@@ -1,0 +1,11 @@
+UnitBlueprint {
+    Merge = true,
+	
+    Economy = {
+        BuildCostEnergy = 1475500,
+        BuildCostMass = 75500,
+        BuildTime = 41000,
+		
+        RebuildBonusIds = {'ueb2302'},
+    },
+}

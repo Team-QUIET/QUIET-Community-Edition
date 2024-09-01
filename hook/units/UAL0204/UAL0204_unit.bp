@@ -1,0 +1,112 @@
+UnitBlueprint {
+   Merge = true,
+   BlueprintId = "UAL0204",
+    Economy = {
+        BuildCostEnergy = 5050,
+        BuildCostMass = 465,
+        BuildRate = 8,
+        BuildTime = 229,
+        
+        MaintenanceConsumptionPerSecondEnergy = 20,
+    },
+
+    Physics = {
+        BackupDistance = 5,
+        BankingSlope = 0,
+        DragCoefficient = 0.2,
+        MaxAcceleration = .75,
+        MaxBrake = 1.5,
+        MaxSpeed = 3.8,
+        MaxSpeedReverse = 2,
+        MaxSteerForce = 10,
+        MeshExtentsX = 1,
+        MeshExtentsY = 1.25,
+        MeshExtentsZ = 1,
+        MinSpeedPercent = 0,
+        MotionType = "RULEUMT_Land",
+        TurnRadius = 8,
+        TurnRate = 44,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+
+            AimsStraightOnDisable = true,
+
+            Audio = {
+                BarrelLoop        = Sound { Bank = 'UAB',       Cue = 'UAB2302_Turret_Loop',          LodCutoff = 'WeaponBig_LodCutoff' },
+                BarrelStart       = Sound { Bank = 'UAB',       Cue = 'UAB2302_Turret_Start',         LodCutoff = 'WeaponBig_LodCutoff' },
+                Fire              = Sound { Bank = 'UALWeapon', Cue = 'UAB2302_Artillery_Sonance',    LodCutoff = 'Weapon_LodCutoff' },
+                MuzzleChargeStart = Sound { Bank = 'UALWeapon', Cue = 'UAB2302_Artillery_Son_Charge', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = "RULEUBA_None",
+
+            CollideFriendly = false,
+
+            Damage = 700,
+            DamageRadius = 0,
+            DamageType = "Normal",
+
+            DisplayName = "Sniper Piercing",
+
+            EnergyChargeForFirstShot = false,
+            EnergyDrainPerSecond = 220,
+            EnergyRequired = 1320,
+
+            FireTargetLayerCapsTable = { Land = "Land|Water" },
+            FiringRandomnessWhileMoving = 0.65,
+            FiringTolerance = 0.8,
+
+            Label = "Piercing_Rifle",
+
+            MaxRadius = 42,
+            MinRadius = 5,
+
+            MuzzleVelocity = 60,
+
+            ProjectileId = "/mods/4DC/projectiles/Sniper_Piercing/Sniper_Piercing_proj.bp",
+            ProjectileLifetime = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = { "sniper_muzzle" },
+                    RackBone = "sniper_barrel",
+                },
+            },
+
+            RackRecoilDistance = -4.0,
+
+            RangeCategory = "UWRC_DirectFire",
+
+            RateOfFire = 1,     -- controlled by charge -- 5 seconds
+
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                "EXPERIMENTAL",
+                "SHIELD",
+                "DEFENSE",
+                "MOBILE",
+            },
+            TargetRestrictDisallow = "UNTARGETABLE",
+            TrackingRadius = 1.1,
+
+            TurretBoneMuzzle = "sniper_muzzle",
+            TurretBonePitch = "sniper_pitch",
+            TurretBoneYaw = "body",
+            TurretDualManipulators = false,
+
+            TurretPitch = 0,
+            TurretPitchRange = 48,
+            TurretPitchSpeed = 24,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 22,
+
+            Turreted = true,
+        },
+
+    },
+}

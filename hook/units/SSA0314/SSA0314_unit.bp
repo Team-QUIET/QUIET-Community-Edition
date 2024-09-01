@@ -1,0 +1,314 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "SSA0314",
+    Air = {
+        AutoLandTime = 1.9,
+        BankFactor = 2.2,
+        BankForward = false,
+		
+        BreakOffDistance = 60,
+        BreakOffIfNearNewTarget = true,
+        BreakOffTrigger = 25,
+		
+        CanFly = true,
+		
+        CombatTurnSpeed = 1.1,
+		
+        EngageDistance = 50,
+		
+        KLift = 3.3,
+        KLiftDamping = 2.5,
+		
+        KMove = 0.96,
+        KMoveDamping = 0.92,
+		
+        KRoll = 1.6,
+        KRollDamping = 1.6,
+		
+        KTurn = 0.8,
+        KTurnDamping = 0.85,
+		
+        LiftFactor = 7.5,
+		
+        MaxAirspeed = 18,
+        MinAirspeed = 14,
+		
+        PredictAheadForBombDrop = 3,
+		
+        StartTurnDistance = 5,
+		
+        TightTurnMultiplier = 1.2,
+		
+        TurnSpeed = 0.9,
+        Winged = true,
+    },
+	
+    Defense = {
+	
+        MissileDetector = { AttachBone = 'Missile_Defence' },
+		
+        ArmorType = 'Light',
+
+        Health = 5250,
+        MaxHealth = 5250,
+        RegenRate = 15,
+        SubThreatLevel = 15,
+        SurfaceThreatLevel = 110,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 195000,
+        BuildCostMass = 5750,
+        BuildTime = 3000,
+		
+        ResearchMultEnergy = 0.2,
+        MaintenanceConsumptionPerSecondEnergy = 250,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'XSA_Weapon', Cue = 'XSA0304_Zhanasse_Bomb', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            AutoInitiateAttackCommand = true,
+            
+            BallisticArc = 'RULEUBA_None',
+            
+            BombDropThreshold = 3.1,
+			
+            Buffs = {
+                {
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 1,
+					Radius = 1.5,
+                    TargetAllow = 'ALLUNITS',
+                    TargetDisallow = 'AIR,COMMAND,WALL,TECH3,EXPERIMENTAL',
+                },
+            },
+
+            CollideFriendly = false,
+			
+            Damage = 4200,
+            DamageFriendly = true,
+            DamageRadius = 2.8,
+            DamageType = 'Normal',
+			
+            EffectiveRadius = 48,
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Land|Water|Seabed',
+                Land = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0,
+            FiringTolerance = 3,
+			
+            Label = 'Bomb',
+
+            NotExclusive = true,
+			
+            MaxRadius = 75,
+			
+            MuzzleSalvoDelay = 0.4,
+            MuzzleSalvoSize = 3,
+
+            MuzzleVelocity = 0,
+			
+            NeedToComputeBombDrop = true,
+			
+            ProjectileId = '/projectiles/SBOZhanaseeBomb01/SBOZhanaseeBomb01_proj.bp',
+			ProjectileLifetime = 15,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Body'},
+                    RackBone = 'Body',
+                },
+            },
+            
+            RackSalvoReloadTime = 8.8,    -- 10 second cycle = 9600/10 = 960 DPS
+
+            RateOfFire = 1,
+			
+            TargetCheckInterval = 3,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'EXPERIMENTAL',
+                'ANTIAIR',
+                'ENERGYPRODUCTION',
+                'MASSFABRICATION',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            
+            TrackingRadius = 1.1,
+        },
+		
+        {
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'XSB_Weapon', Cue = 'XSB2108_Laanse_Missile', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 200,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Laanse Standoff Missile Launcher',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Land|Water|Seabed',
+                Land = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 30,
+			
+            Label = 'CruiseMissile',
+			
+            NotExclusive = true,
+			
+            MaxRadius = 150,
+            MinRadius = 50,
+			
+            MuzzleChargeDelay = 0.3,
+
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 22,
+			
+            PrefersPrimaryWeaponTarget = true,
+			
+            ProjectileId = '/projectiles/SPM_Sinnaino_AGM/SPM_Sinnaino_AGM_proj.bp',
+            ProjectileLifetime = 20,
+            ProjectileLifetimeUsesMultiplier = 1.15,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Body'},
+                    RackBone = 'Body',
+                },
+            },
+            
+            RackSalvoReloadTime = 11.9,     -- 12.5 second cycle = 1200/12.5 = 96 DPS
+            RackReloadTimeout = 11.5,
+
+            RateOfFire = 1,
+			
+            SlavedToBody = true,
+			
+            TargetCheckInterval = 3,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'EXPERIMENTAL',
+                'ANTIAIR',
+                'ENERGYPRODUCTION',
+                'MASSFABRICATION',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 0.6,
+			
+            TurretBoneMuzzle = 'Body',
+            TurretBonePitch = 'Body',
+            TurretBoneYaw = 'Body',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 0,
+            TurretPitchSpeed = 0,
+			
+            TurretYaw = 0,
+            TurretYawRange = 0,
+            TurretYawSpeed = 0,
+			
+            Turreted = true,
+        },
+        {
+            advancedTracking = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'UAAWeapon', Cue = 'UAA0204_Depth_Charge', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CollideFriendly = false,
+			
+            Damage = 900,       -- this gets split into 3 projectiles of 300 each
+            DamageType = 'Normal',
+			
+            DisplayName = 'Cluster Torpedo',
+            
+            EffectiveRadius = 64,
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Seabed|Sub|Water',
+                Land = 'Seabed|Sub|Water',
+            },
+			
+            FiringRandomness = 3,
+            FiringTolerance = 2,
+			
+            HeadingArcCenter = 0,
+            HeadingArcRange = 30,
+			
+            Label = 'ClusterTorpedo',
+			
+            NotExclusive = true,
+			
+            MaxRadius = 56,
+            MinRadius = 8,
+			
+            MuzzleSalvoDelay = 0.3,
+            MuzzleSalvoSize = 2,
+            
+            MuzzleVelocity = 11,
+			
+            ProjectileId = '/projectiles/SANHeavyCavitationTorpedo01/SANHeavyCavitationTorpedo01_proj.bp',
+            ProjectileLifetime = 10,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Body'},
+                    RackBone = 'Body',
+                },
+            },
+            
+            RackSalvoReloadTime = 9.4,  -- 10 second cycle = 1800 = 180 DPS
+
+            RateOfFire = 1,
+			
+            TargetCheckInterval = 2.5,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'CRUISER',
+                'SUBMERSIBLE',
+                'NAVAL',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER, WALL',
+            
+            TrackingRadius = 1.1,
+        },
+
+        {
+            AboveWaterTargetsOnly = true,
+            Damage = 500,
+            DamageFriendly = true,
+            DamageRadius = 2.5,
+            DamageType = 'Normal',
+            DisplayName = 'Air Crash',
+            DummyWeapon = true,
+            Label = 'DeathImpact',
+            WeaponCategory = 'Death',
+        },
+    },
+}

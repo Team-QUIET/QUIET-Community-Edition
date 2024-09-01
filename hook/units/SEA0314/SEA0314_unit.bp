@@ -1,0 +1,312 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "SEA0314",
+    Air = {
+        AutoLandTime = 1.9,
+        BankFactor = 2.2,
+        BankForward = false,
+		
+        BreakOffDistance = 60,
+        BreakOffIfNearNewTarget = true,
+        BreakOffTrigger = 25,
+		
+        CanFly = true,
+		
+        CombatTurnSpeed = 1.1,
+		
+        EngageDistance = 50,
+		
+        KLift = 3.3,
+        KLiftDamping = 2.5,
+		
+        KMove = 0.96,
+        KMoveDamping = 0.92,
+		
+        KRoll = 1.6,
+        KRollDamping = 1.6,
+		
+        KTurn = 0.8,
+        KTurnDamping = 0.8,
+		
+        LiftFactor = 7.5,
+		
+        MaxAirspeed = 18,
+        MinAirspeed = 15,
+		
+        PredictAheadForBombDrop = 3,
+		
+        StartTurnDistance = 5,
+		
+        TightTurnMultiplier = 1.1,
+		
+        TurnSpeed = 0.8,
+        Winged = true,
+    },
+
+    Defense = {
+	
+        MissileDetector = { AttachBone = 'MissileDetector' },
+		
+        ArmorType = 'Light',
+
+        Health = 7200,
+        MaxHealth = 7200,
+        RegenRate = 10,
+        
+        SubThreatLevel = 18,
+        SurfaceThreatLevel = 120,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 210000,
+        BuildCostMass = 5750,
+        BuildTime = 3000,
+		
+        ResearchMultEnergy = 0.2,
+        MaintenanceConsumptionPerSecondEnergy = 300,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'UEAWeapon', Cue = 'UEA0304_Nuke_Bomb', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            AutoInitiateAttackCommand = true,
+
+            BallisticArc = 'RULEUBA_None',
+			
+            Buffs = {
+                {
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 1.5,
+					Radius = 2.5,
+                    TargetAllow = 'ALLUNITS',
+                    TargetDisallow = 'AIR,COMMAND,WALL,TECH3,EXPERIMENTAL',
+                },
+            },
+
+            BombDropThreshold = 3.1,
+			
+            CollideFriendly = false,
+			
+            Damage = 1200,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Small Yield Nuclear Bomb',
+			
+            EffectiveRadius = 48,
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Land|Water|Seabed',
+                Land = 'Land|Water|Seabed',
+            },
+            
+            FiringRandomness = 0.2,
+            FiringTolerance = 6,
+			
+            Label = 'Bomb',
+			
+            MaxRadius = 75,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 4,
+            MuzzleVelocity = 0,
+			
+            NeedToComputeBombDrop = true,
+            
+            NotExclusive = true,
+			
+            ProjectileId = '/projectiles/TIFSmallYieldNuclearBomb01/TIFSmallYieldNuclearBomb01_proj.bp',
+			
+            RackBones = {
+                {  RackBone = 'Bomb_001', MuzzleBones = {'Bomb_001','Bomb_002','Bomb_003','Bomb_004'} },
+            },
+            
+            RackSalvoReloadTime = 9.6,  -- firing cycle 10 = 7600/10 = 760 DPS
+
+            RateOfFire = 1,
+			
+            TargetCheckInterval = 3,
+            
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'EXPERIMENTAL',
+                'ANTIAIR',
+                'ENERGYPRODUCTION',
+                'MASSFABRICATION',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+
+            TrackingRadius = 1.1,
+        },
+		
+        {
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'UESWeapon', Cue = 'UES0202_Fire_Cruise', LodCutoff = 'Weapon_LodCutoff' },            
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 1150,
+            DamageFriendly = true,
+            DamageRadius = 3.5,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Lancer Standoff ASM Barrage',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Land|Water|Seabed',
+                Land = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 30,
+			
+            Label = 'Missile',
+			
+            NotExclusive = true,
+			
+            MaxRadius = 150,
+            MinRadius = 50,
+			
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 20,
+			
+            PrefersPrimaryWeaponTarget = true,
+			
+            ProjectileId = '/projectiles/TPM_Lancer_AGM/TPM_Lancer_AGM_proj.bp',
+            ProjectileLifetime = 20,
+            ProjectileLifetimeUsesMultiplier = 1.15,
+			
+            RackBones = {
+                { RackBone = 'Bomb_001', HideMuzzle = true, MuzzleBones = {'Bomb_001', 'Bomb_002'} },
+                { RackBone = 'Bomb_003', HideMuzzle = true, MuzzleBones = {'Bomb_003', 'Bomb_004'} },
+                { RackBone = 'Bomb_005', HideMuzzle = true, MuzzleBones = {'Bomb_005', 'Bomb_006'} },
+            },
+            
+            RackSalvoChargeTime = 0.1,      -- delay between each rackbone
+            RackSalvoReloadTime = 11.3,     -- 6 missiles every 12.8 = 3600/12.8 = 281 DPS
+            RackReloadTimeout = 11.5,
+
+            RateOfFire = 1,
+			
+            SlavedToBody = true,
+			
+            TargetCheckInterval = 2,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'EXPERIMENTAL',
+                'ANTIAIR',
+                'ENERGYPRODUCTION',
+                'MASSFABRICATION',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, WALL',
+            TrackingRadius = 0.6,
+			
+            TurretBoneMuzzle = 'Bomb_001',
+            TurretBonePitch = 'Bomb_001',
+            TurretBoneYaw = 'Bomb_001',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 0,
+            TurretPitchSpeed = 0,
+			
+            TurretYaw = 0,
+            TurretYawRange = 0,
+            TurretYawSpeed = 0,
+			
+            Turreted = true,
+        },
+		
+        {   --Torpedoes
+
+            advancedTracking = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'UAAWeapon', Cue = 'UAA0204_Depth_Charge', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CollideFriendly = false,
+
+            Damage = 400,
+            DamageType = 'Normal',
+
+            DisplayName = 'Angler Torpedo',
+            
+            EffectiveRadius = 64,
+
+            FireTargetLayerCapsTable = {
+                Air = 'Seabed|Sub|Water',
+                Land = 'Seabed|Sub|Water',
+            },
+            FiringRandomness = 3,
+            FiringTolerance = 2,
+            
+            HeadingArcCenter = 0,
+            HeadingArcRange = 30,
+            
+            Label = 'Torpedo',
+            
+            NotExclusive = true,
+            
+            MaxRadius = 56,
+            MinRadius = 8,
+            
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 4,
+            
+            MuzzleVelocity = 10,
+            
+            ProjectileId = '/projectiles/TANAnglerTorpedo01/TANAnglerTorpedo01_proj.bp',
+            ProjectileLifetime = 10,
+            
+            RackBones = {
+                { RackBone = 'Bomb_001', MuzzleBones = {'Bomb_001','Bomb_002','Bomb_005','Bomb_006' } },
+            },
+            
+            RackSalvoReloadTime = 9.2,  -- 10 second cycle = 1600/10 = 160 DPS
+
+            RateOfFire = 1,
+            
+            TargetCheckInterval = 3,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'CRUISER',
+                'SUBMARINE',
+                'NAVAL',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER, WALL',
+            TrackingRadius = 1.1,
+            
+            Turreted = false,
+        },
+		
+        {
+            AboveWaterTargetsOnly = true,
+            Damage = 400,
+            DamageFriendly = true,
+            DamageRadius = 2.5,
+            DamageType = 'Normal',
+            DisplayName = 'Air Crash',
+            DummyWeapon = true,
+            FiringTolerance = 2,
+            Label = 'DeathImpact',
+            WeaponCategory = 'Death',
+        },
+    },
+}

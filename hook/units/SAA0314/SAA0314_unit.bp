@@ -1,0 +1,69 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "SAA0314", 
+    Air = {
+        AutoLandTime = 1.9,
+        BankFactor = 2.2,
+        BankForward = false,
+		
+        BreakOffDistance = 60,
+        BreakOffIfNearNewTarget = true,
+        BreakOffTrigger = 25,
+		
+        CanFly = true,
+		
+        CombatTurnSpeed = 1.1,
+		
+        EngageDistance = 50,
+		
+        KLift = 3.3,
+        KLiftDamping = 2.5,
+		
+        KMove = 0.96,
+        KMoveDamping = 0.92,
+		
+        KRoll = 1.6,
+        KRollDamping = 1.6,
+		
+        KTurn = 0.8,
+        KTurnDamping = 0.85,
+		
+        LiftFactor = 7.5,
+		
+        MaxAirspeed = 17,
+        MinAirspeed = 14,
+		
+        PredictAheadForBombDrop = 3,
+		
+        StartTurnDistance = 5,
+		
+        TightTurnMultiplier = 1.1,
+		
+        TurnSpeed = 1.0,
+        Winged = true,
+    },
+	
+    Defense = {
+	
+        MissileDetector = { AttachBone = 'Detector' },
+
+        ArmorType = 'Light',
+
+        Health = 6850,
+        MaxHealth = 6850,
+        RegenRate = 10,
+
+        SubThreatLevel = 16,
+        SurfaceThreatLevel = 105,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 195000,
+        BuildCostMass = 5300,
+        BuildTime = 5500,
+		
+        ResearchMultEnergy = 0.2,
+
+        MaintenanceConsumptionPerSecondEnergy = 250,
+    },
+}
