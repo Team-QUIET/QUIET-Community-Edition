@@ -1,0 +1,12 @@
+name = "LOUD Community Edition"
+uid = "0df2a276-cc41-36a1-2ba3-e16bb44f0g3f"
+version = 0.1
+copyright = ""
+description = "LOUD CE is a massive collection of Bug Fixes, Game Rebalance, & Other Various Actions"
+author = "LOUD CE Team"
+selectable = true
+enabled = true
+exclusive = false
+ui_only = false
+before = {  }
+after = {  }
