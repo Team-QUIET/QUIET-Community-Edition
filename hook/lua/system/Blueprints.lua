@@ -1,76 +1,83 @@
--- Hook Start
--- Reason: Add Wreckage to all Blueprints to create more wreckage in the game, goes in hand with the change in Unit.lua to overkillRatio. 
--- We comment out MassMult Adjustments for now to see how it affects gameplay.
--- We remove Energy Reclaim from all wrecks to focus Macro more on Energy Production rather then 30 minutes of Macro for Mass Extractor Upgrades.
-function ModBlueprints(all_blueprints)
+do  -- Hook Start
+    -- Reason: Add Wreckage to all Blueprints to create more wreckage in the game, goes in hand with the change in Unit.lua to overkillRatio. 
+    -- We comment out MassMult Adjustments for now to see how it affects gameplay.
+    -- We remove Energy Reclaim from all wrecks to focus Macro more on Energy Production rather then 30 minutes of Macro for Mass Extractor Upgrades.
+    local oldModBlueprints = ModBlueprints
 
-    for id, bp in pairs(all_blueprints.Unit) do				
-        
-        local cats = {}
+    function ModBlueprints(all_bps)
 
-        if bp.Categories then
+        if oldModBlueprints then
+            oldModBlueprints(all_bps)
+        end
+
+        for id, bp in pairs(all_bps.Unit) do				
             
-            for k,cat in pairs(bp.Categories) do
-                cats[cat] = true
-            end
-        
-            if cats.NAVAL then
-            
-                if not bp.Wreckage then
+            local cats = {}
+
+            if bp.Categories then
                 
-                    bp.Wreckage = {
-                        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
-                        EnergyMult = 0,
-                        HealthMult = 0.9,
-                        LifeTime = 720,	-- give naval wreckage a lifetime value of 12 minutes
-                        MassMult = 0.5,
-                        ReclaimTimeMultiplier = 1.2,
-                        
-                        WreckageLayers = {
-                            Air = false,
-                            Land = false,
-                            Seabed = true,
-                            Sub = true,
-                            Water = true,
-                        };
-                    }
-                else
-                    local wl = bp.Wreckage.WreckageLayers
-                    wl.Seabed = true
-                    wl.Sub = true
-                    wl.Water = true
-                    bp.Wreckage.LifeTime = 720
+                for k,cat in pairs(bp.Categories) do
+                    cats[cat] = true
                 end
+            
+                if cats.NAVAL then
                 
-            else
-                if bp.Wreckage then
-                
-                    if not bp.Wreckage.LifeTime then
-
-                        bp.Wreckage.LifeTime = 900
-                        
+                    if not bp.Wreckage then
+                    
+                        bp.Wreckage = {
+                            Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+                            EnergyMult = 0,
+                            HealthMult = 0.9,
+                            LifeTime = 720,	-- give naval wreckage a lifetime value of 12 minutes
+                            MassMult = 0.5,
+                            ReclaimTimeMultiplier = 1.2,
+                            
+                            WreckageLayers = {
+                                Air = false,
+                                Land = false,
+                                Seabed = true,
+                                Sub = true,
+                                Water = true,
+                            };
+                        }
+                    else
+                        local wl = bp.Wreckage.WreckageLayers
+                        wl.Seabed = true
+                        wl.Sub = true
+                        wl.Water = true
+                        bp.Wreckage.LifeTime = 720
                     end
+                    
                 else
-                    LOG("Adding BP Wreckage")
-                    bp.Wreckage = {
-                        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
-                        EnergyMult = 0,
-                        HealthMult = 0.9,
-                        LifeTime = 720,	-- give naval wreckage a lifetime value of 12 minutes
-                        MassMult = 0.75,
-                        ReclaimTimeMultiplier = 1.2,
-                        WreckageLayers = {
-                            Land = true,
-                        };
-                    }       
+                    if bp.Wreckage then
                     
-                    --if bp.Wreckage.MassMult and bp.Wreckage.MassMult > 0.2 then
-                    
-                    --    bp.Wreckage.MassMult = bp.Wreckage.MassMult * 0.5
+                        if not bp.Wreckage.LifeTime then
+
+                            bp.Wreckage.LifeTime = 900
+                            
+                        end
+                    else
+                        LOG("Adding BP Wreckage")
+                        bp.Wreckage = {
+                            Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+                            EnergyMult = 0,
+                            HealthMult = 0.9,
+                            LifeTime = 720,	-- give naval wreckage a lifetime value of 12 minutes
+                            MassMult = 0.75,
+                            ReclaimTimeMultiplier = 1.2,
+                            WreckageLayers = {
+                                Land = true,
+                            };
+                        }       
                         
-                    --    bp.Wreckage.ReclaimTimeMultiplier = 1.2
+                        --if bp.Wreckage.MassMult and bp.Wreckage.MassMult > 0.2 then
                         
-                    --end
+                        --    bp.Wreckage.MassMult = bp.Wreckage.MassMult * 0.5
+                            
+                        --    bp.Wreckage.ReclaimTimeMultiplier = 1.2
+                            
+                        --end
+                    end
                 end
             end
         end
