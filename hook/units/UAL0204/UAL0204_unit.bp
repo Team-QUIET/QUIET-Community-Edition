@@ -59,7 +59,7 @@ UnitBlueprint {
             FiringRandomnessWhileMoving = 0.65,
             FiringTolerance = 0.8,
 
-            Label = "Piercing_Rifle",
+            Label = "Sniper_Piercing_Rifle",
 
             MaxRadius = 42,
             MinRadius = 5,
@@ -107,6 +107,5 @@ UnitBlueprint {
 
             Turreted = true,
         },
-
     },
 }
