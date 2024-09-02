@@ -57,7 +57,7 @@ do  -- Hook Start
                             
                         end
                     else
-                        LOG("Adding BP Wreckage")
+                        --LOG("Adding BP Wreckage")
                         bp.Wreckage = {
                             Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
                             EnergyMult = 0,
