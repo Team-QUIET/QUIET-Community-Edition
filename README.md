@@ -37,3 +37,5 @@ Welcome to the **LOUD Community Edition**! This project is a community-driven ef
 We welcome all forms of contributions to enhance the LOUD experience! Here’s how you can get involved:
 
 ### How to Contribute
+
+Feel free to submit a new issue.
