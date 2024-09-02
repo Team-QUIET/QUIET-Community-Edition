@@ -1,0 +1,62 @@
+---------------------------------------------
+## LOUD Community Edition 
+## Rebalance Changelog
+---------------------------------------------
+
+### Reclaim Changes
+-- Reclaim Changes were simple. The Single Goal in Mind was to encourage early aggression but punish late game mistakes i.e losing entire army without delivering significant damage.
+All Wrecks have been fixed to prevent permanent disappear of Wreckage/Reclaim
+Overkill Ratio on Wreckage disappearing has been changed from 10% to 30% meaning you have to overkill said unit by 30% to not receive the wreckage
+Naval Reclaim no lower gives 30% of the energy in the Wreckage
+
+### T3 Penetration Bombers
+-- Pen Bombers are very strong, with the ability to easily punch through most AA & having cheap stealth. This change was needed to prevent early Pen Bomber Rushes specifically in Teamgames. Many changes are aimed at some of the first steps towards significantly diversifying units
+Aeon:
+Mass Cost 4300 -> 5300
+Energy Cost 165000 -> 195000
+Stealth Energy Cost Upkeep 50 -> 250
+MaxAirspeed 19 -> 17
+MinAirspeed 15 -> 14
+TurnSpeed 1.0 -> 1.1
+UEF: 
+Mass Cost 4750 -> 5750
+Energy Cost 180000 -> 2100000
+Stealth Energy Cost Upkeep 50 -> 300
+Health 6800 -> 7200
+MaxAirspeed 19 -> 18
+TurnSpeed 1.0 -> 0.8
+Small Yield Nuclear Bomb Damage 1900k -> 1200
+Lancer Standoff ASM Barrage Damage 600 -> 1150
+Lancer Standoff ASM Barrage DamageRadius 2 -> 3.5
+Cybran: 
+Mass Cost 4750 -> 5500
+Energy Cost 180000 -> 190000
+Stealth Energy Cost Upkeep 50 -> 300
+Health 4750 -> 4250
+RegenRate 10 -> 25
+MaxAirspeed 19 -> 20
+MinAirspeed 15 -> 16
+TurnSpeed 1.0 -> 1.1
+Seraphim: 
+Mass Cost 4750 -> 5750
+Energy Cost 180000 -> 195000
+Stealth Energy Cost Upkeep 50 -> 250
+Health 6250 -> 5250
+MaxAirspeed 19 -> 18
+MinAirspeed 15 -> 14
+Bombs 3200 -> 4200
+
+### T3 Static Artillery
+Revert to the FAF Cost of T3 Static Artillery
+
+### T2 Aeon Sniper
+-- The Aeon Sniper was dominating T2, T3, and even early T4 Phase in some games, this called for a immediate nerf. It's main strength lies in its speed and with the reduction, it should allow players to catch them much easier. The cost will also make them less efficient and the EnergyRequired will make the Reload much longer as well by 3 more seconds.
+Mass Cost 320 -> 465 
+Energy Cost 3850 -> 5050
+MaxSpeed 4.0 -> 3.8
+EnergyRequired (Recharge - Main Weapon) 880 -> 1320
+
+### T3 Mobile Sensor Arrays
+-- Mobile Sensor Arrays Omni was too small combined with the small omni on static radar led to Stealth & Cloak being far too powerful & annoying for players.
+Energy Cost Upkeep 850 -> 1500
+OmniRadius 56 -> 112
