@@ -1,0 +1,32 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "ssl0324", 
+	
+    Defense = {
+        ArmorType = 'Structure',
+
+        Health = 220,
+        MaxHealth = 220,
+        RegenRate = 1,
+
+        EconomyThreatLevel = 65,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 30000,
+        BuildCostMass = 1650,
+        BuildTime = 2500,
+		
+        MaintenanceConsumptionPerSecondEnergy = 1500,
+    },
+	
+    Intel = {
+        ReactivateTime = 5,
+        ShowIntelOnSelect = true,
+        
+        OmniRadius = 112,
+        RadarRadius = 248,
+        VisionRadius = 40,
+		WaterVisionRadius = 24,
+    },
+}

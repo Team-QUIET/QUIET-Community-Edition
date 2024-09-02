@@ -1,0 +1,32 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "sel0324", 
+	
+    Defense = {
+        ArmorType = 'Normal',
+
+        Health = 1800,
+        MaxHealth = 1800,
+        RegenRate = 2,
+
+        AirThreatLevel = 36,
+        EconomyThreatLevel = 150,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 30000,
+        BuildCostMass = 2200,
+        BuildTime = 1100,
+		
+        MaintenanceConsumptionPerSecondEnergy = 1500,
+    },
+	
+    Intel = {
+        OmniRadius = 112,
+        RadarRadius = 248,
+        VisionRadius = 40,
+        WaterVisionRadius = 12,
+
+        ShowIntelOnSelect = true,		
+    },
+}

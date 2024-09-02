@@ -1,0 +1,34 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "srl0324", 
+
+    Defense = {
+        ArmorType = 'Normal',
+
+        Health = 250,
+        MaxHealth = 250,
+        RegenRate = 1,
+
+        EconomyThreatLevel = 65,
+    },
+
+    Economy = {
+        BuildCostEnergy = 30000,
+        BuildCostMass = 1750,
+        BuildTime = 2500,
+
+        MaintenanceConsumptionPerSecondEnergy = 1500,
+    },
+
+    Intel = {
+        ShowIntelOnSelect = true,
+
+        OmniRadius = 112,
+        RadarRadius = 248,
+        VisionRadius = 40,
+
+        RadarStealth = true,
+		StealthWaitTime = 2,
+        Cloak = true,
+    },
+}
