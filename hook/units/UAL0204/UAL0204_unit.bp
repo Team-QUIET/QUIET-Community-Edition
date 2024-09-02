@@ -1,6 +1,6 @@
 UnitBlueprint {
    Merge = true,
-   BlueprintId = "UAL0204",
+   BlueprintId = "ual0204",
     Economy = {
         BuildCostEnergy = 5050,
         BuildCostMass = 465,

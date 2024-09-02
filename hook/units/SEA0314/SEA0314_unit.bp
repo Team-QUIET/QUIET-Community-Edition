@@ -1,6 +1,6 @@
 UnitBlueprint {
     Merge = true,
-	BlueprintId = "SEA0314",
+	BlueprintId = "sea0314",
     Air = {
         AutoLandTime = 1.9,
         BankFactor = 2.2,
