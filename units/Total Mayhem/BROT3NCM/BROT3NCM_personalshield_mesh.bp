@@ -1,0 +1,18 @@
+MeshBlueprint {
+    BlueprintId = "BROT3NCMPhaseShield",
+    IconFadeInZoom = 130,
+    LODs = {
+        {
+            MeshName = '/mods/TotalMayhem/units/BROT3NCM/BROT3NCM_LOD0.scm',
+            AlbedoName = '/mods/TotalMayhem/units/BROT3NCM/BROT3NCM_Albedo.dds',
+            NormalsName = '/mods/TotalMayhem/units/BROT3NCM/BROT3NCM_normalsTS.dds',
+            SpecularName = '/mods/TotalMayhem/units/BROT3NCM/BROT3NCM_SpecTeam.dds',
+            LookupName = '/effects/entities/PhaseShield/PhaseShieldLookup.dds',
+
+            LODCutoff = 195,
+            
+            Scrolling = true,
+            ShaderName = 'PhaseShield',
+        },
+    },
+}

@@ -1,0 +1,618 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "brot3ncm",
+	
+    Defense = {
+
+        MissileTorpDestroy = { AttachBone = {'head'}, Radius = 4, RedirectRateOfFire = 9, ProjectileCategories = {'TACTICAL MISSILE','TORPEDO'} },
+
+        ArmorType = 'Experimental',
+
+        Health = 18500,
+        MaxHealth = 18500,
+        RegenRate = 10,
+
+		AirThreatLevel = 32,
+        SurfaceThreatLevel = 592,
+
+        Shield = {
+            ImpactEffects = 'AeonShieldHit01',
+            OwnerShieldMesh = 'BROT3NCMPhaseShield',
+            PersonalShield = true,
+            RegenAssistMult = 60,
+            ShieldEnergyDrainRechargeTime = 4,
+            ShieldMaxHealth = 21000,
+            ShieldRechargeTime = 12,
+            ShieldRegenRate = 240,
+            ShieldRegenStartTime = 1,
+            ShieldSize = 2,
+            ShieldVerticalOffset = 0,
+            StartOn = true,
+        },
+    },
+	
+    Description = '<LOC brot3ncm_desc>Experimental Medium Rapid Assault Mech',
+	
+    Display = {
+        Abilities = {
+            "<LOC ability_amphibious>Amphibious",
+            "<LOC ability_aa>Anti-Air",
+            "<LOC ability_tacmissiledef>Personal Tac & Torpedo Defense",
+            '<LOC ability_radar>Radar',
+            '<LOC ability_shielddome>Personal Shield',
+        },
+
+        AnimationDeath = { {Animation = '/mods/TotalMayhem/units/BROT3NCM/BROT3NCM_Death.sca',Weight = 100} },
+        AnimationWalk = '/mods/TotalMayhem/units/BROT3NCM/BROT3NCM_Walk.sca',
+        AnimationWalkRate = 2,
+
+        Mesh = { IconFadeInZoom = 150, LODs = { {LODCutoff = 500,Scrolling = true,ShaderName = 'Aeon'} } },
+        
+        MovementEffects = {
+            Land = {
+                Footfall = {
+                    Bones = {
+                        {
+                            FootBone = 'footfall_right',
+                            HipBone = 'footfall_right',
+                            KneeBone = 'footfall_right',
+                            MaxFootFall = -0.25,
+                            Offset = {z = -1},
+                            StraightLegs = false,
+                            Type = 'FootFall01',
+                        },
+                        {
+                            FootBone = 'footfall_left',
+                            HipBone = 'footfall_left',
+                            KneeBone = 'footfall_left',
+                            MaxFootFall = -0.25,
+                            Offset = {z = -1},
+                            StraightLegs = false,
+                            Type = 'FootFall01',
+                        },
+                    },
+                    
+                    Damage = {
+                        Amount = 1100,
+                        DamageFriendly = false,
+                        Radius = 2,
+                        Type = 'ExperimentalFootfall',
+                    },
+                },
+            },
+        },
+
+        UniformScale = 0.087,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 480000,
+        BuildCostMass = 21000,
+        BuildTime = 21000,
+
+        MaintenanceConsumptionPerSecondEnergy = 1000,
+    },
+    
+    Interface = {
+        HelpText = 'Medium Rapid Assault Mech',
+    },
+	
+	
+    Physics = {
+        BackUpDistance = 0,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+        },
+        DragCoefficient = 0.2,
+
+        LayerChangeOffsetHeight = -4,
+        
+        MaxAcceleration = 1.75,
+        MaxBrake = 2.75,
+        MaxSpeed = 2.75,
+        MaxSpeedReverse = 0,
+        
+        MaxSteerForce = 10,
+        
+        MinSpeedPercent = 0,
+        
+        MotionType = 'RULEUMT_Amphibious',
+        
+        SkirtOffsetX = -1.5,
+        SkirtOffsetZ = -1.5,
+        
+        SkirtSizeX = 5,
+        SkirtSizeZ = 5,
+        
+        TurnRadius = 5,
+        TurnRate = 29,
+    },
+    
+    Weapon = {
+		
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                BeamLoop    = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Loop', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStart   = Sound { Bank = 'TM_AEONWEAPONS', Cue = 'AEONNOVACATGREENLASERFX', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStop    = Sound { Bank = 'TM_AEONWEAPONS', Cue = 'AEONTERMINATORLASERSTOPFX', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0,
+            BeamLifetime = 1,	-- do dmg 10x per on fire = 10000dmg
+			
+            CollideFriendly = false,
+            ContinuousBeam = false,
+			
+            Damage = 1000,
+            DamageFriendly = true,
+            DamageType = 'ShieldMult0.4',
+            DamageRadius = 1.5,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 2,
+			
+            Label = 'MainLaser',
+			
+            MaxRadius = 44,
+
+            MuzzleChargeDelay = 0.6,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'leftarm_muzzle01','leftarm_muzzle02'},
+                    RackBone = 'gun02',
+                },
+            },
+
+            RackRecoilDistance = -1,
+
+            RackSlavedToTurret = true,
+
+            RateOfFire = 0.1,	-- fire every 5 seconds = 2000dps
+			
+            ReTargetOnMiss = true,
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.05,
+			
+            TurretBoneDualMuzzle = 'leftarm_muzzle01',
+            TurretBoneDualPitch = 'gun02',
+			
+            TurretBoneMuzzle = 'leftarm_muzzle02',
+            TurretBonePitch = 'gun02',
+			
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = true,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 35,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 32,
+
+            Turreted = true,
+        },
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                BeamLoop    = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Loop', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStart   = Sound { Bank = 'TM_AEONWEAPONS', Cue = 'AEONNOVACATBLUELASERFX', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStop    = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Stop', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0.2,
+            BeamLifetime = 0.2,		-- 1x damage per fire
+			
+            CollideFriendly = false,
+			
+            ContinuousBeam = true,
+			
+            Damage = 125,
+            DamageFriendly = false,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Blue Laser',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 0.1,
+			
+            Label = 'laserblu',
+			
+            MaxRadius = 42,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'rightarm_muzzle01'},
+                    RackBone = 'gun01',
+                },
+            },
+
+            RackRecoilDistance = -1,
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 3,	-- 375dps
+			
+            ReTargetOnMiss = true,
+
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TrackingRadius = 1.05,
+			
+            TurretBoneDualMuzzle = 'rightarm_muzzle01',
+            TurretBoneDualPitch = 'gun01',
+			
+            TurretBoneMuzzle = 'rightarm_muzzle03',
+            TurretBonePitch = 'gun01',
+			
+            TurretBoneYaw = 'Turret',
+
+            TurretDualManipulators = true,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 35,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 30,
+            
+            Turreted = true,
+        },
+        
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                BeamLoop    = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Loop', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStart   = Sound { Bank = 'TM_AEONWEAPONS', Cue = 'AEONNOVACATBLUELASERFX', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStop    = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Stop', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0.2,
+            BeamLifetime = 0.2,
+			
+            CollideFriendly = false,
+            ContinuousBeam = true,
+			
+            Damage = 150,
+            DamageFriendly = false,
+            DamageType = 'Normal',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+            },
+
+            FiringTolerance = 0.1,
+            
+            Label = 'laserred',
+            
+            MaxRadius = 42,
+            
+			PrefersPrimaryWeaponTarget = true,
+            
+            RackBones = {
+                {
+                    MuzzleBones = {'rightarm_muzzle02'},
+                    RackBone = 'gun01',
+                },
+            },
+            
+            RackRecoilDistance = -1,
+
+            RackSlavedToTurret = true,
+
+            RateOfFire = 2.5,	-- 375 dps
+			
+            ReTargetOnMiss = true,
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.05,
+			
+            TurretBoneDualMuzzle = 'rightarm_muzzle01',
+            TurretBoneDualPitch = 'gun01',
+			
+            TurretBoneMuzzle = 'rightarm_muzzle03',
+            TurretBonePitch = 'gun01',
+			
+            TurretBoneYaw = 'Turret',
+			
+            TurretDualManipulators = true,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 35,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 30,
+			
+            Turreted = true,
+        },
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                BeamLoop    = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Loop', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStart   = Sound { Bank = 'TM_AEONWEAPONS', Cue = 'AEONNOVACATBLUELASERFX', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStop    = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Stop', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0.2,
+            BeamLifetime = 0.2,
+			
+            CollideFriendly = false,
+            ContinuousBeam = true,
+			
+            Damage = 140,
+            DamageFriendly = false,
+            DamageType = 'Normal',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+            },
+
+            FiringTolerance = 0.1,
+            
+            Label = 'lasermix',
+            
+            MaxRadius = 42,
+            
+			PrefersPrimaryWeaponTarget = true,
+            
+            RackBones = {
+                {
+                    MuzzleBones = {'rightarm_muzzle03'},
+                    RackBone = 'gun01',
+                },
+            },
+
+            RackRecoilDistance = -1,
+
+            RackSlavedToTurret = true,
+
+            RateOfFire = 2.7,	-- 378 dps
+			
+            ReTargetOnMiss = true,
+
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.05,
+
+            TurretBoneDualMuzzle = 'rightarm_muzzle01',
+            TurretBoneDualPitch = 'gun01',
+
+            TurretBoneMuzzle = 'rightarm_muzzle03',
+            TurretBonePitch = 'gun01',
+
+            TurretBoneYaw = 'Turret',
+
+            TurretDualManipulators = true,
+
+            TurretPitch = 0,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 35,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 30,
+
+            Turreted = true,
+        },
+
+        {
+            AboveWaterFireOnly = true,
+            AlwaysRecheckTarget = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'UALWeapon', Cue = 'UAB2304_SAM', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 150,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Zealot AA Missile',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Seabed = 'Air',
+            },
+			
+            FiringTolerance = 10,
+			
+            Label = 'AAMissiles',
+			
+            MaxRadius = 42,
+
+            MuzzleVelocity = 30,
+
+            ProjectileId = '/projectiles/AAAZealotMissile01/AAAZealotMissile01_proj.bp',
+            ProjectileLifetime = 5,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'aa01'},
+                    RackBone = 'aa01',
+                },
+                {
+                    MuzzleBones = {'aa02'},
+                    RackBone = 'aa02',
+                },
+            },
+
+            RackFireTogether = true,
+
+            RackSlavedToTurret = true,
+            
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 0.5,
+			
+            TargetCheckInterval = 0.3,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'HIGHPRIAIR',
+                'BOMBER',
+                'GROUNDATTACK',
+                'AIR MOBILE',
+                'ALLUNITS',
+            },
+			
+            TargetRestrictDisallow = 'UNTARGETABLE, SATELLITE',
+			
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'aa01',
+            TurretBonePitch = 'aa01',
+            TurretBoneYaw = 'aagun02',
+			
+            TurretPitch = 25,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 180,
+			
+            Turreted = true,
+        },
+		{
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'TM_AEONWEAPONS', Cue = 'ROBOTTALK1FX', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            AutoInitiateAttackCommand = true,
+
+            BallisticArc = 'RULEUBA_LowArc',
+
+            CollideFriendly = false,
+
+            Damage = 0,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+
+            DisplayName = 'Robot Talk',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+
+            FiringTolerance = 1,
+
+            Label = 'robottalk',
+			
+            MaxRadius = 48,
+
+            MuzzleVelocity = 40,
+			
+            ProjectileId = '/projectiles/NullShell/NullShell_proj.bp',
+			
+            ProjectileLifetimeUsesMultiplier = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'AttachPoint'},
+                    RackBone = 'AttachPoint',
+                },
+            },
+
+            RackRecoilDistance = -2,
+
+            RateOfFire = 0.05,
+            
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {'ALLUNITS'},
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.05,
+            
+            TurretBoneMuzzle = 'AttachPoint',
+            TurretBonePitch = 'AttachPoint',
+            TurretBoneYaw = 'AttachPoint',
+            
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 100,
+            
+            TurretYaw = 0,
+            TurretYawRange = 45,
+            TurretYawSpeed = 100,
+            
+            Turreted = true,
+        },
+        
+		{
+            AboveWaterTargetsOnly = true,
+            Damage = 6000,
+            DamageFriendly = true,
+            DamageRadius = 8,
+            DamageType = 'Normal',
+            DisplayName = 'Death Nuke',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+            WeaponCategory = 'Death',
+        },
+    },
+}

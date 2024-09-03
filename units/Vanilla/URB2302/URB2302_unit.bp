@@ -1,6 +1,6 @@
 UnitBlueprint {
     Merge = true,
-    
+    BlueprintId = "urb2302",
     Economy = {
         BuildCostEnergy = 130500,
         BuildCostMass = 69600,
