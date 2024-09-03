@@ -3,6 +3,18 @@
 ## Rebalance Changelog
 ---------------------------------------------
 
+### 9/3/2024 (V1.0.2 Release)
+
+# T2 Aeon Sniper
+TargetPriorities Readjusted to increase Micro Focus
+MaintenanceConsumptionPerSecondEnergy 20 -> 50
+EnergyRequired (Recharge - Main Weapon) 1320 -> 1760
+
+
+### 9/2/2024 (V1.0.1 Release)
+
+Hotfix for T2 Aeon Sniper not firing
+
 ### 9/2/2024 (V1.0.0 Release)
 
 # Reclaim Changes
