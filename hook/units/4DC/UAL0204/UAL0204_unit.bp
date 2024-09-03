@@ -7,7 +7,7 @@ UnitBlueprint {
         BuildRate = 8,
         BuildTime = 229,
         
-        MaintenanceConsumptionPerSecondEnergy = 20,
+        MaintenanceConsumptionPerSecondEnergy = 50,
     },
 
     Physics = {
@@ -53,7 +53,7 @@ UnitBlueprint {
 
             EnergyChargeForFirstShot = false,
             EnergyDrainPerSecond = 220,
-            EnergyRequired = 1320,
+            EnergyRequired = 1760,
 
             FireTargetLayerCapsTable = { Land = "Land|Water" },
             FiringRandomnessWhileMoving = 0.65,
@@ -66,7 +66,7 @@ UnitBlueprint {
 
             MuzzleVelocity = 60,
 
-            ProjectileId = "/mods/4DC/projectiles/Sniper_Piercing/Sniper_Piercing_proj.bp",
+            ProjectileId = "/mods/projectiles/4DC/Sniper_Piercing/Sniper_Piercing_proj.bp",
             ProjectileLifetime = 1,
 
             RackBones = {
@@ -86,8 +86,8 @@ UnitBlueprint {
             TargetPriorities = {
                 "EXPERIMENTAL",
                 "SHIELD",
-                "DEFENSE",
                 "MOBILE",
+                "DEFENSE",
             },
             TargetRestrictDisallow = "UNTARGETABLE",
             TrackingRadius = 1.1,
