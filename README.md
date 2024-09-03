@@ -2,7 +2,7 @@
 
 Welcome to the **LOUD Community Edition**! This project is a community-driven effort to enhance the gameplay experience of [LOUD Project Mod](https://github.com/LOUD-Project/Git-LOUD) by implementing balance changes, bug fixes, and introducing new features. We aim to create a dynamic, fun, and fair gaming environment for all players.
 
-## What's New in the Latest Update?
+## What's New in V1.0.0?
 
 ### Reclaim Changes
 - **Goal**: Encourage early-game aggression while punishing late-game mistakes.
