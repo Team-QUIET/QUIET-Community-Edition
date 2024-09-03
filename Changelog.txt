@@ -5,11 +5,20 @@
 
 ### 9/3/2024 (V1.0.2 Release)
 
+# T4 Eliash Medium Rapid Assault Bot
+Mass Cost 26000 -> 21000
+Energy Cost 420000 -> 480000
+Health 66500 -> 18500
+Shield = 21000
+ShieldRegenRate = 240
+ShieldRechargeTime = 12
+Main Weapon 10000 -> 5000 DPS
+AA Weapon 300 -> 400 Damage
+
 # T2 Aeon Sniper
 TargetPriorities Readjusted to increase Micro Focus
 MaintenanceConsumptionPerSecondEnergy 20 -> 50
 EnergyRequired (Recharge - Main Weapon) 1320 -> 1760
-
 
 ### 9/2/2024 (V1.0.1 Release)
 
