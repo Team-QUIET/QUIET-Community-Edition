@@ -4,16 +4,9 @@ UnitBlueprint {
 	
     Defense = {
 
-        MissileTorpDestroy = { AttachBone = {'head'}, Radius = 4, RedirectRateOfFire = 9, ProjectileCategories = {'TACTICAL MISSILE','TORPEDO'} },
-
-        ArmorType = 'Experimental',
-
         Health = 18500,
         MaxHealth = 18500,
         RegenRate = 10,
-
-		AirThreatLevel = 32,
-        SurfaceThreatLevel = 592,
 
         Shield = {
             ImpactEffects = 'AeonShieldHit01',
@@ -35,54 +28,8 @@ UnitBlueprint {
 	
     Display = {
         Abilities = {
-            "<LOC ability_amphibious>Amphibious",
-            "<LOC ability_aa>Anti-Air",
-            "<LOC ability_tacmissiledef>Personal Tac & Torpedo Defense",
-            '<LOC ability_radar>Radar',
             '<LOC ability_shielddome>Personal Shield',
         },
-
-        AnimationDeath = { {Animation = '/mods/TotalMayhem/units/BROT3NCM/BROT3NCM_Death.sca',Weight = 100} },
-        AnimationWalk = '/mods/TotalMayhem/units/BROT3NCM/BROT3NCM_Walk.sca',
-        AnimationWalkRate = 2,
-
-        Mesh = { IconFadeInZoom = 150, LODs = { {LODCutoff = 500,Scrolling = true,ShaderName = 'Aeon'} } },
-        
-        MovementEffects = {
-            Land = {
-                Footfall = {
-                    Bones = {
-                        {
-                            FootBone = 'footfall_right',
-                            HipBone = 'footfall_right',
-                            KneeBone = 'footfall_right',
-                            MaxFootFall = -0.25,
-                            Offset = {z = -1},
-                            StraightLegs = false,
-                            Type = 'FootFall01',
-                        },
-                        {
-                            FootBone = 'footfall_left',
-                            HipBone = 'footfall_left',
-                            KneeBone = 'footfall_left',
-                            MaxFootFall = -0.25,
-                            Offset = {z = -1},
-                            StraightLegs = false,
-                            Type = 'FootFall01',
-                        },
-                    },
-                    
-                    Damage = {
-                        Amount = 1100,
-                        DamageFriendly = false,
-                        Radius = 2,
-                        Type = 'ExperimentalFootfall',
-                    },
-                },
-            },
-        },
-
-        UniformScale = 0.087,
     },
 	
     Economy = {
@@ -135,25 +82,20 @@ UnitBlueprint {
         {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
-            
-            Audio = {
-                BeamLoop    = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Loop', LodCutoff = 'Weapon_LodCutoff' },
-                BeamStart   = Sound { Bank = 'TM_AEONWEAPONS', Cue = 'AEONNOVACATGREENLASERFX', LodCutoff = 'Weapon_LodCutoff' },
-                BeamStop    = Sound { Bank = 'TM_AEONWEAPONS', Cue = 'AEONTERMINATORLASERSTOPFX', LodCutoff = 'Weapon_LodCutoff' },
-            },
-            
-            BallisticArc = 'RULEUBA_None',
 			
             BeamCollisionDelay = 0,
-            BeamLifetime = 1,	-- do dmg 10x per on fire = 10000dmg
+            BeamLifetime = 1,	-- do dmg 10x per on fire = 5000dmg
 			
             CollideFriendly = false,
             ContinuousBeam = false,
 			
-            Damage = 1000,
+            Damage = 200,
             DamageFriendly = true,
             DamageType = 'ShieldMult0.4',
             DamageRadius = 1.5,
+
+            EnergyDrainPerSecond = 650,
+            EnergyRequired = 3250,
 			
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
@@ -168,18 +110,11 @@ UnitBlueprint {
 
             MuzzleChargeDelay = 0.6,
 
-            RackBones = {
-                {
-                    MuzzleBones = {'leftarm_muzzle01','leftarm_muzzle02'},
-                    RackBone = 'gun02',
-                },
-            },
-
             RackRecoilDistance = -1,
 
             RackSlavedToTurret = true,
 
-            RateOfFire = 0.1,	-- fire every 5 seconds = 2000dps
+            RateOfFire = 1,	-- fire every 5 seconds - controlled by charge = 1000dps
 			
             ReTargetOnMiss = true,
 			
@@ -194,12 +129,6 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             TrackingRadius = 1.05,
-			
-            TurretBoneDualMuzzle = 'leftarm_muzzle01',
-            TurretBoneDualPitch = 'gun02',
-			
-            TurretBoneMuzzle = 'leftarm_muzzle02',
-            TurretBonePitch = 'gun02',
 			
             TurretBoneYaw = 'Turret',
             TurretDualManipulators = true,
@@ -217,12 +146,6 @@ UnitBlueprint {
         {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
-
-            Audio = {
-                BeamLoop    = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Loop', LodCutoff = 'Weapon_LodCutoff' },
-                BeamStart   = Sound { Bank = 'TM_AEONWEAPONS', Cue = 'AEONNOVACATBLUELASERFX', LodCutoff = 'Weapon_LodCutoff' },
-                BeamStop    = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Stop', LodCutoff = 'Weapon_LodCutoff' },
-            },
             
             BallisticArc = 'RULEUBA_None',
 			
@@ -249,13 +172,6 @@ UnitBlueprint {
             Label = 'laserblu',
 			
             MaxRadius = 42,
-			
-            RackBones = {
-                {
-                    MuzzleBones = {'rightarm_muzzle01'},
-                    RackBone = 'gun01',
-                },
-            },
 
             RackRecoilDistance = -1,
 			
@@ -275,17 +191,9 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-			
             TrackingRadius = 1.05,
 			
-            TurretBoneDualMuzzle = 'rightarm_muzzle01',
-            TurretBoneDualPitch = 'gun01',
-			
-            TurretBoneMuzzle = 'rightarm_muzzle03',
-            TurretBonePitch = 'gun01',
-			
             TurretBoneYaw = 'Turret',
-
             TurretDualManipulators = true,
 			
             TurretPitch = 0,
@@ -302,12 +210,6 @@ UnitBlueprint {
         {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
-            
-            Audio = {
-                BeamLoop    = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Loop', LodCutoff = 'Weapon_LodCutoff' },
-                BeamStart   = Sound { Bank = 'TM_AEONWEAPONS', Cue = 'AEONNOVACATBLUELASERFX', LodCutoff = 'Weapon_LodCutoff' },
-                BeamStop    = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Stop', LodCutoff = 'Weapon_LodCutoff' },
-            },
             
             BallisticArc = 'RULEUBA_None',
 			
@@ -334,13 +236,6 @@ UnitBlueprint {
             
 			PrefersPrimaryWeaponTarget = true,
             
-            RackBones = {
-                {
-                    MuzzleBones = {'rightarm_muzzle02'},
-                    RackBone = 'gun01',
-                },
-            },
-            
             RackRecoilDistance = -1,
 
             RackSlavedToTurret = true,
@@ -360,14 +255,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             TrackingRadius = 1.05,
 			
-            TurretBoneDualMuzzle = 'rightarm_muzzle01',
-            TurretBoneDualPitch = 'gun01',
-			
-            TurretBoneMuzzle = 'rightarm_muzzle03',
-            TurretBonePitch = 'gun01',
-			
             TurretBoneYaw = 'Turret',
-			
             TurretDualManipulators = true,
 			
             TurretPitch = 0,
@@ -383,13 +271,7 @@ UnitBlueprint {
         {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
-            
-            Audio = {
-                BeamLoop    = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Loop', LodCutoff = 'Weapon_LodCutoff' },
-                BeamStart   = Sound { Bank = 'TM_AEONWEAPONS', Cue = 'AEONNOVACATBLUELASERFX', LodCutoff = 'Weapon_LodCutoff' },
-                BeamStop    = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Stop', LodCutoff = 'Weapon_LodCutoff' },
-            },
-            
+
             BallisticArc = 'RULEUBA_None',
 			
             BeamCollisionDelay = 0.2,
@@ -414,13 +296,6 @@ UnitBlueprint {
             MaxRadius = 42,
             
 			PrefersPrimaryWeaponTarget = true,
-            
-            RackBones = {
-                {
-                    MuzzleBones = {'rightarm_muzzle03'},
-                    RackBone = 'gun01',
-                },
-            },
 
             RackRecoilDistance = -1,
 
@@ -442,14 +317,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             TrackingRadius = 1.05,
 
-            TurretBoneDualMuzzle = 'rightarm_muzzle01',
-            TurretBoneDualPitch = 'gun01',
-
-            TurretBoneMuzzle = 'rightarm_muzzle03',
-            TurretBonePitch = 'gun01',
-
             TurretBoneYaw = 'Turret',
-
             TurretDualManipulators = true,
 
             TurretPitch = 0,
@@ -466,10 +334,6 @@ UnitBlueprint {
         {
             AboveWaterFireOnly = true,
             AlwaysRecheckTarget = true,
-            
-            Audio = {
-                Fire = Sound { Bank = 'UALWeapon', Cue = 'UAB2304_SAM', LodCutoff = 'Weapon_LodCutoff' },
-            },
 
             BallisticArc = 'RULEUBA_None',
 
@@ -494,19 +358,7 @@ UnitBlueprint {
 
             MuzzleVelocity = 30,
 
-            ProjectileId = '/projectiles/AAAZealotMissile01/AAAZealotMissile01_proj.bp',
             ProjectileLifetime = 5,
-			
-            RackBones = {
-                {
-                    MuzzleBones = {'aa01'},
-                    RackBone = 'aa01',
-                },
-                {
-                    MuzzleBones = {'aa02'},
-                    RackBone = 'aa02',
-                },
-            },
 
             RackFireTogether = true,
 
@@ -531,10 +383,6 @@ UnitBlueprint {
 			
             TrackingRadius = 1.2,
 			
-            TurretBoneMuzzle = 'aa01',
-            TurretBonePitch = 'aa01',
-            TurretBoneYaw = 'aagun02',
-			
             TurretPitch = 25,
             TurretPitchRange = 80,
             TurretPitchSpeed = 180,
@@ -547,10 +395,6 @@ UnitBlueprint {
         },
 		{
             AboveWaterTargetsOnly = true,
-
-            Audio = {
-                Fire = Sound { Bank = 'TM_AEONWEAPONS', Cue = 'ROBOTTALK1FX', LodCutoff = 'Weapon_LodCutoff' },
-            },
 
             AutoInitiateAttackCommand = true,
 
@@ -576,16 +420,7 @@ UnitBlueprint {
 
             MuzzleVelocity = 40,
 			
-            ProjectileId = '/projectiles/NullShell/NullShell_proj.bp',
-			
             ProjectileLifetimeUsesMultiplier = 1,
-
-            RackBones = {
-                {
-                    MuzzleBones = {'AttachPoint'},
-                    RackBone = 'AttachPoint',
-                },
-            },
 
             RackRecoilDistance = -2,
 
@@ -595,10 +430,6 @@ UnitBlueprint {
             TargetPriorities = {'ALLUNITS'},
             TargetRestrictDisallow = 'UNTARGETABLE',
             TrackingRadius = 1.05,
-            
-            TurretBoneMuzzle = 'AttachPoint',
-            TurretBonePitch = 'AttachPoint',
-            TurretBoneYaw = 'AttachPoint',
             
             TurretPitch = 0,
             TurretPitchRange = 90,
