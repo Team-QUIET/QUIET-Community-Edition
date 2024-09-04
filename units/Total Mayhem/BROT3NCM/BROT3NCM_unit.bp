@@ -89,7 +89,7 @@ UnitBlueprint {
             CollideFriendly = false,
             ContinuousBeam = false,
 			
-            Damage = 200,
+            Damage = 325,
             DamageFriendly = true,
             DamageType = 'ShieldMult0.4',
             DamageRadius = 1.5,
@@ -340,7 +340,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 150,
+            Damage = 400,
             DamageType = 'Normal',
 			
             DisplayName = 'Zealot AA Missile',
