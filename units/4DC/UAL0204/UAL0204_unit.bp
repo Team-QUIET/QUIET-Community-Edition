@@ -19,9 +19,6 @@ UnitBlueprint {
         MaxSpeed = 3.8,
         MaxSpeedReverse = 2,
         MaxSteerForce = 10,
-        MeshExtentsX = 1,
-        MeshExtentsY = 1.25,
-        MeshExtentsZ = 1,
         MinSpeedPercent = 0,
         MotionType = "RULEUMT_Land",
         TurnRadius = 8,
@@ -33,13 +30,6 @@ UnitBlueprint {
             AboveWaterTargetsOnly = true,
 
             AimsStraightOnDisable = true,
-
-            Audio = {
-                BarrelLoop        = Sound { Bank = 'UAB',       Cue = 'UAB2302_Turret_Loop',          LodCutoff = 'WeaponBig_LodCutoff' },
-                BarrelStart       = Sound { Bank = 'UAB',       Cue = 'UAB2302_Turret_Start',         LodCutoff = 'WeaponBig_LodCutoff' },
-                Fire              = Sound { Bank = 'UALWeapon', Cue = 'UAB2302_Artillery_Sonance',    LodCutoff = 'Weapon_LodCutoff' },
-                MuzzleChargeStart = Sound { Bank = 'UALWeapon', Cue = 'UAB2302_Artillery_Son_Charge', LodCutoff = 'Weapon_LodCutoff' },
-            },
 
             BallisticArc = "RULEUBA_None",
 
@@ -59,8 +49,6 @@ UnitBlueprint {
             FiringRandomnessWhileMoving = 0.65,
             FiringTolerance = 0.8,
 
-            Label = "Sniper_Piercing_Rifle",
-
             MaxRadius = 42,
             MinRadius = 5,
 
@@ -68,13 +56,6 @@ UnitBlueprint {
 
             ProjectileId = "/mods/LOUD-Community-Edition/projectiles/Sniper_Piercing/Sniper_Piercing_proj.bp",
             ProjectileLifetime = 1,
-
-            RackBones = {
-                {
-                    MuzzleBones = { "sniper_muzzle" },
-                    RackBone = "sniper_barrel",
-                },
-            },
 
             RackRecoilDistance = -4.0,
 
@@ -95,9 +76,6 @@ UnitBlueprint {
             TargetRestrictDisallow = "UNTARGETABLE",
             TrackingRadius = 1.1,
 
-            TurretBoneMuzzle = "sniper_muzzle",
-            TurretBonePitch = "sniper_pitch",
-            TurretBoneYaw = "body",
             TurretDualManipulators = false,
 
             TurretPitch = 0,

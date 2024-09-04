@@ -13,6 +13,8 @@ Shield = 21000
 ShieldRegenRate = 240
 ShieldRechargeTime = 12
 Main Weapon 10000 -> 5000 DPS
+EnergyDrainPerSecond = 650,
+EnergyRequired = 3250,
 AA Weapon 300 -> 400 Damage
 Buffed Auto TargetPriorities
 
