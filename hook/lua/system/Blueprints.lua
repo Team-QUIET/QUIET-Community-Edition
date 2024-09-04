@@ -81,5 +81,16 @@ do  -- Hook Start
                 end
             end
         end
+        -- Iterating over the whole table 
+        -- Reason: (Azraeel) Imagine in the future that we're probably going to be doing more projectile edits in this so I'm keeping this as a while iteration for that reason. 
+        for id, bp in pairs(all_bps.Projectile) do
+
+            if bp.Categories then
+
+                table.remove(all_bps.Projectile['/mods/4dc/projectiles/sniper_piercing/sniper_piercing_proj.bp'].Categories, 2)
+
+            end
+
+        end
     end
 end
