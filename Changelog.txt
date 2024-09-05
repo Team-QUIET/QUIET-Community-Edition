@@ -5,6 +5,11 @@
 
 ### 9/3/2024 (V1.0.2 Release)
 
+# T4 Galactic Colossus (GC) / T4 Universal Colossus (UC)
+Fixed GC/UC Tractor Claws (This makes him SIGNIFICANTLY more powerful)
+GC/UC Tractor Claws now crush units over time that have a health over 5000
+GC/UC Tractor Claws deal 4999 every 11 ticks
+
 # T4 Eliash Medium Rapid Assault Bot
 Mass Cost 26000 -> 21000
 Energy Cost 420000 -> 480000
