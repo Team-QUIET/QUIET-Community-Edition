@@ -8,6 +8,7 @@ local WeaponFile = import('/lua/sim/DefaultWeapons.lua')
 local CollisionBeamFile = import('defaultcollisionbeams.lua')
 local TractorClawCollisionBeam = CollisionBeamFile.TractorClawCollisionBeam
 local Explosion = import('defaultexplosions.lua')
+local EffectTemplate = import("/lua/effecttemplates.lua")
 
 local DefaultBeamWeapon = WeaponFile.DefaultBeamWeapon
 
@@ -18,11 +19,11 @@ local DefaultBeamWeapon = WeaponFile.DefaultBeamWeapon
 ---@field RunningTractorThread boolean
 ADFTractorClaw = Class(Weapon) {
 
-    --VacuumFx = EffectTemplate.ACollossusTractorBeamVacuum01,
-    --TractorFx = EffectTemplate.ATractorAmbient,
-    --CrushFx = EffectTemplate.ACollossusTractorBeamCrush01,
-    --TractorMuzzleFx = { EffectTemplate.ACollossusTractorBeamGlow01 },
-    --BeamFx = { EffectTemplate.ACollossusTractorBeam01 },
+    VacuumFx = EffectTemplate.ACollossusTractorBeamVacuum01,
+    TractorFx = EffectTemplate.ATractorAmbient,
+    CrushFx = EffectTemplate.ACollossusTractorBeamCrush01,
+    TractorMuzzleFx = { EffectTemplate.ACollossusTractorBeamGlow01 },
+    BeamFx = { EffectTemplate.ACollossusTractorBeam01 },
 
     SliderVelocity = {
         TECH3 = 12,
@@ -145,7 +146,7 @@ ADFTractorClaw = Class(Weapon) {
         trash:Add(effectsEntity)
 
         -- create vacuum effect
-        --[[for k, effect in self.VacuumFx do
+        for k, effect in self.VacuumFx do
             trash:Add(CreateEmitterOnEntity(target, self.Army, effect):ScaleEmitter(0.75))
         end
 
@@ -157,7 +158,7 @@ ADFTractorClaw = Class(Weapon) {
         -- create start effect
         for k, effect in self.TractorMuzzleFx do
             trash:Add(CreateEmitterOnEntity(effectsEntity, self.Army, effect))
-        end]]--
+        end
 
         -- compute the distance to set the slider
         local bonePosition = unit:GetPosition(muzzle)
@@ -200,9 +201,9 @@ ADFTractorClaw = Class(Weapon) {
             if (not IsDestroyed(target)) and (not IsDestroyed(unit)) and (not IsDestroyed(self)) then
 
                 -- create crush effect
-                --for k, effect in self.CrushFx do
-                --    CreateEmitterAtBone(unit, muzzle, unit.Army, effect)
-                --end
+                for k, effect in self.CrushFx do
+                    CreateEmitterAtBone(unit, muzzle, unit.Army, effect)
+                end
 
                 -- create light particles
                 CreateLightParticle(unit, muzzle, self.Army, 1, 4, 'glow_02', 'ramp_blue_16')

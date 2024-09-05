@@ -1,6 +1,11 @@
 --- A dummy projectile that solely inherits what it needs. Useful for
 -- effects that require projectiles without additional overhead.
 --  Credit to Jip (FAF) for GC TractorClaw Rework
+
+-- Upvalue for Performance
+local EntityGetBlueprint = _G.moho.entity_methods.GetBlueprint
+local EntityGetArmy = _G.moho.entity_methods.GetArmy
+
 ---@class DummyProjectile : moho.projectile_methods
 DummyProjectile = Class(moho.projectile_methods) {
 
