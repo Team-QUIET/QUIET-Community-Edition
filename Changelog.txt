@@ -5,10 +5,18 @@
 
 ### 9/3/2024 (V1.0.2 Release)
 
+# T3 Triseptitron 
+Rocket Damage 125 -> 215
+Range 80 -> 90 
+DamageRadius 2 -> 2.5
+FiringRandomness 1.4 -> 4
+Fixed issue where it was overshooting it's target always
+
 # T4 Galactic Colossus (GC) / T4 Universal Colossus (UC)
 Fixed GC/UC Tractor Claws (This makes them SIGNIFICANTLY more powerful)
 GC/UC Tractor Claws now crush units over time that have a health over 5000
-GC/UC Tractor Claws deal 4999 every 11 ticks
+UC Tractor Claws deal 9999 every 11 Ticks
+GC Tractor Claws deal 4999 every 11 Ticks
 
 # T4 Eliash Medium Rapid Assault Bot
 Mass Cost 26000 -> 21000
