@@ -54,7 +54,7 @@ ADFTractorClaw = Class(Weapon) {
                     end
 
                     -- detach everything from this weapon
-                    self.unit:DetachAll(self.Blueprint.MuzzleSpecial)
+                    self.unit:DetachAll(self.bp.MuzzleSpecial)
                     self:SetEnabled(false)
                 end
             end,
