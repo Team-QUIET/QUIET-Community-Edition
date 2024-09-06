@@ -81,6 +81,6 @@ do  -- Hook Start
                 end
             end
         end
-        table.remove(all_bps.Projectile['/mods/4dc/projectiles/sniper_piercing/sniper_piercing_proj.bp'].Categories, 2)
+        --table.remove(all_bps.Projectile['/mods/4dc/projectiles/sniper_piercing/sniper_piercing_proj.bp'].Categories, 2)
     end
 end
