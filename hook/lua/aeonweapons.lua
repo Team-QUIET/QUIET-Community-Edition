@@ -26,9 +26,9 @@ ADFTractorClaw = Class(Weapon) {
     BeamFx = { EffectTemplate.ACollossusTractorBeam01 },
 
     SliderVelocity = {
-        TECH3 = 12,
-        TECH2 = 15,
-        TECH1 = 18,
+        TECH3 = 10,
+        TECH2 = 13,
+        TECH1 = 16,
     },
 
     --- Adds logic to catch edge cases
@@ -67,7 +67,7 @@ ADFTractorClaw = Class(Weapon) {
     OnFire = function(self)
         -- only tractor one target at a time
         if self.RunningTractorThread then
-            self:ForkThread(self.OnInvalidTargetThread)
+            self.Trash:Add(ForkThread(self.OnInvalidTargetThread, self))
             return
         end
 
@@ -80,13 +80,13 @@ ADFTractorClaw = Class(Weapon) {
         -- only tractor actual units
         local target = self:GetUnitBehindTarget(blipOrUnit)
         if not target then
-            self:ForkThread(self.OnInvalidTargetThread)
+            self.Trash:Add(ForkThread(self.OnInvalidTargetThread, self))
             return
         end
 
         -- only tract units that are not being tracted at the moment
         if target.Tractored then
-            self:ForkThread(self.OnInvalidTargetThread)
+            self.Trash:Add(ForkThread(self.OnInvalidTargetThread, self))
             return
         end
 
@@ -102,7 +102,7 @@ ADFTractorClaw = Class(Weapon) {
     OnInvalidTargetThread = function(self)
         self:ResetTarget()
         self:SetEnabled(false)
-        WaitSeconds(0.4)
+        WaitTicks(5)
         if not IsDestroyed(self) then
             self:SetEnabled(true)
         end
@@ -176,10 +176,12 @@ ADFTractorClaw = Class(Weapon) {
             -- attach the slider to the target
             target:SetDoNotTarget(false)
             target:AttachBoneTo(-1, unit, muzzle)
-            target:SetDoNotTarget(true)
-            target.DisallowCollisions = true
+            self:MakeImmune(target)
 
-            local velocity = self.SliderVelocity[target.bp.TechCategory] or 15
+            -- make it stop what it was doing
+            IssueClearCommands(target)
+
+            local velocity = self.SliderVelocity[target.bp.TechCategory] or 13
 
             -- start pulling back the slider
             slider:SetSpeed(velocity)
@@ -200,6 +202,11 @@ ADFTractorClaw = Class(Weapon) {
             -- we're at the arm, do destruction effects
             if (not IsDestroyed(target)) and (not IsDestroyed(unit)) and (not IsDestroyed(self)) then
 
+                -- stop rotating
+                rotatorA:SetGoal(0)
+                rotatorB:SetGoal(0)
+                rotatorC:SetGoal(0)
+
                 -- create crush effect
                 for k, effect in self.CrushFx do
                     CreateEmitterAtBone(unit, muzzle, unit.Army, effect)
@@ -212,10 +219,11 @@ ADFTractorClaw = Class(Weapon) {
                 if not IsDestroyed(unit) then
 
                     target.CanTakeDamage = true
-                    while not IsDestroyed(target) and not IsDestroyed(unit) and not unit.Dead and target:GetHealth() >= 5000 do
-                        Damage(unit, bonePosition, target, 4999, "Normal")
+                    while not IsDestroyed(target) and not IsDestroyed(unit) and not unit.Dead and
+                        target:GetHealth() >= (self.bp.TractorDamage or 4999) + 1 do
+                        Damage(unit, bonePosition, target, (self.bp.TractorDamage or 4999), "Normal")
                         Explosion.CreateScalableUnitExplosion(target, 1, true)
-                        WaitTicks(11)
+                        WaitTicks((self.bp.TractorDamageInterval or 10) + 1)
                     end
 
                     CreateLightParticle(unit, muzzle, self.Army, 4, 2, 'glow_02', 'ramp_blue_16')
