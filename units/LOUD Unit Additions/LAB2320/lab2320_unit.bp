@@ -1,0 +1,247 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "lab2320",
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+            
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 530,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Miasma Artillery',
+			
+            DoTPulses = 5,	-- 5 x 530 damage
+            DoTTime = 3,	-- applied over 3 seconds
+
+            EnergyDrainPerSecond = 195,     -- 9 second charge cycle
+            EnergyRequired = 1750,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+                Water = 'Land|Water',
+            },
+			
+            FiringRandomness = 1.35,
+            FiringTolerance = 0.1,
+
+            LeadTarget = true,
+			
+            MaxRadius = 155,
+            MinRadius = 25,
+
+            MuzzleVelocity = 33,
+			
+            MuzzleVelocityReduceDistance = 175,
+			
+			ProjectileLifetime = 12,
+
+            RackRecoilDistance = -30,
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 1,
+			
+            TargetCheckInterval = 3,
+			
+            TargetPriorities = {
+                "EXPERIMENTAL MOBILE ARTILLERY",
+                "(ARTILLERY - TECH1)",
+                "ANTISHIELD",
+                "SNIPER",
+                "SHIELD STRUCTURE",
+                "EXPERIMENTAL MOBILE",
+                "TECH3 ENERGYPRODUCTION",
+                "TECH2 ENERGYPRODUCTION",
+                "RESEARCH",
+                "TECH3 MASSPRODUCTION",
+                "TECH2 MASSPRODUCTION",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "COMMAND",
+                "TECH1 MOBILE",
+                "ALLUNITS",
+            },
+			
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 6,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 6,
+			
+            Turreted = true,
+        },
+		
+		{
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 530,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Miasma Artillery',
+			
+            DoTPulses = 5,	-- 5 x 530 damage
+            DoTTime = 3,	-- applied over 3 seconds
+
+            EnergyDrainPerSecond = 195,     -- 9 second charge
+            EnergyRequired = 1750,
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+                Water = 'Land|Water',
+            },
+			
+            FiringRandomness = 1.35,
+            FiringTolerance = 0.1,
+			
+            LeadTarget = true,
+			
+            MaxRadius = 155,
+            MinRadius = 25,
+
+            MuzzleVelocity = 33,
+			
+            MuzzleVelocityReduceDistance = 175,
+			
+			ProjectileLifetime = 12,
+
+            RackRecoilDistance = -30,
+
+            RateOfFire = 1,
+			
+            TargetCheckInterval = 3,
+			
+            TargetPriorities = {
+                "EXPERIMENTAL MOBILE ARTILLERY",
+                "(ARTILLERY - TECH1)",
+                "ANTISHIELD",
+                "SNIPER",
+                "SHIELD STRUCTURE",
+                "EXPERIMENTAL MOBILE",
+                "TECH3 ENERGYPRODUCTION",
+                "TECH2 ENERGYPRODUCTION",
+                "RESEARCH",
+                "TECH3 MASSPRODUCTION",
+                "TECH2 MASSPRODUCTION",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "COMMAND",
+                "TECH1 MOBILE",
+                "ALLUNITS",
+            },
+
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TurretBoneMuzzle = 'Turret_Muzzle01',
+            TurretBonePitch = 'Turret_Barrel01',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 5,
+            TurretPitchSpeed = 2,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 6,
+			
+            Turreted = true,
+        },
+		{
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 530,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Miasma Artillery',
+			
+            DoTPulses = 5,	-- 5 x 530 damage
+            DoTTime = 3,	-- applied over 3 seconds
+
+            EnergyDrainPerSecond = 195,     -- 9 second charge
+            EnergyRequired = 1750,
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+                Water = 'Land|Water',
+            },
+			
+            FiringRandomness = 1.35,
+            FiringTolerance = 0.1,
+			
+            LeadTarget = true,
+			
+            MaxRadius = 155,
+            MinRadius = 25,
+
+            MuzzleVelocity = 33,
+			
+            MuzzleVelocityReduceDistance = 175,
+			
+			ProjectileLifetime = 12,
+
+            RackRecoilDistance = -30,
+
+            RateOfFire = 1,
+			
+            TargetCheckInterval = 3,
+			
+            TargetPriorities = {
+                "EXPERIMENTAL MOBILE ARTILLERY",
+                "(ARTILLERY - TECH1)",
+                "ANTISHIELD",
+                "SNIPER",
+                "SHIELD STRUCTURE",
+                "EXPERIMENTAL MOBILE",
+                "TECH3 ENERGYPRODUCTION",
+                "TECH2 ENERGYPRODUCTION",
+                "RESEARCH",
+                "TECH3 MASSPRODUCTION",
+                "TECH2 MASSPRODUCTION",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "COMMAND",
+                "TECH1 MOBILE",
+                "ALLUNITS",
+            },
+
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TurretBoneMuzzle = 'Turret_Muzzle02',
+            TurretBonePitch = 'Turret_Barrel02',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 5,
+            TurretPitchSpeed = 2,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 6,
+			
+            Turreted = true,
+        },
+    },
+}
