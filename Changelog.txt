@@ -20,6 +20,12 @@ Seraphim:
 Damage 1300 -> 2600
 Damage Radius 2.4 -> 3.4
 DamageType Normal -> ShieldMult1.5 (50% More Damage to Shields)
+Muzzle Velocity 33 -> 66
+(Redid TargetPriorities for All T3 Barrage)
+
+# T4 Eliash Medium Rapid Assault Bot
+Shield 21000 -> 26000
+ShieldRegenStartTime 1 -> 0.5
 
 ### 9/3/2024 (V1.02/V1.021 Release)
 
