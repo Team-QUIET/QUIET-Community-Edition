@@ -1,6 +1,6 @@
 UnitBlueprint {
     Merge = true,
-    BlueprintId = "lrb2320",
+    BlueprintId = "lsb2320",
 	
     Weapon = {
         {
@@ -35,7 +35,7 @@ UnitBlueprint {
 			
             MuzzleChargeDelay = 1,
 
-            MuzzleVelocity = 33,
+            MuzzleVelocity = 66,
 			MuzzleVelocityReduceDistance = 175,
 			
 			ProjectileLifetime = 12,
@@ -117,7 +117,7 @@ UnitBlueprint {
 			
             MuzzleChargeDelay = 1,
 
-            MuzzleVelocity = 33,
+            MuzzleVelocity = 66,
 			MuzzleVelocityReduceDistance = 175,
 			
 			ProjectileLifetime = 12,
@@ -197,7 +197,7 @@ UnitBlueprint {
 			
             MuzzleChargeDelay = 1,
 
-            MuzzleVelocity = 33,
+            MuzzleVelocity = 66,
 			MuzzleVelocityReduceDistance = 175,
 			
 			ProjectileLifetime = 12,
