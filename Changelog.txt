@@ -3,7 +3,25 @@
 ## Rebalance Changelog
 ---------------------------------------------
 
-### 9/3/2024 (V1.0.2 Release)
+### TBD (V1.22)
+
+# T3 Barrage Artillery
+Aeon: 
+Damage 265 -> 530
+DamageRadius 2 -> 3
+UEF:
+Damage 1500 -> 3000
+DamageRadius 2 -> 3
+Cybran:
+Damage 1200 -> 2400
+DamageRadius 2.8 -> 3.8
+StunRadius 2 -> 3
+Seraphim: 
+Damage 1300 -> 2600
+Damage Radius 2.4 -> 3.4
+DamageType Normal -> ShieldMult1.5 (50% More Damage to Shields)
+
+### 9/3/2024 (V1.02/V1.021 Release)
 
 # T3 Triseptitron 
 Rocket Damage 125 -> 215

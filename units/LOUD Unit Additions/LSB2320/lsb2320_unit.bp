@@ -1,0 +1,248 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "lrb2320",
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+            
+            BallisticArc = 'RULEUBA_HighArc',
+            CollideFriendly = false,
+			
+            Damage = 2600,
+            DamageFriendly = true,
+            DamageRadius = 3.4,
+            DamageType = 'ShieldMult1.5',
+			
+            DisplayName = 'Zthuthaam Cannon',
+			
+            EnergyDrainPerSecond = 278,     -- 9 second charge
+            EnergyRequired = 2500,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+                Water = 'Land|Water',
+            },
+			
+            FiringRandomness = 1.25,
+            FiringTolerance = 1,
+			
+			LeadTarget = true,			
+			
+            MaxRadius = 160,
+            MinRadius = 25,
+			
+            MuzzleChargeDelay = 1,
+
+            MuzzleVelocity = 33,
+			MuzzleVelocityReduceDistance = 175,
+			
+			ProjectileLifetime = 12,
+
+            RackRecoilDistance = -8,
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 1,
+			
+            TargetCheckInterval = 3,
+			
+            TargetPriorities = {
+                "EXPERIMENTAL MOBILE ARTILLERY",
+                "(ARTILLERY - TECH1)",
+                "ANTISHIELD",
+                "SNIPER",
+                "SHIELD STRUCTURE",
+                "EXPERIMENTAL MOBILE",
+                "TECH3 ENERGYPRODUCTION",
+                "TECH2 ENERGYPRODUCTION",
+                "RESEARCH",
+                "TECH3 MASSPRODUCTION",
+                "TECH2 MASSPRODUCTION",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "COMMAND",
+                "TECH1 MOBILE",
+                "ALLUNITS",
+            },
+
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Recoil',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 6,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 6,
+			
+            Turreted = true,
+        },
+		
+		{
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+
+            BallisticArc = 'RULEUBA_HighArc',
+            CollideFriendly = false,
+			
+            Damage = 2600,
+            DamageFriendly = true,
+            DamageRadius = 3.4,
+            DamageType = 'ShieldMult1.5',
+			
+            DisplayName = 'Zthuthaam Artillery Cannon',
+			
+            EnergyDrainPerSecond = 278,
+            EnergyRequired = 2500,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+                Water = 'Land|Water',
+            },
+			
+            FiringRandomness = 1.25,
+            FiringTolerance = 1,
+			
+			LeadTarget = true,
+			
+            MaxRadius = 160,
+            MinRadius = 25,
+			
+            MuzzleChargeDelay = 1,
+
+            MuzzleVelocity = 33,
+			MuzzleVelocityReduceDistance = 175,
+			
+			ProjectileLifetime = 12,
+
+            RackRecoilDistance = -8,
+
+            RateOfFire = 1,
+			
+            TargetCheckInterval = 3,
+			
+            TargetPriorities = {
+                "EXPERIMENTAL MOBILE ARTILLERY",
+                "(ARTILLERY - TECH1)",
+                "ANTISHIELD",
+                "SNIPER",
+                "SHIELD STRUCTURE",
+                "EXPERIMENTAL MOBILE",
+                "TECH3 ENERGYPRODUCTION",
+                "TECH2 ENERGYPRODUCTION",
+                "RESEARCH",
+                "TECH3 MASSPRODUCTION",
+                "TECH2 MASSPRODUCTION",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "COMMAND",
+                "TECH1 MOBILE",
+                "ALLUNITS",
+            },
+            
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TurretBoneMuzzle = 'Turret_Muzzle01',
+            TurretBonePitch = 'Turret_Recoil01',
+            TurretBoneYaw = 'Turret01',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 6,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 6,
+			
+            Turreted = true,
+        },
+		
+		{
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+
+            BallisticArc = 'RULEUBA_HighArc',
+            CollideFriendly = false,
+			
+            Damage = 2600,
+            DamageFriendly = true,
+            DamageRadius = 3.4,
+            DamageType = 'ShieldMult1.5',
+			
+            DisplayName = 'Zthuthaam Artillery Cannon',
+			
+            EnergyDrainPerSecond = 278,
+            EnergyRequired = 2500,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+                Water = 'Land|Water',
+            },
+			
+            FiringRandomness = 1.25,
+            FiringTolerance = 1,
+			
+			LeadTarget = true,
+			
+            MaxRadius = 160,
+            MinRadius = 25,
+			
+            MuzzleChargeDelay = 1,
+
+            MuzzleVelocity = 33,
+			MuzzleVelocityReduceDistance = 175,
+			
+			ProjectileLifetime = 12,
+
+            RackRecoilDistance = -8,
+
+            RateOfFire = 1,
+			
+            TargetCheckInterval = 3,
+			
+            TargetPriorities = {
+                "EXPERIMENTAL MOBILE ARTILLERY",
+                "(ARTILLERY - TECH1)",
+                "ANTISHIELD",
+                "SNIPER",
+                "SHIELD STRUCTURE",
+                "EXPERIMENTAL MOBILE",
+                "TECH3 ENERGYPRODUCTION",
+                "TECH2 ENERGYPRODUCTION",
+                "RESEARCH",
+                "TECH3 MASSPRODUCTION",
+                "TECH2 MASSPRODUCTION",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "COMMAND",
+                "TECH1 MOBILE",
+                "ALLUNITS",
+            },
+
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TurretBoneMuzzle = 'Turret_Muzzle02',
+            TurretBonePitch = 'Turret_Recoil02',
+            TurretBoneYaw = 'Turret02',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 6,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 6,
+			
+            Turreted = true,
+        },
+    },
+}
