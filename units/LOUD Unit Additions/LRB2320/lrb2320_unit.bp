@@ -1,0 +1,285 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "lrb2320",
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+
+            BallisticArc = 'RULEUBA_LowArc',
+			
+            Buffs = {
+            	{
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 1.5,
+                    Radius = 3,
+                    TargetAllow = 'LAND TECH1,NAVAL TECH1,LAND TECH2,NAVAL TECH2,LAND TECH3,NAVAL TECH3',
+                    TargetDisallow = 'WALL',
+                },
+            },
+
+            CollideFriendly = false,
+			
+            Damage = 2400,
+            DamageFriendly = true,
+            DamageRadius = 3.8,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Resonance Artillery',
+			
+            EnergyDrainPerSecond = 348, -- 9 second charge
+            EnergyRequired = 3130,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+                Water = 'Land|Water',
+            },
+			
+            FiringRandomness = 1.25,
+            FiringTolerance = 1,
+			
+            LeadTarget = true,
+			
+            MaxRadius = 155,
+            MinRadius = 25,
+
+            MuzzleVelocity = 33,
+			
+			MuzzleVelocityReduceDistance = 175,
+
+			ProjectileLifetime = 12,			
+
+            RackRecoilDistance = -36,
+
+			RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 1.0,	-- RoF is controlled by Energy Drain
+
+            TargetCheckInterval = 3,
+			
+            TargetPriorities = {
+                "EXPERIMENTAL MOBILE ARTILLERY",
+                "(ARTILLERY - TECH1)",
+                "ANTISHIELD",
+                "SNIPER",
+                "SHIELD STRUCTURE",
+                "EXPERIMENTAL MOBILE",
+                "TECH3 ENERGYPRODUCTION",
+                "TECH2 ENERGYPRODUCTION",
+                "RESEARCH",
+                "TECH3 MASSPRODUCTION",
+                "TECH2 MASSPRODUCTION",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "COMMAND",
+                "TECH1 MOBILE",
+                "ALLUNITS",
+            },
+
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TurretBoneMuzzle = 'gun_muzzle03',
+            TurretBonePitch = 'gun03',
+            TurretBoneYaw = 'gun_base03',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 6,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 6,
+			
+            Turreted = true,
+        },
+
+        {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+            
+            BallisticArc = 'RULEUBA_LowArc',
+			
+            Buffs = {
+            	{
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 1.5,
+                    Radius = 3,
+                    TargetAllow = 'LAND TECH1,NAVAL TECH1,LAND TECH2,NAVAL TECH2,LAND TECH3,NAVAL TECH3',
+                    TargetDisallow = 'WALL',
+                },
+            },
+			
+            CollideFriendly = false,
+			
+            Damage = 2400,
+            DamageFriendly = true,
+            DamageRadius = 3.8,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Resonance Artillery',
+			
+            EnergyDrainPerSecond = 348,
+            EnergyRequired = 3130,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+                Water = 'Land|Water',
+            },
+			
+            FiringRandomness = 1.25,
+            FiringTolerance = 1,
+			
+			LeadTarget = true,			
+			
+            MaxRadius = 155,
+            MinRadius = 25,
+
+            MuzzleVelocity = 33,
+			
+			MuzzleVelocityReduceDistance = 175,			
+
+			ProjectileLifetime = 12,
+
+            RackRecoilDistance = -36,
+
+            RateOfFire = 1.0,	-- RoF controlled by energy drain
+			
+            TargetCheckInterval = 3,
+			
+            TargetPriorities = {
+                "EXPERIMENTAL MOBILE ARTILLERY",
+                "(ARTILLERY - TECH1)",
+                "ANTISHIELD",
+                "SNIPER",
+                "SHIELD STRUCTURE",
+                "EXPERIMENTAL MOBILE",
+                "TECH3 ENERGYPRODUCTION",
+                "TECH2 ENERGYPRODUCTION",
+                "RESEARCH",
+                "TECH3 MASSPRODUCTION",
+                "TECH2 MASSPRODUCTION",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "COMMAND",
+                "TECH1 MOBILE",
+                "ALLUNITS",
+            },
+
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TurretBoneMuzzle = 'gun_muzzle01',
+            TurretBonePitch = 'gun01',
+            TurretBoneYaw = 'gun01',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 6,
+			
+            TurretYaw = 0,
+            TurretYawRange = 5,
+            TurretYawSpeed = 2,
+			
+            Turreted = true,
+        },
+		
+        {          
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+
+            BallisticArc = 'RULEUBA_LowArc',
+			
+            Buffs = {
+            	{
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 1.5,
+                    Radius = 3,
+                    TargetAllow = 'LAND TECH1,NAVAL TECH1,LAND TECH2,NAVAL TECH2,LAND TECH3,NAVAL TECH3',
+                    TargetDisallow = 'WALL',
+                },
+            },
+			
+            CollideFriendly = false,
+			
+            Damage = 2400,
+            DamageFriendly = true,
+            DamageRadius = 3.8,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Resonance Artillery',
+			
+            EnergyDrainPerSecond = 348,
+            EnergyRequired = 3130,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+                Water = 'Land|Water',
+            },
+			
+            FiringRandomness = 1.25,
+            FiringTolerance = 1,
+			
+			LeadTarget = true,			
+			
+            MaxRadius = 155,
+	        MinRadius = 25,
+
+            MuzzleVelocity = 33,
+			
+			MuzzleVelocityReduceDistance = 175,
+	
+			ProjectileLifetime = 12,
+
+            RackRecoilDistance = -36,
+
+            RateOfFire = 1.0,	-- RoF controlled by energy drain
+			
+            TargetCheckInterval = 3,
+			
+            TargetPriorities = {
+                "EXPERIMENTAL MOBILE ARTILLERY",
+                "(ARTILLERY - TECH1)",
+                "ANTISHIELD",
+                "SNIPER",
+                "SHIELD STRUCTURE",
+                "EXPERIMENTAL MOBILE",
+                "TECH3 ENERGYPRODUCTION",
+                "TECH2 ENERGYPRODUCTION",
+                "RESEARCH",
+                "TECH3 MASSPRODUCTION",
+                "TECH2 MASSPRODUCTION",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "COMMAND",
+                "TECH1 MOBILE",
+                "ALLUNITS",
+            },
+
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TurretBoneMuzzle = 'gun_muzzle02',
+            TurretBonePitch = 'gun02',
+            TurretBoneYaw = 'gun02',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 6,
+			
+            TurretYaw = 0,
+            TurretYawRange = 5,
+            TurretYawSpeed = 2,
+			
+            Turreted = true,
+        },
+    },
+}
