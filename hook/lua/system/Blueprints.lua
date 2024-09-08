@@ -1,5 +1,24 @@
--- We clobber the ModBlueprints to remove many nebulous changes in the Blueprints.lua that significantly affect Unit BPs Globally
+-- LCE clobbers the ModBlueprints to remove many nebulous changes in the Blueprints.lua that significantly affect Unit BPs Globally
+-- LCE cleans the Blueprints.lua up and sections them into their own functions with exact action names to allow people to see what's going on more clearly
 function ModBlueprints(all_blueprints)
+
+    ThreatAlterations(all_blueprints)
+    UnitAlterations(all_blueprints)
+    ReclaimAlterations(all_blueprints)
+    NotificationAlterations(all_blueprints)
+
+    -- For Icons from Mods
+    usermodUnitIcons = nil
+end
+
+
+--=======================================
+-- FUNCTION THREATALTERATIONS(ALL_BLUEPRINTS)
+-- Phoenix's Threat Adjustments for LOUD AI 
+-- Allows LOUD AI to recongize balance changes and adjust his threat search more optimally
+--=======================================
+
+function ThreatAlterations(all_blueprints)
 
     -- TODO: move this load to someplace more central so Tanksy and others can use it
     -- Load Phoenix's Helper Library
@@ -29,7 +48,6 @@ function ModBlueprints(all_blueprints)
     --LOG("*AI DEBUG ScenarioInfo data is "..repr( _G ) )
 
     local ROFadjust = 0.9
-    
     local units_threatchange = 0
 
     for id, bp in all_blueprints.Unit do
@@ -125,9 +143,16 @@ function ModBlueprints(all_blueprints)
             end
         end
     end 
-    
     LOG("*AI DEBUG "..units_threatchange.." units had threat revised")
-    
+end
+
+
+--=======================================
+-- FUNCTION UNITALTERATIONS(ALL_BLUEPRINTS)
+-- Overrall Unit Alterations that are changing vast amounts of blueprints to standardize/change values in Blueprints
+--=======================================
+
+function UnitAlterations(all_blueprints)
     local econScale = 0
     local speedScale = 0
     local viewScale = 0
@@ -398,9 +423,18 @@ function ModBlueprints(all_blueprints)
             end
         end
     end
-
     --LOG("*AI DEBUG Adding NAVAL Wreckage information and setting wreckage lifetime")
-    
+end
+
+
+--=======================================
+-- FUNCTION RECLAIMALTERATIONS(ALL_BLUEPRINTS)
+-- LCE's Reclaim Adjustments to encourage more aggression early game but punish hyper aggression lategame, this enables comeback mechanics. 
+-- This also fixes an issue where many units lack a bp.wreckage table
+--=======================================
+
+function ReclaimAlterations(all_blueprints)
+
     for id, bp in pairs(all_blueprints.Unit) do				
         
         local cats = {}
@@ -482,7 +516,17 @@ function ModBlueprints(all_blueprints)
             end
         end
     end
+end
 
+
+--=======================================
+-- FUNCTION NOTIFICATIONALTERATIONS(ALL_BLUEPRINTS)
+-- LCE's NotificationAlterations + Misc
+-- Wonky Resources allows mexes to always be placed no matter the terrain
+-- Other part is notifications for pings/audio for Commanders, Mex Attacks, and etc
+--=======================================
+
+function NotificationAlterations(all_blueprints)
     --LOG("*AI DEBUG Adding Audio Cues for COMMANDERS - NUKES - FERRY ROUTES - EXTRACTORS")
 
     local factions = {'UEF', 'Aeon', 'Cybran', 'Aeon'}
@@ -543,5 +587,4 @@ function ModBlueprints(all_blueprints)
             end
         end
     end
-    usermodUnitIcons = nil
 end
