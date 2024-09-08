@@ -3,9 +3,18 @@
 ## Rebalance Changelog
 ---------------------------------------------
 
-### TBD (V1.22)
+### 9/8/2024 (V1.22)
+
+# Reclaim
+Reclaim that contains 90% of it's mass or higher is reduced to 75% however if the reclaim is lower then 75% on a unit's wreckage it is brought back up to 75%
+
+# T1 & T2 Land
+-- T1 & T2 were overperforming especially T1 Land against both T2 & T3, similarly T2 was overperforming vs T3. The intended purpose of this change is to extend the gap between tiers.
+Removed 12% Speed & Health Buff given to T1 Land in Blueprints.lua
+Removed 6% Speed & Health Buff given to T2 Land in Blueprints.lua
 
 # T3 Barrage Artillery
+-- Barrage Artillery is buffed to make it more cost efficient vs building additional T2 Artillery
 Aeon: 
 Damage 265 -> 530
 DamageRadius 2 -> 3
@@ -24,6 +33,7 @@ Muzzle Velocity 33 -> 66
 (Redid TargetPriorities for All T3 Barrage)
 
 # T4 Eliash Medium Rapid Assault Bot
+-- The Eliash receives a small buff to it's personal shield
 Shield 21000 -> 26000
 ShieldRegenStartTime 1 -> 0.5
 
