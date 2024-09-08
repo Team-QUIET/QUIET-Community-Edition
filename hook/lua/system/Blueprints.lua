@@ -234,7 +234,6 @@ function UnitAlterations(all_blueprints)
                             -- UniformScale universally to make t2 & t3 more mobile
                             for _, cat_mobile in bp.Categories do
                                 if cat_mobile == 'TECH2' then
-                                    table.remove(all_blueprints.Projectile['/mods/4dc/projectiles/sniper_piercing/sniper_piercing_proj.bp'].Categories, 2) -- Removes SHIELDPIERCING Category from T2 Aeon Sniper
                                     -- make them appear a little smaller
                                     if bp.Display.UniformScale then
                                         bp.Display.UniformScale = bp.Display.UniformScale * .95
