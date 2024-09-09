@@ -1,0 +1,10 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "uab1304", 
+	
+    Economy = {	
+        MaintenanceConsumptionPerSecondEnergy = 388,
+        
+        ProductionPerSecondMass = 35,
+    },
+}

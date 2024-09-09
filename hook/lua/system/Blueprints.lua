@@ -20,10 +20,6 @@ end
 
 function UnitAlterations(all_blueprints)
 
-    local econScale = 0
-    local speedScale = 0
-    local viewScale = 0
-
     for id, bp in all_blueprints.Unit do
 
         if bp.Categories then
@@ -31,10 +27,6 @@ function UnitAlterations(all_blueprints)
             for i, cat in bp.Categories do
 
                 if cat == 'LAND' then
-
-                    econScale = 0
-					speedScale = 0
-					viewScale = 0
 
                     for j, catj in bp.Categories do
             
@@ -87,7 +79,7 @@ function UnitAlterations(all_blueprints)
                         end
                     end  
                 end
-                    
+   
                 -- all structures
                 -- LCE: Leaving this in here until we decide if we want to reset it to the default ranges instead of 9% least range
                 if cat == 'STRUCTURE' then
