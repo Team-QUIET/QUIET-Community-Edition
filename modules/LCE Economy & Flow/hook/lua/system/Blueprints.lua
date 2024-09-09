@@ -37,8 +37,9 @@ function EconomicAlterations(all_blueprints)
                 -- This also seeks to smooth out the transitions between t1 -> t2 & t2 -> t3
                 if cat == 'ECONOMIC' then
 
-                    econScaleT2 = 1.25
-                    econScaleT3 = 1.325
+                    econScaleT2 = 1.225
+                    econScaleT3 = 1.3
+                    energyScale = 1.1
 
                     for j, catj in bp.Categories do
 
@@ -46,7 +47,6 @@ function EconomicAlterations(all_blueprints)
 
 							T2_Adjustment = 1.5
 							T3_Adjustment = 1.5
-                            energyScale = 1.1
 
                             for _, cat_mobile in bp.Categories do
 
@@ -78,7 +78,7 @@ function EconomicAlterations(all_blueprints)
                 -- Special Rebalance for Integrated Storage Mass Extractors
                 if cat == 'ECONOMIC' then
 
-                    econScaleT4 = 2.25
+                    econScaleT4 = 2.225
                     energyScale = 1.2
 
                     for j, catj in bp.Categories do
@@ -106,7 +106,7 @@ function EconomicAlterations(all_blueprints)
                 -- Rebalance for Factories to cost less
                 if cat == 'STRUCTURE' then
                     
-                    econScaleT1 = 0.95
+                    econScaleT1 = 0.935
                     econScaleT2 = 0.80
                     econScaleT3 = 0.75
 
