@@ -23,7 +23,8 @@ function EconomicAlterations(all_blueprints)
     local econScaleT4 = 0
     local T2_Adjustment = 0
     local T3_Adjustment = 0
-    --local T4_Adjustment = 0
+    local T4_Adjustment = 0
+    local energyScale = 0
 
     for id, bp in all_blueprints.Unit do
 
@@ -45,8 +46,10 @@ function EconomicAlterations(all_blueprints)
 
 							T2_Adjustment = 1.5
 							T3_Adjustment = 1.5
+                            energyScale = 1.1
 
                             for _, cat_mobile in bp.Categories do
+
                                 if cat_mobile == 'TECH2' then
 
                                     bp.Economy.ProductionPerSecondMass = bp.Economy.ProductionPerSecondMass * T2_Adjustment
@@ -55,13 +58,17 @@ function EconomicAlterations(all_blueprints)
 
                                     bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * econScaleT2
 
-                                elseif cat_mobile == 'TECH3' then
+                                    bp.Economy.MaintenanceConsumptionPerSecondEnergy = bp.Economy.MaintenanceConsumptionPerSecondEnergy * energyScale
+
+                                elseif cat_mobile == 'TECH3' and not bp.Enhancements then
 
                                     bp.Economy.ProductionPerSecondMass = bp.Economy.ProductionPerSecondMass * T3_Adjustment
 
                                     bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * econScaleT3
 
                                     bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * econScaleT3
+
+                                    bp.Economy.MaintenanceConsumptionPerSecondEnergy = bp.Economy.MaintenanceConsumptionPerSecondEnergy * energyScale
                                 end
                             end
                         end
@@ -72,22 +79,24 @@ function EconomicAlterations(all_blueprints)
                 if cat == 'ECONOMIC' then
 
                     econScaleT4 = 2.25
+                    energyScale = 1.2
 
                     for j, catj in bp.Categories do
 
                         if catj == 'MASSEXTRACTION' then
 
-							--T4_Adjustment = 1.01
+							T4_Adjustment = 1.18
 
                             for _, cat_mobile in bp.Categories do
-                                if cat_mobile == 'UEB1304' or cat_mobile == 'UAB1304' or cat_mobile == 'URB1304' or cat_mobile == 'XSB1304' then
+                                if cat_mobile == 'TECH3' and bp.Enhancements then
 
-                                    --For Some Reason, ProductionPerSecondMass wasn't applying to the T4 Mass Extractors (???)
-                                    --bp.Economy.ProductionPerSecondMass = bp.Economy.ProductionPerSecondMass * T4_Adjustment
+                                    bp.Economy.ProductionPerSecondMass = bp.Economy.ProductionPerSecondMass * T4_Adjustment
 
                                     bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * econScaleT4
 
                                     bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * econScaleT4
+
+                                    bp.Economy.MaintenanceConsumptionPerSecondEnergy = bp.Economy.MaintenanceConsumptionPerSecondEnergy * energyScale
                                 end
                             end
                         end
