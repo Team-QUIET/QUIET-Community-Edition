@@ -1,0 +1,509 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "bel0402", 
+	AI = {
+        GuardScanRadius = 0,
+    },
+
+    Defense = {
+        ArmorType = 'Experimental',
+        Health = 124000,
+        MaxHealth = 124000,
+        RegenRate = 30,
+    },
+	
+    Description = '<LOC bel0402_desc>Experimental Ultra Heavy Breacher Bot',
+	
+    Interface = {
+        HelpText = 'Experimental Ultra Heavy Breacher Bot',
+    },
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+            LAYER_Water = true,
+        },
+        DragCoefficient = 0.2,
+		
+        LayerChangeOffsetHeight = -4.3,
+		
+        MaxAcceleration = 2.8,
+        MaxBrake = 2.8,
+        MaxSpeed = 2.8,
+        MaxSpeedReverse = 0,
+        MaxSteerForce = 15,
+		
+        MeshExtentsX = 4.7,
+        MeshExtentsY = 4,
+        MeshExtentsZ = 5.2,
+		
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Amphibious',
+		
+        StandUpright = true,
+		
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+        SkirtSizeX = 4,
+        SkirtSizeZ = 4,
+		
+        TurnRadius = 5,
+        TurnRate = 32,
+    },
+	
+    Weapon = {
+		
+		--	Tactical Missiles
+		
+        {
+			AboveWaterFireOnly = false,
+            AboveWaterTargetsOnly = true,
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 800,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Goliath Missiles',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+            },
+			
+			FiringRandomness = 3,
+            FiringTolerance = 180,
+			
+            MaxRadius = 158,
+	        MinRadius = 20,
+			
+            MuzzleChargeDelay = 0.5,
+
+            MuzzleVelocity = 3,
+
+            MuzzleVelocityRandom = 0.2,
+			
+			NotExclusive = true,
+
+            ProjectileLifetime = 25,
+
+            RackSalvoChargeTime = 2,
+
+            RackSalvoReloadTime = 1,
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+			-- the true rate of fire is a combination of the rack salvo reload - 1 seconds
+			-- and the time it takes to fire the 16 muzzles ( 16 * muzzle charge delay -- 8 seconds )
+			-- and the rack salvo charge time - 1 seconds
+			-- so true firing cycle is 10 seconds or 9600/10
+
+            RateOfFire = 1.2,	---- 16 times 600 = 9600 Damage every 10 seconds = 960 DPS
+			
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'TECH3 STRUCTURE DEFENSE',
+                'TECH2 STRUCTURE DEFENSE',
+                '(STRUCTURE * DEFENSE - ANTIMISSILE)',
+                'TECH3 STRUCTURE',
+                'TECH2 STRUCTURE',
+                'TECH3 MOBILE',
+                'TECH2 MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, WALL',
+            TrackingRadius = 1.1,
+			
+            Turreted = false,
+			
+			WeaponRepackTimeout = 2,
+            WeaponUnpackAnimationRate = 0.5,
+            WeaponUnpacks = true,
+        },
+
+		---- Shoulder Beam Cannon
+		
+		{
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+			AimsStraightOnDisable = true,
+			
+            AutoInitiateAttackCommand = true,
+			
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0.4,
+			
+			ContinuousBeam = false,
+			
+            CollideFriendly = false,
+			
+            Damage = 475,
+            DamageRadius = 1.5,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Plasma Cannon',
+			
+            DoNotCollideList = {'MISSILE'},
+			
+            FireTargetLayerCapsTable = { 
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 0.5,
+		
+            LeadTarget = false,
+			
+            MaxRadius = 60,
+			MinRadius = 12,
+			
+            MuzzleChargeDelay = 0.4,
+			
+            NeedPrep = true,
+			NotExclusive = true,
+
+            RangeCategory = 'UWRC_DirectFire',
+            
+			ReTargetOnMiss = true,
+
+            RateOfFire = 1.5,	---- 375 * 4 * 2 = 3000 DPS 
+
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 60,
+
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'EXPERIMENTAL',
+                'SUBCOMMANDER',
+                'TECH3 MOBILE',
+                '(STRUCTURE * DEFENSE - ANTIMISSILE)',
+                'TECH3 STRUCTURE',
+                'TECH2 MOBILE',
+                'TECH1 MOBILE',
+                'ALLUNITS',
+            }, 
+			TargetRestrictDisallow = 'HIGHALTAIR, UNTARGETABLE, WALL', 
+            TrackingRadius = 1.2,
+
+            TurretBoneMuzzle = 'Beam_Muzzle',
+            TurretBonePitch = 'Beam_Pitch',
+            TurretBoneYaw = 'Beam_Turret',
+
+            TurretPitch = 0,
+            TurretPitchRange = 50,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 42,
+			
+            Turreted = true,
+			
+            UseFiringSolutionInsteadOfAimBone = true,
+
+            WeaponRepackTimeout = 1,
+            WeaponUnpackAnimationRate = 1,
+            WeaponUnpacks = true,
+        },
+
+		-- arm mounted flamers --
+		
+        {
+			AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 80,
+            DamageRadius = 2.5,
+            
+            DoTPulses = 8,	-- 640 Damage per shell ( 8 * 80 )
+            DoTTime = 2.5,
+            
+            DamageType = 'Normal',
+			
+            DisplayName = 'Flamers',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 1,
+            FiringRandomness = 1.5,
+			
+            MaxRadius = 39,
+			MinRadius = 4,
+			
+            MuzzleVelocity = 20,
+			
+			NotExclusive = true,
+            NoPause = true,
+
+            ProjectileLifetime = 2,
+
+            RateOfFire = 3,		---- 900 DPS
+			
+            TargetCheckInterval = 0.3,
+
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 50,
+            
+            TargetPriorities = {
+                'TECH3 MOBILE',
+                'TECH2 MOBILE',
+                'TECH1 MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+
+            TurretBoneMuzzle = 'Right_Arm_Muzzle',
+            TurretBonePitch = 'Right_Arm_Pitch',
+            TurretBoneYaw = 'Right_Arm_Yaw',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 30,
+			
+            TurretYaw = -90,
+            TurretYawRange = 110,
+            TurretYawSpeed = 32,
+			
+            Turreted = true,
+        },
+		
+        {
+			AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 80,
+            DamageRadius = 2.5,
+            
+            DoTPulses = 8,	-- 640 Damage per shell ( 8 * 80 )
+            DoTTime = 2.5,
+            
+            DamageType = 'Normal',
+			
+            DisplayName = 'Flamers',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 1,
+            FiringRandomness = 1.5,
+			
+            MaxRadius = 39,
+			MinRadius = 4,
+
+            MuzzleVelocity = 20,
+			
+			NotExclusive = true,
+            NoPause = true,
+
+            ProjectileLifetime = 2,
+
+            RateOfFire = 3,		---- 900 DPS
+			
+            TargetCheckInterval = 0.3,
+
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 50,
+
+            TargetPriorities = {
+                'TECH3 MOBILE',
+                'TECH2 MOBILE',
+                'TECH1 MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TurretBoneMuzzle = 'Left_Arm_Muzzle',
+            TurretBonePitch = 'Left_Arm_Pitch',			
+            TurretBoneYaw = 'Left_Arm_Yaw',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 30,
+			
+            TurretYaw = 90,
+            TurretYawRange = 110,
+            TurretYawSpeed = 32,
+			
+            Turreted = true,
+        },
+
+		-- TMD --
+		
+		{
+			AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,		
+            AimsStraightOnDisable = true,
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Phalanx Anti Missile',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+				Seabed = 'Air',
+            },
+			
+            FiringTolerance = 0,
+			
+            MaxRadius = 36,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 5,
+            MuzzleVelocity = 75,
+
+            ProjectileLifetimeUsesMultiplier = 0.6,
+
+            RangeCategory = 'UWRC_Countermeasure',
+			
+            RateOfFire = 1.1,
+            TargetCheckInterval = 0.5,
+			
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictOnlyAllow = 'TACTICAL MISSILE',
+            TargetType = 'RULEWTT_Projectile',
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'TMD_Muzzle_Recoil',
+            TurretBonePitch = 'TMD_Barrel',
+            TurretBoneYaw = 'TMD_Turret',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 120,
+			
+            Turreted = true,
+        },
+		
+		-- Head mounted SAM --
+        {
+			AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,		
+			advancedTracking = true,
+            AlwaysRecheckTarget = true,
+
+            BallisticArc = 'RULEUBA_None',
+			
+            CollideFriendly = false,
+			
+            Damage = 320,
+            DamageType = 'Normal',
+			
+            DisplayName = 'SAM Launcher',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+				Seabed = 'Air',
+            },
+			
+            FiringTolerance = 360,
+
+			LeadTarget = false,
+			
+            MaxRadius = 48,
+			
+            MuzzleSalvoDelay = 0.4,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 35,
+
+            ProjectileLifetime = 2.8,
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 0.5,
+			
+            TargetCheckInterval = 0.5,
+
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'HIGHPRIAIR',
+                'TECH3 BOMBER',
+                'TECH3 GROUNDATTACK',
+                'TECH2 BOMBER',
+                'TECH2 GROUNDATTACK',
+                'TRANSPORTATION',
+                'MOBILE',
+            },			
+
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Head',
+            TurretBonePitch = 'Head',
+            TurretBoneYaw = 'Head',
+			
+            TurretPitch = 25,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 70,
+			
+            TurretYaw = 0,
+            TurretYawRange = 90,
+            TurretYawSpeed = 38,
+			
+            Turreted = true,
+        },
+		
+		-- Death Explosion --
+        {
+            AboveWaterTargetsOnly = true,
+            CollideFriendly = false,
+			
+            Damage = 32500,
+            DamageFriendly = true,
+            DamageRadius = 18,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Death Nuke',
+			
+            FireOnDeath = false,
+            FiringTolerance = 2,
+			
+            MaxRadius = 1,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 0,
+			
+            NukeInnerRingDamage = 23500,
+            NukeInnerRingRadius = 18,
+            NukeInnerRingTicks = 3,
+            NukeInnerRingTotalTime = 1,
+			
+            NukeOuterRingDamage = 3650,
+            NukeOuterRingRadius = 38,
+            NukeOuterRingTicks = 3,
+            NukeOuterRingTotalTime = 3,
+		
+            RateOfFire = 1,
+			
+            TargetCheckInterval = 9999999,
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            Turreted = false,
+            WeaponCategory = 'Death',
+        },
+    },
+}
