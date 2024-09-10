@@ -1,0 +1,103 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "srl0311", 
+
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'CYBRAN',
+        'MOBILE',
+        'LAND',
+        'TECH3',
+        'INDIRECTFIRE',
+        'ARTILLERY',
+        'SILO',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+    },
+    
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = true,
+            
+            BallisticArc = 'RULEUBA_HighArc',
+            CollideFriendly = false,
+            
+            Damage = 215,
+            DamageFriendly = true,
+            DamageRadius = 2.5,
+            DamageType = 'Normal',
+            
+            DisplayName = 'Iridium Rocket Barrage',
+            
+            EffectiveRadius = 80,
+            
+            EnergyDrainPerSecond = 130,
+            EnergyRequired = 2600,
+            
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+            
+            FiringRandomness = 4,
+            FiringTolerance = 4,
+            
+            Label = 'MainGun',
+            
+            MaxRadius = 90,
+            MinRadius = 25,
+            
+            MuzzleChargeDelay = .25,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 21,
+            MuzzleVelocityRandom = 0.4,
+            MuzzleVelocityReduceDistance = 60,
+
+            ProjectileId = '/mods/LOUD-Community-Edition/projectiles/CDFRocketIridium03/CDFRocketIridium03_proj.bp',
+            
+            RackRecoilDistance = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
+            RackSalvoReloadTime = 9,    -- cycle is 10.5 + 9 = 19.5
+
+            RangeCategory = 'UWRC_IndirectFire',
+            
+            RateOfFire = 1,     -- RoF controlled by charge cycle - 20 seconds
+            RenderFireClock = true,
+
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 4,
+            
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'SHIELD',
+                'STRUCTURE DEFENSE',
+                'STRUCTURE',
+                'EXPERIMENTAL',
+                'SPECIALLOWPRI',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            
+            TurretBoneMuzzle = 'Missile_001',
+            TurretBonePitch = 'Racks_Pitch',
+            TurretBoneYaw = 0,
+            TurretDualManipulators = false,
+            
+            TurretPitch = 15,
+            TurretPitchRange = 15,
+            TurretPitchSpeed = 20,
+            
+            TurretYaw = 0,
+            TurretYawRange = 30,
+            TurretYawSpeed = 30,
+            
+            Turreted = true,
+            YawOnlyOnTarget = true,
+            WeaponCategory = 'Missile',
+        },
+    },
+}

@@ -3,7 +3,61 @@
 ## Rebalance Changelog
 ---------------------------------------------
 
-### 9/3/2024 (V1.0.2 Release)
+### 9/10/2024
+
+Fixed Barrage Artillery not being correctly modified
+Added Submod called "Economy & Flow" will be added to modlist when you add the full LCE to your usermods folder.
+Economy & Flow affects factories cost, mass extractor income & cost and will eventually include a custom version of Evenflow.
+Removed AirSpawnWaves from all AIs in LOUD
+
+### 9/8/2024 (V1.22)
+
+# Reclaim
+Reclaim that contains 90% of it's mass or higher is reduced to 75% however if the reclaim is lower then 75% on a unit's wreckage it is brought back up to 75%
+
+# T1 & T2 Land
+-- T1 & T2 were overperforming especially T1 Land against both T2 & T3, similarly T2 was overperforming vs T3. The intended purpose of this change is to extend the gap between tiers.
+Removed 12% Speed & Health Buff given to T1 Land in Blueprints.lua
+Removed 6% Speed & Health Buff given to T2 Land in Blueprints.lua
+
+# T3 Barrage Artillery
+-- Barrage Artillery is buffed to make it more cost efficient vs building additional T2 Artillery
+Aeon: 
+Damage 265 -> 530
+DamageRadius 2 -> 3
+UEF:
+Damage 1500 -> 3000
+DamageRadius 2 -> 3
+Cybran:
+Damage 1200 -> 2400
+DamageRadius 2.8 -> 3.8
+StunRadius 2 -> 3
+Seraphim: 
+Damage 1300 -> 2600
+Damage Radius 2.4 -> 3.4
+DamageType Normal -> ShieldMult1.5 (50% More Damage to Shields)
+Muzzle Velocity 33 -> 66
+(Redid TargetPriorities for All T3 Barrage)
+
+# T4 Eliash Medium Rapid Assault Bot
+-- The Eliash receives a small buff to it's personal shield
+Shield 21000 -> 26000
+ShieldRegenStartTime 1 -> 0.5
+
+### 9/3/2024 (V1.02/V1.021 Release)
+
+# T3 Triseptitron 
+Rocket Damage 125 -> 215
+Range 80 -> 90 
+DamageRadius 2 -> 2.5
+FiringRandomness 1.4 -> 4
+Fixed issue where it was overshooting it's target always
+
+# T4 Galactic Colossus (GC) / T4 Universal Colossus (UC)
+Fixed GC/UC Tractor Claws (This makes them SIGNIFICANTLY more powerful)
+GC/UC Tractor Claws now crush units over time that have a health over 5000
+UC Tractor Claws deal 9999 every 11 Ticks
+GC Tractor Claws deal 4999 every 11 Ticks
 
 # T4 Eliash Medium Rapid Assault Bot
 Mass Cost 26000 -> 21000

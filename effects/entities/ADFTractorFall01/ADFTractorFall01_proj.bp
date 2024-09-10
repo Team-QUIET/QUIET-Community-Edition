@@ -1,0 +1,27 @@
+ProjectileBlueprint{
+    Categories = { "PROJECTILE" },
+    Display = {
+        CameraFollowsProjectile = false,
+        Mesh = {
+            IconFadeInZoom = 1000,
+            LODs = {
+                {
+                    LODCutoff = 0,
+                    LookupName = "/textures/environment/Falloff_seraphim_lookup.dds",
+                    ShaderName = "Seraphim",
+                },
+            },
+        },
+        UniformScale = 0.01,
+    },
+    Physics = {
+        CollideEntity = false,
+        DestroyOnWater = true,
+        InitialSpeed = 0,
+        LeadTarget = false,
+        Lifetime = 10,
+        RotationalVelocity = 0,
+        UseGravity = true,
+        VelocityAlign = false,
+    },
+}
