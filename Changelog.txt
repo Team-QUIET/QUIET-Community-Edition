@@ -3,6 +3,13 @@
 ## Rebalance Changelog
 ---------------------------------------------
 
+### 9/10/2024
+
+Fixed Barrage Artillery not being correctly modified
+Added Submod called "Economy & Flow" will be added to modlist when you add the full LCE to your usermods folder.
+Economy & Flow affects factories cost, mass extractor income & cost and will eventually include a custom version of Evenflow.
+Removed AirSpawnWaves from all AIs in LOUD
+
 ### 9/8/2024 (V1.22)
 
 # Reclaim
