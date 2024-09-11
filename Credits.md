@@ -2,7 +2,9 @@
 Our main credits go to creators of LOUD Project & FAForever.
 Simply put, this project would not be possible without the two giants of the SCFA Community.
 As per the following MIT Licenses will be placed below!
+
 ---
+
 ## Copyright (c) 2024 FAForever
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,22 +24,24 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
----
-## LOUD | No Specific License, so we recongize the Creators of LOUD
 
-- Contributors: 
-Sprouto
-Tanksy
-Henry Thaddeus "Terminator" Katzmarek
-Sean "Balthazar" Wheeldon (The-Balthazar)
-RoboDewey (lips0027)
-PhoenixMT (davidorser)
-RD (rajderks)
-FrUst Berry (FrUst-Berry)
-Azraeelian Angel (Azraeel)
-Rat Circus (TheRatCircus)
-MostLostNoob
-c04spoon (joinr)
-PhilipJFry (PhilipJFryFAF)
-Willem "Jip" Wijnia (Garanas)
-Lohkrim
+---
+
+## LOUD | No Specific License, so we recongize the Creators of LOUD
+## Contributors: 
+
+- Sprouto
+- Tanksy
+- Henry Thaddeus "Terminator" Katzmarek
+- Sean "Balthazar" Wheeldon (The-Balthazar)
+- RoboDewey (lips0027)
+- PhoenixMT (davidorser)
+- RD (rajderks)
+- FrUst Berry (FrUst-Berry)
+- Azraeelian Angel (Azraeel)
+- Rat Circus (TheRatCircus)
+- MostLostNoob
+- c04spoon (joinr)
+- PhilipJFry (PhilipJFryFAF)
+- Willem "Jip" Wijnia (Garanas)
+- Lohkrim
