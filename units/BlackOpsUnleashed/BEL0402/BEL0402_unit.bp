@@ -1,8 +1,10 @@
 UnitBlueprint {
     Merge = true,
-	BlueprintId = "bel0402", 
-	AI = {
-        GuardScanRadius = 0,
+	BlueprintId = "bel0402", 	
+	Economy = {
+        BuildCostEnergy = 1700000,
+        BuildCostMass = 81500,
+        BuildTime = 19650,
     },
 
     Defense = {
@@ -10,6 +12,10 @@ UnitBlueprint {
         Health = 124000,
         MaxHealth = 124000,
         RegenRate = 30,
+    },
+
+    General = {
+		UnitName = '<LOC bel0402_name>Goliath',
     },
 	
     Description = '<LOC bel0402_desc>Experimental Ultra Heavy Breacher Bot',
@@ -64,9 +70,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 			
-            Damage = 800,
+            Damage = 1000,
             DamageFriendly = true,
-            DamageRadius = 3,
+            DamageRadius = 4,
             DamageType = 'Normal',
 			
             DisplayName = 'Goliath Missiles',
@@ -76,7 +82,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
 			
-			FiringRandomness = 3,
+			FiringRandomness = 5,
             FiringTolerance = 180,
 			
             MaxRadius = 158,
@@ -90,7 +96,8 @@ UnitBlueprint {
 			
 			NotExclusive = true,
 
-            ProjectileLifetime = 25,
+            ProjectileId = '/mods/LOUD-Community-Edition/projectiles/TIFMissileCruise06/TIFMissileCruise06_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 1,
 
             RackSalvoChargeTime = 2,
 
@@ -256,9 +263,12 @@ UnitBlueprint {
 
             SlavedToBody = true,
             SlavedToBodyArcRange = 50,
+
+            PrefersPrimaryWeaponTarget = false,
             
             TargetPriorities = {
                 'TECH3 MOBILE',
+                'EXPERIMENTAL',
                 'TECH2 MOBILE',
                 'TECH1 MOBILE',
                 'ALLUNITS',
@@ -322,8 +332,11 @@ UnitBlueprint {
             SlavedToBody = true,
             SlavedToBodyArcRange = 50,
 
+            PrefersPrimaryWeaponTarget = false,
+
             TargetPriorities = {
                 'TECH3 MOBILE',
+                'EXPERIMENTAL',
                 'TECH2 MOBILE',
                 'TECH1 MOBILE',
                 'ALLUNITS',

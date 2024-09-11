@@ -1,0 +1,58 @@
+ProjectileBlueprint{
+    Audio = {
+        Impact        = Sound { Bank = 'Impacts', Cue = 'UEF_Expl_Med_Impact',     LodCutoff = 'Weapon_LodCutoff' },
+        ImpactTerrain = Sound { Bank = 'Impacts', Cue = 'Impact_Land_Gen_UEF',     LodCutoff = 'Weapon_LodCutoff' },
+        ImpactWater   = Sound { Bank = 'Impacts', Cue = 'Impact_Water_Splash_UEF', LodCutoff = 'Weapon_LodCutoff' },
+    },
+    Categories = {
+        "INDIRECTFIRE",
+        "MISSILE",
+        "PROJECTILE",
+        "TACTICAL",
+        "UEF",
+    },
+    Defense = {
+        Health = 2,
+        MaxHealth = 2,
+    },
+    DesiredShooterCap = 1,
+    Display = {
+        CameraFollowTimeout = 2,
+        CameraFollowsProjectile = true,
+        ImpactEffects = { Type = "Medium01" },
+        Mesh = {
+            LODs = {
+                {
+                    LODCutoff = 300,
+                    ShaderName = "TMeshAlpha",
+                    MeshName = "/projectiles/TIFMissileCruise01/TIFMissileCruise01_lod0.scm",
+                    AlbedoName = "/projectiles/TIFMissileCruise01/TIFMissileCruise01_albedo.dds",
+                },
+            },
+        },
+        StrategicIconSize = 3,
+        UniformScale = 0.2,
+    },
+    General = {
+        Category = "Missile",
+        Faction = "UEF",
+    },
+    Interface = { HelpText = 0 },
+    Physics = {
+        Acceleration = 3,
+        DestroyOnWater = true,
+        InitialSpeed = 3,
+        MaxSpeed = 10,
+        MaxZigZag = 9,
+        RotationalVelocity = 25,
+        RotationalVelocityRange = 50,
+        TrackTarget = true,
+        TrackTargetGround = true,
+        TrackTargetGroundFuzziness = 5,
+        TrackTargetGroundOffset = 5,
+        TurnRate = 0,
+        UseGravity = false,
+        VelocityAlign = true,
+        ZigZagFrequency = 3,
+    },
+}
