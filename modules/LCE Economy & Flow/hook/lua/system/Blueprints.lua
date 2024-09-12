@@ -21,87 +21,15 @@ function EconomicAlterations(all_blueprints)
     local econScaleT2 = 0
     local econScaleT3 = 0
     local econScaleT4 = 0
-    local T2_Adjustment = 0
-    local T3_Adjustment = 0
-    local T4_Adjustment = 0
-    local energyScale = 0
 
     for id, bp in all_blueprints.Unit do
+
+        -- Eventually, I'll talk to Kami about doing the evenflow rework in this mod instead of touching the mass extractors imo
+        -- @Azraeelian Angel
 
         if bp.Categories then
 
             for i, cat in bp.Categories do
-
-                -- Economic Progression Rework
-                -- This increases mass production at the T2 & T3 phase to encourage far more activity in the late early to mid late game.
-                -- This also seeks to smooth out the transitions between t1 -> t2 & t2 -> t3
-                if cat == 'ECONOMIC' then
-
-                    econScaleT2 = 1.225
-                    econScaleT3 = 1.3
-                    energyScale = 1.1
-
-                    for j, catj in bp.Categories do
-
-                        if catj == 'MASSEXTRACTION' then
-
-							T2_Adjustment = 1.5
-							T3_Adjustment = 1.5
-
-                            for _, cat_mobile in bp.Categories do
-
-                                if cat_mobile == 'TECH2' then
-
-                                    bp.Economy.ProductionPerSecondMass = bp.Economy.ProductionPerSecondMass * T2_Adjustment
-
-                                    bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * econScaleT2
-
-                                    bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * econScaleT2
-
-                                    bp.Economy.MaintenanceConsumptionPerSecondEnergy = bp.Economy.MaintenanceConsumptionPerSecondEnergy * energyScale
-
-                                elseif cat_mobile == 'TECH3' and not bp.Enhancements then
-
-                                    bp.Economy.ProductionPerSecondMass = bp.Economy.ProductionPerSecondMass * T3_Adjustment
-
-                                    bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * econScaleT3
-
-                                    bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * econScaleT3
-
-                                    bp.Economy.MaintenanceConsumptionPerSecondEnergy = bp.Economy.MaintenanceConsumptionPerSecondEnergy * energyScale
-                                end
-                            end
-                        end
-                    end
-                end
-
-                -- Special Rebalance for Integrated Storage Mass Extractors
-                if cat == 'ECONOMIC' then
-
-                    econScaleT4 = 2.225
-                    energyScale = 1.2
-
-                    for j, catj in bp.Categories do
-
-                        if catj == 'MASSEXTRACTION' then
-
-							T4_Adjustment = 1.18
-
-                            for _, cat_mobile in bp.Categories do
-                                if cat_mobile == 'TECH3' and bp.Enhancements then
-
-                                    bp.Economy.ProductionPerSecondMass = bp.Economy.ProductionPerSecondMass * T4_Adjustment
-
-                                    bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * econScaleT4
-
-                                    bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * econScaleT4
-
-                                    bp.Economy.MaintenanceConsumptionPerSecondEnergy = bp.Economy.MaintenanceConsumptionPerSecondEnergy * energyScale
-                                end
-                            end
-                        end
-                    end
-                end
 
                 -- Rebalance for Factories to cost less
                 if cat == 'STRUCTURE' then
@@ -109,6 +37,7 @@ function EconomicAlterations(all_blueprints)
                     econScaleT1 = 0.935
                     econScaleT2 = 0.80
                     econScaleT3 = 0.75
+                    econScaleT4 = 0.75
 
                     for j, catj in bp.Categories do
 
@@ -130,6 +59,11 @@ function EconomicAlterations(all_blueprints)
                                     bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * econScaleT3
     
                                     bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * econScaleT3
+                                elseif cat_mobile == 'GATE' then
+
+                                    bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * econScaleT4
+    
+                                    bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * econScaleT4
                                 end
                             end
                         end
