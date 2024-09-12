@@ -10,13 +10,20 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 50,
     },
 
+    Intel = {
+        RadarStealth = false,
+        
+        OmniRadius = 0,
+        VisionRadius = 28,
+    },
+
     Physics = {
         BackupDistance = 5,
         BankingSlope = 0,
         DragCoefficient = 0.2,
         MaxAcceleration = .75,
         MaxBrake = 1.5,
-        MaxSpeed = 3.8,
+        MaxSpeed = 3.6,
         MaxSpeedReverse = 2,
         MaxSteerForce = 10,
         MinSpeedPercent = 0,
@@ -43,7 +50,7 @@ UnitBlueprint {
 
             EnergyChargeForFirstShot = false,
             EnergyDrainPerSecond = 220,
-            EnergyRequired = 1320,
+            EnergyRequired = 1540,
 
             FireTargetLayerCapsTable = { Land = "Land|Water" },
             FiringRandomnessWhileMoving = 0.65,
