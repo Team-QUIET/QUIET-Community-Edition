@@ -3,6 +3,30 @@
 ## Rebalance Changelog
 ---------------------------------------------
 
+### 9/12/2024
+
+# UEF T4 Goliath
+Significant Buff to TargetPriorities
+Forced the Goliath to turn with it's weapons when not being moved commanded
+Reclassed to Breacher Class 
+Added Effects to it's Missile Barrage
+Health 104000 -> 124000
+Missile Barrage:
+Firing Randomness 3 -> 5
+Damage 600 -> 1000
+DamageRadius 3 -> 4
+ProjectileLifetimeUsesMultiplier = 1
+Missiles now ZigZag and create a random scatter barrage meaning the missiles no longer all hit the targetground perfectly. (This makes it extremely hard for TMD to intercept them)
+Missile Health 1 -> 2
+MaxSpeed 20 -> 10
+Flamerthrower Arms:
+DPS: 480 DPS -> 880 DPS
+Death Nuke: 
+Damage 14,700 -> 32,890
+InnerRadius 12 -> 18
+OuterRadius 24 -> 38
+
+
 ### 9/10/2024
 
 Fixed Barrage Artillery not being correctly modified
