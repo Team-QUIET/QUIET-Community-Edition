@@ -3,6 +3,13 @@
 ## Rebalance Changelog
 ---------------------------------------------
 
+### TBD 
+
+# Aeon T2 Sniper
+Reload Speed 6 -> 7 Seconds
+Removed Stealth
+MaxSpeed 3.8 -> 3.6
+
 ### 9/12/2024
 
 # UEF T4 Goliath
