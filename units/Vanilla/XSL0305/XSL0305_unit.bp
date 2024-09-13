@@ -1,0 +1,171 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "xsl0305",
+    AI = {
+		GuardReturnRadius = 50,
+        GuardScanRadius = 36,
+    },
+	
+    Defense = {
+        Health = 690,
+        MaxHealth = 690,
+    },
+	
+    Physics = {
+        CapCost = 3,
+		BackUpDistance = 0,
+        BankingSlope = 0,
+        DragCoefficient = 0.2,
+        MaxAcceleration = 2.5,
+        MaxBrake = 2.5,
+        MaxSpeed = 2.5,
+        MaxSpeedReverse = 0,
+        MaxSteerForce = 10,
+        MeshExtentsX = 1,
+        MeshExtentsY = 1.25,
+        MeshExtentsZ = 1,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        StandUpright = true,
+        TurnRadius = 5,
+        TurnRate = 90,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 700,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Sih Energy Rifle',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+            FiringRandomnessWhileMoving = 0.4,
+			
+            FiringTolerance = 3,
+			
+            IgnoreIfDisabled = true,
+			
+            MaxRadius = 36,
+
+            MuzzleVelocity = 100,
+			
+			ProjectileLifetimeUsesMultiplier = 1.15,
+
+            RackRecoilDistance = -0.1,
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 0.2,		-- 140 DPS
+            RenderFireClock = true,
+			
+            SlavedToBody = false,
+
+            TargetCheckInterval = 3,
+            TargetPriorities = {
+                "SNIPER",
+                "(ARTILLERY - TECH1)",
+                "ANTISHIELD",
+                "SHIELD",
+                "COMMAND",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "STRUCTURE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'Muzzle',
+            TurretBonePitch = 'Barrel',
+            TurretBoneYaw = 'Barrel',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 50,
+            TurretPitchSpeed = 30,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 70,
+            Turreted = true,
+        },
+		
+		-- SNIPER WEAPON when deployed --
+        {
+            AboveWaterTargetsOnly = true,
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 2800,
+            DamageRadius = 0,
+            DamageType = 'ShieldMult1.2',    
+			
+            DisplayName = 'Sih Energy Rifle',
+            
+            EnergyRequired = 380,
+            EnergyDrainPerSecond = 38,     -- 10 seconds to charge
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+            FiringRandomnessWhileMoving = 0.2,
+			
+            FiringTolerance = 3,
+			
+            IgnoreIfDisabled = true,
+			
+            MaxRadius = 72,
+			
+            MuzzleChargeDelay = 1,      -- muzzle delay of 1 second
+
+            MuzzleVelocity = 100,
+
+			ProjectileLifetimeUsesMultiplier = 1.15,
+
+            RackRecoilDistance = -0.1,
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 1,		---- 140 Dps - 20 seconds - controlled by charge 
+			
+            SlavedToBody = false,
+			
+            TargetCheckInterval = 3,
+            TargetPriorities = {
+                "SNIPER",
+                "(ARTILLERY - TECH1)",
+                "SHIELD",
+                "COMMAND",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "STRUCTURE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.1,
+
+            TurretBoneMuzzle = 'Muzzle',
+            TurretBonePitch = 'Barrel',
+            TurretBoneYaw = 'Barrel',
+            TurretDualManipulators = false,
+
+            TurretPitch = 0,
+            TurretPitchRange = 50,
+            TurretPitchSpeed = 30,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+
+            Turreted = true,
+        },
+    },
+}

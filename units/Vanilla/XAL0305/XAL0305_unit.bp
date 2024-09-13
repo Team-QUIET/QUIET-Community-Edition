@@ -1,0 +1,126 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "xal0305",
+    AI = {
+		GuardReturnRadius = 35,
+        GuardScanRadius = 30,
+        NeedUnpack = false,
+    },
+	
+    Defense = {
+        Health = 560,
+        MaxHealth = 560,
+    },
+	
+    Display = {
+        Abilities = {
+            'Shield Damage Bonus',
+			'High Range',
+        },
+    },
+    
+    Economy = {
+        BuildCostEnergy = 13750,
+        BuildCostMass = 775,
+        BuildTime = 360,
+    },
+
+    Physics = {
+		BackUpDistance = 0,
+        BankingSlope = 0,
+        DragCoefficient = 0.2,
+        MaxAcceleration = 2.4,
+        MaxBrake = 3.2,
+        MaxSpeed = 3.2,
+        MaxSpeedReverse = 0,
+        MaxSteerForce = 10,
+        MeshExtentsX = 1,
+        MeshExtentsY = 1.25,
+        MeshExtentsZ = 1,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        StandUpright = true,
+        TurnRadius = 5,
+        TurnRate = 110,
+    },
+    
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 1200,
+            DamageType = 'ShieldMult1.2',     
+			
+            DisplayName = 'Heavy Disruptor Cannon',
+            
+            EnergyRequired = 360,
+            EnergyDrainPerSecond = 60,     -- 6 seconds to charge
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomnessWhileMoving = 0.3,
+            FiringTolerance = 2,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 75,
+			
+            MuzzleChargeDelay = 1,      -- 1 second delay
+
+            MuzzleVelocity = 75,
+			
+            ProjectileLifetimeUsesMultiplier = 1,
+
+            RackRecoilDistance = -0.1,
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 1,     -- rate of fire controlled by charge - 10 seconds
+			
+            TargetCheckInterval = 3,
+            RenderFireClock = true,
+			
+            TargetPriorities = {
+                "SNIPER",
+                "(ARTILLERY - TECH1)",
+                "ANTISHIELD",
+                "SHIELD",
+                "COMMAND",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "STRUCTURE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.05,
+            
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 10,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 30,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+			
+            Turreted = true,
+            WeaponCategory = "Direct Fire",
+
+            WeaponRepackTimeout = 0,
+            WeaponUnpackAnimation = '/units/xal0305/xal0305_asetup.sca',
+            WeaponUnpackAnimationRate = 0,
+            WeaponUnpackLocksMotion = false,
+            WeaponUnpacks = false,
+        },
+    },
+}
