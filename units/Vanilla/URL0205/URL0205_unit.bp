@@ -52,7 +52,7 @@ UnitBlueprint {
             Label = 'AAGun',
 			LeadTarget = true,
 			
-            MaxRadius = 36,
+            MaxRadius = 40,
 
             MuzzleVelocity = 34,
 			
