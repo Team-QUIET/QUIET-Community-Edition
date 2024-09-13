@@ -1,0 +1,97 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "url0205",
+    AI = {
+		GuardReturnRadius = 44,
+        GuardScanRadius = 32,
+    },
+	
+    Intel = {
+        VisionRadius = 24,
+    },
+	
+    Physics = {
+        BackUpDistance = 8,
+        BankingSlope = 0,
+        DragCoefficient = 0.2,
+        MaxAcceleration = 2.9,
+        MaxBrake = 2.9,
+        MaxSpeed = 2.9,
+        MaxSpeedReverse = 2.9,
+        MaxSteerForce = 5,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        RotateOnSpot = false,
+        RotateOnSpotThreshold = 0.1,
+        TurnRadius = 0,
+        TurnRate = 90,
+    },
+	
+    Weapon = {
+        {
+            AlwaysRecheckTarget = true,
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 90,
+            DamageFriendly = false,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+			
+            DetonatesAtTargetHeight = true,
+			
+            DisplayName = 'Electron Flak',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+            },
+            FiringRandomness = 2.5,
+            FiringTolerance = 2,
+			
+            Label = 'AAGun',
+			LeadTarget = true,
+			
+            MaxRadius = 36,
+
+            MuzzleVelocity = 34,
+			
+            ProjectileLifetimeUsesMultiplier = 1.25,
+            ProjectilesPerOnFire = 1,
+
+            RackRecoilDistance = -0.5,
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 1.6,		---- 144 DPS Air
+			
+            TargetCheckInterval = 0.3,
+            TargetPriorities = {
+                "(AIR * MOBILE * EXPERIMENTAL - BOMBER)",
+                "AIR MOBILE GROUNDATTACK",
+                "AIR MOBILE TECH2 BOMBER",
+                "AIR MOBILE TECH1 BOMBER",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE BOMBER",
+                "AIR MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Right_Muzzle01',
+            TurretBonePitch = 'Barrel',
+            TurretBoneYaw = 'Turret',
+
+            TurretPitch = 35,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 30,
+			
+            Turreted = true,
+        },
+    },
+}
