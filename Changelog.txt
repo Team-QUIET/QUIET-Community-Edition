@@ -3,14 +3,25 @@
 ## Rebalance Changelog
 ---------------------------------------------
 
-### TBD 
+### TBD
+
+# T2 Static Flak & T3 Static Flak
+-- Buff Flak against Gunships & Remove most of it's usefulness against fast flying strategic bombers and fighters (Making sams more useful)
+Comparable Values to the Static except higher rank and generally more damage (although of course more cost)
+
+# T2 Cybran Immortal
+-- Cybran should NOT be receiving Stealth or Cloak on 99% of their units as they have powerful mobile stealth & cloaking fields in both T2 & T3
+Removed Stealth
+
+### 9/14/2024 
 
 # Aeon T2 Sniper
 Reload Speed 6 -> 7 Seconds
 Removed Stealth
 MaxSpeed 3.8 -> 3.6
 
-# T2 Flak
+# T2 Mobile Flak
+-- Buff Flak against Gunships & Remove most of it's usefulness against fast flying strategic bombers and fighters (Making sams more useful)
 All Flak:
 Normalize Speed to Allow Micro'ing
 DamageRadius: 1.5 -> 3
@@ -22,6 +33,7 @@ MaxRadius: 36 -> 40
 Significant Buff to TargetPriorities
 
 # T3 Sniper
+-- Snipers are all now more nimble to allow micro & also to allow them to be relevant especially in LOUD where there is a lot more Indirect then Vanilla or FAF (Might still need more buffs)
 Normalize Speed to Allow Micro'ing
 Significant Buff to TargetPriorities
 DamageType = 'ShieldMult1.2',  (20% Shield Damage)
