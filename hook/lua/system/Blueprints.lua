@@ -20,6 +20,11 @@ end
 
 function UnitAlterations(all_blueprints)
 
+    local T1_Adjustment = 0
+    local T2_Adjustment = 0
+    local T3_Adjustment = 0
+    local T4_Adjustment = 0
+
     for id, bp in all_blueprints.Unit do
 
         if bp.Categories then
@@ -34,9 +39,9 @@ function UnitAlterations(all_blueprints)
                             
                             -- UniformScale universally to make t2 & t3 more mobile
                             -- Reset T1 & T2 Health & Speed back to normal
-                            local T1_Adjustment = 0.893
-							local T2_Adjustment = 0.944
-							local T3_Adjustment = 1.00
+                            T1_Adjustment = 0.893
+							T2_Adjustment = 0.944
+							T3_Adjustment = 1.00
 
                             for _, cat_mobile in bp.Categories do
                                 if cat_mobile == 'TECH1' then
@@ -74,6 +79,31 @@ function UnitAlterations(all_blueprints)
                                     if bp.Display.UniformScale then
                                         bp.Display.UniformScale = bp.Display.UniformScale * .95
                                     end
+                                end
+                            end
+                        end
+                    end  
+                end
+
+                if cat == 'AIR' then
+
+                    for j, catj in bp.Categories do
+            
+                        if catj == 'BOMBER' then
+                            
+                            -- This fixes all bombers to be not so weak to dodge micro 
+                            -- This also fixes T2 & Ahwassa Bombers not dropping at all in many cases
+
+                            for _, cat_mobile in bp.Categories do
+                                if cat_mobile == 'TECH1' or cat_mobile == 'TECH2' or cat_mobile == 'TECH3' or cat_mobile == 'EXPERIMENTAL' then
+
+                                    if bp.Weapon.BombDropThreshold then
+										bp.Weapon.BombDropThreshold = bp.Weapon.BombDropThreshold * 2
+									end
+
+                                    if bp.Weapon.FiringTolerance then
+										bp.Weapon.FiringTolerance = bp.Weapon.FiringTolerance * 2
+									end
                                 end
                             end
                         end
