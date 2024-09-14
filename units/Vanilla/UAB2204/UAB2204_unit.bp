@@ -1,0 +1,76 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "uab2204",
+    
+    Weapon = {
+        {
+            AlwaysRecheckTarget = true,
+            BallisticArc = 'RULEUBA_None',	
+	
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 75,
+            DamageFriendly = false,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+			
+            DetonatesAtTargetHeight = true,
+			
+            DisplayName = 'Fizz Launcher',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Water = 'Air',
+            },
+			
+            FiringRandomness = 1.5,
+            FiringTolerance = 2,
+			
+			LeadTarget = true,
+			
+            MaxRadius = 50,
+
+            MuzzleVelocity = 35,
+			
+			ProjectileLifetimeUsesMultiplier = 1.25,
+
+            RackSalvoChargeTime = 0.1,  -- 1 tick before firing 
+
+            RackSalvoReloadTime = 0.4,  -- 4 ticks after firing
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 10,		---- 150 DPS -- Rof ignored due to rack salvo charge values - high RoF just keeps it ready to fire on any tick
+			
+            TargetCheckInterval = 0.3,
+            TargetPriorities = {
+                "(AIR * MOBILE * EXPERIMENTAL - BOMBER)",
+                "AIR MOBILE GROUNDATTACK",
+                "AIR MOBILE TECH2 BOMBER",
+                "AIR MOBILE TECH1 BOMBER",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE BOMBER",
+                "AIR MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TrackingRadius = 1.2,
+            
+            TurretBoneMuzzle = 'WepFocus',
+            TurretBonePitch = 'Barrel_Right',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 35,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 60,
+			
+            Turreted = true,
+        },
+    },
+}

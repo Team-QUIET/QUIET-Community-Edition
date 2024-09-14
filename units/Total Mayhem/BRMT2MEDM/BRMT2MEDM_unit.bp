@@ -1,0 +1,32 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "brmt2medm",
+    
+    Display = {
+        Abilities = {
+            '<LOC ability_amphibious>Amphibious',
+            'Long Range Harrassment Rockets',            
+        },
+        
+        AnimationDeath = { {Animation = '/mods/TotalMayhem/units/BRMT2MEDM/BRMT2MEDM_Death.sca',Weight = 100} },
+        AnimationWalk = '/mods/TotalMayhem/units/BRMT2MEDM/BRMT2MEDM_Walk.sca',
+        AnimationWalkRate = 8,
+		
+        Mesh = {
+            IconFadeInZoom = 170,
+            LODs = {
+                {LODCutoff = 400,ShaderName = 'Insect'},
+            },
+        },
+		
+        UniformScale = 0.055,
+    },
+	
+    Intel = {
+        RadarStealth = false,
+        SonarStealth = false,
+        
+        VisionRadius = 28,
+		WaterVisionRadius = 20,
+    },
+}
