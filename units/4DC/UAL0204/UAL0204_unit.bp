@@ -1,6 +1,37 @@
 UnitBlueprint {
    Merge = true,
    BlueprintId = "ual0204",
+
+   Display = {
+        Abilities = {
+            "<LOC ability_customizable>Customizable",
+            "Fast for a Sniper",
+        },
+
+        AnimationWalk = "/mods/4DC/units/UAL0204/ual0204_awalk.sca",
+        AnimationWalkRate = 3.92,
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 215,
+                    ShaderName = "Aeon",
+                    MeshName = "/mods/4DC/units/UAL0204/UAL0204_lod0.scm",
+                    AlbedoName = "/mods/4DC/units/UAL0204/UAL0204_Albedo.dds",
+                    NormalsName = "/mods/4DC/units/UAL0204/UAL0204_normalsTS.dds",
+                    SpecularName = "/mods/4DC/units/UAL0204/UAL0204_SpecTeam.dds",
+                },
+            },
+        },
+
+        MovementEffects = {
+            Land = { Effects = { { Bones = {"Foot1","Foot2","Foot3","Foot4"}, Offset = { 0, 0, 0 }, Type = "GroundKickup01"} } }
+        },
+
+        UniformScale = 0.007,
+    },
+
     Economy = {
         BuildCostEnergy = 5050,
         BuildCostMass = 465,
