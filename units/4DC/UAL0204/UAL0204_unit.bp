@@ -103,6 +103,7 @@ UnitBlueprint {
 
             TargetCheckInterval = 1,
             TargetPriorities = {
+                "SPECIALHIGHPRI",
                 "EXPERIMENTAL",
                 "SHIELD",
                 "DEFENSE",

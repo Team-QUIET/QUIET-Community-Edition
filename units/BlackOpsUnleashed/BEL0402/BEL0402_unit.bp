@@ -114,6 +114,7 @@ UnitBlueprint {
 			
             TargetCheckInterval = 1,
             TargetPriorities = {
+                'SPECIALHIGHPRI',
                 'TECH3 STRUCTURE DEFENSE',
                 'TECH2 STRUCTURE DEFENSE',
                 '(STRUCTURE * DEFENSE - ANTIMISSILE)',
@@ -187,6 +188,7 @@ UnitBlueprint {
 
             TargetCheckInterval = 1,
             TargetPriorities = {
+                'SPECIALHIGHPRI',
                 'EXPERIMENTAL',
                 'SUBCOMMANDER',
                 'TECH3 MOBILE',
@@ -267,6 +269,7 @@ UnitBlueprint {
             PrefersPrimaryWeaponTarget = false,
             
             TargetPriorities = {
+                'SPECIALHIGHPRI',
                 'TECH3 MOBILE',
                 'EXPERIMENTAL',
                 'TECH2 MOBILE',
@@ -335,6 +338,7 @@ UnitBlueprint {
             PrefersPrimaryWeaponTarget = false,
 
             TargetPriorities = {
+                'SPECIALHIGHPRI',
                 'TECH3 MOBILE',
                 'EXPERIMENTAL',
                 'TECH2 MOBILE',
