@@ -1,6 +1,7 @@
 UnitBlueprint {
     Merge = true,
 	BlueprintId = "sea0314",
+
     Air = {
         AutoLandTime = 1.9,
         BankFactor = 2.2,
@@ -43,10 +44,7 @@ UnitBlueprint {
         Winged = true,
     },
 
-    Defense = {
-	
-        MissileDetector = { AttachBone = 'MissileDetector' },
-		
+    Defense = {	
         ArmorType = 'Light',
 
         Health = 7200,
@@ -69,26 +67,10 @@ UnitBlueprint {
     Weapon = {
         {
             AboveWaterTargetsOnly = true,
-            
-            Audio = {
-                Fire = Sound { Bank = 'UEAWeapon', Cue = 'UEA0304_Nuke_Bomb', LodCutoff = 'Weapon_LodCutoff' },
-            },
 
             AutoInitiateAttackCommand = true,
 
             BallisticArc = 'RULEUBA_None',
-			
-            Buffs = {
-                {
-                    Add = { OnImpact = true },
-                    AppliedToTarget = true,
-                    BuffType = 'STUN',
-                    Duration = 1.5,
-					Radius = 2.5,
-                    TargetAllow = 'ALLUNITS',
-                    TargetDisallow = 'AIR,COMMAND,WALL,TECH3,EXPERIMENTAL',
-                },
-            },
 
             BombDropThreshold = 3.1,
 			
@@ -111,8 +93,6 @@ UnitBlueprint {
             FiringRandomness = 0.2,
             FiringTolerance = 6,
 			
-            Label = 'Bomb',
-			
             MaxRadius = 75,
 			
             MuzzleSalvoDelay = 0.1,
@@ -122,12 +102,6 @@ UnitBlueprint {
             NeedToComputeBombDrop = true,
             
             NotExclusive = true,
-			
-            ProjectileId = '/projectiles/TIFSmallYieldNuclearBomb01/TIFSmallYieldNuclearBomb01_proj.bp',
-			
-            RackBones = {
-                {  RackBone = 'Bomb_001', MuzzleBones = {'Bomb_001','Bomb_002','Bomb_003','Bomb_004'} },
-            },
             
             RackSalvoReloadTime = 9.6,  -- firing cycle 10 = 7600/10 = 760 DPS
 
@@ -150,11 +124,6 @@ UnitBlueprint {
 		
         {
             AboveWaterTargetsOnly = true,
-
-            Audio = {
-                Fire = Sound { Bank = 'UESWeapon', Cue = 'UES0202_Fire_Cruise', LodCutoff = 'Weapon_LodCutoff' },            
-            },
-
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 			
@@ -184,15 +153,8 @@ UnitBlueprint {
 			
             PrefersPrimaryWeaponTarget = true,
 			
-            ProjectileId = '/projectiles/TPM_Lancer_AGM/TPM_Lancer_AGM_proj.bp',
             ProjectileLifetime = 20,
             ProjectileLifetimeUsesMultiplier = 1.15,
-			
-            RackBones = {
-                { RackBone = 'Bomb_001', HideMuzzle = true, MuzzleBones = {'Bomb_001', 'Bomb_002'} },
-                { RackBone = 'Bomb_003', HideMuzzle = true, MuzzleBones = {'Bomb_003', 'Bomb_004'} },
-                { RackBone = 'Bomb_005', HideMuzzle = true, MuzzleBones = {'Bomb_005', 'Bomb_006'} },
-            },
             
             RackSalvoChargeTime = 0.1,      -- delay between each rackbone
             RackSalvoReloadTime = 11.3,     -- 6 missiles every 12.8 = 3600/12.8 = 281 DPS
@@ -233,10 +195,6 @@ UnitBlueprint {
         {   --Torpedoes
 
             advancedTracking = true,
-            
-            Audio = {
-                Fire = Sound { Bank = 'UAAWeapon', Cue = 'UAA0204_Depth_Charge', LodCutoff = 'Weapon_LodCutoff' },
-            },
 
             BallisticArc = 'RULEUBA_None',
 
@@ -271,7 +229,6 @@ UnitBlueprint {
             
             MuzzleVelocity = 10,
             
-            ProjectileId = '/projectiles/TANAnglerTorpedo01/TANAnglerTorpedo01_proj.bp',
             ProjectileLifetime = 10,
             
             RackBones = {
