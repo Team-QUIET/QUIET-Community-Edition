@@ -383,6 +383,7 @@ UnitBlueprint {
             SlavedToBody = true,
             SlavedToBodyArcRange = 65,
             TargetPriorities = {
+                'SPECIALHIGHPRI',
                 'EXPERIMENTAL',
                 'SUBCOMMANDER',
                 'TECH3 MOBILE',
@@ -469,6 +470,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_IndirectFire',
             RateOfFire = 2,
             TargetPriorities = {
+                'SPECIALHIGHPRI',
                 'TECH3 MOBILE',
                 'TECH2 MOBILE',
                 'TECH1 MOBILE',
@@ -566,6 +568,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_IndirectFire',
             RateOfFire = 2,
             TargetPriorities = {
+                'SPECIALHIGHPRI',
                 'TECH3 MOBILE',
                 'TECH2 MOBILE',
                 'TECH1 MOBILE',

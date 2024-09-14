@@ -1,0 +1,114 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "xsl0205",
+    AI = {
+		GuardReturnRadius = 40,
+        GuardScanRadius = 32,
+    },
+	
+    Intel = {
+        VisionRadius = 24,
+        WaterVisionRadius = 8,
+    },
+	
+    Physics = {
+		BackUpDistance = 8,
+        BankingSlope = 0.5,
+        
+        
+        DragCoefficient = 0.2,
+        Elevation = 0.25,
+        
+        MaxAcceleration = 2.6,
+        MaxBrake = 2.6,
+        MaxSpeed = 2.6,
+        MaxSpeedReverse = 2.6,
+        
+        MaxSteerForce = 5,
+        
+        MeshExtentsX = 1.1,
+        MeshExtentsY = 0.5,
+        MeshExtentsZ = 1.25,
+        
+        MinSpeedPercent = 0,
+        
+        MotionType = 'RULEUMT_Hover',
+        
+        RotateBodyWhileMoving = true,
+        RotateOnSpot = false,
+        TurnFacingRate = 180,
+        TurnRadius = 0,
+        TurnRate = 120,
+    },
+	
+    Weapon = {
+        {
+            AlwaysRecheckTarget = true,
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 72,
+            DamageFriendly = false,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+
+            DetonatesAtTargetHeight = true,
+			
+            DisplayName = 'Olaris AA Artillery Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Water = 'Air',
+            },
+			
+            FiringRandomness = 2,5,
+            FiringTolerance = 2,
+
+			LeadTarget = true,
+			
+            MaxRadius = 40,
+			
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 2,
+
+            MuzzleVelocity = 20,
+			
+            ProjectileLifetimeUsesMultiplier = 1.25,
+
+            RackSalvoChargeTime = 0.1,
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 2,		---- 144 Dps
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "(AIR * MOBILE * EXPERIMENTAL - BOMBER)",
+                "AIR MOBILE GROUNDATTACK",
+                "AIR MOBILE TECH2 BOMBER",
+                "AIR MOBILE TECH1 BOMBER",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE BOMBER",
+                "AIR MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+
+            TurretPitch = 35,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 40,
+			
+            Turreted = true,
+        },
+    },
+}

@@ -36,7 +36,7 @@ UnitBlueprint {
             MuzzleChargeDelay = 1,
 
             MuzzleVelocity = 66,
-			MuzzleVelocityReduceDistance = 175,
+			MuzzleVelocityReduceDistance = 700,
 			
 			ProjectileLifetime = 12,
 
@@ -118,7 +118,7 @@ UnitBlueprint {
             MuzzleChargeDelay = 1,
 
             MuzzleVelocity = 66,
-			MuzzleVelocityReduceDistance = 175,
+			MuzzleVelocityReduceDistance = 700,
 			
 			ProjectileLifetime = 12,
 
@@ -198,7 +198,7 @@ UnitBlueprint {
             MuzzleChargeDelay = 1,
 
             MuzzleVelocity = 66,
-			MuzzleVelocityReduceDistance = 175,
+			MuzzleVelocityReduceDistance = 700,
 			
 			ProjectileLifetime = 12,
 

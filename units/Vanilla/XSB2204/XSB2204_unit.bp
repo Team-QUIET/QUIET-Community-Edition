@@ -1,0 +1,79 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "xsb2204",
+
+    Weapon = {
+        {
+            AlwaysRecheckTarget = true,
+            BallisticArc = 'RULEUBA_None',
+
+            CannotAttackGround = true,
+            CollideFriendly = false,
+
+            Damage = 50,
+            DamageFriendly = false,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+
+            DetonatesAtTargetHeight = true,
+
+            DisplayName = 'Olaris AA Cannon',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Water = 'Air',
+            },
+
+            FiringRandomness = 2,
+            FiringTolerance = 2,
+
+			LeadTarget = true,
+
+            MaxRadius = 45,
+
+            MuzzleVelocity = 35,
+
+			ProjectileLifetimeUsesMultiplier = 1.25,
+            ProjectilesPerOnFire = 2,
+
+            RackFireTogether = true,
+            RackSalvoChargeTime = 0.1,
+            RackSalvoFiresAfterCharge = true,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = true,
+
+            RangeCategory = 'UWRC_AntiAir',
+
+            RateOfFire = 3,		-- 150 DPS Air
+
+            TargetCheckInterval = 0.3,
+            TargetPriorities = {
+                "(AIR * MOBILE * EXPERIMENTAL - BOMBER)",
+                "AIR MOBILE GROUNDATTACK",
+                "AIR MOBILE TECH2 BOMBER",
+                "AIR MOBILE TECH1 BOMBER",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE BOMBER",
+                "AIR MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TrackingRadius = 1.1,
+            
+            TurretBoneMuzzle = 'WepFocus',
+            TurretBonePitch = 'Barrel_Right',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = false,
+            
+            TurretPitch = 35,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 180,
+            
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 40,
+            
+            Turreted = true,
+        },
+    },
+}

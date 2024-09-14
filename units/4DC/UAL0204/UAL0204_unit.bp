@@ -1,6 +1,37 @@
 UnitBlueprint {
    Merge = true,
    BlueprintId = "ual0204",
+
+   Display = {
+        Abilities = {
+            "<LOC ability_customizable>Customizable",
+            "Fast for a Sniper",
+        },
+
+        AnimationWalk = "/mods/4DC/units/UAL0204/ual0204_awalk.sca",
+        AnimationWalkRate = 3.92,
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 215,
+                    ShaderName = "Aeon",
+                    MeshName = "/mods/4DC/units/UAL0204/UAL0204_lod0.scm",
+                    AlbedoName = "/mods/4DC/units/UAL0204/UAL0204_Albedo.dds",
+                    NormalsName = "/mods/4DC/units/UAL0204/UAL0204_normalsTS.dds",
+                    SpecularName = "/mods/4DC/units/UAL0204/UAL0204_SpecTeam.dds",
+                },
+            },
+        },
+
+        MovementEffects = {
+            Land = { Effects = { { Bones = {"Foot1","Foot2","Foot3","Foot4"}, Offset = { 0, 0, 0 }, Type = "GroundKickup01"} } }
+        },
+
+        UniformScale = 0.007,
+    },
+
     Economy = {
         BuildCostEnergy = 5050,
         BuildCostMass = 465,
@@ -10,13 +41,20 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 50,
     },
 
+    Intel = {
+        RadarStealth = false,
+        
+        OmniRadius = 0,
+        VisionRadius = 28,
+    },
+
     Physics = {
         BackupDistance = 5,
         BankingSlope = 0,
         DragCoefficient = 0.2,
         MaxAcceleration = .75,
         MaxBrake = 1.5,
-        MaxSpeed = 3.8,
+        MaxSpeed = 3.6,
         MaxSpeedReverse = 2,
         MaxSteerForce = 10,
         MinSpeedPercent = 0,
@@ -43,7 +81,7 @@ UnitBlueprint {
 
             EnergyChargeForFirstShot = false,
             EnergyDrainPerSecond = 220,
-            EnergyRequired = 1320,
+            EnergyRequired = 1540,
 
             FireTargetLayerCapsTable = { Land = "Land|Water" },
             FiringRandomnessWhileMoving = 0.65,
@@ -65,6 +103,7 @@ UnitBlueprint {
 
             TargetCheckInterval = 1,
             TargetPriorities = {
+                "SPECIALHIGHPRI",
                 "EXPERIMENTAL",
                 "SHIELD",
                 "DEFENSE",

@@ -271,6 +271,7 @@ UnitBlueprint{
             SlavedToBody = true,
             SlavedToBodyArcRange = 65,
             TargetPriorities = {
+                'SPECIALHIGHPRI',
                 'EXPERIMENTAL',
                 'SUBCOMMANDER',
                 'TECH3 MOBILE',
@@ -347,6 +348,7 @@ UnitBlueprint{
             TargetCheckInterval = 0.2,
             AlwaysRecheckTarget = false,
             TargetPriorities = {
+                'SPECIALHIGHPRI',
                 'TECH3 MOBILE',
                 'TECH2 MOBILE',
                 'TECH1 MOBILE',
@@ -421,6 +423,7 @@ UnitBlueprint{
             TargetCheckInterval = 0.2,
             AlwaysRecheckTarget = false,
             TargetPriorities = {
+                'SPECIALHIGHPRI',
                 'TECH3 MOBILE',
                 'TECH2 MOBILE',
                 'TECH1 MOBILE',

@@ -1,0 +1,79 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "ueb3304",
+
+    Weapon = {
+        {
+            AlwaysRecheckTarget = true,
+            BallisticArc = 'RULEUBA_None',
+
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 72,
+            DamageFriendly = false,
+            DamageRadius = 4.4,
+            DamageType = 'Normal',
+			
+            DetonatesAtTargetHeight = true,
+			
+            DisplayName = 'Fragmentation Flak',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Water = 'Air',
+            },
+			
+            FiringRandomness = 2.5,
+            FiringTolerance = 2,
+					
+			LeadTarget = true,
+			
+            MaxRadius = 55,
+
+            MuzzleVelocity = 50,
+			
+			ProjectileLifetimeUsesMultiplier = 1.25,
+
+            RackFireTogether = true,
+
+            RackRecoilDistance = -1,
+
+            RackReloadTimeout = 10,
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 2,		-- 288 DPS Air
+
+            TargetCheckInterval = 0.3,
+            TargetPriorities = {
+                "(AIR * MOBILE * EXPERIMENTAL - BOMBER)",
+                "AIR MOBILE GROUNDATTACK",
+                "AIR MOBILE TECH2 BOMBER",
+                "AIR MOBILE TECH1 BOMBER",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE BOMBER",
+                "AIR MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Turret_Barrel',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 35,
+            TurretPitchRange = 55,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 80,
+			
+            Turreted = true,
+        },
+    },
+}
