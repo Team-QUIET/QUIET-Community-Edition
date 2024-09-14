@@ -5,6 +5,9 @@
 
 ### TBD
 
+# Bombers
+Fixed Bombers not dropping bombs properly also nerfs dodge micro against bombers as well, i.e means early bombers and such are much stronger and harder to dodge
+
 # T2 Static Flak & T3 Static Flak
 -- Buff Flak against Gunships & Remove most of it's usefulness against fast flying strategic bombers and fighters (Making sams more useful)
 Comparable Values to the Static except higher rank and generally more damage (although of course more cost)
@@ -12,6 +15,12 @@ Comparable Values to the Static except higher rank and generally more damage (al
 # T2 Cybran Immortal
 -- Cybran should NOT be receiving Stealth or Cloak on 99% of their units as they have powerful mobile stealth & cloaking fields in both T2 & T3
 Removed Stealth
+
+# Misc
+Fix Target Priorities for certain units. They will target Protector Bots properly again.
+Evenflow is now integrated into Economy & Flow. It is now strongly recommended to use this version as it goes hand and hand with LCE. 
+Additional tweaks into Economy & Flow include Hydrocarbons put into line with T2 Pgen & T3 Pgen cost and production of energy.
+Another Additional tweak includes reduction in buildtime on the Enhancements on T3 Factories
 
 ### 9/14/2024 
 
