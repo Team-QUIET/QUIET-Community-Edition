@@ -1,6 +1,6 @@
 name = "LOUD Community Edition"
 author = "LOUD CE Team"
-version = 1.26
+version = 1.27
 description = "LOUD CE is a massive collection of Bug Fixes, Game Rebalance, & Other Various Actions"
 exclusive = false
 ui_only = false
