@@ -1,6 +1,7 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "xsl0305",
+    
     AI = {
 		GuardReturnRadius = 50,
         GuardScanRadius = 36,

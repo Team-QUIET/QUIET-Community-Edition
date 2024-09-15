@@ -1,0 +1,8 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "xss0304",
+	
+    Defense = {
+        MissileTorpDestroy = { AttachBone = {'Projectile01','Exhaust01'}, Radius = 3, RedirectRateOfFire = 8, ProjectileCategories = {'TORPEDO'} },
+    },
+}
