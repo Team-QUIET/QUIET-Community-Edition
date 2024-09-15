@@ -5,6 +5,16 @@
 
 ### TBD
 
+# T3 Seraphim Submarine
+Slight Nerf to Seraphim Submarine to prevent the meta where you would shift g 5-6 seraphim subs on top of each other and their torp defense would infinitely be able to defend a SIGNIFICANT amount of torps.
+
+# T2 Destroyers
+All Torpedo on Destroyers significantly buffed should be able to crush T1 Subs at a relative similar cost efficiency
+
+# T2 Torpedo Bombers
+Torpedo Bombers nerfed to original 800-860 Health Values with a slight increase in E cost & M cost.
+Relative Cost increase was 2k more e and 50 more mass
+
 # Bombers
 Fixed Bombers not dropping bombs properly also nerfs dodge micro against bombers as well, i.e means early bombers and such are much stronger and harder to dodge
 
@@ -21,6 +31,8 @@ Fix Target Priorities for certain units. They will target Protector Bots properl
 Evenflow is now integrated into Economy & Flow. It is now strongly recommended to use this version as it goes hand and hand with LCE. 
 Additional tweaks into Economy & Flow include Hydrocarbons put into line with T2 Pgen & T3 Pgen cost and production of energy.
 Another Additional tweak includes reduction in buildtime on the Enhancements on T3 Factories
+Fixed T3 Seraphim SAM Missing ASF & Strategic Bombers
+Fixed Czar never catching up to a target when using an attack command
 
 ### 9/14/2024 
 
