@@ -1,0 +1,112 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "ues0201",
+	
+    Weapon = {
+        {
+            
+        },
+		
+        {
+            
+        },
+		
+        {
+           
+        },
+		
+        {
+            
+        },
+		
+        {
+            advancedTracking = true,
+            
+            BallisticArc = 'RULEUBA_None',
+			
+			CannotAttackGround = true,			
+            CollideFriendly = false,
+
+            CountedProjectile = true,
+			
+            Damage = 2,
+            DamageType = 'Normal',
+
+            DisplayName = 'AntiTorpedo',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Sub|Water|Seabed',
+            },
+			
+            FiringTolerance = 90,
+			
+            HeadingArcCenter = -90,
+            HeadingArcRange = 90,
+			
+            Label = 'AntiTorpedo',
+			
+            MaxRadius = 37,
+
+            MuzzleSalvoDelay = 0.2,
+            MuzzleVelocity = 7,
+			
+            ProjectileLifetime = 3,
+
+            RangeCategory = 'UWRC_Countermeasure',
+			
+            RateOfFire = 1,     -- controlled by MuzzleSalvoDelay and WeaponRepackTimeout - 1 every 0.4 seconds
+			
+            TargetCheckInterval = 0.5,
+
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictOnlyAllow = 'TORPEDO',
+            TargetType = 'RULEWTT_Projectile',
+            
+            WeaponRepackTimeout = 0.2,
+        },
+		
+        {
+            advancedTracking = true,
+            
+            BallisticArc = 'RULEUBA_None',
+			
+			CannotAttackGround = true,			
+            CollideFriendly = false,
+
+            CountedProjectile = true,
+			
+            Damage = 2,
+            DamageType = 'Normal',
+
+            DisplayName = 'AntiTorpedo',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Sub|Water|Seabed',
+            },
+			
+            FiringTolerance = 90,
+			
+            HeadingArcCenter = 90,
+            HeadingArcRange = 90,
+			
+            Label = 'AntiTorpedo',
+			
+            MaxRadius = 37,
+
+            MuzzleSalvoDelay = 0.2,
+            MuzzleVelocity = 7,
+			
+            ProjectileLifetime = 3,
+
+            RateOfFire = 1,     -- controlled by MuzzleSalvoDelay and WeaponRepackTimeout - 1 every 0.4 seconds
+			
+            TargetCheckInterval = 0.5,
+
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictOnlyAllow = 'TORPEDO',
+            TargetType = 'RULEWTT_Projectile',
+            
+            WeaponRepackTimeout = 0.2,
+        },        
+    },
+}
