@@ -1,0 +1,77 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "xss0201",
+	
+    Weapon = {
+        {
+
+        },
+		
+        {
+        
+        },
+		
+        {
+           
+        },
+		
+        {
+            BallisticArc = 'RULEUBA_None',
+
+			CannotAttackGround = true,
+
+            CollideFriendly = false,
+
+            CountedProjectile = true,
+			
+            Damage = 2,
+			DamageFriendly = false,
+            DamageType = 'Normal',
+			
+            DisplayName = 'AntiTorpedo',
+
+            FireTargetLayerCapsTable = {
+                Sub = 'Seabed|Sub|Water',
+                Water = 'Seabed|Sub|Water',
+            },
+			
+            FiringTolerance = 50,
+			
+            Label = 'AntiTorpedo',
+
+            MaxRadius = 36,
+            MinRadius = 0,
+
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 8,
+			
+            ProjectileLifetime = 3,
+
+            RangeCategory = 'UWRC_Countermeasure',
+			
+            RateOfFire = 1,     -- controlled by MuzzleSalvoDelay and WeaponRepackTimeout
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetRestrictOnlyAllow = 'TORPEDO',
+            TargetType = 'RULEWTT_Projectile',
+			
+            TurretBoneMuzzle = 'Exhaust01',
+            TurretBonePitch = 'Exhaust01',
+            TurretBoneYaw = 'Exhaust01',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 30,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 360,
+			
+            Turreted = true,
+            
+            WeaponRepackTimeout = 0.2,
+        },
+    },
+}

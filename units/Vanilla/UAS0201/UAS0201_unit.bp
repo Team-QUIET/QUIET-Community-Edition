@@ -1,0 +1,153 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "uas0201",
+	
+    Weapon = {
+        {
+           
+        },
+
+        {
+            
+        },
+
+        -- FLANK MOUNTED ANTITORP -- Right
+        {
+            advancedTracking = true,
+            
+            BallisticArc = 'RULEUBA_None',
+            BelowWaterTargetsOnly = true,
+
+			CannotAttackGround = true,
+            CollideFriendly = false,
+
+            CountedProjectile = true,
+			
+            Damage = 2,
+			DamageFriendly = false,
+            DamageType = 'Normal',
+			
+            DisplayName = 'AntiTorpedo',
+
+            FireTargetLayerCapsTable = {
+                Water = 'Sub|Water|Seabed',
+            },
+			
+            FiringTolerance = 90,
+			
+            HeadingArcCenter = -85,
+            HeadingArcRange = 90,
+			
+            MaxRadius = 32,
+			
+            MuzzleSalvoDelay = 0.2,
+            MuzzleVelocity = 7.5,
+			
+            ProjectileLifetime = 3,
+
+            RangeCategory = 'UWRC_Countermeasure',
+			
+            RateOfFire = 1,     -- controlled by salvodelay and WeaponRepackTimeout - 1 every 0.2 seconds
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictOnlyAllow = 'TORPEDO',
+            TargetType = 'RULEWTT_Projectile',
+            
+            WeaponRepackTimeout = 0.2,
+        },
+		
+        -- FLANK MOUNTED ANTITORP -- Left
+        {
+            advancedTracking = true,
+            
+            BallisticArc = 'RULEUBA_None',
+            BelowWaterTargetsOnly = true,
+
+			CannotAttackGround = true,
+            CollideFriendly = false,
+
+            CountedProjectile = true,
+			
+            Damage = 2,
+			DamageFriendly = false,
+            DamageType = 'Normal',
+			
+            DisplayName = 'AntiTorpedo',
+
+            FireTargetLayerCapsTable = {
+                Water = 'Sub|Water|Seabed',
+            },
+			
+            FiringTolerance = 90,
+			
+            HeadingArcCenter = 85,
+            HeadingArcRange = 90,
+			
+            MaxRadius = 32,
+
+            MuzzleSalvoDelay = 0.2,			
+            MuzzleVelocity = 7.5,
+			
+            ProjectileLifetime = 3,
+			
+            RateOfFire = 1,
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictOnlyAllow = 'TORPEDO',
+            TargetType = 'RULEWTT_Projectile',
+
+            WeaponRepackTimeout = 0.2,            
+        },
+
+        -- REAR MOUNTED ANTITORP
+        {
+            advancedTracking = true,
+            
+            BallisticArc = 'RULEUBA_None',
+            BelowWaterTargetsOnly = true,
+
+			CannotAttackGround = true,
+            CollideFriendly = false,
+
+            CountedProjectile = true,
+			
+            Damage = 2,
+			DamageFriendly = false,
+            DamageType = 'Normal',
+			
+            DisplayName = 'AntiTorpedo',
+
+            FireTargetLayerCapsTable = {
+                Water = 'Sub|Water|Seabed',
+            },
+			
+            FiringTolerance = 90,
+			
+            HeadingArcCenter = 180,
+            HeadingArcRange = 90,
+			
+            Label = 'AntiTorpedo3',
+			
+            MaxRadius = 32,
+
+            MuzzleSalvoDelay = 0.2,
+            MuzzleVelocity = 7.5,
+			
+            ProjectileLifetime = 3,
+
+            RateOfFire = 1,
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictOnlyAllow = 'TORPEDO',
+            TargetType = 'RULEWTT_Projectile',
+
+            WeaponRepackTimeout = 0.2,
+        },		
+    },
+}
