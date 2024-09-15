@@ -3,6 +3,6 @@ UnitBlueprint {
     BlueprintId = "xss0304",
 	
     Defense = {
-        MissileTorpDestroy = { AttachBone = {'Projectile01','Exhaust01'}, Radius = 3, RedirectRateOfFire = 8, ProjectileCategories = {'TORPEDO'} },
+        MissileTorpDestroy = { AttachBone = {'Projectile01','Exhaust01'}, Radius = 3.3, RedirectRateOfFire = 20, ProjectileCategories = {'TORPEDO'} },
     },
 }
