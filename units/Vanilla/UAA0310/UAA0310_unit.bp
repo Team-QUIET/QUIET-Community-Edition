@@ -1,0 +1,486 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "uaa0310",
+
+    AI = {
+        GuardReturnRadius = 45,
+        GuardScanRadius = 0,
+		GuardRadius = 0,
+        RefuelingMultiplier = 50,
+        RefuelingRepairAmount = 500,
+        RepairConsumeEnergy = 30,
+        RepairConsumeMass = 0,
+		
+		StagingPlatformScanRadius = 500,
+		
+        TargetBones = {
+            "Attachpoint01",
+            "Attachpoint02",
+            "Attachpoint03",
+            "Attachpoint04",
+            "Attachpoint05",
+            "Attachpoint06",
+            "Attachpoint07",
+            "Attachpoint08",
+        },
+    },
+	
+    Air = {
+        BankFactor = 0,
+        BankForward = false,
+        CanFly = true,
+        HoverOverAttack = true,
+        KLift = 2,
+        KLiftDamping = 3.5,
+        KMove = 1,
+        KMoveDamping = 2,
+        KTurn = 1,
+        KTurnDamping = 10,
+        LiftFactor = 7,
+        MaxAirspeed = 8,
+        MinAirspeed = 0,
+        StartTurnDistance = 20,
+    },
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Air = true,
+        },
+        
+        Elevation = 25,
+		
+        MaxAcceleration = 8,
+        MaxSpeed = 8,
+        
+        MaxSteerForce = 100,
+        
+        MeshExtentsX = 27,
+        MeshExtentsY = 8,
+        MeshExtentsZ = 27,
+        
+        MinSpeedPercent = 0,
+        
+        MotionType = 'RULEUMT_Air',
+        
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+        SkirtSizeX = 16,
+        SkirtSizeZ = 16,
+        
+        TurnRadius = 40,
+        TurnRate = 38,
+    },
+	
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,			
+            AutoInitiateAttackCommand = true,
+			
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0,
+            BeamLifetime = 1.0,
+
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 800,
+            DamageRadius = 4,
+			DamageFriendly = true,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Quantum Death Ray Generator',
+			
+			DoNotCollideList = {
+                'MISSILE',
+				'HIGHALTAIR',
+            },
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Land|Air|Water|Seabed',
+            },
+			
+            FiringTolerance = 30,
+			
+            MaxRadius = 30,
+            MaximumBeamLength = 50,
+
+            NotExclusive = true,			
+
+            RackSlavedToTurret = false,
+            RateOfFire = 1,		-- 8K DPS Ground
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'STRUCTURE -WALL',
+                'MOBILE',
+                'ALLUNITS -WALL',
+            },
+
+            TargetRestrictDisallow = 'UNTARGETABLE,HIGHALTAIR,SATELLITE',
+        },
+		
+		--- 4 x AA Missiles ---
+		
+        {		
+            BallisticArc = 'RULEUBA_None',
+			
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 300,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Zealot AA Missile',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land',
+            },
+			
+            FiringTolerance = 45,
+			
+            HeadingArcCenter = 230,
+            HeadingArcRange = 120,
+			
+            Label = 'AA_Missile',
+			
+            MaxRadius = 52,
+			
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 2,
+
+            MuzzleVelocity = 32,
+			
+            ProjectileLifetime = 4,
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 1,		-- 600 DPS Air
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,STRUCTURE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR',
+            TrackingRadius = 1.2,
+        },
+		
+        {
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 300,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Zealot AA Missile',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land',
+            },
+			
+            FiringTolerance = 45,
+			
+            HeadingArcCenter = 310,
+            HeadingArcRange = 120,
+			
+            MaxRadius = 52,
+			
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 2,
+
+            MuzzleVelocity = 32,
+
+            NotExclusive = true,
+
+            ProjectileLifetime = 4,
+
+            RateOfFire = 1,		-- 600 DPS Air
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,STRUCTURE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR',
+            TrackingRadius = 1.2,
+        },
+        {
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 300,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Zealot AA Missile',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land',
+            },
+			
+            FiringTolerance = 45,
+			
+            HeadingArcCenter = 130,
+            HeadingArcRange = 120,
+			
+            Label = 'AA_Missile',
+			
+            MaxRadius = 52,
+			
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 2,
+
+            MuzzleVelocity = 32,
+
+            NotExclusive = true,
+
+            ProjectileLifetime = 4,
+
+            RateOfFire = 1,		-- 600 DPS Air
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,STRUCTURE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR',
+            TrackingRadius = 1.2,
+        },
+        {
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 300,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Zealot AA Missile',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land',
+            },
+			
+            FiringTolerance = 45,
+			
+            HeadingArcCenter = 50,
+            HeadingArcRange = 120,
+			
+            MaxRadius = 52,
+			
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 2,
+
+            MuzzleVelocity = 32,
+
+            NotExclusive = true,
+
+            ProjectileLifetime = 4,
+
+            RateOfFire = 1,		-- 600 DPS Air
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,STRUCTURE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR',
+            TrackingRadius = 1.2,
+        },
+		
+		-- 2 x Fizz ? Is Flak ? --
+		
+        {
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 125,
+            DamageFriendly = false,
+            DamageRadius = 4,
+            DamageType = 'Normal',
+			
+            DetonatesAtTargetHeight = true,
+			
+            DisplayName = 'Fizz Launcher',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land',
+            },
+			
+            FiringRandomness = 2.5,
+            FiringTolerance = 2,
+			
+            HeadingArcCenter = 270,
+            HeadingArcRange = 120,
+			
+			LeadTarget = true,
+			
+            MaxRadius = 50,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 35,
+
+            NotExclusive = true,			
+
+			ProjectileLifetime = 1,
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 2,		-- 300 DPS Air
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'AIR MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE,STRUCTURE',
+            TargetRestrictOnlyAllow = 'AIR',
+			
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'Left_Turret02_WepFocus',
+            TurretBonePitch = 'Left_Turret02_Barrel',
+            TurretBoneYaw = 'Left_Turret02',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 110,
+            TurretPitchSpeed = 90,
+			
+            TurretYaw = 0,
+            TurretYawRange = 110,
+            TurretYawSpeed = 90,
+			
+            Turreted = true,
+        },
+        {
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 125,
+            DamageFriendly = false,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+			
+            DetonatesAtTargetHeight = true,
+			
+            DisplayName = 'Fizz Launcher',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land',
+            },
+			
+            FiringRandomness = 2.5,
+            FiringTolerance = 2,
+			
+            HeadingArcCenter = 90,
+            HeadingArcRange = 120,
+
+			LeadTarget = true,
+			
+            MaxRadius = 50,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 35,
+
+            NotExclusive = true,			
+
+			ProjectileLifetime = 1,
+
+            RateOfFire = 2,		-- 300 DPS Air
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'AIR MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE,STRUCTURE',
+            TargetRestrictOnlyAllow = 'AIR',
+			
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'Right_Turret02_WepFocus',
+            TurretBonePitch = 'Right_Turret02_Barrel',
+            TurretBoneYaw = 'Right_Turret02',
+
+            TurretPitch = 0,
+            TurretPitchRange = 110,
+            TurretPitchSpeed = 90,
+
+            TurretYaw = 0,
+            TurretYawRange = 110,
+            TurretYawSpeed = 90,
+
+            Turreted = true,
+        },
+		
+		--- Depth Charges ---
+        {
+            BallisticArc = 'RULEUBA_None',
+            BelowWaterTargetsOnly = true,
+            
+            CollideFriendly = false,
+			
+            Damage = 600,
+            DamageRadius = 2.5,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Harmonic Depth Charge',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Seabed|Sub|Water',
+            },
+			
+            FiringRandomness = 18,
+            FiringTolerance = 5,
+			
+            MaxRadius = 12,
+
+            MuzzleSalvoDelay = 0.5,
+            MuzzleSalvoSize = 6,
+
+            MuzzleVelocity = 6,
+            
+            NotExclusive = true,
+
+			ProjectileLifetime = 7,
+
+            RackSalvoReloadTime = 3,
+            
+            RangeCategory = 'UWRC_AntiNavy',
+			
+            RateOfFire = 0.5,   -- controlled by MuzzleSalvoDelay and RackReload = 6 seconds = 3600/6 = 600 DPS
+			
+            TargetCheckInterval = 2,
+            
+            TargetPriorities = {
+                'SUBMARINE',
+                'SUBMERSIBLE',
+                'MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,HOVER',
+        },		
+
+        {
+            Damage = 6250,
+            DamageFriendly = true,
+            DamageRadius = 11,
+            DamageType = 'Normal',
+            DisplayName = 'Air Crash',
+            DummyWeapon = true,
+            Label = 'DeathImpact',
+        },
+    },
+}
