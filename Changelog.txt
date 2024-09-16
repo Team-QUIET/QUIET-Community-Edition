@@ -8,6 +8,13 @@
 # T1 Shard AA Boat
 Shard receives a significant 20 -> 12.5 DPS Nerf as well as AoE Reduction from 2 -> 1.25 to stop it from dominating T2 Torpedo Bombers via spam.
 
+# T2 Submarine Hunters
+Projectile Count Reduced from 3 -> 1
+Damage reduced by 50%
+SalvoDelay increase to 1 Second on all T2 Submarines
+Torpedo Defense on Submarine Hunters from 9 -> 23 RoF 
+Torpedo Defense Range on Submarine Hunters from 3.2 -> 3.3
+
 # T2 Destroyers
 T2 Destroyers receive another Torpedo Defense Buff to combat submarines 
 
