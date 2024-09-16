@@ -1,0 +1,144 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "uaa0102",
+
+    AI = {
+        GuardReturnRadius = 75,
+        GuardScanRadius = 45,
+    },
+	
+    Defense = {
+        Health = 285,
+        MaxHealth = 285,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 3500,
+        BuildCostMass = 48,
+        BuildTime = 1050,
+    },
+	
+    Weapon = {
+        {
+            AutoInitiateAttackCommand = true,
+
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 8,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Sonic Pulse Battery',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air',
+                Land = 'Air|Land',
+            },
+			
+            FiringTolerance = 0,
+			
+            Label = 'SonicPulseBattery',
+			
+            MaxRadius = 30,
+
+            MuzzleVelocity = 70,
+			
+            NeedPrep = true,
+
+			ProjectileLifetime = 0.5,
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 2,		-- 28 DPS Air
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 40,
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'AIR MOBILE',
+                'AIR MOBILE -INTELLIGENCE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR',
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'Turret_Muzzle_Right',
+            TurretBonePitch = 'Turret_Muzzle_Right',
+            TurretBoneYaw = 'Turret_Muzzle_Right',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 55,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 45,
+            TurretYawSpeed = 180,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+        },
+        {
+            AutoInitiateAttackCommand = false,
+
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 8,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Sonic Pulse Battery',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land',
+                Land = 'Air|Land',
+            },
+			
+            FiringTolerance = 0,
+			
+            Label = 'SonicPulseBattery',
+			
+            MaxRadius = 30,
+
+            MuzzleVelocity = 70,
+			
+            PrefersPrimaryWeaponTarget = true,
+
+            ProjectileLifetime = 0.6,
+			
+            RateOfFire = 2,		-- another 28 DPS Air
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 50,
+
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'MOBILE -INTELLIGENCE',
+            },
+            TargetRestrictDisallow = 'STRUCTURE,UNTARGETABLE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR',
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'Turret_Muzzle_Left',
+            TurretBonePitch = 'Turret_Muzzle_Left',
+            TurretBoneYaw = 'Turret_Muzzle_Left',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 55,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 55,
+            TurretYawSpeed = 180,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+        },
+    },
+}

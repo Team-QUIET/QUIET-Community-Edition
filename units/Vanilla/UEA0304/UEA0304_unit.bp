@@ -1,0 +1,92 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "uea0304",
+
+    Air = {
+        AutoLandTime = 1,
+        BankFactor = 2.5,
+        BankForward = false,
+        BreakOffDistance = 60,
+        BreakOffIfNearNewTarget = true,
+        BreakOffTrigger = 30,
+        CanFly = true,
+        CombatTurnSpeed = 0.8,
+        EngageDistance = 50,
+        KLift = 3,
+        KLiftDamping = 2.5,
+        KMove = 1,
+        KMoveDamping = 2,
+        KRoll = 2,
+        KRollDamping = 2,
+        KTurn = 0.8,
+        KTurnDamping = 1,
+        LiftFactor = 7,
+        MaxAirspeed = 17,
+        MinAirspeed = 15,
+        PredictAheadForBombDrop = 3,
+        StartTurnDistance = 5,
+        TightTurnMultiplier = 0,
+        TurnSpeed = 0.8,
+        Winged = true,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+
+            AutoInitiateAttackCommand = true,
+
+            BallisticArc = 'RULEUBA_None',
+			
+            BombDropThreshold = 3.5,
+			
+            CollideFriendly = false,
+			
+            Damage = 3000,
+            DamageFriendly = true,
+            DamageRadius = 4,
+            DamageType = 'Normal',
+			
+            DisplayName = 'High Yield Bomb',
+			
+            EffectiveRadius = 25,
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Land|Water|Seabed',
+                Land = 'Land|Water|Seabed',
+            },
+            FiringRandomness = 0,
+            FiringTolerance = 6,
+			
+			FixBombTrajectory = true,
+					
+            MaxRadius = 90,
+
+            MuzzleVelocity = 0,
+			
+            NeedToComputeBombDrop = true,
+
+            RateOfFire = 0.125,
+
+            TargetCheckInterval = 3,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'STRUCTURE -WALL',
+                'ENGINEER',
+                'ALLUNITS -WALL',
+            },
+            TargetRestrictDisallow = "UNTARGETABLE",
+            TurretDualManipulators = false,
+            Turreted = false,
+            WeaponCategory = "Bomb",
+            WeaponRepackTimeout = 0,
+            WeaponUnpacks = false,
+        },
+		
+		-- Tail Gun --
+		
+        {
+
+        },
+    },
+}

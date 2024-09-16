@@ -1,0 +1,80 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "xsa0102",
+
+    AI = {
+        GuardReturnRadius = 75,
+        GuardScanRadius = 45,
+    },
+	
+    Defense = {
+        Health = 290,
+        MaxHealth = 290,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 3500,
+        BuildCostMass = 50,
+        BuildTime = 1050,
+    },
+	
+    Weapon = {
+        {
+            AutoInitiateAttackCommand = true,
+
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 11.6,
+            DamageType = 'Normal',
+            DisplayName = 'Shleo AA AutoGun',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land',
+                Land = 'Air',
+            },
+			
+            FiringTolerance = 0,
+			
+            Label = 'SonicPulseBattery',
+			
+            MaxRadius = 30,
+
+            MuzzleVelocity = 75,
+			
+			ProjectileLifetime = 0.5,
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 5,		-- 58 DPS Air
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 50,
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,STRUCTURE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR',
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'Muzzle',
+            TurretBonePitch = 'Muzzle',
+            TurretBoneYaw = 'Muzzle',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 55,
+            TurretPitchSpeed = 360,
+			
+            TurretYaw = 0,
+            TurretYawRange = 55,
+            TurretYawSpeed = 360,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+        },
+    },
+}

@@ -1,0 +1,146 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "ura0102",
+
+    AI = {
+        GuardReturnRadius = 75,
+        GuardScanRadius = 45,
+    },
+	
+    Defense = {
+        Health = 280,
+        MaxHealth = 280,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 3500,
+        BuildCostMass = 50,
+        BuildTime = 1050,
+    },
+	
+    Weapon = {
+        {
+            AutoInitiateAttackCommand = true,
+
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 14,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Electron Autocannon',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land',
+            },
+			
+            FiringTolerance = 0,
+			
+            Label = 'AutoCannon',
+			
+            MaxRadius = 30,
+
+            MuzzleVelocity = 70,
+			
+            ProjectileLifetime = 0.5,
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 2,
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 50,
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'AIR MOBILE -INTELLIGENCE',
+                'AIR MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,STRUCTURE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR',
+			
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'Left_Muzzle01',
+            TurretBonePitch = 'Left_Muzzle01',
+            TurretBoneYaw = 'Left_Muzzle01',
+
+            TurretPitch = 0,
+            TurretPitchRange = 55,
+            TurretPitchSpeed = 360,
+
+            TurretYaw = 0,
+            TurretYawRange = 55,
+            TurretYawSpeed = 360,
+
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+        },
+        {
+            AlwaysRecheckTarget = true,
+
+            AutoInitiateAttackCommand = false,
+
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 14,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Electron Autocannon',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land',
+                Land = 'Air|Land',
+            },
+			
+            FiringTolerance = 0,
+			
+            Label = 'AutoCannon',
+			
+            MaxRadius = 30,
+
+            MuzzleVelocity = 70,
+			
+            PrefersPrimaryWeaponTarget = true,
+
+            ProjectileLifetime = 0.5,
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 2,
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 50,
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE -INTELLIGENCE',
+                'MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,STRUCTURE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR',
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'Right_Muzzle01',
+            TurretBonePitch = 'Right_Muzzle01',
+            TurretBoneYaw = 'Right_Muzzle01',
+
+            TurretPitch = 0,
+            TurretPitchRange = 55,
+            TurretPitchSpeed = 360,
+
+            TurretYaw = 0,
+            TurretYawRange = 55,
+            TurretYawSpeed = 360,
+
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+        },
+    },
+}
