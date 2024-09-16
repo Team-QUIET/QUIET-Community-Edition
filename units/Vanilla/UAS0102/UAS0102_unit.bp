@@ -1,0 +1,75 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "uas0102",
+	
+    Weapon = {
+        {
+            AlwaysRecheckTarget = true,
+            BallisticArc = 'RULEUBA_None',
+
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 12.5,
+			DamageFriendly = false,
+			DamageRadius = 1,
+            DamageType = 'Normal',
+			
+			DetonatesAtTargetHeight = true,
+			
+            DisplayName = 'Hi-V Pulse Battery',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+			
+            FiringRandomness = 0.5,
+            FiringTolerance = 0.05,
+			
+            Label = 'AAGun',
+			
+			LeadTarget = true,
+			
+            MaxRadius = 44,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 3,
+
+            MuzzleVelocity = 70,
+			
+            ProjectileLifetime = 0.9,
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 2,		---- 3 times 12.5 damage = 37.5 damage twice per second = 75 DPS
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'HIGHPRIAIR',
+                'BOMBER',
+				'ANTINAVY',
+                'GROUNDATTACK',
+                'AIR MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TrackingRadius = 1.3,
+			
+            TurretBoneMuzzle = 'Turret_Muzzle01',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 45,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+			
+            Turreted = true,
+			UseFiringSolutionInsteadOfAimBone = true,
+        },
+    },
+}
