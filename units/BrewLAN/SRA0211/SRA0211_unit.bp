@@ -1,0 +1,97 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "sra0211",
+	
+    Air = {
+        AutoLandTime = 1,
+        BankFactor = 2.5,
+        BankForward = false,
+        BreakOffDistance = 60,
+        BreakOffIfNearNewTarget = true,
+        BreakOffTrigger = 30,
+        CanFly = true,
+        CombatTurnSpeed = 0.8,
+        EngageDistance = 50,
+        KLift = 3,
+        KLiftDamping = 2.5,
+        KMove = 1,
+        KMoveDamping = 2,
+        KRoll = 2,
+        KRollDamping = 2,
+        KTurn = 0.8,
+        KTurnDamping = 1,
+        LiftFactor = 7,
+        MaxAirspeed = 15,
+        MinAirspeed = 15,
+        PredictAheadForBombDrop = 3,
+        StartTurnDistance = 5,
+        TightTurnMultiplier = 0,
+        TurnSpeed = 0.8,
+        Winged = true,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 19000,
+        BuildCostMass = 375,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            
+            AutoInitiateAttackCommand = true,
+            
+            BallisticArc = 'RULEUBA_None',
+			
+            BombDropThreshold = 3.5,
+			
+            CollideFriendly = false,
+			
+            Damage = 800,
+            DamageFriendly = true,
+            DamageRadius = 2.2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Neutron Bomb',
+			
+            EffectiveRadius = 25,
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Land|Water|Seabed',
+                Land = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0,
+            FiringTolerance = 3,
+			
+            Label = 'Bomb',
+			
+            MaxRadius = 90,
+			
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 0,
+            NeedToComputeBombDrop = true,
+            
+            RackFireTogether = false,
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 10,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
+            RateOfFire = 0.2,   -- 160 DPS
+			
+            TargetCheckInterval = 2,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.15,
+            Turreted = false,
+            WeaponCategory = 'Bomb',
+        },
+    },
+}
