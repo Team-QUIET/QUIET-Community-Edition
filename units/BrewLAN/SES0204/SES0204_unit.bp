@@ -1,0 +1,60 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "ses0204",
+    
+    Defense = {
+        MissileTorpDestroy = { AttachBone = {'Niode_M'}, Radius = 3.3, RedirectRateOfFire = 23, ProjectileCategories = {'TORPEDO'} },
+    },
+    
+    Weapon = {
+        {
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+            
+            Damage = 175,           -- most potent T2 torpedo
+            DamageType = 'Normal',
+            
+            DisplayName = 'Angler Torpedo',
+            
+            FireTargetLayerCapsTable = {
+                Sub = 'Seabed|Sub|Water',
+                Water = 'Seabed|Sub|Water',
+            },
+            
+            FiringTolerance = 15,
+            
+            Label = 'Torpedo',
+            
+            MaxRadius = 48,
+            
+            MuzzleSalvoDelay = 0.82,
+            MuzzleSalvoSize = 1,
+            
+            MuzzleVelocity = 2,
+            
+            ProjectileLifetime = 7,
+            
+            RackSalvoReloadTime = 0.98,
+            
+            RangeCategory = 'UWRC_AntiNavy',
+            
+            RateOfFire = 1,
+            
+            TargetCheckInterval = 0.5,
+            
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'STRUCTURE DEFENSE',
+                'SPECIALLOWPRI',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
+            TrackingRadius = 1.1,
+        },
+        
+        {
+
+        },
+    },
+}
