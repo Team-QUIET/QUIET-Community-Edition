@@ -42,15 +42,15 @@ UnitBlueprint {
 			
             MaxRadius = 34,
 
-            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 2,
-            MuzzleVelocity = 8,
+            MuzzleVelocity = 10,
 			
             ProjectileLifetime = 3,
 
             RangeCategory = 'UWRC_Countermeasure',
 			
-            RateOfFire = 1,     -- rate of fire controlled by SalvoDelay and WeaponRepackTimeout - 2 every 0.4 seconds
+            RateOfFire = 1,     -- rate of fire controlled by SalvoDelay and WeaponRepackTimeout - 2 every 0.2 seconds
 			
             TargetCheckInterval = 1,
 			
