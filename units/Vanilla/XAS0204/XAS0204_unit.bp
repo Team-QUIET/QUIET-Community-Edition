@@ -1,0 +1,58 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "xas0204",
+	
+    Defense = {
+        MissileTorpDestroy = { AttachBone = {'XAS0204'}, Radius = 3.3, RedirectRateOfFire = 23, ProjectileCategories = {'TORPEDO'} },
+    },
+	
+    Weapon = {
+        {
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 135,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Chrono Torpedo',
+			
+            FireTargetLayerCapsTable = {
+                Sub = 'Seabed|Sub|Water',
+                Water = 'Seabed|Sub|Water',
+            },
+			
+            FiringTolerance = 15,
+			
+            Label = 'Torpedo',
+			
+            MaxRadius = 48,
+			
+            MuzzleSalvoDelay = 0.9,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 2,
+			
+            ProjectileLifetime = 7,
+
+            RackSalvoReloadTime = 1,
+
+            RangeCategory = 'UWRC_AntiNavy',
+			
+            RateOfFire = 1,	  
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 20,
+			
+            TargetCheckInterval = 2,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'SUBMERSIBLE',
+				'MOBILE',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
+            TrackingRadius = 1.1,
+        },
+    },
+}
