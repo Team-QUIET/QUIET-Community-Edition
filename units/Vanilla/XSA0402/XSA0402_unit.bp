@@ -1,0 +1,115 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "xsa0402",
+	
+    Air = {
+        AutoLandTime = 1,
+        BankFactor = 2.5,
+        BankForward = false,
+        BreakOffDistance = 60,
+        BreakOffIfNearNewTarget = true,
+        BreakOffTrigger = 30,
+        CanFly = true,
+        CombatTurnSpeed = 0.8,
+        EngageDistance = 50,
+        KLift = 3,
+        KLiftDamping = 2.5,
+        KMove = 1,
+        KMoveDamping = 2,
+        KRoll = 2,
+        KRollDamping = 2,
+        KTurn = 0.8,
+        KTurnDamping = 1.2,
+        LiftFactor = 7,
+        MaxAirspeed = 18,
+        MinAirspeed = 16,
+        PredictAheadForBombDrop = 3,
+        StartTurnDistance = 1,
+        TightTurnMultiplier = 0,
+        TurnSpeed = 0.9,
+        Winged = true,
+    },
+	
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            AttackGroundTries = 20,
+            AutoInitiateAttackCommand = true,
+            BallisticArc = 'RULEUBA_None',
+            BombDropThreshold = 20,
+            CollideFriendly = false,
+            Damage = 12000,
+            DamageFriendly = true,
+            DamageRadius = 19,
+            DamageType = 'Normal',
+            DisplayName = 'Ohwalli Strategic Bomb',
+            EffectiveRadius = 38,
+            EnergyDrainPerSecond = 1950,    -- this would be in addition to the 1000 it already drains - u might think this is excessive - but not even close.
+                                            -- According to formula, this weapon should require close to 30k drain to recharge in 10 seconds
+            EnergyRequired = 29250,         -- 15 seconds to charge - 
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Land|Water|Seabed',
+                Land = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0,
+            FiringTolerance = 6,
+            FixBombTrajectory = true,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 0,
+            NeedPrep = true,
+            NeedToComputeBombDrop = true,
+			HeadingArcCenter = 0,
+			HeadingArcRange = 360,
+            MaxRadius = 90,
+            EffectiveRadius = 90,		
+            NotExclusive = true,
+            RateOfFire = 1,         -- controlled entirely by charge cycle --
+            RackFireTogether = false,
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 12,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
+            SlavedToBody = false,
+            SlavedToBodyArcRange = 360,
+            TargetCheckInterval = 2,
+            TargetPriorities = {
+                'SPECIALHIGHPRI -AIR',
+				'EXPERIMENTAL -AIR',
+                'STRUCTURE -WALL',
+                'MOBILE -AIR',
+				'ENGINEER',
+                'ALLUNITS -WALL',
+            },
+            TargetRestrictDisallow = "UNTARGETABLE",
+            TurretDualManipulators = false,
+            Turreted = false,
+            WeaponCategory = "Bomb",
+        },
+		
+		-- Right Left AA
+        {
+            
+        },
+
+		-- Left Right AA
+        {
+        
+        },
+
+		-- Right Rear AA
+        {
+        
+        },
+
+		-- Left Rear AA
+        {
+            
+        },
+    },
+}
