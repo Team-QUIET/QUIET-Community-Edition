@@ -5,11 +5,32 @@
 
 ### TBD
 
+# T1 Shard AA Boat
+Shard receives a significant 20 -> 12.5 DPS Nerf as well as AoE Reduction from 2 -> 1.25 to stop it from dominating T2 Torpedo Bombers via spam.
+
+# T2 Destroyers
+T2 Destroyers receive another Torpedo Defense Buff to combat submarines 
+
+# Overhaul
+-- Air Overhaul introduces many fixes to physics of Bombers & Rebalancing of Fighters to many T2 Fighters relevant and T1 Fighters far less effective
+T1 Air Fighters:
+20 HP Reduction 
+5-10% DPS Reduction
+T2 Air Fighters:
+50% Increase in Dps
+3k E Cost Reduction
+30 M Cost Reduction
+Health: 1300 - 1500 (Depending on Faction)
+Misc:
+All Bombers physics reworked to allow them to properly be micro'd and bombs dropped significantly better
+
+### 9/15/24
+
 # T3 Seraphim Submarine
 Slight Nerf to Seraphim Submarine to prevent the meta where you would shift g 5-6 seraphim subs on top of each other and their torp defense would infinitely be able to defend a SIGNIFICANT amount of torps.
 
 # T2 Destroyers
-All Torpedo on Destroyers significantly buffed should be able to crush T1 Subs at a relative similar cost efficiency
+All Torpedo Defense on Destroyers significantly buffed should be able to crush T1 Subs at a relative similar cost efficiency
 
 # T2 Torpedo Bombers
 Torpedo Bombers nerfed to original 800-860 Health Values with a slight increase in E cost & M cost.
