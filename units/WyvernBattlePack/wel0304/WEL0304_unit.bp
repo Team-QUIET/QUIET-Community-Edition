@@ -1,0 +1,318 @@
+UnitBlueprint{
+
+    Description = "Amphibious Assault Tank",
+
+    AI = {
+        GuardScanRadius = 26,
+        TargetBones = { "WEL0304" },
+    },
+
+    Audio = {
+        Destroyed   = Sound { Bank = 'UELDestroy', Cue = 'UEL_Destroy_Med_Land', LodCutoff = 'UnitMove_LodCutoff' },
+        StartMove   = Sound { Bank = 'UEL',        Cue = 'UEL0202_Move_Start',   LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection = Sound { Bank = 'Interface',  Cue = 'UEF_Select_Tank',      LodCutoff = 'UnitMove_LodCutoff' },
+    },
+
+    Buffs = {
+        Regen = {
+            Level1 = 3,
+            Level2 = 6,
+            Level3 = 9,
+            Level4 = 12,
+            Level5 = 15,
+        },
+    },
+
+    BuildIconSortPriority = 40,
+
+    Categories = {
+        "AMPHIBIOUS",
+        "BUILTBYTIER3FACTORY",
+        "DIRECTFIRE",
+        "LAND",
+        "MOBILE",
+        "RECLAIMABLE",
+        "SELECTABLE",
+        "SUBMERSIBLE",
+        "TANK",
+        "TECH2", -- was TECH3
+        "UEF",
+        "VISIBLETORECON",
+    },
+
+    Defense = {
+        ArmorType = "Normal",
+        Health = 3200,
+        MaxHealth = 3200,
+        RegenRate = 2,
+        SurfaceThreatLevel = 37.3,
+    },
+
+    Display = {
+        Abilities = {
+            "<LOC ability_amphibious>Amphibious"
+        },
+
+        Mesh = { IconFadeInZoom = 130, LODs = { {LODCutoff = 215,Scrolling = true,ShaderName = "Unit"} } },
+        
+        MovementEffects = {
+            Land = {
+                Effects = { { Bones = {"Right_Exhaust","Left_Exhaust"}, Type = "GroundKickup01" } },
+                Treads = { ScrollTreads = true, TreadMarks = { {
+                            BoneName = "WEL0304",
+                            TreadMarks = "tank_treads_albedo",
+                            TreadMarksInterval = 0.2,
+                            TreadMarksSizeX = 1.15,
+                            TreadMarksSizeZ = 1,
+                            TreadOffset = { 0, 0, 0 },
+                        },
+                    },
+                },
+            },
+        },
+        
+        UniformScale = 0.06,
+    },
+    
+    Economy = {
+        BuildCostEnergy = 10000,
+        BuildCostMass = 900,
+        BuildTime = 450,
+    },
+
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = "UEF",
+        Icon = "amph",
+        UnitName = "Rommel",
+    },
+
+    Intel = {
+        VisionRadius = 32,
+        WaterVisionRadius = 20,
+    },
+
+    LifeBarHeight = 0.08,
+    LifeBarOffset = 0.9,
+    LifeBarSize = 1.3,
+
+    Physics = {
+        BackUpDistance = 5,
+        BankingSlope = 0,
+        DragCoefficient = 0.2,
+        LayerChangeOffsetHeight = -0.75,
+        MaxAcceleration = 1.6,
+        MaxBrake = 3.2,
+        MaxSpeed = 3.2,
+        MaxSpeedReverse = 2.4,
+        MaxSteerForce = 1000,
+        MeshExtentsX = 0.75,
+        MeshExtentsY = 0.45,
+        MeshExtentsZ = 1.25,
+        MinSpeedPercent = 0,
+        MotionType = "RULEUMT_Amphibious",
+        TurnRadius = 0,
+        TurnRate = 35,
+    },
+
+    SelectionSizeX = 0.8,
+    SelectionSizeZ = 1.1,
+    SelectionThickness = 0.3,
+
+    SizeX = 1.2,
+    SizeY = 0.6,
+    SizeZ = 1.8,
+
+    StrategicIconName = "icon_seabed3_directfire",
+    StrategicIconSortPriority = 125,
+
+    Transport = { TransportClass = 3 },
+
+    Veteran = {
+        Level1 = 10,
+        Level2 = 20,
+        Level3 = 30,
+        Level4 = 40,
+        Level5 = 50,
+    },
+
+    Weapon = {
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEL0401_Cannon_Exp_Lrg', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = "RULEUBA_LowArc",
+            CollideFriendly = false,
+
+            Damage = 550,
+            DamageRadius = 1.5,
+            DamageType = "Normal",
+
+            DisplayName = "Heavy Gauss Cannon",
+
+            FireTargetLayerCapsTable = {
+                Land = "Land|Water|Seabed",
+                Seabed = "Land|Water|Seabed",
+            },
+
+            FiringRandomnessWhileMoving = 0.4,
+            FiringTolerance = 0.5,
+
+            Label = "AssaultCannon",
+
+            MaxRadius = 32,
+
+            MuzzleVelocity = 40,
+
+            NotExclusive = true,
+
+            ProjectileId = "/projectiles/TDFGauss04/TDFGauss04_proj.bp",
+            ProjectileLifetime = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = { "Left_Barrel_Muzzle" },
+                    RackBone = "Turret_Barrel02",
+                },
+                {
+                    MuzzleBones = { "Right_Barrel_Muzzle" },
+                    RackBone = "Turret_Barrel01",
+                },
+            },
+            RackRecoilDistance = -1.5,
+
+            RangeCategory = "UWRC_DirectFire",
+
+            RateOfFire = 0.5,
+
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "DEFENSE",
+                "MOBILE",
+                "ALLUNITS -WALL",
+            },
+            TargetRestrictDisallow = "UNTARGETABLE",
+            TrackingRadius = 1.1,
+
+            TurretBoneDualMuzzle = "Left_Barrel_Muzzle",
+            TurretBoneDualPitch = "Turret_Barrel02",
+            TurretBoneMuzzle = "Right_Barrel_Muzzle",
+            TurretBonePitch = "Turret_Barrel01",
+            TurretBoneYaw = "Turret",
+
+            TurretDualManipulators = true,
+
+            TurretPitch = 0,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 45,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 40,
+
+            Turreted = true,
+        },
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = false,
+
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB4201_Phalanx_01', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = "RULEUBA_None",
+            CollideFriendly = false,
+
+            Damage = 15,
+            DamageRadius = 0,
+            DamageType = "Normal",
+
+            DisplayName = "Gatling Plasma Cannon",
+
+            FireTargetLayerCapsTable = {
+                Land = "Land|Water|Seabed",
+                Seabed = "Land|Water|Seabed",
+            },
+            FiringRandomness = 0.3,
+            FiringRandomnessWhileMoving = 0.6,
+
+            FiringTolerance = 2,
+
+            Label = "MiniGun",
+
+            MaxRadius = 26,
+
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 20,
+            MuzzleVelocity = 32,
+
+            NotExclusive = true,
+
+            ProjectileId = "/projectiles/TDPhalanx01/TDPhalanx01_proj.bp",
+            ProjectileLifetimeUsesMultiplier = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = { "Machine_Gun_Muzzle01" },
+                    RackBone = "minigun",
+                },
+            },
+
+            RackSalvoChargeTime = 1.5,
+            RackSalvoReloadTime = 2,
+
+            RangeCategory = "UWRC_IndirectFire",
+
+            RateOfFire = 1,
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "MOBILE",
+                "ALLUNITS -WALL",
+            },
+            TargetRestrictDisallow = "UNTARGETABLE",
+            TrackingRadius = 1.1,
+
+            TurretBoneMuzzle = "Machine_Gun_Muzzle01",
+            TurretBonePitch = "minigun",
+            TurretBoneYaw = "minigun",
+            TurretDualManipulators = false,
+
+            TurretPitch = 0,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 45,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 45,
+
+            Turreted = true,
+
+            WeaponRepackTimeout = 1.5,
+            WeaponUnpacks = true,
+        },
+    },
+
+    Wreckage = {
+        Blueprint = "/props/DefaultWreckage/DefaultWreckage_prop.bp",
+        EnergyMult = 0.2,
+        HealthMult = 0.9,
+        MassMult = 0.5,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = { Land = true },
+    },
+}
