@@ -1,0 +1,19 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "uab8765",
+	
+    Categories = {
+        'NIL',
+        'NIL',
+        'NIL',
+        'NIL',
+        'NIL',
+        'NIL',
+        'NIL',
+        'NIL',
+        'NIL',
+        'NIL',
+        'NIL',
+        'NIL',
+    },
+}
