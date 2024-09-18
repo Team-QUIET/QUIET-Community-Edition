@@ -1,4 +1,4 @@
-TMissileCruiseProjectile02 = Class(SingleBeamProjectile) {
+TMissileCruiseProjectileCE1 = Class(SingleBeamProjectile) {
 
     FxTrails = EffectTemplate.TMissileExhaust03,
     FxTrailOffset = -0.8,

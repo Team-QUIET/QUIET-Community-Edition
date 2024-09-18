@@ -1,0 +1,102 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "brot1exm1",
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 1.15,
+        MaxBrake = 2.65,
+        MaxSpeed = 2.65,
+        MaxSpeedReverse = 0,
+        MaxSteerForce = 10,
+        MeshExtentsX = 1,
+        MeshExtentsY = 1.2,
+        MeshExtentsZ = 2,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        StandUpright = true,
+        TurnRadius = 5,
+        TurnRate = 40,
+    },
+
+    Weapon = {
+        {
+
+		},
+        {
+
+		},
+		{
+            AboveWaterTargetsOnly = true,
+            
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 25,
+			DamageFriendly = true,
+            DamageRadius = 1,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Rockets',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 1,
+            FiringRandomness = 0.8,
+			
+            Label = 'rocket',
+			
+            MaxRadius = 28,
+			
+            MuzzleSalvoDelay = 0.4,
+            MuzzleSalvoSize = 6,
+            MuzzleVelocity = 17,
+			
+			PrefersPrimaryWeaponTarget = true,
+			
+            ProjectileLifetimeUsesMultiplier = 2,
+
+            RackSalvoReloadTime = 7.5,      -- 10 second cycle 
+
+            RangeCategory = 'UWRC_IndirectFire',
+
+            RateOfFire = 1,	-- 15dps
+			
+            TargetCheckInterval = 2.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE -AIR',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.05,
+			
+            TurretBoneDualMuzzle = 'rl01',
+            TurretBoneDualPitch = 'rl01',
+
+            TurretBoneMuzzle = 'rl04',
+            TurretBonePitch = 'rl04',
+
+            TurretBoneYaw = 'Turret',
+
+            TurretDualManipulators = true,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 15,
+			
+            TurretYaw = 0,
+            TurretYawRange = 45,
+            TurretYawSpeed = 15,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+        },
+    },
+}

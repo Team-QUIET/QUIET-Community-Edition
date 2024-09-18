@@ -1,0 +1,92 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "del0204",
+
+    Physics = {
+		BackUpDistance = 0,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 3.4,
+        MaxBrake = 3.4,
+        MaxSpeed = 3.4,
+        MaxSpeedReverse = 0,
+        MaxSteerForce = 7,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        StandUpright = true,
+        TurnRadius = 1,
+        TurnRate = 80,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = false,
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 15,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Gatling Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+            },
+            FiringRandomness = 0.1,
+            FiringTolerance = 0.1,
+			
+            MaxRadius = 30,
+			
+            MuzzleSalvoDelay = 0.3,	---- 15 rounds in 4.5 seconds
+            MuzzleSalvoSize = 15,	---- 15 rounds per salvo
+            MuzzleVelocity = 30,
+            
+            NoPause = true,
+			
+            ProjectileLifetimeUsesMultiplier = 1.1,
+
+            RackSalvoChargeTime = 3,	---- 3 seconds to warm up
+
+            RackSalvoReloadTime = 1,	---- 1 seconds to reload
+
+            RangeCategory = 'UWRC_DirectFire',
+            
+            RateOfFire = 1,			---- 15 * 15 every 5.5 seconds = 40 DPS
+            
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE -AIR',
+                'STRUCTURE -WALL',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TrackingRadius = 1.1,
+            
+            TurretBoneMuzzle = 'Left_Arm_Barrel_Muzzle',
+            TurretBonePitch = 'Left_Arm_B01',
+            TurretBoneYaw = 'Torso',
+            TurretDualManipulators = false,
+            
+            TurretPitch = 0,
+            TurretPitchRange = 50,
+            TurretPitchSpeed = 50,
+            
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+            
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+            WeaponRepackTimeout = 2,
+            WeaponUnpacks = true,
+        },
+        {
+            
+        },
+    },
+}

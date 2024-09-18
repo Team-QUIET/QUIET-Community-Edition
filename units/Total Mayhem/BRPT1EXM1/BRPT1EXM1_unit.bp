@@ -1,0 +1,32 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "brpt1exm1",
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+		
+        MaxAcceleration = 1.1,
+        MaxBrake = 2.7,
+        MaxSpeed = 2.7,
+        MaxSpeedReverse = 0,
+		
+        MaxSteerForce = 10,
+		
+        MeshExtentsX = 0.7,
+        MeshExtentsY = 0.5,
+        MeshExtentsZ = 0.8,
+		
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+		
+        RotateOnSpot = false,
+        RotateOnSpotThreshold = 0,
+		
+        TurnRadius = 5,
+        TurnRate = 40,
+    },
+}

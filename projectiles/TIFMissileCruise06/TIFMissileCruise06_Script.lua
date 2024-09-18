@@ -1,4 +1,4 @@
-local TMissileCruiseProjectile02 = import('/lua/terranprojectiles.lua').TMissileCruiseProjectile02
+local TMissileCruiseProjectileCE1 = import('/lua/terranprojectiles.lua').TMissileCruiseProjectileCE1
 
 local EffectTemplate = import('/lua/EffectTemplates.lua')
 local SingleBeamProjectile = import('/lua/sim/defaultprojectiles.lua').SingleBeamProjectile
@@ -7,7 +7,7 @@ local KillThread = KillThread
 local WaitSeconds = WaitSeconds
 local VDist2 = VDist2
 
-TIFMissileCruise06 = Class(TMissileCruiseProjectile02) {
+TIFMissileCruise06 = Class(TMissileCruiseProjectileCE1) {
 
     FxTrails = EffectTemplate.TMissileExhaust03,
     FxTrailOffset = -0.85,
@@ -26,7 +26,7 @@ TIFMissileCruise06 = Class(TMissileCruiseProjectile02) {
     
     OnCreate = function(self)
 
-        TMissileCruiseProjectile02.OnCreate(self)
+        TMissileCruiseProjectileCE1.OnCreate(self)
 
         self:SetCollisionShape('Sphere', 0, 0, 0, 2)
 

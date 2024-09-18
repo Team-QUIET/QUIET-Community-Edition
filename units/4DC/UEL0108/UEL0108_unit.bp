@@ -1,0 +1,81 @@
+UnitBlueprint{
+    Merge = true,
+    BlueprintId = "uel0108",
+
+    Physics = {
+        BankingSlope = 0,
+        DragCoefficient = 0.2,
+        MaxAcceleration = 1.15,
+        MaxBrake = 2.55,
+        MaxSpeed = 2.55,
+        MaxSpeedReverse = 0,
+        MaxSteerForce = 10,
+        MeshExtentsX = 0.5,
+        MeshExtentsY = 0.25,
+        MeshExtentsZ = 0.7,
+        MinSpeedPercent = 0,
+        MotionType = "RULEUMT_Land",
+        RotateOnSpot = false,
+        RotateOnSpotThreshold = 0.1,
+        TurnRadius = 5,
+        TurnRate = 40,
+    },
+
+    Weapon = {
+        {
+            BallisticArc = "RULEUBA_LowArc",
+
+            CollideFriendly = false,
+
+            Damage = 88,
+            DamageFriendly = false,
+            DamageRadius = 1,
+            DamageType = "Normal",
+
+            DisplayName = "Gauss Cannon",
+
+            FireTargetLayerCapsTable = { Land = "Land|Water" },
+            FiringRandomness = 0.1,
+            FiringRandomnessWhileMoving = 0.6,
+            FiringTolerance = 2,
+
+            Label = "MainGun",
+
+            MaxRadius = 27,
+
+            MuzzleVelocity = 25,
+
+            RackRecoilDistance = -8,
+
+            RangeCategory = "UWRC_DirectFire",
+
+            RateOfFire = 0.5,
+
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "COMMAND",
+                "MOBILE",
+                "DEFENSE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = "UNTARGETABLE",
+            TrackingRadius = 1.2,
+
+            TurretBoneMuzzle = "Muzzle",
+            TurretBonePitch = "Sleeve",
+            TurretBoneYaw = "Turret",
+            TurretDualManipulators = false,
+
+            TurretPitch = 0,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 40,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 48,
+
+            Turreted = true,
+        },
+    },
+}
