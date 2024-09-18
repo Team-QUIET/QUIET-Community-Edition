@@ -5,6 +5,19 @@
 
 ### TBD
 
+# T4 Mothra
+Damage 2950 -> 1475
+DamageRadius 2.5 -> 2
+Range 100 -> 88
+
+# Unit Removal
+UEF: 
+T2 Janus, T3 Warhammer, T4 Rampage
+Cybran:
+T2 Cosair
+All: 
+Experimental Resource Storages
+
 UEF Pillar / Cybran Hoplite / UEF Mongoose
 TurretYawSpeed from 45 -> 90
 
