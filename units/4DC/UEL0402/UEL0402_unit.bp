@@ -218,6 +218,9 @@ UnitBlueprint {
 								TurretYawSpeed = 140, -- was 40
 					
 								Turreted = true,
+								SlavedToBody = true,
+								SlavedToBodyArcRange = 10,
+								PrefersPrimaryWeaponTarget = true,
 					
 								WeaponRepackTimeout = 2,
 								WeaponUnpacks = true,
@@ -308,7 +311,9 @@ UnitBlueprint {
 								TurretYaw = 0, -- was 42
 								TurretYawRange = 10, -- was 58
 								TurretYawSpeed = 140, -- was 40
-					
+								SlavedToBody = true,
+								SlavedToBodyArcRange = 10,
+								PrefersPrimaryWeaponTarget = true,
 								Turreted = true,
 
 								WeaponRepackTimeout = 2,
@@ -422,6 +427,7 @@ UnitBlueprint {
 								TurretYawSpeed = 0,
 					
 								Turreted = true,
+								PrefersPrimaryWeaponTarget = true,
 						},
 						{
 					AboveWaterFireOnly = true,
@@ -525,6 +531,7 @@ UnitBlueprint {
 								TurretYawSpeed = 0,
 					
 								Turreted = true,
+								PrefersPrimaryWeaponTarget = true,
 						},
 				
 				-- a close combat riot gun --
