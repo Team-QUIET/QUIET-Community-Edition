@@ -1,0 +1,101 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "brot3shpd",
+	
+    Economy = {
+        BuildCostEnergy = 91000,
+        BuildCostMass = 12000,
+		
+		BuildRate = 20,		-- for enhancements
+		
+        BuildTime = 8600,
+		
+        RebuildBonusIds = {'BROT3SHPD'},
+    },
+	
+    Weapon = {
+		{
+            AboveWaterTargetsOnly = true,
+
+            BallisticArc = 'RULEUBA_LowArc',		
+   
+            CollideFriendly = false,
+			
+            Damage = 1475,
+            DamageRadius = 2.5,
+            DamageType = 'ShieldMult1.2',
+			
+            DisplayName = 'Wave Cannon',
+
+            EnergyChargeForFirstShot = false,            
+			
+            EnergyDrainPerSecond = 2800,
+            EnergyRequired = 9800,      -- 3.5 second charge 
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0.2,
+            FiringTolerance = 1,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 88,
+            MinRadius = 10,
+			
+            MuzzleChargeDelay = 0.8,
+
+            MuzzleVelocity = 26,
+            
+            NotExclusive = true,
+
+            ProjectileLifetime = 4,
+
+            RackFireTogether = true,
+			
+            RackRecoilDistance = -3,
+
+            RackSalvoReloadTime = 1.9,  -- cycle is 3.6 = 5900/3.6 = 1638 DPS
+            
+            RackSlavedToTurret = true,
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 2,
+            TargetCheckInterval = 2,
+			
+            TargetPriorities = {
+                'EXPERIMENTAL',
+                'SHIELD',
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TrackingRadius = 1.10,
+			
+            TurretBoneMuzzle = 'aim',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 55,
+            TurretPitchSpeed = 26,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 24,
+
+            Turreted = true,
+        },
+        {
+            
+        },
+        {
+            
+        },
+    },
+}
