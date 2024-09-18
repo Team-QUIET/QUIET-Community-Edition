@@ -1,0 +1,21 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "dra0202",
+	
+    Categories = {
+        'NIL',
+        'NIL',
+        'NIL',
+        'NIL',
+        'NIL',
+        'NIL',
+        'NIL',
+        'NIL',
+        'NIL',
+        'NIL',
+        'NIL',
+        'NIL',
+        'NIL',
+        'NIL',
+    },
+}
