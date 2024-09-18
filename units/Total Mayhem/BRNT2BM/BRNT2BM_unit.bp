@@ -1,0 +1,223 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "brnt2bm",
+
+    Weapon = {
+		{
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 95,
+			DamageRadius = 1.5,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Rockets',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+            },
+            
+            FiringTolerance = 0.5,
+			
+			FiringRandomness = 0,
+            FiringRandomnessWhileMoving = 0.1,
+			
+            Label = 'rocket',
+			
+            MaxRadius = 40,
+			MinRadius = 8,
+			
+            MuzzleSalvoDelay = 0.6,
+            MuzzleSalvoSize = 3,
+            MuzzleVelocity = 20,
+            
+            NotExclusive = true,
+
+            ProjectileLifetime = 3,
+
+            RackFireTogether = true,
+
+            RackSlavedToTurret = true,
+			
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 0.1,
+			RenderFireClock = true,
+			
+            TargetCheckInterval = 2.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneDualMuzzle = 'rl01',
+            TurretBoneDualPitch = 'rocketlauncher',
+			
+            TurretBoneMuzzle = 'rl03',
+            TurretBonePitch = 'rocketlauncher01',
+			
+            TurretBoneYaw = 'Turret',
+
+            TurretDualManipulators = true,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 65,
+            TurretPitchSpeed = 65,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 60,
+			
+            Turreted = true,
+        },
+		{
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 8,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Gauss Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+            },
+			
+			FiringRandomness = 0,
+			FiringRandomnessWhileMoving = 0.35,
+            FiringTolerance = 1,
+			
+            MaxRadius = 32,
+
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 4,
+            MuzzleVelocity = 46,
+			
+			NoPause = true,
+            
+            NotExclusive = true,
+
+			ProjectileLifetime = 0.9,
+
+            RackFireTogether = true,
+
+            RackSlavedToTurret = true,
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 1,
+			
+            TargetCheckInterval = 0.3,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,HIGHALTAIR,WALL',
+            TrackingRadius = 1.1,
+			
+            TurretBoneDualMuzzle = 'minigunmuzzle',
+            TurretBoneDualPitch = 'minigun',
+			
+            TurretBoneMuzzle = 'minigunmuzzle01',
+            TurretBonePitch = 'minigun01',
+			
+            TurretBoneYaw = 'arm',
+			
+            TurretDualManipulators = true,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 65,
+            TurretPitchSpeed = 45,
+			
+            TurretYaw = 0,
+            TurretYawRange = 4,
+            TurretYawSpeed = 20,
+			
+            Turreted = true,
+        },
+		{
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 8,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Gauss Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+            },
+			
+			FiringRandomness = 0,
+			FiringRandomnessWhileMoving = 0.35,
+            FiringTolerance = 1,
+			
+            MaxRadius = 32,
+
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 4,
+            MuzzleVelocity = 46,
+			
+			NoPause = true,
+            
+            NotExclusive = true,
+
+			ProjectileLifetime = 0.9,
+
+            RackFireTogether = true,
+
+            RackSlavedToTurret = true,
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 1,
+			
+            TargetCheckInterval = 0.3,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,HIGHALTAIR,WALL',
+            TrackingRadius = 1.1,
+			
+            TurretBoneDualMuzzle = 'minigunmuzzle02',
+            TurretBoneDualPitch = 'minigun02',
+			
+            TurretBoneMuzzle = 'minigunmuzzle03',
+            TurretBonePitch = 'minigun03',
+			
+            TurretBoneYaw = 'arm01',
+			
+            TurretDualManipulators = true,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 65,
+            TurretPitchSpeed = 45,
+			
+            TurretYaw = 0,
+            TurretYawRange = 4,
+            TurretYawSpeed = 20,
+			
+            Turreted = true,
+        },        
+    },
+}

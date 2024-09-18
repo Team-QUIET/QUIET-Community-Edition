@@ -1,0 +1,96 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "drl0204",
+
+    AI = {
+        AttackAngle = 0,
+    },
+	
+    Physics = {
+        BackUpDistance = 0,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 3.3,
+        MaxBrake = 3.3,
+        MaxSpeed = 3.3,
+        MaxSpeedReverse = 0,
+        MaxSteerForce = 10,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        TurnRadius = 1,
+        TurnRate = 80,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            
+            BallisticArc = 'RULEUBA_None',
+
+            CollideFriendly = false,
+			
+            Damage = 75,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Iridium Rocket Pack',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0.1,
+            FiringRandomnessWhileMoving = 0.2,
+			
+            FiringTolerance = 0.1,
+
+            LeadTarget = true,
+			
+            MaxRadius = 42,
+			
+            MuzzleSalvoDelay = 0.5,
+            MuzzleSalvoSize = 3,
+            
+            MuzzleVelocity = 25,
+            MuzzleVelocityRandom = 0.5,
+			
+            ProjectileLifetime = 4,
+
+            RackSalvoReloadTime = 2.5,
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 0.5,     -- controlled by delays = 4 = 56 DPS
+
+            TargetCheckInterval = 2.0,
+
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS,-WALL',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Turret_Muzzle_01',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 100,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+			
+            Turreted = true,
+        },
+    },
+}
