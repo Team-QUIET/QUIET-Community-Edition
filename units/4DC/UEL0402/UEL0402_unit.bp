@@ -171,7 +171,7 @@ UnitBlueprint {
 					
 								MuzzleVelocity = 40,
 					
-								NotExclusive = true,             
+								NotExclusive = false,             
 					
 								ProjectileId = '/projectiles/TDFHeavyPlasmaGatlingCannon01/TDFHeavyPlasmaGatlingCannon01_proj.bp',
 								ProjectileLifetime = 1.1,
@@ -221,6 +221,8 @@ UnitBlueprint {
 								SlavedToBody = true,
 								SlavedToBodyArcRange = 10,
 								PrefersPrimaryWeaponTarget = true,
+								LeadTarget = true,
+								UseFiringSolutionInsteadOfAimBone = true,
 					
 								WeaponRepackTimeout = 2,
 								WeaponUnpacks = true,
@@ -267,7 +269,7 @@ UnitBlueprint {
 					
 								MuzzleVelocity = 40,
 					
-								NotExclusive = true,
+								NotExclusive = false,
 					
 								ProjectileId = '/projectiles/TDFHeavyPlasmaGatlingCannon01/TDFHeavyPlasmaGatlingCannon01_proj.bp',
 								ProjectileLifetime = 1.1,
@@ -314,10 +316,12 @@ UnitBlueprint {
 								SlavedToBody = true,
 								SlavedToBodyArcRange = 10,
 								PrefersPrimaryWeaponTarget = true,
+								UseFiringSolutionInsteadOfAimBone = true,
 								Turreted = true,
 
 								WeaponRepackTimeout = 2,
 								WeaponUnpacks = true,
+								LeadTarget = true,
 						},
 				
 				-- each arm also has an underslung cannon --
@@ -382,7 +386,7 @@ UnitBlueprint {
 								MuzzleSalvoSize = 1,
 								MuzzleVelocity = 40, 
 					
-								NotExclusive = true,                    
+								NotExclusive = false,                    
 					
 								ProjectileId = '/mods/4DC/projectiles/Over_Charge/Over_Charge_proj.bp',
 								ProjectileLifetime = 3,
@@ -486,7 +490,7 @@ UnitBlueprint {
 								MuzzleSalvoSize = 1,
 								MuzzleVelocity = 40,
 					
-								NotExclusive = true,           
+								NotExclusive = false,           
 					
 								ProjectileId = '/mods/4DC/projectiles/Over_Charge/Over_Charge_proj.bp',  
 								ProjectileLifetime = 3,
@@ -582,7 +586,7 @@ UnitBlueprint {
 								MuzzleSalvoSize = 1,
 								MuzzleVelocity = 50,
 					
-								NotExclusive = true,
+								NotExclusive = false,
 					
 								ProjectileId = '/projectiles/TDFGauss01/TDFGauss01_proj.bp',
 								ProjectileLifetime = 1,
