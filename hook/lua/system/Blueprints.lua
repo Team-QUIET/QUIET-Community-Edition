@@ -241,7 +241,15 @@ do
 	--=======================================
 	function NullifyUnitBlueprints(all_blueprints)
 		local unitPruningId = {
-			'brnt2bm' -- Banshee
+			'brnt2bm', -- Banshee
+			'brnt3wt', -- WarHammer
+			'dea0202', -- Janus
+			'dra0202', -- Corsair
+			'uel0402', -- Rampage
+			'uab8765', -- Exp Storage Aeon
+			'urb8765', -- Exp Storage Cybran
+			'ueb8765', -- Exp Storage UEF
+			'xsb8765'  -- Exp Storage Seraphim
 		};
 
 		for i, bp in pairs(unitPruningId) do
