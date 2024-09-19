@@ -38,19 +38,20 @@ UnitBlueprint {
                 Land = 'Land|Water',
             },
             FiringRandomness = 0.1,
-            FiringTolerance = 0.1,
+            FiringTolerance = 1,
 			
             MaxRadius = 30,
 			
-            MuzzleSalvoDelay = 0.3,	---- 15 rounds in 4.5 seconds
+            MuzzleSalvoDelay = 0.2,	---- 15 rounds in 4.5 seconds
             MuzzleSalvoSize = 15,	---- 15 rounds per salvo
             MuzzleVelocity = 30,
             
             NoPause = true,
 			
             ProjectileLifetimeUsesMultiplier = 1.1,
+            ProjectilesPerOnFire = 1,
 
-            RackSalvoChargeTime = 3,	---- 3 seconds to warm up
+            RackSalvoChargeTime = 1,	---- 1 seconds to warm up
 
             RackSalvoReloadTime = 1,	---- 1 seconds to reload
 
@@ -58,14 +59,14 @@ UnitBlueprint {
             
             RateOfFire = 1,			---- 15 * 15 every 5.5 seconds = 40 DPS
             
-            TargetCheckInterval = 0.5,
+            TargetCheckInterval = 0,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'MOBILE -AIR',
                 'STRUCTURE -WALL',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.1,
+            TrackingRadius = 1.0,
             
             TurretBoneMuzzle = 'Left_Arm_Barrel_Muzzle',
             TurretBonePitch = 'Left_Arm_B01',
@@ -86,7 +87,66 @@ UnitBlueprint {
             WeaponUnpacks = true,
         },
         {
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = false,
             
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 65,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Heavy Fragmentation Grenade Launcher',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+            },
+			
+            FiringRandomness = 2.5,
+            FiringTolerance = 1,
+			
+            MaxRadius = 32,
+			
+            MuzzleSalvoDelay = 0.3,	---- every .3 seconds
+            MuzzleSalvoSize = 4,	---- 4 grenades per salvo = 1.2 seconds
+            MuzzleVelocity = 13,
+            MuzzleVelocityRandomness = 0,
+
+            ProjectileLifetimeUsesMultiplier = 2.25,
+            ProjectilesPerOnFire = 3,
+
+            RackSalvoSize = 3,
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 0.2,		---- 240 DPS every 5.5 seconds = 43 DPS
+			
+            TargetCheckInterval = 0,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE -AIR',
+                'DEFENSE',
+				'STRUCTURE -WALL',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1,
+			
+            TurretBoneMuzzle = 'Right_Arm_B02_Muzzle',
+            TurretBonePitch = 'Right_Arm_B01',
+            TurretBoneYaw = 'Right_Arm_B01',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 45,
+			
+            TurretYaw = 0,
+            TurretYawRange = 20,
+            TurretYawSpeed = 90,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
         },
     },
 }
