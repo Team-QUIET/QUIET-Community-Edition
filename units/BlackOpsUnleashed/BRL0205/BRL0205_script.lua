@@ -18,16 +18,12 @@ BRL0205 = Class(CWalkingLandUnit) {
             
 				CDFLaserHeavyWeapon.OnWeaponFired(self, target)
                 
-				ChangeState( self.unit, self.unit.VisibleState )
 			end,
 			
 			OnLostTarget = function(self)
             
 				CDFLaserHeavyWeapon.OnLostTarget(self)
-                
-				if self.unit:IsIdleState() then
-				    ChangeState( self.unit, self.unit.InvisState )
-				end
+
 			end,
         },
 		
@@ -82,61 +78,5 @@ BRL0205 = Class(CWalkingLandUnit) {
 		self:EnableUnitIntel('Cloak') 
 
     end,
-    
-    --[[InvisState = State() {
-    
-        Main = function(self)
-            
-            local bp = __blueprints[self.BlueprintID]
-
-            self:SetEnergyMaintenanceConsumptionOverride(bp.Economy.MaintenanceConsumptionPerSecondEnergyCloak)
-            
-            self:SetMaintenanceConsumptionActive()
-        
-            self.Cloaked = false
-
-            if bp.Intel.StealthWaitTime then
-                WaitSeconds( bp.Intel.StealthWaitTime )
-            end
-
-			self:EnableUnitIntel('Cloak')
-            
-			self.Cloaked = true
-        end,
-        
-        OnMotionHorzEventChange = function(self, new, old)
-        
-            if new != 'Stopped' then
-                ChangeState( self, self.VisibleState )
-            end
-            
-            CWalkingLandUnit.OnMotionHorzEventChange(self, new, old)
-        end,
-    },
-    
-    VisibleState = State() {
-    
-        Main = function(self)
-            
-            local bp = __blueprints[self.BlueprintID]
-
-            self:SetEnergyMaintenanceConsumptionOverride(bp.Economy.MaintenanceConsumptionPerSecondEnergy)
-            
-            self:SetMaintenanceConsumptionActive()        
-            
-            if self.Cloaked then
-			    self:DisableUnitIntel('Cloak')
-			end
-        end,
-        
-        OnMotionHorzEventChange = function(self, new, old)
-        
-            if new == 'Stopped' then
-                ChangeState( self, self.InvisState )
-            end
-            
-            CWalkingLandUnit.OnMotionHorzEventChange(self, new, old)
-        end,
-    },]]--
 }
 TypeClass = BRL0205
