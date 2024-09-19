@@ -28,6 +28,7 @@ UnitBlueprint {
 	Categories = {
 		"AMPHIBIOUS",
 		"BUILTBYTIER2FACTORY",
+		"BUILTBYTIER3FACTORY",
 		"DIRECTFIRE",
 		"LAND",
 		"MOBILE",
