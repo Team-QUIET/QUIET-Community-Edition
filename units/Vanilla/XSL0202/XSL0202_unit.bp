@@ -1,0 +1,95 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "xsl0202",
+	
+    Physics = {
+		BackUpDistance = 0,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 1.5,
+        MaxBrake = 2.7,
+        MaxSpeed = 2.7,
+        MaxSpeedReverse = 0,
+        MaxSteerForce = 3,
+        MeshExtentsX = 1,
+        MeshExtentsY = 0.5,
+        MeshExtentsZ = 1,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        RotateOnSpot = false,
+		StandUpright = true,
+        TurnRadius = 0.5,
+        TurnRate = 45,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 45,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Aire-au Bolter',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 1,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 28,
+			
+            MuzzleSalvoDelay = 0.4,
+            MuzzleSalvoSize = 2,
+
+            MuzzleVelocity = 33,
+			
+			ProjectileLifetime = 1,
+
+            RackSlavedToTurret = true,
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 1,		-- 90 DPS
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS,-WALL',
+            },
+			
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.3,
+			
+            TurretBoneDualMuzzle = 'Left_Muzzle',
+            TurretBoneDualPitch = 'Left_Arm',
+
+            TurretBoneMuzzle = 'Right_Muzzle',
+            TurretBonePitch = 'Right_Arm',
+
+            TurretBoneYaw = 'Torso',
+
+            TurretDualManipulators = true,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+			
+            Turreted = true,
+        },
+    },
+}
