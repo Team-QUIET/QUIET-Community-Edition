@@ -43,8 +43,8 @@ UnitBlueprint {
 
 	Defense = {
 		ArmorType = "Normal",
-		Health = 2150,
-		MaxHealth = 2150,
+		Health = 1850,
+		MaxHealth = 1850,
 		RegenRate = 1,
 		SurfaceThreatLevel = 15.3, -- Same as Amphorak
 	},
