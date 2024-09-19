@@ -135,7 +135,7 @@ UnitBlueprint {
 	StrategicIconName = "icon_seabed2_directfire",
 	StrategicIconSortPriority = 125,
 
-	Transport = { TransportClass = 3 },
+	Transport = { TransportClass = 2 },
 
 	Veteran = {
 		Level1 = 10,
