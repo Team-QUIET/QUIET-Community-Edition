@@ -236,7 +236,6 @@ do
 
 	--=======================================
 	-- FUNCTION NullifyUnitBlueprints(ALL_BLUEPRINTS)
-	-- LCE's NotificationAlterations
 	-- Nullify categories on units we don't want to see built
 	--=======================================
 	function NullifyUnitBlueprints(all_blueprints)
