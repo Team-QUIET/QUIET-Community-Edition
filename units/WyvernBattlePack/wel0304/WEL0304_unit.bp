@@ -43,8 +43,8 @@ UnitBlueprint {
 
 	Defense = {
 		ArmorType = "Normal",
-		Health = 2150,
-		MaxHealth = 2150,
+		Health = 1850,
+		MaxHealth = 1850,
 		RegenRate = 1,
 		SurfaceThreatLevel = 15.3, -- Same as Amphorak
 	},
@@ -72,7 +72,7 @@ UnitBlueprint {
 			},
 		},
 
-		UniformScale = 0.06,
+		UniformScale = 0.05,
 	},
 
 	Economy = {
@@ -132,10 +132,10 @@ UnitBlueprint {
 	SizeY = 0.6,
 	SizeZ = 1.8,
 
-	StrategicIconName = "icon_seabed3_directfire",
+	StrategicIconName = "icon_seabed2_directfire",
 	StrategicIconSortPriority = 125,
 
-	Transport = { TransportClass = 3 },
+	Transport = { TransportClass = 2 },
 
 	Veteran = {
 		Level1 = 10,
