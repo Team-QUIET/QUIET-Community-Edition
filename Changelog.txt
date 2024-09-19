@@ -5,6 +5,10 @@
 
 ### TBD
 
+# T2 UEF Rommel
+Rommel Tech 3 -> Tech 2
+All Stats generally taken from the T2 Banshee
+
 # T4 Mothra
 Damage 2950 -> 1475
 DamageRadius 2.5 -> 2
@@ -12,7 +16,7 @@ Range 100 -> 88
 
 # Unit Removal
 UEF: 
-T2 Janus, T3 Warhammer, T4 Rampage
+T2 Janus, T3 Warhammer, T4 Rampage, T2 Banshee
 Cybran:
 T2 Cosair
 All: 
