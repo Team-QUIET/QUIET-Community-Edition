@@ -1,0 +1,26 @@
+UnitBlueprint {
+	Merge = true,
+	BlueprintId = "xel0307",
+
+	Defense = {
+		Health = 4200,  -- was 3150
+		MaxHealth = 4200, -- was 3150
+	},
+
+	Economy = {
+		BuildCostEnergy = 36000, -- was 24000
+		BuildCostMass = 3250,  -- was 1950
+		MaintenanceConsumptionPerSecondEnergy = 20,
+	},
+
+	Weapon = {
+		{
+			-- Gauss cannon
+			MaxRadius = 32, -- was 39
+		},
+		{
+			-- Gatling 2x
+			MaRadius = 28, -- was 30
+		}
+	}
+}
