@@ -12,50 +12,48 @@ SRL0320 = Class(CLandUnit) {
 
 		MainGun = Class(CAAMissileNaniteWeapon) {
 
-			-- CreateProjectileAtMuzzle = function(self, muzzle)
+			CreateProjectileAtMuzzle = function(self, muzzle)
 
-			--     if self.unit.IntelOn then
-			--         self.unit.IntelOn = nil
-			--         self.unit:SetMaintenanceConsumptionInactive()
-			--         self.unit:SetScriptBit('RULEUTC_CloakToggle', true)
-			--         self.unit:DisableUnitIntel('Cloak')
-			--         self.unit:RequestRefreshUI()
-			--         self.unit.IntelWasOn = true
-			--     end
+			    -- if self.IntelOn then
+			    --     self.IntelOn = nil
+			    --     self:SetMaintenanceConsumptionInactive()
+			    --     self:SetScriptBit('RULEUTC_CloakToggle', true)
+			    --     self:DisableUnitIntel('Cloak')
+			    --     self:RequestRefreshUI()
+			    --     self.IntelWasOn = true
+			    -- end
 
-			--     CAAMissileNaniteWeapon.CreateProjectileAtMuzzle(self, muzzle)
-			-- end,
+			    CAAMissileNaniteWeapon.CreateProjectileAtMuzzle(self, muzzle)
+			end,
 
-			-- OnWeaponFired = function(self)
+			OnWeaponFired = function(self)
 
-			--     if self.unit.IntelWasOn then
-			--         self.unit.IntelOn = true
-			--         self.unit:SetMaintenanceConsumptionActive()
-			--         self.unit:SetScriptBit('RULEUTC_CloakToggle', false)
-			--         self.unit:EnableUnitIntel('Cloak')
-			--         self.unit:RequestRefreshUI()
-			--         self.unit.IntelWasOn = nil
-			--     end
+				-- if self.IntelWasOn then
+			    --     self.IntelOn = true
+			    --     self:SetMaintenanceConsumptionActive()
+			    --     self:SetScriptBit('RULEUTC_CloakToggle', false)
+			    --     self:EnableUnitIntel('Cloak')
+			    --     self:RequestRefreshUI()
+			    --     self.IntelWasOn = nil
+			    -- end
 
-			--     CAAMissileNaniteWeapon.OnWeaponFired(self)
+			    CAAMissileNaniteWeapon.OnWeaponFired(self)
 
-			-- end,
+			end,
+			
 		},
 	},
 
 	OnStopBeingBuilt = function(self, builder, layer)
 		CLandUnit.OnStopBeingBuilt(self, builder, layer)
 
-		if self:GetAIBrain().BrainType == 'Human' then
-			self:SetMaintenanceConsumptionInactive()
-			self:SetScriptBit('RULEUTC_CloakToggle', true)
-			self:RequestRefreshUI()
-		else
+		if true then
 			self.IntelOn = true
 			self:SetMaintenanceConsumptionActive()
 			self:SetScriptBit('RULEUTC_CloakToggle', false)
 			self:EnableUnitIntel('Cloak')
 			self:RequestRefreshUI()
+			self.IntelWasOn = nil
 		end
 	end,
 
