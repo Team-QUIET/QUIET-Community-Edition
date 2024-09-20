@@ -1,0 +1,289 @@
+UnitBlueprint {
+
+	AI = {
+		GuardScanRadius = 50,
+		TargetBones = { 'Turret' },
+	},
+
+
+	Audio = {
+		Activate    = Sound { Bank = 'URL', Cue = 'URL0304_Move_Extend', LodCutoff = 'UnitMove_LodCutoff' },
+		StartMove   = Sound { Bank = 'URL', Cue = 'URL0304_Move_Start', LodCutoff = 'UnitMove_LodCutoff' },
+		StopMove    = Sound { Bank = 'URL', Cue = 'URL0304_Move_Stop', LodCutoff = 'UnitMove_LodCutoff' },
+		UISelection = Sound { Bank = 'Interface', Cue = 'Cybran_Select_Tank', LodCutoff = 'UnitMove_LodCutoff' },
+		Destroyed   = Sound { Bank = 'URLDestroy', Cue = 'URL_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff' },
+		Cloak       = Sound { Bank = 'XSL_Destroy', Cue = 'XSL0402_Death', LodCutoff = 'Weapon_LodCutoff' },
+		Decloak     = Sound { Bank = 'XSL', Cue = 'XSL0402_Spawn', LodCutoff = 'Weapon_LodCutoff' },
+	},
+
+	Buffs = {
+		Regen = {
+			Level1 = 2,
+			Level2 = 4,
+			Level3 = 6,
+			Level4 = 8,
+			Level5 = 10,
+		},
+	},
+
+	BuildIconSortPriority = 24,
+
+	Categories = {
+		'SELECTABLE',
+		'BUILTBYTIER3FACTORY',
+		'CYBRAN',
+		'MOBILE',
+		'LAND',
+		'AMPHIBIOUS',
+		'SUBMERSIBLE',
+		'TECH3',
+		'ANTIAIR',
+		'VISIBLETORECON',
+		'RECLAIMABLE',
+		'OVERLAYANTIAIR',
+	},
+
+	Defense = {
+		AirThreatLevel = 36,
+		ArmorType = 'Normal',
+		Health = 1850,
+		MaxHealth = 1850,
+		RegenRate = 4,
+	},
+
+	Description = 'Amphibious Anti-Air Defense',
+
+	Display = {
+
+		Abilities = {
+			'<LOC ability_amphibious>Amphibious',
+			'<LOC ability_aa>Anti-Air',
+			'<LOC ability_cloak>Cloaking',
+		},
+
+		AnimationOpen = '/units/URL0304/URL0304_Aactivate.sca',
+
+		Mesh = {
+			IconFadeInZoom = 130,
+			LODs = {
+				{
+					LODCutoff = 100,
+					Scrolling = true,
+					ShaderName = 'Insect',
+				},
+				{
+					LODCutoff = 300,
+					Scrolling = true,
+					ShaderName = 'Insect',
+				},
+			},
+		},
+
+		MovementEffects = {
+			Land = {
+				Effects = {
+					{
+						Bones = { 'Back_Left_M', 'Back_Right_M' },
+						Type = 'GroundKickup01',
+					},
+				},
+				Treads = {
+					ScrollTreads = true,
+					TreadMarks = {
+						{
+							TreadMarks = 'tank_treads06_albedo',
+							TreadMarksInterval = 0.2,
+							TreadMarksSizeX = 1.8,
+							TreadMarksSizeZ = 3,
+							TreadOffset = { 0, 0, -1 },
+						},
+					},
+				},
+			},
+		},
+		UniformScale = 0.08,
+	},
+
+	Economy = {
+		BuildCostEnergy = 12500,
+		BuildCostMass = 1200,
+		BuildTime = 625,
+
+		MaintenanceConsumptionPerSecondEnergy = 150,
+	},
+
+	General = {
+		CapCost = 2,
+		CommandCaps = {
+			RULEUCC_Attack = true,
+			RULEUCC_CallTransport = true,
+			RULEUCC_Guard = true,
+			RULEUCC_Move = true,
+			RULEUCC_Patrol = true,
+			RULEUCC_RetaliateToggle = true,
+			RULEUCC_Stop = true,
+		},
+		FactionName = 'Cybran',
+		Icon = 'amph',
+		ToggleCaps = {
+			RULEUTC_CloakToggle = true,
+		},
+		UnitName = '<LOC srl0320_name>Slink',
+	},
+
+	Intel = {
+		Cloak = true,
+		VisionRadius = 32,
+		WaterVisionRadius = 8,
+	},
+
+	Interface = {
+		HelpText = 'Amphibious Anti-Air System',
+	},
+
+	LifeBarHeight = 0.075,
+	LifeBarOffset = 0.7,
+	LifeBarSize = 1.75,
+
+	Physics = {
+		BankingSlope = 0,
+		BuildOnLayerCaps = {
+			LAYER_Land = true,
+		},
+		DragCoefficient = 0.2,
+
+		MaxAcceleration = 0.9,
+		MaxBrake = 2.6,
+		MaxSpeed = 2.7,
+		MaxSpeedReverse = 2.7,
+
+		MaxSteerForce = 10,
+		MinSpeedPercent = 0,
+		MotionType = 'RULEUMT_Amphibious',
+
+		TurnRadius = 0,
+		TurnRate = 60,
+
+		WaterSpeedMultiplier = 1.2,
+	},
+
+	SelectionSizeX = 1.1,
+	SelectionSizeZ = 1.1,
+	SelectionThickness = 0.4,
+
+	SizeX = 1.0,
+	SizeY = 0.65,
+	SizeZ = 1.5,
+
+	StrategicIconName = 'icon_seabed3_antiair',
+	StrategicIconSortPriority = 115,
+
+	Transport = {
+		TransportClass = 3,
+	},
+
+	Veteran = {
+		Level1 = 10,
+		Level2 = 20,
+		Level3 = 30,
+		Level4 = 40,
+		Level5 = 50,
+	},
+
+	Weapon = {
+		{
+			AboveWaterFireOnly = true,
+			advancedTracking = true,
+			AlwaysRecheckTarget = true,
+			Audio = {
+				Fire = Sound {
+					Bank = 'URLWeapon',
+					Cue = 'URB2304_Missile_Nanite',
+					LodCutoff = 'Weapon_LodCutoff',
+				},
+			},
+			BallisticArc = 'RULEUBA_None',
+			CollideFriendly = false,
+
+			Damage = 120,
+			DamageRadius = 0,
+			DamageType = 'Normal',
+
+			DisplayName = 'Nanite Missile System',
+
+			FireTargetLayerCapsTable = {
+				Land = 'Air|Land',
+				Seabed = 'Air|Land',
+			},
+			FiringTolerance = 50,
+
+			Label = 'MainGun',
+
+			MaxRadius = 50,
+
+			MuzzleSalvoDelay = 0.1,
+			MuzzleSalvoSize = 5,
+			MuzzleVelocity = 20,
+
+			ProjectileId = '/projectiles/CAAMissileNanite02/CAAMissileNanite02_proj.bp',
+			ProjectileLifetime = 3.9,
+
+			RackBones = {
+				{
+					MuzzleBones = {
+						'Muzzle1',
+						'Muzzle2',
+						'Muzzle3',
+						'Muzzle4',
+						'Muzzle5',
+					},
+					RackBone = 'Muzzle1',
+				},
+			},
+
+			RangeCategory = 'UWRC_AntiAir',
+
+			RateOfFire = 0.6,
+
+			TargetCheckInterval = 0.3,
+			TargetPriorities = {
+				'SPECIALHIGHPRI',
+				'HIGHPRIAIR',
+				'AIR',
+			},
+			TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			TargetRestrictOnlyAllow = 'AIR',
+			TrackingRadius = 1.2,
+
+			TurretBoneMuzzle = 'Muzzle1',
+			TurretBonePitch = 'Turret_body',
+			TurretBoneYaw = 'Turret',
+			TurretDualManipulators = false,
+
+			TurretPitch = 40,
+			TurretPitchRange = 25,
+			TurretPitchSpeed = 60,
+
+			TurretYaw = 0,
+			TurretYawRange = 180,
+			TurretYawSpeed = 60,
+
+			Turreted = true,
+		},
+	},
+
+	Wreckage = {
+		Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+		EnergyMult = 0,
+		HealthMult = 0.9,
+		MassMult = 0.9,
+		ReclaimTimeMultiplier = 1,
+		WreckageLayers = {
+			Air = false,
+			Land = true,
+			Seabed = true,
+			Sub = false,
+			Water = false,
+		},
+	},
+}
