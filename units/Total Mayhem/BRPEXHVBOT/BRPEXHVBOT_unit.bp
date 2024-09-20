@@ -1,0 +1,9 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "brpexhvbot",
+
+    AI = {
+        GuardScanRadius = 40,
+		TargetBones = {'AvantGauche01'},	
+    },
+}
