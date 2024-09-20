@@ -33,6 +33,9 @@ UnitBlueprint {
             DamageType = 'Normal',
 			
             DisplayName = 'Gatling Cannon',
+
+            EnergyDrainPerSecond = 0,
+            EnergyRequired = 0,
 			
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water',
@@ -40,7 +43,7 @@ UnitBlueprint {
             FiringRandomness = 0.1,
             FiringTolerance = 1,
 			
-            MaxRadius = 30,
+            MaxRadius = 34,
 			
             MuzzleSalvoDelay = 0.2,	---- 15 rounds in 4.5 seconds
             MuzzleSalvoSize = 15,	---- 15 rounds per salvo
@@ -51,19 +54,23 @@ UnitBlueprint {
             ProjectileLifetimeUsesMultiplier = 1.1,
             ProjectilesPerOnFire = 1,
 
+            RackFireTogether = false,
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 0,
+            RackSalvoFiresAfterCharge = false,
             RackSalvoChargeTime = 1,	---- 1 seconds to warm up
-
             RackSalvoReloadTime = 1,	---- 1 seconds to reload
-
+            RackSlavedToTurret = false,
             RangeCategory = 'UWRC_DirectFire',
-            
             RateOfFire = 1,			---- 15 * 15 every 5.5 seconds = 40 DPS
-            
             TargetCheckInterval = 0,
             TargetPriorities = {
-                'SPECIALHIGHPRI',
-                'MOBILE -AIR',
-                'STRUCTURE -WALL',
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
             TrackingRadius = 1.0,
@@ -83,6 +90,7 @@ UnitBlueprint {
             
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Direct Fire",
             WeaponRepackTimeout = 2,
             WeaponUnpacks = true,
         },
@@ -103,10 +111,10 @@ UnitBlueprint {
                 Land = 'Land|Water',
             },
 			
-            FiringRandomness = 2.5,
+            FiringRandomness = 3.5,
             FiringTolerance = 1,
 			
-            MaxRadius = 32,
+            MaxRadius = 34,
 			
             MuzzleSalvoDelay = 0.3,	---- every .3 seconds
             MuzzleSalvoSize = 4,	---- 4 grenades per salvo = 1.2 seconds
@@ -116,18 +124,22 @@ UnitBlueprint {
             ProjectileLifetimeUsesMultiplier = 2.25,
             ProjectilesPerOnFire = 3,
 
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 0,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
             RackSalvoSize = 3,
-
-            RangeCategory = 'UWRC_IndirectFire',
-			
+            RackSlavedToTurret = false,
+            RangeCategory = 'UWRC_DirectFire',
             RateOfFire = 0.2,		---- 240 DPS every 5.5 seconds = 43 DPS
-			
             TargetCheckInterval = 0,
             TargetPriorities = {
-                'SPECIALHIGHPRI',
-                'MOBILE -AIR',
-                'DEFENSE',
-				'STRUCTURE -WALL',
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             TrackingRadius = 1,
@@ -147,6 +159,7 @@ UnitBlueprint {
 			
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Direct Fire",
         },
     },
 }
