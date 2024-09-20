@@ -17,6 +17,15 @@ UnitBlueprint {
 		'TANK',
 	},
 
+	Defense = {
+		AirThreatLevel = 15,
+		ArmorType = 'Normal',
+		Health = 2750,  -- was 5150
+		MaxHealth = 2750, -- was 5150
+		RegenRate = 4,
+		SurfaceThreatLevel = 65.6,
+	},
+
 	Display = {
 		Abilities = {
 			'Railgun - hits multiple targets',
