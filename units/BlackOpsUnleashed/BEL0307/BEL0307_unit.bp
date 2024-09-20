@@ -58,15 +58,15 @@ UnitBlueprint {
 		{
 			-- Ravager --
 			Damage = 35, -- was 50
-			MaxRadius = 24, -- was 36
+			MaxRadius = 16, -- was 36
 		},
 		{
 			-- Riot beams
-			MaxRadius = 24, -- was 28
+			MaxRadius = 14, -- was 28
 		},
 		{
 			-- Riot beams 2
-			MaxRadius = 24, -- was 28
+			MaxRadius = 14, -- was 28
 		},
 		{
 			-- Rocket salvo
