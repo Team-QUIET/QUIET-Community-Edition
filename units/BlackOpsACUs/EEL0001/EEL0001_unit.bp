@@ -1,14 +1,17 @@
 UnitBlueprint {
     Merge = true,
-	BlueprintId = "eal0001",
+	BlueprintId = "eel0001",
 	
     Weapon = {
+
         {
             
         },
+
         {
             
         },
+
         {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
@@ -17,15 +20,14 @@ UnitBlueprint {
             CollideFriendly = false,
 			
             Damage = 25000,
-            DamageFriendly = true,
+            DamageFriendly = false,
             DamageRadius = 2.5,
-
             DamageType = 'Overcharge',
 			
             DisplayName = 'Overcharge Cannon',
 			
             EnergyChargeForFirstShot = false,
-			
+
             EnergyDrainPerSecond = 0,
             EnergyRequired = 5000,
 			
@@ -34,16 +36,15 @@ UnitBlueprint {
                 Seabed = 'Air|Land|Water|Seabed',
                 Water = 'Air|Land|Water|Seabed',
             },
-			
             FiringTolerance = 2,
 			
             ManualFire = true,
-			
+
             MaxRadius = 30,
 
             MuzzleVelocity = 25,
-            
-            NotExclusive = true,
+			
+			NotExclusive = true,
 			
             OverChargeWeapon = true,
             Overcharge = {
@@ -54,21 +55,20 @@ UnitBlueprint {
                 structureDamage = 800,
             },
 			
-            ProjectileId = '/mods/LOUD-Community-Edition/projectiles/ADFOverCharge01/ADFOverCharge01_proj.bp',
+            ProjectileId = '/mods/LOUD-Community-Edition/projectiles/TDFOverCharge01/TDFOverCharge01_proj.bp',
             ProjectileLifetimeUsesMultiplier = 2,
-
-            RackRecoilDistance = -0.5,
 
             RangeCategory = 'UWRC_Countermeasure',
 			
-            RateOfFire = 1,         -- relies upon the charge cycle
-			
+            RateOfFire = 1,     -- relies upon the charge cycle
+
             TargetCheckInterval = 0.5,
             TargetRestrictDisallow = 'UNTARGETABLE',
 			
-            TurretBoneMuzzle = 'Right_Turret_Muzzle',
-            TurretBonePitch = 'Right_Turret',
-            TurretBoneYaw = 'Right_Arm_B02',
+            TurretBoneMuzzle = 'Right_Arm_Muzzle',
+            TurretBonePitch = 'Right_Arm_Barrel',
+            TurretBoneYaw = 'Torso',
+            TurretDualManipulators = false,
 			
             TurretPitch = 0,
             TurretPitchRange = 60,
@@ -81,18 +81,12 @@ UnitBlueprint {
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
         },
-        {
-           
-        },
-		
+
         {
             
         },
-        {
-           
-        },
-        
-        -- Torpedo Launcher -- 
+		
+		--- Flamethrower ---
 
         {
             
@@ -100,9 +94,8 @@ UnitBlueprint {
         {
             
         },
-        {
-           
-        },
+
+		--- Torpedo Launcher ---
 		
         {
             
@@ -111,17 +104,68 @@ UnitBlueprint {
            
         },
         {
-          
+            
         },
 		
+		-- Anti-Matter Cannon --
+		
+        {
+            
+        },
+        {
+            
+        },
         {
            
         },
+		
+		-- Gatling Gun --
+		
         {
             
         },
         {
             
         },
-    },
+        {
+            
+        },
+		
+		-- Tactical Missile --
+		
+        {
+            
+        },
+		
+		--- Billy Nuke Missile ---
+
+        {
+           
+        },
+		
+		-- Right Shoulder Energy Lance --
+		
+        {
+            
+        },
+		
+		-- Left Shoulder Energy Lance --
+		
+        {
+            
+        },
+		
+		-- Cluster Missiles -- 
+		
+        {
+            
+        },
+        {
+            
+        },
+        {
+            
+        },
+
+	},
 }

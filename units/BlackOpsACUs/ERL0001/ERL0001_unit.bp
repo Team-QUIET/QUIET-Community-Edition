@@ -1,7 +1,7 @@
 UnitBlueprint {
     Merge = true,
-	BlueprintId = "eal0001",
-	
+	BlueprintId = "erl0001",
+
     Weapon = {
         {
             
@@ -9,42 +9,45 @@ UnitBlueprint {
         {
             
         },
+		
         {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
 
             BallisticArc = 'RULEUBA_None',
-            CollideFriendly = false,
-			
-            Damage = 25000,
-            DamageFriendly = true,
-            DamageRadius = 2.5,
 
+            BeamCollisionDelay = 0.2,
+            BeamLifetime = 0.4,
+
+            CollideFriendly = false,
+
+            Damage = 25000,
+            DamageFriendly = false,
+            DamageRadius = 2.5,
             DamageType = 'Overcharge',
-			
+
             DisplayName = 'Overcharge Cannon',
-			
+
             EnergyChargeForFirstShot = false,
-			
+
             EnergyDrainPerSecond = 0,
             EnergyRequired = 5000,
-			
+
             FireTargetLayerCapsTable = {
                 Land = 'Air|Land|Water|Seabed',
                 Seabed = 'Air|Land|Water|Seabed',
                 Water = 'Air|Land|Water|Seabed',
             },
-			
             FiringTolerance = 2,
-			
+
             ManualFire = true,
-			
+
             MaxRadius = 30,
 
             MuzzleVelocity = 25,
-            
+
             NotExclusive = true,
-			
+            
             OverChargeWeapon = true,
             Overcharge = {
                 commandDamage = 400,
@@ -53,38 +56,64 @@ UnitBlueprint {
                 minDamage = 1250,
                 structureDamage = 800,
             },
-			
-            ProjectileId = '/mods/LOUD-Community-Edition/projectiles/ADFOverCharge01/ADFOverCharge01_proj.bp',
+
+            ProjectileId = '/mods/LOUD-Community-Edition/projectiles/CDFCannonMolecularOvercharge01/CDFCannonMolecularOvercharge01_proj.bp',
             ProjectileLifetimeUsesMultiplier = 2,
 
-            RackRecoilDistance = -0.5,
-
             RangeCategory = 'UWRC_Countermeasure',
-			
-            RateOfFire = 1,         -- relies upon the charge cycle
-			
+
+            RateOfFire = 1,     -- relies upon charge cycle now
+
             TargetCheckInterval = 0.5,
+
             TargetRestrictDisallow = 'UNTARGETABLE',
-			
-            TurretBoneMuzzle = 'Right_Turret_Muzzle',
+
+            TurretBoneMuzzle = 'Turret_Muzzle_02',
             TurretBonePitch = 'Right_Turret',
-            TurretBoneYaw = 'Right_Arm_B02',
-			
+            TurretBoneYaw = 'Torso',
+
             TurretPitch = 0,
             TurretPitchRange = 60,
             TurretPitchSpeed = 30,
-			
+
             TurretYaw = 0,
             TurretYawRange = 180,
             TurretYawSpeed = 125,
-			
+
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
         },
+		
+        {
+            
+        },
+
+        --- Rocket Pack ---
+        
+        {
+            
+        },
+        {
+            
+        },
+        
+        --- Torpedo Launcher ---
+        
+        {
+            
+        },
+        {
+            
+        },
+
+        --- EMP Weapon ---
+        
         {
            
         },
-		
+        {
+            
+        },
         {
             
         },
@@ -92,18 +121,19 @@ UnitBlueprint {
            
         },
         
-        -- Torpedo Launcher -- 
+        -- these next 3 are the actual damage weapon of the EMP Array
+        {
+           
+        },
+        {
+            
+        },
+        {
+            
+        },
 
-        {
-            
-        },
-        {
-            
-        },
-        {
-           
-        },
-		
+        -- The Maser - or 'Death Ray' --
+        
         {
             
         },
@@ -111,17 +141,19 @@ UnitBlueprint {
            
         },
         {
-          
+            
         },
-		
+        {
+
+        },
+        {
+            
+        },
         {
            
         },
         {
-            
-        },
-        {
-            
+           
         },
     },
 }
