@@ -26,8 +26,8 @@ UnitBlueprint {
 
             EnergyChargeForFirstShot = false,
 
-            EnergyDrainPerSecond = 0,
-            EnergyRequired = 5000,
+            EnergyDrainPerSecond = 1500,
+            EnergyRequired = 4500,
 
             FireTargetLayerCapsTable = {
                 Land = 'Air|Land|Water|Seabed',
@@ -43,6 +43,13 @@ UnitBlueprint {
             MuzzleVelocity = 25,
 
             OverChargeWeapon = true,
+            Overcharge = {
+                commandDamage = 400,
+                energyMult = 0.9,
+                maxDamage = 25000,
+                minDamage = 1250,
+                structureDamage = 800,
+            },
 
             ProjectileId = '/mods/LOUD-Community-Edition/projectiles/SDFChronatronCannon02/SDFChronatronCannon02_proj.bp',
             ProjectileLifetimeUsesMultiplier = 2,

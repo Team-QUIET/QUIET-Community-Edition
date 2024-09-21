@@ -26,8 +26,8 @@ UnitBlueprint {
 			
             EnergyChargeForFirstShot = false,
 			
-            EnergyDrainPerSecond = 0,
-            EnergyRequired = 5000,
+            EnergyDrainPerSecond = 1500,
+            EnergyRequired = 4500,
 			
             FireTargetLayerCapsTable = {
                 Land = 'Air|Land|Water|Seabed',
