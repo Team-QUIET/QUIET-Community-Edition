@@ -81,25 +81,6 @@ local UnitRevertCollisionShape = moho.unit_methods.RevertCollisionShape
 
 local CategoriesOverspill = categories.SHIELD * categories.DEFENSE
 
--- default values for a shield specification table (to be passed to native code)
-local DEFAULT_OPTIONS = {
-    Mesh = '',
-    MeshZ = '',
-    ImpactMesh = '',
-    ImpactEffects = '',
-    Size = 10,
-    ShieldMaxHealth = 250,
-    ShieldRechargeTime = 10,
-    ShieldEnergyDrainRechargeTime = 10,
-    ShieldVerticalOffset = -1,
-    ShieldRegenRate = 1,
-    ShieldRegenStartTime = 5,
-    PassOverkillDamage = false,
-
-    -- flags for mods
-    -- SkipAttachmentCheck = false, -- defaults to nil, same as false
-}
-
 LargestShieldDiameter = 0
 for k, bp in __blueprints do
     -- check for blueprints that have a shield and a shield size set
@@ -120,14 +101,7 @@ Shield = Class(LCEShield) {
     RemainEnabledWhenAttached = false,
     LOG("We've entered LCE Version of Shield.lua"),
 
-    __init = function(self, spec, owner)
-        -- This key deviates in name from the blueprints...
-        spec.Size = spec.ShieldSize
-
-        -- Apply default options
-        local spec = TableAssimilate(spec, DEFAULT_OPTIONS)
-        spec.Owner = owner
-
+    __init = function(self, spec)
         _c_CreateShield(self, spec)
     end,
 
