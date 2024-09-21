@@ -3,6 +3,67 @@
 Unit_LOUDCE = Unit
 Unit = Class(Unit_LOUDCE) {
 
+    DoTakeDamage = function(self, instigator, amount, vector, damageType)
+
+		local GetHealth = GetHealth
+	
+        local preAdjHealth = GetHealth(self)
+		
+        AdjustHealth( self, instigator, -amount)
+		
+        if GetHealth(self) < 1 then
+		
+            if damageType == 'Reclaimed' then
+			
+                self:Destroy()
+				
+            else
+			
+                local excessDamageRatio = 0.0
+				
+                -- Calculate the excess damage amount
+                local excess = preAdjHealth - amount
+                local maxHealth = EntityMethods.GetMaxHealth(self)
+				
+                if (excess < 0 and maxHealth > 0) then
+				
+                    excessDamageRatio = -excess / maxHealth
+					
+                end
+				
+                Kill( self, instigator, damageType, excessDamageRatio)
+				
+            end
+			
+        end
+
+        -- Handle incoming OC damage for ACUs
+        if damageType == 'Overcharge' and LOUDENTITY(categories.COMMAND, self) then
+
+            local wep = instigator:GetWeaponByLabel('OverCharge')
+
+            amount = wep:GetBlueprint().Overcharge.commandDamage
+            
+        end
+
+        -- Handle incoming OC damage for Structures
+        if damageType == 'Overcharge' and LOUDENTITY(categories.STRUCTURE, self) then
+
+            local wep = instigator:GetWeaponByLabel('OverCharge')
+
+            amount = wep:GetBlueprint().Overcharge.structureDamage
+            
+        end
+		
+		
+        if not self.Dead and LOUDENTITY(categories.COMMAND, self) then
+		
+			GetAIBrain(self):OnPlayCommanderUnderAttackVO()
+			
+        end
+		
+    end,
+
     DeathThread = function( self, overkillRatio, instigator)
 
         if self.DeathAnimManip then

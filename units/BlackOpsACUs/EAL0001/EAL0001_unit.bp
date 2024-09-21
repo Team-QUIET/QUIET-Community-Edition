@@ -1,0 +1,127 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "eal0001",
+	
+    Weapon = {
+        {
+            
+        },
+        {
+            
+        },
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 25000,
+            DamageFriendly = true,
+            DamageRadius = 2.5,
+
+            DamageType = 'Overcharge',
+			
+            DisplayName = 'Overcharge Cannon',
+			
+            EnergyChargeForFirstShot = false,
+			
+            EnergyDrainPerSecond = 1500,
+            EnergyRequired = 4500,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Air|Land|Water|Seabed',
+                Seabed = 'Air|Land|Water|Seabed',
+                Water = 'Air|Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 2,
+			
+            ManualFire = true,
+			
+            MaxRadius = 30,
+
+            MuzzleVelocity = 25,
+            
+            NotExclusive = true,
+			
+            OverChargeWeapon = true,
+            Overcharge = {
+                commandDamage = 400,
+                energyMult = 0.9,
+                maxDamage = 25000,
+                minDamage = 1250,
+                structureDamage = 800,
+            },
+			
+            ProjectileId = '/mods/LOUD-Community-Edition/projectiles/ADFOverCharge01/ADFOverCharge01_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 2,
+
+            RackRecoilDistance = -0.5,
+
+            RangeCategory = 'UWRC_Countermeasure',
+			
+            RateOfFire = 1,         -- relies upon the charge cycle
+			
+            TargetCheckInterval = 0.5,
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TurretBoneMuzzle = 'Right_Turret_Muzzle',
+            TurretBonePitch = 'Right_Turret',
+            TurretBoneYaw = 'Right_Arm_B02',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 30,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 125,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+        },
+        {
+           
+        },
+		
+        {
+            
+        },
+        {
+           
+        },
+        
+        -- Torpedo Launcher -- 
+
+        {
+            
+        },
+        {
+            
+        },
+        {
+           
+        },
+		
+        {
+            
+        },
+        {
+           
+        },
+        {
+          
+        },
+		
+        {
+           
+        },
+        {
+            
+        },
+        {
+            
+        },
+    },
+}
