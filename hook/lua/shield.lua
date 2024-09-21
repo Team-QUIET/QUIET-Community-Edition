@@ -99,12 +99,15 @@ local LCEShield = Shield
 Shield = Class(LCEShield) {
 
     RemainEnabledWhenAttached = false,
+    LOG("We've entered LCE Version of Shield.lua"),
 
     __init = function(self, spec, owner)
         _c_CreateShield(self, spec)
     end,
 
     OnCreate = function( self, spec )
+
+        LOG("We've entered LCE Version of Shield.lua - OnCreate Function")
 
         -- cache information that is used frequently
         self.Army = EntityGetArmy(self)
@@ -209,6 +212,8 @@ Shield = Class(LCEShield) {
 		end
 
         ChangeState(self, self.EnergyDrainRechargeState)
+
+        LOG("We've exitting LCE Version of Shield.lua - OnCreate Function")
     end,
 	
     ForkThread = function(self, fn, ...)
@@ -307,7 +312,7 @@ Shield = Class(LCEShield) {
             local units = brain:GetUnitsAroundPoint(CategoriesOverspill, position, 0.5 * diameter, 'Ally')
 
             if units then
-
+                LOG("We found overlapping shields "..repr(units))
                 -- allocate locals once
                 local shieldOther
                 local radiusOther
@@ -358,15 +363,14 @@ Shield = Class(LCEShield) {
                         end
                     end
                 end
-
                 -- keep track of the number of adjacent shields
                 self.OverlappingShieldsCount = head - 1
             else
+                LOG("We didnt find any overlapping shields")
                 -- no units found
                 self.OverlappingShieldsCount = 0
             end
         end
-
         -- return the shields in question
         return self.OverlappingShields, self.OverlappingShieldsCount
     end,
@@ -419,6 +423,8 @@ Shield = Class(LCEShield) {
 
         -- cache information used throughout the function
 
+        LOG("We are entering LCE Version of Shield.lua - ApplyDamage Function")
+
         local tick = GetGameTick()
 
         -- damage correction for overcharge
@@ -436,6 +442,8 @@ Shield = Class(LCEShield) {
 
         if self.ShieldType ~= "Personal" then
 
+            LOG("The Shieldtype is "..repr(self.ShieldType))
+
             local instigatorId = (instigator and instigator.EntityId) or false
             if instigatorId then
 
@@ -448,10 +456,12 @@ Shield = Class(LCEShield) {
 
                 -- anything but shield spill damage is regular damage, remove any previous overspill damage from the same instigator during the same tick
                 if dmgType ~= "ShieldSpill" then
+                    LOG("The dmgType is (it should be Shieldspill)"..repr(dmgType))
                     self.DamagedRegular[instigatorId] = tick
                     amount = amount - self.DamagedOverspill[instigatorId]
                     self.DamagedOverspill[instigatorId] = 0
                 else
+                    LOG("It definite is "..repr(dmgType))
                     -- if we have already received regular damage from this instigator at this tick, skip the overspill damage
                     if self.DamagedRegular[instigatorId] == tick then
                         return
@@ -467,6 +477,9 @@ Shield = Class(LCEShield) {
 
         if self.Owner ~= instigator then
             local absorbed = self:OnGetDamageAbsorption(instigator, amount, dmgType)
+
+            LOG("We're calculating the damage now... - ApplyDamage Function")
+            LOG("Absorbed is "..repr(absorbed))
 
             -- take some damage
             EntityAdjustHealth(self, instigator, -absorbed)
@@ -505,6 +518,8 @@ Shield = Class(LCEShield) {
 
         -- overspill damage checks
 
+        LOG("doOverspill is "..repr(doOverspill))
+
         if -- prevent recursively applying overspill
         doOverspill
             -- personal shields do not have overspill damage
@@ -518,12 +533,17 @@ Shield = Class(LCEShield) {
         then
             local spillAmount = self.SpillOverDmgMod * amount
 
+            LOG("The spillAmount is "..repr(spillAmount))
+
             -- retrieve shields that overlap with us
             local others, count = self:GetOverlappingShields(tick)
+
+            LOG("What is the Overlapping Shield Amount (others) "..repr(others).. "and Count is "..repr(count))
 
             -- apply overspill damage to neighbour shields
             for k = 1, count do
                 others[k]:ApplyDamage(
+                    LOG("Applying Overspill Damage to other shields nearby"),
                     instigator, -- instigator
                     spillAmount, -- amount
                     nil, -- vector
