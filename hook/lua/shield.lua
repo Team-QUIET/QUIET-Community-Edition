@@ -542,8 +542,8 @@ Shield = Class(LCEShield) {
 
             -- apply overspill damage to neighbour shields
             for k = 1, count do
+                LOG("Applying Overspill Damage to other shields nearby"),
                 others[k]:ApplyDamage(
-                    LOG("Applying Overspill Damage to other shields nearby"),
                     instigator, -- instigator
                     spillAmount, -- amount
                     nil, -- vector
