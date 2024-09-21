@@ -81,6 +81,25 @@ local UnitRevertCollisionShape = moho.unit_methods.RevertCollisionShape
 
 local CategoriesOverspill = categories.SHIELD * categories.DEFENSE
 
+-- default values for a shield specification table (to be passed to native code)
+local DEFAULT_OPTIONS = {
+    Mesh = '',
+    MeshZ = '',
+    ImpactMesh = '',
+    ImpactEffects = '',
+    Size = 10,
+    ShieldMaxHealth = 250,
+    ShieldRechargeTime = 10,
+    ShieldEnergyDrainRechargeTime = 10,
+    ShieldVerticalOffset = -1,
+    ShieldRegenRate = 1,
+    ShieldRegenStartTime = 5,
+    PassOverkillDamage = false,
+
+    -- flags for mods
+    -- SkipAttachmentCheck = false, -- defaults to nil, same as false
+}
+
 LargestShieldDiameter = 0
 for k, bp in __blueprints do
     -- check for blueprints that have a shield and a shield size set
@@ -102,6 +121,13 @@ Shield = Class(LCEShield) {
     LOG("We've entered LCE Version of Shield.lua"),
 
     __init = function(self, spec, owner)
+        -- This key deviates in name from the blueprints...
+        spec.Size = spec.ShieldSize
+
+        -- Apply default options
+        local spec = TableAssimilate(spec, DEFAULT_OPTIONS)
+        spec.Owner = owner
+
         _c_CreateShield(self, spec)
     end,
 
@@ -114,7 +140,6 @@ Shield = Class(LCEShield) {
         self.EntityId = EntityGetEntityId(self)
         self.Brain = spec.Owner:GetAIBrain()
 
-		self.Army = GetArmy(self)
 		self.Dead = false
         
         if spec.ImpactEffects ~= '' then
@@ -312,7 +337,7 @@ Shield = Class(LCEShield) {
             local units = brain:GetUnitsAroundPoint(CategoriesOverspill, position, 0.5 * diameter, 'Ally')
 
             if units then
-                LOG("We found overlapping shields "..repr(units))
+                --LOG("We found overlapping shields "..repr(units))
                 -- allocate locals once
                 local shieldOther
                 local radiusOther
@@ -366,7 +391,7 @@ Shield = Class(LCEShield) {
                 -- keep track of the number of adjacent shields
                 self.OverlappingShieldsCount = head - 1
             else
-                LOG("We didnt find any overlapping shields")
+                --LOG("We didnt find any overlapping shields")
                 -- no units found
                 self.OverlappingShieldsCount = 0
             end
@@ -538,11 +563,11 @@ Shield = Class(LCEShield) {
             -- retrieve shields that overlap with us
             local others, count = self:GetOverlappingShields(tick)
 
-            LOG("What is the Overlapping Shield Amount (others) "..repr(others).. "and Count is "..repr(count))
+            LOG("Are we reaching here")
 
             -- apply overspill damage to neighbour shields
             for k = 1, count do
-                LOG("Applying Overspill Damage to other shields nearby"),
+                LOG("Applying Overspill Damage to other shields nearby")
                 others[k]:ApplyDamage(
                     instigator, -- instigator
                     spillAmount, -- amount
