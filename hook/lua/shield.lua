@@ -311,7 +311,7 @@ Shield = Class(LCEShield) {
             local units = brain:GetUnitsAroundPoint(CategoriesOverspill, position, 0.5 * diameter, 'Ally')
 
             if units then
-                --LOG("We found overlapping shields "..repr(units))
+                LOG("We found overlapping shields "..repr(units))
                 -- allocate locals once
                 local shieldOther
                 local radiusOther
@@ -365,7 +365,7 @@ Shield = Class(LCEShield) {
                 -- keep track of the number of adjacent shields
                 self.OverlappingShieldsCount = head - 1
             else
-                --LOG("We didnt find any overlapping shields")
+                LOG("We didnt find any overlapping shields")
                 -- no units found
                 self.OverlappingShieldsCount = 0
             end
