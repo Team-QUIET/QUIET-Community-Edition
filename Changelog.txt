@@ -5,6 +5,34 @@
 
 ### 1.30
 
+# T3 UEF Helltank
+Removed AMPHIBIOUS
+Removed SUBMERSIBLE
+BuildCostEnergy = 15500, -- was 17500
+BuildCostMass = 1425,  -- was 1725
+-- Riot beams
+MaxRadius = 14, -- was 28
+Rocket Salvo from 44 MaxRadius to 42 MaxRadius
+-- Railgun --
+Damage = 875,    -- was 750
+MaxRadius = 42,  -- was 40
+RateOfFire = 0.225, -- was 0.3
+-- Ravager --
+Damage = 35, -- was 50
+MaxRadius = 16, -- was 36
+Health = 2750,  -- was 5150
+MaxHealth = 2750, -- was 5150
+
+# T3 UEF Juggernant
+Health = 4200,  -- was 3150
+MaxHealth = 4200, -- was 3150
+BuildCostEnergy = 36000, -- was 24000
+BuildCostMass = 3250,  -- was 1950
+-- Gauss cannon
+MaxRadius = 32, -- was 39
+-- Gatling 2x
+MaxRadius = 28, -- was 30
+
 # T2 Cybran Mobile Bomb
 It receives permanent cloak but has it's stealth removed
 It can not be manually attacked into the target and will also cause 1.1k dmg if killed (volatile ability)
@@ -29,6 +57,9 @@ The cooldown is rapid however takes around 3 seconds for a full recharge of the 
 -> EnergyRequired = 4500,
 
 With around 20k e storage, your commander can now easily demolish his way through a T3.5 Army especially if he's a fully combat vetted and upgrade Commander. He will still struggle with Experimentals as the peak damage is VERY hard to reach.
+
+# Removed Units
+T3 UEF Ironfist
 
 ### 1.29
 
