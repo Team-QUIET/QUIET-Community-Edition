@@ -1,0 +1,12 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "brl0401",
+
+  Veteran = {
+        Level1 = 120,
+        Level2 = 240,
+        Level3 = 360,
+        Level4 = 480,
+        Level5 = 600,
+    },
+    }
