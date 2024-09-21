@@ -245,6 +245,7 @@ do
 			'dea0202', -- Janus
 			'dra0202', -- Corsair
 			'uel0402', -- Rampage
+			'brnt3abb',-- Ironfist
 			'uab8765', -- Exp Storage Aeon
 			'urb8765', -- Exp Storage Cybran
 			'ueb8765', -- Exp Storage UEF
