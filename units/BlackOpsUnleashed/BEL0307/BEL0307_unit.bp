@@ -1,0 +1,76 @@
+UnitBlueprint {
+	Merge = true,
+	BlueprintId = "bel0307",
+
+	Categories = {
+		'SELECTABLE',
+		'BUILTBYTIER3FACTORY',
+		'UEF',
+		'MOBILE',
+		nil, -- was 'AMPHIBIOUS'
+		nil, -- was 'SUBMERSIBLE'
+		'LAND',
+		'TECH3',
+		'DIRECTFIRE',
+		'VISIBLETORECON',
+		'RECLAIMABLE',
+		'TANK',
+	},
+
+	Defense = {
+		AirThreatLevel = 15,
+		ArmorType = 'Normal',
+		Health = 2750,  -- was 5150
+		MaxHealth = 2750, -- was 5150
+		RegenRate = 4,
+		SurfaceThreatLevel = 65.6,
+	},
+
+	Display = {
+		Abilities = {
+			'Railgun - hits multiple targets',
+			'Gatling Close Defense system',
+			'2 x Riot Lasers',
+			'Rocket Barrage',
+			'',
+		}
+	},
+
+	Economy = {
+		BuildCostEnergy = 15500, -- was 17500
+		BuildCostMass = 1425,  -- was 1725
+		BuildTime = 862,
+	},
+
+	General = {
+		Icon = 'land',
+	},
+
+	StrategicIconName = 'icon_land3_directfire',
+
+	Weapon = {
+		{
+			-- Railgun --
+			Damage = 875,    -- was 750
+			MaxRadius = 42,  -- was 40
+			RateOfFire = 0.225, -- was 0.3
+		},
+		{
+			-- Ravager --
+			Damage = 35, -- was 50
+			MaxRadius = 16, -- was 36
+		},
+		{
+			-- Riot beams
+			MaxRadius = 14, -- was 28
+		},
+		{
+			-- Riot beams 2
+			MaxRadius = 14, -- was 28
+		},
+		{
+			-- Rocket salvo
+			MaxRadius = 42, -- was 44
+		}
+	}
+}
