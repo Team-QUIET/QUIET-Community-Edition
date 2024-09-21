@@ -5,7 +5,14 @@
 
 ### 1.30
 
-ACU Overcharge Rework:
+# T2 Cybran Mobile Bomb
+It receives permanent cloak but has it's stealth removed
+It can not be manually attacked into the target and will also cause 1.1k dmg if killed (volatile ability)
+
+# T4 Cybran Basilisk
+Basilisk receives a doubled veterancy level increase to account for it's extremely powerful AA capability
+
+# ACU Overcharge Rework:
 ACU Overcharge rework applies to all Commanders are a standardized number system.
 
 commandDamage = 400,
