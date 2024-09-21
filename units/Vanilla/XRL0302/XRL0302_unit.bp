@@ -1,0 +1,105 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "xrl0302",
+    
+  Display = {
+        Abilities = {
+            '<LOC ability_amphibious>Amphibious',            
+            '<LOC ability_suicideweapon>Suicide Weapon',
+            '<LOC ability_cloak>Cloaking',
+        },
+        },
+
+  Economy = {
+        BuildCostEnergy = 2000,   
+        BuildCostMass = 200,
+        BuildTime = 1500,
+
+        MaintenanceConsumptionPerSecondEnergy = 20,
+    },
+
+  General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+
+        FactionName = 'Cybran',
+        Icon = 'amph',
+
+        OrderOverrides = {
+            RULEUTC_WeaponToggle = {bitmapId = 'Nuke',helpText = 'detonate'},
+        },
+
+        ToggleCaps = {
+            RULEUTC_WeaponToggle = true,
+            RULEUTC_CloakToggle = true,
+        },
+        
+        UnitName = '<LOC xrl0302_name>Fire Beetle',
+    },
+
+  Intel = {
+        VisionRadius = 24,
+        Cloak = true,
+    },
+    
+  Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            CollideFriendly = false,
+
+            Damage = 2200,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+
+            DisplayName = 'Suicide',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+				Seabed = 'Land|Water|Seabed',
+            },
+
+            FiringTolerance = 360,
+
+            Label = 'Suicide',
+
+            MaxRadius = 3,
+
+            ProjectileId = '/projectiles/NullShell/NullShell_proj.bp',
+            ProjectileLifetime = 0.1,
+
+            RackBones = {
+                { MuzzleBones = { 0 }, RackBone = 0 },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'STRUCTURE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            Turreted = false,
+        },
+        {
+            Damage = 1100,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+            DisplayName = 'Death Weapon',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+            WeaponCategory = 'Death',
+        },
+    },
+    }
