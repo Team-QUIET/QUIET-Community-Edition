@@ -20,7 +20,7 @@ UnitBlueprint {
 		},
 		{
 			-- Gatling 2x
-			MaRadius = 28, -- was 30
+			MaxRadius = 28, -- was 30
 		}
 	}
 }
