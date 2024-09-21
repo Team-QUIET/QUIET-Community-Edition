@@ -3,6 +3,26 @@
 ## Rebalance Changelog
 ---------------------------------------------
 
+### 1.30
+
+ACU Overcharge Rework:
+ACU Overcharge rework applies to all Commanders are a standardized number system.
+
+commandDamage = 400,
+energyMult = 0.9,
+maxDamage = 25000,
+minDamage = 1250,
+structureDamage = 800,
+
+This is the number table for all Commanders, CommandDamage and StructureDamage are unique hard values for all (Commanders & Structures)
+Damage is calculated base off the Energy aviable in your storage and can use up to 90% of your energy storage.
+The maxDamage it can deliver is 25000 however this takes significant amount of storage (the calculated value would be somewhere around 70k e storage)
+The cooldown is rapid however takes around 3 seconds for a full recharge of the OC once used. 
+-> EnergyDrainPerSecond = 1500,
+-> EnergyRequired = 4500,
+
+With around 20k e storage, your commander can now easily demolish his way through a T3.5 Army especially if he's a fully combat vetted and upgrade Commander. He will still struggle with Experimentals as the peak damage is VERY hard to reach.
+
 ### 1.29
 
 # T2 Seraphim Ilsavoh & T2.5 Ilsavoh
