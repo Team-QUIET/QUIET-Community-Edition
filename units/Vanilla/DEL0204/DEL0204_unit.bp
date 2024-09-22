@@ -58,8 +58,8 @@ UnitBlueprint {
             RackRecoilDistance = 0,
             RackReloadTimeout = 0,
             RackSalvoFiresAfterCharge = false,
-            RackSalvoChargeTime = 1,	---- 1 seconds to warm up
-            RackSalvoReloadTime = 1,	---- 1 seconds to reload
+            RackSalvoChargeTime = 1,	---- 1 seconds to warm up, Chargetime resets when retargetting so we don't prefer to have a high chargetime
+            RackSalvoReloadTime = 3,	---- 3 seconds to reload
             RackSlavedToTurret = false,
             RangeCategory = 'UWRC_DirectFire',
             RateOfFire = 1,			---- 15 * 15 every 5.5 seconds = 40 DPS
