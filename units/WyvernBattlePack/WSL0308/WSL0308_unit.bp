@@ -1,0 +1,79 @@
+UnitBlueprint{
+    Merge = true,
+    BlueprintId = "wsl0308",
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            BallisticArc = "RULEUBA_LowArc",
+
+            Buffs = {
+                {
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = "STUN",
+                    Duration = 0.15,
+                    Radius = 0.5,
+                    TargetAllow = "MOBILE",
+                    TargetDisallow = "EXPERIMENTAL,COMMAND",
+                },
+            },
+
+            CollideFriendly = false,
+
+            Damage = 200,
+            DamageRadius = 1,
+            DamageType = "Normal",
+
+            DisplayName = "Thau Cannon",
+
+            FireTargetLayerCapsTable = { Land = "Land|Water|Seabed" },
+
+            FiringRandomness = 0.2,
+            FiringRandomnessWhileMoving = 0.75,
+            FiringTolerance = 1,
+
+            Label = "MainTurret",
+            LeadTarget = true,
+
+            MaxRadius = 32,
+
+            MuzzleVelocity = 40,
+
+            ProjectileLifetime = 1,
+
+            RackRecoilDistance = -1,
+
+            RangeCategory = "UWRC_DirectFire",
+
+            RateOfFire = 1.5,
+
+            TargetCheckInterval = 0.25,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "MOBILE",
+                "DEFENSE",
+                "ALLUNITS -WALL",
+            },
+            TargetRestrictDisallow = "UNTARGETABLE",
+            TrackingRadius = 1.1,
+
+            TurretBoneDualMuzzle = "TahuMuzzle02",
+            TurretBoneDualPitch = "TurretPitch2",
+            TurretBoneMuzzle = "TahuMuzzle01",
+            TurretBonePitch = "TurretPitch",
+            TurretBoneYaw = "Turret",
+            TurretDualManipulators = true,
+
+            TurretPitch = 10,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 30,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 54,
+
+            Turreted = true,
+        },
+    },
+}
