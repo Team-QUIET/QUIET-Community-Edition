@@ -22,16 +22,15 @@ ProjectileBlueprint {
         'DIRECTFIRE',
     },
     Display = {
-        StrategicIconSize = 3,
+        ImpactEffects = {
+            Type = 'Medium01',
+        },
+        StrategicIconSize = 1,
     },
     General = {
         Category = 'Direct Fire',
-        EntityCategory = {
-            'CYBRAN',
-            'PROJECTILE',
-            'DIRECTFIRE',
-        },
         Faction = 'Cybran',
+        TechLevel = 1,
         Weapon = 'Molecular Ripper Cannon',
     },
     Interface = {
@@ -39,9 +38,13 @@ ProjectileBlueprint {
     },
     Physics = {
         DestroyOnWater = true,
-        InitialSpeed = 20,
+        InitialSpeed = 14.6,
+        InitialSpeedRange = 3,
+        InitialSpeedReduceDistance = 30,
+        LeadTarget = false,
         TrackTarget = true,
+        RotationalVelocity = 9000,
         TurnRate = 60,
-        UseGravity = false,
+        VelocityAlign = true,
     },
 }

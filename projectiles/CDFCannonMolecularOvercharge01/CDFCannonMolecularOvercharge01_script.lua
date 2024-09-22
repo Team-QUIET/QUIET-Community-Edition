@@ -1,10 +1,14 @@
+-- File     :  /data/projectiles/SDFChronatronCannon02/SDFChronatronCannon02_script.lua
+-- Author(s):  Gordon Duclos
+-- Summary  :  ChronatronCannon Projectile script, Seraphim commander overcharge, XSL0001
+-- Copyright © 2007 Gas Powered Games, Inc.  All rights reserved.
+-----------------------------------------------------------------------------------------
 
 local CMolecularCannonProjectile = import('/lua/cybranprojectiles.lua').CMolecularCannonProjectile
-local EffectTemplate = import('/lua/EffectTemplates.lua')
 local OverchargeProjectile = import("/lua/sim/defaultprojectiles.lua").OverchargeProjectile
+local EffectTemplate = import("/lua/effecttemplates.lua")
 
 CDFCannonMolecular01 = Class(CMolecularCannonProjectile, OverchargeProjectile) {
-
     PolyTrail = '/effects/emitters/default_polytrail_03_emit.bp',
     FxTrails = EffectTemplate.CCommanderOverchargeFxTrail01,
 
@@ -28,5 +32,6 @@ CDFCannonMolecular01 = Class(CMolecularCannonProjectile, OverchargeProjectile) {
         OverchargeProjectile.OnCreate(self)
     end,
 }
+
 TypeClass = CDFCannonMolecular01
 

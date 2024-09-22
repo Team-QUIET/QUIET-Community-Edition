@@ -22,8 +22,10 @@ ProjectileBlueprint {
         'DIRECTFIRE',
     },
     Display = {
-        CameraFollowsProjectile = true,
-        StrategicIconSize = 3,
+        ImpactEffects = {
+            Type = 'Medium01',
+        },
+        StrategicIconSize = 1,
     },
     General = {
         Category = 'Direct Fire',
@@ -41,6 +43,7 @@ ProjectileBlueprint {
         InitialSpeedReduceDistance = 30,
         LeadTarget = false,
         TrackTarget = true,
+        RotationalVelocity = 9000,
         TurnRate = 60,
         VelocityAlign = true,
     },

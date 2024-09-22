@@ -1,11 +1,16 @@
+-- File     :  /data/projectiles/SDFChronatronCannon02/SDFChronatronCannon02_script.lua
+-- Author(s):  Gordon Duclos
+-- Summary  :  ChronatronCannon Projectile script, Seraphim commander overcharge, XSL0001
+-- Copyright © 2007 Gas Powered Games, Inc.  All rights reserved.
+-----------------------------------------------------------------------------------------
 
 local TLaserBotProjectile = import('/lua/terranprojectiles.lua').TLaserBotProjectile
-local EffectTemplate = import('/lua/EffectTemplates.lua')
 local OverchargeProjectile = import("/lua/sim/defaultprojectiles.lua").OverchargeProjectile
+local EffectTemplate = import("/lua/effecttemplates.lua")
 
 TDFOverCharge01 = Class(TLaserBotProjectile, OverchargeProjectile) {
     FxTrails = EffectTemplate.TCommanderOverchargeFXTrail01,
-    FxTrailScale = 1.0,    
+    FxTrailScale = 1.0,
 
 	-- Hit Effects
     FxImpactUnit =  EffectTemplate.TCommanderOverchargeHit01,
