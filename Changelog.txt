@@ -3,6 +3,16 @@
 ## Rebalance Changelog
 ---------------------------------------------
 
+### 1.31
+
+# T3 Seraphim Oteethka
+Stun Duration 1 -> 0.15 (Seconds)
+Stun Radius 1 -> 0.5
+FiringRandomnessWhileMoving 0.5 -> 0.75
+
+# T2 Cybran Hoptile
+Removed Stun from Rockets
+
 ### 1.30
 
 # T3 UEF Helltank
