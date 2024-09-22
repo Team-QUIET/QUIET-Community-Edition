@@ -5,6 +5,14 @@
 
 ### 1.31
 
+# Shield Overspill
+- DISCLAIMER: This significantly nerfs shields and SIGNIFICANTLY & FUNDAMENTALLY changes the entire flow of the game. It can not be stressed enough that when playing 1.31 please take this into account.
+
+Shield Overspill is a brand new functionality for the LOUD Project. It introduces the ability for Weapons with AoE to spread the damage out through multiple shields. This effectively nerfs Mobile Shield Stacking, Static Shield Stacking & makes (T2, T3, T4) Artillery as well as any unit that wields a significant weapon with large AoE a massive threat to layered shielding. 
+
+Currently AoE Damage is spread throughout shields by a 15% per Shield.
+
+
 # T3 Seraphim Oteethka
 Stun Duration 1 -> 0.15 (Seconds)
 Stun Radius 1 -> 0.5
