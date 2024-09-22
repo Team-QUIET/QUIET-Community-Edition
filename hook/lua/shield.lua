@@ -23,6 +23,20 @@ local LOUDSQRT      = math.sqrt
 
 local TableAssimilate = table.assimilate
 
+-- cache globals
+local Warp = Warp
+local IsEntity = IsEntity
+local IsAlly = IsAlly
+local IsEnemy = IsEnemy
+local Random = Random
+local GetGameTick = GetGameTick
+local ForkThread = ForkThread
+local ChangeState = ChangeState
+local ArmyGetHandicap = ArmyGetHandicap
+local CoroutineYield = coroutine.yield
+local CreateEmitterAtBone = CreateEmitterAtBone
+local _c_CreateShield = _c_CreateShield
+
 -- cache trashbag functions
 local TrashBag = TrashBag
 local TrashAdd = TrashBag.Add
@@ -79,6 +93,8 @@ local UnitSetScriptBit = moho.unit_methods.SetScriptBit
 local UnitIsUnitState = moho.unit_methods.IsUnitState
 local UnitRevertCollisionShape = moho.unit_methods.RevertCollisionShape
 
+local IEffectOffsetEmitter = moho.IEffect.OffsetEmitter
+
 local CategoriesOverspill = categories.SHIELD * categories.DEFENSE
 
 LargestShieldDiameter = 0
@@ -128,7 +144,8 @@ Shield = Class(LCEShield) {
             self.ImpactMeshBp = false
         end
 
-        -- static table --
+        -- manage impact entities
+        self.LiveImpactEntities = 0
         self.ImpactEntitySpecs = { Owner = spec.Owner }
         
 
@@ -591,44 +608,52 @@ Shield = Class(LCEShield) {
 
     CreateImpactEffect = function(self, vector)
 
-		if not self.Dead then
-		
-            local ImpactEffects = self.ImpactEffects
-            
-			local ImpactMesh = Entity( self.ImpactEntitySpecs )
+        if IsDestroyed(self) then
+            return
+        end
 
-			Warp( ImpactMesh, self:GetPosition())		
-		
-			if self.ImpactMeshBp then
-                
-                local vec = VectorCached
-                vec[1] = -vector.x
-                vec[2] = -vector.y
-                vec[3] = -vector.z
-                
-				ImpactMesh:SetOrientation( OrientFromDir( vec ), true)			
+        -- keep track of this entity
+        self.LiveImpactEntities = self.LiveImpactEntities + 1
 
-				ImpactMesh:SetMesh(self.ImpactMeshBp)
-				
-				ImpactMesh:SetDrawScale(self.Size)
+        -- cache values
+        local effect
+        local army = self.Army
+        local vc = VectorCached
 
-			end
+        -- compute distance to offset effect
+        local x = vector[1]
+        local y = vector[2]
+        local z = vector[3]
+        local d = LOUDSQRT(x * x + y * y + z * z)
 
-			if ImpactEffects and not self.Dead then
-            
-                local Army = self.Army
-                local CreateEmitterAtBone = CreateEmitterAtBone
-                
-				for k, v in ImpactEffects do
-					CreateEmitterAtBone( ImpactMesh, -1, Army, v ):OffsetEmitter(0, 0, LOUDSQRT( LOUDPOW( vector[1], 2 ) + LOUDPOW( vector[2], 2 ) + LOUDPOW(vector[3], 2 ) )  )
-				end
-                
-			end
-			
-			WaitTicks(17)
-            
-			ImpactMesh:Destroy()
-		end
+        -- allocate an entity
+        local entity = Entity(self.ImpactEntitySpecs)
+
+        vc[1], vc[2], vc[3] = EntityGetPositionXYZ(self)
+        Warp(entity, vc)
+
+        -- set the impact mesh and scale it accordingly
+        if self.ImpactMeshBp ~= '' then
+            EntitySetMesh(entity, self.ImpactMeshBp)
+            EntitySetDrawScale(entity, self.Size)
+
+            vc[1], vc[2], vc[3] = -x, -y, -z
+            EntitySetOrientation(entity, OrientFromDir(vc), true)
+        end
+
+        -- spawn additional effects
+        for _, v in self.ImpactEffects do
+            effect = CreateEmitterAtBone(entity, -1, army, v)
+            IEffectOffsetEmitter(effect, 0, 0, d)
+        end
+
+        -- hold up a bit
+        CoroutineYield(20)
+
+        -- take out the entity again
+        EntityDestroy(entity)
+
+        self.LiveImpactEntities = self.LiveImpactEntities - 1
     end,
 
     OnDestroy = function(self)
@@ -701,6 +726,7 @@ Shield = Class(LCEShield) {
     end,
 
     RemoveShield = function(self)
+        self._IsUp = false
 	
         self:SetCollisionShape('None')
 
@@ -755,6 +781,7 @@ Shield = Class(LCEShield) {
 		end
 		
         self.Owner:OnShieldIsUp()
+        self._IsUp = true
     end,
 
     -- Basically run a timer, but with a visual bar
