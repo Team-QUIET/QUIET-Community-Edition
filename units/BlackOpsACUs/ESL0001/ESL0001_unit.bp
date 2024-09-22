@@ -61,6 +61,7 @@ UnitBlueprint {
             RateOfFire = 1,     -- relies upon charge cycle -- 
 
             TargetCheckInterval = 0.5,
+            
             TargetRestrictDisallow = 'UNTARGETABLE',
 
             TurretBoneMuzzle = 'Right_Turret_Muzzle',

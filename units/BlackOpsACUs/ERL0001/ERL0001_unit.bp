@@ -15,11 +15,11 @@ UnitBlueprint {
             AboveWaterTargetsOnly = true,
 
             BallisticArc = 'RULEUBA_None',
-
-            BeamCollisionDelay = 0.2,
-            BeamLifetime = 0.4,
-
+            CanAttackGround = true,
             CollideFriendly = false,
+
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0,
 
             Damage = 25000,
             DamageFriendly = false,
@@ -46,7 +46,7 @@ UnitBlueprint {
 
             MuzzleVelocity = 25,
 
-            NotExclusive = true,
+            NotExclusive = false,
             
             OverChargeWeapon = true,
             Overcharge = {
@@ -59,6 +59,8 @@ UnitBlueprint {
 
             ProjectileId = '/mods/LOUD-Community-Edition/projectiles/CDFCannonMolecularOvercharge01/CDFCannonMolecularOvercharge01_proj.bp',
             ProjectileLifetimeUsesMultiplier = 2,
+
+            RackRecoilDistance = -0.5,
 
             RangeCategory = 'UWRC_Countermeasure',
 

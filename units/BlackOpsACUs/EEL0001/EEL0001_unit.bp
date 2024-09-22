@@ -17,6 +17,7 @@ UnitBlueprint {
             AboveWaterTargetsOnly = true,
 
             BallisticArc = 'RULEUBA_None',
+            CanAttackGround = true,
             CollideFriendly = false,
 			
             Damage = 25000,
@@ -44,7 +45,7 @@ UnitBlueprint {
 
             MuzzleVelocity = 25,
 			
-			NotExclusive = true,
+			NotExclusive = false,
 			
             OverChargeWeapon = true,
             Overcharge = {
@@ -58,11 +59,14 @@ UnitBlueprint {
             ProjectileId = '/mods/LOUD-Community-Edition/projectiles/TDFOverCharge01/TDFOverCharge01_proj.bp',
             ProjectileLifetimeUsesMultiplier = 2,
 
+            RackRecoilDistance = -0.5,
+
             RangeCategory = 'UWRC_Countermeasure',
 			
             RateOfFire = 1,     -- relies upon the charge cycle
 
             TargetCheckInterval = 0.5,
+            
             TargetRestrictDisallow = 'UNTARGETABLE',
 			
             TurretBoneMuzzle = 'Right_Arm_Muzzle',
