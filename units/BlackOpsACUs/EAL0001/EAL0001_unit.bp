@@ -14,12 +14,12 @@ UnitBlueprint {
             AboveWaterTargetsOnly = true,
 
             BallisticArc = 'RULEUBA_None',
+            CanAttackGround = true,
             CollideFriendly = false,
 			
             Damage = 25000,
             DamageFriendly = true,
             DamageRadius = 2.5,
-
             DamageType = 'Overcharge',
 			
             DisplayName = 'Overcharge Cannon',
@@ -43,7 +43,7 @@ UnitBlueprint {
 
             MuzzleVelocity = 25,
             
-            NotExclusive = true,
+            NotExclusive = false,
 			
             OverChargeWeapon = true,
             Overcharge = {
@@ -64,6 +64,7 @@ UnitBlueprint {
             RateOfFire = 1,         -- relies upon the charge cycle
 			
             TargetCheckInterval = 0.5,
+            
             TargetRestrictDisallow = 'UNTARGETABLE',
 			
             TurretBoneMuzzle = 'Right_Turret_Muzzle',
