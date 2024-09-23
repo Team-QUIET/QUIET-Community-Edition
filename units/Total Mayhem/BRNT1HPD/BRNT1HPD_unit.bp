@@ -1,0 +1,109 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "brnt1hpd",
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                BarrelLoop  = Sound { Bank = 'UES', Cue = 'UES0302_Cannon_Loop', LodCutoff = 'WeaponBig_LodCutoff' },
+                BarrelStart = Sound { Bank = 'UES', Cue = 'UES0302_Cannon_Start', LodCutoff = 'WeaponBig_LodCutoff' },
+                BarrelStop  = Sound { Bank = 'UES', Cue = 'UES0302_Cannon_Stop', LodCutoff = 'WeaponBig_LodCutoff' },
+                Fire        = Sound { Bank = 'TM_UEFWEAPONS', Cue = 'BRNHEAVYGAUSS2FX1', LodCutoff = 'WeaponBig_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_LowArc',
+			
+            Buffs = {
+            	{
+                    Add = { OnImpact = false },
+                    AppliedToTarget = false,
+                    BuffType = 'STUN',
+                    Duration = 0.4,
+                    Radius = 1.5,
+                    TargetAllow = 'LAND TECH1,NAVAL TECH1',
+                    TargetDisallow = 'WALL',
+                },
+            	{
+                    Add = { OnImpact = false },
+                    AppliedToTarget = false,
+                    BuffType = 'STUN',
+                    Duration = 0.2,
+                    Radius = 0.5,
+                    TargetAllow = 'LAND TECH2,NAVAL TECH2',
+                    TargetDisallow = 'WALL',
+                },                
+            },			
+     
+            CollideFriendly = false,
+			
+            Damage = 200,
+            DamageRadius = 1.5,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Gauss Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 1,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 36,
+            MinRadius = 2,
+
+            MuzzleVelocity = 35,
+			
+			ProjectileId = '/mods/TotalMayhem/projectiles/BRNT1MTproj/BRNT1MTproj_proj.bp',
+            ProjectileLifetime = 1.1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'muzzle01'},
+                    RackBone = 'Turret_Recoil',
+                },
+                {
+                    MuzzleBones = { 'muzzle02' },
+                    RackBone = 'Turret_Recoil01',
+                },
+            },
+            
+            RackRecoilDistance = -1,
+
+            RackSlavedToTurret = true,
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 0.8,
+			
+            TargetCheckInterval = 1.0,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE -AIR',
+                'ALLUNITS',
+            },
+			
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.05,
+			
+            TurretBoneMuzzle = 'aim',
+            TurretBonePitch = 'Turret_Recoil',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 40,
+            TurretPitchSpeed = 36,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 30,
+			
+            Turreted = true,
+ 	   },
+    },
+    }
