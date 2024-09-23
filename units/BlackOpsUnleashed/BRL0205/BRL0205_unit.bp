@@ -271,8 +271,8 @@ UnitBlueprint {
             
             Buffs = {
                 {
-                    Add = { OnImpact = true },
-                    AppliedToTarget = true,
+                    Add = { OnImpact = false },
+                    AppliedToTarget = false,
                     BuffType = 'STUN',
                     Duration = 0.8,
                     TargetAllow = 'LAND TECH1,NAVAL TECH1,LAND TECH2,NAVAL TECH2',
