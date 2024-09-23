@@ -1,0 +1,198 @@
+UnitBlueprint {
+	Merge = true,
+	BlueprintId = "brmt2ht",
+
+ Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEL0202_Cannon_Dbl', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 75,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Gauss Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+			
+			FiringRandomness = 0.2,
+            FiringRandomnessWhileMoving = 0.35,
+            
+            FiringTolerance = 1,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 32,
+
+            MuzzleVelocity = 28,
+			
+            ProjectileId = '/mods/TotalMayhem/projectiles/BRMT2HVY2proj/BRMT2HVY2proj_proj.bp',
+			ProjectileLifetime = 1.5,
+
+            RackBones = {
+                {
+                    MuzzleBones = { 'Turret_Muzzle' },
+                    RackBone = 'Turret_Barrel',
+                },
+            },
+
+            RackRecoilDistance = -1,
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 1,	--	75dps
+			
+            TargetCheckInterval = 0.8,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'STRUCTURE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,WALL',
+            TrackingRadius = 1.05,
+			
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 36,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 34,
+			
+            Turreted = true,
+		},
+		
+		{
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Missile_Nanite', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_LowArc',
+
+            Buffs = {
+            	{
+                    Add = { OnImpact = false },
+                    AppliedToTarget = false,
+                    BuffType = 'STUN',
+                    Duration = 0.4,
+                    Radius = 1,
+                    TargetAllow = 'LAND TECH1,NAVAL TECH1,LAND TECH2,NAVAL TECH2',
+                    TargetDisallow = 'WALL',
+                },
+            },
+            CollideFriendly = false,
+			
+            Damage = 25,
+			DamageFriendly = true,
+            DamageRadius = 1.4,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Chaos Rocket Pack',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 1,
+            
+            FiringRandomness = 1.9,
+            FiringRandomnessWhileMoving = 2.8,
+			
+            Label = 'rocket',
+			
+            MaxRadius = 42,
+
+            MuzzleSalvoDelay = 0.05,
+            MuzzleSalvoSize = 6,	-- 6 rockets per rack
+
+            MuzzleVelocity = 18,
+
+			NotExclusive = true,
+
+			PrefersPrimaryWeaponTarget = true,
+			
+            ProjectileId = '/projectiles/CDFRocketIridium02/CDFRocketIridium02_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 3,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'rl01',
+                        'rl02',
+                        'rl03',
+                        'rl04',
+                        'rl05',
+                        'rl06',
+                    },
+                    RackBone = 'rocketlauncher1',
+				},
+				{
+                    MuzzleBones = {
+                        'rl07',
+                        'rl08',
+                        'rl09',
+                        'rl10',
+                        'rl11',
+                        'rl12',
+                    },
+                    RackBone = 'rocketlauncher2',
+                },
+            },
+			
+            RackFireTogether = true,
+			
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 0.10,	-- 12 rockets of 25 every 10 seconds = 30dps
+			
+			RenderFireClock = true,
+			
+            TargetCheckInterval = 3.5,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'STRUCTURE - WALL',
+				'MOBILE -AIR',
+                'ALLUNITS',
+            },
+			
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.05,
+			
+            TurretBoneDualMuzzle = 'rl07',
+            TurretBoneDualPitch = 'rocketlauncher2',
+			
+            TurretBoneMuzzle = 'rl04',
+            TurretBonePitch = 'rocketlauncher1',
+			
+            TurretBoneYaw = 'Turret',
+			
+            TurretDualManipulators = true,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 6,
+
+            TurretYaw = 0,
+            TurretYawRange = 30,
+            TurretYawSpeed = 12,
+
+            Turreted = true,
+        },
+    },
+    }
