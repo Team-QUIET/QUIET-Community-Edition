@@ -1,0 +1,18 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "brot2epd",
+
+    Weapon = {	
+            Buffs = {
+            	{
+                    Add = { OnImpact = false },
+                    AppliedToTarget = false,
+                    BuffType = 'STUN',
+                    Duration = 0.3,
+                    Radius = 1,
+                    TargetAllow = 'LAND TECH1,NAVAL TECH1,LAND TECH2,NAVAL TECH2',
+                    TargetDisallow = 'WALL,COMMAND,EXPERIMENTAL',
+                },
+            },
+    },
+    }
