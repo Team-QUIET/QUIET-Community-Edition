@@ -15,7 +15,6 @@ UnitBlueprint {
                     TargetDisallow = 'WALL',
                 },
             },
-
         },
     },
-    }
+}

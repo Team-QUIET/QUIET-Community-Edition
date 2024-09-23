@@ -4,24 +4,25 @@ UnitBlueprint {
 
     Weapon = {
             Buffs = {
-            	{
-                    Add = { OnImpact = false },
-                    AppliedToTarget = false,
-                    BuffType = 'STUN',
-                    Duration = 0.4,
-                    Radius = 1.5,
-                    TargetAllow = 'LAND TECH1,NAVAL TECH1',
-                    TargetDisallow = 'WALL',
-                },
-            	{
-                    Add = { OnImpact = false },
-                    AppliedToTarget = false,
-                    BuffType = 'STUN',
-                    Duration = 0.2,
-                    Radius = 0.5,
-                    TargetAllow = 'LAND TECH2,NAVAL TECH2',
-                    TargetDisallow = 'WALL',
-                },                
-            },			
+            {
+                Add = { OnImpact = false },
+                AppliedToTarget = false,
+                BuffType = 'STUN',
+                Duration = 0.4,
+                Radius = 1.5,
+                TargetAllow = 'LAND TECH1,NAVAL TECH1',
+                TargetDisallow = 'WALL',
+            },
+
+            {
+                Add = { OnImpact = false },
+                AppliedToTarget = false,
+                BuffType = 'STUN',
+                Duration = 0.2,
+                Radius = 0.5,
+                TargetAllow = 'LAND TECH2,NAVAL TECH2',
+                TargetDisallow = 'WALL',
+            },                
+        },			
     },
-    }
+}

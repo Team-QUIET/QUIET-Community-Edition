@@ -4,11 +4,10 @@ UnitBlueprint {
 
  Weapon = {
         {
-
+            
 		},
-		
+	
 		{
-
             Buffs = {
             	{
                     Add = { OnImpact = false },
@@ -20,7 +19,6 @@ UnitBlueprint {
                     TargetDisallow = 'WALL',
                 },
             },
-
         },
     },
-    }
+}
