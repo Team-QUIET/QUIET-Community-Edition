@@ -30,7 +30,7 @@ local OverchargeShared = import("/mods/LOUD-Community-Edition/lua/shared/overcha
 local OCProjectiles = {}
 
 ---@class OverchargeProjectile
-OverchargeProjectile = ClassSimple {
+OverchargeProjectile = Class {
 
     ---@param self OverchargeProjectile | moho.projectile_methods
     OnCreate = function(self)
