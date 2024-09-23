@@ -246,6 +246,8 @@ do
 			'dra0202', -- Corsair
 			'uel0402', -- Rampage
 			'brnt3abb',-- Ironfist
+			'brpat2bomber', -- Vesinee
+			'xsa0202', -- Notha
 			'uab8765', -- Exp Storage Aeon
 			'urb8765', -- Exp Storage Cybran
 			'ueb8765', -- Exp Storage UEF
