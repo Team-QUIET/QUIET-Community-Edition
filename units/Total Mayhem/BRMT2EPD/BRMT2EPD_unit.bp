@@ -4,14 +4,6 @@ UnitBlueprint {
 
     Weapon = {
         {
-            AboveWaterTargetsOnly = true,
-			
-            Audio = {
-                Fire = Sound { Bank = 'URLWeapon', Cue = 'URL0303_Disintegrator', LodCutoff = 'Weapon_LodCutoff' },
-            },
-			
-            BallisticArc = 'RULEUBA_LowArc',
-			
             Buffs = {
             	{
                     Add = { OnImpact = false },
@@ -23,81 +15,7 @@ UnitBlueprint {
                     TargetDisallow = 'WALL',
                 },
             },
-			
-            CollideFriendly = false,
-			
-            Damage = 160,
-            DamageRadius = 0,
-            DamageType = 'Normal',
-			
-            DisplayName = 'Ionized Plasma Cannon',
-			
-            FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Seabed|Air',
-            },
-			
-            FiringTolerance = 1,
-			
-            Label = 'MainGun',
-			
-			LeadTarget = true,
 
-            MaxRadius = 48,
-            MinRadius = 3,
-
-            MuzzleVelocity = 80,
-			
-            NoPause = true,
-
-            ProjectileId = '/projectiles/CDFLaserDisintegrator02/CDFLaserDisintegrator02_proj.bp',
-            ProjectileLifetimeUsesMultiplier = 1.1,
-
-            RackBones = {
-                {
-                    MuzzleBones = { 'Turret_Muzzle01' },
-                    RackBone = 'Barrel01',
-                },
-                {
-                    MuzzleBones = { 'Turret_Muzzle02' },
-                    RackBone = 'Barrel02',
-                },
-            },
-            
-            RackRecoilDistance = -0.5,
-			
-            RangeCategory = 'UWRC_DirectFire',
-			
-            RateOfFire = 1.5,
-			
-            TargetCheckInterval = 0.5,
-            TargetPriorities = {
-                'EXPERIMENTAL',
-                'SPECIALHIGHPRI',
-                'MOBILE',
-                'ALLUNITS',
-            },
-            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.2,
-			
-            TurretBoneDualMuzzle = 'Turret_Muzzle01',
-            TurretBoneDualPitch = 'Turret_Barrel01',
-
-            TurretBoneMuzzle = 'Turret_Muzzle02',
-            TurretBonePitch = 'Turret_Barrel02',
-
-            TurretBoneYaw = 'Turret',
-
-            TurretDualManipulators = true,
-			
-            TurretPitch = 0,
-            TurretPitchRange = 80,
-            TurretPitchSpeed = 40,
-			
-            TurretYaw = 0,
-            TurretYawRange = 180,
-            TurretYawSpeed = 48,
-			
-            Turreted = true,
         },
     },
     }
