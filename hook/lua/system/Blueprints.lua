@@ -121,6 +121,56 @@ do
 							end
 						end
 					end
+					
+					-- Allow T2, T3, & T4 Engineers to Build T2 Factories
+					local CatsT2 = {
+						'BUILTBYTIER2ENGINEER',
+						'BUILTBYTIER3ENGINEER',
+						'BUILTBYTIER4ENGINEER',
+					}
+					if cat == 'BUILTBYTIER1FACTORY' then -- Safety Check -- Refer to bottom comment on the T3 Factory add as to why
+						for v, catk in bp.Categories do
+							if catk == 'FACTORY' then
+								for j, catj in bp.Categories do
+									if catj == 'STRUCTURE' then
+										for _, catp in bp.Categories do
+											if catp == 'TECH2' then
+												for i, cat in CatsT2 do
+													if not table.find(bp.Categories, cat) then
+														table.insert(bp.Categories, cat)
+													end
+												end
+											end
+										end
+									end
+								end
+							end
+						end
+					end
+
+					-- Allow T3 Engineers to Build T3 Factories
+					local CatsT3 = {
+						'BUILTBYTIER3ENGINEER',
+					}
+					if cat == 'BUILTBYTIER2FACTORY' then -- Had to this do because Cybran T3 Engineer was able to build the eggs lol -- I hate long if chains but..... guess we need it here
+						for v, catk in bp.Categories do
+							if catk == 'FACTORY' then
+								for j, catj in bp.Categories do
+									if catj == 'STRUCTURE' then
+										for _, catp in bp.Categories do
+											if catp == 'TECH3' then
+												for i, cat in CatsT3 do
+													if not table.find(bp.Categories, cat) then
+														table.insert(bp.Categories, cat)
+													end
+												end
+											end
+										end
+									end
+								end
+							end
+						end
+					end
 				end
 			end
 		end
