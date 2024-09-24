@@ -1,0 +1,185 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "bal0310",
+
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        Elevation = 0.3,
+        
+        BackUpDistance = 10,
+        MaxAcceleration = 2,
+        MaxBrake = 2,
+        MaxSpeed = 3,
+        MaxSpeedReverse = 3,
+        
+        MaxSteerForce = 100,
+        MeshExtentsX = 1.1,
+        MeshExtentsY = 0.7,
+        MeshExtentsZ = 2.0,
+        MinSpeedPercent = 0,
+
+        MotionType = 'RULEUMT_Hover',
+
+        RotateBodyWhileMoving = true,
+        RotateOnSpot = true,
+        
+        TurnFacingRate = 55,
+        TurnRadius = 0,
+        TurnRate = 50,
+    },
+    
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 800,
+            DamageFriendly = true,
+            DamageRadius = 1.6,
+            DamageType = 'ShieldMult1.2',
+			
+            DisplayName = 'Sonance Artillery',
+
+            EnergyChargeForFirstShot = false,
+
+            EnergyRequired = 440,
+            EnergyDrainPerSecond = 132,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0.2,
+            FiringTolerance = 1,
+			
+            HeadingArcCenter = 0,
+            HeadingArcRange = 180,
+			
+            MaxRadius = 50,
+
+            LeadTarget = true,
+			
+            MuzzleChargeDelay = 0.2,
+
+            MuzzleVelocity = 26,
+			
+            NotExclusive = true,
+			
+            ProjectileLifetime = 2.5,
+
+            RackRecoilDistance = -1,
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 1,	-- 240dps   -- controlled by charge
+
+            SlavedToBody = false,
+            SlavedToBodyArcRange = 90,
+            
+            TargetCheckInterval = 2,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'DEFENSE',
+                'MOBILE',
+                'ALLUNITS,-WALL',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.2,
+
+            TurretBoneMuzzle = 'Main_Turret_Muzzle',
+            TurretBonePitch = 'Main_Turret_Barrel',
+            TurretBoneYaw = 'Main_Turret_Barrel',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 30,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+			
+            Turreted = true,
+        },
+        {
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = true,
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 120,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Quantum Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0.1,
+            FiringTolerance = 2,
+			
+            HeadingArcCenter = 0,
+            HeadingArcRange = 20,
+			
+            MaxRadius = 37,
+			
+            MuzzleChargeDelay = 0.4,
+
+            MuzzleVelocity = 45,
+            
+            NotExclusive = true,
+
+            ProjectileLifetime = 0.9,
+
+            RackRecoilDistance = -0.5,
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 2, -- 240 dps
+			
+            TargetCheckInterval = 0.6,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS,-WALL',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.2,
+			
+            TurretBoneDualMuzzle = 'L_Turret_Muzzle',
+            TurretBoneDualPitch = 'Left_Gun_Pivot',
+
+            TurretBoneMuzzle = 'R_Turret_Muzzle',
+            TurretBonePitch = 'Right_Gun_Pivot',
+
+            TurretBoneYaw = 'BAL0310',
+
+            TurretDualManipulators = true,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 50,
+            TurretPitchSpeed = 25,
+			
+            TurretYaw = 0,
+            TurretYawRange = 20,
+            TurretYawSpeed = 10,
+			
+            Turreted = true,
+
+            WeaponRepackTimeout = 1.5,
+            WeaponUnpackAnimationRate = 2,
+            WeaponUnpacks = true,
+        },
+    },
+}
