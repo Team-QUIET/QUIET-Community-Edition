@@ -1,7 +1,7 @@
-name = "LOUD Community Edition"
-author = "LOUD CE Team"
+name = "QUIET"
+author = "QUIET Team"
 version = 1.31
-description = "LOUD CE is a massive collection of Bug Fixes, Game Rebalance, & Other Various Actions"
+description = "QUIET is a massive collection of Bug Fixes, Game Rebalance, & Other Various Actions"
 exclusive = false
 ui_only = false
 selectable = true
