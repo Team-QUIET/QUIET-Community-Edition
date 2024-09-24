@@ -57,7 +57,7 @@ UnitBlueprint {
                 structureDamage = 800,
             },
 
-            ProjectileId = '/mods/LOUD-Community-Edition/projectiles/CDFCannonMolecularOvercharge01/CDFCannonMolecularOvercharge01_proj.bp',
+            ProjectileId = '/mods/QUIET-Community-Edition/projectiles/CDFCannonMolecularOvercharge01/CDFCannonMolecularOvercharge01_proj.bp',
             ProjectileLifetimeUsesMultiplier = 2,
 
             RackRecoilDistance = -0.5,

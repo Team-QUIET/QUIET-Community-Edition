@@ -96,7 +96,7 @@ UnitBlueprint {
 			
 			NotExclusive = true,
 
-            ProjectileId = '/mods/LOUD-Community-Edition/projectiles/TIFMissileCruise06/TIFMissileCruise06_proj.bp',
+            ProjectileId = '/mods/QUIET-Community-Edition/projectiles/TIFMissileCruise06/TIFMissileCruise06_proj.bp',
             ProjectileLifetimeUsesMultiplier = 1,
 
             RackSalvoChargeTime = 2,

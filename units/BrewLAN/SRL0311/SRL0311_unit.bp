@@ -55,7 +55,7 @@ UnitBlueprint {
             MuzzleVelocityRandom = 0.4,
             MuzzleVelocityReduceDistance = 60,
 
-            ProjectileId = '/mods/LOUD-Community-Edition/projectiles/CDFRocketIridium03/CDFRocketIridium03_proj.bp',
+            ProjectileId = '/mods/QUIET-Community-Edition/projectiles/CDFRocketIridium03/CDFRocketIridium03_proj.bp',
             
             RackRecoilDistance = 0,
             RackSalvoSize = 1,

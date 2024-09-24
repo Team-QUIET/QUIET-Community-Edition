@@ -25,7 +25,7 @@ local UnitsInSphere = import("/lua/utilities.lua").GetTrueEnemyUnitsInSphere
 local GetDistanceBetweenTwoEntities = import("/lua/utilities.lua").GetDistanceBetweenTwoEntities
 
 -- shared between sim and ui
-local OverchargeShared = import("/mods/LOUD-Community-Edition/lua/shared/overcharge.lua")
+local OverchargeShared = import("/mods/QUIET-Community-Edition/lua/shared/overcharge.lua")
 
 local OCProjectiles = {}
 

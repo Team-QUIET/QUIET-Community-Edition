@@ -54,7 +54,7 @@ UnitBlueprint {
                 structureDamage = 800,
             },
 			
-            ProjectileId = '/mods/LOUD-Community-Edition/projectiles/ADFOverCharge01/ADFOverCharge01_proj.bp',
+            ProjectileId = '/mods/QUIET-Community-Edition/projectiles/ADFOverCharge01/ADFOverCharge01_proj.bp',
             ProjectileLifetimeUsesMultiplier = 2,
 
             RackRecoilDistance = -0.5,

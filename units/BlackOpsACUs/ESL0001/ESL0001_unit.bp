@@ -51,7 +51,7 @@ UnitBlueprint {
                 structureDamage = 800,
             },
 
-            ProjectileId = '/mods/LOUD-Community-Edition/projectiles/SDFChronatronCannon02/SDFChronatronCannon02_proj.bp',
+            ProjectileId = '/mods/QUIET-Community-Edition/projectiles/SDFChronatronCannon02/SDFChronatronCannon02_proj.bp',
             ProjectileLifetimeUsesMultiplier = 2,
 
             RackRecoilDistance = -0.5,

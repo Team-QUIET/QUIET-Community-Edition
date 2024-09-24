@@ -92,7 +92,7 @@ UnitBlueprint {
 
             MuzzleVelocity = 60,
 
-            ProjectileId = "/mods/LOUD-Community-Edition/projectiles/Sniper_NonPiercing/Sniper_NonPiercing_proj.bp",
+            ProjectileId = "/mods/QUIET-Community-Edition/projectiles/Sniper_NonPiercing/Sniper_NonPiercing_proj.bp",
             ProjectileLifetime = 1,
 
             RackRecoilDistance = -4.0,

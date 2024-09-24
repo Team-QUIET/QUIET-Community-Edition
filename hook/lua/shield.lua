@@ -10,7 +10,7 @@ do -- encasing the code in do .... end means that you dont have to worry about u
 local Entity = import('/lua/sim/Entity.lua').Entity
 local EffectTemplate = import('/lua/EffectTemplates.lua')
 
-local shieldAbsorptionValues = import("/mods/LOUD-Community-Edition/lua/ShieldAbsorptionValues.lua").shieldAbsorptionValues
+local shieldAbsorptionValues = import("/mods/QUIET-Community-Edition/lua/ShieldAbsorptionValues.lua").shieldAbsorptionValues
 
 local ChangeState = ChangeState
 

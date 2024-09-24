@@ -56,7 +56,7 @@ UnitBlueprint {
                 structureDamage = 800,
             },
 			
-            ProjectileId = '/mods/LOUD-Community-Edition/projectiles/TDFOverCharge01/TDFOverCharge01_proj.bp',
+            ProjectileId = '/mods/QUIET-Community-Edition/projectiles/TDFOverCharge01/TDFOverCharge01_proj.bp',
             ProjectileLifetimeUsesMultiplier = 2,
 
             RackRecoilDistance = -0.5,

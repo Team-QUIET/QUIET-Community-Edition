@@ -1,1 +1,1 @@
-OverchargeProjectile = import("/mods/LOUD-Community-Edition/lua/sim/overchargeprojectile.lua").OverchargeProjectile
+OverchargeProjectile = import("/mods/QUIET-Community-Edition/lua/sim/overchargeprojectile.lua").OverchargeProjectile

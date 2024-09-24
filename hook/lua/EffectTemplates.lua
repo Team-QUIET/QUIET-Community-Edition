@@ -1,4 +1,4 @@
-EmtBpPathLOUDCE = '/mods/LOUD-Community-Edition/effects/emitters/'
+EmtBpPathLOUDCE = '/mods/QUIET-Community-Edition/effects/emitters/'
 
 ATractorAmbient = {
     EmtBpPathLOUDCE .. 'tractor_01_emit.bp',

@@ -287,7 +287,7 @@ ADFTractorClaw = Class(Weapon) {
             target.DestructionExplosionWaitDelayMax = 0
 
             -- create a projectile to help identify when the unit is on the terrain
-            local projectile = target:CreateProjectileAtBone('/mods/LOUD-Community-Edition/effects/entities/ADFTractorFall01/ADFTractorFall01_proj.bp', 0)
+            local projectile = target:CreateProjectileAtBone('/mods/QUIET-Community-Edition/effects/entities/ADFTractorFall01/ADFTractorFall01_proj.bp', 0)
 
             -- is not defined when the projectile is created underwater
             if not projectile.bp then
