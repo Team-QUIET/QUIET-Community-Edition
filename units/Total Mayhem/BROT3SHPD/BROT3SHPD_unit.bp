@@ -21,7 +21,7 @@ UnitBlueprint {
    
             CollideFriendly = false,
 			
-            Damage = 1475,
+            Damage = 2950,
             DamageRadius = 2.5,
             DamageType = 'ShieldMult1.2',
 			
