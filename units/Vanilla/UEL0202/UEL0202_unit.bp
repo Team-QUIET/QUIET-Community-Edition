@@ -2,6 +2,11 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "uel0202",
 
+    Defense = {
+        Health = 1500,
+        MaxHealth = 1500,
+    },
+
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
