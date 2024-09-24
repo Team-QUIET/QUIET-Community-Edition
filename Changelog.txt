@@ -3,6 +3,29 @@
 ## Rebalance Changelog
 ---------------------------------------------
 
+### 1.32
+
+# Wraith
+Acceleration 1.5 -> 2
+BackUpDistance = 10
+TurnFacingRate 20 -> 55
+TurnRate 22 -> 50
+RotateOnSpot = True
+Fixed The Pathfinding & Improved the Micro on Wraith (This allows the guns to move more freely)
+
+# Factories
+T2 Engineers can now build T2 Factories
+T3 Engineers can now build T3 Factories
+
+# T2 Pillar Tank
+Health 1250 -> 1500
+
+# Misc
+Removed Stun from Dalek, Thug, Anode, Hippo, Ambush Bot
+Removed Notha & Vesinee
+Fixed DPS & Damage on The T4 PD "Neolith"
+Reverted Damage nerf to the T4 PD "Mothra"
+
 ### 1.31
 
 # Shield Overspill
