@@ -38,13 +38,13 @@ UnitBlueprint {
 			ProjectileLifetime = 1.5,
 
             RackFireTogether = false,
+            RackSalvoFiresAfterCharge = true,
             RackRecoilDistance = -1,
             RackReloadTimeout = 10,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RenderFireClock = true,
 
             RangeCategory = 'UWRC_DirectFire',
 			

@@ -60,7 +60,6 @@ UnitBlueprint {
             ProjectileLifetimeUsesMultiplier = 2,
 
             RackRecoilDistance = -0.5,
-            RenderFireClock = true,
 
             RangeCategory = 'UWRC_Countermeasure',
 			
