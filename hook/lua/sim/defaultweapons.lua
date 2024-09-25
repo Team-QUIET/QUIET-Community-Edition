@@ -196,7 +196,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
             if bp.WeaponUnpacks and self.WeaponPackState ~= 'Unpacked' then
                 ChangeState(self, self.WeaponUnpackingState)
             else
-                if bp.RackSalvoChargeTime and bp.RackSalvoChargeTime > 0 then
+                if bp.RackSalvoChargeTime and bp.RackSalvoChargeTime > 0 or bp.RackSalvoFiresAfterCharge then
                     ChangeState(self, self.RackSalvoChargeState)
 
                     -- SkipReadyState used for Janus and Corsair
