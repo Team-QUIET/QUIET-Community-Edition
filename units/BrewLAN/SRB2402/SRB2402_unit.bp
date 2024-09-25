@@ -44,10 +44,11 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
+            RenderFireClock = true,
 
             RangeCategory = 'UWRC_DirectFire',
 			
-            RateOfFire = 2,     -- 1650 DPS - controlled by energy -- 2 x 750 every second 
+            RateOfFire = 10/10,     -- 1650 DPS - controlled by energy -- 2 x 750 every second 
 
             TargetCheckInterval = 0.5,
             TargetPriorities = {
