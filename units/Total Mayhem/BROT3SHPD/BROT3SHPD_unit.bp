@@ -29,8 +29,8 @@ UnitBlueprint {
 
             EnergyChargeForFirstShot = false,            
 			
-            EnergyDrainPerSecond = 2800,
-            EnergyRequired = 9800,      -- 3.5 second charge 
+            EnergyDrainPerSecond = 3270,
+            EnergyRequired = 6867,      -- 2.1 second charge 
 			
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
@@ -56,14 +56,14 @@ UnitBlueprint {
 			
             RackRecoilDistance = -3,
 
-            RackSalvoReloadTime = 1.9,  -- cycle is 3.6 = 5900/3.6 = 1638 DPS
+            RackSalvoReloadTime = 1.9, 
             
             RackSlavedToTurret = true,
 			
             RangeCategory = 'UWRC_DirectFire',
 			
-            RateOfFire = 2,
-            TargetCheckInterval = 2,
+            RateOfFire = 10/5,
+            TargetCheckInterval = 0.5,
 			
             TargetPriorities = {
                 'EXPERIMENTAL',
