@@ -1,0 +1,29 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "brmt3pd",
+
+    Weapon = {
+        {
+
+            EnergyDrainPerSecond = 400,
+            EnergyRequired = 400,
+
+			      MuzzleChargeDelay = 1,
+
+			      RackReloadTimeout = 0,
+
+			      RackFireTogether = true,
+
+            RackSlavedToTurret = true,
+			
+			      NotExclusive = true,
+			
+            RateOfFire = 10/10,	-- controlled by charge equals 1.31 seconds = 412 DPS
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 45,
+            
+        },
+    },
+}
