@@ -130,6 +130,18 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
         return weapNRG
     end,
 
+    -- Played when a rack salvo reloads
+    -- Do not wait in here or the sequence in the blueprint will be messed up. Fork a thread instead
+    PlayFxRackSalvoReloadSequence = function(self)
+        local bp = self.Blueprint
+        local animationReload = bp.AnimationReload
+        if animationReload and not self.Animator then
+            local animator = CreateAnimator(self.unit)
+            self.Animator = animator
+            animator:PlayAnim(animationReload):SetRate(bp.AnimationReloadRate or 1)
+        end
+    end,
+
     -- WEAPON STATES:
     
     IdleState = State {
