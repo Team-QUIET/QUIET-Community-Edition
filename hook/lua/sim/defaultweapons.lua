@@ -685,17 +685,9 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
         end,
 
         OnFire = function(self)
-
         end,
         
         OnLostTarget = function(self)
-            -- Override default OnLostTarget to prevent bypassing reload time by switching to idle state immediately
-            local unit = self.unit
-            if unit then
-                unit:OnLostTarget(self)
-            end
-
-            Weapon.OnLostTarget(self)
         end,
     },
 
