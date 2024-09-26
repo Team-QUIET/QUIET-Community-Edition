@@ -44,7 +44,7 @@ ProjectileBlueprint {
         LeadTarget = false,
         TrackTarget = true,
         RotationalVelocity = 9000,
-        TurnRate = 60,
+        TurnRate = 360,
         VelocityAlign = true,
     },
 }

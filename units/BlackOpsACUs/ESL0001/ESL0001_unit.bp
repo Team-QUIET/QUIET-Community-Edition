@@ -1,17 +1,1469 @@
 UnitBlueprint {
-    Merge = true,
-	BlueprintId = "esl0001",
+    AI = {
+        GuardRadius = 10,
+        TargetBones = { 'Torso' },
+    },
+
+    Audio = {
+        CommanderArrival        = Sound { Bank = 'UAL', Cue = 'UAL0001_Gate_In',         LodCutoff = 'UnitMove_LodCutoff' },
+        Construct               = Sound { Bank = 'XSL', Cue = 'XSL0001_Construct_Start', LodCutoff = 'UnitMove_LodCutoff' },
+        FootFallGeneric         = Sound { Bank = 'XSL', Cue = 'XSL0001_Move_Step',       LodCutoff = 'UnitMove_LodCutoff' },
+        FootFallGenericSeabed   = Sound { Bank = 'XSL', Cue = 'XSL0001_Move_UW_Step',    LodCutoff = 'UnitMove_LodCutoff' },
+        StartMove               = Sound { Bank = 'XSL', Cue = 'XSL0001_Move_Start',      LodCutoff = 'UnitMove_LodCutoff' },
+        StartReclaim            = Sound { Bank = 'XSL', Cue = 'XSL0001_Reclaim_Start',   LodCutoff = 'UnitMove_LodCutoff' },
+        StopMove                = Sound { Bank = 'XSL', Cue = 'XSL0001_Move_Stop',       LodCutoff = 'UnitMove_LodCutoff' },
+        Killed                  = Sound { Bank = 'Impacts', Cue = 'XSB2305_impact',      LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection             = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_Commander', LodCutoff = 'UnitMove_LodCutoff' },
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 4,
+            Level2 = 8,
+            Level3 = 11,
+            Level4 = 14,
+            Level5 = 17,
+        },
+        VisionRadius = {
+            Level1 = 2,
+            Level2 = 2,
+            Level3 = 3,
+            Level4 = 3,
+            Level5 = 3,        
+        },
+        WaterVisionRadius = {
+            Level1 = 2,
+            Level2 = 2,
+            Level3 = 3,
+            Level4 = 3,
+            Level5 = 3,        
+        },
+    },
+
+	BuffFields = {
+		RegenField1 = 'SeraphimACURegenBuffField',
+		RegenField2 = 'SeraphimAdvancedACURegenBuffField',
+	},
+
+    Categories = {
+        'SELECTABLE',
+        'SERAPHIM',
+        'MOBILE',
+        'COMMAND',
+        'REPAIR',
+        'SILO',
+        'ENGINEER',
+        'CONSTRUCTION',
+        'RECLAIM',
+        'CAPTURE',
+        'LAND',
+        'VISIBLETORECON',
+        'PATROLHELPER',
+        'SHOWQUEUE',
+        'OVERLAYCOUNTERINTEL',
+        'OVERLAYOMNI',
+        'OVERLAYRADAR',
+        'OVERLAYSONAR',
+        'ANTITELEPORT',
+        'OVERLAYMISC',
+    },
+	
+    Defense = {
+
+        MissileTorpDestroy = { AttachBone = 'Body', Radius = 5, RedirectRateOfFire = 8, ProjectileCategories = {'TACTICAL MISSILE','TORPEDO'} },
+		
+        LambdaRedirect01 = { AttachBone = 'Left_Turret_Muzzle', Radius = 7, RedirectRateOfFire = 9 },
+        LambdaRedirect02 = { AttachBone = 'Right_Turret_Muzzle', Radius = 9, RedirectRateOfFire = 9 },
+		
+        LambdaDestroy01 = { AttachBone = 'Left_Arm_B01', Radius = 11, RedirectRateOfFire = 7 },
+        LambdaDestroy02 = { AttachBone = 'Right_Arm_B01', Radius = 13, RedirectRateOfFire = 7 },
+
+        ArmorType = 'Commander',
+        
+        EconomyThreatLevel = 640,
+        
+        Health = 27500,
+        MaxHealth = 27500,
+        RegenRate = 16,
+        
+        SurfaceThreatLevel = 45,
+        
+		NoTeleDistance = 55,
+		MaxTeleRange = 350,
+    },
+	
+    Description = '<LOC esl0001_desc>Armored Command Unit',
+	
+    Display = {
+        Abilities = {
+            '<LOC ability_amphibious>Amphibious',
+            '<LOC ability_customizable>Customizable',
+            '<LOC ability_deathaoe>Volatile',
+            '<LOC ability_notcap>Not Capturable',
+            '<LOC ability_omni>Omni Sensor',
+            '<LOC ability_personalstealth>Personal Stealth',
+            '<LOC ability_radar>Radar',
+            '<LOC ability_sonar>Sonar',
+            '<LOC ability_tacmissiledef>Tactical Missile Defense',
+            '<LOC ability_torpedodef>Personal Torpedo Defense',
+        },
+
+        AnimationWalk = '/mods/BlackopsACUs/units/esl0001/esl0001_awalk.sca',
+        AnimationWalkRate = 1.1,
+		
+        DamageEffects = {
+            { Bone = 0, OffsetX = 0.25, OffsetY = 0.75, OffsetZ = 0 },
+            { Bone = 0, OffsetX = -0.25, OffsetY = 0.75, OffsetZ = 0 },
+            { Bone = 0, OffsetX = -0.35, OffsetY = 0.1, OffsetZ = 0 },
+        },
+
+        IdleEffects = {
+            Seabed = {
+                Effects = {
+                    { Bones = {'Left_Arm_B02','Right_Arm_B02','Right_Turret_Muzzle','Left_Turret_Muzzle'}, Scale = 7, Type = 'UnderWater01' },
+                },
+            },
+        },
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 175,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    Scrolling = true,
+                    ShaderName = 'Seraphim',
+                },
+            },
+        },
+
+        MovementEffects = {
+
+            Land = {
+
+                Footfall = {
+                    Bones = {
+                        {
+                            FootBone = 'Left_Foot',
+                            HipBone = 'Left_Leg_B01',
+                            KneeBone = 'Left_Leg_B02',
+                            Tread = {
+                                TreadMarks = 'CommanderPrint_albedo',
+                                TreadMarksSizeX = 0.5,
+                                TreadMarksSizeZ = 0.5,
+                                TreadOffset = {0.15,0,0.5},
+                            },
+                            Type = 'FootFall02',
+                        },
+                        {
+                            FootBone = 'Right_Foot',
+                            HipBone = 'Right_Leg_B01',
+                            KneeBone = 'Right_Leg_B02',
+                            Tread = {
+                                TreadMarks = 'CommanderPrint_albedo',
+                                TreadMarksSizeX = 0.5,
+                                TreadMarksSizeZ = 0.5,
+                                TreadOffset = {-0.15,0,0.5},
+                            },
+                            Type = 'FootFall02',
+                        },
+                    },
+                },
+            },
+
+            Seabed = {
+
+                Effects = {
+                    {
+                        Bones = {'Left_Arm_B02','Right_Arm_B02','Right_Turret_Muzzle','Left_Turret_Muzzle','Left_Foot','Right_Foot'},
+                        Scale = 4,
+                        Type = 'UnderWater01',
+                    },
+                },
+
+                Footfall = {
+                    Bones = {
+                        {
+                            FootBone = 'Left_Foot',
+                            HipBone = 'Left_Leg_B01',
+                            KneeBone = 'Left_Leg_B02',
+                            Tread = {
+                                TreadMarks = 'CommanderPrint_albedo',
+                                TreadMarksSizeX = 0.5,
+                                TreadMarksSizeZ = 0.5,
+                                TreadOffset = {0.15,0,0.5},
+                            },
+                            Type = 'FootFall02',
+                        },
+                        {
+                            FootBone = 'Right_Foot',
+                            HipBone = 'Right_Leg_B01',
+                            KneeBone = 'Right_Leg_B02',
+                            Tread = {
+                                TreadMarks = 'CommanderPrint_albedo',
+                                TreadMarksSizeX = 0.5,
+                                TreadMarksSizeZ = 0.5,
+                                TreadOffset = {-0.15,0,0.5},
+                            },
+                            Type = 'FootFall02',
+                        },
+                    },
+                },
+            },
+        },
+
+        TransportAnimation = {
+            { Animation = '/mods/BlackopsACUs/units/esl0001/esl0001_afold.sca', Weight = 100 },
+        },
+
+        TransportDropAnimation = {
+            { Animation = '/mods/BlackopsACUs/units/esl0001/esl0001_aunfold.sca', Weight = 100 },
+        },
+
+        UniformScale = 0.051,
+    },
+
+    Economy = {
+        BuildCostEnergy = 100000,
+        BuildCostMass = 10000,
+        BuildRate = 10,
+
+        BuildTime = 60000,
+
+        BuildableCategory = {
+            'BUILTBYCOMMANDER SERAPHIM',
+            'BUILTBYTIER2COMMANDER SERAPHIM',
+            'BUILTBYTIER3COMMANDER SERAPHIM',
+            'BUILTBYTIER4COMMANDER SERAPHIM',
+        },
+
+        MaxBuildDistance = 14,
+
+        NaturalProducer = true,
+
+        ProductionPerSecondEnergy = 20,
+        ProductionPerSecondMass = 2,
+
+        StorageEnergy = 5000,
+        StorageMass = 650,
+
+		TeleportBurstEnergyCost = 5000,
+    },
+
+    Enhancements = {
+        Slots = {
+            Back = {
+                name = '<LOC _Back>',
+                x = -2,
+                y = -5,
+            },
+            Command = {
+                name = 'Command',
+                x = 153,
+                y = 30,
+            },
+            LCH = {
+                name = '<LOC _LCH>',
+                x = 50,
+                y = -10,
+            },
+            RCH = {
+                name = '<LOC _RCH>',
+                x = -12,
+                y = -10,
+            },
+        },
+
+        EXImprovedEngineering = {
+
+            BuildCostEnergy = 38000,
+            BuildCostMass = 3500,
+            BuildTime = 1950,
+
+            BuildableCategoryAdds = 'BUILTBYTIER2COMMANDER SERAPHIM',
+
+            Icon = 'exles1',
+
+            Name = 'Tech 2 Improved Engineering (T1)',
+
+            ShowBones = {'Engineering'},
+
+            Slot = 'LCH',
+
+            UpgradeEffectBones = {'Left_Arm_B02','Left_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = {'Body'},
+        },
+
+        EXImprovedEngineeringRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'Engineering'},
+
+            Icon = 'exles1',
+
+            Name = 'Remove Engineering Suites',
+
+            Prerequisite = 'EXImprovedEngineering',
+
+            RemoveEnhancements = {'EXImprovedEngineering','EXImprovedEngineeringRemove'},
+
+            Slot = 'LCH',
+        },
+
+        EXAdvancedEngineering = {
+
+            BuildCostEnergy = 152000,
+            BuildCostMass = 10500,
+            BuildTime = 15200,
+
+            BuildableCategoryAdds = 'BUILTBYTIER3COMMANDER SERAPHIM',
+
+            Icon = 'exles2',
+
+            Name = 'Tech 3 Advanced Engineering (T2)',
+
+            Prerequisite = 'EXImprovedEngineering',
+
+            ShowBones = {'Engineering'},
+
+            Slot = 'LCH',
+
+            UpgradeEffectBones = {'Left_Arm_B02','Left_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = {'Body'},
+        },
+
+        EXAdvancedEngineeringRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {
+                'Engineering',
+            },
+
+            Icon = 'exles2',
+
+            Name = 'Remove Engineering Suites',
+
+            Prerequisite = 'EXAdvancedEngineering',
+
+            RemoveEnhancements = {
+                'EXAdvancedEngineering',
+                'EXAdvancedEngineeringRemove',
+            },
+
+            Slot = 'LCH',
+        },
+
+        EXExperimentalEngineering = {
+
+            BuildCostEnergy = 720000,
+            BuildCostMass = 29500,
+            BuildTime = 72000,
+
+            BuildableCategoryAdds = 'BUILTBYTIER4COMMANDER SERAPHIM',
+
+            Icon = 'exles3',
+
+            Name = 'Tech 4 Experimental Engineering (T3)',
+
+            Prerequisite = 'EXAdvancedEngineering',
+
+            ShowBones = {'Engineering'},
+
+            Slot = 'LCH',
+
+            UpgradeEffectBones = {'Left_Arm_B02','Left_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = {'Body'},
+        },
+
+        EXExperimentalEngineeringRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'Engineering'},
+
+            Icon = 'exles3',
+
+            Name = 'Remove Engineering Suites',
+
+            Prerequisite = 'EXExperimentalEngineering',
+
+            RemoveEnhancements = {'EXExperimentalEngineering','EXExperimentalEngineeringRemove'},
+
+            Slot = 'LCH',
+        },
+
+        EXCombatEngineering = {
+
+            BuildCostEnergy = 38000,
+            BuildCostMass = 3750,
+            BuildTime = 3800,
+
+            BuildableCategoryAdds = 'BUILTBYTIER2COMMANDER SERAPHIM',
+
+            Icon = 'exlce1',
+
+            Name = 'Combat Engineering (T2)',
+
+            ShowBones = {'Engineering','Combat_Engineering'},
+
+            Slot = 'LCH',
+
+            UpgradeEffectBones = {'Left_Arm_B02','Left_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = {'Body'},
+        },
+
+        EXCombatEngineeringRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'Engineering','Combat_Engineering'},
+
+            Icon = 'exlce1',
+
+            Name = 'Remove Engineering Suites',
+
+            Prerequisite = 'EXCombatEngineering',
+
+            RemoveEnhancements = {'EXCombatEngineering','EXCombatEngineeringRemove'},
+
+            Slot = 'LCH',
+        },
+
+        EXAssaultEngineering = {
+
+            BuildCostEnergy = 116500,
+            BuildCostMass = 15000,
+            BuildTime = 11650,
+
+            BuildableCategoryAdds = 'BUILTBYTIER3COMMANDER SERAPHIM',
+
+            Icon = 'exlce2',
+
+            Name = 'Assault Engineering (T3)',
+
+            Prerequisite = 'EXCombatEngineering',
+
+            ShowBones = {'Engineering','Combat_Engineering'},
+
+            Slot = 'LCH',
+
+            UpgradeEffectBones = {'Left_Arm_B02','Left_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = {'Body'},
+        },
+
+        EXAssaultEngineeringRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'Engineering','Combat_Engineering'},
+
+            Icon = 'exlce2',
+
+            Name = 'Remove Engineering Suites',
+
+            Prerequisite = 'EXAssaultEngineering',
+
+            RemoveEnhancements = {'EXAssaultEngineering','EXAssaultEngineeringRemove'},
+
+            Slot = 'LCH',
+        },
+
+        EXApocalypticEngineering = {
+
+            BuildCostEnergy = 375000,
+            BuildCostMass = 49000,
+            BuildTime = 37500,
+
+            BuildableCategoryAdds = 'BUILTBYTIER4COMMANDER SERAPHIM',
+
+            Icon = 'exlce3',
+
+            Name = 'Apocalyptic Engineering (T4)',
+
+            Prerequisite = 'EXAssaultEngineering',
+
+            ShowBones = {'Engineering','Combat_Engineering'},
+
+            Slot = 'LCH',
+
+            UpgradeEffectBones = {'Left_Arm_B02','Left_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = {'Body'},
+        },
+
+        EXApocalypticEngineeringRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'Engineering','Combat_Engineering'},
+
+            Icon = 'exlce3',
+
+            Name = 'Remove Engineering Suites',
+
+            Prerequisite = 'EXApocalypticEngineering',
+
+            RemoveEnhancements = {'EXApocalypticEngineering','EXApocalypticEngineeringRemove'},
+
+            Slot = 'LCH',
+        },
+
+        EXChronotronBooster = {
+
+            BuildCostEnergy = 7500,
+            BuildCostMass = 750,
+            BuildTime = 750,
+
+            Icon = 'exrzb1',
+
+            Name = 'Jury Rigged Chronotron (T1)',
+
+            Slot = 'RCH',
+
+            UpgradeEffectBones = {'Right_Arm_B02','Right_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = {'Body'},
+        },
+        
+        EXChronotronBoosterRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            Icon = 'exrzb1',
+
+            Name = 'Remove Jury Rigged Chronotron',
+
+            Prerequisite = 'EXChronotronBooster',
+
+            RemoveEnhancements = {'EXChronotronBooster','EXChronotronBoosterRemove'},
+
+            Slot = 'RCH',
+        },
+
+        EXTorpedoLauncher = {
+
+            BuildCostEnergy = 35000,
+            BuildCostMass = 1050,
+            BuildTime = 3500,
+
+            Icon = 'exrtorp1',
+
+            Name = 'Torpedo Launcher (T2)',
+
+            ShowBones = {'Torpedo_Launcher'},
+
+            Slot = 'RCH',
+
+            UpgradeEffectBones = {'Right_Arm_B02','Right_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = {'Body'},
+        },
+
+        EXTorpedoLauncherRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'Torpedo_Launcher'},
+
+            Icon = 'exrtorp1',
+
+            Name = 'Remove Torpedo Launcher',
+
+            Prerequisite = 'EXTorpedoLauncher',
+
+            RemoveEnhancements = {'EXTorpedoLauncher','EXTorpedoLauncherRemove'},
+
+            Slot = 'RCH',
+        },
+
+        EXTorpedoRapidLoader = {
+
+            BuildCostEnergy = 70000,
+            BuildCostMass = 3150,
+            BuildTime = 7000,
+
+            Icon = 'exrtorp2',
+
+            Name = 'Improved Reloader (T3)',
+
+			Prerequisite = 'EXTorpedoLauncher',
+
+            ShowBones = {'Torpedo_Launcher'},
+
+            Slot = 'RCH',
+
+            UpgradeEffectBones = {'Right_Arm_B02','Right_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = {'Body'},
+        },
+
+        EXTorpedoRapidLoaderRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'Torpedo_Launcher'},
+
+            Icon = 'exrtorp2',
+
+            Name = 'Remove Improved Reloader',
+
+            Prerequisite = 'EXTorpedoRapidLoader',
+
+            RemoveEnhancements = {'EXTorpedoLauncher','EXTorpedoRapidLoader','EXTorpedoRapidLoaderRemove'},
+
+            Slot = 'RCH',
+        },
+
+        EXTorpedoClusterLauncher = {
+
+            BuildCostEnergy = 140000,
+            BuildCostMass = 9450,
+            BuildTime = 14000,
+
+            Icon = 'exrtorp3',
+
+            Name = 'Advanced Warheads (T4)',
+
+			Prerequisite = 'EXTorpedoRapidLoader',
+
+            ShowBones = {'Torpedo_Launcher'},
+
+            Slot = 'RCH',
+
+            UpgradeEffectBones = {'Right_Arm_B02','Right_Turret_Muzzle',},
+            UpgradeUnitAmbientBones = {'Body'},
+        },
+
+        EXTorpedoClusterLauncherRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'Torpedo_Launcher'},
+
+            Icon = 'exrtorp3',
+
+            Name = 'Remove Cluster Launcher',
+
+            Prerequisite = 'EXTorpedoClusterLauncher',
+
+            RemoveEnhancements = {'EXTorpedoLauncher','EXTorpedoRapidLoader','EXTorpedoClusterLauncher','EXTorpedoClusterLauncherRemove'},
+
+            Slot = 'RCH',
+        },
+
+        EXStormCannon = {
+
+            BuildCostEnergy = 21000,
+            BuildCostMass = 900,
+            BuildTime = 2100,
+
+            Icon = 'exramc1',
+
+            Name = 'Storm Cannon (T2+)',
+
+            ShowBones = { 'Big_Ball_Cannon' },
+            HideBones = { 'Basic_Gun_Plate' },
+
+            Slot = 'RCH',
+
+            UpgradeEffectBones = { 'Right_Arm_B02', 'Right_Turret_Muzzle' },
+            UpgradeUnitAmbientBones = { 'Body' },
+        },
+
+        EXStormCannonRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            ShowBones = { 'Basic_Gun_Plate' },
+            HideBones = { 'Big_Ball_Cannon' },
+
+            Icon = 'exramc1',
+
+            Name = 'Remove Storm Cannon',
+
+            Prerequisite = 'EXCannonBigBall',
+
+            RemoveEnhancements = { 'EXCannonBigBall','EXCannonBigBallRemove' },
+            Slot = 'RCH',
+        },
+
+        EXStormCannonII = {
+
+            BuildCostEnergy = 56000,
+            BuildCostMass = 1900,
+            BuildTime = 5600,
+
+            Icon = 'exramc2',
+
+            Name = 'Enhanced Storm Cannon (T3)',
+
+			Prerequisite = 'EXStormCannon',
+
+            ShowBones = { 'Big_Ball_Cannon' },
+            HideBones = { 'Basic_Gun_Plate' },
+
+            Slot = 'RCH',
+            UpgradeEffectBones = { 'Right_Arm_B02','Right_Turret_Muzzle' },
+            UpgradeUnitAmbientBones = {'Body'},
+        },
+
+        EXStormCannonIIRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            ShowBones = { 'Basic_Gun_Plate' },
+            HideBones = { 'Big_Ball_Cannon' },
+
+            Icon = 'exramc2',
+
+            Name = 'Remove Storm Cannon II',
+
+            Prerequisite = 'EXStormCannonII',
+
+            RemoveEnhancements = {'EXStormCannon','EXStormCannonII','EXStormCannonIIRemove'},
+            Slot = 'RCH',
+        },
+
+        EXStormCannonIII = {
+
+            BuildCostEnergy = 165000,
+            BuildCostMass = 5400,
+            BuildTime = 16500,
+
+            Icon = 'exramc3',
+
+            Name = 'Advanced Storm Cannon (T4)',
+
+			Prerequisite = 'EXStormCannonII',
+
+            ShowBones = {'Big_Ball_Cannon'},
+            HideBones = {'Basic_Gun_Plate'},
+
+            Slot = 'RCH',
+
+            UpgradeEffectBones = {'Right_Arm_B02','Right_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = {'Body'},
+        },
+
+        EXStormCannonIIIRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            ShowBones = {'Basic_Gun_Plate'},
+            HideBones = {'Big_Ball_Cannon'},
+
+            Icon = 'exramc3',
+
+            Name = 'Remove Advanced Storm Cannon',
+
+            Prerequisite = 'EXStormCannonIII',
+
+            RemoveEnhancements = {'EXStormCannon','EXStormCannonII','EXStormCannonIII','EXStormCannonIIIRemove'},
+            Slot = 'RCH',
+        },
+
+        EXRapidCannon = {
+
+            BuildCostEnergy = 21000,
+            BuildCostMass = 840,
+            BuildTime = 1800,
+
+            Icon = 'exrgec1',
+
+            Name = 'Plasma Gatling Cannon (T2)',
+
+            ShowBones = {'Rapid_Cannon'},
+
+            Slot = 'RCH',
+
+            UpgradeEffectBones = {'Right_Arm_B02','Right_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = {'Body'},
+        },
+
+        EXRapidCannonRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'Rapid_Cannon'},
+
+            Icon = 'exrgec1',
+
+            Name = 'Remove Plasma Gatling Cannon',
+
+            Prerequisite = 'EXRapidCannon',
+
+            RemoveEnhancements = {'EXRapidCannon','EXRapidCannonRemove'},
+            Slot = 'RCH',
+        },
+
+        EXRapidCannonII = {
+
+            BuildCostEnergy = 42000,
+            BuildCostMass = 1400,
+            BuildTime = 4200,
+
+            Icon = 'exrgec2',
+
+            Name = 'Phased Energy Fields (T3)',
+
+			Prerequisite = 'EXRapidCannon',
+
+            ShowBones = {'Rapid_Cannon'},
+
+            Slot = 'RCH',
+
+            UpgradeEffectBones = {'Right_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = {'Body'},
+        },
+
+        EXRapidCannonIIRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'Rapid_Cannon'},
+
+            Icon = 'exrgec2',
+
+            Name = 'Remove Phased Energy Fields',
+
+            Prerequisite = 'EXRapidCannonII',
+
+            RemoveEnhancements = {'EXRapidCannon','EXRapidCannonII','EXRapidCannonIIRemove'},
+            Slot = 'RCH',
+        },
+
+        EXRapidCannonIII = {
+
+            BuildCostEnergy = 130000,
+            BuildCostMass = 4200,
+            BuildTime = 13000,
+
+            Icon = 'exrgec3',
+
+            Name = 'Secondary Power Feeds (T4)',
+
+			Prerequisite = 'EXRapidCannonII',
+
+            ShowBones = {'Rapid_Cannon'},
+
+            Slot = 'RCH',
+
+            UpgradeEffectBones = {'Right_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = {'Body'},
+        },
+
+        EXRapidCannonIIIRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'Rapid_Cannon'},
+
+            Icon = 'exrgec3',
+
+            Name = 'Remove Secondary Power Feeds',
+
+            Prerequisite = 'EXRapidCannonIII',
+
+            RemoveEnhancements = {'EXRapidCannon','EXRapidCannonII','EXRapidCannonIII','EXRapidCannonIIIRemove'},
+            Slot = 'RCH',
+        },
+		
+        EXIntelEnhancementT2 = {
+
+            BuildCostEnergy = 3600,
+            BuildCostMass = 180,
+            BuildTime = 360,
+
+            Icon = 'excint1',
+            
+            ConsumptionPerSecondEnergy = 187.5,
+
+            Name = 'Intel Package (T2)',
+
+            ShowBones = {'IntelPack'},
+
+            Slot = 'Command',
+
+            UpgradeEffectBones = {'IntelPack'},
+            UpgradeUnitAmbientBones = {'Torso'},
+        },
+		
+        EXIntelEnhancementT2Remove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'IntelPack'},
+
+            Icon = 'excint1',
+
+            Name = 'Remove Intel Package',
+
+            Prerequisite = 'EXIntelEnhancement',
+
+            RemoveEnhancements = {'EXIntelEnhancementT2','EXIntelEnhancementT2Remove'},
+
+            Slot = 'Command',
+        },
+
+        EXIntelEnhancementT3 = {
+
+            BuildCostEnergy = 27000,
+            BuildCostMass = 2200,
+            BuildTime = 2700,
+
+            Icon = 'excint2',
+            
+            ConsumptionPerSecondEnergy = 2000,
+
+            Name = 'Intel Enhancement (T3)',
+
+			Prerequisite = 'EXIntelEnhancementT2',
+
+            ShowBones = {'IntelPack'},
+
+            Slot = 'Command',
+
+            UpgradeEffectBones = {'IntelPack'},
+            UpgradeUnitAmbientBones = {'Torso'},
+        },
+		
+        EXIntelEnhancementT3Remove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'IntelPack'},
+
+            Icon = 'excint2',
+
+            Name = 'Remove Intel Enhancement',
+
+            Prerequisite = 'EXIntelEnhancementT3',
+
+            RemoveEnhancements = {'EXIntelEnhancementT3','EXIntelEnhancementT3Remove'},
+
+            Slot = 'Command',
+        },
+		
+        EXPersonalTeleporter = {
+
+            BuildCostEnergy = 95000,
+            BuildCostMass = 4800,
+            BuildTime = 9500,
+
+            Icon = 'exbtele',
+
+            Name = 'Personal Teleporter (T4)',
+
+            Slot = 'Back',
+
+            UpgradeEffectBones = {'IntelPack'},
+            UpgradeUnitAmbientBones = {'Torso'},
+        },
+        
+        EXPersonalTeleporterRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'IntelPack'},
+
+            Icon = 'exbtele',
+
+            Name = 'Remove Personal Teleporter',
+
+            Prerequisite = 'EXPersonalTeleporter',
+
+            RemoveEnhancements = {'EXPersonalTeleporter','EXPersonalTeleporterRemove'},
+
+            Slot = 'Back',
+        },
+
+        EXL1Lambda = {
+
+            BuildCostEnergy = 22000,
+            BuildCostMass = 680,
+            BuildTime = 2200,
+            
+            ConsumptionPerSecondEnergy = 120,
+
+            Icon = 'exbsh1',
+
+            Name = 'Lambda Destruction Field Emitters (T2+)',
+
+            Slot = 'Back',
+
+            UpgradeEffectBones = {'L_Spinner_B01'},
+            UpgradeUnitAmbientBones = {'Body'},
+        },
+
+        EXL1LambdaRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            Icon = 'exbsh1',
+
+            Name = 'Remove Lambda Destruction Field Emitters',
+
+            Prerequisite = 'EXL1Lambda',
+
+            RemoveEnhancements = {'EXL1Lambda','EXL1LambdaRemove'},
+
+            Slot = 'Back',
+        },
+
+        EXL2Lambda = {
+
+            BuildCostEnergy = 36000,
+            BuildCostMass = 1325,
+            BuildTime = 3500,
+            
+            ConsumptionPerSecondEnergy = 320,
+
+            Icon = 'exbsh2',
+
+            Name = 'Lambda Deflection Field Emitters (T3)',
+
+			Prerequisite = 'EXL1Lambda',
+
+            Slot = 'Back',
+
+            UpgradeEffectBones = {'L_Spinner_B01'},
+            UpgradeUnitAmbientBones = {'Body'},
+        },
+
+        EXL2LambdaRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            Icon = 'exbsh2',
+
+            Name = 'Remove Enhanced Lambda Emitters',
+
+            Prerequisite = 'EXL2Lambda',
+
+            RemoveEnhancements = {'EXL1Lambda','EXL2Lambda','EXL2LambdaRemove'},
+
+            Slot = 'Back',
+        },
+
+        EXArmorPlating = {
+
+            BuildCostEnergy = 32000,
+            BuildCostMass = 4200,
+            BuildTime = 3200,
+
+            Icon = 'exbarmor',
+
+            Name = 'Armor Plating (T2+)',
+
+            ShowBones = {'IntelPack',},
+
+            Slot = 'Back',
+
+            UpgradeEffectBones = {'Missile_Launcher'},
+            UpgradeUnitAmbientBones = {'Body'},
+        },
+
+        EXArmorPlatingRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'IntelPack'},
+
+            Icon = 'exbarmor',
+
+            Name = 'Remove Armor Plating',
+
+            Prerequisite = 'EXArmorPlating',
+
+            RemoveEnhancements = {'EXArmorPlating','EXArmorPlatingRemove'},
+
+            Slot = 'Back',
+        },
+
+        EXStealthField = {
+
+            BuildCostEnergy = 12000,
+            BuildCostMass = 675,
+            BuildTime = 1200,
+
+            ConsumptionPerSecondEnergy = 325,
+
+            Icon = 'exbstealth',
+
+            Name = 'Stealth Field Generator (T3)',
+
+            Prerequisite = 'EXArmorPlating',
+
+            ShowBones = {'IntelPack'},
+
+            Slot = 'Back',
+
+            UpgradeEffectBones = {'Missile_Launcher'},
+            UpgradeUnitAmbientBones = {'Body'},
+        },
+
+        EXStealthFieldRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'IntelPack'},
+
+            Icon = 'exbstealth',
+
+            Name = 'Remove Stealth Field',
+
+            Prerequisite = 'EXStealthField',
+
+            RemoveEnhancements = {'EXStealthField','EXStealthFieldRemove'},
+
+            Slot = 'Back',
+        },
+
+        EXCloakingSubsystems = {
+
+            BuildCostEnergy = 32100,
+            BuildCostMass = 4000,
+            BuildTime = 3210,
+
+            ConsumptionPerSecondEnergy = 725,
+
+            Icon = 'exbcloak',
+
+            Name = 'Cloaking Subsystems (T3+)',
+
+			Prerequisite = 'EXStealthField',
+
+            ShowBones = {'IntelPack'},
+
+            Slot = 'Back',
+
+            UpgradeEffectBones = {'IntelPack'},
+            UpgradeUnitAmbientBones = {'Body'},
+        },
+
+        EXCloakingSubsystemsRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'IntelPack'},
+
+            Icon = 'exbcloak',
+
+            Name = 'Remove Cloaking Subsystems',
+
+            Prerequisite = 'EXCloakingSubsystems',
+
+            RemoveEnhancements = {'EXBasicDefense','EXStealthField','EXCloakingSubsystems','EXCloakingSubsystemsRemove'},
+
+            Slot = 'Back',
+        },
+
+    },
+
+    General = {
+        BuildBones = {AimBone = 'Left_Turret_Muzzle', BuildEffectBones = {'Left_Turret_Muzzle'}, PitchBone = 'Left_Arm_B02',YawBone = 'Torso'},
+
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Capture = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Overcharge = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_Reclaim = true,
+            RULEUCC_Repair = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+
+        FactionName = 'Seraphim',
+        Icon = 'amph',
+
+        OrderOverrides = {
+            RULEUTC_CloakToggle = { bitmapId = 'stealth-personal', preferredSlot = 10, helpText = 'Toggle Personal Cloak' },
+            RULEUTC_IntelToggle = { bitmapId = 'omni', preferredSlot = 8, helpText = 'Toggle Radar,Sonar & OMNI' },
+            RULEUTC_SpecialToggle = { preferredSlot = 11, helpText = 'Toggle Lambda Fields' },
+            RULEUTC_StealthToggle = { bitmapId = 'stealth-field', preferredSlot = 9, helpText = 'Toggle Stealth Field' },
+        },
+
+        ToggleCaps = {
+            RULEUTC_CloakToggle = true,
+            RULEUTC_IntelToggle = true,
+            RULEUTC_ShieldToggle = true,
+            RULEUTC_SpecialToggle = true,
+            RULEUTC_StealthToggle = true,
+        },
+
+        QuickSelectPriority = 1,
+        SelectionPriority = 3,
+    },
+
+    Intel = {
+        Cloak = true,
+        CloakFieldRadius = 0,
+
+        FreeIntel = false,
+
+        RadarStealth = true,
+        RadarStealthField = true,
+        RadarStealthFieldRadius = 1,
+
+        SonarStealth = true,
+        SonarStealthField = true,
+        SonarStealthFieldRadius = 1,
+
+        OmniRadius = 26,
+        RadarRadius = 50,
+        SonarRadius = 46,
+        VisionRadius = 28,
+        WaterVisionRadius = 22,
+
+        ReactivateTime = 15,
+    },
+	
+    LifeBarHeight = 0.15,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 1.25,
+	
+    Physics = {
+        BackUpDistance = 15,    
+        BankingSlope = 0,
+
+        DragCoefficient = 0.2,
+
+        LayerChangeOffsetHeight = -0.9,
+
+        MaxAcceleration = 0.55,
+
+        MaxBrake = 1.45,
+        MaxSpeed = 1.45,
+        MaxSpeedReverse = 1.45,
+
+        MaxSteerForce = 12,
+        MinSpeedPercent = 0,
+
+        MotionType = 'RULEUMT_Amphibious',
+
+        StandUpright = true,
+        TurnRadius = 10,
+        TurnRate = 65,
+    },
+    
+    SelectionCenterOffsetX = 0.15,
+    SelectionCenterOffsetZ = -0.3,
+    SelectionSizeX = 0.7,
+    SelectionSizeZ = 0.6,
+    SelectionThickness = 0.9,
+	
+    SizeX = 0.8,
+    SizeY = 2.2,
+    SizeZ = 0.7,
+	
+    StrategicIconName = 'icon_commander_generic',
+    StrategicIconSortPriority = 0,
+	
+    Transport = {
+        ClassSAttachSize = 0,
+        TransportClass = 3,
+    },
+	
+    Veteran = {
+        Level1 = 33,
+        Level2 = 66,
+        Level3 = 99,
+        Level4 = 132,
+        Level5 = 165,
+    },
 	
     Weapon = {
         {
-           
-        },
-        {
-            
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0.1,
+            BeamLifetime = 0.1,
+			
+            CollideFriendly = false,
+			
+            Damage = 0.1,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Target Designator',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Air|Land|Water|Seabed',
+                Seabed = 'Air|Land|Water|Seabed',
+                Water = 'Air|Land|Water|Seabed',
+            },
+            FiringTolerance = 3,
+			
+            HeadingArcCenter = 0,
+            HeadingArcRange = 180,
+			
+            Label = 'TargetPainter',
+			
+            MaxRadius = 25, --script must change this to match weapon upgrade range
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Right_Turret_Muzzle'},
+                    RackBone = 'Right_Arm_B02',
+                },
+            },
+
+            RateOfFire = 2,
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+            TurretBoneMuzzle = 'Right_Turret_Muzzle',
+            TurretBonePitch = 'Right_Arm_B02',
+            TurretBoneYaw = 'Torso',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 85,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 85,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
         },
         {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound {Bank = 'XSL_Weapon',Cue = 'XSL0001_Chronotron_Cannon',LodCutoff = 'Weapon_LodCutoff'},
+            },
+
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 70,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Chronotron Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Air|Land|Water|Seabed',
+                Seabed = 'Air|Land|Water|Seabed',
+                Water = 'Air|Land|Water|Seabed',
+            },
+
+            FiringTolerance = 2,
+			
+            Label = 'ChronotronCannon',
+			
+            MaxRadius = 28,
+
+            MuzzleVelocity = 40,
+			
+			NotExclusive = true,
+			
+            ProjectileId = '/projectiles/SDFChronatronCannon01/SDFChronatronCannon01_proj.bp',
+            ProjectileLifetime = 2,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Right_Turret_Muzzle'},
+                    RackBone = 'Right_Arm_B02',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 2,
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS -WALL',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			
+            TurretBoneMuzzle = 'Right_Turret_Muzzle',
+            TurretBonePitch = 'Right_Arm_B02',
+            TurretBoneYaw = 'Torso',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 30,
+            TurretPitchSpeed = 85,
+			
+            TurretYaw = 0,
+            TurretYawRange = 30,
+            TurretYawSpeed = 85,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+        },
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound {Bank = 'XSL_Weapon',Cue = 'XSL0001_Chronotron_Cannon_OC',LodCutoff = 'Weapon_LodCutoff'},
+            },
 
             BallisticArc = 'RULEUBA_None',
             CanAttackGround = true,
@@ -36,11 +1488,15 @@ UnitBlueprint {
             },
             FiringTolerance = 2,
 
+            Label = 'OverCharge',
+
             ManualFire = true,
 
             MaxRadius = 30,
 
             MuzzleVelocity = 25,
+
+            NotExclusive = false,
 
             OverChargeWeapon = true,
             Overcharge = {
@@ -53,6 +1509,13 @@ UnitBlueprint {
 
             ProjectileId = '/mods/QUIET-Community-Edition/projectiles/SDFChronatronCannon02/SDFChronatronCannon02_proj.bp',
             ProjectileLifetimeUsesMultiplier = 2,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Right_Turret_Muzzle'},
+                    RackBone = 'Right_Arm_B02',
+                },
+            },
 
             RackRecoilDistance = -0.5,
 
@@ -80,47 +1543,850 @@ UnitBlueprint {
             UseFiringSolutionInsteadOfAimBone = true,
         },
         {
-            
+            AboveWaterTargetsOnly = true,
+            CollideFriendly = false,
+
+            Damage = 0,
+            DamageFriendly = true,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+
+            DisplayName = 'Death Nuke',
+
+            FireOnDeath = true,
+            FiringTolerance = 2,
+
+            Label = 'DeathWeapon',
+
+            MaxRadius = 1,
+
+            MuzzleVelocity = 0,
+			
+            NukeInnerRingDamage = 14500,
+            NukeInnerRingRadius = 15,
+            NukeInnerRingTicks = 5,
+            NukeInnerRingTotalTime = 1,
+
+            NukeOuterRingDamage = 4500,
+            NukeOuterRingRadius = 25,
+            NukeOuterRingTicks = 5,
+            NukeOuterRingTotalTime = 4,
+
+            ProjectileId = '/effects/entities/InainoEffectController01/InainoEffectController01_proj.bp',
+            RackBones = {
+                {
+                    MuzzleBones = {0},
+                    RackBone = 0,
+                },
+            },
+
+            RateOfFire = 1,
+
+            TargetCheckInterval = 9999999,
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
         },
         
         --- Torpedo Launcher ---
 
         {
+            Audio = {
+                FireUnderwater  = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0201_AnaIt_Torpedo', LodCutoff = 'UnitMove_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+
+            Damage = 380,
+            DamageType = 'Normal',
+
+            DisplayName = 'Torpedo Launcher',
+
+            FireTargetLayerCapsTable = {
+                Seabed = 'Seabed|Sub|Water',
+            },
+            FiringTolerance = 3,
+
+            Label = 'EXTorpedoLauncher01',
+
+            MaxRadius = 60,
+
+            MuzzleSalvoDelay = 0.6,
+            MuzzleSalvoSize = 2,
+
+            MuzzleVelocity = 6,
+
+            ProjectileId = '/projectiles/SANAnaitTorpedo01/SANAnaitTorpedo01_proj.bp',
+            ProjectileLifetime = 7.5,
             
+            RackBones = {
+                {
+                    MuzzleBones = {'Torpedo_Muzzle_01','Torpedo_Muzzle_02'},
+                    RackBone = 'Torpedo_Launcher',
+                },
+            },
+            
+            RackSalvoReloadTime = 2.1,    -- cycle is 3.3 seconds = 760/3.2
+
+            RangeCategory = 'UWRC_AntiNavy',
+
+            RateOfFire = 1,         -- controlled by muzzle delay and reload time
+
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'SUBMERSIBLE',
+                'NAVAL',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
         },
         {
-           
+            advancedTracking = true,
+            
+            Audio = {
+                FireUnderwater  = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0201_AnaIt_Torpedo', LodCutoff = 'UnitMove_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+
+            Damage = 250,
+            DamageType = 'Normal',
+
+            DisplayName = 'Torpedo Launcher',
+
+            FireTargetLayerCapsTable = {
+                Seabed = 'Seabed|Sub|Water',
+            },
+            FiringTolerance = 2,
+
+            Label = 'EXTorpedoLauncher02',
+
+            MaxRadius = 66,
+
+            MuzzleSalvoDelay = 0.5,
+            MuzzleSalvoSize = 4,
+
+            MuzzleVelocity = 6,
+
+            ProjectileId = '/projectiles/SANAnaitTorpedo01/SANAnaitTorpedo01_proj.bp',
+            ProjectileLifetime = 9,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Torpedo_Muzzle_01','Torpedo_Muzzle_02'},
+                    RackBone = 'Torpedo_Launcher',
+                },
+            },
+            
+            RackSalvoReloadTime = 1.3,      -- cycle is 3.3 seconds = 1000/3.3 = 303 DPS
+
+            RangeCategory = 'UWRC_AntiNavy',
+
+            RateOfFire = 1,     -- controlled by muzzle delay and reload time
+
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'SUBMERSIBLE',
+                'NAVAL',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
         },
         {
-           
+            advancedTracking = true,
+            
+            Audio = {
+                FireUnderwater  = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0201_AnaIt_Torpedo', LodCutoff = 'UnitMove_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+
+            Damage = 500,
+            DamageType = 'Normal',
+
+            DisplayName = 'Torpedo Launcher',
+
+            FireTargetLayerCapsTable = {
+                Seabed = 'Seabed|Sub|Water',
+            },
+            FiringTolerance = 4,
+
+            Label = 'EXTorpedoLauncher03',
+
+            MaxRadius = 72,
+
+            MuzzleSalvoDelay = 0.5,
+            MuzzleSalvoSize = 4,
+
+            MuzzleVelocity = 7,
+
+            ProjectileId = '/projectiles/SANAnaitTorpedo01/SANAnaitTorpedo01_proj.bp',
+            ProjectileLifetime = 9,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Torpedo_Muzzle_01','Torpedo_Muzzle_02'},
+                    RackBone = 'Torpedo_Launcher',
+                },
+            },
+            
+            RackSalvoReloadTime = 2.5,    -- cycle is 4.5 seconds = 2000/4.5 = 444 DPS
+
+            RangeCategory = 'UWRC_AntiNavy',
+
+            RateOfFire = 1,     -- controlled by muzzle delay and reload time
+
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'SUBMERSIBLE',
+                'NAVAL',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
         },
 
         {
-            
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound {Bank = 'XSL_Weapon',Cue = 'XSL0401_SinnUnthe_Fire',LodCutoff = 'Weapon_LodCutoff'},
+                MuzzleChargeStart = Sound {Bank = 'XSL_Weapon',Cue = 'XSL0401_SinnUnthe_Charge',LodCutoff = 'Weapon_LodCutoff'},
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CollideFriendly = false,
+
+            Damage = 50,
+			DamageRadius = 2,
+            DamageFriendly = false,
+            DamageType = 'Normal',
+
+			DoTTime = 4,
+            DoTPulses = 20,     -- 1000 damage
+
+            DisplayName = 'Storm Cannon',
+
+            EnergyChargeForFirstShot = false,
+
+            EnergyDrainPerSecond = 400,	-- 1.5 second charge --
+            EnergyRequired = 600,
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 2,
+
+            Label = 'EXBigBallCannon01',
+
+            MaxRadius = 33,
+            MinRadius = 2,
+
+            MuzzleChargeDelay = 2.5,
+
+            MuzzleVelocity = 15,
+
+			NotExclusive = true,
+
+			PrefersPrimaryWeaponTarget = true,
+
+            ProjectileId = '/mods/BlackopsACUs/projectiles/SeraACUBigBall01/SeraACUBigBall01_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 2.2,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Big_Ball_Muzzle'},
+                    RackBone = 'Big_Ball_Cannon',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+
+            RateOfFire = 1,     -- controlled by charge and muzzlechargedelay = 4 seconds
+
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+            TurretBoneMuzzle = 'Big_Ball_Muzzle',
+            TurretBonePitch = 'Right_Arm_B02',
+            TurretBoneYaw = 'Torso',
+
+            TurretPitch = 0,
+            TurretPitchRange = 30,
+            TurretPitchSpeed = 85,
+
+            TurretYaw = 0,
+            TurretYawRange = 30,
+            TurretYawSpeed = 85,
+
+            Turreted = true,
         },
         {
-          
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound {Bank = 'XSL_Weapon',Cue = 'XSL0401_SinnUnthe_Fire',LodCutoff = 'Weapon_LodCutoff'},
+                MuzzleChargeStart = Sound {Bank = 'XSL_Weapon',Cue = 'XSL0401_SinnUnthe_Charge',LodCutoff = 'Weapon_LodCutoff'},
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CollideFriendly = false,
+
+            Damage = 100,
+			DamageRadius = 2.6,
+            DamageType = 'Normal',
+
+			DoTTime = 4,
+            DoTPulses = 20,     -- 2000 Damage
+
+            DisplayName = 'Storm Cannon II',
+
+            EnergyChargeForFirstShot = false,
+
+            EnergyDrainPerSecond = 650,	-- 1.5 second charge --
+            EnergyRequired = 975,
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 2,
+
+            Label = 'EXBigBallCannon02',
+
+            MaxRadius = 37,
+            MinRadius = 2,
+
+            MuzzleChargeDelay = 2.5,    -- 2.5 second muzzle charge delay
+
+            MuzzleVelocity = 18,
+
+			NotExclusive = true,
+
+			PrefersPrimaryWeaponTarget = true,
+
+            ProjectileId = '/mods/BlackopsACUs/projectiles/SeraACUBigBall02/SeraACUBigBall02_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 2.5,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Big_Ball_Muzzle'},
+                    RackBone = 'Big_Ball_Cannon',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+
+            RateOfFire = 1,     -- controlled by charges - 4 seconds
+
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS -WALL',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+            TurretBoneMuzzle = 'Big_Ball_Muzzle',
+            TurretBonePitch = 'Right_Arm_B02',
+            TurretBoneYaw = 'Torso',
+
+            TurretPitch = 0,
+            TurretPitchRange = 30,
+            TurretPitchSpeed = 85,
+
+            TurretYaw = 0,
+            TurretYawRange = 30,
+            TurretYawSpeed = 85,
+
+            Turreted = true,
         },
         {
-          
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound {Bank = 'XSL_Weapon',Cue = 'XSL0401_SinnUnthe_Fire',LodCutoff = 'Weapon_LodCutoff'},
+                MuzzleChargeStart = Sound {Bank = 'XSL_Weapon',Cue = 'XSL0401_SinnUnthe_Charge',LodCutoff = 'Weapon_LodCutoff'},
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CollideFriendly = false,
+
+            Damage = 180,
+			DamageRadius = 3.4,
+            DamageType = 'Normal',
+
+			DoTTime = 4,
+            DoTPulses = 20,     -- 3600 Damage
+
+            DisplayName = 'Storm Cannon III',
+
+            EnergyChargeForFirstShot = false,
+
+            EnergyDrainPerSecond = 700,	-- 2 second charge --
+            EnergyRequired = 1400,
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 2,
+
+            Label = 'EXBigBallCannon03',
+
+            MaxRadius = 45,
+            MinRadius = 3,
+
+            MuzzleChargeDelay = 2,
+
+            MuzzleVelocity = 18,
+
+			NotExclusive = true,
+
+			PrefersPrimaryWeaponTarget = true,
+
+            ProjectileId = '/mods/BlackopsACUs/projectiles/SeraACUBigBall03/SeraACUBigBall03_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 2.5,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Big_Ball_Muzzle'},
+                    RackBone = 'Big_Ball_Cannon',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+
+            RateOfFire = 1,     -- controlled by charges -- 4 seconds
+
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+            TurretBoneMuzzle = 'Big_Ball_Muzzle',
+            TurretBonePitch = 'Right_Arm_B02',
+            TurretBoneYaw = 'Torso',
+
+            TurretPitch = 0,
+            TurretPitchRange = 30,
+            TurretPitchSpeed = 85,
+
+            TurretYaw = 0,
+            TurretYawRange = 30,
+            TurretYawSpeed = 85,
+
+            Turreted = true,
         },
 
 
         {
-            
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound {Bank = 'XSL_Weapon',Cue = 'XSL0401_Gatling_Cannon',LodCutoff = 'Weapon_LodCutoff'},
+            },
+
+            BallisticArc = 'RULEUBA_LowArc',
+
+            CollideFriendly = false,
+
+            Damage = 75,
+			DamageRadius = 0,
+            DamageType = 'Normal',
+
+            DisplayName = 'Gatling Plasma Cannon',
+
+            FireTargetLayerCapsTable = { Land = 'Land|Water|Seabed|Air', Seabed = 'Land|Water|Seabed|Air' },
+
+            FiringTolerance = 2,
+
+            Label = 'EXRapidCannon01',
+
+            MaxRadius = 36,
+            MinRadius = 2,
+
+            MuzzleVelocity = 36,
+
+			NoPause = true,
+
+			PrefersPrimaryWeaponTarget = true,
+
+            ProjectileId = '/mods/BlackopsACUs/projectiles/SeraRapidCannon01/SeraRapidCannon01_proj.bp',
+            ProjectileLifetime = 1.1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Rapid_Muzzle'},
+                    RackBone = 'Rapid_Cannon',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+
+            RateOfFire = 3,		-- 225 DPS
+
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+            TurretBoneMuzzle = 'Rapid_Muzzle',
+            TurretBonePitch = 'Right_Arm_B02',
+            TurretBoneYaw = 'Torso',
+
+            TurretPitch = 0,
+            TurretPitchRange = 4,
+            TurretPitchSpeed = 90,
+
+            TurretYaw = 0,
+            TurretYawRange = 4,
+            TurretYawSpeed = 90,
+
+            Turreted = true,
         },
         
         {
-           
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound {Bank = 'XSL_Weapon',Cue = 'XSL0401_Gatling_Cannon',LodCutoff = 'Weapon_LodCutoff'},
+            },
+
+            BallisticArc = 'RULEUBA_LowArc',
+
+            CollideFriendly = false,
+
+            Damage = 140,
+			DamageRadius = 0,
+            DamageType = 'Normal',
+
+            DisplayName = 'Gatling Plasma Cannon',
+
+            FireTargetLayerCapsTable = { Land = 'Land|Water|Seabed|Air', Seabed = 'Land|Water|Seabed|Air' },
+
+            FiringTolerance = 2,
+
+            Label = 'EXRapidCannon02',
+
+            MaxRadius = 48,
+            MinRadius = 2,
+
+            MuzzleVelocity = 40,
+
+			NoPause = true,
+
+			PrefersPrimaryWeaponTarget = true,
+
+            ProjectileId = '/mods/BlackopsACUs/projectiles/SeraRapidCannon02/SeraRapidCannon02_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 1.2,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Rapid_Muzzle'},
+                    RackBone = 'Rapid_Cannon',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+
+            RateOfFire = 3,		-- 420 DPS
+
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+            TurretBoneMuzzle = 'Rapid_Muzzle',
+            TurretBonePitch = 'Right_Arm_B02',
+            TurretBoneYaw = 'Torso',
+
+            TurretPitch = 0,
+            TurretPitchRange = 4,
+            TurretPitchSpeed = 90,
+
+            TurretYaw = 0,
+            TurretYawRange = 4,
+            TurretYawSpeed = 90,
+
+            Turreted = true,
         },
         {
-            
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound {Bank = 'XSL_Weapon',Cue = 'XSL0401_Gatling_Cannon',LodCutoff = 'Weapon_LodCutoff'},
+            },
+
+            BallisticArc = 'RULEUBA_LowArc',
+
+            CollideFriendly = false,
+
+            Damage = 275,
+            DamageRadius = 1,
+            DamageType = 'Normal',
+
+            DisplayName = 'Gatling Plasma Cannon',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 2,
+
+            Label = 'EXRapidCannon03',
+
+            MaxRadius = 57,
+            MinRadius = 2,
+
+            MuzzleVelocity = 40,
+
+			NoPause = true,
+
+			PrefersPrimaryWeaponTarget = true,
+
+            ProjectileId = '/mods/BlackopsACUs/projectiles/SeraRapidCannon03/SeraRapidCannon03_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 1.5,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Rapid_Muzzle'},
+                    RackBone = 'Rapid_Cannon',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+
+            RateOfFire = 2,		-- 550 DPS
+
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+            TurretBoneMuzzle = 'Rapid_Muzzle',
+            TurretBonePitch = 'Right_Arm_B02',
+            TurretBoneYaw = 'Torso',
+
+            TurretPitch = 0,
+            TurretPitchRange = 4,
+            TurretPitchSpeed = 90,
+
+            TurretYaw = 0,
+            TurretYawRange = 4,
+            TurretYawSpeed = 90,
+
+            Turreted = true,
         },
         {
-            
+            AboveWaterFireOnly = true,
+            AlwaysRecheckTarget = true,
+
+            Audio = {
+                Fire = Sound {Bank = 'XSL_Weapon',Cue = 'XSL0401_Aire_Autocannon',LodCutoff = 'Weapon_LodCutoff'},
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CannotAttackGround = true,
+
+            CollideFriendly = false,
+
+            Damage = 50,
+            DamageFriendly = false,
+            DamageRadius = 1.5,
+            DamageType = 'Normal',
+
+            DetonatesAtTargetHeight = true,
+
+            DisplayName = 'Olaris AA Artillery Cannon',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Seabed = 'Air',
+                Water = 'Air',
+            },
+            FiringRandomness = 3.5,
+            FiringTolerance = 0.5,
+
+            HeadingArcCenter = 90,
+            HeadingArcRange = 90,
+
+            Label = 'EXAA01',
+
+            MaxRadius = 36,
+
+            MuzzleSalvoDelay = 0.4,
+            MuzzleSalvoSize = 3,
+            MuzzleVelocity = 60,
+
+            ProjectileId = '/projectiles/SAAOlarisAAArtillery03/SAAOlarisAAArtillery03_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 1.1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Left_AA_Muzzle'},
+                    RackBone = 'Left_AA_Barrel03',
+                },
+            },
+
+            RangeCategory = 'UWRC_AntiAir',
+
+            RateOfFire = 3,
+
+            TargetCheckInterval = 0.3,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'HIGHPRIAIR',
+                'BOMBER',
+                'GROUNDATTACK',
+                'AIR MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+            TrackingRadius = 1.2,
+
+            TurretBoneMuzzle = 'Left_AA_Muzzle',
+            TurretBonePitch = 'Left_AA_Turret',
+            TurretBoneYaw = 'Left_AA_Turret',
+
+            TurretPitch = 0,
+            TurretPitchRange = 85,
+            TurretPitchSpeed = 180,
+
+            TurretYaw = 0,
+            TurretYawRange = 90,
+            TurretYawSpeed = 180,
+
+            Turreted = true,
         },
         {
-           
+            AboveWaterFireOnly = true,
+            AlwaysRecheckTarget = true,
+
+            Audio = {
+                Fire = Sound {Bank = 'XSL_Weapon',Cue = 'XSL0401_Aire_Autocannon',LodCutoff = 'Weapon_LodCutoff'},
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CannotAttackGround = true,
+
+            CollideFriendly = false,
+
+            Damage = 50,
+            DamageFriendly = false,
+            DamageRadius = 1.5,
+            DamageType = 'Normal',
+
+            DetonatesAtTargetHeight = true,
+
+            DisplayName = 'Olaris AA Artillery Cannon',
+
+            EffectiveRadius = 42,
+
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Seabed = 'Air',
+                Water = 'Air',
+            },
+            FiringRandomness = 3.5,
+            FiringTolerance = 0.5,
+
+            HeadingArcCenter = -90,
+            HeadingArcRange = 90,
+
+            Label = 'EXAA02',
+
+            MaxRadius = 36,
+
+            MuzzleSalvoDelay = 0.4,
+            MuzzleSalvoSize = 3,
+
+            MuzzleVelocity = 20,
+
+            PrefersPrimaryWeaponTarget = true,
+
+            ProjectileId = '/projectiles/SAAOlarisAAArtillery03/SAAOlarisAAArtillery03_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 1.25,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Right_AA_Muzzle'},
+                    RackBone = 'Right_AA_Barrel',
+                },
+            },
+
+            RangeCategory = 'UWRC_AntiAir',
+
+            RateOfFire = 3,
+
+            TargetCheckInterval = 0.3,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'BOMBER',
+                'GROUNDATTACK',
+                'TRANSPORTATION',
+                'AIR MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+            TrackingRadius = 1.2,
+
+            TurretBoneMuzzle = 'Right_AA_Muzzle',
+            TurretBonePitch = 'Right_AA_Turret',
+            TurretBoneYaw = 'Right_AA_Turret',
+
+            TurretPitch = 0,
+            TurretPitchRange = 85,
+            TurretPitchSpeed = 180,
+
+            TurretYaw = 0,
+            TurretYawRange = 90,
+            TurretYawSpeed = 180,
+
+            Turreted = true,
         },
     },
 }
