@@ -17,6 +17,7 @@ Fix T3 Cybran Tripple Threat DPS & Firing States
 Fix T3 UEF Brimstone DPS & Firing States
 Fix T3 Aeon Mothra DPS & Firing States
 Fix T3 Cybran Neolith DPS & Firing States
+Fix Seraphim Commander not shooting the correct projectile
 
 ### 1.32
 
