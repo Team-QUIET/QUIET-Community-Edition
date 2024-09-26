@@ -3,6 +3,21 @@
 ## Rebalance Changelog
 ---------------------------------------------
 
+### 1.33
+
+# Weapon States
+All Weapon States (Excluding WeaponFiringState) have been rewritten to a cleaner standard and to reduce the amount of unnessacry states many units were going through. This causes latency and delay as well as other strange bugs in units.
+This is a extremely deep and fundamental change to the game and I expect some units to be broken. (Please report them in our discord ASAP for hotfixes)
+
+# Misc
+Fix T2 UEF Statue rockets
+Fix T2 UEF Pillar DPS
+Fix T3 Aeon Wraith Pathfinding
+Fix T3 Cybran Tripple Threat DPS & Firing States
+Fix T3 UEF Brimstone DPS & Firing States
+Fix T3 Aeon Mothra DPS & Firing States
+Fix T3 Cybran Neolith DPS & Firing States
+
 ### 1.32
 
 # Wraith
