@@ -1,0 +1,20 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "brot3shbm",
+  
+    Weapon = {
+        {
+
+            AutoInitiateAttackCommand = false,
+		},
+        {
+		},
+        {
+		},
+
+		{
+
+            AutoInitiateAttackCommand = false,
+        },
+    },
+    }
