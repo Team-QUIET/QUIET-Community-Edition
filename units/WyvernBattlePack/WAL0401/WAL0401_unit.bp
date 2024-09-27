@@ -3,7 +3,7 @@ UnitBlueprint{
     Description = "<LOC wal0401_desc>Experimental Ultra Heavy Assault Bot",
 
     AI = {
-        GuardScanRadius = 40,
+        GuardScanRadius = 0,
         TargetBones = {"NewHead","Torso","Left_Footfall","Right_Leg_B02"},
     },
 
