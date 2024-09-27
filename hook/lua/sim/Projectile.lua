@@ -1,5 +1,5 @@
-Projectile_LOUDCE = Projectile
-Projectile = Class(Projectile_LOUDCE) {
+QCEProjectile = Projectile
+Projectile = Class(QCEProjectile) {
     OnImpact = function(self, targetType, targetEntity)
         
         local ProjectileDialog = ScenarioInfo.ProjectileDialog
@@ -21,12 +21,6 @@ Projectile = Class(Projectile_LOUDCE) {
             if targetType == 'Shield' then
             
                 local DD = LOUDCOPY(self.DamageData)
-
-                -- LOUD 'marshmallow shield effect' all AOE to 0 on shields
-                -- No Sprouto this is dumb. Let's not remove the AoE.
-                if DD.DamageRadius > 0 then
-                    self.DamageData.DamageRadius = self.DamageData.DamageRadius
-                end
 
                 -- LOUD ShieldMult effect
                 if STRINGSUB(DamageType, 1, 10) == 'ShieldMult' then

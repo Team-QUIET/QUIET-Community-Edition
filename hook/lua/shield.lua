@@ -111,8 +111,8 @@ for k, bp in __blueprints do
     end
 end
 
-local LCEShield = Shield
-Shield = Class(LCEShield) {
+local QCEShield = Shield
+Shield = Class(QCEShield) {
 
     RemainEnabledWhenAttached = false,
     --LOG("We've entered LCE Version of Shield.lua"),
