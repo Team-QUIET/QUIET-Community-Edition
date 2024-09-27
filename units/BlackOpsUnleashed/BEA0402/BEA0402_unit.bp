@@ -1,0 +1,22 @@
+UnitBlueprint {
+      Merge = true,
+	BlueprintId = "bea0402", 	
+ 
+    AI = {
+		GuardRadius = 0,
+		GuardReturnRadius = 0,
+        GuardScanRadius = 0,
+        },
+		
+		    Air = {
+
+        CirclingDirChangeFrequencySec = 8,
+        CirclingElevationChangeRatio = 0,
+        CirclingRadiusChangeMaxRatio = .95,
+        CirclingRadiusChangeMinRatio = .95,
+        CirclingRadiusVsAirMult = .98,
+        CirclingTurnMult = 1,
+
+    },
+	
+   }
