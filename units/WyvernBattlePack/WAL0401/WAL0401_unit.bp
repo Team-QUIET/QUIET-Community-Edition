@@ -218,7 +218,7 @@ UnitBlueprint{
                 BeamStop  = Sound { Bank = 'UALWeapon', Cue = 'UAL0401_Phason_Laser_Stop',   LodCutoff = 'Weapon_LodCutoff' },
             },
 
-            AutoInitiateAttackCommand = true,
+            AutoInitiateAttackCommand = false,
 
             BallisticArc = "RULEUBA_None",
             BeamCollisionDelay = 0,
