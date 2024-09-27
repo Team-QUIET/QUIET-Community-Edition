@@ -1,0 +1,20 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "bal0401",
+  
+    Weapon = {
+		---- This weapon is just for show - real details are in the script - fires 9 rounds that drop from above
+		---- Each causes about 2000 Damage on a direct hit - and about 600 if just in radius - cant seem to find
+		---- where these values are controlled
+		---- FOUND it - \BlackOpsUnleashed\effects\Entities\GoldLaserBombEffectController01\GoldLaserBombEffectController01_script.lua
+        -- very similar to a nuke - 2000 inner ring damage >> 650 at maximum radius of 7
+		{
+
+            AutoInitiateAttackCommand = false,
+
+        },
+		{
+        },
+        },
+        }
+        
