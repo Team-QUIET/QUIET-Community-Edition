@@ -7,6 +7,10 @@ UnitBlueprint {
         BuildTime = 19650,
     },
 
+	AI = {
+        GuardScanRadius = 0,
+    },
+
     Defense = {
         ArmorType = 'Experimental',
         Health = 124000,
