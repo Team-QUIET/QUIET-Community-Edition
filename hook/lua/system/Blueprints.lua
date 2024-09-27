@@ -1,6 +1,6 @@
 do
-	-- LCE clobbers the ModBlueprints to remove many nebulous changes in the Blueprints.lua that significantly affect Unit BPs Globally
-	-- LCE cleans the Blueprints.lua up and sections them into their own functions with exact action names to allow people to see what's going on more clearly
+	-- QCE clobbers the ModBlueprints to remove many nebulous changes in the Blueprints.lua that significantly affect Unit BPs Globally
+	-- QCE cleans the Blueprints.lua up and sections them into their own functions with exact action names to allow people to see what's going on more clearly
 	local OldModBlueprints = ModBlueprints
 
 	function ModBlueprints(all_blueprints)
@@ -162,7 +162,7 @@ do
 
 	--=======================================
 	-- FUNCTION RECLAIMALTERATIONS(ALL_BLUEPRINTS)
-	-- LCE's Reclaim Adjustments to encourage more aggression early game but punish hyper aggression lategame, this enables comeback mechanics.
+	-- QCE's Reclaim Adjustments to encourage more aggression early game but punish hyper aggression lategame, this enables comeback mechanics.
 	-- This also fixes an issue where many units lack a bp.wreckage table
 	--=======================================
 
@@ -240,7 +240,7 @@ do
 
 	--=======================================
 	-- FUNCTION NOTIFICATIONALTERATIONS(ALL_BLUEPRINTS)
-	-- LCE's NotificationAlterations + Misc
+	-- QCE's NotificationAlterations + Misc
 	-- Wonky Resources allows mexes to always be placed no matter the terrain
 	-- Other part is notifications for pings/audio for Commanders, Mex Attacks, and etc
 	--=======================================
@@ -274,6 +274,7 @@ do
 	function NullifyUnitBlueprints(all_blueprints)
 		local unitPruningId = {
 			'brnt2bm', -- Banshee
+			'wrl0305', -- Echidna
 			'brnt3wt', -- WarHammer
 			'dea0202', -- Janus
 			'dra0202', -- Corsair
