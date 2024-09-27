@@ -1,0 +1,8 @@
+UnitBlueprint{
+	Merge = true,
+	BlueprintId = "wel4404",
+
+    AI = {
+        GuardScanRadius = 0,
+    },
+	}
