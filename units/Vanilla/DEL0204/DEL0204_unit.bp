@@ -43,7 +43,7 @@ UnitBlueprint {
             FiringRandomness = 0.1,
             FiringTolerance = 1,
 			
-            MaxRadius = 34,
+            MaxRadius = 32,
 			
             MuzzleSalvoDelay = 0.2,	---- 15 rounds in 4.5 seconds
             MuzzleSalvoSize = 15,	---- 15 rounds per salvo
@@ -114,7 +114,7 @@ UnitBlueprint {
             FiringRandomness = 3.5,
             FiringTolerance = 1,
 			
-            MaxRadius = 34,
+            MaxRadius = 32,
 			
             MuzzleSalvoDelay = 0.3,	---- every .3 seconds
             MuzzleSalvoSize = 4,	---- 4 grenades per salvo = 1.2 seconds
