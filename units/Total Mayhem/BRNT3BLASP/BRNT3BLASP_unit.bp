@@ -1,0 +1,27 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "brnt3blasp"
+
+      Weapon = {
+
+        {
+
+            AutoInitiateAttackCommand = false,
+
+		},
+        {
+		},
+        {
+        },
+        {
+        },
+        {
+		},
+        {
+		},		
+        {
+		},
+        {
+        },
+    },
+    }
