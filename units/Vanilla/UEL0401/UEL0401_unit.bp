@@ -1,0 +1,9 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "uel0401",
+    
+    AI = {
+		GuardReturnRadius = 0,
+        GuardScanRadius = 0,
+    },
+}
