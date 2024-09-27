@@ -9,4 +9,56 @@ UnitBlueprint {
         Level4 = 480,
         Level5 = 600,
     },
+
+	    Weapon = {
+
+		{
+
+        },
+
+		{
+
+        },
+		
+		{
+        },
+		
+
+		{
+
+        },
+		
+
+		{
+
+			AutoInitiateAttackCommand = false,
+
+        },
+
+        {
+
+        },
+		{
+
+        },
+
+        {
+
+			AutoInitiateAttackCommand = false,
+
+        },
+		
+		{
+
+        },
+		
+
+        {
+
+        },
+
+        {
+
+        },
+    },
     }
