@@ -1,0 +1,9 @@
+UnitBlueprint {
+Merge = true,
+BlueprintId = "brnt3blasp",
+
+    AI = { 
+        GuardScanRadius = 0, 
+
+    },
+    }
