@@ -1,0 +1,27 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "url0402",
+    
+    Weapon = {
+
+        {
+        },
+        {
+        },
+
+		
+        {
+
+            AutoInitiateAttackCommand = false,
+        },
+		
+        {
+        },
+
+        {
+        },
+		
+        {
+        },
+    },
+    }
