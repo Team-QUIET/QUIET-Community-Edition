@@ -396,7 +396,7 @@ UnitBlueprint {
 		{
             AboveWaterTargetsOnly = true,
 
-            AutoInitiateAttackCommand = true,
+            AutoInitiateAttackCommand = false,
 
             BallisticArc = 'RULEUBA_LowArc',
 

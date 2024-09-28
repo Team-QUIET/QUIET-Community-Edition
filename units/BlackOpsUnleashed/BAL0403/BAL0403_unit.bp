@@ -1,0 +1,18 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "bal0403",
+    
+    Weapon = {
+        {
+
+            AutoInitiateAttackCommand = false,
+
+        },
+        {
+
+        },
+        {
+
+        },
+    },
+}

@@ -1,0 +1,33 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "wra0401",
+
+      Weapon = {
+        {
+
+            AutoInitiateAttackCommand = false,
+
+        },
+        {
+
+        },
+        {
+
+        },
+        {
+
+        },
+        {
+
+        },
+        {
+
+        },
+        {
+
+        },
+        {
+
+        },
+    },
+}

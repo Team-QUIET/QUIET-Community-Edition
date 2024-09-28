@@ -1,0 +1,31 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "bsl0401"
+
+      Weapon = {
+        {
+
+            AutoInitiateAttackCommand = false,
+
+        },
+	{
+
+            AutoInitiateAttackCommand = false,
+
+        },
+	{
+
+            AutoInitiateAttackCommand = false,
+
+        },
+        {
+
+        },
+        {
+
+        },
+        {
+
+        },
+    },
+}

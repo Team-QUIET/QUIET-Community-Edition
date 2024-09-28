@@ -141,7 +141,7 @@ UnitBlueprint {
             AboveWaterTargetsOnly = true,
 			AimsStraightOnDisable = true,
 			
-            AutoInitiateAttackCommand = true,
+            AutoInitiateAttackCommand = false,
 			
             BallisticArc = 'RULEUBA_None',
 			
