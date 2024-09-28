@@ -8,13 +8,11 @@ UnitBlueprint {
             AutoInitiateAttackCommand = false,
 
         },
-
         {
 
         },
-        
         {
 
         },
     },
-    }
+}
