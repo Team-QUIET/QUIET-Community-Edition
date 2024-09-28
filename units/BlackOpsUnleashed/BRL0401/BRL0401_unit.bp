@@ -11,54 +11,42 @@ UnitBlueprint {
     },
 
 	    Weapon = {
-
 		{
 
-        },
-
+        	},
 		{
 
-        },
-		
-		{
-        },
-		
-
+        	},
 		{
 
-        },
-		
+        	},
+		{
 
+		},
 		{
 
 			AutoInitiateAttackCommand = false,
 
-        },
+        	},
+        	{
 
-        {
-
-        },
+        	},
 		{
 
-        },
-
-        {
+        	},
+        	{
 
 			AutoInitiateAttackCommand = false,
 
-        },
-		
+        	},
 		{
 
-        },
-		
+        	},
+        	{
 
-        {
+        	},
+        	{
 
-        },
-
-        {
-
-        },
-    },
-    }
+        	},
+    	},
+}
