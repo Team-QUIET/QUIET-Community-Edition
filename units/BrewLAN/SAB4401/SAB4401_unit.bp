@@ -242,7 +242,7 @@ UnitBlueprint {
     SizeY = 5.5,
     SizeZ = 3.4,
 	
-    StrategicIconName = 'icon_structure3_shield',
+    StrategicIconName = 'icon_structure4_shield',
     StrategicIconSortPriority = 100,
 	
     Wreckage = {

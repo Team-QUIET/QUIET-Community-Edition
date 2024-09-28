@@ -33,4 +33,7 @@ UnitBlueprint {
 		
         MaintenanceConsumptionPerSecondEnergy = 4500,
     },
+
+    StrategicIconName = 'icon_structure4_shield',
+    StrategicIconSortPriority = 100,
 }
