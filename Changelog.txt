@@ -28,6 +28,7 @@ RoF increased to 2 (2 Shoots 2 Salvos)
 -20% Reduction Against Shields Removed
 DamageRadius 2 -> 3.5
 
+# Misc
 Removed Cybran T3 Sniper
 
 ### 1.33
