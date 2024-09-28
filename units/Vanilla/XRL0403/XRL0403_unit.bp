@@ -1,0 +1,9 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "xrl0403",
+	
+    Economy = {
+        BuildCostEnergy = 785500,
+        BuildCostMass = 46000,
+    },
+}
