@@ -28,6 +28,9 @@ RoF increased to 2 (2 Shoots 2 Salvos)
 -20% Reduction Against Shields Removed
 DamageRadius 2 -> 3.5
 
+# T4 Cybran Megalith
+Energy Cost 450000 -> 785500
+
 # Misc
 Removed Cybran T3 Sniper
 
