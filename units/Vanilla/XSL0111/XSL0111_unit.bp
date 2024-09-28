@@ -1,0 +1,78 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "xsl0111",
+	
+    Physics = {
+        BackUpDistance = 4,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 2.85,
+        MaxBrake = 2.85,
+        MaxSpeed = 2.85,
+        MaxSpeedReverse = 2.85,
+        MaxSteerForce = 5,
+        MeshExtentsX = 0.85,
+        MeshExtentsY = 0.6,
+        MeshExtentsZ = 1.25,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+
+        TurnRadius = 0.5,
+        TurnRate = 90,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            
+            AlwaysRecheckTarget = true,
+
+            AnimationReloadRate = 0.42,
+            
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+
+            Damage = 390,
+            DamageRadius = 1.5,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Laanse Tactical Missile Launcher',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+            },
+            FiringTolerance = 0.5,
+            
+            LeadTarget = true,
+ 			
+            MaxRadius = 75,
+            MinRadius = 4,
+
+            MuzzleVelocity = 6.5,
+			
+            ProjectileLifetime = 12,
+            
+            RackSalvoChargeTime = .6,
+            RackSalvoReloadTime = 5.9,
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 0.5,     -- controlled by RackSalvo timings -- 6.5 seconds
+			
+            SlavedToBody = true,
+			
+            TargetCheckInterval = 2,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'STRUCTURE,-WALL',
+                'MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.05,
+        },
+    },
+}

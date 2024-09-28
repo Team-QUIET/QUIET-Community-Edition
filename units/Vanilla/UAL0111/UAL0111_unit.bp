@@ -1,0 +1,76 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "ual0111",
+	
+    Physics = {
+        BackUpDistance = 4,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 2.85,
+        MaxBrake = 2.85,
+        MaxSpeed = 2.85,
+        MaxSpeedReverse = 2.85,
+        MaxSteerForce = 5,
+        MeshExtentsX = 0.85,
+        MeshExtentsY = 0.6,
+        MeshExtentsZ = 1.25,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        RotateOnSpot = true,
+        RotateOnSpotThreshold = 0.1,
+        TurnRadius = 0,
+        TurnRate = 90,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            
+            BallisticArc = 'RULEUBA_None',
+
+            CollideFriendly = false,
+            CountedProjectile = false,
+			
+            Damage = 600,
+            DamageRadius = 1,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Serpentine Missile',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+            },
+            FiringTolerance = 5,
+            
+            LeadTarget = true,
+			
+            MaxRadius = 75,
+            MinRadius = 3,
+			
+            MuzzleChargeDelay = 0.5,
+
+            MuzzleVelocity = 5,
+
+            ProjectileLifetime = 25,
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 0.1,
+            RenderFireClock = true,
+			
+            SlavedToBody = true,
+
+            TargetCheckInterval = 2,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'DEFENSE',
+                'MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+        },
+    },
+}
