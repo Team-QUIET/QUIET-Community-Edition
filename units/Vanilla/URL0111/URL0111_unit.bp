@@ -1,0 +1,74 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "url0111",
+	
+    Physics = {
+        BackUpDistance = 4,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 2.85,
+        MaxBrake = 2.85,
+        MaxSpeed = 2.85,
+        MaxSpeedReverse = 2.85,
+        MaxSteerForce = 5,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        RotateOnSpot = false,
+        RotateOnSpotThreshold = 0.1,
+        TurnRadius = 2,
+        TurnRate = 90,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+
+            Damage = 200,
+            DamageRadius = 1.2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Loa Tactical Missile',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 3,
+			
+			LeadTarget = true,
+			
+            MaxRadius = 75,
+            MinRadius = 7,
+			
+            MuzzleChargeDelay = 0.3,
+
+            MuzzleVelocity = 5,
+			
+            ProjectileLifetime = 20,
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 0.3,		---- 60 DPS
+            RenderFireClock = true,
+			
+            SlavedToBody = true,
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'STRUCTURE DEFENSE',
+                'MOBILE',
+                'ALLUNITS,-WALL',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.0,
+        },
+    },
+}

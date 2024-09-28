@@ -1,0 +1,80 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "uel0111",
+
+    Physics = {
+        BackUpDistance = 4,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 2.85,
+        MaxBrake = 2.85,
+        MaxSpeed = 2.85,
+        MaxSpeedReverse = 2.85,
+        MaxSteerForce = 5,
+        MeshExtentsX = 0.75,
+        MeshExtentsY = 0.75,
+        MeshExtentsZ = 1.35,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        TurnRadius = 0,
+        TurnRate = 90,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+
+            Damage = 300,
+            DamageFriendly = false,
+            DamageRadius = 1.5,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Cruise Missile',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+            },
+            FiringTolerance = 5,
+            
+            LeadTarget = true,
+			
+            MaxRadius = 75,
+            MinRadius = 5,
+			
+            MuzzleChargeDelay = 0.5,
+
+            MuzzleVelocity = 5,
+			
+            ProjectileLifetime = 17,
+			
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 0.2,
+            RenderFireClock = true,
+
+            SlavedToBody = true,
+			
+            TargetCheckInterval = 2,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'STRUCTURE,-WALL',
+                'MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.05,
+
+            Turreted = false,
+
+            WeaponRepackTimeout = 1.7,
+            WeaponUnpackAnimation = '/units/uel0111/uel0111_aopen01.sca',
+            WeaponUnpackAnimationRate = 2,
+            WeaponUnpacks = true,
+        },
+    },
+}
