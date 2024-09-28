@@ -1,0 +1,79 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "url0304",
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = true,
+            ArtilleryShieldBlocks = true,
+            
+            BallisticArc = 'RULEUBA_HighArc',
+            CollideFriendly = false,
+			
+            Damage = 500,
+            DamageFriendly = true,
+            DamageRadius = 4.2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Proton Artillery',
+            
+            EnergyChargeForFirstShot = false,
+            
+            EnergyRequired = 2400,
+            EnergyDrainPerSecond = 480,     -- 5 seconds to charge
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+            
+            FiringRandomness = 1.2,
+            FiringTolerance = 2,
+			
+            LeadTarget = true,
+			
+            MaxRadius = 92,
+            MinRadius = 10,
+
+            MuzzleVelocity = 22.5,
+            MuzzleVelocityReduceDistance = 92,
+			
+			ProjectileLifetime = 15,
+
+            RackRecoilDistance = -0.2,
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 1,	        -- every 5 seconds by charge = 96 DPS
+
+            TargetCheckInterval = 2,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'SHIELD',
+                'ARTILLERY',
+                'DEFENSE',
+                'MOBILE',
+                'ALLUNITS,-WALL',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 30,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 24,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 32,
+			
+            Turreted = true,
+
+            WeaponRepackTimeout = 2,
+            WeaponUnpackAnimationRate = 1,
+            WeaponUnpackLocksMotion = true,
+            WeaponUnpacks = true,
+        },
+    },
+}

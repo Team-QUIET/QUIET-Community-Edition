@@ -1,0 +1,85 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "uel0304",
+    
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = true,
+            ArtilleryShieldBlocks = true,
+			
+            BallisticArc = 'RULEUBA_HighArc',
+			
+            CameraLifetime = 4,
+            CameraVisionRadius = 5,
+			
+            CollideFriendly = false,
+			
+            Damage = 750,
+            DamageFriendly = true,
+            DamageRadius = 4,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Anti Matter Artillery',
+            
+            EnergyChargeForFirstShot = false,
+            
+            EnergyRequired = 3150,
+            EnergyDrainPerSecond = 450,     -- 7 seconds to charge
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+            },
+			
+            FiringRandomness = 0.85,
+            FiringTolerance = 2,
+			
+            LeadTarget = true,
+			
+            MaxRadius = 92,
+            MinRadius = 5,
+
+            MuzzleVelocity = 22.5,
+            MuzzleVelocityReduceDistance = 92,
+
+            NotExclusive = true,
+			
+            ProjectileLifetime = 15,
+
+            RackRecoilDistance = -0.6,
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 1,     -- every 7 seconds - controlled by charge = 100 DPS
+			
+            TargetCheckInterval = 1,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'DEFENSE',
+				'STRUCTURE,-WALL',
+                'MOBILE',
+            },
+			
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 30,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 26,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 32,
+			
+            Turreted = true,
+
+            WeaponRepackTimeout = 2,			
+            WeaponUnpackAnimationRate = 1,
+            WeaponUnpackLocksMotion = true,
+            WeaponUnpacks = true,
+        },
+    },
+}
