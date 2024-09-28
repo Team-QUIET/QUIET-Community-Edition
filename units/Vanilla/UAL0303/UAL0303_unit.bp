@@ -1,0 +1,62 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "ual0303",
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 170,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Laser',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 2,
+			
+            Label = 'FrontTurret01',
+			
+            MaxRadius = 28,
+			
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+
+            MuzzleVelocity = 40,
+			
+			ProjectileLifetime = 1,			
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 2,		-- 340 DPS
+			
+            TargetCheckInterval = 0.6,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS,-WALL',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 10,
+            TurretPitchRange = 50,
+            TurretPitchSpeed = 25,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+			
+            Turreted = true,
+        },
+    },
+}
