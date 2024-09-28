@@ -1,0 +1,104 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "xsl0304",
+	
+    Physics = {
+		BackUpDistance = 4,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 2.8,
+        MaxBrake = 2.8,
+        MaxSpeed = 2.8,
+        MaxSpeedReverse = 2.5,
+        MaxSteerForce = 10,
+        MeshExtentsX = 1,
+        MeshExtentsY = 1.25,
+        MeshExtentsZ = 1,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        StandUpright = true,
+        TurnRadius = 0.5,
+        TurnRate = 75,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+            
+            BallisticArc = 'RULEUBA_HighArc',
+            CollideFriendly = false,
+			
+            Damage = 500,
+            DamageFriendly = true,
+            DamageRadius = 4.2,
+            DamageType = 'Normal',      
+			
+            DisplayName = 'Suthanus Artillery',
+
+            EnergyChargeForFirstShot = false,
+           
+            EnergyRequired = 2400,
+            EnergyDrainPerSecond = 500,     -- 4.8 seconds to charge
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 1.35,
+            FiringTolerance = 2,
+			
+            LeadTarget = true,
+			
+            MaxRadius = 92,
+            MinRadius = 8,
+			
+            MuzzleChargeDelay = 0.2,        -- .2 second delay
+
+            MuzzleVelocity = 22.5,
+            MuzzleVelocityReduceDistance = 92,
+
+			ProjectileLifetime = 15,
+
+            RackRecoilDistance = -0.3,
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 1,     -- every 5 seconds by charge = 96 Dps
+            RenderFireClock = true,
+			
+            TargetCheckInterval = 3,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'SHIELD',
+                'ARTILLERY',
+                'STRUCTURE',
+                'MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TurretBoneMuzzle = 'Turret_Barrel_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 30,
+            TurretPitchRange = 40,
+            TurretPitchSpeed = 20,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 30,
+			
+            Turreted = true,
+			
+            WeaponRepackTimeout = 2,
+            WeaponUnpackAnimationRate = 1,
+            WeaponUnpackLocksMotion = true,
+            WeaponUnpacks = true,
+        },
+    },
+}
