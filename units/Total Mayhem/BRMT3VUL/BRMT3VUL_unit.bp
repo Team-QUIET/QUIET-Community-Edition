@@ -7,23 +7,19 @@ UnitBlueprint {
 
             AutoInitiateAttackCommand = false,
 
- 	    },
-
+ 	},
         {
 
- 	    },
+ 	},
         {
 
- 	    },
-
-
+ 	},
         {
 
- 	    },
+ 	},
 
-		{
+	{
 
         },		
-        
     },
-    }
+}
