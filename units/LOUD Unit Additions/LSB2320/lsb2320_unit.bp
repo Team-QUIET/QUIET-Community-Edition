@@ -12,7 +12,7 @@ UnitBlueprint {
 			
             Damage = 2600,
             DamageFriendly = true,
-            DamageRadius = 3.4,
+            DamageRadius = 2.4,
             DamageType = 'ShieldMult1.5',
 			
             DisplayName = 'Zthuthaam Cannon',
@@ -25,7 +25,7 @@ UnitBlueprint {
                 Water = 'Land|Water',
             },
 			
-            FiringRandomness = 1.25,
+            FiringRandomness = 2.25,
             FiringTolerance = 1,
 			
 			LeadTarget = true,			

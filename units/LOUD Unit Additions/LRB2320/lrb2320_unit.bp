@@ -25,7 +25,7 @@ UnitBlueprint {
 			
             Damage = 2400,
             DamageFriendly = true,
-            DamageRadius = 3.8,
+            DamageRadius = 2.8,
             DamageType = 'Normal',
 			
             DisplayName = 'Resonance Artillery',
@@ -38,7 +38,7 @@ UnitBlueprint {
                 Water = 'Land|Water',
             },
 			
-            FiringRandomness = 1.25,
+            FiringRandomness = 2.25,
             FiringTolerance = 1,
 			
             LeadTarget = true,

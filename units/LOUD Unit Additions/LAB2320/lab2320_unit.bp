@@ -12,7 +12,7 @@ UnitBlueprint {
 			
             Damage = 530,
             DamageFriendly = true,
-            DamageRadius = 3,
+            DamageRadius = 2,
             DamageType = 'Normal',
 			
             DisplayName = 'Miasma Artillery',
@@ -28,7 +28,7 @@ UnitBlueprint {
                 Water = 'Land|Water',
             },
 			
-            FiringRandomness = 1.35,
+            FiringRandomness = 2.25,
             FiringTolerance = 0.1,
 
             LeadTarget = true,
