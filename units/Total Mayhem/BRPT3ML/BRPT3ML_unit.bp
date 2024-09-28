@@ -1,0 +1,77 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "brpt3ml",
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+            
+            BallisticArc = 'RULEUBA_HighArc',
+            CollideFriendly = false,
+			
+            Damage = 125,
+            DamageRadius = 3.5,
+            DamageType = 'Normal',       -- unique penalty to this unit --
+            DamageFriendly = false,
+			
+            DisplayName = 'Light Quarnon Cannon',
+            
+            EnergyRequired = 560,
+            EnergyDrainPerSecond = 112,     -- 5 seconds to charge
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+            },
+			
+			FiringRandomnessWhileMoving = 3,
+            FiringRandomness = 1,
+            FiringTolerance = 2,
+			
+            MaxRadius = 88,
+            MinRadius = 22,
+			
+            MuzzleSalvoDelay = 0.8,         -- 3.2 seconds to discharge
+
+            MuzzleSalvoSize = 4,
+
+            MuzzleVelocity = 23,
+			MuzzleVelocityRandom = 1,
+			MuzzleVelocityReduceDistance = 80,
+
+            ProjectileLifetime = 8,
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 1,     -- rate controlled by charge - every 5 seconds = 500/5
+			
+            TargetCheckInterval = 1,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'DEFENSE',
+                'MOBILE',
+                'ALLUNITS,-WALL',
+            },
+			
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.05,
+			
+            TurretBoneMuzzle = 'muzzle01',
+            TurretBonePitch = 'Left_Arm_B01',
+            TurretBoneYaw = 'Left_Arm_B01',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 65,
+            TurretPitchSpeed = 32.5,
+			
+            TurretYaw = 0,
+            TurretYawRange = 150,
+            TurretYawSpeed = 50,
+			
+            Turreted = true,
+			
+			UseFiringSolutionInsteadOfAimBone = true,
+        },
+    },
+}

@@ -456,9 +456,9 @@ Shield = Class(QCEShield) {
 
         -- damage correction for overspill, do not apply to personal shields
 
-        if self.ShieldType ~= "Personal" then
+        --LOG("The Shieldtype is "..repr(self.ShieldType))
 
-            --LOG("The Shieldtype is "..repr(self.ShieldType))
+        if self.ShieldType ~= "Personal" then
 
             local instigatorId = (instigator and instigator.EntityId) or false
             if instigatorId then
