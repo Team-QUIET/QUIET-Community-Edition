@@ -5,22 +5,28 @@ UnitBlueprint{
     Weapon = {
         {
 
-            EnergyDrainPerSecond = 300,
-            EnergyRequired = 300,
+		EnergyDrainPerSecond = 300,
+		EnergyRequired = 300,
 
-            MuzzleVelocity = 40,
-			MuzzleChargeDelay = 1,
-			TurretDualManipulators = false,
+		MuzzleVelocity = 40,
+		MuzzleChargeDelay = 1,
+		TurretDualManipulators = true,
 
-            RackRecoilDistance = -8,
-            RackReloadTimeout = 0,
-			RackSalvoFiresAfterCharge =  true,
-			RackSlavedToTurret = true,
-			RackFireTogether = true,
+		RackRecoilDistance = -8,
+		RackReloadTimeout = 0,
+		RackSalvoFiresAfterCharge =  true,
+		RackSlavedToTurret = true,
+		RackFireTogether = true,
 
-            RateOfFire = 10/10,
+		RateOfFire = 10/10,
+			
+		TurretYaw = 0,
+		TurretYawRange = 180,
+		TurretYawSpeed = 45,
+
         },
         {
+		
         },
     },
 }
