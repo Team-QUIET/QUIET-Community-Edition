@@ -1,0 +1,17 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "uab4301",
+	
+    Defense = {		
+        Shield = {
+            RegenAssistMult = 60,
+            ShieldEnergyDrainRechargeTime = 5,
+            ShieldMaxHealth = 18000,
+            ShieldRechargeTime = 24,
+            ShieldRegenRate = 150,
+            ShieldRegenStartTime = 3,
+            ShieldSize = 35,
+            ShieldVerticalOffset = -5,
+        },
+    },
+}

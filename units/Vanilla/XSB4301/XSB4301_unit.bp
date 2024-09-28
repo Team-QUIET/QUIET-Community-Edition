@@ -1,0 +1,17 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "xsb4301",
+	
+    Defense = {		
+        Shield = {
+            RegenAssistMult = 60,
+            ShieldEnergyDrainRechargeTime = 5,
+            ShieldMaxHealth = 21000,
+            ShieldRechargeTime = 25,
+            ShieldRegenRate = 168,
+            ShieldRegenStartTime = 3,
+            ShieldSize = 46,
+            ShieldVerticalOffset = -7,
+        },
+    },
+}

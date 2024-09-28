@@ -1,0 +1,258 @@
+UnitBlueprint {
+    AI = {
+        GuardScanRadius = 40,
+        StagingPlatformScanRadius = 40,
+
+		TargetBones = {'Base','Ring_1','Ring_2','Ring_3'},
+    },
+	
+    Audio = {
+        Destroyed   = Sound { Bank = 'UALDestroy', Cue = 'UAB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff'},
+        Killed      = Sound { Bank = 'UALDestroy', Cue = 'UAB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff'},
+        ShieldOff   = Sound { Bank = 'UAB', Cue = 'UAB4202_Activate', LodCutoff = 'UnitMove_LodCutoff'},
+        ShieldOn    = Sound { Bank = 'UAB', Cue = 'UAB4202_Activate', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'Aeon_Select_Structure', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    BuildIconSortPriority = 16,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER4COMMANDER',
+        'AEON',
+        'STRUCTURE',
+        'DEFENSE',
+        'EXPERIMENTAL',
+        'SHIELD',
+        'ANTIARTILLERY',
+        'DRAGBUILD',
+        'SIZE12',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SHOWQUEUE',
+        'OVERLAYDEFENSE',
+        'OVERLAYMISC',
+        'SORTSTRATEGIC',
+        'RESEARCHLOCKED',
+    },
+	
+    CollisionOffsetY = -0.25,
+	
+    Defense = {
+	
+        ArmorType = 'Structure',
+        Health = 1250,
+        MaxHealth = 1250,
+		
+        RegenRate = 4,
+
+        EconomyThreatLevel = 120,
+        SurfaceThreatLevel = 170.5,
+		
+        Shield = {
+            ImpactEffects = 'AeonShieldHit01',
+            ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
+            Mesh = '/effects/entities/AeonShield01/AeonShield01_mesh',
+            MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
+            RegenAssistMult = 60,
+			
+            ShieldEnergyDrainRechargeTime = 8,
+            ShieldMaxHealth = 31000,
+            ShieldRechargeTime = 30,
+            ShieldRegenRate = 230,
+            ShieldRegenStartTime = 1,
+            ShieldSize = 8,
+            ShieldVerticalOffset = 0,
+            
+            ShieldProjectionRadius = 40,
+            
+            ShieldTargetBeam = '/effects/emitters/collossus_tractor_beam_01_emit.bp',
+        },
+		
+        TargetShield = {
+            ImpactEffects = 'AeonShieldHit01',
+            ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
+            Mesh = '/mods/brewlan_LOUD/effects/entities/sab4401projectedshield01/sab4401projectedshield01_mesh',
+            MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
+            RegenAssistMult = 60,
+			
+            ShieldEnergyDrainRechargeTime = 9,
+            ShieldMaxHealth = 31000,
+            ShieldRechargeTime = 40,
+            ShieldRegenRate = 230,
+            ShieldRegenStartTime = 3,
+            ShieldSize = 10,
+            ShieldVerticalOffset = 0,
+        },
+    },
+	
+    Description = '<LOC srb4401>Projected Shield Generator',
+	
+    Display = {
+        AINames = {
+            'Bubblegum Palace',
+            'Shield Tower',
+            'Bubble Tea',
+        },
+
+        Abilities = {
+            '<LOC ability_shielddome>Shield Dome',
+        },
+
+        AnimationDeath = {
+            {
+                Animation = '/mods/BrewLAN_LOUD/units/sab4401/sab4401_Adeath01.sca',
+                AnimationRateMax = 3.25,
+                AnimationRateMin = 2.75,
+                Weight = 10,
+            },
+            {
+                Animation = '/mods/BrewLAN_LOUD/units/sab4401/sab4401_Adeath02.sca',
+                AnimationRateMax = 3.25,
+                AnimationRateMin = 2.75,
+                Weight = 10,
+            },
+            {
+                Animation = '/mods/BrewLAN_LOUD/units/sab4401/sab4401_Adeath03.sca',
+                AnimationRateMax = 3.25,
+                AnimationRateMin = 2.75,
+                Weight = 10,
+            },
+            {
+                Animation = '/mods/BrewLAN_LOUD/units/sab4401/sab4401_Adeath04.sca',
+                AnimationRateMax = 3.25,
+                AnimationRateMin = 2.75,
+                Weight = 10,
+            },
+            {
+                Animation = '/mods/BrewLAN_LOUD/units/sab4401/sab4401_Adeath05.sca',
+                AnimationRateMax = 3.25,
+                AnimationRateMin = 2.75,
+                Weight = 10,
+            },
+            {
+                Animation = '/mods/BrewLAN_LOUD/units/sab4401/sab4401_Adeath06.sca',
+                AnimationRateMax = 3.25,
+                AnimationRateMin = 2.75,
+                Weight = 10,
+            },
+            {
+                Animation = '/mods/BrewLAN_LOUD/units/sab4401/sab4401_Adeath07.sca',
+                AnimationRateMax = 3.25,
+                AnimationRateMin = 2.75,
+                Weight = 10,
+            },
+            {
+                Animation = '/mods/BrewLAN_LOUD/units/sab4401/sab4401_Adeath08.sca',
+                AnimationRateMax = 3.25,
+                AnimationRateMin = 2.75,
+                Weight = 10,
+            },
+        },
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                { LODCutoff = 200, ShaderName = 'Aeon' },
+                { LODCutoff = 400, ShaderName = 'Aeon' },
+            },
+        },
+
+        Tarmacs = {
+            {
+                Albedo = 'Tarmacs/Tar12x_aeon_01_albedo',
+                DeathLifetime = 300,
+                FadeOut = 150,
+                Length = 12.8,
+                Normal = 'Tarmacs/Tar12x_aeon_01_normals',
+                Orientations = {0,90,180,270},
+                RemoveWhenDead = false,
+                Width = 12.8,
+            },
+        },
+        UniformScale = 0.08,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 175000,
+        BuildCostMass = 30000,
+        BuildTime = 1845,
+		
+        MaintenanceConsumptionPerSecondEnergy = 4000,
+		
+        RebuildBonusIds = {'sab4401'},
+    },
+	
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
+    },
+	
+    General = {
+		CapCost = 8,
+
+        CommandCaps = {
+            RULEUCC_Pause = true,
+        },
+
+        FactionName = 'Aeon',
+        Icon = 'land',
+
+        OrderOverrides = {
+            RULEUTC_ShieldToggle = { bitmapId = 'shield-dome', helpText = 'toggle_shield_dome' },
+        },
+
+        SelectionPriority = 5,
+
+        ToggleCaps = { RULEUTC_ShieldToggle = true },
+
+        UnitName = '<LOC sab4401_name>Pillar of Prominence',
+    },
+
+    Interface = {
+        HelpText = '<LOC srb4401>Experimental Shield Generator',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 2.7,
+    LifeBarSize = 5,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+        MaxSteerForce = 0,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = -2.5,
+        SkirtOffsetZ = -2.5,
+        SkirtSizeX = 6,
+        SkirtSizeZ = 6,
+        TurnRate = 0,
+    },
+	
+    SelectionSizeX = 3.1,
+    SelectionSizeZ = 3.1,
+    SelectionThickness = 0.35,
+	
+    SizeX = 3.4,
+    SizeY = 5.5,
+    SizeZ = 3.4,
+	
+    StrategicIconName = 'icon_structure3_shield',
+    StrategicIconSortPriority = 100,
+	
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.3,
+        HealthMult = 0.9,
+        MassMult = 0.3,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

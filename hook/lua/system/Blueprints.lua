@@ -285,7 +285,11 @@ do
 			'uab8765', -- Exp Storage Aeon
 			'urb8765', -- Exp Storage Cybran
 			'ueb8765', -- Exp Storage UEF
-			'xsb8765'  -- Exp Storage Seraphim
+			'xsb8765', -- Exp Storage Seraphim
+			'uabssg01',-- Exp Square Shield Aeon
+			'uebssg01',-- Exp Square Shield UEF
+			'urbssg01',-- Exp Square Shield Cybran
+			'xsbssg01' -- Exp Square Shield Seraphim
 		};
 
 		for i, bp in pairs(unitPruningId) do
