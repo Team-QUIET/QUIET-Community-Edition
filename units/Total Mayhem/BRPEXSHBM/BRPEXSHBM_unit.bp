@@ -1,6 +1,6 @@
 UnitBlueprint {
   Merge = true,
-  BlueprintId = "brpexshbm"
+  BlueprintId = "brpexshbm",
 
       Weapon = {
         {
