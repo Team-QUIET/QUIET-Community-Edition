@@ -8,12 +8,12 @@ UnitBlueprint {
             AutoInitiateAttackCommand = false,
 
         },
-		{
+	{
 
             AutoInitiateAttackCommand = false,
 
         },
-		{
+	{
 
             AutoInitiateAttackCommand = false,
 
@@ -24,9 +24,8 @@ UnitBlueprint {
         {
 
         },
-
         {
 
         },
     },
-    }
+}
