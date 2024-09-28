@@ -3,6 +3,18 @@
 ## Rebalance Changelog
 ---------------------------------------------
 
+### 1.35
+
+# T2 MML
+Speed 3 -> 2.85
+
+# T3 Mobile Artillery
+Fix the unpack rate that was making units stuck in place
+
+# T3 Barrage Artillery (Accouts for Overspill now in balancing)
+DamageRadius reduced by 1 on all
+FiringRandomness 1.25 -> 2.25
+
 ### 1.34
 
 # Removed Roaming Behavior From All Experimentals
