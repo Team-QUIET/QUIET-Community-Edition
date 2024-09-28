@@ -7,6 +7,13 @@
 
 # Removed Roaming Behavior From All Experimentals
 
+# Shields
+General Info on shields is that they will take longer to regenerate, many stats have been standardized then redistributed to give a bit more diversity to the shields. 
+Integrated Shields received a bit of a hard bonking as their stats were not justified by the current cost. They were all given 20k+ E Cost and around 500-1000 Mass Cost as well as given the regeneration nerfs and etc.
+Shields offset were standardized a bit to prevent some of the outrageous shield layering. (Anti Artillery Shield for UEF is untouched by any of these changes as well as Cybran Shields inbetween the final & first upgrade)
+
+All Square Shields have been removed and replaced by significantly buffed BrewLAN Experimental Shields that have been completely reworked to fit into the Experimental Phase of the game.
+
 # T2 Cybran Hoplite
 Range 42 -> 37
 
