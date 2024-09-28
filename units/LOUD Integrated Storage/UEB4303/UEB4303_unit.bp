@@ -1,0 +1,25 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "ueb4303",
+
+    Defense = {
+        Shield = {
+            RegenAssistMult = 60,
+            ShieldEnergyDrainRechargeTime = 5,
+            ShieldMaxHealth = 19000,
+            ShieldRechargeTime = 30,
+            ShieldRegenRate = 155,
+            ShieldRegenStartTime = 3,
+            ShieldSize = 50,
+            ShieldVerticalOffset = -6,
+        },
+    },
+	
+    Economy = {
+        BuildCostEnergy = 40000,
+        BuildCostMass = 3000,
+        BuildTime = 2400,
+		
+        MaintenanceConsumptionPerSecondEnergy = 1100,
+    },
+}
