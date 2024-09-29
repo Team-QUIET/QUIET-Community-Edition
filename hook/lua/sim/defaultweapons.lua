@@ -71,7 +71,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
             self:SetWeaponEnabled(true)
             
-            ChangeState( self, self.IdleState)
+            LOUDSTATE( self, self.IdleState)
             
         end
 
@@ -191,12 +191,12 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
                     return
                 end
                 if bp.WeaponUnpacks then
-                    ChangeState(self, self.WeaponUnpackingState)
+                    LOUDSTATE(self, self.WeaponUnpackingState)
                 else
                     if bp.RackSalvoChargeTime and bp.RackSalvoChargeTime > 0 then
-                        ChangeState(self, self.RackSalvoChargeState)
+                        LOUDSTATE(self, self.RackSalvoChargeState)
                     else
-                        ChangeState(self, self.RackSalvoFireReadyState)
+                        LOUDSTATE(self, self.RackSalvoFireReadyState)
                     end
                 end
             end
@@ -206,16 +206,16 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
             local bp = self.bp
             if bp.WeaponUnpacks and self.WeaponPackState ~= 'Unpacked' then
-                ChangeState(self, self.WeaponUnpackingState)
+                LOUDSTATE(self, self.WeaponUnpackingState)
             else
                 if bp.RackSalvoChargeTime and bp.RackSalvoChargeTime > 0 or bp.RackSalvoFiresAfterCharge then
-                    ChangeState(self, self.RackSalvoChargeState)
+                    LOUDSTATE(self, self.RackSalvoChargeState)
 
                     -- SkipReadyState used for Janus and Corsair
                 elseif bp.SkipReadyState then
-                    ChangeState(self, self.RackSalvoFiringState)
+                    LOUDSTATE(self, self.RackSalvoFiringState)
                 else
-                    ChangeState(self, self.RackSalvoFireReadyState)
+                    LOUDSTATE(self, self.RackSalvoFireReadyState)
                 end
             end
         end,
@@ -588,7 +588,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
             self.HaltFireOrdered = false
 
-            if self.CurrentRackNumber > TotalRacksOnWeapon or CountedProjectile then
+            if self.CurrentRackNumber > TotalRacksOnWeapon then
                 self.CurrentRackNumber = 1
                 if bp.RackSalvoReloadTime > 0 or self.EconDrain then
                     LOUDSTATE(self, self.RackSalvoReloadState)
@@ -687,13 +687,13 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
             local autoFire = not bp.ManualFire and not bp.RackSalvoFiresAfterCharge
 
             if hasTarget and bp.RackSalvoChargeTime > 0 and autoFire then
-                ChangeState(self, self.RackSalvoChargeState)
+                LOUDSTATE(self, self.RackSalvoChargeState)
             elseif hasTarget and autoFire then
-                ChangeState(self, self.RackSalvoFireReadyState)
+                LOUDSTATE(self, self.RackSalvoFireReadyState)
             elseif not hasTarget and bp.WeaponUnpacks and not bp.WeaponUnpackLocksMotion then
-                ChangeState(self, self.WeaponPackingState)
+                LOUDSTATE(self, self.WeaponPackingState)
             else
-                ChangeState(self, self.IdleState)
+                LOUDSTATE(self, self.IdleState)
             end
 			
         end,
@@ -724,9 +724,9 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
             local rackSalvoChargeTime = bp.RackSalvoChargeTime
             if rackSalvoChargeTime and rackSalvoChargeTime > 0 then
-                ChangeState(self, self.RackSalvoChargeState)
+                LOUDSTATE(self, self.RackSalvoChargeState)
             else
-                ChangeState(self, self.RackSalvoFireReadyState)
+                LOUDSTATE(self, self.RackSalvoFireReadyState)
             end
         end,
 
@@ -761,7 +761,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
             if bp.WeaponUnpackLocksMotion then
                 unit:SetImmobile(false)
             end
-            ChangeState(self, self.IdleState)
+            LOUDSTATE(self, self.IdleState)
         end,
 
         ---@param self DefaultProjectileWeapon
@@ -770,7 +770,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
             local bp = self.bp
 
             if not self.bp.ForceSingleFire then
-                ChangeState(self, self.WeaponUnpackingState)
+                LOUDSTATE(self, self.WeaponUnpackingState)
             end
         end,
 
@@ -783,7 +783,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
                 -- triggers when we fired a missile but we're still waiting for the pack animation to finish
                 (bp.CountedProjectile and (not bp.ForceSingleFire))
             then
-                ChangeState(self, self.WeaponUnpackingState)
+                LOUDSTATE(self, self.WeaponUnpackingState)
             end
         end,
 
