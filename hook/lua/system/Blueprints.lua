@@ -289,7 +289,8 @@ do
 			'uabssg01',-- Exp Square Shield Aeon
 			'uebssg01',-- Exp Square Shield UEF
 			'urbssg01',-- Exp Square Shield Cybran
-			'xsbssg01' -- Exp Square Shield Seraphim
+			'xsbssg01',-- Exp Square Shield Seraphim
+			'wel0405', -- King Kraptor
 		};
 
 		for i, bp in pairs(unitPruningId) do
