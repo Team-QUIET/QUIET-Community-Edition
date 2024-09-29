@@ -1,0 +1,72 @@
+UnitBlueprint {
+	Merge = true,
+	BlueprintId = "brmt3mcm2",
+	
+	    Weapon = {
+        {
+
+            Damage = 375,
+            DamageRadius = 2.5,
+            DamageType = 'Normal',
+			
+            FiringTolerance = 1,
+            FiringRandomness = 2,
+			FiringRandomnessWhileMoving = 2,
+			
+            MaxRadius = 72,
+            MinRadius = 15,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 32,
+            MuzzleVelocity = 48,
+			MuzzleVelocityRandom = 0.3,
+			MuzzleVelocityReduceDistance = 54,
+
+            RackFireTogether = true,
+            
+            RackSalvoReloadTime = 13.6,
+			
+            RateOfFire = 1,
+
+            TurretDualManipulators = true,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 45,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 45,
+
+		},
+
+		-- 2 ARM Weapons --
+		
+        {
+		
+		MaxRadius = 52,
+		
+ 	    },		
+        {
+		
+		MaxRadius = 52,
+		
+ 	    },		
+        {
+		
+		MaxRadius = 48,
+		
+        },
+        {
+		
+		MaxRadius = 48,
+		
+        },
+		{
+		
+        },
+        {
+
+        },
+    },
+}
