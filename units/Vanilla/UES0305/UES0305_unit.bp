@@ -1,0 +1,255 @@
+UnitBlueprint {
+
+	AI = {
+		TargetBones = { 'Abovetgt', 'UES0305' },
+		GuardScanRadius = 48,
+	},
+
+	Audio = {
+		DoneBeingBuilt = Sound { Bank = 'UES', Cue = 'UES0305_Activate', LodCutoff = 'UnitMove_LodCutoff' },
+		Destroyed      = Sound { Bank = 'UELDestroy', Cue = 'UEB_Destroy_Med_Land', LodCutoff = 'UnitMove_LodCutoff' },
+		StartMove      = Sound { Bank = 'UES', Cue = 'UES0305_Move_Start', LodCutoff = 'UnitMove_LodCutoff' },
+		UISelection    = Sound { Bank = 'Interface', Cue = 'UEF_Select_Sonar', LodCutoff = 'UnitMove_LodCutoff' },
+	},
+
+	Buffs = {
+		Regen = {
+			Level1 = 2,
+			Level2 = 4,
+			Level3 = 6,
+			Level4 = 8,
+			Level5 = 10,
+		},
+		WaterVisionRadius = {
+			Level1 = 4,
+			Level2 = 6,
+			Level3 = 8,
+			Level4 = 10,
+			Level5 = 12,
+		},
+	},
+
+	BuildIconSortPriority = 190,
+
+	Categories = {
+		'SELECTABLE',
+		'BUILTBYTIER3ENGINEER',
+		'BUILTBYTIER3COMMANDER',
+		'UEF',
+		'MOBILE',
+		'INTELLIGENCE',
+		'TECH3',
+		'SONAR',
+		'NEEDMOBILEBUILD',
+		'VISIBLETORECON',
+		'RECLAIMABLE',
+		'MOBILESONAR',
+		'OVERLAYOMNI',
+		'OVERLAYRADAR',
+		'OVERLAYSONAR',
+		'SORTINTEL',
+	},
+
+	CollisionOffsetY = -0.25,
+
+	Defense = {
+		ArmorType = 'Normal',
+
+		Health = 1200,
+		MaxHealth = 1200,
+		RegenRate = 3,
+
+		EconomyThreatLevel = 40,
+		SubThreatLevel = 6,
+	},
+
+	Description = '<LOC ues0305_desc>Mobile Sonar Platform',
+
+	Display = {
+		Abilities = {
+			'<LOC ability_sonar>Sonar',
+			'<LOC ability_radar>Radar',
+			'<LOC ability_personalstealth>Personal Stealth',
+			"<LOC ability_torpedo>Torpedoes",
+		},
+
+		IdleEffects = {
+			Water = { Effects = { { Bones = { 0 }, Scale = 0.5, Type = 'SeaIdle02' } } },
+		},
+
+		Mesh = {
+			IconFadeInZoom = 130,
+			LODs = {
+				{
+					LODCutoff = 100,
+					ShaderName = 'Unit',
+				},
+				{
+					AlbedoName = 'ues0305_lod1_albedo.dds',
+					LODCutoff = 215,
+					ShaderName = 'Unit',
+					SpecularName = 'ues0305_lod1_specteam.dds',
+				},
+			},
+		},
+
+		MovementEffects = {
+			Water = { Effects = { { Bones = { 0 }, Scale = 0.5, Type = 'BackWake' } } },
+		},
+
+		UniformScale = 0.02,
+	},
+
+	Economy = {
+		BuildCostEnergy = 18500,
+		BuildCostMass = 3200,
+		BuildTime = 2000,
+
+		MaintenanceConsumptionPerSecondEnergy = 740,
+	},
+
+	General = {
+		CommandCaps = {
+			RULEUCC_Attack = true,
+			RULEUCC_Move = true,
+			RULEUCC_Patrol = true,
+			RULEUCC_RetaliateToggle = true,
+			RULEUCC_Stop = true,
+		},
+		FactionName = 'UEF',
+		Icon = 'sea',
+		OrderOverrides = {
+			RULEUTC_IntelToggle = { bitmapId = 'sonar', helpText = 'toggle_sonar' },
+		},
+
+		ToggleCaps = { RULEUTC_IntelToggle = true },
+
+		UnitName = '<LOC ueb3201_name>SP3 - 3000',
+
+		UpgradesFrom = 'ueb3202',
+	},
+
+	Intel = {
+		RadarStealth = true,
+		SonarStealth = true,
+
+		RadarRadius = 80, -- T3 Naval unit standard
+		SonarRadius = 232,
+
+		OmniRadius = 20,
+		VisionRadius = 32,
+		WaterVisionRadius = 40,
+	},
+
+	Interface = {
+		HelpText = 'Mobile Sonar Platform',
+	},
+
+	LifeBarHeight = 0.075,
+	LifeBarOffset = 0.45,
+	LifeBarSize = 1.25,
+
+	Physics = {
+		BackUpDistance = 0,
+		BankingSlope = 0,
+		BuildOnLayerCaps = {
+			LAYER_Land = true,
+			LAYER_Water = true,
+		},
+		CatchUpAcc = 10,
+		DragCoefficient = 0.2,
+		MaxAcceleration = 1,
+		MaxBrake = 2,
+		MaxSpeed = 3.5,
+		MaxSpeedReverse = 0,
+		MaxSteerForce = 5,
+		MeshExtentsOffsetY = -1.7,
+		MeshExtentsX = 1.25,
+		MeshExtentsY = 2.8,
+		MeshExtentsZ = 1.25,
+		MinSpeedPercent = 0,
+		MotionType = 'RULEUMT_Water',
+		TurnRadius = 5,
+		TurnRate = 100,
+	},
+
+	SelectionSizeX = 0.65,
+	SelectionSizeZ = 0.65,
+	SelectionThickness = 0.6,
+
+	SizeX = 0.9,
+	SizeY = 1.1,
+	SizeZ = 0.9,
+
+	StrategicIconName = 'icon_structure3_intel',
+	StrategicIconSortPriority = 230,
+
+	Veteran = {
+		Level1 = 6,
+		Level2 = 12,
+		Level3 = 18,
+		Level4 = 24,
+		Level5 = 30,
+	},
+
+	Weapon = {
+		{
+			Audio = {
+				Fire = Sound { Bank = 'UESWeapon', Cue = 'UES0203_Torpedo', LodCutoff = 'Weapon_LodCutoff' },
+			},
+
+			BallisticArc = 'RULEUBA_None',
+			CollideFriendly = false,
+
+			Damage = 300,
+			DamageType = 'Normal',
+
+			DisplayName = 'Angler Torpedo',
+
+			FireTargetLayerCapsTable = {
+				Water = 'Seabed|Sub|Water',
+			},
+
+			FiringTolerance = 30,
+
+			Label = 'Torpedo01',
+
+			MaxRadius = 48,
+
+			MuzzleSalvoDelay = 0.8,
+			MuzzleSalvoSize = 2,
+
+			MuzzleVelocity = 5,
+
+			ProjectileId = '/projectiles/TANAnglerTorpedo01/TANAnglerTorpedo01_proj.bp',
+			ProjectileLifetime = 6.5,
+
+			RackBones = {
+				{
+					MuzzleBones = {
+						'Projectile01',
+						'Projectile02',
+					},
+					RackBone = 'Projectile01',
+				},
+			},
+
+			RackSalvoReloadTime = 1.7, -- fires every 3.3 seconds
+
+			RangeCategory = 'UWRC_AntiNavy',
+
+			RateOfFire = 1, -- 600 every 3.3 = 181 DPS
+			TargetCheckInterval = 1,
+
+			TargetPriorities = {
+				'SPECIALHIGHPRI',
+				'MOBILE -AIR',
+				'DEFENSE',
+				'ALLUNITS -AIR',
+			},
+			TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
+			TrackingRadius = 1.1,
+
+		},
+	},
+}
