@@ -1,0 +1,144 @@
+UnitBlueprint {
+	AI = {
+		TargetBones = { 'Abovetgt', 'UEB3202' },
+	},
+
+	Audio = {
+		Destroyed   = Sound { Bank = 'UELDestroy', Cue = 'UEB_Destroy_Med_Land', LodCutoff = 'UnitMove_LodCutoff' },
+		UISelection = Sound { Bank = 'Interface', Cue = 'UEF_Select_Sonar', LodCutoff = 'UnitMove_LodCutoff' },
+	},
+
+	BuildIconSortPriority = 190,
+
+	Categories = {
+		'SELECTABLE',
+		'UEF',
+		'STRUCTURE',
+		'INTELLIGENCE',
+		'TECH2',
+		'SONAR',
+		'BUILTBYTIER2ENGINEER',
+		'BUILTBYTIER3ENGINEER',
+		'BUILTBYTIER2COMMANDER',
+		'BUILTBYTIER3COMMANDER',
+		'VISIBLETORECON',
+		'RECLAIMABLE',
+		'SHOWQUEUE',
+		'OVERLAYSONAR',
+		'SORTINTEL',
+	},
+
+	CollisionOffsetY = -0.25,
+
+	Defense = {
+		ArmorType = 'Structure',
+
+		Health = 650,
+		MaxHealth = 650,
+		RegenRate = 2,
+
+		EconomyThreatLevel = 19,
+	},
+
+	Description = '<LOC ueb3202_desc>Improved Sonar System',
+
+	Display = {
+
+		Abilities = {
+			'<LOC ability_upgradable>Upgradeable',
+			'<LOC ability_personalstealth>Personal Stealth',
+		},
+
+		AnimationUpgrade = '/units/ueb3202/ueb3202_aupgrade.sca',
+
+		Mesh = {
+			IconFadeInZoom = 130,
+			LODs = {
+				{ LODCutoff = 100,                        ShaderName = 'Unit' },
+				{ AlbedoName = 'ueb3202_lod1_albedo.dds', LODCutoff = 215,    ShaderName = 'Unit', SpecularName = 'ueb3202_lod1_specteam.dds' },
+			},
+		},
+
+		UniformScale = 0.02,
+	},
+
+	Economy = {
+		BuildCostEnergy = 3600,
+		BuildCostMass = 360,
+		BuildRate = 15,
+		BuildTime = 600,
+
+		BuildableCategory = { 'ues0305' },
+
+		MaintenanceConsumptionPerSecondEnergy = 250,
+	},
+
+	Footprint = {
+		MinWaterDepth = 1.5,
+	},
+
+	General = {
+		CommandCaps = { RULEUCC_Pause = true },
+		FactionName = 'UEF',
+		Icon = 'sea',
+		OrderOverrides = {
+			RULEUTC_IntelToggle = { bitmapId = 'sonar', helpText = 'toggle_sonar' },
+		},
+		SelectionPriority = 5,
+		ToggleCaps = { RULEUTC_IntelToggle = true },
+
+		UpgradesFrom = 'ueb3102',
+		UpgradesTo = 'ues0305',
+	},
+
+	Intel = {
+		ReactivateTime = 10,
+		ShowIntelOnSelect = true,
+
+		RadarStealth = true,
+		SonarStealth = true,
+
+		SonarRadius = 192,
+		VisionRadius = 28,
+		WaterVisionRadius = 32,
+	},
+
+	Interface = {
+		HelpText = 'Improved Sonar System',
+	},
+
+	LifeBarHeight = 0.075,
+	LifeBarOffset = 0.4,
+	LifeBarSize = 1,
+
+	Physics = {
+		BankingSlope = 0,
+		BuildOnLayerCaps = {
+			LAYER_Water = true,
+		},
+		DragCoefficient = 0.2,
+		MaxSteerForce = 0,
+		MeshExtentsOffsetY = -1.5,
+		MeshExtentsX = 1.25,
+		MeshExtentsY = 2.5,
+		MeshExtentsZ = 1.25,
+		MinSpeedPercent = 0,
+		MotionType = 'RULEUMT_None',
+		SkirtOffsetX = 0,
+		SkirtOffsetZ = 0,
+		SkirtSizeX = 1,
+		SkirtSizeZ = 1,
+		TurnRate = 0,
+	},
+
+	SelectionSizeX = 0.55,
+	SelectionSizeZ = 0.55,
+	SelectionThickness = 0.7,
+
+	SizeX = 0.5,
+	SizeY = 0.5,
+	SizeZ = 0.5,
+
+	StrategicIconName = 'icon_structure2_intel',
+	StrategicIconSortPriority = 230,
+}
