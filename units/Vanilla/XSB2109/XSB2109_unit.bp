@@ -1,0 +1,234 @@
+UnitBlueprint {
+	AI = {
+		TargetBones = { 'Abovetgt', 'XSB2109' },
+	},
+
+	Audio = {
+		Destroyed   = Sound { Bank = 'XSL_Destroy', Cue = 'XSB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff' },
+		Killed      = Sound { Bank = 'XSL_Destroy', Cue = 'XSB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff' },
+		UISelection = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_gun', LodCutoff = 'UnitMove_LodCutoff' },
+	},
+
+	Buffs = {},
+
+	BuildIconSortPriority = 130,
+
+	Categories = {
+		'SELECTABLE',
+		'BUILTBYTIER1ENGINEER',
+		'BUILTBYTIER2ENGINEER',
+		'BUILTBYTIER3ENGINEER',
+		'BUILTBYCOMMANDER',
+		'SERAPHIM',
+		'STRUCTURE',
+		'DEFENSE',
+		'TECH1',
+		'ANTINAVY',
+		'DRAGBUILD',
+		'SIZE4',
+		'VISIBLETORECON',
+		'RECLAIMABLE',
+		'OVERLAYSONAR',
+		'SORTDEFENSE',
+	},
+
+	CollisionOffsetY = -0.8,
+	CollisionOffsetZ = 0.05,
+
+	Defense = {
+		ArmorType = 'Structure',
+
+		Health = 1625,
+		MaxHealth = 1625,
+
+		RegenRate = 2,
+
+		SubThreatLevel = 18,
+	},
+
+	Description = '<LOC xsb2109_desc>Basic Torpedo Launcher',
+
+	Display = {
+		Abilities = {
+			'<LOC ability_sonar>Sonar',
+		},
+
+		AnimationDeath = {
+			{
+				Animation = '/units/xsb2109/xsb2109_Adeath.sca',
+				AnimationRateMax = 1,
+				AnimationRateMin = 1,
+				Weight = 1,
+			},
+		},
+
+		Mesh = {
+			IconFadeInZoom = 130,
+			LODs = {
+				{
+					LODCutoff = 70,
+					LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+					ShaderName = 'Seraphim',
+				},
+				{
+					AlbedoName = 'xsb2109_lod1_albedo.dds',
+					LODCutoff = 215,
+					LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+					ShaderName = 'Seraphim',
+					SpecularName = 'xsb2109_lod1_specteam.dds',
+				},
+			},
+		},
+		UniformScale = 0.045,
+	},
+
+	Economy = {
+		BuildCostEnergy = 3600,
+		BuildCostMass = 450,
+		BuildTime = 450,
+	},
+
+	Footprint = {
+		MinWaterDepth = 2,
+	},
+
+	General = {
+		CommandCaps = {
+			RULEUCC_Attack = true,
+			RULEUCC_RetaliateToggle = true,
+			RULEUCC_Stop = true,
+		},
+		FactionName = 'Seraphim',
+		Icon = 'sea',
+		SelectionPriority = 5,
+
+		UnitName = '<LOC xsb2109_name>Sou-atha',
+	},
+
+	Intel = {
+		FreeIntel = true,
+
+		SonarRadius = 52,
+		VisionRadius = 28,
+		WaterVisionRadius = 40,
+	},
+
+	Interface = {
+		HelpText = 'Basic Torpedo Launcher',
+	},
+
+	LifeBarHeight = 0.075,
+	LifeBarOffset = 0.4,
+	LifeBarSize = 0.9,
+
+	Physics = {
+		BankingSlope = 0,
+		BuildOnLayerCaps = {
+			LAYER_Water = true,
+		},
+		DragCoefficient = 0.2,
+		MaxSteerForce = 0,
+		MeshExtentsX = 1,
+		MeshExtentsY = 0.75,
+		MeshExtentsZ = 1,
+		MinSpeedPercent = 0,
+		MotionType = 'RULEUMT_None',
+		SkirtOffsetX = 0,
+		SkirtOffsetZ = 0,
+		SkirtSizeX = 1,
+		SkirtSizeZ = 1,
+		TurnRate = 0,
+	},
+
+	SelectionSizeX = 0.6,
+	SelectionSizeZ = 0.9,
+	SelectionThickness = 0.5,
+
+	SizeX = 0.9,
+	SizeY = 1.4,
+	SizeZ = 0.9,
+
+	StrategicIconName = 'icon_structure1_antinavy',
+	StrategicIconSortPriority = 205,
+
+	Veteran = {
+		Level1 = 5,
+		Level2 = 10,
+		Level3 = 15,
+		Level4 = 20,
+		Level5 = 25,
+	},
+	Weapon = {
+		{
+			Audio = {
+				Fire = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0201_AnaIt_Torpedo', LodCutoff = 'Weapon_LodCutoff' },
+			},
+
+			BallisticArc = 'RULEUBA_None',
+			CollideFriendly = false,
+
+			Damage = 300,
+			DamageType = 'Normal',
+
+			DisplayName = 'Uall Cavitation Torpedo Launcher',
+
+			FireTargetLayerCapsTable = {
+				Water = 'Seabed|Sub|Water',
+			},
+
+			FiringTolerance = 20,
+
+			Label = 'Turret01',
+
+			MaxRadius = 48,
+
+			MuzzleSalvoDelay = 0.8,
+			MuzzleSalvoSize = 1,
+			MuzzleVelocity = 6,
+
+			ProjectileId = '/projectiles/SANAnaitTorpedo01/SANAnaitTorpedo01_proj.bp',
+			ProjectileLifetime = 6,
+
+			RackBones = {
+				{
+					MuzzleBones = { 'Muzzle01' },
+					RackBone = 'Muzzle01',
+				},
+				{
+					MuzzleBones = { 'Muzzle02' },
+					RackBone = 'Muzzle02',
+				},
+			},
+
+			RackSalvoReloadTime = 1.7, -- fires every 3.3 seconds
+
+			RangeCategory = 'UWRC_AntiNavy',
+
+			RateOfFire = 1, -- 600 dmg = 181 dps    -- controlled by salvodelay and reloadtime
+			TargetCheckInterval = 1,
+
+			TargetPriorities = {
+				'SPECIALHIGHPRI',
+				'MOBILE -AIR',
+				'DEFENSE',
+				'ALLUNITS -AIR',
+			},
+			TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
+			TrackingRadius = 1.1,
+
+			TurretBoneMuzzle = 'Muzzle01',
+			TurretBonePitch = 'XSB2109',
+			TurretBoneYaw = 'XSB2109',
+
+			TurretPitch = -10,
+			TurretPitchRange = 35,
+			TurretPitchSpeed = 35,
+
+			TurretYaw = 0,
+			TurretYawRange = 360,
+			TurretYawSpeed = 28,
+
+			Turreted = true,
+		},
+	},
+}
