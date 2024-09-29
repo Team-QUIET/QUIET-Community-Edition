@@ -5,7 +5,17 @@ UnitBlueprint {
       Weapon = {
         {
 
-            AutoInitiateAttackCommand = false,
+			AutoInitiateAttackCommand = false,
+
+			MuzzleSalvoDelay = 0.1,
+			MuzzleSalvoSize = 10,
+			MuzzleVelocity = 36,
+			MuzzleVelocityRandom = 0.5,
+			
+			RackSalvoReloadTime = 8,
+			RackFireTogether = true,
+			
+			RateOfFire = 10/10,
 
  	},
         {
