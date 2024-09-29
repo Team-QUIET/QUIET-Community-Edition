@@ -1,0 +1,247 @@
+UnitBlueprint {
+
+	AI = {
+		TargetBones = {
+			"Abovetgt",
+			"Turret_Muzzle",
+			"Turret_Barrel",
+			"URB2205",
+		},
+	},
+
+	Audio = {
+		Destroyed   = Sound { Bank = 'URLDestroy', Cue = 'URB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff' },
+		UISelection = Sound { Bank = 'Interface', Cue = 'Cybran_Select_Gun', LodCutoff = 'UnitMove_LodCutoff' },
+	},
+
+	Buffs = {
+		Regen = {
+			Level1 = 3,
+			Level2 = 6,
+			Level3 = 9,
+			Level4 = 12,
+			Level5 = 15,
+		},
+		WaterVisionRadius = {
+			Level1 = 4,
+			Level2 = 6,
+			Level3 = 8,
+			Level4 = 10,
+			Level5 = 12,
+		},
+	},
+
+	BuildIconSortPriority = 310,
+
+	Categories = {
+		'SELECTABLE',
+		'BUILTBYTIER2ENGINEER',
+		'BUILTBYTIER3ENGINEER',
+		'BUILTBYTIER2COMMANDER',
+		'BUILTBYTIER3COMMANDER',
+		'CYBRAN',
+		'TECH2',
+		'DEFENSE',
+		'STRUCTURE',
+		'ANTINAVY',
+		'DRAGBUILD',
+		'SIZE4',
+		'VISIBLETORECON',
+		'RECLAIMABLE',
+		'SORTDEFENSE',
+	},
+
+	CollisionOffsetY = -1.0,
+
+	Defense = {
+		ArmorType = 'Structure',
+
+		Health = 10001,
+		MaxHealth = 10001,
+		RegenRate = 6,
+
+		SubThreatLevel = 30,
+	},
+
+	Description = '<LOC urb2205_desc>Improved Torpedo Launcher',
+
+	Display = {
+		Abilities = {
+			'<LOC ability_sonar>Sonar',
+			'<LOC ability_personalstealth>Personal Stealth',
+		},
+
+		Mesh = {
+			IconFadeInZoom = 130,
+			LODs = {
+				{ LODCutoff = 215, ShaderName = 'Insect' },
+			},
+		},
+
+		UniformScale = 0.17,
+	},
+
+	Economy = {
+		BuildCostEnergy = 9000,
+		BuildCostMass = 1280,
+		BuildTime = 1280,
+	},
+
+	Footprint = {
+		MinWaterDepth = 2,
+		SizeX = 2,
+		SizeZ = 2,
+	},
+
+	General = {
+		CommandCaps = {
+			RULEUCC_Attack = true,
+			RULEUCC_RetaliateToggle = true,
+			RULEUCC_Stop = true,
+		},
+		FactionName = 'Cybran',
+		Icon = 'sea',
+		SelectionPriority = 5,
+		UnitName = '<LOC urb2205_name>Tentacle',
+	},
+
+	Intel = {
+		FreeIntel = true,
+
+		RadarStealth = true,
+		SonarStealth = true,
+
+		SonarRadius = 60,
+		VisionRadius = 32,
+		WaterVisionRadius = 44,
+	},
+
+	Interface = {
+		HelpText = 'Improved Torpedo Launcher',
+	},
+
+	LifeBarHeight = 0.075,
+	LifeBarOffset = 0.75,
+	LifeBarSize = 1.5,
+
+	Physics = {
+		BankingSlope = 0,
+		BuildOnLayerCaps = {
+			LAYER_Water = true,
+		},
+		DragCoefficient = 0.2,
+		FlattenSkirt = true,
+		MaxSteerForce = 0,
+		MinSpeedPercent = 0,
+		MotionType = 'RULEUMT_None',
+		SkirtOffsetX = -0.5,
+		SkirtOffsetZ = -0.5,
+		SkirtSizeX = 3,
+		SkirtSizeZ = 3,
+		TurnRate = 0,
+	},
+
+	SelectionSizeX = 1,
+	SelectionSizeZ = 1,
+	SelectionThickness = 0.4,
+
+	SizeX = 1.5,
+	SizeY = 2.2,
+	SizeZ = 1.5,
+
+	StrategicIconName = 'icon_structure2_antinavy',
+	StrategicIconSortPriority = 200,
+
+	Veteran = {
+		Level1 = 10,
+		Level2 = 20,
+		Level3 = 30,
+		Level4 = 40,
+		Level5 = 50,
+	},
+
+	Weapon = {
+		{
+			Audio = {
+				Fire = Sound { Bank = 'URLWeapon', Cue = 'URB2205_Torpedo_Nanite', LodCutoff = 'Weapon_LodCutoff' },
+			},
+
+			BallisticArc = 'RULEUBA_None',
+
+			Buffs = {
+				{
+					Add = { OnImpact = true },
+					AppliedToTarget = true,
+					BuffType = 'STUN',
+					Duration = 0.3,
+					Radius = 2,
+					TargetAllow = 'LAND TECH1,NAVAL TECH1,LAND TECH2',
+					TargetDisallow = 'WALL,COMMAND,EXPERIMENTAL',
+				},
+			},
+
+			CollideFriendly = false,
+
+			Damage = 300,
+			DamageType = 'Normal',
+
+			DisplayName = 'Nanite Torpedo',
+
+			FireTargetLayerCapsTable = {
+				Water = 'Seabed|Sub|Water',
+			},
+
+			FiringTolerance = 20,
+
+			Label = 'TorpedoLauncher',
+
+			MaxRadius = 60,
+
+			MuzzleSalvoDelay = 0.6,
+			MuzzleSalvoSize = 4,
+			MuzzleVelocity = 7.5,
+
+			ProjectileId = '/projectiles/CANTorpedoNanite02/CANTorpedoNanite02_proj.bp',
+			ProjectileLifetime = 8,
+
+			RackBones = {
+				{
+					MuzzleBones = { 'Turret_Muzzle' },
+					RackBone = 'Turret_Barrel',
+				},
+			},
+
+			RackSalvoReloadTime = 1.6,
+
+			RangeCategory = 'UWRC_AntiNavy',
+
+			RateOfFire = 1, -- controlled by salvo delay and salvo reload = 300 DPS Sub
+
+			TargetCheckInterval = 1,
+
+			TargetPriorities = {
+				'SPECIALHIGHPRI',
+				'SUBMERSIBLE',
+				'MOBILE',
+				'DEFENSE',
+				'ALLUNITS',
+			},
+			TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
+			TrackingRadius = 1.1,
+
+			TurretBoneMuzzle = 'Turret_Muzzle',
+			TurretBonePitch = 'Turret_Barrel',
+			TurretBoneYaw = 'Turret_Barrel',
+
+			TurretPitch = -30,
+			TurretPitchRange = 45,
+			TurretPitchSpeed = 35,
+
+			TurretYaw = 0,
+			TurretYawRange = 180,
+			TurretYawSpeed = 28,
+
+			Turreted = true,
+		},
+	},
+}
