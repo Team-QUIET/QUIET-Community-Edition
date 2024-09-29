@@ -10,17 +10,17 @@ UnitBlueprint {
 
         Shield = {
             ImpactEffects = 'AeonShieldHit01',
-            OwnerShieldMesh = 'BROT3NCMPhaseShield',
-            PersonalShield = true,
+            ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
+            Mesh = '/effects/entities/AeonShield01/AeonShield01_mesh',
+            MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
             RegenAssistMult = 60,
             ShieldEnergyDrainRechargeTime = 4,
             ShieldMaxHealth = 26000,
             ShieldRechargeTime = 12,
             ShieldRegenRate = 240,
             ShieldRegenStartTime = 0.5,
-            ShieldSize = 2,
-            ShieldVerticalOffset = 0,
-            StartOn = true,
+            ShieldSize = 12,
+            ShieldVerticalOffset = -2,
         },
     },
 	
