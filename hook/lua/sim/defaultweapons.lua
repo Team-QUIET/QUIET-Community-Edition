@@ -357,8 +357,10 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
     RackSalvoFiringState = State {
 	
-        WeaponWantEnabled       = true,
-        WeaponAimWantEnabled    = true,
+        StateName = 'RackSalvoFiringState',
+
+        WeaponWantEnabled = true,
+        WeaponAimWantEnabled = true,
 
         Main = function(self)
             
@@ -586,30 +588,30 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
             self.HaltFireOrdered = false
 
-			-- if all the racks have fired --
-            if (self.CurrentRackNumber > TotalRacksOnWeapon) or CountedProjectile then
-			
-				-- reset the rack count
+            if self.CurrentRackNumber > TotalRacksOnWeapon or CountedProjectile then
                 self.CurrentRackNumber = 1
-
-                -- this takes precedence - delay for reloading the rack
-                if bp.RackSalvoReloadTime > 0 or bp.AnimationReload or self.EconDrain or CountedProjectile then
-				
+                if bp.RackSalvoReloadTime > 0 or self.EconDrain then
                     LOUDSTATE(self, self.RackSalvoReloadState)
-
-                -- anything else is just ready to fire again --
+                elseif bp.RackSalvoChargeTime > 0 then
+                    LOUDSTATE(self, self.IdleState)
+                elseif CountedProjectile then
+                    if bp.WeaponUnpacks then
+                        LOUDSTATE(self, self.WeaponPackingState)
+                    else
+                        LOUDSTATE(self, self.IdleState)
+                    end
                 else
-				
-                    LOUDSTATE(self, self.RackSalvoChargeState)
-					
+                    LOUDSTATE(self, self.RackSalvoFireReadyState)
                 end
-
+            elseif CountedProjectile then
+                if bp.WeaponUnpacks then
+                    LOUDSTATE(self, self.WeaponPackingState)
+                else
+                    LOUDSTATE(self, self.IdleState)
+                end
             else
-
-                LOUDSTATE(self, self.RackSalvoChargeState)
-
+                LOUDSTATE(self, self.RackSalvoFireReadyState)
             end
-            
         end,
 		
 		OnFire = function(self)
