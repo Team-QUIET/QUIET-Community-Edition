@@ -2,15 +2,13 @@ UnitBlueprint {
 	Merge = true,
 	BlueprintId = "brnt1expd",
 	
-	    Weapon = {
-		    {
-
+    Weapon = {
+		{
             TurretYaw = 0,
             TurretYawRange = 180,
             TurretYawSpeed = 90,
-
         },
-		    {
+		{
 
         },        
     },
