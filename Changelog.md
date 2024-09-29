@@ -3,6 +3,18 @@
 # Rebalance Changelog
 ---------------------------------------------
 
+# 1.37
+
+### T4 Aeon Avernus
+(Comparable To King Kraptor)
+Meant for dealing with Experimentals only, lacks almost any AOE so it's weak vs larger T3 Armies however deals massive precision DPS vs Experimentals. The bigger and heavier the Experimental, the better. (Except Avalanche lol)
+
+### T4 Cybran Vulture
+Receives Rocket Barrage Rework Equal to Madbolo
+
+### Misc
+Fix Hardlock on Naval Maps
+
 # 1.36
 
 ### T4 Aeon Eliash
