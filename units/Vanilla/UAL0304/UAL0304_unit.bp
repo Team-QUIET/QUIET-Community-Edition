@@ -1,0 +1,78 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "ual0304",
+    
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+
+            BallisticArc = 'RULEUBA_HighArc',
+            CollideFriendly = false,
+			
+            Damage = 100,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = 'Normal', 
+			
+            DisplayName = 'Sonance Artillery',
+			
+            DoTPulses = 10,     -- resulting in 1000 dmg 
+            DoTTime = 5,
+            
+            EnergyChargeForFirstShot = false,
+            
+            EnergyRequired = 2500,
+            EnergyDrainPerSecond = 250,     -- 10 seconds to charge
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+            
+            FiringRandomness = 1,
+            FiringTolerance = 2,
+			
+            Label = 'MainGun',
+            LeadTarget = true,
+			
+            MaxRadius = 92,
+            MinRadius = 8,
+			
+            MuzzleVelocity = 22.5,
+            MuzzleVelocityReduceDistance = 95,
+			
+            ProjectileLifetime = 15,
+
+            RackRecoilDistance = -0.3,
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 1,         -- every 10 seconds by charge = 100 DPS
+		
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'SHIELD',
+                'ARTILLERY',
+                'DEFENSE',
+                'MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+
+            TurretPitch = 30,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 24,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 32,
+
+            Turreted = true,
+        },
+    },
+}
