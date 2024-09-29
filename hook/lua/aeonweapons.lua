@@ -9,6 +9,7 @@ local CollisionBeamFile = import('defaultcollisionbeams.lua')
 local TractorClawCollisionBeam = CollisionBeamFile.TractorClawCollisionBeam
 local Explosion = import('defaultexplosions.lua')
 local EffectTemplate = import("/lua/effecttemplates.lua")
+local QCECollisionbeams = import('/mods/QUIET-Community-Edition/lua/QCECollisionbeams.lua')
 
 local DefaultBeamWeapon = WeaponFile.DefaultBeamWeapon
 
@@ -346,4 +347,12 @@ ADFTractorClaw = Class(Weapon) {
 ADFTractorClawStructure = Class(DefaultBeamWeapon) {
     BeamType = TractorClawCollisionBeam,
     FxMuzzleFlash = {},
+}
+
+TMAnovacatbluelaserweapon = Class(DefaultBeamWeapon) {
+    BeamType = QCECollisionbeams.TMNovaCatBlueLaserBeam,
+    FxMuzzleFlash = {},
+    FxChargeMuzzleFlash = {},
+    FxUpackingChargeEffects = EffectTemplate.CMicrowaveLaserCharge01,
+    FxUpackingChargeEffectScale = 1,
 }
