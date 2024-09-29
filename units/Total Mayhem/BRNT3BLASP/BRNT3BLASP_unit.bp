@@ -1,13 +1,11 @@
 UnitBlueprint {
   Merge = true,
-  BlueprintId = "brnt3blasp"
+  BlueprintId = "brnt3blasp",
 
       Weapon = {
-
         {
 
             AutoInitiateAttackCommand = false,
-
 	},
         {
 

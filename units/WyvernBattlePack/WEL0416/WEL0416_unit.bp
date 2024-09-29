@@ -1,15 +1,13 @@
 UnitBlueprint{
   Merge = true,
-  BlueprintId = "wel0416:,
+  BlueprintId = "wel0416",
     
     Weapon = {
         {
 
         },
         {
-
             AutoInitialAttackCommand = false,
-
         },
         {
 
@@ -18,9 +16,7 @@ UnitBlueprint{
 
         },
         {
-
             AutoInitiateAttackCommand = false,
-
         },
         {
 
