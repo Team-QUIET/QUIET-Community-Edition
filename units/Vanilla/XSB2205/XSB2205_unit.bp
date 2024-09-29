@@ -1,0 +1,331 @@
+UnitBlueprint {
+
+	AI = {
+		TargetBones = { 'Abovetgt', 'UAB2205' },
+	},
+
+	Audio = {
+		Destroyed   = Sound { Bank = 'XSL_Destroy', Cue = 'XSB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff' },
+		UISelection = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_gun', LodCutoff = 'UnitMove_LodCutoff' },
+	},
+
+	Buffs = {
+		Regen = {
+			Level1 = 2,
+			Level2 = 4,
+			Level3 = 6,
+			Level4 = 8,
+			Level5 = 10,
+		},
+		WaterVisionRadius = {
+			Level1 = 4,
+			Level2 = 6,
+			Level3 = 8,
+			Level4 = 10,
+			Level5 = 12,
+		},
+	},
+
+	BuildIconSortPriority = 310,
+
+	Categories = {
+		'SELECTABLE',
+		'BUILTBYTIER2ENGINEER',
+		'BUILTBYTIER3ENGINEER',
+		'BUILTBYTIER2COMMANDER',
+		'BUILTBYTIER3COMMANDER',
+		'SERAPHIM',
+		'TECH2',
+		'DEFENSE',
+		'STRUCTURE',
+		'ANTINAVY',
+		'DRAGBUILD',
+		'SIZE4',
+		'VISIBLETORECON',
+		'RECLAIMABLE',
+		'OVERLAYSONAR',
+		'OVERLAYANTINAVY',
+		'SORTDEFENSE',
+	},
+
+	CollisionOffsetY = -0.8,
+
+	Defense = {
+		ArmorType = 'Structure',
+
+		Health = 5600,
+		MaxHealth = 5600,
+		RegenRate = 4,
+
+		SubThreatLevel = 24,
+	},
+
+	Description = '<LOC xsb2205_desc>Improved Torpedo Launcher',
+
+	Display = {
+
+		Abilities = {
+			'<LOC ability_sonar>Sonar',
+			'<LOC ability_personalstealth>Personal Stealth',
+			'<LOC ability_torpedodef>Torpedo Defense',
+		},
+
+		AnimationDeath = {
+			{
+				Animation = '/units/xsb2205/xsb2205_Adeath.sca',
+				AnimationRateMax = 1,
+				AnimationRateMin = 1,
+				Weight = 1,
+			},
+		},
+
+		AnimationOpen = '/units/UAB2205/UAB2205_Aopen.sca',
+
+		Mesh = {
+			IconFadeInZoom = 130,
+			LODs = {
+				{
+					LODCutoff = 100,
+					LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+					ShaderName = 'Seraphim',
+				},
+				{
+					AlbedoName = 'xsb2205_lod1_albedo.dds',
+					LODCutoff = 215,
+					LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+					ShaderName = 'Seraphim',
+					SpecularName = 'xsb2205_lod1_specteam.dds',
+				},
+			},
+		},
+
+		UniformScale = 0.05,
+	},
+
+	Economy = {
+		BuildCostEnergy = 9000,
+		BuildCostMass = 1200,
+		BuildTime = 1200,
+	},
+
+	Footprint = {
+		MinWaterDepth = 2.5,
+		SizeX = 2,
+		SizeZ = 2,
+	},
+
+	General = {
+		CommandCaps = {
+			RULEUCC_Attack = true,
+			RULEUCC_RetaliateToggle = true,
+			RULEUCC_Stop = true,
+		},
+		FactionName = 'Seraphim',
+		Icon = 'sea',
+		SelectionPriority = 5,
+		UnitName = '<LOC xsb2205_name>Uosthu',
+	},
+
+	Intel = {
+		FreeIntel = true,
+
+		RadarStealth = true,
+		SonarStealth = true,
+
+		SonarRadius = 64,
+		VisionRadius = 32,
+		WaterVisionRadius = 44,
+	},
+
+	Interface = {
+		HelpText = 'Imp Torp Launcher/Torp Defense',
+	},
+
+	LifeBarHeight = 0.075,
+	LifeBarOffset = 1.1,
+	LifeBarSize = 1.6,
+
+	Physics = {
+		BankingSlope = 0,
+		BuildOnLayerCaps = {
+			LAYER_Water = true,
+		},
+		DragCoefficient = 0.2,
+		FlattenSkirt = true,
+		MaxSteerForce = 0,
+		MeshExtentsX = 1.75,
+		MeshExtentsY = 1,
+		MeshExtentsZ = 1.75,
+		MinSpeedPercent = 0,
+		MotionType = 'RULEUMT_None',
+		SkirtOffsetX = -0.5,
+		SkirtOffsetZ = -0.5,
+		SkirtSizeX = 3,
+		SkirtSizeZ = 3,
+		TurnRate = 0,
+	},
+
+	SelectionSizeX = 1.1,
+	SelectionSizeZ = 1.3,
+	SelectionThickness = 0.34,
+
+	SizeX = 1.5,
+	SizeY = 1.6,
+	SizeZ = 1.5,
+
+	StrategicIconName = 'icon_structure2_antinavy',
+	StrategicIconSortPriority = 200,
+
+	Veteran = {
+		Level1 = 9,
+		Level2 = 18,
+		Level3 = 27,
+		Level4 = 36,
+		Level5 = 45,
+	},
+
+	Weapon = {
+		{
+			Audio = {
+				Fire = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0201_AnaIt_Torpedo', LodCutoff = 'Weapon_LodCutoff' },
+			},
+
+			BallisticArc = 'RULEUBA_None',
+
+			Buffs = {
+				{
+					Add = { OnImpact = true },
+					AppliedToTarget = true,
+					BuffType = 'STUN',
+					Duration = 0.3,
+					Radius = 2,
+					TargetAllow = 'LAND TECH1,NAVAL TECH1,LAND TECH2',
+					TargetDisallow = 'WALL,COMMAND,EXPERIMENTAL',
+				},
+			},
+
+			CollideFriendly = false,
+
+			Damage = 300,
+			DamageType = 'Normal',
+
+			DisplayName = 'Cavitation Torpedo Cluster',
+
+			FireTargetLayerCapsTable = {
+				Water = 'Seabed|Sub|Water',
+			},
+
+			FiringTolerance = 20,
+
+			Label = 'TorpedoTurret',
+
+			MaxRadius = 64,
+
+			MuzzleSalvoDelay = 0.6,
+			MuzzleSalvoSize = 3,
+			MuzzleVelocity = 6,
+
+			ProjectileId = '/projectiles/SANAnaitTorpedo01/SANAnaitTorpedo01_proj.bp',
+			ProjectileLifetime = 8,
+
+			RackBones = {
+				{
+					MuzzleBones = { 'Muzzle01', 'Muzzle02', 'Muzzle03' },
+					RackBone = 'Muzzle01',
+				},
+			},
+
+			RackSalvoReloadTime = 1.3,
+
+			RangeCategory = 'UWRC_AntiNavy',
+
+			RateOfFire = 1, -- 900 Damage every 3.1 secs = 290 DPS Sub
+
+			TargetCheckInterval = 1,
+
+			TargetPriorities = {
+				'SPECIALHIGHPRI',
+				'SUBMERSIBLE',
+				'MOBILE',
+				'DEFENSE',
+				'ALLUNITS',
+			},
+			TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
+			TrackingRadius = 1.1,
+
+			TurretBoneMuzzle = 'Muzzle01',
+			TurretBonePitch = 'XSB2205',
+			TurretBoneYaw = 'XSB2205',
+
+			TurretPitch = -20,
+			TurretPitchRange = 20,
+			TurretPitchSpeed = 20,
+
+			TurretYaw = 0,
+			TurretYawRange = 360,
+			TurretYawSpeed = 30,
+
+			Turreted = true,
+		},
+		{
+			BallisticArc = 'RULEUBA_None',
+
+			CollideFriendly = false,
+
+			Damage = 2,
+			DamageFriendly = false,
+			DamageType = 'Normal',
+
+			DisplayName = 'Anti Torpedo',
+
+			FireTargetLayerCapsTable = {
+				Water = 'Seabed|Sub|Water',
+			},
+
+			FiringTolerance = 40,
+
+			Label = 'AntiTorpedo',
+
+			MaxRadius = 24,
+			MinRadius = 6,
+
+			MuzzleVelocity = 8,
+
+			ProjectileId = '/projectiles/SANAjelluAntiTorpedo01/SANAjelluAntiTorpedo01_proj.bp',
+			ProjectileLifetime = 3,
+
+			RackBones = {
+				{
+					MuzzleBones = { 'Muzzle04' },
+					RackBone = 'Muzzle04',
+				},
+			},
+
+			RackSalvoReloadTime = 1.5,
+
+			RangeCategory = 'UWRC_Countermeasure',
+
+			RateOfFire = 1, -- controlled by RackSalvoReload
+
+			TargetCheckInterval = 0.5,
+
+			TargetRestrictOnlyAllow = 'TORPEDO',
+
+			TargetType = 'RULEWTT_Projectile',
+
+			TurretBoneMuzzle = 'Muzzle04',
+			TurretBonePitch = 'Anti_Torpedo_Turret',
+			TurretBoneYaw = 'Anti_Torpedo_Turret',
+
+			TurretPitch = -10,
+			TurretPitchRange = 25,
+			TurretPitchSpeed = 25,
+
+			TurretYaw = 0,
+			TurretYawRange = 180,
+			TurretYawSpeed = 40,
+
+			Turreted = true,
+		},
+	},
+}
