@@ -1,0 +1,219 @@
+UnitBlueprint {
+	AI = {
+		TargetBones = { 'Abovetgt', 'UAB2109' },
+	},
+
+	Audio = {
+		Destroyed   = Sound { Bank = 'UALDestroy', Cue = 'UAB_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff' },
+		UISelection = Sound { Bank = 'Interface', Cue = 'Aeon_Select_Gun', LodCutoff = 'UnitMove_LodCutoff' },
+	},
+
+	Buffs = {},
+
+	BuildIconSortPriority = 130,
+
+	Categories = {
+		'SELECTABLE',
+		'BUILTBYTIER1ENGINEER',
+		'BUILTBYTIER2ENGINEER',
+		'BUILTBYTIER3ENGINEER',
+		'BUILTBYCOMMANDER',
+		'AEON',
+		'TECH1',
+		'DEFENSE',
+		'STRUCTURE',
+		'ANTINAVY',
+		'DRAGBUILD',
+		'SIZE4',
+		'VISIBLETORECON',
+		'RECLAIMABLE',
+		'OVERLAYSONAR',
+		'SORTDEFENSE',
+	},
+
+	CollisionOffsetY = -0.8,
+
+	CollisionOffsetZ = 0.05,
+
+	Defense = {
+		ArmorType = 'Structure',
+
+		Health = 1625,
+		MaxHealth = 1625,
+		RegenRate = 2,
+
+		SubThreatLevel = 18,
+	},
+
+	Description = '<LOC uab2109_desc>Basic Torpedo Launcher',
+
+	Display = {
+		Abilities = {
+			'<LOC ability_sonar>Sonar',
+		},
+
+		Mesh = {
+			IconFadeInZoom = 130,
+			LODs = {
+				{
+					LODCutoff = 50,
+					ShaderName = 'Aeon',
+				},
+				{
+					AlbedoName = 'uab2109_lod1_albedo.dds',
+					LODCutoff = 215,
+					ShaderName = 'Aeon',
+					SpecularName = 'uab2109_lod1_specteam.dds',
+				},
+			},
+		},
+
+		UniformScale = 0.3,
+	},
+
+	Economy = {
+		BuildCostEnergy = 3600,
+		BuildCostMass = 425,
+		BuildTime = 450,
+	},
+
+	Footprint = {
+		MinWaterDepth = 2,
+	},
+
+	General = {
+
+		CommandCaps = {
+			RULEUCC_Attack = true,
+			RULEUCC_RetaliateToggle = true,
+			RULEUCC_Stop = true,
+		},
+		FactionName = 'Aeon',
+		Icon = 'sea',
+		SelectionPriority = 5,
+		UnitName = '<LOC uab2109_name>Tide',
+	},
+
+	Intel = {
+		FreeIntel = true,
+
+		SonarRadius = 52,
+		VisionRadius = 28,
+		WaterVisionRadius = 40,
+	},
+
+	Interface = {
+		HelpText = 'Basic Torpedo Launcher',
+	},
+
+	LifeBarHeight = 0.075,
+	LifeBarOffset = 0.35,
+	LifeBarSize = 0.9,
+
+	Physics = {
+		BankingSlope = 0,
+		BuildOnLayerCaps = {
+			LAYER_Water = true,
+		},
+		DragCoefficient = 0.2,
+		MaxSteerForce = 0,
+		MeshExtentsX = 1,
+		MeshExtentsY = 0.75,
+		MeshExtentsZ = 1,
+		MinSpeedPercent = 0,
+		MotionType = 'RULEUMT_None',
+		SkirtOffsetX = 0,
+		SkirtOffsetZ = 0,
+		SkirtSizeX = 1,
+		SkirtSizeZ = 1,
+		TurnRate = 0,
+	},
+
+	SelectionSizeX = 0.65,
+	SelectionSizeZ = 0.65,
+	SelectionThickness = 0.6,
+
+	SizeX = 0.9,
+	SizeY = 1.4,
+	SizeZ = 0.9,
+
+	StrategicIconName = 'icon_structure1_antinavy',
+	StrategicIconSortPriority = 205,
+
+	Veteran = {
+		Level1 = 6,
+		Level2 = 12,
+		Level3 = 18,
+		Level4 = 24,
+		Level5 = 30,
+	},
+
+	Weapon = {
+		{
+			Audio = {
+				Fire = Sound { Bank = 'UALWeapon', Cue = 'UAB2109_Torpedo', LodCutoff = 'Weapon_LodCutoff' },
+			},
+
+			BallisticArc = 'RULEUBA_None',
+			CollideFriendly = false,
+
+			Damage = 300,
+			DamageType = 'Normal',
+
+			DisplayName = 'Chrono Torpedo',
+
+			FireTargetLayerCapsTable = {
+				Water = 'Seabed|Sub|Water',
+			},
+			FiringTolerance = 20,
+
+			Label = 'Turret01',
+
+			MaxRadius = 48,
+
+			MuzzleSalvoDelay = 0.8,
+			MuzzleSalvoSize = 2,
+			MuzzleVelocity = 5,
+
+			ProjectileId = '/projectiles/AANTorpedo01/AANTorpedo01_proj.bp',
+			ProjectileLifetime = 6,
+
+			RackBones = {
+				{
+					MuzzleBones = { 'Turret_Muzzle' },
+					RackBone = 'Turret_Barrel',
+				},
+			},
+
+			RackSalvoReloadTime = 1.7, -- fires every 3.3 seconds
+
+			RangeCategory = 'UWRC_AntiNavy',
+
+			RateOfFire = 1, -- 600 every 3.3 = 181 DPS
+			TargetCheckInterval = 1,
+
+			TargetPriorities = {
+				'SPECIALHIGHPRI',
+				'MOBILE -AIR',
+				'DEFENSE',
+				'ALLUNITS -AIR',
+			},
+			TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
+			TrackingRadius = 1.1,
+
+			TurretBoneMuzzle = 'Turret_Muzzle',
+			TurretBonePitch = 'Turret_Barrel',
+			TurretBoneYaw = 'Turret',
+
+			TurretPitch = -20,
+			TurretPitchRange = 35,
+			TurretPitchSpeed = 35,
+
+			TurretYaw = 0,
+			TurretYawRange = 360,
+			TurretYawSpeed = 28,
+
+			Turreted = true,
+		},
+	},
+}
