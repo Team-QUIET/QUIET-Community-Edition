@@ -3,6 +3,25 @@
 # Rebalance Changelog
 ---------------------------------------------
 
+# 1.36
+
+### T4 Aeon Eliash
+Transformed Personal Shield -> Bubble Shield
+
+### T3 Aeon Mobile Artillery
+Removed +20% Shield Damage
+
+### T4 Cybran Madbolo
+All Weapons Ranges Increases
+Rework Primary Weapon Rocket Barrage (High Muzzle Velocity, More Accuracy, More Rockets)
+
+### T3 UEF Brimstone
+Yawspeed 27 -> 45
+Fix Brimstone Overshooting
+
+### T1 Mayor PD 
+Yawspeed 45 -> 90
+
 # 1.35
 
 ### T2 MML
