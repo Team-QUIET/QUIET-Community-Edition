@@ -234,15 +234,15 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
 			
             BeamCollisionDelay = 0,
-            BeamLifetime = 1,	-- do dmg 10x per on fire = 4500dmg
+            BeamLifetime = 1,	-- do dmg 10x per on fire = 5000dmg
 			
             CollideFriendly = false,
             ContinuousBeam = false,
 			
-            Damage = 450,
+            Damage = 500,
             DamageFriendly = true,
             DamageType = 'Normal',
-            DamageRadius = 1.2,
+            DamageRadius = 1.5,
 
             EnergyDrainPerSecond = 650,
             EnergyRequired = 3250,
@@ -279,7 +279,9 @@ UnitBlueprint {
 
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'MOBILE',
+                'TECH3 MOBILE',
+                'TECH2 MOBILE',
+                'TECH1 MOBILE',
                 'DEFENSE',
                 'ALLUNITS',
             },
@@ -359,7 +361,9 @@ UnitBlueprint {
             TargetCheckInterval = 0.5,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'MOBILE',
+                'TECH3 MOBILE',
+                'TECH2 MOBILE',
+                'TECH1 MOBILE',
                 'DEFENSE',
                 'ALLUNITS',
             },
@@ -440,7 +444,9 @@ UnitBlueprint {
             TargetCheckInterval = 0.5,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'MOBILE',
+                'TECH3 MOBILE',
+                'TECH2 MOBILE',
+                'TECH1 MOBILE',
                 'DEFENSE',
                 'ALLUNITS',
             },
@@ -520,7 +526,9 @@ UnitBlueprint {
             TargetCheckInterval = 0.5,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'MOBILE',
+                'TECH3 MOBILE',
+                'TECH2 MOBILE',
+                'TECH1 MOBILE',
                 'DEFENSE',
                 'ALLUNITS',
             },
@@ -637,7 +645,7 @@ UnitBlueprint {
                 Fire = Sound { Bank = 'TM_AEONWEAPONS', Cue = 'ROBOTTALK1FX', LodCutoff = 'Weapon_LodCutoff' },
             },
 
-            AutoInitiateAttackCommand = true,
+            AutoInitiateAttackCommand = false,
 
             BallisticArc = 'RULEUBA_LowArc',
 
