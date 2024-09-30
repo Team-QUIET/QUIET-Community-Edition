@@ -1,4 +1,9 @@
 UnitBlueprint {
+    Merge = true,
+    BlueprintId = "srb4401",
+
+    ScriptClass = 'SRB4401',
+    ScriptModule = '/mods/QUIET-Community-Edition/units/BrewLAN/SRB4401/SRB4401_Script.lua',
 
     Audio = {
         DeathExplosion = Sound { Bank = 'URLDestroy', Cue = 'URB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff'},

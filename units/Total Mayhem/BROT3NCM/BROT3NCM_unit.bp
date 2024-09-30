@@ -1,4 +1,9 @@
 UnitBlueprint {
+    Merge = true,
+    BlueprintId = "brot3ncm",
+
+    ScriptClass = 'BROT3NCM',
+    ScriptModule = '/mods/QUIET-Community-Edition/units/Total Mayhem/BROT3NCM/BROT3NCM_Script.lua',
 
     AI = { 
         GuardScanRadius = 44,

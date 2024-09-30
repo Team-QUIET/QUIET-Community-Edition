@@ -1,4 +1,10 @@
 UnitBlueprint {
+    Merge = true,
+    BlueprintId = "esl0001",
+
+    ScriptClass = 'ESL0001',
+    ScriptModule = '/mods/QUIET-Community-Edition/units/BlackopsACUs/ESL0001/ESL0001_Script.lua',
+
     AI = {
         GuardRadius = 10,
         TargetBones = { 'Torso' },

@@ -1,6 +1,9 @@
 UnitBlueprint{
-  Merge = true,
-  BlueprintId = "wel0416",
+    Merge = true,
+    BlueprintId = "wel0416",
+
+    ScriptClass = 'WEL0416',
+    ScriptModule = '/mods/QUIET-Community-Edition/units/WyvernBattlePack/WEL0416/WEL0416_Script.lua',
     
     Weapon = {
         {

@@ -1,4 +1,10 @@
 UnitBlueprint {
+    Merge = true,
+    BlueprintId = "sab4401",
+
+    ScriptClass = 'SAB4401',
+    ScriptModule = '/mods/QUIET-Community-Edition/units/BrewLAN/SAB4401/SAB4401_Script.lua',
+
     AI = {
         GuardScanRadius = 40,
         StagingPlatformScanRadius = 40,
