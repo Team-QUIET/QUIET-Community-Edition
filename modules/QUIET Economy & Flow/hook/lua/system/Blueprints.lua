@@ -474,6 +474,7 @@ function EconomicAlterations(all_blueprints)
                         bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * 0.50
                     end
                 end
+            end
         end
     end
 end
