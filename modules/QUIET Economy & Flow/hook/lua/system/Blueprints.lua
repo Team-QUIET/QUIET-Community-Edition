@@ -425,5 +425,56 @@ function EconomicAlterations(all_blueprints)
             end
         end
     end
+
+    for id, bp in all_blueprints.Unit do
+        local cats = {} -- Note: Just redo the entire blueprints.lua so theres no multi for loops -- We can do it like we did it here instead
+        if bp.Categories then
+            for k, cat in pairs(bp.Categories) do
+                cats[cat] = true
+            end
+
+            -- T1 & T2 Air Scout Cost Reduction
+            if cats.SCOUT and cats.INTELLIGENCE and cats.HIGHALTAIR and cats.AIR then
+                do
+                    if cats.TECH1 then
+                        bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.315
+                    elseif cats.TECH2 then
+                        bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.5
+                    end
+                end
+            end
+
+            -- Mass Extractor Energy Upkeep Reduction
+            if cats.MASSEXTRACTION and cats.STRUCTURE and cats.ECONOMIC then
+                do
+                    if cats.TECH1 then
+                        bp.Economy.MaintenanceConsumptionPerSecondEnergy = bp.Economy.MaintenanceConsumptionPerSecondEnergy * 0.34
+                    elseif cats.TECH2 then
+                        bp.Economy.MaintenanceConsumptionPerSecondEnergy = bp.Economy.MaintenanceConsumptionPerSecondEnergy * 0.34
+                    elseif cats.TECH3 then
+                        bp.Economy.MaintenanceConsumptionPerSecondEnergy = bp.Economy.MaintenanceConsumptionPerSecondEnergy * 0.525
+                    end
+                end
+            end
+
+            -- Engineer Cost Reduction
+            if cats.ENGINEER and cats.LAND and cats.MOBILE then
+                do
+                    if cats.TECH1 then
+                        bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.65
+
+                        bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * 0.69
+                    elseif cats.TECH2 then
+                        bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.42
+
+                        bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * 0.54
+                    elseif cats.TECH3 then
+                        bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.325
+
+                        bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * 0.50
+                    end
+                end
+        end
+    end
 end
 end -- do end
