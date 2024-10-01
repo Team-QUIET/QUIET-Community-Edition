@@ -6,6 +6,32 @@
 
 ---
 
+# 1.40
+
+# T2 UEF Mongoose
+
+Grenade Launcher: Damage 62 -> 49 
+RoF for Gatling Gun 1 Second -> 1.2 Second
+
+# Overcharge
+
+Energy Ratio 6 -> 9 (TLDR It takes more energy to do more damage)
+
+# T3 Barrage Artillery
+
+Nerfed FiringRandomness 1.25 -> 2.25
+AoF nerfed from by a universal number of 1
+
+# Misc
+Fixed Dragonite Shield Not Actually Protecting It
+Fixed Eliash Shiled Not Actually Protecting It
+
+# 1.39
+
+### T1, T2, T3 Aeon Artillery
+
+Fix Artillery Overshooting for Aeon
+
 # 1.38
 
 ### Torpedo Defenses
