@@ -27,7 +27,7 @@ ProjectileBlueprint {
             # ##Type = 'Small01',
             Type = 'Medium03',
         },
-        StrategicIconSize = 2,
+        StrategicIconSize = 4,
     },
     General = {
         Category = 'Direct Fire',
