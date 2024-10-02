@@ -6,6 +6,26 @@
 
 ---
 
+# 1.41 
+
+Many Units have received YawTurretSpeed Buffs to allow them to be microable if you are interested in what units please check PR #209 for reference
+
+# T2 Aeon Amphorak
+Damage is brought in line with other T2.5 (Around 120DPS)
+No longer cost energy to fire
+
+# T2 Cybran Hoplite
+RoF = 10/40
+Damage reduced from 75 -> 65
+
+# Misc
+Fixed AI not being able to Overcharge
+Introduce Various new economic rebalances in our Submod called QCE Economy & Flow, please refer to commit # 707be96325bcbae0951caf29d76962611acad45a for reference
+Fixed Avernus Shoulder Cannon Projectile being extremely small
+Fixed Eliash not actually having a visual shield on the unit 
+Fixed Thug PD not being buildable
+Fixed Pegasus ShieldIsUp (AoE can not splash through the Pegasus Personal Shield)
+
 # 1.40
 
 # T2 UEF Mongoose
