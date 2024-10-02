@@ -6,16 +6,16 @@ function ModBlueprints(all_blueprints)
     
     OldModBlueprints(all_blueprints)
     
-    EconomicAlterations(all_blueprints)
-    
+    EvenflowQCE(all_blueprints)
+    EconomicBalanceQCE(all_blueprints)
 end
 
 --=======================================
--- FUNCTION ECONOMICALTERATIONS(ALL_BLUEPRINTS)
+-- FUNCTION EvenflowQCE(ALL_BLUEPRINTS)
 -- Overrall Economic Alterations that are changing vast amounts of the economic game.
 --=======================================
     
-function EconomicAlterations(all_blueprints)
+function EvenflowQCE(all_blueprints)
 
 
     -- log all changes
@@ -307,15 +307,9 @@ function EconomicAlterations(all_blueprints)
             end
         end
     end
+end
 
-    local econScaleT2 = 0
-    local econScaleT3M = 0
-    local econScaleT3E = 0
-    local econScaleT4M = 0
-    local econScaleT4E = 0
-    local T2_Adjustment = 0
-    local T3_Adjustment = 0
-    local T4_Adjustment = 0
+function EconomicBalanceQCE(all_blueprints)
 
     for id, bp in all_blueprints.Unit do
 
@@ -326,14 +320,6 @@ function EconomicAlterations(all_blueprints)
                 if cat == 'ECONOMIC' then
                     
                     -- Note: These numbers are exact to replicate what getting to a single Advanced T3 Power Generator would be in mass / energy cost
-                    econScaleT2 = 1.20
-                    econScaleT3M = 2.347
-                    econScaleT3E = 1.627
-                    econScaleT4M = 0.399
-                    econScaleT4E = 0.5016
-                    T2_Adjustment = 0.572
-                    T3_Adjustment = 0.5645
-                    T4_Adjustment = 0.6394
 
                     for j, catj in bp.Categories do
 
@@ -341,26 +327,16 @@ function EconomicAlterations(all_blueprints)
 
                             for _, cat_mobile in bp.Categories do
                                 if cat_mobile == 'TECH2' then
-
-                                    bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * econScaleT2
-
-                                    bp.Economy.ProductionPerSecondEnergy = bp.Economy.ProductionPerSecondEnergy * T2_Adjustment
-
+                                    bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * 1.20
+                                    bp.Economy.ProductionPerSecondEnergy = bp.Economy.ProductionPerSecondEnergy * 0.572
                                 elseif cat_mobile == 'TECH3' and not bp.Enhancements then
-
-                                    bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * econScaleT3M
-
-                                    bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * econScaleT3E
-
-                                    bp.Economy.ProductionPerSecondEnergy = bp.Economy.ProductionPerSecondEnergy * T3_Adjustment
-
+                                    bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * 2.347
+                                    bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 1.627
+                                    bp.Economy.ProductionPerSecondEnergy = bp.Economy.ProductionPerSecondEnergy * 0.5645
                                 elseif cat_mobile == 'TECH3' and bp.Enhancements then
-
-                                    bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * econScaleT4M
-
-                                    bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * econScaleT4E
-
-                                    bp.Economy.ProductionPerSecondEnergy = bp.Economy.ProductionPerSecondEnergy * T4_Adjustment
+                                    bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * 0.399
+                                    bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.5016
+                                    bp.Economy.ProductionPerSecondEnergy = bp.Economy.ProductionPerSecondEnergy * 0.6394
                                 end
                             end
                         end
@@ -369,8 +345,6 @@ function EconomicAlterations(all_blueprints)
             end
         end
     end
-
-    local EnhancementReduction = 0
 
     for id, bp in all_blueprints.Unit do
 
@@ -381,7 +355,7 @@ function EconomicAlterations(all_blueprints)
                 if cat == 'STRUCTURE' then
                     
                     -- Note: This is to reduce BuildTime for enhancements to allow them to be completed significantly faster to stimulate T3 Production Further into the game
-                    EnhancementReduction = 0.70
+                    local EnhancementReduction = 0.70
 
                     for j, catj in bp.Categories do
 
@@ -390,33 +364,19 @@ function EconomicAlterations(all_blueprints)
                             -- Note: had to do a ugly if end / if end method because all t3 factories have these upgrades.. so it would end on the first if and not continue down the elseif statements.
                             for _, cat_mobile in bp.Categories do
                                 if cat_mobile == 'TECH3' and bp.Enhancements.ImprovedProduction then
-
                                     bp.Enhancements.ImprovedProduction.BuildTime = bp.Enhancements.ImprovedProduction.BuildTime * EnhancementReduction
-
                                 end
-
                                 if cat_mobile == 'TECH3' and bp.Enhancements.AdvancedProduction then
-
                                     bp.Enhancements.AdvancedProduction.BuildTime = bp.Enhancements.AdvancedProduction.BuildTime * EnhancementReduction
-
                                 end
-
                                 if cat_mobile == 'TECH3' and bp.Enhancements.ImprovedMateriels then
-
                                     bp.Enhancements.ImprovedMateriels.BuildTime = bp.Enhancements.ImprovedMateriels.BuildTime * EnhancementReduction
-
                                 end
-
                                 if cat_mobile == 'TECH3' and bp.Enhancements.AdvancedMateriels then
-
                                     bp.Enhancements.AdvancedMateriels.BuildTime = bp.Enhancements.AdvancedMateriels.BuildTime * EnhancementReduction
-                                
                                 end
-
                                 if cat_mobile == 'TECH3' and bp.Enhancements.ExperimentalMateriels then
-
                                     bp.Enhancements.ExperimentalMateriels.BuildTime = bp.Enhancements.ExperimentalMateriels.BuildTime * EnhancementReduction
-
                                 end
                             end
                         end
@@ -433,26 +393,13 @@ function EconomicAlterations(all_blueprints)
                 cats[cat] = true
             end
 
-            -- T1 & T2 Air Scout Cost Reduction
-            if cats.SCOUT and cats.INTELLIGENCE and cats.HIGHALTAIR and cats.AIR then
-                do
-                    if cats.TECH1 then
-                        bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.315
-                    elseif cats.TECH2 then
-                        bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.5
-                    end
-                end
-            end
-
             -- Mass Extractor Energy Upkeep Reduction
             if cats.MASSEXTRACTION and cats.STRUCTURE and cats.ECONOMIC then
                 do
                     if cats.TECH1 then
-                        bp.Economy.MaintenanceConsumptionPerSecondEnergy = bp.Economy.MaintenanceConsumptionPerSecondEnergy * 0.34
+                        bp.Economy.MaintenanceConsumptionPerSecondEnergy = bp.Economy.MaintenanceConsumptionPerSecondEnergy * 0.67
                     elseif cats.TECH2 then
-                        bp.Economy.MaintenanceConsumptionPerSecondEnergy = bp.Economy.MaintenanceConsumptionPerSecondEnergy * 0.34
-                    elseif cats.TECH3 then
-                        bp.Economy.MaintenanceConsumptionPerSecondEnergy = bp.Economy.MaintenanceConsumptionPerSecondEnergy * 0.525
+                        bp.Economy.MaintenanceConsumptionPerSecondEnergy = bp.Economy.MaintenanceConsumptionPerSecondEnergy * 0.68
                     end
                 end
             end
@@ -462,15 +409,12 @@ function EconomicAlterations(all_blueprints)
                 do
                     if cats.TECH1 then
                         bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.65
-
                         bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * 0.69
                     elseif cats.TECH2 then
                         bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.42
-
                         bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * 0.54
-                    elseif cats.TECH3 then
+                    elseif cats.TECH3 and not cats.SUBCOMMANDER then
                         bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.325
-
                         bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * 0.50
                     end
                 end
