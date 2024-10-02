@@ -410,8 +410,6 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
                     self:ForkThread(self.RenderClockThread, rof)                
                 end
             end
-
-            self:OnWeaponFired(bp)
             
             local CurrentRackInfo, MuzzlesToBeFired, NumMuzzlesFiring, muzzleIndex, muzzle, projectilefired
 
@@ -581,9 +579,10 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
             self.FirstShot = false
             self:StartEconomyDrain() -- the recharge begins as soon as the weapon starts firing
+            self:OnWeaponFired() -- Used primarily by Overcharge
 
 			if Buffs then
-				self:DoOnFireBuffs(Buffs)
+				self:DoOnFireBuffs(Buffs) -- TODO: Need to investigate how the buffs are applied currently
 			end
 
             self.HaltFireOrdered = false

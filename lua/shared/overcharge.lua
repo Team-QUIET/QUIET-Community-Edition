@@ -4,7 +4,7 @@
 -- - sim / ui proof: they should work for both sim code and ui code.
 
 --- Formula to compute the damage of an overcharge.
-local energyRatio = 9
+local energyRatio = 8
 
 EnergyAsDamage = function(energy)
     return ((1/energyRatio) * energy)
