@@ -17,6 +17,24 @@ Physics = {
         SkirtSizeZ = 4,
         TurnRadius = 5,
         TurnRate = 45,
-		WaterSpeedMultiplier = 1.15,
+	WaterSpeedMultiplier = 1.15,
+
     },
-  }
+
+    Weapon = {
+        {
+		
+	BeamLifetime = 0.5,
+			
+	EnergyDrainPerSecond = 51,
+	EnergyRequired = 50,
+
+	RateOfFire = 10/10,	
+
+	TurretYaw = 0,
+	TurretYawRange = 180,
+	TurretYawSpeed = 90,
+
+        },
+    },
+}
