@@ -5,10 +5,12 @@ UnitBlueprint {
     Weapon = {
         {
 
+            RateOfFire = 10/10,
+
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 60,
-            Turreted = true,
+            TurretYawSpeed = 90,
+
 		},
 		
 		{
@@ -25,18 +27,18 @@ UnitBlueprint {
             Label = 'rocket',
 			
             MaxRadius = 24,
-			MinRadius = 6,
+		MinRadius = 6,
 			
             MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 3,
             MuzzleVelocity = 12,
 			
-			PrefersPrimaryWeaponTarget = true,
+		PrefersPrimaryWeaponTarget = true,
 			
             RateOfFire = 10/70,
-			RenderFireClock = true,
+		RenderFireClock = true,
 			
-			RackFireTogether = true,
+		RackFireTogether = true,
 			
             TargetRestrictDisallow = 'UNTARGETABLE',
             TrackingRadius = 1.05,
@@ -51,8 +53,8 @@ UnitBlueprint {
 			
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 60,
-            Turreted = true,
+            TurretYawSpeed = 90,
+
         },
     },
 }
