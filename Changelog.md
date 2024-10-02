@@ -10,15 +10,15 @@
 
 Many Units have received YawTurretSpeed Buffs to allow them to be microable if you are interested in what units please check PR #209 for reference
 
-# T2 Aeon Amphorak
+### T2 Aeon Amphorak
 Damage is brought in line with other T2.5 (Around 120DPS)
 No longer cost energy to fire
 
-# T2 Cybran Hoplite
+### T2 Cybran Hoplite
 RoF = 10/40
 Damage reduced from 75 -> 65
 
-# Misc
+### Misc
 Fixed AI not being able to Overcharge
 Introduce Various new economic rebalances in our Submod called QCE Economy & Flow, please refer to commit # 707be96325bcbae0951caf29d76962611acad45a for reference
 Fixed Avernus Shoulder Cannon Projectile being extremely small
@@ -28,21 +28,21 @@ Fixed Pegasus ShieldIsUp (AoE can not splash through the Pegasus Personal Shield
 
 # 1.40
 
-# T2 UEF Mongoose
+### T2 UEF Mongoose
 
 Grenade Launcher: Damage 62 -> 49 
 RoF for Gatling Gun 1 Second -> 1.2 Second
 
-# Overcharge
+### Overcharge
 
 Energy Ratio 6 -> 9 (TLDR It takes more energy to do more damage)
 
-# T3 Barrage Artillery
+### T3 Barrage Artillery
 
 Nerfed FiringRandomness 1.25 -> 2.25
 AoF nerfed from by a universal number of 1
 
-# Misc
+### Misc
 Fixed Dragonite Shield Not Actually Protecting It
 Fixed Eliash Shiled Not Actually Protecting It
 
