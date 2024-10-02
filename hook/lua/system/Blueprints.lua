@@ -153,6 +153,28 @@ do
 								end
 							end
 						end
+
+						-- T1 & T2 Air Scout Cost Reduction
+						if cats.SCOUT and cats.INTELLIGENCE and cats.HIGHALTAIR and cats.AIR then
+							do
+								if cats.TECH1 then
+									bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.315
+								elseif cats.TECH2 then
+									bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.5
+								end
+							end
+						end
+
+						-- Support Commander Health Reduction
+						if cats.ENGINEER and cats.LAND and cats.MOBILE then
+							do
+								if cats.TECH3 and cats.SUBCOMMANDER then
+									bp.Defense.RegenRate = bp.Defense.RegenRate * 0.696
+									bp.Defense.MaxHealth = bp.Defense.MaxHealth * 0.60
+									bp.Defense.Health = bp.Defense.MaxHealth
+								end
+							end
+						end
 					end
 				end
 			end
