@@ -2,39 +2,38 @@ UnitBlueprint {
   Merge = true,
   BlueprintId = "brot2asb",
 
-Physics = {
+  Physics = {
 
-        MaxAcceleration = 6,
-        MaxBrake = 2.8,
-        MaxSpeed = 2.8,
-        MaxSpeedReverse = 2.8,
-        MaxSteerForce = 10,
-        MinSpeedPercent = 0,
-        MotionType = 'RULEUMT_Amphibious',
-        SkirtOffsetX = -1.5,
-        SkirtOffsetZ = -1.5,
-        SkirtSizeX = 4,
-        SkirtSizeZ = 4,
-        TurnRadius = 5,
-        TurnRate = 45,
-	WaterSpeedMultiplier = 1.15,
+    MaxAcceleration = 6,
+    MaxBrake = 2.8,
+    MaxSpeed = 2.8,
+    MaxSpeedReverse = 2.8,
+    MaxSteerForce = 10,
+    MinSpeedPercent = 0,
+    MotionType = 'RULEUMT_Amphibious',
+    SkirtOffsetX = -1.5,
+    SkirtOffsetZ = -1.5,
+    SkirtSizeX = 4,
+    SkirtSizeZ = 4,
+    TurnRadius = 5,
+    TurnRate = 45,
+    WaterSpeedMultiplier = 1.15,
+  },
+
+  Weapon = {
+    {
+      
+    BeamLifetime = 0.5,
+        
+    EnergyDrainPerSecond = 2,
+    EnergyRequired = 1,
+
+    RateOfFire = 10/10,	
+
+    TurretYaw = 0,
+    TurretYawRange = 180,
+    TurretYawSpeed = 90,
 
     },
-
-    Weapon = {
-        {
-		
-	BeamLifetime = 0.5,
-			
-	EnergyDrainPerSecond = 51,
-	EnergyRequired = 50,
-
-	RateOfFire = 10/10,	
-
-	TurretYaw = 0,
-	TurretYawRange = 180,
-	TurretYawSpeed = 90,
-
-        },
-    },
+  },
 }
