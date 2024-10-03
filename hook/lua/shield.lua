@@ -892,7 +892,10 @@ Shield = Class(QCEShield) {
             WaitTicks(10)
 			
         end,
-		
+
+        IsOn = function(self)
+            return false
+        end,
     },
 
     -- This state happens when the shield has been depleted due to damage
@@ -919,7 +922,7 @@ Shield = Class(QCEShield) {
         end,
 		
         IsOn = function(self)
-            return true
+            return false
         end,
     },
 
@@ -953,17 +956,19 @@ Shield = Class(QCEShield) {
         end,
         
         IsOn = function(self)
-            return true
+            return false
         end,
 		
     },
 
     DeadState = State {
-	
         Main = function(self)
 			self.Dead = true
         end,
-		
+
+        IsOn = function(self)
+            return false
+        end,
     },
 	
 }

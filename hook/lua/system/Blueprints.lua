@@ -164,17 +164,6 @@ do
 								end
 							end
 						end
-
-						-- Support Commander Health Reduction
-						if cats.ENGINEER and cats.LAND and cats.MOBILE then
-							do
-								if cats.TECH3 and cats.SUBCOMMANDER then
-									bp.Defense.RegenRate = bp.Defense.RegenRate * 0.696
-									bp.Defense.MaxHealth = bp.Defense.MaxHealth * 0.60
-									bp.Defense.Health = bp.Defense.MaxHealth
-								end
-							end
-						end
 					end
 				end
 			end
