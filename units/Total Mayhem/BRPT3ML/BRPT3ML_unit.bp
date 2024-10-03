@@ -39,7 +39,7 @@ UnitBlueprint {
 			MuzzleVelocityRandom = 1,
 			MuzzleVelocityReduceDistance = 80,
 
-            ProjectileLifetime = 8,
+            ProjectileLifetime = 12,
 
             RangeCategory = 'UWRC_IndirectFire',
 			
