@@ -57,8 +57,9 @@ UnitBlueprint {
 	
     Display = {
         Abilities = {
-            'Repairs',
-			'Cloaking',
+		'Repairs',
+		'Cloaking',
+		'No Stealth',
         },
         AnimationDeath = {
             {
@@ -134,7 +135,7 @@ UnitBlueprint {
     	FreeIntel = false,
         
         Cloak = true,
-        
+        RadarStealth = false,
         RadarRadius = 52,
 
         VisionRadius = 28,
