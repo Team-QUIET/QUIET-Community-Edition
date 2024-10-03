@@ -2,6 +2,14 @@ UnitBlueprint{
     Merge = true,
     BlueprintId = "uel0108",
 
+    IgnoreEvenflow = true,
+
+    Economy = {
+        BuildCostEnergy = 950,
+        BuildCostMass = 110,
+        BuildTime = 1200,
+    },
+
     Physics = {
         BankingSlope = 0,
         DragCoefficient = 0.2,
@@ -41,7 +49,7 @@ UnitBlueprint{
 
             Label = "MainGun",
 
-            MaxRadius = 27,
+            MaxRadius = 28,
 
             MuzzleVelocity = 25,
 
@@ -49,7 +57,7 @@ UnitBlueprint{
 
             RangeCategory = "UWRC_DirectFire",
 
-            RateOfFire = 0.5,
+            RateOfFire = 10/15,
 
             TargetCheckInterval = 0.5,
             TargetPriorities = {
@@ -69,11 +77,11 @@ UnitBlueprint{
 
             TurretPitch = 0,
             TurretPitchRange = 45,
-            TurretPitchSpeed = 40,
+            TurretPitchSpeed = 45,
 
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 48,
+            TurretYawSpeed = 90,
 
             Turreted = true,
         },

@@ -1,6 +1,14 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "brot1exm1",
+
+    IgnoreEvenflow = true,
+
+    Economy = {
+        BuildCostEnergy = 1250,
+        BuildCostMass = 160,
+        BuildTime = 1270,
+    },
 	
     Physics = {
         BankingSlope = 0,
@@ -8,9 +16,9 @@ UnitBlueprint {
             LAYER_Land = true,
         },
         DragCoefficient = 0.2,
-        MaxAcceleration = 1.15,
-        MaxBrake = 2.65,
-        MaxSpeed = 2.65,
+        MaxAcceleration = 1.05,
+        MaxBrake = 2.45,
+        MaxSpeed = 2.45,
         MaxSpeedReverse = 0,
         MaxSteerForce = 10,
         MeshExtentsX = 1,
@@ -25,10 +33,79 @@ UnitBlueprint {
 
     Weapon = {
         {
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                BarrelLoop  = Sound { Bank = 'UES', Cue = 'UES0302_Cannon_Loop', LodCutoff = 'WeaponBig_LodCutoff' },
+                BarrelStart = Sound { Bank = 'UES', Cue = 'UES0302_Cannon_Start', LodCutoff = 'WeaponBig_LodCutoff' },
+                BarrelStop  = Sound { Bank = 'UES', Cue = 'UES0302_Cannon_Stop', LodCutoff = 'WeaponBig_LodCutoff' },
+                Fire        = Sound { Bank = 'TM_AEONWEAPONS', Cue = 'AEONGUN1', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
 
+            Damage = 30,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Gauss Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 1,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 28,
+			
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 36,
+			
+            ProjectileId = '/projectiles/ADFDisruptor01/ADFDisruptor01_proj.bp',
+            ProjectileLifetime = 0.7,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'mainmuzzle01','mainmuzzle02'},
+                    RackBone = 'Turret_Recoil01',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 0.6,	-- 36dps
+			
+            TargetCheckInterval = 1.0,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE -AIR',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'mainmuzzle01',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 55,
+            TurretPitchSpeed = 55,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
 		},
         {
-
+            
 		},
 		{
             AboveWaterTargetsOnly = true,
@@ -52,7 +129,7 @@ UnitBlueprint {
 			
             Label = 'rocket',
 			
-            MaxRadius = 28,
+            MaxRadius = 29,
 			
             MuzzleSalvoDelay = 0.4,
             MuzzleSalvoSize = 6,

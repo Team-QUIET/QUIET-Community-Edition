@@ -2,6 +2,14 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "brmt1exm1",
 
+    IgnoreEvenflow = true,
+
+    Economy = {
+        BuildCostEnergy = 1150,
+        BuildCostMass = 190,
+        BuildTime = 1335,
+    },
+
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
@@ -9,9 +17,9 @@ UnitBlueprint {
         },
         DragCoefficient = 0.2,
 		
-        MaxAcceleration = 1.1,
-        MaxBrake = 2.65,
-        MaxSpeed = 2.65,
+        MaxAcceleration = 1.375,
+        MaxBrake = 2.75,
+        MaxSpeed = 2.75,
         MaxSpeedReverse = 0,
 		
         MaxSteerForce = 10,
