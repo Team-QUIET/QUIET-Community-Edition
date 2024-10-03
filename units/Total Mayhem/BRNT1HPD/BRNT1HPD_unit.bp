@@ -3,26 +3,28 @@ UnitBlueprint {
     BlueprintId = "brnt1hpd",
 
     Weapon = {
+        {
             Buffs = {
-            {
-                Add = { OnImpact = true },
-                AppliedToTarget = true,
-                BuffType = 'STUN',
-                Duration = 0,
-                Radius = 0,
-                TargetAllow = 'LAND TECH1,NAVAL TECH1',
-                TargetDisallow = 'WALL',
-            },
+                {
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 0,
+                    Radius = 0,
+                    TargetAllow = 'LAND TECH1,NAVAL TECH1',
+                    TargetDisallow = 'WALL',
+                },
 
-            {
-                Add = { OnImpact = true },
-                AppliedToTarget = true,
-                BuffType = 'STUN',
-                Duration = 0,
-                Radius = 0,
-                TargetAllow = 'LAND TECH2,NAVAL TECH2',
-                TargetDisallow = 'WALL',
-            },                
-        },			
+                {
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 0,
+                    Radius = 0,
+                    TargetAllow = 'LAND TECH2,NAVAL TECH2',
+                    TargetDisallow = 'WALL',
+                },
+            },  
+        },              			
     },
 }
