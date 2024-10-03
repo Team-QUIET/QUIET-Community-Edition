@@ -6,6 +6,16 @@
 
 ---
 
+# 1.42
+
+### T4 Cybran Madbolo
+MassCost 21750 -> 30000
+EnergyCost 300000 -> 475000
+
+### Misc
+Fix Thug being unbuildable (2nd try)
+Fix Scorpion having Stealth
+
 # 1.41 
 
 Many Units have received YawTurretSpeed Buffs to allow them to be microable if you are interested in what units please check PR #209 for reference
