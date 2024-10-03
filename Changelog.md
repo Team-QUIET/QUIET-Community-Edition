@@ -6,6 +6,22 @@
 
 ---
 
+# 1.43
+
+### ACU
+TurretYawSpeed [Main Weapon] 48 -> 90 
+Main Weapon Damage 70 -> 120
+Range Equalized to OverCharge Range of 30
+Speed from 1.45 -> 1.7
+
+### T1.5
+All T1.5 now are the first users of the ability to ignore Evenflow
+They now follow guidelines of a much heavier buildtime with some slight reductions in cost and some factional diversity increase (this is an ongoing effort)
+Please Review PR #219 for the stat changes
+
+### Misc
+Fix Thau Battery Projectiles disappearing before hitting the ground
+
 # 1.42
 
 ### T4 Cybran Madbolo
