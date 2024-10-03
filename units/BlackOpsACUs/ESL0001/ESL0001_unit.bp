@@ -1280,18 +1280,18 @@ UnitBlueprint {
     LifeBarSize = 1.25,
 	
     Physics = {
-        BackUpDistance = 15,    
+        BackUpDistance = 0,    
         BankingSlope = 0,
 
         DragCoefficient = 0.2,
 
         LayerChangeOffsetHeight = -0.9,
 
-        MaxAcceleration = 0.55,
+        MaxAcceleration = 1.7,
 
-        MaxBrake = 1.45,
-        MaxSpeed = 1.45,
-        MaxSpeedReverse = 1.45,
+        MaxBrake = 1.7,
+        MaxSpeed = 1.7,
+        MaxSpeedReverse = 0,
 
         MaxSteerForce = 12,
         MinSpeedPercent = 0,
@@ -1300,7 +1300,7 @@ UnitBlueprint {
 
         StandUpright = true,
         TurnRadius = 10,
-        TurnRate = 65,
+        TurnRate = 90,
     },
     
     SelectionCenterOffsetX = 0.15,
@@ -1403,7 +1403,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
-            Damage = 70,
+            Damage = 120,
             DamageType = 'Normal',
 			
             DisplayName = 'Chronotron Cannon',
@@ -1418,7 +1418,7 @@ UnitBlueprint {
 			
             Label = 'ChronotronCannon',
 			
-            MaxRadius = 28,
+            MaxRadius = 30,
 
             MuzzleVelocity = 40,
 			
@@ -1441,10 +1441,10 @@ UnitBlueprint {
             TargetCheckInterval = 0.5,
 			
             TargetPriorities = {
-                'SPECIALHIGHPRI',
-                'MOBILE',
-                'DEFENSE',
-                'ALLUNITS -WALL',
+                "MOBILE",
+                "COMMAND",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
 			
@@ -1453,12 +1453,12 @@ UnitBlueprint {
             TurretBoneYaw = 'Torso',
 			
             TurretPitch = 0,
-            TurretPitchRange = 30,
-            TurretPitchSpeed = 85,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 90,
 			
             TurretYaw = 0,
-            TurretYawRange = 30,
-            TurretYawSpeed = 85,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
 			
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
