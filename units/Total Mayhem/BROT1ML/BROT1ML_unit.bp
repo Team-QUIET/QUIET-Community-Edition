@@ -1,0 +1,18 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "brot1ml",
+
+      Weapon = {
+        {
+
+            MuzzleSalvoDelay = 0.2,
+
+            RateOfFire = 10/10,
+
+            TurretPitchSpeed = 80,
+
+            TurretYawSpeed = 45,
+
+		    },
+    },
+}
