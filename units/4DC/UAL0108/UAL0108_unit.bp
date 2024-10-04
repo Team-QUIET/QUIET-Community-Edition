@@ -1,0 +1,111 @@
+UnitBlueprint{
+    Merge = true,
+    BlueprintId = "ual0108",
+
+    Defense = {
+        Health = 140,
+        MaxHealth = 140,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+
+            BallisticArc = "RULEUBA_None",
+
+            CollideFriendly = false,
+
+            Damage = 20,
+            DamageRadius = 0,
+            DamageType = "Normal",
+
+            DisplayName = "Pulse Laser",
+
+            FireTargetLayerCapsTable = { Land = "Land|Water" },
+
+            FiringRandomness = 0.5,
+            FiringRandomnessWhileMoving = 1.0,
+            FiringTolerance = 2,
+
+            MaxRadius = 18,
+
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 4,
+            MuzzleVelocity = 30,
+
+            ProjectileLifetime = 0.8,
+
+            RangeCategory = "UWRC_DirectFire",
+
+            RateOfFire = 0.4,
+
+            TargetCheckInterval = 0.6,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "MOBILE",
+                "DEFENSE -WALL",
+                "ALLUNITS -WALL",
+            },
+            TargetRestrictDisallow = "UNTARGETABLE",
+
+            TrackingRadius = 1.1,
+
+            TurretBoneMuzzle = "turretMuzzle",
+            TurretBonePitch = "bodyTop",
+            TurretBoneYaw = "bodyTop",
+            TurretDualManipulators = false,
+
+            TurretPitch = 0,
+            TurretPitchRange = 15,
+            TurretPitchSpeed = 30,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+
+            Turreted = true,
+        },
+        {
+            AlwaysRecheckTarget = true,
+
+            BallisticArc = "RULEUBA_None",
+
+            CollideFriendly = false,
+
+            Damage = 30,
+            DamageRadius = 1,
+            DamageType = "Normal",
+
+            DisplayName = "Missile",
+
+            FireTargetLayerCapsTable = { Land = "Land|Water" },
+            FiringTolerance = 10,
+
+            MaxRadius = 30,
+            MinRadius = 2,
+
+            MuzzleSalvoDelay = 0.5,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 5,
+
+            ProjectileLifetime = 3,
+
+            RackSlavedToTurret = true,
+
+            RangeCategory = "UWRC_IndirectFire",
+
+            RateOfFire = 0.2,
+
+            TargetCheckInterval = 0.3,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "COMMAND",
+                "MOBILE",
+                "DEFENSE",
+                "ALLUNITS,-WALL",
+            },
+            TargetRestrictDisallow = "UNTARGETABLE",
+            Turreted = false,
+        },
+    },
+}
