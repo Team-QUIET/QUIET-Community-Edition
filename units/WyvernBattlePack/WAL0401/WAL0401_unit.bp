@@ -1,4 +1,9 @@
 UnitBlueprint{
+    Merge = true,
+    BlueprintId = "wal0401",
+
+    ScriptClass = 'WAL0401',
+    ScriptModule = '/mods/QUIET-Community-Edition/units/WyvernBattlePack/WAL0401/WAL0401_Script.lua',
 
     Description = "<LOC wal0401_desc>Experimental Ultra Heavy Assault Bot",
 

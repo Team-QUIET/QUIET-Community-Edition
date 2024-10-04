@@ -1,4 +1,9 @@
 UnitBlueprint {
+    Merge = true,
+    BlueprintId = "ual0401",
+
+    ScriptClass = 'UAL0401',
+    ScriptModule = '/mods/QUIET-Community-Edition/units/Vanilla/UAL0401/UAL0401_Script.lua',
 
     AI = {
         TargetBones = {

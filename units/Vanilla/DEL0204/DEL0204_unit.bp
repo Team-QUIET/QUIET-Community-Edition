@@ -62,7 +62,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 3,	---- 3 seconds to reload
             RackSlavedToTurret = false,
             RangeCategory = 'UWRC_DirectFire',
-            RateOfFire = 1,			---- 15 * 15 every 5.5 seconds = 40 DPS
+            RateOfFire = 10/12,	
             TargetCheckInterval = 0,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -101,7 +101,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
-            Damage = 65,
+            Damage = 49,
             DamageRadius = 2,
             DamageType = 'Normal',
 			
@@ -131,7 +131,7 @@ UnitBlueprint {
             RackSalvoSize = 3,
             RackSlavedToTurret = false,
             RangeCategory = 'UWRC_DirectFire',
-            RateOfFire = 0.2,		---- 240 DPS every 5.5 seconds = 43 DPS
+            RateOfFire = 0.2,	
             TargetCheckInterval = 0,
             TargetPriorities = {
                 "SPECIALHIGHPRI",

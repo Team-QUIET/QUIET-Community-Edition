@@ -1,4 +1,10 @@
 UnitBlueprint {
+    Merge = true,
+    BlueprintId = "brl0205",
+
+    ScriptClass = 'BRL0205',
+    ScriptModule = '/mods/QUIET-Community-Edition/units/BlackOpsUnleashed/BRL0205/BRL0205_Script.lua',
+
     AI = {
         GuardScanRadius = 27,
         TargetBones = {'Tail2','Turret01'},
@@ -51,8 +57,9 @@ UnitBlueprint {
 	
     Display = {
         Abilities = {
-            'Repairs',
-			'Cloaking',
+		'Repairs',
+		'Cloaking',
+		'No Stealth',
         },
         AnimationDeath = {
             {
@@ -128,7 +135,7 @@ UnitBlueprint {
     	FreeIntel = false,
         
         Cloak = true,
-        
+        RadarStealth = false,
         RadarRadius = 52,
 
         VisionRadius = 28,

@@ -153,6 +153,17 @@ do
 								end
 							end
 						end
+
+						-- T1 & T2 Air Scout Cost Reduction
+						if cats.SCOUT and cats.INTELLIGENCE and cats.HIGHALTAIR and cats.AIR then
+							do
+								if cats.TECH1 then
+									bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.315
+								elseif cats.TECH2 then
+									bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.5
+								end
+							end
+						end
 					end
 				end
 			end
