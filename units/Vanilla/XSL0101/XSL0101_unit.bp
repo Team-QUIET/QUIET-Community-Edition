@@ -2,6 +2,10 @@ UnitBlueprint {
   Merge = true,
   BlueprintId = "xsl0101",
 
+      Intel = {
+            RadarStealth = false,
+        },
+
       Weapon = {
         {
 
