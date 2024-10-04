@@ -1,0 +1,8 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "uel0101",
+
+  Intel = {
+    RadarStealth = false,
+    },
+  }
