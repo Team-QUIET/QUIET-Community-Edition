@@ -1,14 +1,63 @@
 UnitBlueprint {
   Merge = true,
   BlueprintId = "brmt3vul",
+  
+      Display = {
+        Abilities = {
+            "<LOC ability_amphibious>Amphibious",
+            "<LOC ability_tacticalmissledeflect>Tactical Missile Deflection",
+			"Enhanced Vision",
+        },
+	},
+  
+      Economy = {
+        BuildCostEnergy = 180000,
+        BuildCostMass = 15000,
+        BuildTime = 18000,
+    },
+  
+      Intel = {
+		VisionRadius = 56,
+		WaterVisionRadius = 16,
+    },
+	
+	Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+        },
+        DragCoefficient = 0.2,
+
+        LayerChangeOffsetHeight = -2.25,
+
+        MaxAcceleration = 1.65,
+        MaxBrake = 3.3,
+        MaxSpeed = 3.3,
+        MaxSpeedReverse = 2.2,
+        MaxSteerForce = 10,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Amphibious',
+        
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+        
+        SkirtSizeX = 3,
+        SkirtSizeZ = 3,
+        
+        TurnRadius = 3,
+        TurnRate = 45,
+    },
 
       Weapon = {
         {
 
 			AutoInitiateAttackCommand = false,
+			
+			FiringRandomnessWhileMoving = 1,
 
 			MuzzleSalvoDelay = 0.1,
-			MuzzleSalvoSize = 10,
+			MuzzleSalvoSize = 12,
 			MuzzleVelocity = 36,
 			MuzzleVelocityRandom = 0.5,
 			
@@ -16,19 +65,29 @@ UnitBlueprint {
 			RackFireTogether = true,
 			
 			RateOfFire = 10/10,
+			
+			TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 60,
 
- 	},
+		},
         {
+		
+            RateOfFire = 10/10,
 
- 	},
+
+		},
         {
+		
+			RateOfFire = 10/10,
 
- 	},
+		},
         {
+		
+			RateOfFire = 40/10,
 
- 	},
-
-	{
+		},
+		{
 
         },		
     },
