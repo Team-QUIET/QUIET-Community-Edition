@@ -44,7 +44,7 @@ function EvenflowQCE(all_blueprints)
     for id,bp in pairs(all_blueprints.Unit) do
 
         if bp.IgnoreEvenflow == true then
-            break
+            continue
         end
 
         if bp.Categories then
