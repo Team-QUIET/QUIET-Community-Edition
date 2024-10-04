@@ -6,6 +6,29 @@
 
 ---
 
+# 1.44
+
+### T1 Cybran Sky Slammer
+FiringTolerance 0.6 -> 3
+YawTurretSpeed 36 -> 135
+
+### T1 Aeon Artos
+Health 210 -> 140
+(Missile) Range 32 -> 30
+
+### T1 Scouts
+Stealth Removed
+
+### T4 Aeon Eliash
+Mass Cost 21000 -> 26000
+
+### T4 Cybran Vulture
+Please refer to PR #220 for the extensives changelog
+
+### Misc
+Fixed Evenflow not applying to all units if one unit contained "IgnoreEvenflow" Value.
+Fixed T3 Cybran PD "Hades"
+
 # 1.43
 
 ### ACU
