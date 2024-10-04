@@ -2,6 +2,9 @@ UnitBlueprint {
   Merge = true,
   BlueprintId = "url0101",
 
+    ScriptClass = 'URL0101',
+    ScriptModule = '/mods/QUIET-Community-Edition/units/Vanilla/URL0101/URL0101_Script.lua',
+
 	Economy = {
         MaintenanceConsumptionPerSecondEnergy = 15,
     },
