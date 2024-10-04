@@ -1,0 +1,24 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "url0104",
+
+  Weapon = {
+        {
+
+            FiringTolerance = 3,
+
+            ProjectileLifetime = 4.5,
+
+            TurretYawSpeed = 135,
+	
+        },
+		
+        {
+
+            RateOfFire = 15/10,
+
+            TurretYawSpeed = 135,
+
+        },
+    },
+}
