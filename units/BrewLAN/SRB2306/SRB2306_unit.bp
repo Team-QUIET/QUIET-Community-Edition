@@ -1,0 +1,29 @@
+UnitBlueprint {
+	Merge = true,
+	BlueprintId = "srb2306",
+	
+	    Weapon = {
+        {
+
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0,
+
+            ContinuousBeam = true,
+			
+            Damage = 55,
+
+            EnergyCumulativeUpkeepCost = 10,
+            EnergyConsumptionPerSecondMin = 100,
+            EnergyConsumptionPerSecondMax = 600,
+            EnergyDissipationPerSecond = 30,
+			
+
+            RateOfFire = 20/10, 
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 60,
+
+        },
+    },
+}
