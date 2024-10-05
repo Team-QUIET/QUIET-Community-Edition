@@ -33,7 +33,7 @@ UnitBlueprint {
 			'2 x Riot Lasers',
 			'Rocket Barrage',
 			'',
-		}
+		},
 	},
 
 	Economy = {
@@ -53,24 +53,45 @@ UnitBlueprint {
 			-- Railgun --
 			Damage = 875,    -- was 750
 			MaxRadius = 42,  -- was 40
-			RateOfFire = 0.225, -- was 0.3
+			RateOfFire = 2.25/10, -- was 0.3
+
+			TurretYawSpeed = 75,
+
 		},
 		{
 			-- Ravager --
 			Damage = 35, -- was 50
 			MaxRadius = 16, -- was 36
+
+			RateOfFire = 40/10,
+
+			TurretYawSpeed = 75,
+
 		},
 		{
 			-- Riot beams
 			MaxRadius = 14, -- was 28
+
+			RateOfFire = 10/10,
+
+			TurretYawSpeed = 90,
+
 		},
 		{
 			-- Riot beams 2
 			MaxRadius = 14, -- was 28
+
+			RateOfFire = 10/10,
+
+			TurretYawSpeed = 90,
+
 		},
 		{
 			-- Rocket salvo
 			MaxRadius = 42, -- was 44
-		}
-	}
+
+			RateOfFire = 1/10,
+
+		},
+	},
 }
