@@ -1,0 +1,15 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "sal0320",
+
+      Weapon = {
+        {
+
+            RateOfFire = 30/10,
+
+        },
+        {
+
+        },
+    },
+}
