@@ -6,6 +6,39 @@
 
 ---
 
+# 1.45
+
+### Yaw Rate Increase
+Many units have received a 2 second~ Yaw Rate now and should be microable this applies to most units in the game currently
+
+### T3 UEF Banisher
+ROF: 25/10 -> 18/10
+AA Missile Denations at 10 Height Now
+
+### T3 Aeon Armillary
+Damage: 75 -> 65
+
+### T3 Cybran Hailfire
+FiringRandomnessWhileMoving: 0.7 -> 0.5
+
+### T4 Aeon Pillar of Prominence
+ShieldRegenRate: 230 -> 520 (Allows it's shields on other units to be healed more quickly)
+
+### T3 Cybran Dervish
+Dervish Rockets receive the same rework as Madbolo & Vulture
+
+### T3 UEF Bull
+[Rockets]
+MuzzleChargeDelay: 0.6 -> 0.3
+MaxRadius: 48 -> 44
+
+### T3 Cybran Mastodon
+[Rockets]
+FiringRandomnessWhileMoving: 3.5 -> 1.5
+
+### T1 Aeon Wavecrest
+MuzzleSalvoDelay: 0.3 -> 0.2
+
 # 1.44
 
 ### T1 Cybran Sky Slammer
