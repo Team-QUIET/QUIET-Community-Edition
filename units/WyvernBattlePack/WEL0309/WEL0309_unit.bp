@@ -1,0 +1,12 @@
+UnitBlueprint{
+    Merge = true,
+    BlueprintId = "wel0309",
+
+    Weapon = {
+        {
+            ProjectileId = "/mods/QUIET-Community-Edition/projectiles/WBPSmallAAMissile03/WBPSmallAAMissile03_proj.bp",
+
+            RateOfFire = 18/10,
+        },
+    },
+}

@@ -1,0 +1,16 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "brl0307",
+
+      Weapon = {
+        {
+
+            FiringRandomnessWhileMoving = 0.5,
+
+            RateOfFire = 10/10,
+
+            TurretYawSpeed = 75,
+
+        },
+    },
+}

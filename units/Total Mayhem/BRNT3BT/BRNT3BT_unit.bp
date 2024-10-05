@@ -1,0 +1,35 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "brnt3bt",
+
+      Weapon = {
+	
+		-- rocket pods --
+		
+		    {
+
+            MaxRadius = 44,
+
+            MuzzleChargeDelay = 0.3,
+
+            RateOfFire = 1/10,
+
+            TurretYawSpeed = 75,
+
+        },
+		
+		-- Main Gun --
+	
+        {
+
+            FiringTolerance = 0.3,
+
+			      MuzzleVelocityRandom = 0,
+
+            RateOfFire = 4/10,
+
+            TurretYawSpeed = 75,
+
+		    },
+    },
+}

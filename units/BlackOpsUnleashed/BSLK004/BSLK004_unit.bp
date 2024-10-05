@@ -1,0 +1,24 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "bslk004",
+
+      Weapon = {
+            {
+
+            RateOfFire = 10/10,
+
+            TurretYawSpeed = 180,
+
+            },
+		        {
+
+            RateOfFire = 5/10,
+
+            },
+		        {
+
+            RateOfFire = 1/10,
+
+            },
+      },
+}

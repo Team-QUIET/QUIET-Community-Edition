@@ -1,0 +1,18 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "belk002",
+
+      Weapon = {
+        {
+        
+            RateOfFire = 10/10,
+
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 90,
+
+            TurretYawRange = 180,
+            TurretYawSpeed = 115,
+
+	  },
+  },
+}

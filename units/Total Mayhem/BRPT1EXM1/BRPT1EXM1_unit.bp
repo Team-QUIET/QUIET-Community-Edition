@@ -37,4 +37,14 @@ UnitBlueprint {
         TurnRadius = 5,
         TurnRate = 40,
     },
+
+    Weapon = {
+        {
+
+            RateOfFire = 20/10,
+
+            TurretYawSpeed = 90,
+
+        },
+    },
 }

@@ -1,6 +1,28 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "ual0304",
+
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 1.6,
+        MaxBrake = 2.2,
+        MaxSpeed = 2.2,
+        MaxSpeedReverse = 1.2,
+        MaxSteerForce = 10,
+        MeshExtentsX = 1.5,
+        MeshExtentsY = 0.75,
+        MeshExtentsZ = 2.25,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        RotateOnSpot = false,
+        RotateOnSpotThreshold = 0.1,
+        TurnRadius = 0,
+        TurnRate = 45,
+    },
     
     Weapon = {
         {
@@ -47,7 +69,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 1,         -- every 10 seconds by charge = 100 DPS
+            RateOfFire = 10/10,
 		
             TargetCheckInterval = 1,
             TargetPriorities = {
