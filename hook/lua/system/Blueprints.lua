@@ -301,6 +301,7 @@ do
 			'uebssg01',-- Exp Square Shield UEF
 			'urbssg01',-- Exp Square Shield Cybran
 			'xsbssg01',-- Exp Square Shield Seraphim
+			'seb2404', -- Exp Drop-Pod Artillery
 			'wel0405', -- King Kraptor
 		};
 
