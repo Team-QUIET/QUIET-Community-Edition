@@ -1,0 +1,67 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "uel0401",
+
+      Weapon = {
+        {
+
+            RateOfFire = 10/10,
+
+            TurretYawSpeed = 75,
+
+        },
+        {
+
+            RateOfFire = 10/10,
+
+            TurretYawSpeed = 75,
+
+        },
+        {
+
+            RateOfFire = 10/10,
+
+            TurretYawSpeed = 75,
+
+        },
+        {
+
+            RateOfFire = 10/10,
+
+            TurretYawSpeed = 75,
+
+        },
+        {
+
+            RateOfFire = 30/10,
+
+            TurretYawSpeed = 90,
+
+        },
+        {
+
+            RateOfFire = 30/10,
+
+            TurretYawSpeed = 90,
+			
+        },
+        {
+
+            RateOfFire = 15/10,
+
+        },
+        {
+
+            RateOfFire = 15/10,
+
+        },
+        {
+
+            RateOfFire = 10/10,
+
+        },
+        {
+
+        },
+    },
+}
