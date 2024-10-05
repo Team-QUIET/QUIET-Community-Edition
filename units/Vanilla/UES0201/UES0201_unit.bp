@@ -47,7 +47,7 @@ UnitBlueprint {
 			
             MaxRadius = 37,
 
-            MuzzleSalvoDelay = 0,
+            MuzzleSalvoDelay = 0.2,
             MuzzleVelocity = 10,
 			
             ProjectileLifetime = 3,
@@ -93,7 +93,7 @@ UnitBlueprint {
 			
             MaxRadius = 37,
 
-            MuzzleSalvoDelay = 0,
+            MuzzleSalvoDelay = 0.2,
             MuzzleVelocity = 10,
 			
             ProjectileLifetime = 3,
