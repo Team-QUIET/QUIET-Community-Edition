@@ -127,6 +127,19 @@ do
 						for k, cat in pairs(bp.Categories) do
 							cats[cat] = true
 						end
+						
+						-- Adds DRAGBUILD to all Units
+						local CatsMisc = {
+							'DRAGBUILD',
+						}
+						if bp.Categories then
+							for i, cat in CatsMisc do
+								if not table.find(bp.Categories, cat) then
+									table.insert(bp.Categories, cat)
+								end
+							end
+						end
+		
 					
 						-- Allow T2, T3, & T4 Engineers to Build T2 Factories
 						local CatsT2 = {
