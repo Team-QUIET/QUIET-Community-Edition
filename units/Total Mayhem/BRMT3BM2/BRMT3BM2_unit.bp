@@ -1,0 +1,46 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "brmt3bm2",
+
+  Weapon = {
+        {
+
+            FiringTolerance = 1,
+            FiringRandomness = 1.5,
+			      FiringRandomnessWhileMoving = 1.5,
+
+            MaxRadius = 40,
+            MinRadius = 12,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 6,
+			
+            MuzzleVelocity = 24,
+            MuzzleVelocityRandom = 0.3,
+
+            RateOfFire = 1/10,
+
+            TurretYawSpeed = 75,
+
+		    },
+		    {
+
+            RateOfFire = 0.5/10,
+
+        },		
+		    {
+
+            RateOfFire = 5/10,
+
+            TurretYawSpeed = 45,
+
+        },
+		    {
+
+            RateOfFire = 10/10,
+
+            TurretYawSpeed = 45,
+
+        },
+    },
+}
