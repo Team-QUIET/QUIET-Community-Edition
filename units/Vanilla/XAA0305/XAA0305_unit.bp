@@ -1,0 +1,74 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "xaa0305",
+	
+    Air = {
+        AutoLandTime = 1,
+        BankFactor = 0.1,
+        BankForward = false,
+        CanFly = true,
+        CirclingDirChangeFrequencySec = 1,
+        CirclingElevationChangeRatio = 0.25,
+        CirclingRadiusChangeMaxRatio = 0.7,
+        CirclingRadiusChangeMinRatio = 0.5,
+        CirclingRadiusVsAirMult = 0.66,
+        CirclingTurnMult = 3,
+        KLift = 3,
+        KLiftDamping = 2.5,
+        KMove = 0.8,
+        KMoveDamping = 2,
+        KTurn = 0.8,
+        KTurnDamping = 1.5,
+        LiftFactor = 7,
+        MaxAirspeed = 10,
+        MinAirspeed = 3,
+        StartTurnDistance = 5,
+        Winged = false,
+    },
+	
+    Weapon = {
+        {   
+            Damage = 80,	
+
+			FiringRandomness = 0.3,
+            FiringTolerance = 2,
+
+			
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 4,
+            MuzzleVelocity = 40,
+			
+            RateOfFire = 10/8,
+
+            ProjectilesPerOnFire = 4,
+			
+            TargetCheckInterval = 1.0,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                "ANTIAIR",
+                "GROUNDATTACK",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "ALLUNITS",
+            },
+
+            TurretPitchRange = 70,
+            TurretPitchSpeed = 70,
+
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+        },
+		
+        {
+
+        },
+        {
+            
+        },
+        {
+            
+        },
+    },
+}

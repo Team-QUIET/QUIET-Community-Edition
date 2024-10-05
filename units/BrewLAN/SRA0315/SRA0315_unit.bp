@@ -1,0 +1,82 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "sra0315",
+    
+    Air = {
+        AutoLandTime = 1,
+        BankFactor = 0.1,
+        BankForward = false,
+        CanFly = true,
+        CirclingDirChangeFrequencySec = 0.7,
+        CirclingElevationChangeRatio = 0.2,
+        CirclingRadiusChangeMaxRatio = 0.7,
+        CirclingRadiusChangeMinRatio = 0.5,
+        CirclingTurnMult = 3,
+        KLift = 3,
+        KLiftDamping = 2.5,
+        KMove = 1,
+        KMoveDamping = 2,
+        KTurn = 0.8,
+        KTurnDamping = 1.8,
+        LiftFactor = 7,
+        MaxAirspeed = 15,
+        MinAirspeed = 13,
+        StartTurnDistance = 5,
+    },
+    
+    Weapon = { --  Firing cycles based on the golden ratio to keep them out of sync as much as possible
+        {
+            HeadingArcRange = 50,
+
+            MaxRadius = 40,
+            
+            TargetPriorities = { 
+                'SPECIALHIGHPRI',
+				"ANTIAIR",
+                "GROUNDATTACK",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "TECH1 MOBILE",
+                "ALLUNITS",
+            },            
+            
+            TurretPitchRange = 45, 
+            TurretPitchSpeed = 45,  
+
+            TurretYawRange = 50,   
+            TurretYawSpeed = 50,
+        },
+
+        {  
+            TurretYawRange = 50,   
+            TurretYawSpeed = 50,
+
+            HeadingArcRange = 50,
+        },
+
+        {  
+            TurretYawRange = 50,   
+            TurretYawSpeed = 50,
+
+            HeadingArcRange = 50,
+        },
+       
+        {  
+            TurretYawRange = 50,   
+            TurretYawSpeed = 50,
+
+            HeadingArcRange = 50,
+        },
+        {
+            TurretYawRange = 50,   
+            TurretYawSpeed = 50,
+
+            HeadingArcRange = 50,
+        },
+
+        {
+
+        },
+    },
+}

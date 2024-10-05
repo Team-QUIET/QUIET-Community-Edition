@@ -1,0 +1,62 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "xra0305",
+	
+    Air = {
+        AutoLandTime = 1,
+        BankFactor = 0.1,
+        BankForward = false,
+        CanFly = true,
+        CirclingDirChangeFrequencySec = 1,
+        CirclingElevationChangeRatio = 0.25,
+        CirclingRadiusChangeMaxRatio = 0.7,
+        CirclingRadiusChangeMinRatio = 0.5,
+        CirclingTurnMult = 3,
+        KLift = 3,
+        KLiftDamping = 2.5,
+        KMove = 1,
+        KMoveDamping = 2,
+        KTurn = 1,
+        KTurnDamping = 2.3,
+        LiftFactor = 7,
+        MaxAirspeed = 10,
+        MinAirspeed = 3,
+        StartTurnDistance = 5,
+    },
+	
+    Weapon = {
+        {		
+            Damage = 140,
+
+            FiringTolerance = 0.5,
+			
+            MaxRadius = 32,
+
+            MuzzleVelocity = 60,
+			
+            RateOfFire = 10/6,		-- 200 DPS Ground
+
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+				"ANTIAIR",
+                "GROUNDATTACK",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "TECH1 MOBILE",
+                "ALLUNITS",
+            },
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 80,
+
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+        },
+        {
+           
+        },
+        {
+
+        },
+    },
+}
