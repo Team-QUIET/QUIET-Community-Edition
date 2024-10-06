@@ -10,6 +10,7 @@ do
 		ReclaimAlterations(all_blueprints)
 		NotificationAlterations(all_blueprints)
 		NullifyUnitBlueprints(all_blueprints)
+		NullifyUnitRackSalvoFiresAfterChargeInBlueprints(all_blueprints)
 	end
 
 	--=======================================
@@ -127,20 +128,7 @@ do
 						for k, cat in pairs(bp.Categories) do
 							cats[cat] = true
 						end
-						
-						-- Adds DRAGBUILD to all Units
-						local CatsMisc = {
-							'DRAGBUILD',
-						}
-						if bp.Categories then
-							for i, cat in CatsMisc do
-								if not table.find(bp.Categories, cat) then
-									table.insert(bp.Categories, cat)
-								end
-							end
-						end
-		
-					
+
 						-- Allow T2, T3, & T4 Engineers to Build T2 Factories
 						local CatsT2 = {
 							'BUILTBYTIER2ENGINEER',
@@ -159,21 +147,10 @@ do
 						local CatsT3 = {
 							'BUILTBYTIER3ENGINEER',
 						}
-						if cats.BUILTBYTIER2FACTORY and cats.FACTORY and cats.STRUCTURE and cats.TECH3 then 
+						if cats.BUILTBYTIER2FACTORY and cats.FACTORY and cats.STRUCTURE and cats.TECH3 then
 							for i, cat in CatsT3 do
 								if not table.find(bp.Categories, cat) then
 									table.insert(bp.Categories, cat)
-								end
-							end
-						end
-
-						-- T1 & T2 Air Scout Cost Reduction
-						if cats.SCOUT and cats.INTELLIGENCE and cats.HIGHALTAIR and cats.AIR then
-							do
-								if cats.TECH1 then
-									bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.315
-								elseif cats.TECH2 then
-									bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.5
 								end
 							end
 						end
@@ -291,31 +268,46 @@ do
 		end
 	end
 
+	function NullifyUnitRackSalvoFiresAfterChargeInBlueprints(all_blueprints)
+		for id, bp in pairs(all_blueprints.Unit) do
+			if id == 'srb2402' or id == 'ueb2306' then
+				-- hello
+			else
+				if bp.Weapon ~= nil then
+					for idW, bpW in pairs(bp.Weapon) do
+						if bpW.RackSalvoFiresAfterCharge ~= nil then
+							bpW.RackSalvoFiresAfterCharge = false
+						end
+					end
+				end
+			end
+		end
+	end
+
 	--=======================================
 	-- FUNCTION NullifyUnitBlueprints(ALL_BLUEPRINTS)
 	-- Nullify categories on units we don't want to see built
 	--=======================================
 	function NullifyUnitBlueprints(all_blueprints)
 		local unitPruningId = {
-			'brnt2bm', -- Banshee
-			'wrl0305', -- Echidna
-			'brnt3wt', -- WarHammer
-			'dea0202', -- Janus
-			'dra0202', -- Corsair
-			'uel0402', -- Rampage
-			'brnt3abb',-- Ironfist
+			'brnt2bm',   -- Banshee
+			'wrl0305',   -- Echidna
+			'brnt3wt',   -- WarHammer
+			'dea0202',   -- Janus
+			'dra0202',   -- Corsair
+			'uel0402',   -- Rampage
+			'brnt3abb',  -- Ironfist
 			'brpat2bomber', -- Vesinee
-			'xsa0202', -- Notha
-			'uab8765', -- Exp Storage Aeon
-			'urb8765', -- Exp Storage Cybran
-			'ueb8765', -- Exp Storage UEF
-			'xsb8765', -- Exp Storage Seraphim
-			'uabssg01',-- Exp Square Shield Aeon
-			'uebssg01',-- Exp Square Shield UEF
-			'urbssg01',-- Exp Square Shield Cybran
-			'xsbssg01',-- Exp Square Shield Seraphim
-			'seb2404', -- Exp Drop-Pod Artillery
-			'wel0405', -- King Kraptor
+			'xsa0202',   -- Notha
+			'uab8765',   -- Exp Storage Aeon
+			'urb8765',   -- Exp Storage Cybran
+			'ueb8765',   -- Exp Storage UEF
+			'xsb8765',   -- Exp Storage Seraphim
+			'uabssg01',  -- Exp Square Shield Aeon
+			'uebssg01',  -- Exp Square Shield UEF
+			'urbssg01',  -- Exp Square Shield Cybran
+			'xsbssg01',  -- Exp Square Shield Seraphim
+			'wel0405',   -- King Kraptor
 		};
 
 		for i, bp in pairs(unitPruningId) do
