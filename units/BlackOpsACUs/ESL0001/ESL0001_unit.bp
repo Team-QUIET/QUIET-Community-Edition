@@ -78,11 +78,11 @@ UnitBlueprint {
 
         MissileTorpDestroy = { AttachBone = 'Body', Radius = 5, RedirectRateOfFire = 8, ProjectileCategories = {'TACTICAL MISSILE','TORPEDO'} },
 		
-        LambdaRedirect01 = { AttachBone = 'Left_Turret_Muzzle', Radius = 7, RedirectRateOfFire = 9 },
-        LambdaRedirect02 = { AttachBone = 'Right_Turret_Muzzle', Radius = 9, RedirectRateOfFire = 9 },
+        LambdaRedirect01 = { AttachBone = 'Left_Turret_Muzzle', Radius = 7, RedirectRateOfFire = 6 },
+        LambdaRedirect02 = { AttachBone = 'Right_Turret_Muzzle', Radius = 9, RedirectRateOfFire = 6 },
 		
-        LambdaDestroy01 = { AttachBone = 'Left_Arm_B01', Radius = 11, RedirectRateOfFire = 7 },
-        LambdaDestroy02 = { AttachBone = 'Right_Arm_B01', Radius = 13, RedirectRateOfFire = 7 },
+        LambdaDestroy01 = { AttachBone = 'Left_Arm_B01', Radius = 11, RedirectRateOfFire = 5 },
+        LambdaDestroy02 = { AttachBone = 'Right_Arm_B01', Radius = 13, RedirectRateOfFire = 5 },
 
         ArmorType = 'Commander',
         
