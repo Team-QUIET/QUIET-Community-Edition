@@ -2,7 +2,7 @@ WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'.
 -- This warning allows us to see exactly where our Hook Line starts so we can debug the exact line thats causing an error easier
 do
 	local pairs = pairs
-	
+
 	local TableFind = table.find
 	local TableGetn = table.getn
 	local TableInsert = table.insert
@@ -435,26 +435,26 @@ do
 				if speed then
 					if bp.SizeSphere then
 						if bp.SizeSphere < 0.1 * speed then
-							-- WARN(string.format("Overriding the size of the collision sphere of unit ( %s ), it should be atleast 10 percent ( %s ) of the maximum speed ( %s ) to guarantee proper functioning beam weapons"
-							-- 	, tostring(bp.BlueprintId), tostring(0.1 * speed), tostring(speed)))
+							WARN(string.format("Overriding the size of the collision sphere of unit ( %s ), it should be atleast 10 percent ( %s ) of the maximum speed ( %s ) to guarantee proper functioning beam weapons"
+								, tostring(bp.BlueprintId), tostring(0.1 * speed), tostring(speed)))
 							bp.SizeSphere = 0.1 * speed
 						end
 					else
 						if bp.SizeX < 0.1 * speed then
-							-- WARN(string.format("Overriding the x axis of collision box of unit ( %s ), it should be atleast 10 percent ( %s ) of the maximum speed ( %s ) to guarantee proper functioning beam weapons"
-							-- 	, tostring(bp.BlueprintId), tostring(0.1 * speed), tostring(speed)))
+							WARN(string.format("Overriding the x axis of collision box of unit ( %s ), it should be atleast 10 percent ( %s ) of the maximum speed ( %s ) to guarantee proper functioning beam weapons"
+								, tostring(bp.BlueprintId), tostring(0.1 * speed), tostring(speed)))
 							bp.SizeX = 0.1 * speed
 						end
 		
 						if bp.SizeZ < 0.1 * speed then
-							-- WARN(string.format("Overriding the z axis of collision box of unit ( %s ), it should be atleast 10 percent ( %s ) of the maximum speed ( %s ) to guarantee proper functioning beam weapons"
-							-- 	, tostring(bp.BlueprintId), tostring(0.1 * speed), tostring(speed)))
+							WARN(string.format("Overriding the z axis of collision box of unit ( %s ), it should be atleast 10 percent ( %s ) of the maximum speed ( %s ) to guarantee proper functioning beam weapons"
+								, tostring(bp.BlueprintId), tostring(0.1 * speed), tostring(speed)))
 							bp.SizeZ = 0.1 * speed
 						end
 		
 						if bp.SizeY < 0.5 then
-							-- WARN(string.format("Overriding the y axis of collision box of unit ( %s ), it should be atleast 0.5 to guarantee proper functioning gunships"
-							-- 	, tostring(bp.BlueprintId), tostring(0.1 * speed), tostring(speed)))
+							WARN(string.format("Overriding the y axis of collision box of unit ( %s ), it should be atleast 0.5 to guarantee proper functioning gunships"
+								, tostring(bp.BlueprintId), tostring(0.1 * speed), tostring(speed)))
 							bp.SizeY = 0.5
 						end
 					end
@@ -480,7 +480,7 @@ do
 						damagePerRangeCategory[category] = damagePerRangeCategory[category] + dps
 					else
 						if weapon.WeaponCategory ~= 'Death' then
-							--WARN("Invalid weapon on " .. bp.BlueprintId)
+							WARN("Invalid weapon on " .. bp.BlueprintId)
 						end
 					end
 				end
@@ -550,7 +550,7 @@ do
 			end
 
 			if averageDensity ~= bp.AverageDensity then
-				--WARN(string.format("Overwriting the average density of %s from %s to %s", tostring(bp.BlueprintId), bp.AverageDensity, averageDensity))
+				WARN(string.format("Overwriting the average density of %s from %s to %s", tostring(bp.BlueprintId), bp.AverageDensity, averageDensity))
 			end
 
 			bp.AverageDensity = averageDensity
