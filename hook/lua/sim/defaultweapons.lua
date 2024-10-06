@@ -208,7 +208,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
             if bp.WeaponUnpacks and self.WeaponPackState ~= 'Unpacked' then
                 LOUDSTATE(self, self.WeaponUnpackingState)
             else
-                if bp.RackSalvoChargeTime and bp.RackSalvoChargeTime > 0 or bp.RackSalvoFiresAfterCharge then
+                if bp.RackSalvoChargeTime and bp.RackSalvoChargeTime > 0 or bp.RackSalvoFiresAfterCharge == true then
                     LOUDSTATE(self, self.RackSalvoChargeState)
 
                     -- SkipReadyState used for Janus and Corsair
@@ -245,7 +245,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
                 unit:SetBusy(true)
             end
 
-            if bp.RackSalvoFiresAfterCharge then
+            if bp.RackSalvoFiresAfterCharge == true then
                 LOUDSTATE(self, self.RackSalvoFiringState)
             else
                 LOUDSTATE(self, self.RackSalvoFireReadyState)
@@ -683,7 +683,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
             -- Weapons that fire after charging will ignore the fire rate if we don't send them to the idle state
             -- and if we send them to the fire ready state instead, they will ignore charge effects
-            local autoFire = not bp.ManualFire and not bp.RackSalvoFiresAfterCharge
+            local autoFire = not bp.ManualFire and not bp.RackSalvoFiresAfterCharge == true
 
             if hasTarget and bp.RackSalvoChargeTime > 0 and autoFire then
                 LOUDSTATE(self, self.RackSalvoChargeState)
