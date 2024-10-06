@@ -3,6 +3,10 @@ QUIET
 Rebalance Changelog
 ---------------		
 
+# 1.47
+
+Fixed 7.13 WeaponState Issue <br>
+A Long Term Fix is being worked on for future releases <br>
 
 # 1.46
 
