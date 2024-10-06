@@ -316,6 +316,7 @@ do
 		local unitPruningId = {
 			'brnt2bm',   -- Banshee
 			'wrl0305',   -- Echidna
+			'wel03041',  -- Walrus
 			'brnt3wt',   -- WarHammer
 			'dea0202',   -- Janus
 			'dra0202',   -- Corsair
