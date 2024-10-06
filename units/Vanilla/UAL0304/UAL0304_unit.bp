@@ -2,6 +2,12 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "ual0304",
 
+    Economy = {
+        BuildCostEnergy = 8000,
+        BuildCostMass = 800,
+        BuildTime = 2250,
+    },
+
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
