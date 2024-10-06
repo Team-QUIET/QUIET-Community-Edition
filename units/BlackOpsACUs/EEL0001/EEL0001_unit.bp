@@ -38,7 +38,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
-            Damage = 120,
+            Damage = 100,
             DamageType = 'Normal',
 			
             DisplayName = 'Zephyr',
