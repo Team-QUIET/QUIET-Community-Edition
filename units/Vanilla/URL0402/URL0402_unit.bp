@@ -5,14 +5,14 @@ UnitBlueprint {
     Weapon = {
         {
 
-            RateOfFire = 15/10
+            RateOfFire = 15/10,
 
             TurretYawSpeed = 90,
 
         },
         {
 
-            RateOfFire = 15/10
+            RateOfFire = 15/10,
 
             TurretYawSpeed = 90,
 
