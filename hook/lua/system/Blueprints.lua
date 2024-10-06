@@ -1,15 +1,19 @@
 WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * QUIET Hook for Blueprints.lua' ) 
 -- This warning allows us to see exactly where our Hook Line starts so we can debug the exact line thats causing an error easier
-
 do
-
+	local pairs = pairs
+	
 	local TableFind = table.find
 	local TableGetn = table.getn
+	local TableInsert = table.insert
 
 	local MathMax = math.max
 	local MathFloor = math.floor
+	local MathSqrt = math.sqrt
 
 	local StringFind = string.find
+
+	local weaponTargetCheckUpperLimit = 6000
 
 	-- QCE clobbers the ModBlueprints to remove many nebulous changes in the Blueprints.lua that significantly affect Unit BPs Globally
 	-- QCE cleans the Blueprints.lua up and sections them into their own functions with exact action names to allow people to see what's going on more clearly
@@ -24,8 +28,13 @@ do
 		NotificationAlterations(all_blueprints)
 		NullifyUnitBlueprints(all_blueprints)
 		NullifyUnitRackSalvoFiresAfterChargeInBlueprints(all_blueprints)
+		ProcessWeaponAlterations(all_blueprints, all_blueprints.Unit)
+		ProcessPropAlterations(all_blueprints)
 	end
 
+	--=======================================
+	-- Various Local Functions that assist with Functions farther in this file
+	--=======================================
 	local function DetermineWeaponDPS(weapon)
 		--- With thanks to Sean 'Balthazar' Wheeldon
 		-- Base values
@@ -83,6 +92,48 @@ do
 		end
 
 		return nil
+	end
+
+	--=======================================
+	-- Various Processing Functions To Pass Data Correctly
+	-- To Various Functions
+	--=======================================
+	function ProcessWeaponAlterations(all_blueprints, units)
+		local StringLower = string.lower
+	
+		local unitsToSkip = {
+			daa0206 = true,
+		}
+	
+		for _, unit in units do
+			if not unitsToSkip[StringLower(unit.bp.BlueprintId or "")] then
+				if unit.Weapon then
+					for _, weapon in unit.Weapon do
+						if not weapon.DummyWeapon then
+	
+							local projectile
+							local projectileId = string.lower(tostring(weapon.ProjectileId))
+							for k, projectile in all_blueprints.Projectile do
+								if string.lower(tostring(projectile.Source)) == projectileId then
+									projectile = projectile
+									break
+								end
+							end
+	
+							WeaponAlterations(unit, weapon, projectile)
+						end
+					end
+				end
+			end
+		end
+	end
+
+	function ProcessPropAlterations(all_blueprints)
+		if all_blueprints.Prop then
+			for _, prop in pairs(all_blueprints.Prop) do
+				PropAlterations(prop)
+			end
+		end
 	end
 
 	--=======================================
@@ -503,7 +554,180 @@ do
 			end
 
 			bp.AverageDensity = averageDensity
-			--LOG("AverageDensity is "..repr(bp.AverageDensity))
+			--LOG("Unit is "..repr(bp.BlueprintId).." AverageDensity is "..repr(bp.AverageDensity))
+		end
+	end
+
+	--=======================================
+	-- FUNCTION WeaponAlterations(ALL_BLUEPRINTS)
+	-- This is for Weapon Alterations that do not belong in BalanceAlterations or UnitAlterations
+	--=======================================
+	function WeaponAlterations(unit, weapon, projectile)
+		--LOG("WeaponAlterations Start")
+		-- pre-compute flags   
+		local isAir = false
+		local isStructure = false
+		local isBomber = false
+		local isExperimental = false
+		local isTech3 = false
+		local isTech2 = false
+		if unit.Categories then
+			for _, category in unit.Categories do
+				isStructure = isStructure or category == "STRUCTURE"
+				isAir = isAir or category == "AIR"
+				isBomber = isBomber or category == "BOMBER"
+				isTech2 = isTech2 or category == "TECH2"
+				isTech3 = isTech3 or category == "TECH3"
+				isExperimental = isExperimental or category == "EXPERIMENTAL"
+			end
+		end
+	
+		-- process weapon
+	
+		-- Death weapons of any kind
+		if weapon.DamageType == "DeathExplosion" or weapon.Label == "DeathWeapon" or weapon.Label == "DeathImpact" then
+			weapon.TargetCheckInterval = weaponTargetCheckUpperLimit
+			weapon.AlwaysRecheckTarget = false
+			weapon.TrackingRadius = 0.0
+			return
+		end
+	
+		-- Tactical, strategical missile and torpedo defenses
+		if weapon.RangeCategory == "UWRC_Countermeasure" or weapon.TargetType == "RULEWTT_Projectile" then
+			weapon.TargetCheckInterval = weapon.TargetCheckInterval or 0.4
+			weapon.AlwaysRecheckTarget = false
+			weapon.TrackingRadius = 1.0
+			weapon.ManualFire = false
+			return
+		end
+	
+		-- manual launch of tactical and strategic missiles
+		if weapon.ManualFire then
+			weapon.TargetCheckInterval = weaponTargetCheckUpperLimit
+			weapon.AlwaysRecheckTarget = false
+			weapon.TrackingRadius = 0.0
+			return
+		end
+	
+		-- process target check interval
+	
+		-- if it is set then we use that - allows us to make adjustments as we see fit
+		if weapon.TargetCheckInterval == nil then
+			local intervalByRateOfFire = 0.5 / (weapon.RateOfFire or 1)
+			local intervalByRadius = (weapon.MaxRadius or 10) / 30
+			weapon.TargetCheckInterval = math.min(intervalByRateOfFire, intervalByRadius)
+	
+			-- clamp value to something sane
+			if weapon.TargetCheckInterval < 0.4 and (not isExperimental) then
+				weapon.TargetCheckInterval = 0.4
+			end
+	
+			-- clamp value to something sane
+			if weapon.TargetCheckInterval < 0.2 then
+				weapon.TargetCheckInterval = 0.2
+			end
+	
+			-- clamp value to something sane
+			if weapon.TargetCheckInterval > 3 then
+				weapon.TargetCheckInterval = 3
+			end
+	
+			-- allow weapons that retarget to have a relative fast target check interval
+			if projectile then
+				if projectile.Physics.TrackTarget and weapon.TargetCheckInterval > 0.8 then
+					weapon.TargetCheckInterval = 0.8
+				end
+			end
+		end
+	
+		-- process target tracking radius 
+	
+		-- if it is set then we use that - allows us to make adjustments as we see fit
+		if weapon.TrackingRadius == nil then
+			-- by default, give every unit a 5% target checking radius
+			weapon.TrackingRadius = 1.05
+	
+			-- remove target tracking radius for non-aa weaponry part of structures
+			if isStructure and weapon.RangeCategory ~= "UWRC_AntiAir" then
+				weapon.TrackingRadius = 1.0
+			end
+	
+			-- give anti air a larger track radius
+			if weapon.RangeCategory == "UWRC_AntiAir" then
+				weapon.TrackingRadius = 1.15
+			end
+	
+			-- add significant target checking radius for bombers
+			if isBomber then 
+				weapon.TrackingRadius = 1.25
+			end
+		end
+	
+		-- # process target rechecking
+	
+		-- if it is set then we use that - allows us to make adjustments as we see fit
+		if weapon.AlwaysRecheckTarget == nil then
+	
+			-- by default, do not recheck targets as that is expensive when a lot of units are stacked on top of another
+			weapon.AlwaysRecheckTarget = false
+	
+			-- allow 
+			if  weapon.RangeCategory == 'UWRC_DirectFire' or
+				weapon.RangeCategory == "UWRC_IndirectFire" or
+				weapon.MaxRadius > 50 and (weapon.RangeCategory ~= "UWRC_AntiNavy") then
+				weapon.AlwaysRecheckTarget = true
+			end
+	
+			-- always allow anti air weapons attached to structures to retarget, as otherwise they may be stuck on a scout
+			if isStructure and weapon.RangeCategory == "UWRC_AntiAir" then
+				weapon.AlwaysRecheckTarget = true
+			end
+	
+			-- always allow experimentals to retarget
+			if isExperimental then
+				weapon.AlwaysRecheckTarget = true
+			end
+		end
+	
+		-- # sanitize values
+	
+		-- do not allow the 'bomb weapon' of bombers to suddenly retarget, as then they won't drop their bomb when they do
+		if weapon.NeedToComputeBombDrop then
+			weapon.AlwaysRecheckTarget = false
+		end
+	
+		weapon.TargetCheckInterval = 0.1 * math.floor(10 * weapon.TargetCheckInterval)
+		weapon.TrackingRadius = 0.1 * math.floor(10 * weapon.TrackingRadius)
+		--LOG("WeaponAlterations End")
+	end
+
+	function PropAlterations(prop)
+
+		local sx = prop.SizeX or 1
+		local sy = prop.SizeY or 1
+		local sz = prop.SizeZ or 1
+	
+		-- give more emphasis to the x / z value as that is easier to see in the average camera angle
+		local weighted = 0.40 * sx + 0.2 * sy + 0.4 * sz
+		if prop.ScriptClass == 'Tree' or prop.ScriptClass == 'TreeGroup' then
+			weighted = 2.6
+		end
+	
+		-- https://www.desmos.com/calculator (0.9 * sqrt(100 * 500 * x))
+		local lod = 0.9 * MathSqrt(100 * 500 * weighted)
+	
+		if prop.Display and prop.Display.Mesh and prop.Display.Mesh.LODs then
+			local n = TableGetn(prop.Display.Mesh.LODs)
+			for k = 1, n do
+				local data = prop.Display.Mesh.LODs[k]
+	
+				-- https://www.desmos.com/calculator (x * x)
+				local factor = (k / n) * (k / n)
+				local LODCutoff = factor * lod
+	
+				-- sanitize the value
+				data.LODCutoff = MathFloor(LODCutoff / 10 + 1) * 10
+			end
 		end
 	end
 
