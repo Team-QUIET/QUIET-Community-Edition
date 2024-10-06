@@ -1,0 +1,12 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "xsb4201",
+
+    Weapon = {
+        {
+            RateOfFire = 13/10,
+
+            TargetCheckInterval = 0.3,
+        },
+    },
+}
