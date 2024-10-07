@@ -50,7 +50,9 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_Countermeasure',
 			
-            RateOfFire = 1,     -- controlled by MuzzleSalvoDelay and WeaponRepackTimeout
+            RateOfFire = 1,
+
+            RackSalvoReloadTime = 3.5,
 			
             TargetCheckInterval = 0.5,
 			
