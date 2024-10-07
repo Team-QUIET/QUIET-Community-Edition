@@ -5,7 +5,7 @@ UnitBlueprint {
       Weapon = {
         {
 
-            RateOfFire = 20/10,
+            RateOfFire = 13/10,
             
         },
         {
