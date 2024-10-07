@@ -14,3 +14,13 @@ end
 function TrackProj(projectitem, self)
 
 end
+
+--Another workaround for the prior TrackProj function
+
+--This supposedly exists only to allow LOUD to track
+--M28's units doing micro at the projectile level (dubious or not, IDGAF).
+
+--It has the great side effect of entirely breaking miasma shells
+--for reasons, making M28 immune to an entire faction's artillery.
+function TrackMicro(projectitem, self)
+end
