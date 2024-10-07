@@ -3,6 +3,36 @@ QUIET
 Rebalance Changelog
 ---------------		
 
+# 1.48
+
+### Global 
+**All Units Guard Radius are now all santized and standardize. This will heavily improve usage of Patrol & Attack Move.** <br>
+**Units now no longer walk into enemy when on Attack Move and Engineer Attack Move when reclaiming will perform significantly better** <br>
+
+**All Units now have significantly more accurate Overlays for different Weapon Ranges. Any Unit that was missing Weapon Ranges will now have them displayed properly and accurately.** <br>
+
+**All Units now have accurate speeds that cooperate better with their collision box and collision sphere size. This will enable Gunships & Beam Weapons to hit significantly more often** <br>
+
+**All Units now have an AverageDensity based on HP which allows the Engine determine who pushes who in a collision event. This allows heavier units to move through lighter units with ease and heavily improves Pathfinding in certain situations.** <br>
+
+**All Weapons [Units] now have a standardized and santized TargetCheckInterval based on their weapon type. Weapons also all have a standardized TrackingRadius and Variables included [AlwaysRecheckTarget] are now also standardized and will significantly improve Weapon Behavior** <br>
+
+**Props now have a much larger visual display and should appear much easier and at a higher camera angle then previously** <br>
+
+### Seraphim ACU
+**Lower Number is Buff** <br>
+ACU Lambda Rate of Fire: 9 -> 7 <br>
+
+### T3 Mobile Artillery
+Mass Cost: 500 -> 800
+
+### Seraphim TMD
+Rate of Fire: 1.05 -> 1.3
+
+### Misc
+Fix T4 Cybran Monkeylord Weapons being Broken <br>
+Remove T3 UEF Walrus <br>
+
 # 1.47
 
 Fixed 7.13 WeaponState Issue <br>
