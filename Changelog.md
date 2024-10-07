@@ -1,7 +1,22 @@
 QUIET
 ===============	
 Rebalance Changelog
----------------		
+---------------
+
+# 1.49
+
+# Mavor & RFSAC
+**Included Additional Units That Had RackSalvoFiresAfterCharge Within QCE** <br>
+**Mavor now has RackSalvoFiresAfterCharge set to true to provide it with accurate Rate of Fire** <br>
+
+# T2 Destroyers
+RackSalvoReloadTime: 3.5 Seconds
+
+# T3 UEF Juggernaut
+Shield: 2250 -> 4400
+
+# T3 Aeon Armillary
+Rate Of Fire: 30/10 -> 13/10
 
 # 1.48
 

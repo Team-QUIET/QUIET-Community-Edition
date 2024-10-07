@@ -102,7 +102,7 @@ Unit = Class(QCEUnit) {
         WaitTicks( (self.DeathThreadDestructionWaitTime or 0.1) * 10 )
 
         self:Destroy()
-        --LOG("Hello, I am LOUD CE Unit Lua. Welcome to the Journey, Young Sir!")
+        --LOG("Hello, I am QUIET CE Unit Lua. Welcome to the Journey, Young Sir!")
     end,
 
 }
