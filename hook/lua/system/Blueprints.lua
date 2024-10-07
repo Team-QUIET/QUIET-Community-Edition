@@ -881,8 +881,8 @@ do
 	--=======================================
 	function NullifyUnitRackSalvoFiresAfterChargeInBlueprints(all_blueprints)
 		for id, bp in pairs(all_blueprints.Unit) do
-			if id == 'srb2402' or id == 'ueb2306' then
-				-- hello
+			if id == 'srb2402' or id == 'ueb2306' or id == 'ueb2401' or id == 'wal0401' or id == 'ual0401' or id == 'xsb2204' then
+				continue
 			else
 				if bp.Weapon ~= nil then
 					for idW, bpW in pairs(bp.Weapon) do
