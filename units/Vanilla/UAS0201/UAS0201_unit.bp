@@ -47,7 +47,9 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_Countermeasure',
 			
-            RateOfFire = 1,     -- controlled by salvodelay and WeaponRepackTimeout - 1 every 0.2 seconds
+            RateOfFire = 1,
+
+            RackSalvoReloadTime = 3.5,
 			
             TargetCheckInterval = 0.5,
 			
@@ -93,6 +95,8 @@ UnitBlueprint {
             ProjectileLifetime = 3,
 			
             RateOfFire = 1,
+
+            RackSalvoReloadTime = 3.5,
 			
             TargetCheckInterval = 0.5,
 			
@@ -140,6 +144,8 @@ UnitBlueprint {
             ProjectileLifetime = 3,
 
             RateOfFire = 1,
+
+            RackSalvoReloadTime = 3.5,
 			
             TargetCheckInterval = 0.5,
 			
