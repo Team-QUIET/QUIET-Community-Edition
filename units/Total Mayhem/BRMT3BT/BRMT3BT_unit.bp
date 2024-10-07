@@ -2,10 +2,10 @@ UnitBlueprint {
   Merge = true,
   BlueprintId = "brmt3bt",
 
-      Weapon = {
-		    {
+    Weapon = {
+		{
 
-			      FiringRandomnessWhileMoving = 1.5,
+			FiringRandomnessWhileMoving = 1.5,
 
             RateOfFire = 1/10,
 
@@ -17,7 +17,6 @@ UnitBlueprint {
             RateOfFire = 4/10,
 
             TurretYawSpeed = 90,
-
-		    },
+		},
     },
 }
