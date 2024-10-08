@@ -883,7 +883,6 @@ do
 			'seb2404',   -- Exp Drop-Pod Artillery
 			'wel0405',   -- King Kraptor
 		};
-
 		for i, bp in pairs(unitPruningId) do
 			if all_blueprints.Unit[bp] then
 				local unit = all_blueprints.Unit[bp];
@@ -898,9 +897,17 @@ do
 	-- FUNCTION NullifyUnitRackSalvoFiresAfterChargeInBlueprints(ALL_BLUEPRINTS)
 	-- Nullify RackSalvoFiresAfterCharge on units that do not need it
 	--=======================================
+	local unitContinueId = {
+		'srb2402',
+		'ueb2306',
+		'ueb2401',
+		'wal0401',
+		'ual0401',
+		'xsb2204',
+	};
 	function NullifyUnitRackSalvoFiresAfterChargeInBlueprints(all_blueprints)
 		for id, bp in pairs(all_blueprints.Unit) do
-			if id == 'srb2402' or id == 'ueb2306' or id == 'ueb2401' or id == 'wal0401' or id == 'ual0401' or id == 'xsb2204' then
+			if TableFind(unitContinueId, id) then
 				continue
 			else
 				if bp.Weapon ~= nil then
