@@ -148,157 +148,138 @@ do
 
 		for id, bp in all_blueprints.Unit do
 			if bp.Categories then
-				for i, cat in bp.Categories do
-					if cat == 'LAND' then
-						for j, catj in bp.Categories do
-							if catj == 'MOBILE' then
-								-- UniformScale universally to make t2 & t3 more mobile
-								-- Reset T1 & T2 Health & Speed back to normal
-								T1_Adjustment = 0.893
-								T2_Adjustment = 0.944
-								T3_Adjustment = 1.00
+				local cats = {}
+				for k, cat in pairs(bp.Categories) do
+					cats[cat] = true
+				end
 
-								for _, cat_mobile in bp.Categories do
-									if cat_mobile == 'TECH1' then
-										bp.Defense.MaxHealth = bp.Defense.MaxHealth * T1_Adjustment
+				if cats.LAND and cats.MOBILE then
+					-- UniformScale universally to make t2 & t3 more mobile
+					-- Reset T1 & T2 Health & Speed back to normal
+					T1_Adjustment = 0.893
+					T2_Adjustment = 0.944
+					T3_Adjustment = 1.00
 
-										bp.Defense.Health = bp.Defense.MaxHealth
+					if cats.TECH1 then
+						bp.Defense.MaxHealth = bp.Defense.MaxHealth * T1_Adjustment
 
-										if bp.Physics.MaxSpeed then
-											bp.Physics.MaxSpeed = bp.Physics.MaxSpeed * T1_Adjustment
-										end
-									elseif cat_mobile == 'TECH2' then
-										bp.Defense.MaxHealth = bp.Defense.MaxHealth * T2_Adjustment
+						bp.Defense.Health = bp.Defense.MaxHealth
 
-										bp.Defense.Health = bp.Defense.MaxHealth
+						if bp.Physics.MaxSpeed then
+							bp.Physics.MaxSpeed = bp.Physics.MaxSpeed * T1_Adjustment
+						end
+					elseif cats.TECH2 then
+						bp.Defense.MaxHealth = bp.Defense.MaxHealth * T2_Adjustment
 
-										if bp.Physics.MaxSpeed then
-											bp.Physics.MaxSpeed = bp.Physics.MaxSpeed * T2_Adjustment
-										end
+						bp.Defense.Health = bp.Defense.MaxHealth
 
-										-- make them appear a little smaller
-										if bp.Display.UniformScale then
-											bp.Display.UniformScale = bp.Display.UniformScale * .95
-										end
-									elseif cat_mobile == 'TECH3' then
-										bp.Defense.MaxHealth = bp.Defense.MaxHealth * T3_Adjustment
+						if bp.Physics.MaxSpeed then
+							bp.Physics.MaxSpeed = bp.Physics.MaxSpeed * T2_Adjustment
+						end
 
-										bp.Defense.Health = bp.Defense.MaxHealth
+						-- make them appear a little smaller
+						if bp.Display.UniformScale then
+							bp.Display.UniformScale = bp.Display.UniformScale * .95
+						end
+					elseif cats.TECH3 then
+						bp.Defense.MaxHealth = bp.Defense.MaxHealth * T3_Adjustment
 
-										-- make them appear a little smaller
-										if bp.Display.UniformScale then
-											bp.Display.UniformScale = bp.Display.UniformScale * .95
-										end
-									end
+						bp.Defense.Health = bp.Defense.MaxHealth
+
+						-- make them appear a little smaller
+						if bp.Display.UniformScale then
+							bp.Display.UniformScale = bp.Display.UniformScale * .95
+						end
+					end
+				end
+
+				if cats.AIR and cats.BOMBER then
+					-- This fixes all bombers to be not so weak to dodge micro
+					-- This also fixes T2 & Ahwassa Bombers not dropping at all in many cases
+
+					if cats.TECH1 or cats.TECH2 or cats.TECH3 or cats.EXPERIMENTAL then
+						if bp.Weapon.BombDropThreshold then
+							bp.Weapon.BombDropThreshold = bp.Weapon.BombDropThreshold * 2
+						end
+
+						if bp.Weapon.FiringTolerance then
+							bp.Weapon.FiringTolerance = bp.Weapon.FiringTolerance * 2
+						end
+					end
+				end
+
+				-- all structures
+				-- LCE: Leaving this in here until we decide if we want to reset it to the default ranges instead of 9% least range
+				if cats.STRUCTURE then
+					-- the purpose of this alteration is to address the parity of T2 and T3 static defenses with respect to mobile units
+					-- I felt, and the numbers clearly show, that a tremendous range difference crept into the game as many 3rd party
+					-- point defenses were added - blame the UEF Ravager for setting a bad precedent with a range of 65 - others that
+					-- followed often went beyond that, which made even mobile artillery effectively pointless, and greatly encouraged
+					-- 'turtling' instead of mobile warfare
+
+					-- This mod addresses that by bringing any DIRECTFIRE structures back into some kind of normalacy and giving the
+					-- mobile units some chance of getting within firing range before being completely shellacked.
+					if cats.DIRECTFIRE then
+						if cats.EXPERIMENTAL then
+							--LOG("*AI DEBUG Modifying Weapon Range on EXPERIMENTAL "..bp.Description)
+
+							for ik, wep in bp.Weapon do
+								if wep.MaxRadius and wep.MaxRadius > 60 then
+									--LOG("*AI DEBUG MaxRadius goes from "..wep.MaxRadius.." to "..math.floor(wep.MaxRadius * 0.91))
+									wep.MaxRadius = math.floor(wep.MaxRadius * 0.91)
 								end
 							end
 						end
 					end
+				end
 
-					if cat == 'AIR' then
-						for j, catj in bp.Categories do
-							if catj == 'BOMBER' then
-								-- This fixes all bombers to be not so weak to dodge micro
-								-- This also fixes T2 & Ahwassa Bombers not dropping at all in many cases
+				-- Adds DRAGBUILD to all Units
+				local CatsMisc = {
+					'DRAGBUILD',
+				}
+				for i, cat in CatsMisc do
+					if not cats[cat] then
+						table.insert(bp.Categories, cat)
+					end
+				end
 
-								for _, cat_mobile in bp.Categories do
-									if cat_mobile == 'TECH1' or cat_mobile == 'TECH2' or cat_mobile == 'TECH3' or cat_mobile == 'EXPERIMENTAL' then
-										if bp.Weapon.BombDropThreshold then
-											bp.Weapon.BombDropThreshold = bp.Weapon.BombDropThreshold * 2
-										end
-
-										if bp.Weapon.FiringTolerance then
-											bp.Weapon.FiringTolerance = bp.Weapon.FiringTolerance * 2
-										end
-									end
-								end
-							end
+				-- Allow T2, T3, & T4 Engineers to Build T2 Factories
+				local CatsT2 = {
+					'BUILTBYTIER2ENGINEER',
+					'BUILTBYTIER3ENGINEER',
+					'BUILTBYTIER4ENGINEER',
+					'BUILTBYTIER2COMMANDER',
+					'BUILTBYTIER3COMMANDER',
+					'BUILTBYTIER4COMMANDER',
+				}
+				if cats.BUILTBYTIER1FACTORY and cats.FACTORY and cats.STRUCTURE and cats.TECH2 then
+					for i, cat in CatsT2 do
+						if not cats[cat] then
+							table.insert(bp.Categories, cat)
 						end
 					end
+				end
 
-					-- all structures
-					-- LCE: Leaving this in here until we decide if we want to reset it to the default ranges instead of 9% least range
-					if cat == 'STRUCTURE' then
-						-- the purpose of this alteration is to address the parity of T2 and T3 static defenses with respect to mobile units
-						-- I felt, and the numbers clearly show, that a tremendous range difference crept into the game as many 3rd party
-						-- point defenses were added - blame the UEF Ravager for setting a bad precedent with a range of 65 - others that
-						-- followed often went beyond that, which made even mobile artillery effectively pointless, and greatly encouraged
-						-- 'turtling' instead of mobile warfare
-
-						-- This mod addresses that by bringing any DIRECTFIRE structures back into some kind of normalacy and giving the
-						-- mobile units some chance of getting within firing range before being completely shellacked.
-						for _, cat_structure in bp.Categories do
-							if cat_structure == 'DIRECTFIRE' then
-								for _, cat_tech in bp.Categories do
-									if cat_tech == 'EXPERIMENTAL' then
-										--LOG("*AI DEBUG Modifying Weapon Range on EXPERIMENTAL "..bp.Description)
-
-										for ik, wep in bp.Weapon do
-											if wep.MaxRadius and wep.MaxRadius > 60 then
-												--LOG("*AI DEBUG MaxRadius goes from "..wep.MaxRadius.." to "..math.floor(wep.MaxRadius * 0.91))
-												wep.MaxRadius = math.floor(wep.MaxRadius * 0.91)
-											end
-										end
-									end
-								end
-							end
+				-- Allow T3 Engineers to Build T3 Factories
+				local CatsT3 = {
+					'BUILTBYTIER3ENGINEER',
+					'BUILTBYTIER3COMMANDER',
+				}
+				if cats.BUILTBYTIER2FACTORY and cats.FACTORY and cats.STRUCTURE and cats.TECH3 then
+					for i, cat in CatsT3 do
+						if not cats[cat] then
+							table.insert(bp.Categories, cat)
 						end
 					end
+				end
 
-					local cats = {} -- Note: Just redo the entire blueprints.lua so theres no multi for loops -- We can do it like we did it here instead
-					if bp.Categories then
-						for k, cat in pairs(bp.Categories) do
-							cats[cat] = true
-						end
-
-						-- Adds DRAGBUILD to all Units
-						local CatsMisc = {
-							'DRAGBUILD',
-						}
-						if bp.Categories then
-							for i, cat in CatsMisc do
-								if not table.find(bp.Categories, cat) then
-									table.insert(bp.Categories, cat)
-								end
-							end
-						end
-
-
-						-- Allow T2, T3, & T4 Engineers to Build T2 Factories
-						local CatsT2 = {
-							'BUILTBYTIER2ENGINEER',
-							'BUILTBYTIER3ENGINEER',
-							'BUILTBYTIER4ENGINEER',
-						}
-						if cats.BUILTBYTIER1FACTORY and cats.FACTORY and cats.STRUCTURE and cats.TECH2 then
-							for i, cat in CatsT2 do
-								if not table.find(bp.Categories, cat) then
-									table.insert(bp.Categories, cat)
-								end
-							end
-						end
-
-						-- Allow T3 Engineers to Build T3 Factories
-						local CatsT3 = {
-							'BUILTBYTIER3ENGINEER',
-						}
-						if cats.BUILTBYTIER2FACTORY and cats.FACTORY and cats.STRUCTURE and cats.TECH3 then
-							for i, cat in CatsT3 do
-								if not table.find(bp.Categories, cat) then
-									table.insert(bp.Categories, cat)
-								end
-							end
-						end
-
-						-- T1 & T2 Air Scout Cost Reduction
-						if cats.SCOUT and cats.INTELLIGENCE and cats.HIGHALTAIR and cats.AIR then
-							do
-								if cats.TECH1 then
-									bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.315
-								elseif cats.TECH2 then
-									bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.5
-								end
-							end
+				-- T1 & T2 Air Scout Cost Reduction
+				if cats.SCOUT and cats.INTELLIGENCE and cats.HIGHALTAIR and cats.AIR then
+					do
+						if cats.TECH1 then
+							bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.315
+						elseif cats.TECH2 then
+							bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.5
 						end
 					end
 				end
