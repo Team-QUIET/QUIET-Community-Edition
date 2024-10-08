@@ -1,4 +1,4 @@
-WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * QUIET Hook for Blueprints.lua' ) 
+-- WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * QUIET Hook for Blueprints.lua' ) 
 -- This warning allows us to see exactly where our Hook Line starts so we can debug the exact line thats causing an error easier
 do
 	local pairs = pairs
