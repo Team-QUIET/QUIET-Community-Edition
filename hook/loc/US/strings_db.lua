@@ -10,3 +10,6 @@ wal0401_name="Universal Colossus"
 bel0402_desc="Experimental Ultra Heavy Breacher Bot"
 bel0402_help="Experimental Ultra Heavy Breacher Bot"
 bel0402_name="Goliath"
+
+
+uvd_0017="Transport Speed Reduction: %.3g"
