@@ -552,6 +552,7 @@ do
 				elseif isNaval then
 					bp.Physics.TransportSpeedReduction = 1
 				end
+				--LOG("TransportSpeedReduction in blueprint: " .. tostring(bp.Physics.TransportSpeedReduction) .. " and Unit is "..tostring(bp.BlueprintId))
 			end
 
 			local averageDensity = 10

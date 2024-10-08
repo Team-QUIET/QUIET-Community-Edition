@@ -68,13 +68,19 @@ Unit = Class(QCEUnit) {
     end,
 
     ReduceTransportSpeed = function(self)
-        local transportspeed = self.GetBlueprint().Air.MaxAirspeed
+        local bp = self:GetBlueprint()
+        local transportspeed = bp.Air.MaxAirspeed
         local totalweight = 0
         for _, unit in self:GetCargo() do
-            totalweight = totalweight + unit.GetBlueprint().Physics.TransportSpeedReduction
-	    end
+            if unit and unit:GetBlueprint() then
+                local bp = unit:GetBlueprint()
+                totalweight = totalweight + bp.Physics.TransportSpeedReduction
+	        else
+                WARN("Unit or its blueprint is nil.")
+            end
+        end
         self:SetSpeedMult(1 - (totalweight / transportspeed))
-        LOG("Transport Speed is "..repr((1 - (totalweight / transportspeed))))
+        --LOG("Transport Speed is "..repr((1 - (totalweight / transportspeed))))
     end,
 
     -- issued by the Transport as a unit loads on
