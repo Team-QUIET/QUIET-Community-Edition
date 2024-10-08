@@ -1,3 +1,6 @@
+WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * QUIET Hook for Unit.lua' ) 
+-- This warning allows us to see exactly where our Hook Line starts so we can debug the exact line thats causing an error easier
+
 -- Hook
 -- Reason: Adjusting overkillRatio from 0.10 to 0.30 to allow more Wreckage to be created even if there large overkill, I.E T4 AA shooting down T2 Gunships.
 QCEUnit = Unit
@@ -61,6 +64,78 @@ Unit = Class(QCEUnit) {
 			GetAIBrain(self):OnPlayCommanderUnderAttackVO()
 			
         end
+		
+    end,
+
+    ReduceTransportSpeed = function(self)
+        local bp = self:GetBlueprint()
+        local transportspeed = bp.Air.MaxAirspeed
+        local totalweight = 0
+        for _, unit in self:GetCargo() do
+            if unit and unit:GetBlueprint() then
+                local bp = unit:GetBlueprint()
+                totalweight = totalweight + bp.Physics.TransportSpeedReduction
+	        else
+                WARN("Unit or its blueprint is nil.")
+            end
+        end
+        self:SetSpeedMult(1 - (totalweight / transportspeed))
+        --LOG("Transport Speed is "..repr((1 - (totalweight / transportspeed))))
+    end,
+
+    -- issued by the Transport as a unit loads on
+    OnTransportAttach = function(self, attachBone, unit)
+    
+        --LOG("*AI DEBUG Transport "..self.Sync.id.." attaches unit "..unit.Sync.id.." on tick "..GetGameTick() )
+
+        self:MarkWeaponsOnTransport(unit, true)
+		
+        if unit:ShieldIsOn() then
+            unit:DisableShield()
+            unit:DisableDefaultToggleCaps()
+        end
+		
+		unit:SetDoNotTarget(true)
+        unit:SetCanTakeDamage(false)
+		
+        if not LOUDENTITY(categories.PODSTAGINGPLATFORM, self) then
+            self:RequestRefreshUI()
+        end
+
+        unit:DoUnitCallbacks( 'OnAttachedToTransport', self )
+		
+        self:DoUnitCallbacks('OnTransportAttach', unit )
+
+        self:ReduceTransportSpeed()
+		
+    end,
+
+	-- issued by the Transport as units are detached
+    OnTransportDetach = function(self, attachBone, unit)
+
+        --LOG("*AI DEBUG Transport "..self.Sync.id.." detaches unit "..unit.Sync.id.." on tick "..GetGameTick() )
+
+        self:MarkWeaponsOnTransport(unit, false)
+		
+		if not unit:ShieldIsOn() then
+			unit:EnableShield()
+			unit:EnableDefaultToggleCaps()
+		end
+		
+		unit:SetDoNotTarget(false)
+        unit:SetCanTakeDamage(true)
+
+        if not LOUDENTITY(categories.PODSTAGINGPLATFORM, self) then
+            self:RequestRefreshUI()
+        end
+		
+        unit:TransportAnimation(-1)
+
+        unit:DoUnitCallbacks( 'OnDetachedToTransport', self)
+		
+        self:DoUnitCallbacks('OnTransportDetach', unit )
+
+        self:ReduceTransportSpeed()
 		
     end,
 

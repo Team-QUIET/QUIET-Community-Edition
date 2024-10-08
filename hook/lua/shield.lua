@@ -111,7 +111,7 @@ for k, bp in __blueprints do
     end
 end
 
-local QCEShield = Shield
+QCEShield = Shield
 Shield = Class(QCEShield) {
 
     RemainEnabledWhenAttached = false,
