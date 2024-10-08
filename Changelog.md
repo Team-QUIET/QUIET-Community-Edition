@@ -3,6 +3,21 @@ QUIET
 Rebalance Changelog
 ---------------
 
+# 1.50
+
+### Transports
+The movement speed of transports now changes based on how many and which types of units they have loaded.
+- Units slow down transports based on their `TransportSpeedReduction` stat. If a unit has a `TransportSpeedReduction` of 1, each instance of this unit will slow down the transport's `MaxAirspeed` by 1. The primary implication of this change is that the effectiveness of the later T2/T3 Transport Drops are significantly reduced in an intuitive way. Although this adds an additional mechanic to the game that encourages more micro and strategic thinking when placing units on a transport.
+- TransportSpeedReduction: 0.15 (Tech 1 land units)
+- TransportSpeedReduction: 0.3 (Tech 2 land units)
+- TransportSpeedReduction: 0.6 (Tech 3 land units)
+- TransportSpeedReduction: 1 (ACUs and SACUs)
+- TransportSpeedReduction: 1 (Tech 4 land units)
+
+### Misc
+Fixed Miasma Artillery Overshooting `2nd Fix`
+All LOUD Standard Mods are now required to run QUIET to prevent crashing if you were not loading all the LOUD Standard Mods by accident
+
 # 1.49
 
 # Mavor & RFSAC
