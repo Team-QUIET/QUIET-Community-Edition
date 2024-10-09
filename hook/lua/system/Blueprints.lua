@@ -30,6 +30,7 @@ do
 		NullifyUnitRackSalvoFiresAfterChargeInBlueprints(all_blueprints)
 		ProcessWeaponAlterations(all_blueprints, all_blueprints.Unit)
 		ProcessPropAlterations(all_blueprints)
+		ProcessDynamicLOD(all_blueprints)
 	end
 
 	--=======================================
@@ -728,6 +729,44 @@ do
 				-- sanitize the value
 				data.LODCutoff = MathFloor(LODCutoff / 10 + 1) * 10
 			end
+		end
+	end
+
+	
+	--=======================================
+	-- FUNCTION ProcessDynamicLOD(ALL_BLUEPRINTS)
+	-- Computes the LOD cut off values of props based on its blueprint properties. A
+	-- prop that occupies less screen space will have a lower cut off value - allowing
+	-- it to be culled sooner. This improves the framerate of the game in general,
+	-- while having a minor impact on visual fidelity.
+	--
+	-- Technical detail: The LOD values of props in the blueprint are now ignored.
+	--=======================================
+	function ProcessDynamicLOD(all_blueprints)
+		local function computeLOD(blueprint)
+			if blueprint.Display and blueprint.Display.Mesh and blueprint.Display.Mesh.LODs then
+				local n = TableGetn(blueprint.Display.Mesh.LODs)
+				for k, data in pairs(blueprint.Display.Mesh.LODs) do
+					local sx = blueprint.SizeX or 1
+					local sy = blueprint.SizeY or 1
+					local sz = blueprint.SizeZ or 1
+
+					local weighted = 0.40 * sx + 0.2 * sy + 0.4 * sz
+					local lod = 0.9 * MathSqrt(100 * 500 * weighted)
+					local factor = (k / n) * (k / n)
+					local LODCutoff = factor * lod
+
+					data.LODCutoff = MathFloor(LODCutoff / 10 + 1) * 10
+				end
+			end
+		end
+
+		for id, bp in pairs(all_blueprints.Unit) do
+			computeLOD(bp)
+		end
+		
+		for id, bp in pairs(all_blueprints.Prop) do
+			computeLOD(bp)
 		end
 	end
 
