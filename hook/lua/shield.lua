@@ -324,13 +324,11 @@ Shield = Class(QCEShield) {
             -- diameter where other shields overlap with us or are contained by us
             local diameter = LargestShieldDiameter + self.Size
 
-            --LOG("Computing overlapping shields for tick "..repr(tick).." with diameter "..repr(diameter)..", brain "..repr(brain)..", position "..repr(position))
-
             -- retrieve candidate units
             local units = brain:GetUnitsAroundPoint(CategoriesOverspill, position, 0.5 * diameter, 'Ally')
 
             if units then
-                --LOG("We found overlapping shields "..repr(units)..", computing overlap")
+                --LOG("We found overlapping shields "..repr(units))
                 -- allocate locals once
                 local shieldOther
                 local radiusOther
@@ -348,8 +346,6 @@ Shield = Class(QCEShield) {
                     -- store reference to reduce table lookups
                     shieldOther = other.MyShield
 
-                    --LOG("Checking unit "..repr(other)..", shieldOther "..repr(shieldOther))
-
                     -- check if it is a different unti and that it has an active shield with a radius
                     -- larger than 0, as engine defaults shield table to 0
                     if shieldOther
@@ -363,42 +359,28 @@ Shield = Class(QCEShield) {
                         -- compute radius of shield
                         radiusOther = 0.5 * shieldOther.Size
 
-                        --LOG("Computing radius of shield "..repr(radiusOther))
-
                         -- compute total distance to overlap and square it to prevent a square root
                         distanceToOverlap = radius + radiusOther
                         distanceToOverlap = distanceToOverlap * distanceToOverlap
 
-                        --LOG("Computing total distance to overlap "..repr(distanceToOverlap))
-
                         -- retrieve position of other shield
                         osx, osy, osz = EntityGetPositionXYZ(shieldOther)
-
-                        --LOG("Computing vector from self to other "..repr(dx)..", "..repr(dy)..", "..repr(dz))
 
                         -- compute vector from self to other
                         dx = osx - psx
                         dy = osy - psy
                         dz = osz - psz
 
-                        --LOG("Computing squared distance and check it "..repr(d))
-
                         -- compute squared distance and check it
                         d = dx * dx + dy * dy + dz * dz
                         if d < distanceToOverlap then
                             self.OverlappingShields[head] = shieldOther
                             head = head + 1
-                            --LOG("Shield "..repr(shieldOther)..", at position "..repr(osx)..", "..repr(osy)..", "..repr(osz)..", overlaps")
-                        else
-                            --LOG("Shield "..repr(shieldOther)..", at position "..repr(osx)..", "..repr(osy)..", "..repr(osz)..", does not overlap")
                         end
-                    else
-                        --LOG("Shield "..repr(shieldOther)..", at position "..repr(osx)..", "..repr(osy)..", "..repr(osz)..", does not have an active shield")
                     end
                 end
                 -- keep track of the number of adjacent shields
                 self.OverlappingShieldsCount = head - 1
-                --LOG("There are "..repr(self.OverlappingShieldsCount).." overlapping shields")
             else
                 --LOG("We didnt find any overlapping shields")
                 -- no units found
