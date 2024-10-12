@@ -1,14 +1,15 @@
 UnitBlueprint {
-  Merge = true,
-  BlueprintId = "ssl0311",
+    Merge = true,
+    BlueprintId = "ssl0311",
 
-      Weapon = {
+    ScriptClass = 'SSL0311',
+    ScriptModule = '/mods/QUIET-Community-Edition/units/BrewLAN/SSL0311/SSL0311_Script.lua',
+
+    Weapon = {
         {
-
             RateOfFire = 40/10,
 
             TurretYawSpeed = 90,
-
         },
     },
 }
