@@ -3,6 +3,12 @@ QUIET
 Rebalance Changelog
 ---------------
 
+# 1.51
+
+### Misc
+Fixed TransportSpeedReduction NIL
+Fixed SSL0311 Shield Not Stopping AoE
+
 # 1.50
 
 ### Transports
