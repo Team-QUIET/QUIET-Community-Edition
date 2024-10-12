@@ -74,8 +74,12 @@ Unit = Class(QCEUnit) {
         for _, unit in self:GetCargo() do
             if unit and unit:GetBlueprint() then
                 local bp = unit:GetBlueprint()
-                totalweight = totalweight + bp.Physics.TransportSpeedReduction
-	        else
+                if bp.Physics.TransportSpeedReduction then
+                    totalweight = totalweight + bp.Physics.TransportSpeedReduction
+	            else
+                    WARN("TransportSpeedReduction is nil.") -- TODO: Fix all units that do not have it
+                end
+            else
                 WARN("Unit or its blueprint is nil.")
             end
         end
