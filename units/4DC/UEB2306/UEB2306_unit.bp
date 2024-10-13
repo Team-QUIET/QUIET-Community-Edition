@@ -24,6 +24,8 @@ UnitBlueprint{
 		TurretYawRange = 180,
 		TurretYawSpeed = 45,
 
+		UseFiringSolutionInsteadOfAimBone = true,
+
         },
         {
 		
