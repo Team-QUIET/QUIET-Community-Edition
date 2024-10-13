@@ -58,54 +58,59 @@ UnitBlueprint {
 
             BallisticArc = 'RULEUBA_None',
 
-            BombDropThreshold = 3.1,
+            BombDropThreshold = 3.5,
 			
             CollideFriendly = false,
 			
             Damage = 1200,
             DamageFriendly = true,
-            DamageRadius = 3,
+            DamageRadius = 6.5,
             DamageType = 'Normal',
 			
             DisplayName = 'Small Yield Nuclear Bomb',
 			
-            EffectiveRadius = 48,
+            EffectiveRadius = 25,
 			
             FireTargetLayerCapsTable = {
                 Air = 'Land|Water|Seabed',
                 Land = 'Land|Water|Seabed',
             },
             
-            FiringRandomness = 0.2,
-            FiringTolerance = 6,
+            FiringRandomness = 0,
+            FiringTolerance = 3,
 			
-            MaxRadius = 75,
+            MaxRadius = 90,
 			
-            MuzzleSalvoDelay = 0.1,
-            MuzzleSalvoSize = 4,
+            MuzzleSalvoDelay = 0.3,
+            MuzzleSalvoSize = 3,
             MuzzleVelocity = 0,
 			
             NeedToComputeBombDrop = true,
             
-            NotExclusive = true,
+            NotExclusive = false,
             
-            RackSalvoReloadTime = 9.6,  -- firing cycle 10 = 7600/10 = 760 DPS
-
-            RateOfFire = 1,
-			
-            TargetCheckInterval = 3,
-            
+            RackFireTogether = false,
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 10,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
+            RateOfFire = 0.2,
+            TargetCheckInterval = 2.5,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'EXPERIMENTAL',
-                'ANTIAIR',
-                'ENERGYPRODUCTION',
-                'MASSFABRICATION',
-                'ALLUNITS',
+                "EXPERIMENTAL",
+                "TECH3 STRUCTURE",
+                "TECH2 STRUCTURE",
+                "TECH1 STRUCTURE",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-
-            TrackingRadius = 1.1,
+            TrackingRadius = 1.15,
+            TurretDualManipulators = false,
+            Turreted = false,
+            WeaponCategory = 'Bomb',
         },
 		
         {
@@ -180,76 +185,9 @@ UnitBlueprint {
 		
         {   --Torpedoes
 
-            advancedTracking = true,
-
-            BallisticArc = 'RULEUBA_None',
-
-            CollideFriendly = false,
-
-            Damage = 400,
-            DamageType = 'Normal',
-
-            DisplayName = 'Angler Torpedo',
-            
-            EffectiveRadius = 64,
-
-            FireTargetLayerCapsTable = {
-                Air = 'Seabed|Sub|Water',
-                Land = 'Seabed|Sub|Water',
-            },
-            FiringRandomness = 3,
-            FiringTolerance = 2,
-            
-            HeadingArcCenter = 0,
-            HeadingArcRange = 30,
-            
-            Label = 'Torpedo',
-            
-            NotExclusive = true,
-            
-            MaxRadius = 56,
-            MinRadius = 8,
-            
-            MuzzleSalvoDelay = 0.2,
-            MuzzleSalvoSize = 4,
-            
-            MuzzleVelocity = 10,
-            
-            ProjectileLifetime = 10,
-            
-            RackBones = {
-                { RackBone = 'Bomb_001', MuzzleBones = {'Bomb_001','Bomb_002','Bomb_005','Bomb_006' } },
-            },
-            
-            RackSalvoReloadTime = 9.2,  -- 10 second cycle = 1600/10 = 160 DPS
-
-            RateOfFire = 1,
-            
-            TargetCheckInterval = 3,
-            TargetPriorities = {
-                'SPECIALHIGHPRI',
-                'CRUISER',
-                'SUBMARINE',
-                'NAVAL',
-                'ALLUNITS',
-            },
-            TargetRestrictDisallow = 'UNTARGETABLE, HOVER, WALL',
-            TrackingRadius = 1.1,
-            
-            Turreted = false,
         },
-		
         {
-            AboveWaterTargetsOnly = true,
-            Damage = 400,
-            DamageFriendly = true,
-            DamageRadius = 2.5,
-            DamageType = 'Normal',
-            DisplayName = 'Air Crash',
-            DummyWeapon = true,
-            FiringTolerance = 2,
-            Label = 'DeathImpact',
-            WeaponCategory = 'Death',
+
         },
     },
 }

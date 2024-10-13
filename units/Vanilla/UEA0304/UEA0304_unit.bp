@@ -29,6 +29,18 @@ UnitBlueprint {
         TurnSpeed = 0.8,
         Winged = true,
     },
+
+    Intel = {
+        FreeIntel = true,
+
+        JamRadius = {
+            Max = 40,
+            Min = 20,
+        },
+        JammerBlips = 4,
+        RadarRadius = 64,
+        VisionRadius = 32,
+    },
 	
     Weapon = {
         {
@@ -42,9 +54,9 @@ UnitBlueprint {
 			
             CollideFriendly = false,
 			
-            Damage = 3000,
+            Damage = 3100,
             DamageFriendly = true,
-            DamageRadius = 4,
+            DamageRadius = 5.5,
             DamageType = 'Normal',
 			
             DisplayName = 'High Yield Bomb',
@@ -66,14 +78,22 @@ UnitBlueprint {
 			
             NeedToComputeBombDrop = true,
 
-            RateOfFire = 0.125,
-
-            TargetCheckInterval = 3,
+            RackFireTogether = false,
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 10,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
+            RateOfFire = 10/80, --10/integer interval in ticks
+            TargetCheckInterval = 2.5,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'STRUCTURE -WALL',
-                'ENGINEER',
-                'ALLUNITS -WALL',
+                "EXPERIMENTAL",
+                "TECH3 STRUCTURE",
+                "TECH2 STRUCTURE",
+                "TECH1 STRUCTURE",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = "UNTARGETABLE",
             TurretDualManipulators = false,

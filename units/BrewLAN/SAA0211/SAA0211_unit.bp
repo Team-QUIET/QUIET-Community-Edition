@@ -29,6 +29,13 @@ UnitBlueprint {
         TurnSpeed = 1.4,
         Winged = true,
     },
+
+    Intel = {
+		FreeIntel =true,
+
+        RadarRadius = 65,
+        VisionRadius = 32,
+    },
 	
     Economy = {
         BuildCostEnergy = 17000,
@@ -47,12 +54,12 @@ UnitBlueprint {
 			
             CollideFriendly = false,
 			
-            Damage = 750,
+            Damage = 1337,
             DamageFriendly = true,
-            DamageRadius = 1.5,
+            DamageRadius = 3,
             DamageType = 'Normal',
 
-            EffectiveRadius = 45,
+            EffectiveRadius = 25,
 		
             FireTargetLayerCapsTable = {
                 Air = 'Land|Water|Seabed',
@@ -92,6 +99,7 @@ UnitBlueprint {
 			
             TargetRestrictDisallow = 'UNTARGETABLE',
             TrackingRadius = 1.15,
+            WeaponCategory = 'Bomb',
         },
     },
 }

@@ -30,6 +30,13 @@ UnitBlueprint {
         Winged = true,
     },
 
+    Intel = {
+		FreeIntel = true,
+
+        RadarRadius = 65,
+        VisionRadius = 32,
+    },
+
     Economy = {
         BuildCostEnergy = 19000,
         BuildCostMass = 375,
@@ -42,9 +49,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             BombDropThreshold = 3.5,
             CollideFriendly = false,
-            Damage = 800,
+            Damage = 1215,
             DamageFriendly = true,
-            DamageRadius = 2,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DisplayName = 'Tactical Bomb',
             EffectiveRadius = 25,

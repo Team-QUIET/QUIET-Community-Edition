@@ -29,6 +29,13 @@ UnitBlueprint {
         TurnSpeed = 0.8,
         Winged = true,
     },
+
+    Intel = {
+		FreeIntel =true,
+
+        RadarRadius = 65,
+        VisionRadius = 32,
+    },
 	
     Economy = {
         BuildCostEnergy = 19000,
@@ -47,10 +54,10 @@ UnitBlueprint {
 			
             CollideFriendly = false,
 			
-            Damage = 907,
+            Damage = 609,
 			
             DamageFriendly = true,
-            DamageRadius = 2.9,
+            DamageRadius = 4,
             DamageType = 'Normal',
 			
             Display = 'Zhanasee Strategic Bomb',

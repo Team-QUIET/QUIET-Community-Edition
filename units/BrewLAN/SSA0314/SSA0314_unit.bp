@@ -63,7 +63,7 @@ UnitBlueprint {
             
             BallisticArc = 'RULEUBA_None',
             
-            BombDropThreshold = 3.1,
+            BombDropThreshold = 3.5,
 			
             Buffs = {
                 {
@@ -81,10 +81,10 @@ UnitBlueprint {
 			
             Damage = 4200,
             DamageFriendly = true,
-            DamageRadius = 2.8,
+            DamageRadius = 6,
             DamageType = 'Normal',
 			
-            EffectiveRadius = 48,
+            EffectiveRadius = 25,
 			
             FireTargetLayerCapsTable = {
                 Air = 'Land|Water|Seabed',
@@ -98,9 +98,9 @@ UnitBlueprint {
 
             NotExclusive = true,
 			
-            MaxRadius = 75,
+            MaxRadius = 90,
 			
-            MuzzleSalvoDelay = 0.4,
+            MuzzleSalvoDelay = 0.3,
             MuzzleSalvoSize = 3,
 
             MuzzleVelocity = 0,
@@ -116,24 +116,26 @@ UnitBlueprint {
                     RackBone = 'Body',
                 },
             },
-            
-            RackSalvoReloadTime = 8.8,    -- 10 second cycle = 9600/10 = 960 DPS
-
-            RateOfFire = 1,
-			
-            TargetCheckInterval = 3,
-			
+            RackFireTogether = false,
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 10,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
+            RateOfFire = 0.2,
+            TargetCheckInterval = 2.5,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'EXPERIMENTAL',
-                'ANTIAIR',
-                'ENERGYPRODUCTION',
-                'MASSFABRICATION',
-                'ALLUNITS',
+                "EXPERIMENTAL",
+                "TECH3 STRUCTURE",
+                "TECH2 STRUCTURE",
+                "TECH1 STRUCTURE",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            
-            TrackingRadius = 1.1,
+            TrackingRadius = 1.15,
+            WeaponCategory = 'Bomb',
         },
 		
         {
@@ -217,84 +219,10 @@ UnitBlueprint {
             Turreted = true,
         },
         {
-            advancedTracking = true,
-            
-            Audio = {
-                Fire = Sound { Bank = 'UAAWeapon', Cue = 'UAA0204_Depth_Charge', LodCutoff = 'Weapon_LodCutoff' },
-            },
-
-            BallisticArc = 'RULEUBA_None',
-
-            CollideFriendly = false,
-			
-            Damage = 900,       -- this gets split into 3 projectiles of 300 each
-            DamageType = 'Normal',
-			
-            DisplayName = 'Cluster Torpedo',
-            
-            EffectiveRadius = 64,
-			
-            FireTargetLayerCapsTable = {
-                Air = 'Seabed|Sub|Water',
-                Land = 'Seabed|Sub|Water',
-            },
-			
-            FiringRandomness = 3,
-            FiringTolerance = 2,
-			
-            HeadingArcCenter = 0,
-            HeadingArcRange = 30,
-			
-            Label = 'ClusterTorpedo',
-			
-            NotExclusive = true,
-			
-            MaxRadius = 56,
-            MinRadius = 8,
-			
-            MuzzleSalvoDelay = 0.3,
-            MuzzleSalvoSize = 2,
-            
-            MuzzleVelocity = 11,
-			
-            ProjectileId = '/projectiles/SANHeavyCavitationTorpedo01/SANHeavyCavitationTorpedo01_proj.bp',
-            ProjectileLifetime = 10,
-			
-            RackBones = {
-                {
-                    MuzzleBones = {'Body'},
-                    RackBone = 'Body',
-                },
-            },
-            
-            RackSalvoReloadTime = 9.4,  -- 10 second cycle = 1800 = 180 DPS
-
-            RateOfFire = 1,
-			
-            TargetCheckInterval = 2.5,
-			
-            TargetPriorities = {
-                'SPECIALHIGHPRI',
-                'CRUISER',
-                'SUBMERSIBLE',
-                'NAVAL',
-                'ALLUNITS',
-            },
-            TargetRestrictDisallow = 'UNTARGETABLE, HOVER, WALL',
-            
-            TrackingRadius = 1.1,
+           
         },
-
         {
-            AboveWaterTargetsOnly = true,
-            Damage = 500,
-            DamageFriendly = true,
-            DamageRadius = 2.5,
-            DamageType = 'Normal',
-            DisplayName = 'Air Crash',
-            DummyWeapon = true,
-            Label = 'DeathImpact',
-            WeaponCategory = 'Death',
+
         },
     },
 }
