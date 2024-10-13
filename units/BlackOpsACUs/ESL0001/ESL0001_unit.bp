@@ -282,9 +282,9 @@ UnitBlueprint {
 
         EXImprovedEngineering = {
 
-            BuildCostEnergy = 38000,
-            BuildCostMass = 3500,
-            BuildTime = 1950,
+            BuildCostEnergy = 26000,
+            BuildCostMass = 2500,
+            BuildTime = 2500,
 
             BuildableCategoryAdds = 'BUILTBYTIER2COMMANDER SERAPHIM',
 
@@ -321,9 +321,9 @@ UnitBlueprint {
 
         EXAdvancedEngineering = {
 
-            BuildCostEnergy = 152000,
-            BuildCostMass = 10500,
-            BuildTime = 15200,
+            BuildCostEnergy = 75000,
+            BuildCostMass = 7250,
+            BuildTime = 7500,
 
             BuildableCategoryAdds = 'BUILTBYTIER3COMMANDER SERAPHIM',
 
@@ -367,9 +367,9 @@ UnitBlueprint {
 
         EXExperimentalEngineering = {
 
-            BuildCostEnergy = 720000,
-            BuildCostMass = 29500,
-            BuildTime = 72000,
+            BuildCostEnergy = 230000,
+            BuildCostMass = 22500,
+            BuildTime = 23000,
 
             BuildableCategoryAdds = 'BUILTBYTIER4COMMANDER SERAPHIM',
 
@@ -408,9 +408,9 @@ UnitBlueprint {
 
         EXCombatEngineering = {
 
-            BuildCostEnergy = 38000,
-            BuildCostMass = 3750,
-            BuildTime = 3800,
+            BuildCostEnergy = 26000,
+            BuildCostMass = 2500,
+            BuildTime = 2500,
 
             BuildableCategoryAdds = 'BUILTBYTIER2COMMANDER SERAPHIM',
 
@@ -447,9 +447,9 @@ UnitBlueprint {
 
         EXAssaultEngineering = {
 
-            BuildCostEnergy = 116500,
-            BuildCostMass = 15000,
-            BuildTime = 11650,
+            BuildCostEnergy = 75000,
+            BuildCostMass = 7250,
+            BuildTime = 7500,
 
             BuildableCategoryAdds = 'BUILTBYTIER3COMMANDER SERAPHIM',
 
@@ -488,9 +488,9 @@ UnitBlueprint {
 
         EXApocalypticEngineering = {
 
-            BuildCostEnergy = 375000,
-            BuildCostMass = 49000,
-            BuildTime = 37500,
+            BuildCostEnergy = 230000,
+            BuildCostMass = 22500,
+            BuildTime = 23000,
 
             BuildableCategoryAdds = 'BUILTBYTIER4COMMANDER SERAPHIM',
 
