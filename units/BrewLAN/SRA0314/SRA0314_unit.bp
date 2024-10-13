@@ -51,4 +51,90 @@ UnitBlueprint {
         ResearchMultEnergy = 0.2,
         MaintenanceConsumptionPerSecondEnergy = 300,
     },
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+
+            AutoInitiateAttackCommand = true,
+            
+            BallisticArc = 'RULEUBA_None',
+            
+            BombDropThreshold = 3.5,			
+			
+            Buffs = {
+                {
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 1,
+					Radius = 2.5,
+                    TargetAllow = 'ALLUNITS',
+                    TargetDisallow = 'AIR,COMMAND,WALL,EXPERIMENTAL',
+                },
+            },
+
+            CollideFriendly = false,
+			
+            Damage = 2125,
+            DamageFriendly = true,
+            DamageRadius = 8,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Neutron Bomb',
+			
+            EffectiveRadius = 25,
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Land|Water|Seabed',
+                Land = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 1,
+            FiringTolerance = 5,
+			
+            NotExclusive = true,
+            
+            MaxRadius = 90,
+			
+            MuzzleSalvoDelay = 0.3,
+            MuzzleSalvoSize = 3,
+
+            MuzzleVelocity = 0,
+
+            NeedToComputeBombDrop = true,
+
+			ProjectileLifetime = 10,
+            
+            RackFireTogether = false,
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 10,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
+            RateOfFire = 0.2,
+            TargetCheckInterval = 2.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                "EXPERIMENTAL",
+                "TECH3 STRUCTURE",
+                "TECH2 STRUCTURE",
+                "TECH1 STRUCTURE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.15,
+            Turreted = false,
+            WeaponCategory = 'Bomb',
+        },
+        {
+
+        },
+        {   --Torpedoes
+
+        },
+        {
+
+        },
+    },
 }

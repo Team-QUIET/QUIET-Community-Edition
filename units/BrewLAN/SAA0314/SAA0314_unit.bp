@@ -53,4 +53,72 @@ UnitBlueprint {
 
         MaintenanceConsumptionPerSecondEnergy = 250,
     },
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+
+            AutoInitiateAttackCommand = true,
+
+            BallisticArc = 'RULEUBA_None',
+
+            BombDropThreshold = 3,
+            CollideFriendly = false,
+			
+            Damage = 2650,
+            DamageFriendly = true,
+            DamageRadius = 4.5,
+            DamageType = 'Normal',
+			
+            EffectiveRadius = 25,
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Land|Water|Seabed',
+                Land = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0,
+            FiringTolerance = 3,
+			
+            NotExclusive = true,
+			
+            MaxRadius = 90,
+			
+            MuzzleSalvoDelay = 0.3,
+            MuzzleSalvoSize = 3,
+
+            MuzzleVelocity = 0,
+			
+            NeedToComputeBombDrop = true,
+
+            RackFireTogether = false,
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 10,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
+            RateOfFire = 0.2,
+            TargetCheckInterval = 2.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                "EXPERIMENTAL",
+                "TECH3 STRUCTURE",
+                "TECH2 STRUCTURE",
+                "TECH1 STRUCTURE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.15,
+            WeaponCategory = 'Bomb',
+        },
+        {
+
+        },
+        {
+
+        },
+        {
+
+        },
+    },
 }

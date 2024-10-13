@@ -1,0 +1,36 @@
+ProjectileBlueprint {
+
+    Audio = {
+        Impact = Sound {
+            Bank = 'Explosions',
+            Cue = 'Explosion_Bomb',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactWater = Sound {
+            Bank = 'Impacts',
+            Cue = 'Impact_Water_Splash_UEF',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+    },
+
+    Categories = {
+        'PROJECTILE',
+    },
+
+    Display = {
+        CameraFollowTimeout = 2,
+        CameraFollowsProjectile = true,
+        ImpactEffects = { Scale = 1.25 },
+        Mesh = { LODs = { {ShaderName = 'TMeshGlow'} } },
+        StrategicIconSize = 2,
+        UniformScale = 0.07,
+    },
+
+    Physics = {
+        DestroyOnWater = true,
+        RealisticOrdinance = true,
+        TrackTarget = false,
+        TurnRate = 360,
+        VelocityAlign = true,
+    },
+}

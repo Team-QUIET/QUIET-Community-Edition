@@ -29,6 +29,14 @@ UnitBlueprint {
         TurnSpeed = 0.8,
         Winged = true,
     },
+
+    Intel = {
+        FreeIntel = true,
+
+        RadarRadius = 64,
+        RadarStealth = true,
+        VisionRadius = 32,
+    },
 	
     Weapon = {
         {
@@ -43,7 +51,7 @@ UnitBlueprint {
 			
             Damage = 2750,
             DamageFriendly = true,
-            DamageRadius = 4.5,
+            DamageRadius = 6.5,
             DamageType = 'Normal',
 			
             DisplayName = 'Neutron Bomb',
@@ -68,14 +76,22 @@ UnitBlueprint {
 			
 			ProjectileLifetime = 10,
 
-            RateOfFire = 0.125,
-
-            TargetCheckInterval = 3.5,
+            RackFireTogether = false,
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 10,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
+            RateOfFire = 10/80, --10/integer interval in ticks
+            TargetCheckInterval = 2.5,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'STRUCTURE,-WALL',
-                'ENGINEER',
-                'ALLUNITS,-WALL',
+                "EXPERIMENTAL",
+                "TECH3 STRUCTURE",
+                "TECH2 STRUCTURE",
+                "TECH1 STRUCTURE",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = "UNTARGETABLE",
             Turreted = false,

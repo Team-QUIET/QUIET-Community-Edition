@@ -29,6 +29,13 @@ UnitBlueprint {
         TurnSpeed = 0.8,
         Winged = true,
     },
+
+    Intel = {
+        FreeIntel = true,
+
+        RadarRadius = 64,
+        VisionRadius = 32,
+    },
 	
     Weapon = {
         {
@@ -41,9 +48,9 @@ UnitBlueprint {
 
             CollideFriendly = false,
 			
-            Damage = 3250,
+            Damage = 3000,
             DamageFriendly = true,
-            DamageRadius = 3,
+            DamageRadius = 6,
             DamageType = 'Normal',
 			
             Display = 'Zhanasee Strategic Bomb',
@@ -69,15 +76,22 @@ UnitBlueprint {
 
 			ProjectileLifetime = 15,
 
-            RateOfFire = 0.125,
-			
-            TargetCheckInterval = 5,
-			
+            RackFireTogether = false,
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 10,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
+            RateOfFire = 10/80, --10/integer interval in ticks
+            TargetCheckInterval = 2.5,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'STRUCTURE,-WALL',
-                'ENGINEER',
-                'ALLUNITS,-WALL',
+                "EXPERIMENTAL",
+                "TECH3 STRUCTURE",
+                "TECH2 STRUCTURE",
+                "TECH1 STRUCTURE",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = "UNTARGETABLE",
             WeaponCategory = "Bomb",
