@@ -2,6 +2,1082 @@ UnitBlueprint {
     Merge = true,
 	BlueprintId = "eal0001",
 
+    Enhancements = {
+	
+        Slots = {
+            Back = {
+                name = '<LOC _Back>',
+                x = -2,
+                y = -5,
+            },
+            Command = {
+                name = 'Command',
+                x = 98,
+                y = -5,
+            },
+            LCH = {
+                name = '<LOC _LCH>',
+                x = 50,
+                y = -10,
+            },
+            RCH = {
+                name = '<LOC _RCH>',
+                x = -12,
+                y = -10,
+            },
+        },
+		
+        EXImprovedEngineering = {
+		
+            BuildCostEnergy = 26000,
+            BuildCostMass = 2500,
+            BuildTime = 2500,
+			
+            BuildableCategoryAdds = 'BUILTBYTIER2COMMANDER AEON',
+
+            Icon = 'exles1',
+			
+            Name = 'Improved Engineering (T2)',
+			
+            ShowBones = { 'Engineering' },
+
+            Slot = 'LCH',
+
+            UpgradeEffectBones = { 'Left_Turret','Left_Turret_Muzzle' },
+            UpgradeUnitAmbientBones = { 'UAL0001' },
+        },
+		
+        EXImprovedEngineeringRemove = {
+		
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+			
+            HideBones = { 'Engineering' },
+
+            Icon = 'exles1',
+			
+            Name = 'Remove Engineering Suites',
+			
+            Prerequisite = 'EXImprovedEngineering',
+
+            RemoveEnhancements = { 'EXImprovedEngineering','EXImprovedEngineeringRemove'},
+
+            Slot = 'LCH',
+        },
+		
+        EXAdvancedEngineering = {
+		
+            BuildCostEnergy = 75000,
+            BuildCostMass = 7250,
+            BuildTime = 7500,
+
+            BuildableCategoryAdds = 'BUILTBYTIER3COMMANDER AEON',
+
+            Icon = 'exles2',
+			
+            Name = 'Advanced Engineering (T3)',
+			
+            Prerequisite = 'EXImprovedEngineering',
+
+            ShowBones = { 'Engineering' },
+
+            Slot = 'LCH',
+
+            UpgradeEffectBones = {'Left_Turret','Left_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = { 'UAL0001' },
+        },
+		
+        EXAdvancedEngineeringRemove = {
+		
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+			
+            HideBones = { 'Engineering' },
+
+            Icon = 'exles2',
+			
+            Name = 'Remove Engineering Suites',
+			
+            Prerequisite = 'EXAdvancedEngineering',
+
+            RemoveEnhancements = {'EXAdvancedEngineering','EXAdvancedEngineeringRemove'},
+
+            Slot = 'LCH',
+        },
+		
+        EXExperimentalEngineering = {
+		
+            BuildCostEnergy = 230000,
+            BuildCostMass = 22500,
+            BuildTime = 23000,
+			
+            BuildableCategoryAdds = 'BUILTBYTIER4COMMANDER AEON',
+
+            Icon = 'exles3',
+			
+            Name = 'Experimental Engineering (T4)',
+			
+            Prerequisite = 'EXAdvancedEngineering',
+
+            ShowBones = { 'Engineering' },
+
+            Slot = 'LCH',
+
+            UpgradeEffectBones = {'Left_Turret','Left_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = { 'UAL0001' },
+        },
+		
+        EXExperimentalEngineeringRemove = {
+		
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+			
+            HideBones = { 'Engineering' },
+
+            Icon = 'exles3',
+			
+            Name = 'Remove Engineering Suites',
+			
+            Prerequisite = 'EXExperimentalEngineering',
+
+            RemoveEnhancements = {'EXExperimentalEngineering','EXExperimentalEngineeringRemove'},
+
+            Slot = 'LCH',
+        },
+		
+        EXCombatEngineering = {
+		
+            BuildCostEnergy = 26000,
+            BuildCostMass = 2500,
+            BuildTime = 2500,
+
+            BuildableCategoryAdds = 'BUILTBYTIER2COMMANDER AEON',
+            Icon = 'exlce1',
+			
+            Name = 'Combat Engineering (T2)',
+			
+            ShowBones = { 'Combat_Engineering' },
+            HideBones = { 'Left_Turret_Plates' },
+
+            Slot = 'LCH',
+
+            UpgradeEffectBones = {'Left_Turret','Left_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = { 'UAL0001' },
+        },
+		
+        EXCombatEngineeringRemove = {
+		
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+			
+            ShowBones = { 'Left_Turret_Plates' },
+            HideBones = { 'Combat_Engineering' },
+
+            Icon = 'exlce1',
+			
+            Name = 'Remove Engineering Suites',
+			
+            Prerequisite = 'EXCombatEngineering',
+
+            RemoveEnhancements = {'EXCombatEngineering','EXCombatEngineeringRemove'},
+
+            Slot = 'LCH',
+        },
+		
+        EXAssaultEngineering = {
+		
+            BuildCostEnergy = 75000,
+            BuildCostMass = 7250,
+            BuildTime = 7500,
+
+            BuildableCategoryAdds = 'BUILTBYTIER3COMMANDER AEON',
+
+            Icon = 'exlce2',
+			
+            Name = 'Assault Engineering (T3)',
+			
+			Prerequisite = 'EXCombatEngineering',
+
+            ShowBones = { 'Combat_Engineering' },
+            HideBones = { 'Left_Turret_Plates' },
+
+            Slot = 'LCH',
+
+            UpgradeEffectBones = {'Left_Turret','Left_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = { 'UAL0001' },
+        },
+		
+        EXAssaultEngineeringRemove = {
+		
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+			
+            ShowBones = { 'Left_Turret_Plates' },
+            HideBones = { 'Combat_Engineering' },
+
+            Icon = 'exlce2',
+			
+            Name = 'Remove Engineering Suites',
+			
+            Prerequisite = 'EXAssaultEngineering',
+
+            RemoveEnhancements = {'EXAssaultEngineering','EXAssaultEngineeringRemove'},
+
+            Slot = 'LCH',
+        },
+		
+        EXApocalypticEngineering = {
+		
+            BuildCostEnergy = 230000,
+            BuildCostMass = 22500,
+            BuildTime = 23000,
+			
+            BuildableCategoryAdds = 'BUILTBYTIER4COMMANDER AEON',
+            Icon = 'exlce3',
+			
+            Name = 'Apocalyptic Engineering (T4)',
+			
+			Prerequisite = 'EXAssaultEngineering',
+
+            ShowBones = { 'Combat_Engineering' },
+            HideBones = { 'Left_Turret_Plates' },
+
+            Slot = 'LCH',
+
+            UpgradeEffectBones = {'Left_Turret','Left_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = { 'UAL0001' },
+        },
+		
+        EXApocalypticEngineeringRemove = {
+		
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+			
+            ShowBones = { 'Left_Turret_Plates' },
+            HideBones = { 'Combat_Engineering' },
+
+            Icon = 'exlce3',
+			
+            Name = 'Remove Engineering Suites',
+			
+            Prerequisite = 'EXApocalypticEngineering',
+
+            RemoveEnhancements = {'EXApocalypticEngineering','EXApocalypticEngineeringRemove'},
+
+            Slot = 'LCH',
+        },
+		
+        EXDisruptorrBooster = {
+
+            BuildCostEnergy = 7500,
+            BuildCostMass = 750,
+            BuildTime = 750,
+            
+            Icon = 'exrzb1',
+            
+            Name = 'Jury Rigged Disruptor',
+            
+            Slot = 'RCH',
+            
+            UpgradeEffectBones = {'Right_Turret','Right_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = {'UAL0001'},
+        },
+		
+        EXDisruptorrBoosterRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            
+            Icon = 'exrzb1',
+            
+            Name = 'Remove Jury Rigged Disruptor',
+            
+            Prerequisite = 'EXDisruptorrBooster',
+
+            RemoveEnhancements = {'EXDisruptorrBooster','EXDisruptorrBoosterRemove'},
+
+            Slot = 'RCH',
+        },
+		
+        EXTorpedoLauncher = {
+
+            BuildCostEnergy = 35000,
+            BuildCostMass = 1050,
+            BuildTime = 3500,
+
+            Icon = 'exrtorp1',
+            
+            Name = 'Torpedo Launcher (T2)',
+
+            ShowBones = {'Torpedo_Launcher'},
+            
+            Slot = 'RCH',
+            
+            UpgradeEffectBones = {'Right_Turret','Right_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = {'UAL0001'},
+        },
+		
+        EXTorpedoLauncherRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            
+            HideBones = {'Torpedo_Launcher'},
+            
+            Icon = 'exrtorp1',
+            
+            Name = 'Remove Torpedo Launcher',
+            
+            Prerequisite = 'EXTorpedoLauncher',
+
+            RemoveEnhancements = {'EXTorpedoLauncher','EXTorpedoLauncherRemove'},
+
+            Slot = 'RCH',
+        },
+		
+        EXTorpedoRapidLoader = {
+
+            BuildCostEnergy = 70000,
+            BuildCostMass = 3150,
+            BuildTime = 7000,
+            
+            Icon = 'exrtorp2',
+            
+            Name = 'Improved Reloader (T3)',
+            
+			Prerequisite = 'EXTorpedoLauncher',
+
+            ShowBones = {'Torpedo_Launcher'},
+
+            Slot = 'RCH',
+
+            UpgradeEffectBones = {'Right_Turret','Right_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = {'UAL0001'},
+        },
+		
+        EXTorpedoRapidLoaderRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'Torpedo_Launcher'},
+
+            Icon = 'exrtorp2',
+            
+            Name = 'Remove Improved Reloader',
+            
+            Prerequisite = 'EXTorpedoRapidLoader',
+
+            RemoveEnhancements = {'EXTorpedoLauncher','EXTorpedoRapidLoader','EXTorpedoRapidLoaderRemove'},
+
+            Slot = 'RCH',
+        },
+		
+        EXTorpedoClusterLauncher = {
+
+            BuildCostEnergy = 140000,
+            BuildCostMass = 9450,
+            BuildTime = 14000,
+
+            Icon = 'exrtorp3',
+            
+            Name = 'Advanced Warheads (T4)',
+            
+			Prerequisite = 'EXTorpedoRapidLoader',
+
+            ShowBones = {'Torpedo_Launcher'},
+
+            Slot = 'RCH',
+
+            UpgradeEffectBones = {'Right_Turret','Right_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = {'UAL0001'},
+        },
+		
+        EXTorpedoClusterLauncherRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'Torpedo_Launcher'},
+
+            Icon = 'exrtorp3',
+            
+            Name = 'Remove Cluster Launcher',
+            
+            Prerequisite = 'EXTorpedoClusterLauncher',
+
+            RemoveEnhancements = {'EXTorpedoLauncher','EXTorpedoRapidLoader','EXTorpedoClusterLauncher','EXTorpedoClusterLauncherRemove'},
+
+            Slot = 'RCH',
+        },
+		
+        EXArtilleryMiasma = {
+
+            BuildCostEnergy = 18000,
+            BuildCostMass = 1800,
+            BuildTime = 1800,
+
+            Icon = 'exramc1',
+            
+            Name = 'Dual Miasma Artillery (T2)',
+
+            Slot = 'RCH',
+
+            UpgradeEffectBones = {'Right_Turret','Right_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = {'UAL0001',},
+        },
+		
+        EXArtilleryMiasmaRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            Icon = 'exramc1',
+            
+            Name = 'Remove Dual Miasma Artillery',
+            
+            Prerequisite = 'EXArtilleryMiasma',
+
+            RemoveEnhancements = {'EXArtilleryMiasma','EXArtilleryMiasmaRemove'},
+
+            Slot = 'RCH',
+        },
+		
+        EXAdvancedShells = {
+
+            BuildCostEnergy = 72000,
+            BuildCostMass = 5400,
+            BuildTime = 7200,
+
+            Icon = 'exramc2',
+            
+            Name = 'Advanced Warhead Compression (T3)',
+            
+			Prerequisite = 'EXArtilleryMiasma',
+
+            Slot = 'RCH',
+
+            UpgradeEffectBones = {'Right_Turret','Right_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = {'UAL0001'},
+        },
+		
+        EXAdvancedShellsRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            Icon = 'exramc2',
+            
+            Name = 'Remove Advanced Warhead Compression',
+            
+            Prerequisite = 'EXAdvancedShells',
+
+            RemoveEnhancements = {'EXArtilleryMiasma','EXAdvancedShells','EXAdvancedShellsRemove'},
+
+            Slot = 'RCH',
+        },
+		
+        EXImprovedReloader = {
+
+            BuildCostEnergy = 180000,
+            BuildCostMass = 13500,
+            BuildTime = 18000,
+
+            Icon = 'exramc3',
+            
+            Name = 'Improved Auto Loader (T4)',
+            
+			Prerequisite = 'EXAdvancedShells',
+
+            Slot = 'RCH',
+
+            UpgradeEffectBones = {'Right_Turret','Right_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = {'UAL0001'},
+        },
+		
+        EXImprovedReloaderRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            Icon = 'exramc3',
+
+            Name = 'Remove Improved Auto Loader',
+
+            Prerequisite = 'EXImprovedReloader',
+
+            RemoveEnhancements = {'EXArtilleryMiasma','EXAdvancedShells','EXImprovedReloader','EXImprovedReloaderRemove'},
+
+            Slot = 'RCH',
+        },
+		
+        EXBeamPhason = {
+
+            BuildCostEnergy = 17500,
+            BuildCostMass = 900,
+            BuildTime = 1750,
+
+            Icon = 'exrgec1',
+
+            Name = 'Phason Beam (T3)',
+
+            ShowBones = {'Laser_Cannon'},
+
+            HideBones = {'Right_Turret_Barrel'},
+
+            Slot = 'RCH',
+
+            UpgradeEffectBones = {'Right_Turret','Right_Turret_Muzzle'},
+
+            UpgradeUnitAmbientBones = {'UAL0001'},
+        },
+		
+        EXBeamPhasonRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            ShowBones = {'Right_Turret_Barrel'},
+            HideBones = {'Laser_Cannon'},
+
+            Icon = 'exrgec1',
+
+            Name = 'Remove Phason Beam',
+
+            Prerequisite = 'EXBeamPhason',
+
+            RemoveEnhancements = {'EXBeamPhason','EXBeamPhasonRemove'},
+
+            Slot = 'RCH',
+        },
+		
+        EXImprovedCoolingSystem = {
+
+            BuildCostEnergy = 45000,
+            BuildCostMass = 1800,
+            BuildTime = 4500,
+
+            Icon = 'exrgec2',
+
+            Name = 'Dual Channel Booster (T3+)',
+
+			Prerequisite = 'EXBeamPhason',
+
+            ShowBones = {'Laser_Cannon'},
+            HideBones = {'Right_Turret_Barrel'},
+
+            Slot = 'RCH',
+
+            UpgradeEffectBones = {'Right_Turret','Right_Turret_Muzzle'},
+
+            UpgradeUnitAmbientBones = {'UAL0001'},
+        },
+		
+        EXImprovedCoolingSystemRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            ShowBones = {'Right_Turret_Barrel'},
+
+            HideBones = {'Laser_Cannon'},
+
+            Icon = 'exrgec2',
+
+            Name = 'Remove Dual Channel Booster',
+
+            Prerequisite = 'EXImprovedCoolingSystem',
+
+            RemoveEnhancements = {'EXBeamPhason','EXImprovedCoolingSystem','EXImprovedCoolingSystemRemove'},
+
+            Slot = 'RCH',
+        },
+		
+        EXPowerBooster = {
+
+            BuildCostEnergy = 135000,
+            BuildCostMass = 5400,
+            BuildTime = 1350,
+
+            Icon = 'exrgec3',
+
+            Name = 'Molecular Inducer (T4)',
+
+			Prerequisite = 'EXImprovedCoolingSystem',
+
+            ShowBones = {'Laser_Cannon'},
+            HideBones = {'Right_Turret_Barrel'},
+
+            Slot = 'RCH',
+
+            UpgradeEffectBones = {'Right_Turret','Right_Turret_Muzzle'},
+            UpgradeUnitAmbientBones = {'UAL0001'},
+        },
+		
+        EXPowerBoosterRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            ShowBones = {'Right_Turret_Barrel'},
+            HideBones = {'Laser_Cannon'},
+
+            Icon = 'exrgec3',
+
+            Name = 'Remove Molecular Inducer',
+
+            Prerequisite = 'EXPowerBooster',
+
+            RemoveEnhancements = {'EXBeamPhason','EXImprovedCoolingSystem','EXPowerBooster','EXPowerBoosterRemove'},
+
+            Slot = 'RCH',
+        },
+		
+        EXIntelEnhancementT2 = {
+
+            BuildCostEnergy = 3600,
+            BuildCostMass = 180,
+            BuildTime = 360,
+
+            Icon = 'excint1',
+            
+            ConsumptionPerSecondEnergy = 187.5,
+
+            Name = 'Intel Enhancement (T2)',
+
+            ShowBones = {'IntelPack_Head'},
+
+            Slot = 'Command',
+
+            UpgradeEffectBones = {'IntelPack_Head'},
+            UpgradeUnitAmbientBones = {'UAL0001'},
+        },
+		
+        EXIntelEnhancementT2Remove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'IntelPack_Head'},
+
+            Icon = 'excint1',
+
+            Name = 'Remove Intel Enhancement',
+
+            Prerequisite = 'EXIntelEnhancement',
+
+            RemoveEnhancements = {'EXIntelEnhancementT2','EXIntelEnhancementT2Remove'},
+
+            Slot = 'Command',
+        },
+
+        EXIntelEnhancementT3 = {
+
+            BuildCostEnergy = 27000,
+            BuildCostMass = 2200,
+            BuildTime = 2700,
+
+            Icon = 'excint2',
+            
+            ConsumptionPerSecondEnergy = 2000,
+
+            Name = 'Intel Enhancement (T3)',
+
+			Prerequisite = 'EXIntelEnhancementT2',
+
+            ShowBones = {'IntelPack_Head','IntelPack_LShoulder'},
+
+            Slot = 'Command',
+
+            UpgradeEffectBones = {'IntelPack_Head'},
+            UpgradeUnitAmbientBones = {'UAL0001'},
+        },
+		
+        EXIntelEnhancementT3Remove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'IntelPack_Head','IntelPack_LShoulder'},
+
+            Icon = 'excint2',
+
+            Name = 'Remove Intel Enhancement',
+
+            Prerequisite = 'EXIntelEnhancementT3',
+
+            RemoveEnhancements = {'EXIntelEnhancementT3','EXIntelEnhancementT3Remove'},
+
+            Slot = 'Command',
+        },
+		
+        EXIntelRhianneDevice = {
+
+            BuildCostEnergy = 39000,
+            BuildCostMass = 2100,
+            BuildTime = 3900,
+
+            Icon = 'excint3',
+
+            Name = 'Rhianne Optics (T3)',
+
+			Prerequisite = 'EXIntelEnhancementT3',
+
+            ShowBones = {'IntelPack_Torso','IntelPack_RShoulder'},
+
+            Slot = 'Command',
+
+            UpgradeEffectBones = {'IntelPack_Torso','IntelPack_LShoulder','IntelPack_RShoulder'},
+            UpgradeUnitAmbientBones = {'UAL0001'},
+        },
+		
+        EXIntelRhianneDeviceRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'IntelPack_Torso','IntelPack_RShoulder'},
+
+            Icon = 'excint3',
+
+            Name = 'Remove Rhianne Optics',
+
+            Prerequisite = 'EXIntelRhianneDevice',
+
+            RemoveEnhancements = {'EXIntelRhianneDevice','EXIntelRhianneDeviceRemove','EXIntelEnhancementT3','EXIntelEnhancementT2'},
+
+            Slot = 'Command',
+        },
+        
+        -- the Maelstrom is a BuffField - and gets its range set there
+		
+        EXMaelstromQuantum = {
+
+            BuildCostEnergy = 35000,
+            BuildCostMass = 3500,
+            BuildTime = 3500,
+
+            Icon = 'exbbat1',
+
+            Name = 'Maelstrom Generator',
+
+            ConsumptionPerSecondEnergy = 450,
+
+            ShowBones = {'DamagePack_RLeg_B01','DamagePack_RLeg_B02'},
+
+            Slot = 'Back',
+
+            UpgradeEffectBones = {'DamagePack_RLeg_B01','DamagePack_LLeg_B01'},
+            UpgradeUnitAmbientBones = {'UAL0001'},
+        },
+		
+        EXMaelstromQuantumRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'DamagePack_RLeg_B01','DamagePack_RLeg_B02'},
+
+            Icon = 'exbbat1',
+
+            Name = 'Remove Maelstrom Generator',
+
+            Prerequisite = 'EXMaelstromQuantum',
+
+            RemoveEnhancements = {'EXMaelstromQuantum','EXMaelstromQuantumRemove'},
+
+            Slot = 'Back',
+        },
+		
+        EXMaelstromFieldExpander = {
+
+            BuildCostEnergy = 70000,
+            BuildCostMass = 7000,
+            BuildTime = 7000,
+
+            Icon = 'exbbat2',
+
+            Name = 'Maelstrom Amplifier',
+
+            ConsumptionPerSecondEnergy = 675,
+
+			Prerequisite = 'EXMaelstromQuantum',
+            
+            ShowBones = {'DamagePack_Torso','DamagePack_RLeg_B01','DamagePack_RLeg_B02','DamagePack_LLeg_B01','DamagePack_LLeg_B02'},
+
+            Slot = 'Back',
+
+            UpgradeEffectBones = {'DamagePack_Torso','DamagePack_RLeg_B02','DamagePack_LLeg_B02'},
+            UpgradeUnitAmbientBones = {'UAL0001'},
+        },
+		
+        EXMaelstromFieldExpanderRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'DamagePack_Torso','DamagePack_RLeg_B01','DamagePack_RLeg_B02','DamagePack_LLeg_B01','DamagePack_LLeg_B02'},
+
+            Icon = 'exbbat2',
+
+            Name = 'Remove Maelstrom Amplifier',
+
+            Prerequisite = 'EXMaelstromFieldExpander',
+
+            RemoveEnhancements = {'EXMaelstromQuantum','EXMaelstromFieldExpander','EXMaelstromFieldExpanderRemove'},
+
+            Slot = 'Back',
+        },
+		
+        EXMaelstromQuantumInstability = {
+
+            BuildCostEnergy = 125000,
+            BuildCostMass = 11000,
+            BuildTime = 12500,
+
+            Icon = 'exbbat3',
+
+            Name = 'Maelstrom Focusing',
+
+            ConsumptionPerSecondEnergy = 1080,
+
+			Prerequisite = 'EXMaelstromFieldExpander',
+
+            Slot = 'Back',
+
+            UpgradeEffectBones = {'DamagePack_LArm','DamagePack_RArm'},
+            UpgradeUnitAmbientBones = {'UAL0001'},
+        },
+		
+        EXMaelstromQuantumInstabilityRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'DamagePack_LArm','DamagePack_RArm','DamagePack_Torso','DamagePack_RLeg_B01','DamagePack_RLeg_B02','DamagePack_LLeg_B01','DamagePack_LLeg_B02'},
+
+            Icon = 'exbbat3',
+
+            Name = 'Remove Maelstrom Focusing',
+
+            Prerequisite = 'EXMaelstromQuantumInstability',
+
+            RemoveEnhancements = {'EXMaelstromQuantum','EXMaelstromFieldExpander','EXMaelstromQuantumInstability','EXMaelstromQuantumInstabilityRemove'},
+
+            Slot = 'Back',
+        },
+	
+        EXPersonalTeleporter = {
+
+            BuildCostEnergy = 95000,
+            BuildCostMass = 4800,
+            BuildTime = 9500,
+
+            Icon = 'exbtele',
+
+            Name = 'Personal Teleporter (T4)',
+
+            Slot = 'Back',
+
+            UpgradeEffectBones = {'IntelPack_Torso'},
+            UpgradeUnitAmbientBones = {'UAL0001'},
+        },
+		
+        EXPersonalTeleporterRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            Icon = 'exbtele',
+
+            Name = 'Remove Personal Teleporter',
+
+            Prerequisite = 'EXPersonalTeleporter',
+
+            RemoveEnhancements = {'EXPersonalTeleporter','EXPersonalTeleporterRemove'},
+
+            Slot = 'Back',
+        },
+		
+        EXShieldBubble = {
+
+            BuildCostEnergy = 7500,
+            BuildCostMass = 500,
+            BuildTime = 750,
+			
+            Icon = 'exbsh1',
+			
+            ImpactEffects = 'AeonShieldHit01',
+            ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
+            Mesh = '/effects/entities/AeonShield01/AeonShield01_mesh',
+            MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
+			
+            ConsumptionPerSecondEnergy = 200,
+			
+            Name = 'Shield Bubble (T2)',
+			
+            RegenAssistMult = 60,            
+			
+            ShieldEnergyDrainRechargeTime = 5,
+            ShieldMaxHealth = 8500,
+            ShieldRechargeTime = 14,
+            ShieldRegenRate = 98,
+            ShieldRegenStartTime = 1,
+            ShieldSize = 8,
+            ShieldVerticalOffset = -2,
+			
+            Slot = 'Back',
+
+            UpgradeEffectBones = {'ShieldPack_Normal'},
+            UpgradeUnitAmbientBones = {'UAL0001'},
+        },
+		
+        EXShieldBubbleRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            Icon = 'exbsh1',
+
+            Name = 'Remove Shield Bubble',
+
+            Prerequisite = 'EXShieldBubble',
+
+            RemoveEnhancements = {'EXShieldBubble','EXShieldBubbleRemove'},
+
+            Slot = 'Back',
+		},
+		
+        EXActiveSkinShield = {
+
+            BuildCostEnergy = 22000,
+            BuildCostMass = 2240,
+            BuildTime = 2240,
+
+            Icon = 'exbsh2',
+
+            ImpactEffects = 'UEFShieldHit01',
+
+            Name = 'Skin Shield (T3)',
+
+			Prerequisite = 'EXShieldBubble',
+
+            OwnerShieldMesh = '/mods/BlackopsACUs/units/EAL0001/EAL0001_PhaseShield_mesh',
+
+            PersonalShield = true,
+
+            RegenAssistMult = 60,
+
+            ConsumptionPerSecondEnergy = 550,
+
+            ShieldEnergyDrainRechargeTime = 5,
+            ShieldMaxHealth = 18000,
+            ShieldRechargeTime = 24,
+            ShieldRegenRate = 187,
+            ShieldRegenStartTime = 1,
+            ShieldSize = 3,
+            ShieldVerticalOffset = 0,
+
+            Slot = 'Back',
+
+            UpgradeEffectBones = {'ShieldPack_Normal'},
+            UpgradeUnitAmbientBones = {'UAL0001'},
+        },
+		
+        EXActiveSkinShieldRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            Icon = 'exbsh2',
+
+            Name = 'Remove Skin Shield',
+
+            Prerequisite = 'EXActiveSkinShield',
+
+            RemoveEnhancements = {'EXShieldBubble','EXActiveSkinShield','EXActiveSkinShieldRemove'},
+
+            Slot = 'Back',
+        },
+		
+        EXAdvancedSkinShield = {
+
+            BuildCostEnergy = 24000,
+            BuildCostMass = 3505,
+            BuildTime = 2400,
+
+            Icon = 'exbsh3',
+
+            ImpactEffects = 'UEFShieldHit01',
+
+            Name = 'Advanced Skin Shield (T4)',
+
+			Prerequisite = 'EXActiveSkinShield',
+
+            OwnerShieldMesh = '/mods/BlackopsACUs/units/EAL0001/EAL0001_PhaseShield_mesh',
+
+            PersonalShield = true,
+
+            RegenAssistMult = 60,
+
+            ConsumptionPerSecondEnergy = 750,
+
+            ShieldEnergyDrainRechargeTime = 5,
+            ShieldMaxHealth = 28800,
+            ShieldRechargeTime = 28,
+            ShieldRegenRate = 255,
+            ShieldRegenStartTime = 1,
+            ShieldSize = 3,
+            ShieldVerticalOffset = 0,
+
+            Slot = 'Back',
+
+            UpgradeEffectBones = {'ShieldPack_Normal'},
+            UpgradeUnitAmbientBones = {'UAL0001'},
+        },
+		
+        EXAdvancedSkinShieldRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            Icon = 'exbsh3',
+
+            Name = 'Remove Advanced Skin Shield',
+
+            Prerequisite = 'EXAdvancedSkinShield',
+
+            RemoveEnhancements = {'EXShieldBubble','EXActiveSkinShield','EXAdvancedSkinShield','EXAdvancedSkinShieldRemove'},
+
+            Slot = 'Back',
+        },
+    },
+
     Physics = {
         BackUpDistance = 0,    
         BankingSlope = 0,
