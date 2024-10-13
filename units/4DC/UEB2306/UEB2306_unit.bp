@@ -10,7 +10,7 @@ UnitBlueprint{
 
 		MuzzleVelocity = 40,
 		MuzzleChargeDelay = 1,
-		TurretDualManipulators = true,
+		TurretDualManipulators = false,
 
 		RackRecoilDistance = -8,
 		RackReloadTimeout = 0,
