@@ -3,11 +3,25 @@ QUIET
 Rebalance Changelog
 ---------------
 
+# 1.52
+
+### ACU Engineer Upgrades
+- Buildtime, Mass, and Energy Reduced by 25%
+
+### Bombers
+- All Bomber Projectiles have been returned to Vanilla Physics
+- All Bomber Projectiles no longer home-in on targets
+
+- Too compensate for this, all bombers receive `large AoE Buffs`, T2 Bombers also receive `Damage Buff`
+
+### T3 UEF Brimstone
+- Fixed Brimstone MuzzleBones not existing `(Causing massive LOG Spam)`
+
 # 1.51
 
 ### Misc
-Fixed TransportSpeedReduction NIL
-Fixed SSL0311 Shield Not Stopping AoE
+- Fixed TransportSpeedReduction NIL
+- Fixed SSL0311 Shield Not Stopping AoE
 
 # 1.50
 
