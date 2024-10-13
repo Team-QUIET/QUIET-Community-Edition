@@ -5,6 +5,7 @@ description = "QUIET is a massive collection of Bug Fixes, Game Rebalance, & Oth
 exclusive = false
 ui_only = false
 selectable = true
+enabled = true
 uid = "zzzzzzze-fffe-fffe-fffe-71aabbf8363f"
 requires = {
 	"454af309-5afb-458b-bf5b-a00000000007", -- 4DC

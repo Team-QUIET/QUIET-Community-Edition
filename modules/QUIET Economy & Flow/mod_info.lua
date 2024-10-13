@@ -5,6 +5,7 @@ description = "QUIET E&F is the economic overhaul part of QUIET. This changes fa
 exclusive = false
 ui_only = false
 selectable = true
+enabled = true
 uid = "zzzzzzze-fffe-fffe-fffe-94ccddf9599f"
 requires = {
   "zzzzzzze-fffe-fffe-fffe-71aabbf8363f", --QUIET
