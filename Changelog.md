@@ -3,6 +3,33 @@ QUIET
 Rebalance Changelog
 ---------------
 
+# 1.54
+
+### Air
+- Removed Debuffs to Speed when Aircraft is Damaged
+- Removed Debuffs to FuelRatio from all `flak/maa/staticaa` when Aircraft is Damaged
+
+### T4 UEF Star Adder
+- Fixed Star Adder Lasers Missing 
+- Reworked Lasers to be two seperate weapons
+- PPC Cannons Damage: 1000 -> 2000
+- Beam Laser Damage: 350 -> 175
+- Beam Lasers Now Rapid Fire To Balance Out Damage Decrease
+- Fixed Walking Animation To Make Him Not `Slide`
+
+### T2 MML 
+- All Speed Nerfed By 0.05
+- Many Other Stats Standardized Across The Board
+- MMLs should all be around the Same Strength with `Cybran Viper` being the best
+
+### T3 Cybran Leviathan
+- Torp Defense Rate of Fire: 8 -> 20 `**Twenty Would Mean Lower In This Case**`
+
+### Misc
+- Removed Variable Transport Speeds Due To Multiple Bugs
+- Fixed Penetrator Bombers Not Dropping Bombs Reliably
+- Fixed QCE not being enabled properly
+
 # 1.53
 
 ### T3 Pen Bombers
