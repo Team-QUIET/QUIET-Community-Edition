@@ -199,12 +199,12 @@ do
 					-- This also fixes T2 & Ahwassa Bombers not dropping at all in many cases
 
 					if cats.TECH1 or cats.TECH2 or cats.TECH3 or cats.EXPERIMENTAL then
-						if bp.Weapon.BombDropThreshold then
-							bp.Weapon.BombDropThreshold = bp.Weapon.BombDropThreshold * 2
+						if bp.Weapon[1].BombDropThreshold then
+							bp.Weapon[1].BombDropThreshold = bp.Weapon[1].BombDropThreshold * 2
 						end
 
-						if bp.Weapon.FiringTolerance then
-							bp.Weapon.FiringTolerance = bp.Weapon.FiringTolerance * 2
+						if bp.Weapon[1].FiringTolerance then
+							bp.Weapon[1].FiringTolerance = bp.Weapon[1].FiringTolerance * 2
 						end
 					end
 				end
