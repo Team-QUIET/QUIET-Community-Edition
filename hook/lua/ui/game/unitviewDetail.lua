@@ -345,12 +345,6 @@ function WrapAndPlaceText(air, physics, intel, weapons, abilities, capCost, text
 					physicsText = (physicsText .. ", Fuel Time: " .. LOUD_FuelCheck(physics.FuelUseTime))
 				end
 			end
-
-            -- Display the TransportSpeedReduction stat in the UI.
-            if physics.TransportSpeedReduction then
-                table.insert(textLines, LOCF("<LOC uvd_0017>Transport Speed Reduction: %.3g",
-                physics.TransportSpeedReduction, physicsText))
-            end
 			
 			-- Insert the physics text into the table.
 			table.insert(textLines, physicsText)

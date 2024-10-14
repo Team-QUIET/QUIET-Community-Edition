@@ -209,16 +209,6 @@ do
 					end
 				end
 
-				if cats.TRANSPORTATION and cats.AIR then
-					if bp.Physics.FuelUseTime then
-						bp.Physics.FuelUseTime = nil
-					end
-					
-					if bp.Physics.FuelRechargeRate then
-						bp.Physics.FuelRechargeRate = nil
-					end
-				end
-
 				-- all structures
 				-- LCE: Leaving this in here until we decide if we want to reset it to the default ranges instead of 9% least range
 				if cats.STRUCTURE then
@@ -526,25 +516,6 @@ do
 						end
 					end
 				end
-			end
-
-			if not bp.Physics.TransportSpeedReduction and not isStructure then    
-				if isLand and isTech1 then
-					bp.Physics.TransportSpeedReduction = 0.15
-				elseif isLand and isTech2 then
-					bp.Physics.TransportSpeedReduction = 0.3
-				elseif isSACU then
-					bp.Physics.TransportSpeedReduction = 1
-				elseif isLand and isTech3 then
-					bp.Physics.TransportSpeedReduction = 0.6
-				elseif isLand and isExperimental then
-					bp.Physics.TransportSpeedReduction = 1
-				elseif isACU then
-					bp.Physics.TransportSpeedReduction = 1
-				elseif isNaval then
-					bp.Physics.TransportSpeedReduction = 1
-				end
-				--LOG("TransportSpeedReduction in blueprint: " .. tostring(bp.Physics.TransportSpeedReduction) .. " and Unit is "..tostring(bp.BlueprintId))
 			end
 
 			local averageDensity = 10
