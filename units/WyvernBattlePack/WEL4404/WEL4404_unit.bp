@@ -1,0 +1,482 @@
+UnitBlueprint{
+
+    Source = '/mods/BattlePack/units/WEL4404/WEL4404_unit.bp',
+
+
+    Description = "<LOC wel4404_desc>Experimental Medium Assault Mech",
+
+    AI = {
+        GuardScanRadius = 48,
+        TargetBones = {"head","legb4","legb05"},
+    },
+
+    Audio = {
+        AmbientMove           = Sound { Bank = 'URL',          Cue = 'URL0303_Move_Loop',         LodCutoff = 'UnitMove_LodCutoff' },
+        DeathExplosion        = Sound { Bank = 'Explosions',   Cue = 'UEF_Nuke_Impact',           LodCutoff = 'UnitMove_LodCutoff' },
+        Destroyed             = Sound { Bank = 'Explosions',   Cue = 'UEF_Nuke_Impact',           LodCutoff = 'UnitMove_LodCutoff' },
+        FootFallGeneric       = Sound { Bank = 'BattlePackSB', Cue = 'Revamp_StarAdder_Footstep', LodCutoff = 'UnitMove_LodCutoff' },
+        FootFallGenericSeabed = Sound { Bank = 'BattlePackSB', Cue = 'Revamp_StarAdder_Footstep', LodCutoff = 'UnitMove_LodCutoff' },
+        Killed                = Sound { Bank = 'URLDestroy',   Cue = 'URL0402_Destroy',           LodCutoff = 'UnitMove_LodCutoff' },
+        Nuke                  = Sound { Bank = 'Explosions',   Cue = 'UEF_Nuke_Impact',           LodCutoff = 'UnitMove_LodCutoff' },
+        StartMove             = Sound { Bank = 'URL',          Cue = 'URL0303_Move_Start',        LodCutoff = 'UnitMove_LodCutoff' },
+        StopMove              = Sound { Bank = 'URL',          Cue = 'URL0303_Move_Stop',         LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection           = Sound { Bank = 'Interface',    Cue = 'Cybran_Select_Bot',         LodCutoff = 'UnitMove_LodCutoff' },
+    },
+
+    Buffs = {
+        Regen = {
+            Level1 = 12,
+            Level2 = 24,
+            Level3 = 36,
+            Level4 = 48,
+            Level5 = 60,
+        },
+    },
+
+    BuildIconSortPriority = 9.1,
+
+    Categories = {
+        "AMPHIBIOUS",
+        "BUILTBYTIER4COMMANDER",
+        "DIRECTFIRE",
+        "DRAGBUILD",
+        "EXPERIMENTAL",
+        "LAND",
+        "MOBILE",
+        "NEEDMOBILEBUILD",
+        "OVERLAYRADAR",
+        "RECLAIMABLE",
+        "SELECTABLE",
+        "UEF",
+        "VISIBLETORECON",
+    },
+
+    Defense = {
+        ArmorType = "Experimental",
+        Health = 55000,
+        MaxHealth = 55000,
+        RegenRate = 12,
+        SurfaceThreatLevel = 587,
+    },
+
+    Display = {
+        Abilities = {
+            "<LOC ability_amphibious>Amphibious",
+            "<LOC ability_personalstealth>Personal Stealth",
+            "<LOC ability_radar>Radar",
+        },
+
+        AnimationDeath = {
+            {
+                Animation = "/Mods/BattlePack/units/WEL4404/WEL4404_Death.sca",
+                Weight = 100,
+            },
+        },
+        AnimationWalk = "/Mods/BattlePack/units/WEL4404/WEL4404_Walk2.sca",
+        AnimationWalkRate = 2.2,
+
+        Mesh = { IconFadeInZoom = 200, LODs = { { LODCutoff = 550, ShaderName = "Unit" } } },
+
+        UniformScale = 0.0425,
+    },
+
+    Economy = {
+        BuildCostEnergy = 411000,
+        BuildCostMass = 23500,
+        BuildTime = 6850,
+        MaintenanceConsumptionPerSecondEnergy = 80,
+    },
+
+    General = {
+        CapCost = 4,
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = "UEF",
+        Icon = "amph",
+
+        OrderOverrides = {
+            RULEUTC_StealthToggle = { bitmapId = "stealth-personal", helpText = "toggle_stealth_personal" },
+        },
+
+        ToggleCaps = { RULEUTC_StealthToggle = true },
+
+        UnitName = "<LOC wel4404_name>Star Adder",
+    },
+
+    Intel = {
+        RadarRadius = 64,
+        RadarStealth = true,
+        VisionRadius = 36,
+        WaterVisionRadius = 20,
+    },
+
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 1.5,
+    LifeBarSize = 3,
+
+    ModIconName = "wbp",
+
+    Physics = {
+        BackupDistance = 5,
+        BankingSlope = 0,
+        DragCoefficient = 0.2,
+
+        LayerChangeOffsetHeight = -3.2,
+        
+        MaxAcceleration = 2,
+        MaxBrake = 3.5,
+        MaxSpeed = 3.5,
+        MaxSpeedReverse = 3,
+        MaxSteerForce = 0,
+        MinSpeedPercent = 0,
+        MotionType = "RULEUMT_Amphibious",
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+        SkirtSizeX = 4,
+        SkirtSizeZ = 4,
+        TurnRadius = 5,
+        TurnRate = 60,
+    },
+
+    SelectionCenterOffsetX = 0,
+    SelectionCenterOffsetZ = 0,
+    SelectionSizeX = 2.3,
+    SelectionSizeZ = 1.9,
+    SelectionThickness = 0.35,
+
+    SizeX = 2.6,
+    SizeY = 3.8,
+    SizeZ = 2.6,
+
+    StrategicIconName = "icon_seabed4_directfire",
+    StrategicIconSortPriority = 115,
+
+    Transport = { TransportClass = 4 },
+
+    Veteran = {
+        Level1 = 25,
+        Level2 = 50,
+        Level3 = 75,
+        Level4 = 100,
+        Level5 = 125,
+    },
+
+    Weapon = {
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                BarrelLoop        = Sound { Bank = 'UAS',          Cue = 'UAS_Turret_Lrg_Loop',       LodCutoff = 'WeaponBig_LodCutoff' },
+                BarrelStart       = Sound { Bank = 'UAS',          Cue = 'UAS_Turret_Lrg_Start',      LodCutoff = 'WeaponBig_LodCutoff' },
+                Fire              = Sound { Bank = 'BattlePackSB', Cue = 'StarAdderPPC',              LodCutoff = 'WeaponBig_LodCutoff' },
+                MuzzleChargeStart = Sound { Bank = 'XSL_Weapon',   Cue = 'XSL0401_Exp_Phason_Charge', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = "RULEUBA_LowArc",
+            CollideFriendly = false,
+
+            Damage = 2000,
+            DamageRadius = 3,
+            DamageType = "Normal",
+
+            DisplayName = "Plasma PPC",
+
+            FireTargetLayerCapsTable = {
+                Land = "Land|Water|Seabed",
+                Seabed = "Land|Water|Seabed",
+            },
+
+            FiringRandomness = 0.5,
+            FiringTolerance = 2,
+
+            Label = "PlasmaPPC",
+
+            MaxRadius = 50,
+
+            MuzzleChargeDelay = 0.5,
+            MuzzleVelocity = 42,
+
+            NotExclusive = true,
+
+            ProjectileId = "/Mods/BattlePack/projectiles/PlasmaPPC/PlasmaPPC_proj.bp",
+            ProjectileLifetime = 3,
+
+            RackBones = {
+                {
+                    MuzzleBones = { "muzzle08" },
+                    RackBone = "topgun02",
+                },
+                {
+                    MuzzleBones = { "muzzle05" },
+                    RackBone = "topgun01",
+                },
+            },
+            RackRecoilDistance = -1,
+			RackSalvoReloadTime = 2,
+			RackReloadTimeout = 0,
+			RackFireTogether = true,
+
+            RackSlavedToTurret = true,
+
+            RangeCategory = "UWRC_IndirectFire",
+
+            RateOfFire = 8/10,
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "MOBILE",
+                "DEFENSE",
+                "ALLUNITS -WALL",
+            },
+            TargetRestrictDisallow = "UNTARGETABLE",
+            TrackingRadius = 1.1,
+
+            TurretBoneDualMuzzle = "muzzle08",
+            TurretBoneDualPitch = "topgun02",
+            TurretBoneMuzzle = "muzzle05",
+            TurretBonePitch = "topgun01",
+            TurretBoneYaw = "Turret",
+            TurretDualManipulators = true,
+
+            TurretPitch = 0,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 35,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 32,
+            Turreted = true,
+			
+			UseFiringSolutionInsteadOfAimBone = true,
+        },
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'BattlePackSB', Cue = 'StarAdderLaser', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = "RULEUBA_None",
+            BeamCollisionDelay = 0.1,
+            BeamLifetime = 0.1,
+            CollideFriendly = false,
+
+            Damage = 175,
+            DamageType = "Normal",
+
+            DisplayName = "Beam Cannons",
+
+            FireTargetLayerCapsTable = {
+                Land = "Land|Water|Seabed",
+                Seabed = "Land|Water|Seabed",
+            },
+
+            FiringTolerance = 0.2,
+
+            Label = "BeamCannon",
+
+            MaxRadius = 48,
+
+            MuzzleSalvoDelay = 0.1,
+			MuzzleSalvoSize = 4,
+
+            NotExclusive = true,
+
+            PrefersPrimaryWeaponTarget = true,
+            ProjectileLifetimeUsesMultiplier = 5,
+
+            RackBones = {
+                {
+                    MuzzleBones = { "muzzle01", "muzzle02" },
+                    RackBone = "gun02",
+                },
+            },
+			
+            RackFireTogether = true,
+
+            RackSlavedToTurret = false,
+
+            RangeCategory = "UWRC_DirectFire",
+
+            RateOfFire = 66/100,
+
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "MOBILE",
+                "DEFENSE",
+                "ALLUNITS -WALL",
+            },
+            TargetRestrictDisallow = "UNTARGETABLE",
+            TrackingRadius = 1.1,
+
+            TurretBoneDualMuzzle = "muzzle01",
+            TurretBoneDualPitch = "gun02",
+            TurretBoneMuzzle = "muzzle02",
+            TurretBonePitch = "gun02",
+            TurretBoneYaw = "Turret",
+            TurretDualManipulators = true,
+
+            TurretPitch = 0,
+            TurretPitchRange = 55,
+            TurretPitchSpeed = 35,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 70,
+            Turreted = true,
+		},
+		{
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'BattlePackSB', Cue = 'StarAdderLaser', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = "RULEUBA_None",
+            BeamCollisionDelay = 0.1,
+            BeamLifetime = 0.1,
+            CollideFriendly = false,
+
+            Damage = 175,
+            DamageType = "Normal",
+
+            DisplayName = "Beam Cannons",
+
+            FireTargetLayerCapsTable = {
+                Land = "Land|Water|Seabed",
+                Seabed = "Land|Water|Seabed",
+            },
+
+            FiringTolerance = 0.2,
+
+            Label = "BeamCannon",
+
+            MaxRadius = 48,
+
+            MuzzleSalvoDelay = 0.1,
+			MuzzleSalvoSize = 4,
+
+            NotExclusive = true,
+
+            PrefersPrimaryWeaponTarget = true,
+            ProjectileLifetimeUsesMultiplier = 5,
+
+			RackBones = {
+                {
+                    MuzzleBones = { "muzzle03", "muzzle04" },
+                    RackBone = "gun01",
+                },
+            },
+			
+            RackFireTogether = true,
+
+            RackSlavedToTurret = false,
+
+            RangeCategory = "UWRC_DirectFire",
+
+            RateOfFire = 66/100,
+
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "MOBILE",
+                "DEFENSE",
+                "ALLUNITS -WALL",
+            },
+            TargetRestrictDisallow = "UNTARGETABLE",
+            TrackingRadius = 1.1,
+
+            TurretBoneDualMuzzle = "muzzle04",
+            TurretBoneDualPitch = "gun01",
+            TurretBoneMuzzle = "muzzle03",
+            TurretBonePitch = "gun01",
+            TurretBoneYaw = "Turret",
+            TurretDualManipulators = true,
+
+            TurretPitch = 0,
+            TurretPitchRange = 55,
+            TurretPitchSpeed = 35,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 70,
+            Turreted = true,
+        },
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'UESWeapon', Cue = 'UES0201_Cannon_Dbl', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = "RULEUBA_None",
+            CollideFriendly = false,
+            Damage = 100,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = "Normal",
+            DisplayName = "Flamethrower",
+            DoTPulses = 10,
+            DoTTime = 2.5,
+            FireTargetLayerCapsTable = {
+                Land = "Land|Water|Seabed",
+                Seabed = "Land|Water|Seabed",
+            },
+            FiringRandomness = 0.6,
+            FiringTolerance = 2,
+            Label = "FlameThrower",
+            MaxRadius = 30,
+            MinRadius = 10,
+
+            MuzzleVelocity = 20,
+            NotExclusive = true,
+            ProjectileId = "/Mods/BattlePack/projectiles/NFlamerProjectile/NFlamerProjectile_proj.bp",
+            ProjectileLifetime = 3,
+            RackBones = {
+                {
+                    MuzzleBones = { "FlameMuzzle" },
+                    RackBone = "FlameMuzzle",
+                },
+            },
+
+            RateOfFire = 10/10,
+            TargetCheckInterval = 0.625,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "MOBILE",
+                "ALLUNITS -WALL",
+            },
+            TargetRestrictDisallow = "UNTARGETABLE",
+            TrackingRadius = 1.1,
+
+            TurretBoneMuzzle = "FlameMuzzle",
+            TurretBonePitch = "FlameMuzzle",
+            TurretBoneYaw = "Turret",
+            TurretDualManipulators = false,
+            TurretPitch = 0,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 45,
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 0.3,
+            Turreted = true,
+        },
+    },
+
+    Wreckage = {
+        Blueprint = "/props/DefaultWreckage/DefaultWreckage_prop.bp",
+        EnergyMult = 0.3,
+        HealthMult = 0.9,
+        MassMult = 0.3,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+            Seabed = true,
+        },
+    },
+}

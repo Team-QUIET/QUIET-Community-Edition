@@ -1,0 +1,18 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "ssa0306",
+
+      Defense = {
+
+        Health = 3000,
+        MaxHealth = 3000,
+
+
+        Shield = {
+
+            ShieldMaxHealth = 3500,
+
+        },
+
+    },
+  }
