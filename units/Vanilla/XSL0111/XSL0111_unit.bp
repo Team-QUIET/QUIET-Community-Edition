@@ -3,16 +3,16 @@ UnitBlueprint {
     BlueprintId = "xsl0111",
 	
     Physics = {
-        BackUpDistance = 4,
+        BackUpDistance = 8,
         BankingSlope = 0,
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
         DragCoefficient = 0.2,
-        MaxAcceleration = 2.85,
-        MaxBrake = 2.85,
-        MaxSpeed = 2.85,
-        MaxSpeedReverse = 2.85,
+        MaxAcceleration = 2.8,
+        MaxBrake = 2.8,
+        MaxSpeed = 2.8,
+        MaxSpeedReverse = 2.8,
         MaxSteerForce = 5,
         MeshExtentsX = 0.85,
         MeshExtentsY = 0.6,
@@ -35,8 +35,8 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 
-            Damage = 390,
-            DamageRadius = 1.5,
+            Damage = 405,
+            DamageRadius = 0.5,
             DamageType = 'Normal',
 			
             DisplayName = 'Laanse Tactical Missile Launcher',
@@ -45,22 +45,33 @@ UnitBlueprint {
                 Land = 'Land|Water',
             },
             FiringTolerance = 0.5,
+
+            HeadingArcCenter = 0,
+            HeadingArcRange = 60,
             
             LeadTarget = true,
  			
-            MaxRadius = 75,
-            MinRadius = 4,
+            MaxRadius = 65,
+            MinRadius = 10,
 
-            MuzzleVelocity = 6.5,
+	    MuzzleChargeDelay = 0.1,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+
+            MuzzleVelocity = 4,
 			
-            ProjectileLifetime = 12,
-            
-            RackSalvoChargeTime = .6,
-            RackSalvoReloadTime = 5.9,
+            ProjectileLifetime = 25,
+            ProjectilesPerOnFire = 1,
+
+            RackRecoilDistance = -1,
+            RackReloadTimeout = 10,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
 
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 0.5,     -- controlled by RackSalvo timings -- 6.5 seconds
+            RateOfFire = 10/60,
 			
             SlavedToBody = true,
 			
