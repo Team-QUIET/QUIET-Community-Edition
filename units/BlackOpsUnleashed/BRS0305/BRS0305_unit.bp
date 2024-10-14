@@ -1,0 +1,8 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "brs0305",
+
+  Defense = {
+        TorpRedirectField01 = { AttachBone = 'XRS0305', Radius = 5.6, RedirectRateOfFire = 20 },
+    },
+  }
