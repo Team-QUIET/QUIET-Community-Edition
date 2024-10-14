@@ -41,6 +41,14 @@ UnitBlueprint {
         SubThreatLevel = 15,
         SurfaceThreatLevel = 110,
     },
+
+    Intel = {
+        FreeIntel = true,
+        
+        RadarRadius = 65,
+        RadarStealth = true,
+        VisionRadius = 32,
+    },
 	
     Economy = {
         BuildCostEnergy = 195000,

@@ -29,6 +29,14 @@ UnitBlueprint {
         TurnSpeed = 0.8,
         Winged = true,
     },
+
+    Intel = {
+        FreeIntel = true,
+        
+        RadarRadius = 65,
+        RadarStealth = true,
+        VisionRadius = 32,
+    },
 	
     Defense = {
 	

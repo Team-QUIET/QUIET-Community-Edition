@@ -42,6 +42,14 @@ UnitBlueprint {
         SubThreatLevel = 15,
         SurfaceThreatLevel = 120,
     },
+
+    Intel = {
+        FreeIntel = true,
+        
+        RadarRadius = 65,
+        RadarStealth = true,
+        VisionRadius = 32,
+    },
 	
     Economy = {
         BuildCostEnergy = 190000,
@@ -51,6 +59,7 @@ UnitBlueprint {
         ResearchMultEnergy = 0.2,
         MaintenanceConsumptionPerSecondEnergy = 300,
     },
+    
     Weapon = {
         {
             AboveWaterTargetsOnly = true,
