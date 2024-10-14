@@ -3,16 +3,16 @@ UnitBlueprint {
     BlueprintId = "uel0111",
 
     Physics = {
-        BackUpDistance = 4,
+        BackUpDistance = 8,
         BankingSlope = 0,
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
         DragCoefficient = 0.2,
-        MaxAcceleration = 2.85,
-        MaxBrake = 2.85,
-        MaxSpeed = 2.85,
-        MaxSpeedReverse = 2.85,
+        MaxAcceleration = 2.8,
+        MaxBrake = 2.8,
+        MaxSpeed = 2.8,
+        MaxSpeedReverse = 2.8,
         MaxSteerForce = 5,
         MeshExtentsX = 0.75,
         MeshExtentsY = 0.75,
@@ -44,18 +44,25 @@ UnitBlueprint {
             
             LeadTarget = true,
 			
-            MaxRadius = 75,
-            MinRadius = 5,
+            MaxRadius = 65,
+            MinRadius = 12,
 			
             MuzzleChargeDelay = 0.5,
-
-            MuzzleVelocity = 5,
+            MuzzleSalvoDelay = 1.8,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 3,
 			
-            ProjectileLifetime = 17,
+            ProjectileLifetime = 25,
 			
             RangeCategory = 'UWRC_IndirectFire',
+
+	    RackRecoilDistance = 0,
+            RackReloadTimeout = 10,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
 			
-            RateOfFire = 0.2,
+            RateOfFire = 10/100,
             RenderFireClock = true,
 
             SlavedToBody = true,
