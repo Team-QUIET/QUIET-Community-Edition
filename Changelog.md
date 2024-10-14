@@ -3,6 +3,14 @@ QUIET
 Rebalance Changelog
 ---------------
 
+# 1.53
+
+### T3 Pen Bombers
+- Fix Pen Bombers sometimes not dropping when they should
+
+### T3 Cybran Sub Hunter
+- Nerf Torpedo Defense Rate Of Fire from 8 to 20
+
 # 1.52
 
 ### ACU Engineer Upgrades
