@@ -209,6 +209,16 @@ do
 					end
 				end
 
+				if cats.TRANSPORTATION and cats.AIR then
+					if bp.Physics.FuelUseTime then
+						bp.Physics.FuelUseTime = nil
+					end
+					
+					if bp.Physics.FuelRechargeRate then
+						bp.Physics.FuelRechargeRate = nil
+					end
+				end
+
 				-- all structures
 				-- LCE: Leaving this in here until we decide if we want to reset it to the default ranges instead of 9% least range
 				if cats.STRUCTURE then
