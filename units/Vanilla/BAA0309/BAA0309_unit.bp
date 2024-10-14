@@ -1,0 +1,20 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "baa0309",
+
+  Defense = {
+
+        Health = 4800,
+        MaxHealth = 4800,
+
+    },
+
+    Intel = {
+		FreeIntel = true,
+
+		RadarRadius = 48,
+		RadarStealth = false,
+		RadarStealthFieldRadius = 0,
+  
+    },
+  }
