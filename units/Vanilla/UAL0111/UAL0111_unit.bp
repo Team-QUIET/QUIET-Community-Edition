@@ -3,23 +3,23 @@ UnitBlueprint {
     BlueprintId = "ual0111",
 	
     Physics = {
-        BackUpDistance = 4,
+        BackUpDistance = 8,
         BankingSlope = 0,
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
         DragCoefficient = 0.2,
-        MaxAcceleration = 2.85,
-        MaxBrake = 2.85,
-        MaxSpeed = 2.85,
-        MaxSpeedReverse = 2.85,
+        MaxAcceleration = 2.8,
+        MaxBrake = 2.8,
+        MaxSpeed = 2.8,
+        MaxSpeedReverse = 2.8,
         MaxSteerForce = 5,
         MeshExtentsX = 0.85,
         MeshExtentsY = 0.6,
         MeshExtentsZ = 1.25,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_Land',
-        RotateOnSpot = true,
+        RotateOnSpot = false,
         RotateOnSpotThreshold = 0.1,
         TurnRadius = 0,
         TurnRate = 90,
@@ -47,18 +47,18 @@ UnitBlueprint {
             
             LeadTarget = true,
 			
-            MaxRadius = 75,
-            MinRadius = 3,
+            MaxRadius = 65,
+            MinRadius = 15,
 			
             MuzzleChargeDelay = 0.5,
 
-            MuzzleVelocity = 5,
+            MuzzleVelocity = 3,
 
             ProjectileLifetime = 25,
 
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 0.1,
+            RateOfFire = 10/100,
             RenderFireClock = true,
 			
             SlavedToBody = true,
