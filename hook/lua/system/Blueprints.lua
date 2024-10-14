@@ -209,6 +209,13 @@ do
 					end
 				end
 
+				-- Remove the FUELRATIO buff if it exists
+				if cats.ALLUNITS then
+					if bp.Weapon[1].Buffs and bp.Weapon[1].Buffs.BuffType == 'FUELRATIO' then
+						bp.Weapon[1].Buffs = nil
+					end
+				end
+
 				-- all structures
 				-- LCE: Leaving this in here until we decide if we want to reset it to the default ranges instead of 9% least range
 				if cats.STRUCTURE then
