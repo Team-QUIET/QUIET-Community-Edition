@@ -62,7 +62,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
 			
-            RateOfFire = 10/33,
+            RateOfFire = 10/50,
             RenderFireClock = true,
 			
             SlavedToBody = true,
