@@ -4,11 +4,56 @@ UnitBlueprint {
 	
     Weapon = {
 		{
+		
+		FiringRandomness = 0.3,
+				
+		MuzzleSalvoDelay = 0.05,
+            MuzzleSalvoSize = 10,
+
+            MuzzleVelocity = 54,
+
+		ProjectileLifetime = 1,
+			
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+			
+		RateOfFire = 20/10,
+			
+		TargetCheckInterval = 0.3,
+		
+		TurretPitch = 0,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 80,
+			
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 90,
+            TurretYawSpeed = 105,
         },
 		{
+		
+		FiringRandomness = 0.3,
+		
+		MuzzleSalvoDelay = 0.05,
+            MuzzleSalvoSize = 10,
+
+            MuzzleVelocity = 54,
+
+		ProjectileLifetime = 1,
+			
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+			
+            RateOfFire = 20/10,
+			
+		TargetCheckInterval = 0.3,
+		
+		TurretPitch = 0,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 80,
+			
+            TurretYaw = 0,
+            TurretYawRange = 3,
+            TurretYawSpeed = 105,
 
         },        
     },
