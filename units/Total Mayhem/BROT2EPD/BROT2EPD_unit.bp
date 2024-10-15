@@ -23,7 +23,7 @@ UnitBlueprint {
         },
         {
 
-        RateOfFire = 2/10
+        RateOfFire = 2/10,
 
         },
         {
