@@ -1,0 +1,87 @@
+UnitBlueprint {
+	Merge = true,
+	BlueprintId = "brmt1expd",
+	
+	    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                BeamLoop = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Loop', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStop = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Stop', LodCutoff = 'Weapon_LodCutoff' },
+                Unpack = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Charge', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0.2,	-- will impact twice before turning off	
+			
+            CollideFriendly = false,
+            ContinuousBeam = true,
+			
+            Damage = 75,
+			
+            DamageFriendly = false,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Microwave Laser',
+			
+			EnergyDrainPerSecond = 50,
+			EnergyRequired = 49,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed|Air',
+                Water = 'Land|Water|Seabed|Air',
+            },
+			
+            FiringTolerance = 1,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 32,
+			
+			MuzzleSalvoSize = 3,
+			MuzzleSalvoDelay = 0.3,
+			
+            RackBones = {
+                {
+                    MuzzleBones = { 'Turret_Muzzle01' },
+                    RackBone = 'Turret_Barrel',
+                },
+            },
+
+            RackSalvoFiresAfterCharge = true,
+			RackSalvoChargeTime = 0,
+			RackReloadTimeout = 0,
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/10,
+			
+            ReTargetOnMiss = true,
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'STRUCTURE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			TrackingRadius = 1.05,
+			
+            TurretBoneMuzzle = 'Turret_Muzzle01',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret01',
+			
+            TurretPitch = 10,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 80,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 105,
+			
+            Turreted = true,
+        },
+    },
+}
