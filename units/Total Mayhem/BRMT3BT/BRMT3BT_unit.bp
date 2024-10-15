@@ -4,8 +4,18 @@ UnitBlueprint {
 
     Weapon = {
 		{
+		
+		Damage = 55,
+			
+		FiringRandomness = 1,
 
-			FiringRandomnessWhileMoving = 1.5,
+		FiringRandomnessWhileMoving = 0,
+			
+		MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 6,
+
+            MuzzleVelocity = 30,
+            MuzzleVelocityRandom = 0.5,
 
             RateOfFire = 1/10,
 
@@ -14,9 +24,11 @@ UnitBlueprint {
         },
         {
 
-            RateOfFire = 4/10,
+            RateOfFire = 5/10,
 
             TurretYawSpeed = 90,
-		},
+			
+	UseFiringSolutionInsteadOfAimBone = true,
+	},
     },
 }

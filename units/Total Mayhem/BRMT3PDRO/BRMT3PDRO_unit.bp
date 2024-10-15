@@ -1,0 +1,134 @@
+UnitBlueprint {
+	Merge = true,
+	BlueprintId = "brmt3pdro",
+	
+	    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+            
+            Audio = {
+                BarrelLoop          = Sound { Bank = 'UES', Cue = 'UES0302_Cannon_Loop', LodCutoff = 'WeaponBig_LodCutoff' },
+                BarrelStart         = Sound { Bank = 'UES',Cue = 'UES0302_Cannon_Start', LodCutoff = 'WeaponBig_LodCutoff' },
+                BarrelStop          = Sound { Bank = 'UES',Cue = 'UES0302_Cannon_Stop', LodCutoff = 'WeaponBig_LodCutoff' },
+                Fire 				= Sound { Bank = 'URLWeapon', Cue = 'URL0111_Missile_Cruise', LodCutoff = 'Weapon_LodCutoff' },
+                MuzzleChargeStart   = Sound { Bank = 'URLWeapon', Cue = 'URL0111_Missile_Cruise', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_LowArc',
+			
+            Buffs = {
+                {
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 1.4,
+                    Radius = 2.5,
+                    TargetAllow = 'TECH1',
+                    TargetDisallow = 'COMMAND,AIR,MISSILE,WALL',
+                },            
+                {
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 1.1,
+                    Radius = 2,
+                    TargetAllow = 'TECH2',
+                    TargetDisallow = 'COMMAND,AIR,MISSILE,WALL',
+                },
+                {
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 0.7,
+                    Radius = 1.5,
+                    TargetAllow = 'TECH3',
+                    TargetDisallow = 'EXPERIMENTAL,COMMAND,AIR,MISSILE,WALL',
+                },                
+            },
+			
+            CollideFriendly = false,
+			
+            Damage = 880,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+
+            EnergyRequired = 15000,
+            EnergyDrainPerSecond = 1000,
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 0.6,
+            FiringRandomness = .65,
+			
+            Label = 'RocketPod',
+
+            MaxRadius = 107,
+            MinRadius = 24,
+			
+            MuzzleChargeDelay = 0.1,
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 6,
+
+            MuzzleVelocity = 26.5,
+            MuzzleVelocityRandom = .6,
+            MuzzleVelocityReduceDistance = 40,
+			
+            ProjectileId = '/mods/TotalMayhem/projectiles/cybranheavyrocketproj/cybranheavyrocket_proj.bp',
+            ProjectileLifetime = 12,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'Turret_Muzzle',
+                        'Turret_Muzzle2',
+                        'Turret_Muzzle3',
+                        'Turret_Muzzle4',
+                        'Turret_Muzzle5',
+                        'Turret_Muzzle6',
+                    },
+                    RackBone = 'Turret_Barrel',
+                },
+            },
+
+            RackSalvoFiresAfterCharge = true,
+ 
+            RackSalvoReloadTime = 10,
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/10,
+			
+            TargetCheckInterval = 5,
+			
+            TargetPriorities = {
+                'EXPERIMENTAL',
+                'DEFENSE',
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'ALLUNITS',
+            },
+            
+            TargetRestrictDisallow = 'UNTARGETABLE,WALL',
+            TrackingRadius = 1.05,
+			
+            TurretBoneMuzzle = 'Turret_Muzzle2',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+
+            TurretPitch = 0,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 15,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 45,
+			
+            Turreted = true,
+        },
+    },
+}

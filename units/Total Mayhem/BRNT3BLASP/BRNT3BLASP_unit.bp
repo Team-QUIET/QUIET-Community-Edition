@@ -6,8 +6,12 @@ UnitBlueprint {
         {
 
             AutoInitiateAttackCommand = false,
+			
+			TurretYawSpeed = 60,
 	},
         {
+		
+			TurretYawSpeed = 60,
 
 	},
         {
@@ -23,6 +27,88 @@ UnitBlueprint {
 
 	},		
         {
+		
+		AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'TM_UEFWEAPONS', Cue = 'UEFOWENSROCKETFX', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_LowArc',
+			
+            CollideFriendly = false,
+			
+            Damage = 200,
+            DamageRadius = 2.5,
+            DamageType = 'Normal',
+			
+            DoTPulses = 2,
+            DoTTime = 2,
+			
+            DisplayName = 'Gauss Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 2,
+			
+            FiringRandomness = 1,
+			FiringRandomnessWhileMoving = 0,
+			
+            Label = 'rocket',
+			
+            MaxRadius = 60,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 10,
+
+            MuzzleVelocity = 30,
+			MuzzleVelocityRandom = 0.6,
+            
+            NotExclusive = true,
+			
+            ProjectileId = '/mods/TotalMayhem/projectiles/BRNT3BTRLproj/BRNT3BTRLproj_proj.bp',
+            ProjectileLifetime = 3,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'muzzle10','muzzle09'},
+                    RackBone = 'head',
+                },
+            },
+			
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 2/10,
+			RenderFireClock = true,
+			
+            TargetCheckInterval = 1.0,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TrackingRadius = 1.05,
+			
+            TurretBoneMuzzle = 'muzzle10',
+            TurretBonePitch = 'head',
+            TurretBoneYaw = 'head',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 35,
+			
+            TurretYaw = 0,
+            TurretYawRange = 40,
+            TurretYawSpeed = 90,
+			
+            Turreted = true,
 
 	},
         {

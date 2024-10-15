@@ -1,0 +1,104 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "brpt3pd",
+
+      Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'XSL_Weapon', Cue = 'XSL0203_Cannon_Tau', LodCutoff = 'Weapon_LodCutoff'},
+            },
+
+            BallisticArc = 'RULEUBA_LowArc',
+			
+            Buffs = {
+            	{
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 0.8,
+                    Radius = 1.5,
+                    TargetAllow = 'LAND TECH1,NAVAL TECH1',
+                    TargetDisallow = 'WALL',
+                },
+            	{
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 0.5,
+                    Radius = 1,
+                    TargetAllow = 'LAND TECH2,NAVAL TECH2',
+                    TargetDisallow = 'WALL',
+                },
+            },			
+
+            CollideFriendly = false,
+			
+            Damage = 820,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+            DamageFriendly = false,
+			
+            DisplayName = 'Aire-au Bolter',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+			
+			FiringRandomness = 0.7,
+            FiringTolerance = 1,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 67,
+			MinRadius = 6,
+
+            MuzzleVelocity = 48,
+			
+            ProjectileId = '/projectiles/SDFHeavyQuarnonCannon01/SDFHeavyQuarnonCannon01_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 1.6,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'muzzle'},
+                    RackBone = 'muzzle',
+                },
+            },
+			
+            RackRecoilDistance = -2,
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 5/10,
+			
+            TargetCheckInterval = 0.66,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE SHIELD',
+				'MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 70,
+            TurretPitchSpeed = 35,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 50,
+			
+            Turreted = true,
+        },
+        {
+
+    	}, 
+    },
+  }

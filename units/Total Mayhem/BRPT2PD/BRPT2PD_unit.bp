@@ -1,0 +1,82 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "brpt2pd",
+
+  Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'XSL_Weapon', Cue = 'XSL0202_AireAuBolter', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 40,
+            DamageRadius = 0.5,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Aire-au Bolter',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed|Air',
+                Water = 'Land|Water|Seabed|Air',
+            },
+			
+			FiringRandomness = 0.4,
+            FiringTolerance = 1,
+			
+            Label = 'MainGun',
+			
+			LeadTarget = true,
+			
+            MaxRadius = 50,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 3,
+
+            MuzzleVelocity = 50,
+			
+            ProjectileId = '/projectiles/SDFAireauBolter01/SDFAireauBolter01_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 1.2,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Muzzle01'},
+                    RackBone = 'Muzzle01',
+                },
+            },
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 30/10,		-- 240 DPS surface/air
+			
+            TargetCheckInterval = 0.3,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE SHIELD',
+				'MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TrackingRadius = 1.05,
+			
+            TurretBoneMuzzle = 'Muzzle01',
+            TurretBonePitch = 'Pod03',
+            TurretBoneYaw = 'Pod03',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 15,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 90,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 105,
+			
+            Turreted = true,
+        },
+    },
+  }

@@ -1,0 +1,95 @@
+UnitBlueprint {
+	Merge = true,
+	BlueprintId = "brnt2epd",
+	
+	    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'UESWeapon', Cue = 'UES0302_Cannon_Tri', LodCutoff = 'WeaponBig_LodCutoff' },
+            },
+			
+            BallisticArc = 'RULEUBA_LowArc',
+			
+            Buffs = {
+            	{
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 0.8,
+                    Radius = 2,
+                    TargetAllow = 'LAND TECH1,NAVAL TECH1,LAND TECH2,NAVAL TECH2',
+                    TargetDisallow = 'WALL',
+                },
+            },
+			
+            CollideFriendly = false,
+			
+            Damage = 480,
+            DamageRadius = 1.5,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Plasma Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 1,
+            FiringRandomness = 0.15,
+			
+            Label = 'Gauss01',
+			
+            MaxRadius = 54,
+            MinRadius = 6,
+
+            MuzzleVelocity = 48,
+			
+            NoPause = true,
+			
+            ProjectileId = '/mods/TotalMayhem/projectiles/BRNT2EPDproj/BRNT2EPDproj_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 1.25,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle'},
+                    RackBone = 'Turret_Barrel',
+                },
+            },
+            RackRecoilDistance = -0.4,
+            
+            RackSalvoReloadTime = 2,
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/10,
+            TargetCheckInterval = 1.0,
+			
+            TargetPriorities = {
+                'EXPERIMENTAL',
+                'SPECIALHIGHPRI',
+                'MOBILE -AIR',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TrackingRadius = 1.05,			
+			
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+
+            TurretPitch = 0,
+            TurretPitchRange = 55,
+            TurretPitchSpeed = 30,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 45,
+			
+            Turreted = true,
+        },
+    },
+}

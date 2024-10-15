@@ -25,6 +25,10 @@ UnitBlueprint {
                     TargetDisallow = 'WALL',
                 },
             },  
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 45,
         },              			
     },
 }

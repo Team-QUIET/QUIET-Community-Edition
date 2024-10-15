@@ -15,8 +15,15 @@ UnitBlueprint {
                 TargetDisallow = 'WALL,COMMAND,EXPERIMENTAL',
                 },
             },
+
+        RateOfFire = 15/10,
+
+        TurretYawSpeed = 45,
+
         },
         {
+
+        RateOfFire = 2/10,
 
         },
         {
