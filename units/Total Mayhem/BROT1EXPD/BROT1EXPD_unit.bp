@@ -1,0 +1,89 @@
+UnitBlueprint {
+	Merge = true,
+	BlueprintId = "brot1expd",
+	
+	Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                BeamLoop = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Loop', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStart = Sound { Bank = 'TM_AEONWEAPONS', Cue = 'AEONNOVACATBLUELASERFX', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStop = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Stop', LodCutoff = 'Weapon_LodCutoff' },
+            },
+			
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0.2,	-- hits 2x per fire
+			
+            CollideFriendly = false,
+			
+            ContinuousBeam = false,
+			
+            Damage = 45,
+            DamageFriendly = false,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Blue Laser',
+			
+            EnergyDrainPerSecond = 40,
+			EnergyRequired = 20,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Air',
+                Water = 'Land|Water|Air',
+            },
+			
+            FiringTolerance = 0.5,
+			
+            Label = 'laserblue',
+			
+            MaxRadius = 34,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle'},
+                    RackBone = 'Turret_Barrel',
+                },
+            },
+
+            RackSalvoFiresAfterCharge = true,
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 20/10,		-- 148 dps - controlled by charge
+			
+            ReTargetOnMiss = true,
+            TargetCheckInterval = 0.3,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, SATELLITE',
+            TrackingRadius = 1.2,
+			
+            TurretBoneDualMuzzle = 'Turret_Muzzle',
+            TurretBoneDualPitch = 'Turret_Barrel',
+			
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+			
+            TurretBoneYaw = 'Turret',
+
+            TurretDualManipulators = true,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 80,
+
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 105,
+
+            Turreted = true,
+        },
+    },
+}
