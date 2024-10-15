@@ -1,0 +1,101 @@
+UnitBlueprint {
+	Merge = true,
+	BlueprintId = "brnt3pdro",
+	
+	    Weapon = {
+        {
+            AimsStraightOnDisable = true,
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+            
+            Audio = {
+                BarrelStart     = Sound { Bank = 'UES', Cue = 'UES0302_Cannon_Start', LodCutoff = 'WeaponBig_LodCutoff' },
+                BarrelStop      = Sound { Bank = 'UES', Cue = 'UES0302_Cannon_Stop', LodCutoff = 'WeaponBig_LodCutoff' },
+                Fire = Sound { Bank = 'XEL_Weapons', Cue = 'XEL0306_Missile_Cruise', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_LowArc',
+            
+            CollideFriendly = false,
+			
+            Damage = 1050,
+            DamageFriendly = true,
+            DamageRadius = 3.55,
+            DamageType = 'Normal',
+            
+            EnergyChargeForFirstShot = false,
+            
+            EnergyRequired = 15606,
+            EnergyDrainPerSecond = 1406,            -- 11.1 seconds E event
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 0.5,
+            FiringRandomness = 0.6,
+			
+            Label = 'RocketPod',
+			
+            MaxRadius = 108,
+            MinRadius = 24,
+			
+            MuzzleChargeDelay = 0.5,
+			
+            MuzzleVelocity = 23.5,
+            MuzzleVelocityRandom = 0.3,
+			MuzzleVelocityReduceDistance = 100,
+			
+            ProjectileId = '/mods/TotalMayhem/projectiles/BRNT3PDROproj/BRNT3PDROproj_proj.bp',
+            ProjectileLifetime = 6.5,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'muzzle01','muzzle02','muzzle03','muzzle04'},
+                    RackBone = 'barrel01',
+                },
+            },
+
+            RackSalvoReloadTime = 1.2,
+
+            RackSalvoChargeTime = 0.1,
+
+            RackSalvoFiresAfterCharge = true,
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/10,
+			
+            TargetCheckInterval = 2,
+            TargetPriorities = {
+                'EXPERIMENTAL',
+                'DEFENSE',
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'ALLUNITS,-WALL',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.05,
+
+            TurretBoneMuzzle = 'muzzle03',
+            TurretBonePitch = 'barrel01',
+            TurretBoneYaw = 'Turret',
+
+            TurretPitch = 0,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 18,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 45,
+
+            Turreted = true,
+
+            WeaponRepackTimeout = 3.3,
+            WeaponUnpackAnimation = '/mods/TotalMayhem/units/BRNT3PDRO/BRNT3PDRO_deploy.sca',
+            WeaponUnpackAnimationRate = 1.1,
+            WeaponUnpacks = true,
+        },
+    },
+}
