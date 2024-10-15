@@ -1,0 +1,85 @@
+UnitBlueprint {
+	Merge = true,
+	BlueprintId = "brmt1expdt2",
+	
+	Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                BeamLoop = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Loop', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStop = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Stop', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0.2,		-- will do damage for 2 ticks
+			
+            CollideFriendly = false,
+            ContinuousBeam = true,
+			
+            Damage = 50,
+			
+            DamageFriendly = false,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Microwave Laser',
+			
+			EnergyDrainPerSecond = 80,
+			EnergyRequired = 120,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0.05,
+            FiringTolerance = 1,
+			
+            Label = 'MainGun',
+            MaxRadius = 34,
+			
+            MuzzleSalvoDelay = 0.3,
+            MuzzleSalvoSize = 4,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle01','Turret_Muzzle02'},
+                    RackBone = 'Turret_Barrel',
+                },
+            },
+
+            RackSalvoFiresAfterCharge = true,
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/10,
+			
+            ReTargetOnMiss = true,
+
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+
+            TurretBoneMuzzle = 'aim',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret01',
+
+            TurretPitch = 0,
+            TurretPitchRange = 40,
+            TurretPitchSpeed = 30,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 60,
+
+            Turreted = true,
+        },
+    },
+}
