@@ -55,7 +55,7 @@ UnitBlueprint {
 			
             Damage = 90,
             DamageFriendly = false,
-            DamageRadius = 1,
+            DamageRadius = 2,
             DamageType = 'Normal',
 			
             DisplayName = 'AutoCannon',

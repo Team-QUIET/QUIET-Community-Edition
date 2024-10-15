@@ -64,7 +64,7 @@ UnitBlueprint {
 			
             Damage = 100,
             DamageFriendly = false,
-            DamageRadius = 1,
+            DamageRadius = 2,
             DamageType = 'Normal',
 			
             DisplayName = 'Losaare AA Autocannon',			

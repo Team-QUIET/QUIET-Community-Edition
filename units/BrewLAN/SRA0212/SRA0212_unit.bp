@@ -59,7 +59,7 @@ UnitBlueprint {
 
             Damage = 25,
             DamageFriendly = false,
-            DamageRadius = 1,
+            DamageRadius = 2,
             DamageType = 'Normal',
 
             DisplayName = 'Electron Autocannon',

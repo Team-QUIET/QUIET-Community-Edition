@@ -121,7 +121,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 
-            Damage = 50,
+            Damage = 25,
             DamageRadius = 0,
             DamageType = 'Normal',
 
@@ -179,7 +179,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 
-            Damage = 50,
+            Damage = 25,
             DamageRadius = 0,
             DamageType = 'Normal',
 
