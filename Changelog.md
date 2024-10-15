@@ -3,6 +3,13 @@ QUIET
 Rebalance Changelog
 ---------------
 
+# 1.55
+
+### Misc
+- YawRates have been increased on many PDs 
+- Fixed Bone Issue on the Mastodon Rocket Pods causing them to miss
+- Fixed Many Audio Issues on Total Mayhem Units
+
 # 1.54
 
 ### Air
