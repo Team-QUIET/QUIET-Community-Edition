@@ -2,7 +2,7 @@ UnitBlueprint {
     Merge = true,
 	BlueprintId = "erl0001",
 
-Enhancements = {
+    Enhancements = {
         Slots = {
             Back = {
                 name = '<LOC _Back>',
@@ -1098,7 +1098,7 @@ Enhancements = {
 			
             RangeCategory = 'UWRC_DirectFire',
 			
-            RateOfFire = 2,    
+            RateOfFire = 10/10,    
 			
             TargetCheckInterval = 0.5,
 
