@@ -22,6 +22,11 @@ UnitBlueprint {
 	
         {
 
+	Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEL0202_Cannon_Dbl', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+
             FiringTolerance = 0.3,
 
 			      MuzzleVelocityRandom = 0,
