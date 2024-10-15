@@ -1,0 +1,85 @@
+UnitBlueprint {
+	Merge = true,
+	BlueprintId = "brmt2pd",
+	
+	Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB2301_Cannon', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 180,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Shock Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+			
+			FiringRandomness = 0.2,
+            FiringTolerance = 1,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 46,
+            MinRadius = 3,
+
+            MuzzleVelocity = 44,
+			
+            ProjectileId = '/mods/TotalMayhem/projectiles/BRMT2HVY2proj/BRMT2HVY2proj_proj.bp',
+            ProjectileLifetime = 1.2,
+
+            RackBones = {
+                {
+                    MuzzleBones = { 'Muzzle' },
+                    RackBone = 'Turret_Recoil',
+                },
+                {
+                    MuzzleBones = { 'Muzzle01' },
+                    RackBone = 'Turret_Recoil01',
+                },
+            },
+            RackFireTogether = true,
+
+            RackRecoilDistance = -3,
+
+            RackSlavedToTurret = true,
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 50/100,
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'EXPERIMENTAL',
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'STRUCTURE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,WALL',
+            TrackingRadius = 1.05,
+			
+            TurretBoneMuzzle = 'aim',
+            TurretBonePitch = 'Turret_Recoil',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 40,
+            TurretPitchSpeed = 40,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 60,
+			
+            Turreted = true,
+		},
+    },
+}
