@@ -3,6 +3,17 @@ QUIET
 Rebalance Changelog
 ---------------
 
+# 1.56
+
+### ACU
+- Main Gun Rate Of Fire: 2 -> 1
+
+### Misc
+- Fix T2 UEF Tactical Bomber Dropping Bomb Too Early
+- Fix AoE Applying 1 Tick Too Late
+- Fix T2 Fighters Not Being Able To Hit T2 Tactical Bombers
+- Fix T2 Sniper YawRate
+
 # 1.55
 
 ### Misc
