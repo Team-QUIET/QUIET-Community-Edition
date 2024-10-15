@@ -15,6 +15,86 @@ UnitBlueprint {
                     TargetDisallow = 'WALL',
                 },
             },
+						
+            CollideFriendly = false,
+			
+            Damage = 100,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Ionized Plasma Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed|Air',
+            },
+			
+            FiringTolerance = 1,
+			
+            Label = 'MainGun',
+			
+			LeadTarget = true,
+
+            MaxRadius = 48,
+            MinRadius = 3,
+
+            MuzzleVelocity = 80,
+			
+            NoPause = true,
+
+            ProjectileId = '/projectiles/CDFLaserDisintegrator02/CDFLaserDisintegrator02_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 1.1,
+
+            RackBones = {
+                {
+                    MuzzleBones = { 'Turret_Muzzle01' },
+                    RackBone = 'Barrel01',
+                },
+                {
+                    MuzzleBones = { 'Turret_Muzzle02' },
+                    RackBone = 'Barrel02',
+                },
+            },
+            
+            RackRecoilDistance = -0.5,
+			RackSalvoReloadTime = 0,
+			RackReloadTimeout = 0,
+			RackFireTogether = true,
+
+			RackSalvoSize = 2,
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 15/10,
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'EXPERIMENTAL',
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TrackingRadius = 1.05,
+			
+            TurretBoneDualMuzzle = 'Turret_Muzzle01',
+            TurretBoneDualPitch = 'Turret_Barrel01',
+
+            TurretBoneMuzzle = 'Turret_Muzzle02',
+            TurretBonePitch = 'Turret_Barrel02',
+
+            TurretBoneYaw = 'Turret',
+
+            TurretDualManipulators = true,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 80,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 105,
+			
+            Turreted = true,
         },
     },
 }
