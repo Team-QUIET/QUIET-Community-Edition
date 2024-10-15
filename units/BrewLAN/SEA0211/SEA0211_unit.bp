@@ -47,7 +47,7 @@ UnitBlueprint {
             AboveWaterTargetsOnly = true,
             AutoInitiateAttackCommand = true,
             BallisticArc = 'RULEUBA_None',
-            BombDropThreshold = 3.5,
+            BombDropThreshold = 1,
             CollideFriendly = false,
             Damage = 1215,
             DamageFriendly = true,
