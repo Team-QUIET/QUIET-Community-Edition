@@ -413,7 +413,7 @@ do
 			end
 
 			-- Check size of collision boxes
-			if not isDummy then
+			if not isDummy or not bp.CategoriesHash['URA0001'] then
 				-- find maximum speed
 				local speed = bp.Physics.MaxSpeed
 				if bp.Air and bp.Air.MaxAirspeed then
