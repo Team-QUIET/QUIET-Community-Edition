@@ -412,8 +412,21 @@ do
 				bp.CategoriesHash.OVERLAYMISC = true
 			end
 
-			-- Check size of collision boxes
-			if not isDummy or not bp.CategoriesHash['URA0001'] then
+			-- local ura0001 = bp.CategoriesHash["ura0001"]
+			-- -- Check size of collision boxes
+			-- local function logUra0001()
+			-- 	if ura0001 then
+			-- 		LOG("ura0001 is not nil, so collision box size is not being checked")
+			-- 		LOG("bp.CategoriesHash: "..repr(bp.CategoriesHash["ura0001"]))
+			-- 	else
+			-- 		LOG("ura0001 is nil, so collision box size is being checked")
+			-- 		--LOG("bp.CategoriesHash: "..repr(bp.CategoriesHash["ura0001"]))
+			-- 	end
+			-- end
+
+			-- logUra0001()
+
+			if not(bp.CategoriesHash["ura0001"] or isDummy) then
 				-- find maximum speed
 				local speed = bp.Physics.MaxSpeed
 				if bp.Air and bp.Air.MaxAirspeed then
@@ -425,25 +438,25 @@ do
 					if bp.SizeSphere then
 						if bp.SizeSphere < 0.1 * speed then
 							-- WARN(string.format("Overriding the size of the collision sphere of unit ( %s ), it should be atleast 10 percent ( %s ) of the maximum speed ( %s ) to guarantee proper functioning beam weapons"
-							-- 	, tostring(bp.BlueprintId), tostring(0.1 * speed), tostring(speed)))
+							--  	, tostring(bp.BlueprintId), tostring(0.1 * speed), tostring(speed)))
 							bp.SizeSphere = 0.1 * speed
 						end
 					else
 						if bp.SizeX < 0.1 * speed then
 							-- WARN(string.format("Overriding the x axis of collision box of unit ( %s ), it should be atleast 10 percent ( %s ) of the maximum speed ( %s ) to guarantee proper functioning beam weapons"
-							-- 	, tostring(bp.BlueprintId), tostring(0.1 * speed), tostring(speed)))
+							--  	, tostring(bp.BlueprintId), tostring(0.1 * speed), tostring(speed)))
 							bp.SizeX = 0.1 * speed
 						end
 		
 						if bp.SizeZ < 0.1 * speed then
 							-- WARN(string.format("Overriding the z axis of collision box of unit ( %s ), it should be atleast 10 percent ( %s ) of the maximum speed ( %s ) to guarantee proper functioning beam weapons"
-							-- 	, tostring(bp.BlueprintId), tostring(0.1 * speed), tostring(speed)))
+							--  	, tostring(bp.BlueprintId), tostring(0.1 * speed), tostring(speed)))
 							bp.SizeZ = 0.1 * speed
 						end
 		
 						if bp.SizeY < 0.5 then
 							-- WARN(string.format("Overriding the y axis of collision box of unit ( %s ), it should be atleast 0.5 to guarantee proper functioning gunships"
-							-- 	, tostring(bp.BlueprintId), tostring(0.1 * speed), tostring(speed)))
+							--  	, tostring(bp.BlueprintId), tostring(0.1 * speed), tostring(speed)))
 							bp.SizeY = 0.5
 						end
 					end
