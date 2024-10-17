@@ -1254,12 +1254,24 @@ Enhancements = {
         -- The Maser - or 'Death Ray' --
         
         {
+
+            HeadingArcRange = 10,
+
+            TurretYawSpeed = 90,
             
         },
         {
+
+            HeadingArcRange = 10,
+
+            TurretYawSpeed = 90,
            
         },
         {
+
+            HeadingArcRange = 10,
+
+            TurretYawSpeed = 90,
             
         },
         {
