@@ -3,6 +3,13 @@ QUIET
 Rebalance Changelog
 ---------------
 
+# 1.57
+
+### Misc
+- Fix UEF ACU Firing when reclaiming
+- Fix Gunships having bad Yaw & Pitch Rates
+- Fix Cybran Engineers being unkillable
+
 # 1.56
 
 ### ACU
