@@ -48,11 +48,11 @@ UnitBlueprint {
                 "ALLUNITS",
             },
 
-            TurretPitchRange = 70,
-            TurretPitchSpeed = 70,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 180,
 			
 			TurretYawRange = 180,
-            TurretYawSpeed = 90,
+            TurretYawSpeed = 180,
         },
         {
 

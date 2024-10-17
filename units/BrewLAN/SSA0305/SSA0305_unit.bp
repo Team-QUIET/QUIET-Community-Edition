@@ -42,11 +42,11 @@ UnitBlueprint {
                 "ALLUNITS",
             },
 
-            TurretPitchRange = 60,
-            TurretPitchSpeed = 60,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 180,
 
             TurretYawRange = 180,
-            TurretYawSpeed = 90,
+            TurretYawSpeed = 180,
         },
         {
 			
@@ -63,11 +63,11 @@ UnitBlueprint {
                 "ALLUNITS",
             },
 
-            TurretPitchRange = 60,
-            TurretPitchSpeed = 60,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 180,
 
             TurretYawRange = 180,
-            TurretYawSpeed = 90,
+            TurretYawSpeed = 180,
         },
         
         -- AA Weapon --
