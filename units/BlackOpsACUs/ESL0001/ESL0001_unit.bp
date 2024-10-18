@@ -1258,11 +1258,11 @@ UnitBlueprint {
 
         FreeIntel = false,
 
-        RadarStealth = true,
+        RadarStealth = false,
         RadarStealthField = true,
         RadarStealthFieldRadius = 1,
 
-        SonarStealth = true,
+        SonarStealth = false,
         SonarStealthField = true,
         SonarStealthFieldRadius = 1,
 

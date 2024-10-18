@@ -1215,6 +1215,22 @@ UnitBlueprint {
 
     },
 
+Intel = {
+
+        FreeIntel = false,
+
+        RadarStealth = false,
+        SonarStealth = false,
+
+        OmniRadius = 26,
+		RadarRadius = 50,
+        SonarRadius = 46,
+        VisionRadius = 28,
+        WaterVisionRadius = 20,
+        
+        ReactivateTime = 15,        -- used by radar enhancements
+    },
+
     Physics = {
         BackUpDistance = 0,    
         BankingSlope = 0,

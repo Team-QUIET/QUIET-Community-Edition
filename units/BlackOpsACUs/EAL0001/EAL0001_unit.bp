@@ -1078,6 +1078,32 @@ UnitBlueprint {
         },
     },
 
+	Intel = {
+
+        FreeIntel = false,
+
+        RadarStealth = false,
+        RadarStealthField = true,
+        RadarStealthFieldRadius = 1,        -- used and altered by Maelstrom Field
+
+        SonarStealth = false,
+        SonarStealthField = true,
+        SonarStealthFieldRadius = 1,        -- as above
+        
+        OmniRadius = 26,
+        RadarRadius = 50,
+        SonarRadius = 46,
+        VisionRadius = 28,
+        WaterVisionRadius = 20,
+
+        -- these are here for the Rhianne Optics enhancement
+		Cooldown = 19,					---- time before scry button reappears once scrying begins (in this case they come back on just before the scrying is finished)
+		Viewtime = 20,					---- time that scrying area remains visible	(the scrying buttons disappear once the viewtime begins)
+        ReactivateTime = 15,			---- time between the end of a scry and the start of a new one (a chance to pick a new target before the old one restarts)
+        RemoteViewingRadius = 48,		---- this would normally be the start size of the remote viewing radius
+		RemoteViewingRadiusFinal = 48,	---- and the final radius of the scry (controls the grow/shrink rate)         
+    },
+
     Physics = {
         BackUpDistance = 0,    
         BankingSlope = 0,

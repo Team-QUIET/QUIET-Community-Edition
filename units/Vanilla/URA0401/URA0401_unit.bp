@@ -1,0 +1,505 @@
+UnitBlueprint {
+	Merge = true,
+	BlueprintId = "ura0401",
+	
+	Weapon = {
+	
+		-- 2 x Iridium Rocket Packs --
+		
+        {
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'URAWeapon', Cue = 'URA0401_Rock_Pack', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            AutoInitiateAttackCommand = true,
+			
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 250,
+			DamageRadius = 2,
+            DamageType = 'ShieldMult1.2',
+			
+            DisplayName = 'Iridium Rocket Pack',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Land|Water|Seabed',
+                Land = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 2,
+			
+            FiringTolerance = 0.65,
+			
+            Label = 'Missile',
+			
+            LeadTarget = true,
+			
+            MaxRadius = 60,
+			
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 5,
+            MuzzleVelocity = 32,
+			MuzzleVelocityRandom = 2,
+			
+			NotExclusive = true,
+			
+            ProjectileId = '/projectiles/CDFRocketIridium01/CDFRocketIridium01_proj.bp',
+			ProjectileLifetime = 3,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'RightFront_Turret_Muzzle'},
+                    RackBone = 'RightFront_Turret_Barrel',
+                },
+            },
+			
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 33/100,
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+				'ANTIAIR -AIR',
+                'MOBILE',
+                'STRUCTURE -WALL',
+                'ENGINEER',
+                'ALLUNITS -WALL',
+            },
+            TargetRestrictDisallow = 'HIGHALTAIR, UNTARGETABLE',
+			
+            TrackingRadius = 1.05,
+			
+            TurretBoneMuzzle = 'RightFront_Turret_Muzzle',
+            TurretBonePitch = 'RightFront_Turret_Barrel',
+            TurretBoneYaw = 'RightFront_Turret_Barrel',
+			
+            TurretPitch = -15,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 120,
+            TurretYawSpeed = 180,
+			
+            Turreted = true,
+        },
+        {
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'URAWeapon', Cue = 'URA0401_Rock_Pack', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CollideFriendly = false,
+			
+            Damage = 250,
+			DamageRadius = 2,
+            DamageType = 'ShieldMult1.2',
+			
+            DisplayName = 'Iridium Rocket Pack',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Land|Water|Seabed',
+                Land = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 2,
+            FiringTolerance = 0.65,
+			
+            Label = 'Missile',
+			
+            LeadTarget = true,
+			
+            MaxRadius = 60,
+			
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 5,
+            MuzzleVelocity = 32,
+			MuzzleVelocityRandom = 2,
+			
+			NotExclusive = true,
+			
+            ProjectileId = '/projectiles/CDFRocketIridium01/CDFRocketIridium01_proj.bp',
+			ProjectileLifetime = 3,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'LeftFront_Turret_Muzzle'},
+                    RackBone = 'LeftFront_Turret_Barrel',
+                },
+            },
+
+            RateOfFire = 33/100,
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+				'ANTIAIR -AIR',
+                'MOBILE',
+                'ALLUNITS -WALL',
+            },
+            TargetRestrictDisallow = 'HIGHALTAIR,UNTARGETABLE,STRUCTURE' ,
+            TrackingRadius = 1.05,
+			
+            TurretBoneMuzzle = 'LeftFront_Turret_Muzzle',
+            TurretBonePitch = 'LeftFront_Turret_Barrel',
+            TurretBoneYaw = 'LeftFront_Turret_Barrel',
+			
+            TurretPitch = -15,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 120,
+            TurretYawSpeed = 180,
+			
+            Turreted = true,
+        },
+		
+		-- 2 x AA Missiles --
+        {
+            Audio = {
+                Fire = Sound { Bank = 'URAWeapon', Cue = 'URA0303_Missile_Nanite', LodCutoff = 'Weapon_LodCutoff' },
+            },
+			
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 200,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Nanite Missile System',
+
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land',
+            },
+			
+            FiringTolerance = 10,
+			
+            HeadingArcCenter = 90,
+            HeadingArcRange = 240,
+			
+            Label = 'AAMissile',
+			
+            MaxRadius = 70,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 3,
+
+            MuzzleVelocity = 40,
+			
+			NotExclusive = true,
+			
+            ProjectileId = '/projectiles/CAAMissileNanite03/CAAMissileNanite03_proj.bp',
+            ProjectileLifetime = 8,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'LeftBack_Nanite_Turret_Muzzle'},
+                    RackBone = 'LeftBack_Nanite_Turret_Barrel01',
+                },
+            },
+			
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 10/10,
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'AIR -INTELLIGENCE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR',
+            TrackingRadius = 1.05,
+			
+            TurretBoneMuzzle = 'LeftBack_Nanite_Turret_Muzzle',
+            TurretBonePitch = 'LeftBack_Nanite_Turret_Barrel01',
+            TurretBoneYaw = 'LeftBack_Nanite_Turret01',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 180,
+			
+            Turreted = true,
+        },
+        {
+            Audio = {
+                Fire = Sound { Bank = 'URAWeapon', Cue = 'URA0303_Missile_Nanite', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 200,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Nanite Missile System',
+
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land',
+            },
+            FiringTolerance = 10,
+			
+            HeadingArcCenter = 270,
+            HeadingArcRange = 240,
+			
+            Label = 'AAMissile',
+			
+            MaxRadius = 70,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 3,
+
+            MuzzleVelocity = 40,
+			
+			NotExclusive = true,
+
+            ProjectileId = '/projectiles/CAAMissileNanite03/CAAMissileNanite03_proj.bp',
+            ProjectileLifetime = 8,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'RightBack_Nanite_Turret_Muzzle04'},
+                    RackBone = 'RightBack_Nanite_Turret_Barrel01',
+                },
+            },
+
+            RateOfFire = 10/10,
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'AIR -INTELLIGENCE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR',
+            TrackingRadius = 1.05,
+			
+            TurretBoneMuzzle = 'RightBack_Nanite_Turret_Muzzle04',
+            TurretBonePitch = 'RightBack_Nanite_Turret_Barrel01',
+            TurretBoneYaw = 'RightBack_Nanite_Turret01',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 180,
+			
+            Turreted = true,
+        },
+		
+		-- 2 x Electron Bolter --
+		-- useful against ground and gunship/transports
+		
+        {
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'URLWeapon', Cue = 'URL0303_Bolter', LodCutoff = 'Weapon_LodCutoff' },
+            },
+			
+            BallisticArc = 'RULEUBA_None',
+			
+            Buffs = {
+            	{
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 0.8,
+                    Radius = 1.5,
+                    TargetAllow = 'LAND,NAVAL',
+                    TargetDisallow = 'EXPERIMENTAL,COMMAND,WALL',
+                },
+            },
+			
+            CollideFriendly = false,
+			
+            Damage = 200,
+            DamageRadius = 2,
+			
+            DamageType = 'Normal',
+			
+            DisplayName = 'Heavy Electron Bolter',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land|Water|Seabed',
+                Land = 'Air|Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0.4,
+            FiringTolerance = 1,
+			
+            Label = 'HeavyBolter',
+			
+            LeadTarget = true,
+			
+            MaxRadius = 55,
+			
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 3,
+
+            MuzzleVelocity = 36,
+			
+			NotExclusive = true,
+			
+            ProjectileId = '/projectiles/CDFBolter03/CDFBolter03_proj.bp',
+            ProjectileLifetime = 2,
+
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'Front_Turret_Muzzle01',
+                        'Front_Turret_Muzzle02',
+                    },
+                    RackBone = 'Front_Turret_Barrel',
+                },
+            },
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/10,
+			
+            TargetCheckInterval = 0.4,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+				'ANTIAIR -AIR',
+                'MOBILE',
+                'STRUCTURE -WALL',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,HIGHALTAIR,SATELLITE,WALL',
+            TrackingRadius = 1.05,
+			
+            TurretBoneMuzzle = 'Front_Turret_Muzzle01',
+            TurretBonePitch = 'Front_Turret_Barrel',
+            TurretBoneYaw = 'Front_Turret_Barrel',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 180,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 180,
+			
+            Turreted = true,
+        },
+        {
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'URLWeapon', Cue = 'URL0303_Bolter', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+			
+            Buffs = {
+            	{
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 0.8,
+                    Radius = 1.5,
+                    TargetAllow = 'LAND,NAVAL',
+                    TargetDisallow = 'EXPERIMENTAL,COMMAND,WALL',
+                },
+            },
+			
+            CollideFriendly = false,
+			
+            Damage = 200,
+            DamageRadius = 2,
+			
+            DamageType = 'Normal',
+			
+            DisplayName = 'Heavy Electron Bolter',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land|Water|Seabed',
+                Land = 'Air|Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0.4,
+            FiringTolerance = 1,
+			
+            Label = 'HeavyBolter',
+			
+            LeadTarget = true,
+			
+            MaxRadius = 55,
+			
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 3,
+
+            MuzzleVelocity = 36,
+			
+			NotExclusive = true,
+
+            ProjectileId = '/projectiles/CDFBolter03/CDFBolter03_proj.bp',
+            ProjectileLifetime = 2,
+
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'Back_Turret_Muzzle01',
+                        'Back_Turret_Muzzle02',
+                    },
+                    RackBone = 'Back_Turret_Barrel01',
+                },
+            },
+
+            RateOfFire = 10/10,
+			
+            TargetCheckInterval = 0.4,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+				'ANTIAIR -AIR',
+                'MOBILE',
+                'STRUCTURE -WALL',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,HIGHALTAIR,SATELLITE,WALL',
+            TrackingRadius = 1.05,
+			
+            TurretBoneMuzzle = 'Back_Turret_Muzzle01',
+            TurretBonePitch = 'Back_Turret_Barrel01',
+            TurretBoneYaw = 'Back_Turret_Barrel01',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 180,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 180,
+			
+            Turreted = true,
+        },
+		
+        {
+            AboveWaterTargetsOnly = true,
+            Damage = 4000,
+            DamageFriendly = true,
+            DamageRadius = 7,
+            DamageType = 'Normal',
+            DisplayName = 'Air Crash',
+            DummyWeapon = true,
+            Label = 'DeathImpact',
+            WeaponCategory = 'Death',
+        },
+    },
+}
