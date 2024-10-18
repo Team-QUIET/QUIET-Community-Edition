@@ -1041,6 +1041,30 @@ UnitBlueprint {
         },
 },
 
+Intel = {
+
+        Cloak = true,
+        CloakFieldRadius = 0,
+
+        FreeIntel = false,
+
+        RadarStealth = false,
+        RadarStealthField = true,
+        RadarStealthFieldRadius = 1,
+
+        SonarStealth = false,
+        SonarStealthField = true,
+        SonarStealthFieldRadius = 1,
+
+        OmniRadius = 26,
+        RadarRadius = 50,
+        SonarRadius = 46,
+        VisionRadius = 28,
+        WaterVisionRadius = 20,
+
+        ReactivateTime = 15,        -- used by radar/stealth enhancements
+    },
+
     Physics = {
         BackUpDistance = 0,    
         BankingSlope = 0,
