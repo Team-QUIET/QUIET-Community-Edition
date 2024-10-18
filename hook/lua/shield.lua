@@ -166,7 +166,7 @@ Shield = Class(QCEShield) {
         -- lookup whether we're a static shield for absorbing deathnukes with modded shields that don't have the value set
         local absorptionType = spec.AbsorptionType
         -- lookup whether we're a static or a commander shield for overcharge's fixed damage
-        local ownerBp = self.Owner.Blueprint
+        local ownerBp = self.Owner.bp
         local ownerCategories = ownerBp.CategoriesHash
         if ownerCategories.STRUCTURE then
             self.StaticShield = true

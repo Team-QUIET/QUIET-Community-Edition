@@ -744,13 +744,13 @@ do
 	-- Technical detail: The LOD values of props in the blueprint are now ignored.
 	--=======================================
 	function ProcessDynamicLOD(all_blueprints)
-		local function computeLOD(blueprint)
-			if blueprint.Display and blueprint.Display.Mesh and blueprint.Display.Mesh.LODs then
-				local n = TableGetn(blueprint.Display.Mesh.LODs)
-				for k, data in pairs(blueprint.Display.Mesh.LODs) do
-					local sx = blueprint.SizeX or 1
-					local sy = blueprint.SizeY or 1
-					local sz = blueprint.SizeZ or 1
+		local function computeLOD(bp)
+			if bp.Display and bp.Display.Mesh and bp.Display.Mesh.LODs then
+				local n = TableGetn(bp.Display.Mesh.LODs)
+				for k, data in pairs(bp.Display.Mesh.LODs) do
+					local sx = bp.SizeX or 1
+					local sy = bp.SizeY or 1
+					local sz = bp.SizeZ or 1
 
 					local weighted = 0.40 * sx + 0.2 * sy + 0.4 * sz
 					local lod = 0.9 * MathSqrt(100 * 500 * weighted)
