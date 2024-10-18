@@ -3,6 +3,21 @@ QUIET
 Rebalance Changelog
 ---------------
 
+# 1.58
+
+### T2 Gunships
+- Health: 1400 -> 1100
+
+### ACU
+- Removed AirLayer Targetting
+
+### ACU (Cybran)
+- Fix Cybran ACU Laser
+
+### Misc
+- Fix A Few Blueprint Variables 
+- Fix Amphorak Blueprint
+
 # 1.57
 
 ### Misc

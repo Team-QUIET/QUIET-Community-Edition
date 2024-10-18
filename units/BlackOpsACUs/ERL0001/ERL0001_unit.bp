@@ -1067,7 +1067,11 @@ UnitBlueprint {
 
     Weapon = {
         {
-            
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            }, 
         },
         
         {

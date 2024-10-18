@@ -1345,9 +1345,9 @@ UnitBlueprint {
             DisplayName = 'Target Designator',
 			
             FireTargetLayerCapsTable = {
-                Land = 'Air|Land|Water|Seabed',
-                Seabed = 'Air|Land|Water|Seabed',
-                Water = 'Air|Land|Water|Seabed',
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
             },
             FiringTolerance = 3,
 			
