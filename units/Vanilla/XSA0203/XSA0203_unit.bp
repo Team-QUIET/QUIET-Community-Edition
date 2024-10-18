@@ -1,0 +1,12 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "xsa0203",
+
+    Defense = {
+        ArmorType = 'Light',
+        Health = 1150,
+        MaxHealth = 1150,
+        RegenRate = 5,
+        SurfaceThreatLevel = 7,
+    },
+}

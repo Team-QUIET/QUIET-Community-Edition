@@ -1,0 +1,12 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "uea0203",
+	
+    Defense = {
+        ArmorType = 'Light',
+        Health = 1100,
+        MaxHealth = 1100,
+        RegenRate = 4,
+        SurfaceThreatLevel = 6.4,
+    },
+}
