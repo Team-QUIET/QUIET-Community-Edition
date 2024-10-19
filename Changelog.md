@@ -3,6 +3,19 @@ QUIET
 Rebalance Changelog
 ---------------
 
+# 1.60
+
+### Energy Charge 
+- All Units that have `RackSalvoFiresAfterCharge = true,` manually `RenderFireClock` instead of through `StartEconomyDrain Function`
+- Fix Experimental Artillery & T3 Strategic Artillery not having `RackSalvoFiresAfterCharge = true,`
+
+### Reclaim
+- Fix long standing bug that was causing QUIET Reclaim Adjustments to not function 
+
+### Misc
+- Fix Seraphim Fighter Missing Target
+- Fix T2 Tactical Bombers Dropping Short `Again`
+
 # 1.59
 
 ### ACU
