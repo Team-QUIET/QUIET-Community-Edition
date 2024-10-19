@@ -214,7 +214,7 @@ UnitBlueprint {
 
             BallisticArc = 'RULEUBA_None',
 			
-			      BeamCollisionDelay = 0,
+			BeamCollisionDelay = 0,
             BeamLifetime = 0.5,
 			
             CollideFriendly = false,
@@ -243,9 +243,6 @@ UnitBlueprint {
                     RackBone = 'Turret_Barrel',
                 },
             },
-
-            RenderFireClock = true,
-            RackSalvoFiresAfterCharge = true,
 
             RangeCategory = 'UWRC_DirectFire',
 			

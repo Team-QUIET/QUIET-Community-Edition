@@ -937,6 +937,13 @@ do
 		'ueb2302',
 		'urb2302',
 		'xsb2302',
+		'wra0401',
+		'brmt1expd',
+		'brmt1expdt2',
+		'brmt3pdro',
+		'brnt3pdro',
+		'brot1expd',
+		'brot3pdro',
 	};
 	function NullifyUnitRackSalvoFiresAfterChargeInBlueprints(all_blueprints)
 		for id, bp in pairs(all_blueprints.Unit) do

@@ -1,0 +1,97 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "brot3pdro",
+    
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+            
+            BallisticArc = 'RULEUBA_LowArc',
+            
+            CollideFriendly = false,
+			
+            Damage = 670,
+            DamageFriendly = true,
+            DamageRadius = 2.6,
+            
+            DamageType = 'Normal',
+			
+            DisplayName = 'Rockets',
+            
+            EnergyRequired = 7849,
+            EnergyDrainPerSecond = 785,     -- 10 seconds to charge
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 1,
+            FiringRandomness = 0.8,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 102,
+            MinRadius = 24,
+			
+            MuzzleSalvoDelay = 0.5,
+            MuzzleSalvoSize = 3,
+
+            MuzzleVelocity = 23,
+            MuzzleVelocityRandom = 0.7,
+            MuzzleVelocityReduceDistance = 100,
+			
+            ProjectileLifetime = 15,
+
+            RackFireTogether = true,
+
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+
+            RackSlavedToTurret = true,
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 0.1,     -- 2 racks x 3 x 670 dmg every 10 seconds controlled by charge --
+			
+            TargetCheckInterval = 1,
+			
+            TargetPriorities = {
+                'EXPERIMENTAL',
+                'STRUCTURE',
+                'SPECIALHIGHPRI',
+                'SHIELD',
+                'ARTILLERY',
+                'MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.10,
+
+            TurretBoneMuzzle = 'Turret_Muzzle01',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+
+            TurretPitch = 0,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 15,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 15,
+            Turreted = true,
+		},
+    },
+    
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.3,
+        HealthMult = 0.9,
+        MassMult = 0.3,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}
