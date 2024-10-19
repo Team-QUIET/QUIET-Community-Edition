@@ -785,6 +785,7 @@ do
 					cats[cat] = true
 				end
 
+				-- Rework This In the Future for Air, Naval, and Land
 				if cats.NAVAL then
 					if not bp.Wreckage then
 						bp.Wreckage = {
@@ -810,12 +811,10 @@ do
 						wl.Water = true
 						bp.Wreckage.LifeTime = 720
 					end
+
 				else
-					if bp.Wreckage then
-						if not bp.Wreckage.LifeTime then
-							bp.Wreckage.LifeTime = 900
-						end
-					else
+
+					if not bp.Wreckage then
 						-- Add Wreckage to all Blueprints to create more wreckage in the game, goes in hand with the change in Unit.lua to overkillRatio.
 						-- We comment out MassMult Adjustments for now to see how it affects gameplay.
 						-- We remove Energy Reclaim from all wrecks to focus Macro more on Energy Production rather then 30 minutes of Macro for Mass Extractor Upgrades.
@@ -825,25 +824,31 @@ do
 							Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 							EnergyMult = 0,
 							HealthMult = 0.9,
-							LifeTime = 720, -- give naval wreckage a lifetime value of 12 minutes
+							LifeTime = 720, -- give land wreckage a lifetime value of 12 minutes
 							MassMult = 0.75,
 							ReclaimTimeMultiplier = 1.2,
 							WreckageLayers = {
 								Land = true,
 							},
 						}
+					else
+						if not bp.Wreckage.LifeTime then
+							bp.Wreckage.LifeTime = 720
+						end
 
-						if bp.Wreckage.MassMult and bp.Wreckage.MassMult >= 0.9 then
+						if bp.Wreckage.MassMult <= 0.75 or bp.Wreckage.MassMult > 0.75 then
 							bp.Wreckage.EnergyMult = 0
+							bp.Wreckage.HealthMult = 0.9
+							bp.Wreckage.LifeTime = 720
 							bp.Wreckage.MassMult = 0.75
 							bp.Wreckage.ReclaimTimeMultiplier = 1.2
-						elseif bp.Wreckage.MassMult and bp.Wreckage.MassMult >= 0.1 and bp.Wreckage.MassMult < 0.75 then
-							bp.Wreckage.EnergyMult = 0
-							bp.Wreckage.MassMult = 0.75
-							bp.Wreckage.ReclaimTimeMultiplier = 1.2
+
+							local wl = bp.Wreckage.WreckageLayers
+							wl.Land = true
 						end
 					end
 				end
+				
 			end
 		end
 	end
@@ -925,6 +930,9 @@ do
 		'wal0401',
 		'ual0401',
 		'xsb2204',
+		'url0401',
+		'ssb2404',
+		'xab2307',
 	};
 	function NullifyUnitRackSalvoFiresAfterChargeInBlueprints(all_blueprints)
 		for id, bp in pairs(all_blueprints.Unit) do
