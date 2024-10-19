@@ -1,0 +1,10 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "ssb2404",
+
+    Weapon = {
+        {
+            RackSalvoFiresAfterCharge = true,
+        },
+    },
+}

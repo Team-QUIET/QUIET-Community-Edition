@@ -1,0 +1,12 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "url0401",
+	
+    Weapon = {
+        {
+            RackSalvoFiresAfterCharge = true,
+			
+            RateOfFire = 1,		-- controlled by charge -- 2000 DPS
+        },
+    },
+}
