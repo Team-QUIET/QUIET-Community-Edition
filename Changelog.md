@@ -3,6 +3,26 @@ QUIET
 Rebalance Changelog
 ---------------
 
+# 1.59
+
+### ACU
+- Removed Stealth
+
+### Citadel Mk1
+- Fix Underside turrets Missing DualManipulators, `50% of guns would not pitch`, causing 50% of the guns to always fire at max range.
+- Set fire rates to integer values
+- Increased all turret pitch and yaw speeds
+- Matching weapons had inconsistent stats, fixed.
+- Removed AutoInitiateAttackCommand behavior
+
+### Soul Ripper Mk1 
+- Weapon ranges increased, yaw and pitch speeds up, paired weapons stats properly synced (they weren't before).
+- SR1 is more effective at dealing with groups of units and entrenched/shielded groups than SR2.
+
+### Soul Ripper Mk2
+- Extended weapon ranges, yaw and pitch speeds up, weapon behaviors altered
+- SR2 is more effective at dealing concentrated damage on single targets than SR1. SR2 has more powerful AA than SR1.
+
 # 1.58
 
 ### T2 Gunships
