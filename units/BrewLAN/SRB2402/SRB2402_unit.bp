@@ -38,6 +38,7 @@ UnitBlueprint {
 			ProjectileLifetime = 1.5,
 
             RackFireTogether = false,
+            RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
             RackRecoilDistance = -1,
             RackReloadTimeout = 10,

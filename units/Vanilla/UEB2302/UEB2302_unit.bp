@@ -8,4 +8,80 @@ UnitBlueprint {
 		
         RebuildBonusIds = {'ueb2302'},
     },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+            
+            BallisticArc = 'RULEUBA_HighArc',
+			
+            CameraShakeDuration = 0.4,
+            CameraShakeMax = 1.1,
+            CameraShakeMin = 0,
+            CameraShakeRadius = 15,
+			
+            CollideFriendly = false,
+			
+            Damage = 4500,
+            DamageFriendly = true,
+            DamageRadius = 5,
+            DamageType = 'ShieldMult1.1',
+			
+            DisplayName = 'Anti Matter Artillery',
+			
+            EnergyDrainPerSecond = 3230,    -- 10 second charge
+            EnergyRequired = 32300,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+            FiringRandomness = 0.175,
+            FiringTolerance = 1.5,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 850,
+            MinRadius = 120,
+			
+            MuzzleVelocity = 71,
+            MuzzleVelocityReduceDistance = 825,
+
+            ProjectileLifetime = 120,
+
+            RackRecoilDistance = -15,
+
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 0.1,	---- 4500 every 10 seconds = 450 DPS - controlled by charge
+
+            TargetCheckInterval = 5,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'ECONOMIC',
+                'STRUCTURE',
+                'ALLUNITS',
+            },
+			
+            TargetRestrictDisallow = 'UNTARGETABLE,WALL',
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Barrel',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 30,
+            TurretPitchRange = 55,
+            TurretPitchSpeed = 5,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 5.2,
+			
+            Turreted = true,
+        },
+    },
 }

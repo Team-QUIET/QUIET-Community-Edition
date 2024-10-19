@@ -38,6 +38,7 @@ UnitBlueprint {
 
             RackFireTogether = true,
             RackSalvoChargeTime = 0.1,
+            RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
             RackSalvoSize = 1,
             RackSlavedToTurret = true,

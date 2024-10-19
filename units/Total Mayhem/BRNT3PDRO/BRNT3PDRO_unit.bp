@@ -61,6 +61,7 @@ UnitBlueprint {
 
             RackSalvoChargeTime = 0.1,
 
+            RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
 
             RangeCategory = 'UWRC_DirectFire',

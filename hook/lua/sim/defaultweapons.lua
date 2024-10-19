@@ -86,7 +86,9 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
         if not self.EconDrain and bp.EnergyRequired and bp.EnergyDrainPerSecond then
 
             local function ChargeProgress( self, progress)
-                SetWorkProgress( self, progress )
+                if not bp.RackSalvoFiresAfterCharge == true then
+                    SetWorkProgress( self, progress )
+                end
             end
 
             local nrgReq = self:GetWeaponEnergyRequired(bp)
@@ -208,7 +210,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
             if bp.WeaponUnpacks and self.WeaponPackState ~= 'Unpacked' then
                 LOUDSTATE(self, self.WeaponUnpackingState)
             else
-                if bp.RackSalvoChargeTime and bp.RackSalvoChargeTime > 0 or bp.RackSalvoFiresAfterCharge == true then
+                if (bp.RackSalvoChargeTime and bp.RackSalvoChargeTime > 0) or bp.RackSalvoFiresAfterCharge == true then
                     LOUDSTATE(self, self.RackSalvoChargeState)
 
                     -- SkipReadyState used for Janus and Corsair

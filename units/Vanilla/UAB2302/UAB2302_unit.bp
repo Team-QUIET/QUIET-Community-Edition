@@ -8,4 +8,11 @@ UnitBlueprint {
 		
         RebuildBonusIds = { 'uab2302' },
     },
+
+    Weapon = {
+        {
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+        },
+    },
 }

@@ -48,6 +48,7 @@ UnitBlueprint {
                 },
             },
 
+            RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
 			
             RangeCategory = 'UWRC_DirectFire',

@@ -14,7 +14,8 @@ UnitBlueprint{
 
 		RackRecoilDistance = -8,
 		RackReloadTimeout = 0,
-		RackSalvoFiresAfterCharge =  true,
+		RenderFireClock = true,
+		RackSalvoFiresAfterCharge = true,
 		RackSlavedToTurret = true,
 		RackFireTogether = true,
 

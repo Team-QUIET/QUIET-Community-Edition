@@ -933,6 +933,10 @@ do
 		'url0401',
 		'ssb2404',
 		'xab2307',
+		'uab2302',
+		'ueb2302',
+		'urb2302',
+		'xsb2302',
 	};
 	function NullifyUnitRackSalvoFiresAfterChargeInBlueprints(all_blueprints)
 		for id, bp in pairs(all_blueprints.Unit) do

@@ -328,6 +328,7 @@ UnitBlueprint {
 
             RackBones = { { MuzzleBones = { "LeftMissileTurret_Muzzle" }, RackBone = "LeftMissileTurret_Barrel" } },
 
+            RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
 
             RateOfFire = 10/10,
@@ -392,6 +393,7 @@ UnitBlueprint {
 
             RackBones = { { MuzzleBones = { "RightMissileTurret_Muzzle" }, RackBone = "RightMissileTurret_Barrel" } },
 
+            RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
 
             RateOfFire = 10/10,

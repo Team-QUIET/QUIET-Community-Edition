@@ -49,6 +49,7 @@ UnitBlueprint {
                 },
             },
 
+            RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
 			RackSalvoChargeTime = 0,
 			RackReloadTimeout = 0,
