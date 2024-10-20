@@ -3,6 +3,18 @@ QUIET
 Rebalance Changelog
 ---------------
 
+# 1.61
+
+### ACU
+- Fix Cybran & Seraphim ACU missing with their main gun
+
+### Energy Charge 
+<strong>Energy Charge Cycle involves fixing long delays that cause the Unit to lose over 100% of it's DPS causing the unit to be extremely weaker then intended</strong><br>
+- Fix T3 Rocket PD Energy Charge Cycle
+- Fix T3 Sniper Energy Charge Cycle
+- Fix T3 Mobile Artillery Energy Charge Cycle
+- Fix T2 Sniper Energy Charge Cycle
+
 # 1.60
 
 ### Energy Charge 
