@@ -1461,7 +1461,7 @@ UnitBlueprint {
             TurretYawSpeed = 90,
 			
             Turreted = true,
-            UseFiringSolutionInsteadOfAimBone = false,
+            UseFiringSolutionInsteadOfAimBone = true,
         },
         {
             AboveWaterFireOnly = true,
