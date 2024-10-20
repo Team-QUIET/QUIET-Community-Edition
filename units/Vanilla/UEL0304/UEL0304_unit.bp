@@ -23,15 +23,15 @@ UnitBlueprint {
 			
             Damage = 750,
             DamageFriendly = true,
-            DamageRadius = 4,
+            DamageRadius = 5.5,
             DamageType = 'Normal',
 			
             DisplayName = 'Anti Matter Artillery',
             
-            EnergyChargeForFirstShot = false,
+            EnergyChargeForFirstShot = true,
             
-            EnergyRequired = 3150,
-            EnergyDrainPerSecond = 450,     -- 7 seconds to charge
+            EnergyRequired = 2400,
+            EnergyDrainPerSecond = 480,     -- 5 seconds to charge
 
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water',
@@ -54,9 +54,12 @@ UnitBlueprint {
 
             RackRecoilDistance = -0.6,
 
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 1,     -- every 7 seconds - controlled by charge = 100 DPS
+            RateOfFire = 10/65,     -- every 7 seconds - controlled by charge = 100 DPS
 			
             TargetCheckInterval = 1,
 			

@@ -19,12 +19,12 @@ UnitBlueprint {
 			
             Damage = 500,
             DamageFriendly = true,
-            DamageRadius = 4.2,
+            DamageRadius = 6,
             DamageType = 'Normal',
 			
             DisplayName = 'Proton Artillery',
             
-            EnergyChargeForFirstShot = false,
+            EnergyChargeForFirstShot = true,
             
             EnergyRequired = 2400,
             EnergyDrainPerSecond = 480,     -- 5 seconds to charge
@@ -48,9 +48,12 @@ UnitBlueprint {
 
             RackRecoilDistance = -0.2,
 
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 1,	        -- every 5 seconds by charge = 96 DPS
+            RateOfFire = 10/65,	        -- every 5 seconds by charge = 96 DPS
 
             TargetCheckInterval = 2,
             TargetPriorities = {

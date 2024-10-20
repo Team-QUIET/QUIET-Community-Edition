@@ -38,17 +38,17 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
 			
-            Damage = 500,
+            Damage = 650,
             DamageFriendly = true,
-            DamageRadius = 4.2,
+            DamageRadius = 5,
             DamageType = 'Normal',      
 			
             DisplayName = 'Suthanus Artillery',
 
-            EnergyChargeForFirstShot = false,
+            EnergyChargeForFirstShot = true,
            
             EnergyRequired = 2400,
-            EnergyDrainPerSecond = 500,     -- 4.8 seconds to charge
+            EnergyDrainPerSecond = 480,     -- 5 seconds to charge
 
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
@@ -71,10 +71,12 @@ UnitBlueprint {
 
             RackRecoilDistance = -0.3,
 
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 1,     -- every 5 seconds by charge = 96 Dps
-            RenderFireClock = true,
+            RateOfFire = 10/65,     -- every 5 seconds by charge = 96 Dps
 			
             TargetCheckInterval = 3,
             TargetPriorities = {

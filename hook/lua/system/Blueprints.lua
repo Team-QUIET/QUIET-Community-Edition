@@ -21,13 +21,15 @@ do
 
 	function ModBlueprints(all_blueprints)
 		OldModBlueprints(all_blueprints)
-
+		--
 		BalanceAlterations(all_blueprints)
+		EnergyChargeAlterations(all_blueprints)
 		UnitAlterations(all_blueprints)
 		ReclaimAlterations(all_blueprints)
 		NotificationAlterations(all_blueprints)
+		--
 		NullifyUnitBlueprints(all_blueprints)
-		NullifyUnitRackSalvoFiresAfterChargeInBlueprints(all_blueprints)
+		--
 		ProcessWeaponAlterations(all_blueprints, all_blueprints.Unit)
 		ProcessPropAlterations(all_blueprints)
 		ProcessDynamicLOD(all_blueprints)
@@ -944,8 +946,11 @@ do
 		'brnt3pdro',
 		'brot1expd',
 		'brot3pdro',
+		'url0304',
+		'uel0304',
+		'xsl0304',
 	};
-	function NullifyUnitRackSalvoFiresAfterChargeInBlueprints(all_blueprints)
+	function EnergyChargeAlterations(all_blueprints)
 		for id, bp in pairs(all_blueprints.Unit) do
 			if TableFind(unitContinueId, id) then
 				continue
@@ -954,6 +959,16 @@ do
 					for idW, bpW in pairs(bp.Weapon) do
 						if bpW.RackSalvoFiresAfterCharge ~= nil then
 							bpW.RackSalvoFiresAfterCharge = false
+						end
+					end
+				end
+			end
+
+			if bp.EnergyRequired ~= nil and bp.EnergyDrainPerSecond ~= nil then
+				if bp.Weapon ~= nil then
+					for idW, bpW in pairs(bp.Weapon) do
+						if bpW.RenderFireClock == nil then
+							bpW.RenderFireClock = true
 						end
 					end
 				end

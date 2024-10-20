@@ -85,12 +85,6 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
         if not self.EconDrain and bp.EnergyRequired and bp.EnergyDrainPerSecond then
 
-            local function ChargeProgress( self, progress)
-                if not bp.RackSalvoFiresAfterCharge == true then
-                    SetWorkProgress( self, progress )
-                end
-            end
-
             local nrgReq = self:GetWeaponEnergyRequired(bp)
             local nrgDrain = self:GetWeaponEnergyDrain(bp)
 
@@ -99,7 +93,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
                 if time < 0.1 then
                     time = 0.1
                 end
-                self.EconDrain = CreateEconomyEvent(self.unit, nrgReq, 0, time, ChargeProgress)
+                self.EconDrain = CreateEconomyEvent(self.unit, nrgReq, 0, time)
                 self.FirstShot = true
                 ForkThread(self.EconomyDrainThread, self)
             end
@@ -132,6 +126,54 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
         return weapNRG
     end,
 
+    -- Played when a muzzle is fired. Mostly used for muzzle flashes
+    PlayFxMuzzleSequence = function(self, muzzle)
+        local unit = self.unit
+        local army = self.Army
+        local scale = self.FxMuzzleFlashScale
+        for _, effect in self.FxMuzzleFlash do
+            CreateAttachedEmitter(unit, muzzle, army, effect):ScaleEmitter(scale)
+        end
+    end,
+
+    -- Played during the beginning of the MuzzleChargeDelay time when a muzzle in a rack is fired.
+    PlayFxMuzzleChargeSequence = function(self, muzzle)
+        local unit = self.unit
+        local army = self.Army
+        local scale = self.FxChargeMuzzleFlashScale
+        for _, effect in self.FxChargeMuzzleFlash do
+            CreateAttachedEmitter(unit, muzzle, army, effect):ScaleEmitter(scale)
+        end
+    end,
+
+    -- Played when a rack salvo charges
+    -- Do not wait in here or the sequence in the blueprint will be messed up. Fork a thread instead
+    PlayFxRackSalvoChargeSequence = function(self)
+        local bp = self.bp
+        local muzzleBones = bp.RackBones[self.CurrentRackNumber].MuzzleBones
+        local unit = self.unit
+        local army = self.Army
+        local scale = self.FxRackChargeMuzzleFlashScale
+        local effectfx = self.FxRackChargeMuzzleFlash
+        if effectfx then
+            for _, effect in self.FxRackChargeMuzzleFlash do
+                for _, muzzle in muzzleBones do
+                    CreateAttachedEmitter(unit, muzzle, army, effect):ScaleEmitter(scale)
+                end
+            end
+        end
+        local chargeStart = bp.Audio.ChargeStart
+        if chargeStart then
+            self:PlaySound(chargeStart)
+        end
+        local animationCharge = bp.AnimationCharge
+        if animationCharge and self.Animator then
+            local animator = CreateAnimator(unit)
+            self.Animator = animator
+            animator:PlayAnim(animationCharge):SetRate(bp.AnimationChargeRate or 1)
+        end
+    end,
+
     -- Played when a rack salvo reloads
     -- Do not wait in here or the sequence in the blueprint will be messed up. Fork a thread instead
     PlayFxRackSalvoReloadSequence = function(self)
@@ -141,6 +183,195 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
             local animator = CreateAnimator(self.unit)
             self.Animator = animator
             animator:PlayAnim(animationReload):SetRate(bp.AnimationReloadRate or 1)
+        end
+    end,
+
+    -- Played when a rack reloads. Mostly used for Recoil
+    PlayFxRackReloadSequence = function(self)
+        local bp = self.bp
+        local cameraShakeRadius = bp.CameraShakeRadius
+        local cameraShakeMax = bp.CameraShakeMax
+        local cameraShakeMin = bp.CameraShakeMin
+        local cameraShakeDuration = bp.CameraShakeDuration
+        if cameraShakeRadius and cameraShakeRadius > 0 and
+            cameraShakeMax and cameraShakeMax > 0 and
+            cameraShakeMin and cameraShakeMin >= 0 and
+            cameraShakeDuration and cameraShakeDuration > 0
+        then
+            self.unit:ShakeCamera(cameraShakeRadius, cameraShakeMax, cameraShakeMin, cameraShakeDuration)
+        end
+        if bp.RackRecoilDistance ~= 0 then
+            self:PlayRackRecoil({ bp.RackBones[self.CurrentRackNumber] })
+        end
+    end,
+
+    -- Played when a weapon unpacks
+    PlayFxWeaponUnpackSequence = function(self)
+        -- Deal with owner's audio cues
+        local unitBP = self.unit:GetBlueprint()
+        local unitBPAudio = unitBP.Audio
+        local activate = unitBPAudio.Activate
+        if activate then
+            self:PlaySound(activate)
+        end
+        local open = unitBPAudio.Open
+        if open then
+            self:PlaySound(open)
+        end
+
+        -- Deal with the Weapon's audio and animations
+        local bp = self.bp
+        local unpack = bp.Audio.Unpack
+        if unpack then
+            self:PlaySound(unpack)
+        end
+        local unpackAnimation = bp.WeaponUnpackAnimation
+        local unpackAnimator = self.UnpackAnimator
+        if unpackAnimation and not unpackAnimator then
+            unpackAnimator = CreateAnimator(self.unit)
+            self.UnpackAnimator = unpackAnimator
+            unpackAnimator:PlayAnim(unpackAnimation):SetRate(0)
+            unpackAnimator:SetPrecedence(bp.WeaponUnpackAnimatorPrecedence or 0)
+            self.Trash:Add(unpackAnimator)
+        end
+        if unpackAnimator then
+            unpackAnimator:SetRate(bp.WeaponUnpackAnimationRate)
+            self.WeaponPackState = 'Unpacking'
+            WaitFor(unpackAnimator)
+        end
+        self.WeaponPackState = 'Unpacked'
+    end,
+
+    -- Played when a weapon packs up
+    -- There is no target, and all rack salvos are complete
+    PlayFxWeaponPackSequence = function(self)
+        local bp = self.bp
+        local close = self.unit.bp.Audio.Close
+        if close then
+            self:PlaySound(close)
+        end
+        local unpackAnimator = self.UnpackAnimator
+        if unpackAnimator then
+            if bp.WeaponUnpackAnimation then
+                unpackAnimator:SetRate(-bp.WeaponUnpackAnimationRate)
+            end
+
+            self.WeaponPackState = 'Packing'
+            WaitFor(unpackAnimator)
+        end
+        self.WeaponPackState = 'Packed'
+    end,
+
+    -- Create the visual side of rack recoil
+    PlayRackRecoil = function(self, rackList)
+    
+        local CreateSlider = CreateSlider
+        local LOUDINSERT = LOUDINSERT
+        local SetPrecedence = SetPrecedence
+        local TrashAdd = TrashAdd
+        
+        local unit = self.unit
+        local RackRecoilDistance = self.bp.RackRecoilDistance
+        
+        local tmpSldr
+        
+        for _, v in rackList do
+		
+            tmpSldr = CreateSlider( unit, v.RackBone)
+			
+            LOUDINSERT( self.RecoilManipulators, tmpSldr)
+			
+            SetPrecedence( tmpSldr, 11 )
+            SetGoal( tmpSldr, 0, 0, RackRecoilDistance )
+            SetSpeed( tmpSldr, -self.RackRecoilReturnSpeed )
+			
+            TrashAdd( unit.Trash, tmpSldr )
+			
+            if v.TelescopeBone then
+            
+                tmpSldr = CreateSlider( unit, v.TelescopeBone)
+                
+                LOUDINSERT( self.RecoilManipulators, tmpSldr)
+                
+                SetPrecedence( tmpSldr, 11 )
+                SetGoal( tmpSldr, 0, 0, v.TelescopeRecoilDistance or RackRecoilDistance)
+                SetSpeed( tmpSldr, -1)
+                
+                TrashAdd( unit.Trash, tmpSldr )
+            end
+
+        end
+        
+        self:ForkThread( self.PlayRackRecoilReturn, rackList)
+    end,
+
+    -- The opposite function to PlayRackRecoil, returns the rack to default position
+    PlayRackRecoilReturn = function(self, rackList)
+        WaitTicks(1)
+        local speed = self.RackRecoilReturnSpeed
+        for _, recManip in self.RecoilManipulators do
+            recManip:SetGoal(0, 0, 0)
+            recManip:SetSpeed(speed)
+        end
+    end,
+
+    -- Wait for all recoil and animations
+    WaitForAndDestroyManips = function(self)
+        local manips = self.RecoilManipulators
+        if manips then
+            for _, manip in manips do
+                WaitFor(manip)
+
+            end
+            self:DestroyRecoilManips()
+        end
+        local animator = self.Animator
+        if animator then
+            WaitFor(animator)
+
+            animator:Destroy()
+            self.Animator = nil
+        end
+    end,
+
+    -- Destroy the sliders which cause weapon visual recoil
+    DestroyRecoilManips = function(self)
+
+        for _, v in self.RecoilManipulators do
+            v:Destroy()
+        end
+
+        self.RecoilManipulators = {}
+    end,
+
+    -- Present for Overcharge to hook into
+    OnWeaponFired = function(self)
+    end,
+
+    -- I think this is triggered whenever the state changes to anything but DeadState
+    OnEnterState = function(self)
+
+        local weaponWantEnabled = self.WeaponWantEnabled
+        local weaponIsEnabled = self.WeaponIsEnabled
+        if weaponWantEnabled and not weaponIsEnabled then
+            self.WeaponIsEnabled = true
+            self:SetWeaponEnabled(true)
+        elseif not weaponWantEnabled and weaponIsEnabled then
+            local bp = self.bp
+            if bp.CountedProjectile ~= true then
+                self.WeaponIsEnabled = false
+                self:SetWeaponEnabled(false)
+            end
+        end
+
+        local weaponAimWantEnabled = self.WeaponAimWantEnabled
+        local weaponAimIsEnabled = self.WeaponAimIsEnabled
+        if weaponAimWantEnabled and not weaponAimIsEnabled then
+            self.WeaponAimIsEnabled = true
+            self:AimManipulatorSetEnabled(true)
+        elseif not weaponAimWantEnabled and weaponAimIsEnabled then
+            self.WeaponAimIsEnabled = false
+            self:AimManipulatorSetEnabled(false)
         end
     end,
 
@@ -364,6 +595,19 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
         WeaponWantEnabled = true,
         WeaponAimWantEnabled = true,
 
+        RenderClockThread = function(self, rateOfFire)
+            local unit = self.unit
+            local clockTime = math.round(10 * rateOfFire)
+            local totalTime = clockTime
+            while clockTime >= 0 and
+                not self:BeenDestroyed() and
+                not unit.Dead do
+                unit:SetWorkProgress(1 - clockTime / totalTime)
+                clockTime = clockTime - 1
+                WaitSeconds(0.1)
+            end
+        end,
+
         Main = function(self)
             
             local bp                    = self.bp
@@ -403,13 +647,10 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
             end	
 			
             -- this used to be placed AFTER the firing events 
-            if bp.RenderFireClock and bp.RateOfFire > 0 then
-			
-	            if not unit.Dead then
-				
-                    local rof = 1 / bp.RateOfFire                
-
-                    self:ForkThread(self.RenderClockThread, rof)                
+            if not self:BeenDestroyed() and
+                not unit.Dead then
+                if bp.RenderFireClock and bp.RateOfFire > 0 then
+                    self:ForkThread(self.RenderClockThread, 1 / bp.RateOfFire)
                 end
             end
             
@@ -628,23 +869,6 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 			end
             
             self.HaltFireOrdered = true
-        end,
-		
-        RenderClockThread = function(self, rof)
-		
-            local clockTime = rof
-            local unit = self.unit
-			local WaitTicks = WaitTicks
-			
-            while clockTime > 0.0 and not self:BeenDestroyed() and not unit.Dead do
-                
-                clockTime = clockTime - 0.1
-                
-                WaitTicks(1)                
-
-                unit:SetWorkProgress( 1 - clockTime / rof )
-
-            end
         end,
     },
 
