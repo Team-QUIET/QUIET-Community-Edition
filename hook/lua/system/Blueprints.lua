@@ -950,6 +950,8 @@ do
 		'url0304',
 		'uel0304',
 		'xsl0304',
+		'xal0305',
+		'xsl0305',
 	};
 	-- This is temperory until all units are fixed correctly within the Blueprint
 	-- Will be removed once all units are fixed

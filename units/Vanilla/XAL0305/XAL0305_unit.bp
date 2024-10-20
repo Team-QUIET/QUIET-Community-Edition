@@ -77,10 +77,13 @@ UnitBlueprint {
             ProjectileLifetimeUsesMultiplier = 1,
 
             RackRecoilDistance = -0.1,
+
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
 			
             RangeCategory = 'UWRC_DirectFire',
 			
-            RateOfFire = 1,     -- rate of fire controlled by charge - 10 seconds
+            RateOfFire = 10/60,
 			
             TargetCheckInterval = 3,
             RenderFireClock = true,

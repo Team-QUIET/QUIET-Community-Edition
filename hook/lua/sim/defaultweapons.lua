@@ -161,8 +161,8 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
     -- Played when a rack salvo charges
     -- Do not wait in here or the sequence in the blueprint will be messed up. Fork a thread instead
-    PlayFxRackSalvoChargeSequence = function(self)
-        local bp = self.bp
+    PlayFxRackSalvoChargeSequence = function(self, blueprint)
+        local bp = blueprint or self.bp
         local muzzleBones = bp.RackBones[self.CurrentRackNumber].MuzzleBones
         local unit = self.unit
         local army = self.Army
@@ -189,8 +189,8 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
     -- Played when a rack salvo reloads
     -- Do not wait in here or the sequence in the blueprint will be messed up. Fork a thread instead
-    PlayFxRackSalvoReloadSequence = function(self)
-        local bp = self.bp
+    PlayFxRackSalvoReloadSequence = function(self, blueprint)
+        local bp = blueprint or self.bp
         local animationReload = bp.AnimationReload
         if animationReload and not self.Animator then
             local animator = CreateAnimator(self.unit)
@@ -200,7 +200,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
     end,
 
     -- Played when a rack reloads. Mostly used for Recoil
-    PlayFxRackReloadSequence = function(self)
+    PlayFxRackReloadSequence = function(self, blueprint)
         local bp = self.bp
         local cameraShakeRadius = bp.CameraShakeRadius
         local cameraShakeMax = bp.CameraShakeMax
@@ -213,8 +213,8 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
         then
             self.unit:ShakeCamera(cameraShakeRadius, cameraShakeMax, cameraShakeMin, cameraShakeDuration)
         end
-        if bp.RackRecoilDistance ~= 0 then
-            self:PlayRackRecoil({ bp.RackBones[self.CurrentRackNumber] })
+        if bp.RackRecoilDistance and bp.RackRecoilDistance ~= 0 then
+            self:PlayRackRecoil({ bp.RackBones[self.CurrentRackNumber]}, bp)
         end
     end,
 
@@ -257,8 +257,8 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
     -- Played when a weapon packs up
     -- There is no target, and all rack salvos are complete
-    PlayFxWeaponPackSequence = function(self)
-        local bp = self.bp
+    PlayFxWeaponPackSequence = function(self, blueprint)
+        local bp = blueprint or self.bp
         local close = self.unit.bp.Audio.Close
         if close then
             self:PlaySound(close)
@@ -276,7 +276,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
     end,
 
     -- Create the visual side of rack recoil
-    PlayRackRecoil = function(self, rackList)
+    PlayRackRecoil = function(self, rackList, blueprint)
     
         local CreateSlider = CreateSlider
         local LOUDINSERT = LOUDINSERT
@@ -995,7 +995,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
             end
 
             self:AimManipulatorSetEnabled(false)
-            self:PlayFxWeaponPackSequence()
+            self:PlayFxWeaponPackSequence(bp)
             if bp.WeaponUnpackLocksMotion then
                 unit:SetImmobile(false)
             end

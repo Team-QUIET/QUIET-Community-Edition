@@ -130,11 +130,14 @@ UnitBlueprint {
 
 			ProjectileLifetimeUsesMultiplier = 1.15,
 
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+
             RackRecoilDistance = -0.1,
 
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 1,		---- 140 Dps - 20 seconds - controlled by charge 
+            RateOfFire = 10/60,
 			
             SlavedToBody = false,
 			
