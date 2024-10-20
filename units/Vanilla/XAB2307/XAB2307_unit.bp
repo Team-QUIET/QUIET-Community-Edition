@@ -6,6 +6,7 @@ UnitBlueprint {
         {
             RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
+            RateOfFire = 10/50,
         },
     },
 }

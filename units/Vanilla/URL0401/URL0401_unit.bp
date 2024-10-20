@@ -7,7 +7,7 @@ UnitBlueprint {
             RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
 			
-            RateOfFire = 1,		-- controlled by charge -- 2000 DPS
+            RateOfFire = 10/20,		-- controlled by charge -- 2000 DPS
         },
     },
 }
