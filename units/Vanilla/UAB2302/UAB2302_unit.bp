@@ -11,8 +11,9 @@ UnitBlueprint {
 
     Weapon = {
         {
-            RenderFireClock = true,
-            RackSalvoFiresAfterCharge = true,
+	RenderFireClock = true,
+	RackSalvoFiresAfterCharge = true,
+	RateOfFire = 95/1000,
         },
     },
 }
