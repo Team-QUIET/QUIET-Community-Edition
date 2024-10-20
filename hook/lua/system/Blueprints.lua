@@ -922,8 +922,9 @@ do
 	end
 
 	--=======================================
-	-- FUNCTION NullifyUnitRackSalvoFiresAfterChargeInBlueprints(ALL_BLUEPRINTS)
-	-- Nullify RackSalvoFiresAfterCharge on units that do not need it
+	-- FUNCTION EnergyChargeAlterations(ALL_BLUEPRINTS)
+	-- Adds RenderFireClock to all EnergyCharge Units
+	-- Removes RackSalvoFiresAfterCharge Temporarily until all units are fixed 
 	--=======================================
 	local unitContinueId = {
 		'srb2402',
@@ -950,6 +951,8 @@ do
 		'uel0304',
 		'xsl0304',
 	};
+	-- This is temperory until all units are fixed correctly within the Blueprint
+	-- Will be removed once all units are fixed
 	function EnergyChargeAlterations(all_blueprints)
 		for id, bp in pairs(all_blueprints.Unit) do
 			if TableFind(unitContinueId, id) then

@@ -8,6 +8,7 @@
 -- Everything is now located in the actual EconomyDrainThread
 -- This goes through and adds variables back that are documented in the FA Blueprint Wiki
 -- Current ones are: RackSalvoFiresAfterCharge
+-- Current Modified are: RenderFireClock, FirstShot, EconDrain
 
 -- Many of these stats are written to not be full of bloat from the EnergyDrain & include some fixes for outlying issues.
 DefaultWeapons_QUIET = DefaultProjectileWeapon
