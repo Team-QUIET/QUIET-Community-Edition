@@ -79,7 +79,7 @@ UnitBlueprint {
 			
             Turreted = true,
 
-            WeaponRepackTimeout = 2,
+            WeaponRepackTimeout = 0,
             WeaponUnpackAnimationRate = 1,
             WeaponUnpackLocksMotion = true,
             WeaponUnpacks = true,
