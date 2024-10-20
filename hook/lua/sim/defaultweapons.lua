@@ -14,6 +14,18 @@
 DefaultWeapons_QUIET = DefaultProjectileWeapon
 DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
+    FxRackChargeMuzzleFlash = {},
+    FxRackChargeMuzzleFlashScale = 1,
+    FxChargeMuzzleFlash = {},
+    FxChargeMuzzleFlashScale = 1,
+    FxMuzzleFlash = {
+        '/effects/emitters/default_muzzle_flash_01_emit.bp',
+        '/effects/emitters/default_muzzle_flash_02_emit.bp',
+    },
+    FxMuzzleFlashScale = 1,
+
+    WeaponPackState = 'Packed',
+
     OnCreate = function(self)
 	
         WeaponOnCreate(self)
