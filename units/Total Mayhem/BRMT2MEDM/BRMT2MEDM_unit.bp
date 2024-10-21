@@ -29,4 +29,204 @@ UnitBlueprint {
         VisionRadius = 28,
 		WaterVisionRadius = 20,
     },
+	
+	Weapon = {
+	
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Missile_Nanite', LodCutoff = 'Weapon_LodCutoff' },
+            },
+			
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 33,
+            DamageRadius = 1.5,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Rockets',
+			
+            FireTargetLayerCapsTable = {
+                Land    = 'Land|Water|Seabed',
+                Seabed  = 'Land|Water|Seabed',                
+            },
+			
+            FiringRandomness = 0.7,
+            FiringTolerance = 0.3,
+			
+            Label = 'ParticleMortar1',
+			
+			LeadTarget = true,
+			
+			MinRadius = 8,
+            MaxRadius = 40,
+			
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 6,
+            MuzzleVelocity = 24,
+			MuzzleVelocityReduceDistance = 8,
+
+            NotExclusive = true,
+			
+            ProjectileId = '/projectiles/CDFRocketIridium02/CDFRocketIridium02_proj.bp',
+            ProjectileLifetime = 3.5,			
+
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'cannonmuz01',
+                        'cannonmuz02',
+                        'cannonmuz03',
+                        'cannonmuz04',
+                        'cannonmuz05',
+                        'cannonmuz06',
+                    },
+                    RackBone = 'rocketlauncher01',
+                },
+                {
+                    MuzzleBones = {
+                        'cannonmuz07',
+                        'cannonmuz11',
+                        'cannonmuz08',
+                        'cannonmuz09',
+                        'cannonmuz10',
+                        'cannonmuz12',
+                    },
+                    RackBone = 'rocketlauncher02',
+                },
+
+            },
+            
+            RackFireTogether = true,
+			
+            RackReloadTimeout = 10,
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 10/100,
+			RenderFireClock = true,
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 60,
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                'EXPERIMENTAL',
+                'SPECIALHIGHPRI',
+                'MOBILE -AIR',
+                'DEFENSE',
+                'ALLUNITS -WALL',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.0,
+			
+            TurretBoneDualMuzzle = 'cannonmuz02',
+            TurretBoneDualPitch = 'rocketlauncher01',
+			
+            TurretBoneMuzzle = 'cannonmuz08',
+            TurretBonePitch = 'rocketlauncher02',
+			
+            TurretBoneYaw = 'Turret',
+			
+            TurretDualManipulators = true,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 45,
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+            Turreted = true,
+
+        },
+
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'URLWeapon', Cue = 'URL0202_Cannon_Dbl', LodCutoff = 'Weapon_LodCutoff' },
+            },
+			
+            BallisticArc = 'RULEUBA_None',
+			
+			BeamCollisionDelay = 0,
+            BeamLifetime = 0.3,		-- hits 3x per fire
+			
+            CollideFriendly = false,
+            Damage = 15,
+            DamageType = 'Normal',
+			
+            FireTargetLayerCapsTable = {
+                Land    = 'Land|Water',
+                Seabed  = 'Land|Water',
+            },
+			
+            FiringTolerance = 1,
+			
+            Label = 'MainGun',
+			
+            LeadTarget = false,
+			
+            MaxRadius = 32,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'righthand_muzzle'},
+                    RackBone = 'armGun02',
+                },
+                {
+                    MuzzleBones = {'lefthand_muzzle'},
+                    RackBone = 'armGun01',
+                },
+            },
+			
+			PrefersPrimaryWeaponTarget = true,
+			
+            RackFireTogether = true,
+
+            RackRecoilDistance = -0.1,
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/10,
+			
+            ReTargetOnMiss = true,
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                'EXPERIMENTAL',
+                'DEFENSE',
+				'MOBILE -AIR',
+                'ALLUNITS -WALL',
+            },
+			
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TurretBoneDualMuzzle = 'righthand_muzzle',
+            TurretBoneDualPitch = 'armGun02',
+			
+            TurretBoneMuzzle = 'lefthand_muzzle',
+            TurretBonePitch = 'armGun01',
+			
+            TurretBoneYaw = 'Turret',
+			
+            TurretDualManipulators = true,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 55,
+            TurretPitchSpeed = 30,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+
+            Turreted = true,
+        },
+    },
 }
