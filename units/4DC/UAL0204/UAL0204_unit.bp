@@ -41,6 +41,14 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 50,
     },
 
+    Defense = {
+        ArmorType = "Normal",
+        Health = 435,
+        MaxHealth = 435,
+        RegenRate = 1,
+        SurfaceThreatLevel = 19.7,
+    },
+
     Intel = {
         RadarStealth = false,
         

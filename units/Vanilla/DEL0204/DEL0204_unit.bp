@@ -21,6 +21,14 @@ UnitBlueprint {
         TurnRate = 80,
     },
 
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 600,
+        MaxHealth = 600,
+        RegenRate = 1,
+        SurfaceThreatLevel = 9.6,
+    },
+
     Weapon = {
         {
             AboveWaterTargetsOnly = true,

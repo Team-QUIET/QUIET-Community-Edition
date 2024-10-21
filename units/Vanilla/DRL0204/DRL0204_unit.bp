@@ -23,6 +23,14 @@ UnitBlueprint {
         TurnRadius = 1,
         TurnRate = 80,
     },
+
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 515,
+        MaxHealth = 515,
+        RegenRate = 1,
+        SurfaceThreatLevel = 6,
+    },
 	
     Weapon = {
         {
