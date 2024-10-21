@@ -953,6 +953,20 @@ do
 		'xal0305',
 		'xsl0305',
 		'ual0204',
+		'brl0307',
+		'lab2320',
+		'leb2320',
+		'lrb2320',
+		'lsb2320',
+		'srl0311',
+		'uab2303',
+		'urb2303',
+		'xsb2303',
+		'ueb2303',
+		'eal0001',
+		'eel0001',
+		'erl0001',
+		'esl0001',
 	};
 	-- This is temperory until all units are fixed correctly within the Blueprint
 	-- Will be removed once all units are fixed

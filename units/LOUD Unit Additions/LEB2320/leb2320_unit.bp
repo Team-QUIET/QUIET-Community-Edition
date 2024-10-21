@@ -41,9 +41,12 @@ UnitBlueprint {
             RackRecoilDistance = -25,
             RackReloadTimeout = 10,
 
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+
 			RangeCategory = 'UWRC_IndirectFire',			
 			
-            RateOfFire = 1,
+            RateOfFire = 10/10,
 			
             TargetCheckInterval = 3,
 			
@@ -119,13 +122,16 @@ UnitBlueprint {
 
 			ProjectileLifetime = 12,
 
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+
             RackRecoilDistance = -25,
             RackReloadTimeout = 10,
 
-            RateOfFire = 1,
-			
+            RateOfFire = 10/10,
+            
             TargetCheckInterval = 3,
-			
+            
             TargetPriorities = {
                 "EXPERIMENTAL MOBILE ARTILLERY",
                 "(ARTILLERY - TECH1)",
@@ -198,13 +204,16 @@ UnitBlueprint {
 			
 			ProjectileLifetime = 12,
 
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+
             RackRecoilDistance = -25,
             RackReloadTimeout = 10,
 
-            RateOfFire = 1,     -- energy controlled - 8 seconds
-			
+            RateOfFire = 10/10,
+            
             TargetCheckInterval = 3,
-			
+            
             TargetPriorities = {
                 "EXPERIMENTAL MOBILE ARTILLERY",
                 "(ARTILLERY - TECH1)",

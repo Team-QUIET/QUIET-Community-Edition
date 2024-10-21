@@ -52,11 +52,14 @@ UnitBlueprint {
 
 			ProjectileLifetime = 12,			
 
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+
             RackRecoilDistance = -36,
 
 			RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 1.0,	-- RoF is controlled by Energy Drain
+            RateOfFire = 10/10,	
 
             TargetCheckInterval = 3,
 			
@@ -146,12 +149,15 @@ UnitBlueprint {
 
 			ProjectileLifetime = 12,
 
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+
             RackRecoilDistance = -36,
 
-            RateOfFire = 1.0,	-- RoF controlled by energy drain
-			
+            RateOfFire = 10/10,	
+
             TargetCheckInterval = 3,
-			
+
             TargetPriorities = {
                 "EXPERIMENTAL MOBILE ARTILLERY",
                 "(ARTILLERY - TECH1)",
@@ -239,12 +245,15 @@ UnitBlueprint {
 	
 			ProjectileLifetime = 12,
 
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+
             RackRecoilDistance = -36,
 
-            RateOfFire = 1.0,	-- RoF controlled by energy drain
-			
+            RateOfFire = 10/10,	
+
             TargetCheckInterval = 3,
-			
+
             TargetPriorities = {
                 "EXPERIMENTAL MOBILE ARTILLERY",
                 "(ARTILLERY - TECH1)",

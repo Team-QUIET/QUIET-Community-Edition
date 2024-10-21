@@ -2,15 +2,19 @@ UnitBlueprint {
   Merge = true,
   BlueprintId = "brl0307",
 
-      Weapon = {
+    Weapon = {
         {
+            EnergyDrainPerSecond = 175,
+            EnergyRequired = 700,
 
             FiringRandomnessWhileMoving = 0.5,
 
-            RateOfFire = 10/10,
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+
+            RateOfFire = 10/70,
 
             TurretYawSpeed = 75,
-
         },
     },
 }
