@@ -1,0 +1,264 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "xsb2303",
+
+    Audio = {
+        Destroyed   = Sound { Bank = 'XSL_Destroy', Cue = 'XSB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff'},
+        Killed      = Sound { Bank = 'XSL_Destroy', Cue = 'XSB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_gun', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 2,
+            Level2 = 4,
+            Level3 = 6,
+            Level4 = 8,
+            Level5 = 10,
+        },
+    },
+	
+    BuildIconSortPriority = 210,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3COMMANDER',
+        'SERAPHIM',
+        'STRUCTURE',
+        'TECH2',
+        'INDIRECTFIRE',
+        'ARTILLERY',
+        'DRAGBUILD',
+        'SIZE4',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SHOWATTACKRETICLE',
+        'SORTDEFENSE',
+    },
+	
+    CollisionOffsetY = -0.25,
+	
+    Defense = {
+        ArmorType = 'Structure',
+        EconomyThreatLevel = 180,        
+        Health = 2000,
+        MaxHealth = 2000,
+        RegenRate = 2,
+        SurfaceThreatLevel = 50.6,
+    },
+	
+    Description = '<LOC xsb2303_desc>Field Artillery Installation',
+	
+    Display = {
+
+        Abilities = {
+            '<LOC ability_aquatic>Aquatic: can be built on water',
+        },
+
+        AnimationDeath = {
+            {
+                Animation = '/units/xsb2303/xsb2303_ADeath.sca',
+                AnimationRateMax = 1,
+                AnimationRateMin = 1,
+                Weight = 100,
+            },
+        },
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 120,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    Scrolling = true,
+                    ShaderName = 'Seraphim',
+                },
+                {
+                    AlbedoName = 'xsb2303_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    ShaderName = 'Seraphim',
+                    SpecularName = 'xsb2303_lod1_specteam.dds',
+                },
+            },
+        },
+
+        UniformScale = 0.03,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 17100,
+        BuildCostMass = 2000,
+        BuildTime = 2000,
+
+        RebuildBonusIds = { 'xsb2303' },
+    },
+	
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Seraphim',
+        Icon = 'amph',
+        SelectionPriority = 5,
+        UnitName = '<LOC xsb2303_name>Zthuthaam',
+    },
+	
+    Intel = {
+        VisionRadius = 30,
+    },
+	
+    Interface = {
+        HelpText = 'T2 Artillery Installation',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.65,
+    LifeBarSize = 1.25,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+        MaxSteerForce = 0,
+        MeshExtentsX = 1.75,
+        MeshExtentsY = 2,
+        MeshExtentsZ = 3,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+        SkirtSizeX = 2,
+        SkirtSizeZ = 2,
+        TurnRate = 0,
+    },
+	
+    SelectionSizeX = 0.75,
+    SelectionSizeZ = 0.75,
+    SelectionThickness = 0.5,
+	
+    SizeX = 1,
+    SizeY = 1.2,
+    SizeZ = 1,
+	
+    StrategicIconName = 'icon_structure2_artillery',
+    StrategicIconSortPriority = 180,
+	
+    Veteran = {
+        Level1 = 9,
+        Level2 = 18,
+        Level3 = 27,
+        Level4 = 36,
+        Level5 = 45,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+
+            Audio = {
+                Fire                = Sound { Bank = 'XSB_Weapon', Cue = 'XSB2303_Zthuthaam_Cannon', LodCutoff = 'Weapon_LodCutoff'},
+                BarrelStart         = Sound { Bank = 'XSB', Cue = 'XSB2303_Turret_Artillery_Start', LodCutoff = 'Weapon_LodCutoff'},
+                BarrelLoop          = Sound { Bank = 'XSB', Cue = 'XSB2303_Turret_Artillery_Loop', LodCutoff = 'Weapon_LodCutoff'},
+                MuzzleChargeStart   = Sound { Bank = 'XSB_Weapon', Cue = 'XSB2303_Charge', LodCutoff = 'Weapon_LodCutoff'},
+            },
+
+            BallisticArc = 'RULEUBA_HighArc',
+            CollideFriendly = false,
+			
+            Damage = 1300,
+            DamageFriendly = true,
+            DamageRadius = 2.4,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Zthuthaam Cannon',
+			
+            EnergyDrainPerSecond = 260,	-- every 9 seconds
+            EnergyRequired = 2340,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 1.5,
+            FiringTolerance = 1,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 125,
+            MinRadius = 5,
+			
+            MuzzleChargeDelay = 1,
+
+            MuzzleVelocity = 26.13,
+			MuzzleVelocityReduceDistance = 100,
+			
+            ProjectileId = '/projectiles/SIFZthuthaamArtilleryShell02/SIFZthuthaamArtilleryShell02_proj.bp',
+			ProjectileLifetime = 10,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle'},
+                    RackBone = 'Turret_Recoil',
+                },
+            },
+
+            RackRecoilDistance = -2,
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 10/90,
+			RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+			
+            TargetCheckInterval = 3,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'SHIELD',
+                'ARTILLERY',
+				'STRUCTURE,-WALL',
+				'MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Recoil',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 14,
+			
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 12,
+
+            Turreted = true,
+        },
+    },
+
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.3,
+        HealthMult = 0.9,
+        MassMult = 0.3,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+            Water = true,
+        },
+    },
+}

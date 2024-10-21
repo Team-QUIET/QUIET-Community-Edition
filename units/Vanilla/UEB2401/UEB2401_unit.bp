@@ -4,8 +4,11 @@ UnitBlueprint {
 	
     Weapon = {
         {
+            FiringRandomness = 0.05,
+
             RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
+            RateOfFire = 10/65,
         },
     },
 }

@@ -108,4 +108,10 @@ Unit = Class(QCEUnit) {
         --LOG("Hello, I am QUIET CE Unit Lua. Welcome to the Journey, Young Sir!")
     end,
 
+    -- Called by the weapon class, these are expensive!
+    OnGotTarget = function(self, Weapon) end,
+
+    -- Called by the weapon class, these are expensive!
+    OnLostTarget = function(self, Weapon) end,
+
 }

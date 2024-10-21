@@ -141,6 +141,10 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
     -- Played when a muzzle is fired. Mostly used for muzzle flashes
     PlayFxMuzzleSequence = function(self, muzzle)
+        if type(self.FxMuzzleFlash) ~= "table" then
+            WARN(self.unit:GetUnitId() .. " FxMuzzleFlash is not a table, it's a " .. type(self.FxMuzzleFlash))
+            return
+        end
         local unit = self.unit
         local army = self.Army
         local scale = self.FxMuzzleFlashScale
@@ -151,6 +155,10 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
     -- Played during the beginning of the MuzzleChargeDelay time when a muzzle in a rack is fired.
     PlayFxMuzzleChargeSequence = function(self, muzzle)
+        if type(self.FxChargeMuzzleFlash) ~= "table" then
+            WARN(self.unit:GetUnitId() .. " FxChargeMuzzleFlash is not a table, it's a " .. type(self.FxChargeMuzzleFlash))
+            return
+        end
         local unit = self.unit
         local army = self.Army
         local scale = self.FxChargeMuzzleFlashScale
@@ -162,17 +170,19 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
     -- Played when a rack salvo charges
     -- Do not wait in here or the sequence in the blueprint will be messed up. Fork a thread instead
     PlayFxRackSalvoChargeSequence = function(self, blueprint)
+        if type(self.FxRackChargeMuzzleFlash) ~= "table" then
+            WARN(self.unit:GetUnitId() .. " FxRackChargeMuzzleFlash is not a table, it's a " .. type(self.FxRackChargeMuzzleFlash))
+            return
+        end
         local bp = blueprint or self.bp
         local muzzleBones = bp.RackBones[self.CurrentRackNumber].MuzzleBones
         local unit = self.unit
         local army = self.Army
         local scale = self.FxRackChargeMuzzleFlashScale
-        local effectfx = self.FxRackChargeMuzzleFlash
-        if effectfx then
-            for _, effect in self.FxRackChargeMuzzleFlash do
-                for _, muzzle in muzzleBones do
-                    CreateAttachedEmitter(unit, muzzle, army, effect):ScaleEmitter(scale)
-                end
+        --local effectfx = self.FxRackChargeMuzzleFlash
+        for _, effect in self.FxRackChargeMuzzleFlash do
+            for _, muzzle in muzzleBones do
+                CreateAttachedEmitter(unit, muzzle, army, effect):ScaleEmitter(scale)
             end
         end
         local chargeStart = bp.Audio.ChargeStart
@@ -357,6 +367,26 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
         self.RecoilManipulators = {}
     end,
 
+    -- Should be called whenever a target is lost
+    -- Includes the manual selection of a new target, and the issuing of a move order
+    ---@param self DefaultProjectileWeapon
+    OnLostTarget = function(self)
+        -- Issue 43
+        -- Tell the owner this weapon has lost the target
+        local unit = self.unit
+        if unit then
+            unit:OnLostTarget(self)
+        end
+
+        Weapon.OnLostTarget(self)
+
+        if self.bp.WeaponUnpacks then
+            ChangeState(self, self.WeaponPackingState)
+        else
+            ChangeState(self, self.IdleState)
+        end
+    end,
+
     -- Present for Overcharge to hook into
     OnWeaponFired = function(self)
     end,
@@ -431,6 +461,12 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
         OnGotTarget = function(self)
             local unit = self.unit
             local bp = self.bp
+
+            local unit = self.unit
+
+            if unit then
+                unit:OnGotTarget(self)
+            end
 
             if not bp.WeaponUnpackLockMotion or (bp.WeaponUnpackLocksMotion and not self.unit:IsUnitState('Moving')) then
                 if bp.CountedProjectile and not self:CanFire() then
@@ -940,6 +976,13 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
         end,
         
         OnLostTarget = function(self)
+            -- Override default OnLostTarget to prevent bypassing reload time by switching to idle state immediately
+            local unit = self.unit
+            if unit then
+                unit:OnLostTarget(self)
+            end
+
+            Weapon.OnLostTarget(self)
         end,
     },
 
@@ -1004,8 +1047,14 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
         ---@param self DefaultProjectileWeapon
         OnGotTarget = function(self)
-            local unit = self.unit
             local bp = self.bp
+
+            Weapon.OnGotTarget(self)
+
+            local unit = self.unit
+            if unit then
+                unit:OnGotTarget(self)
+            end
 
             if not self.bp.ForceSingleFire then
                 LOUDSTATE(self, self.WeaponUnpackingState)

@@ -13,6 +13,7 @@ UnitBlueprint {
         {
             RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
+            RateOfFire = 95/1000,
         },
     },
 }
