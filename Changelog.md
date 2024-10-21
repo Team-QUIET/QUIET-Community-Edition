@@ -3,6 +3,26 @@ QUIET
 Rebalance Changelog
 ---------------
 
+# 1.63
+
+### Skirmishers
+`T2 Aeon Sniper`
+- Health: 750 -> 435
+
+`Mongoose`
+- Health: 900 -> 600
+
+`Hoplite`
+- Health: 780 -> 515
+
+### Energy Charge
+- Fix T3 Barrage Artillery Energy Charge Cycle
+- Fix T3 Cybran Triseptitron Energy Charge Cycle
+
+### T3 Cybran Hailfire
+- Add Energy Charge Cycle
+- Energy Charge: -175 | Energy Required: 700
+
 # 1.62
 
 ### Energy Charge
