@@ -553,19 +553,12 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
             else
                 unit:SetBusy(false)
             end
-            
-            if ScenarioInfo.WeaponStateDialog then
-                LOG("*AI DEBUG DefaultWeapon RackSalvo Fire Ready State "..repr(bp.Label).." at "..GetGameTick() )
-            end
 
             self.WeaponCanFire = true
             local econDrain = self.EconDrain
             if econDrain then
                 self.WeaponCanFire = false
                 WaitFor(econDrain)
-                if ScenarioInfo.WeaponStateDialog then
-                    LOG("*AI DEBUG DefaultWeapon RackSalvo Fire Ready State "..repr(self.bp.Label).." Economy Event Ends at "..GetGameTick() )
-                end
                 self.WeaponCanFire = true
             end
 
@@ -616,25 +609,13 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 		-- while debugging the WeaponUnpackLocksMotion I discovered that if you have the value NeedsUnpack = true in the AI section
 		-- then the weapon will Never do an OnFire() event unless the unit is set to IMMOBILE
         OnFire = function(self)
-
-            if ScenarioInfo.WeaponStateDialog then
-                LOG("*AI DEBUG DefaultWeapon RackSalvo Fire Ready State "..repr(self.bp.Label).." OnFire at "..GetGameTick() )
-            end
-
             if self.WeaponCanFire then
                 LOUDSTATE(self, self.RackSalvoFiringState)
             end
-			
         end,
-        
+
         OnGotTarget = function(self)
-
-            if ScenarioInfo.WeaponStateDialog then
-                LOG("*AI DEBUG DefaultWeapon RackSalvo Fire Ready State "..repr(self.bp.Label).." OnGotTarget at "..GetGameTick() )		
-            end
-          
         end,
-
     },
 
     RackSalvoFiringState = State {
@@ -672,10 +653,6 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
             local unit                  = self.unit
             
             local WeaponStateDialog     = ScenarioInfo.WeaponStateDialog
-            
-            if WeaponStateDialog then
-                LOG("*AI DEBUG DefaultWeapon RackSalvo Firing State for "..repr(bp.Label).." at "..GetGameTick() )
-			end
             
             -- ok -- with multiple weaponed units - this is the command that halts other weapons from firing
             -- when Exclusive, all other weapons will 'pause' until this function completes
@@ -736,11 +713,6 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
                 for i = 1, NumMuzzlesFiring do
 
                     if not self.HaltFireOrdered and (not self:GetCurrentTarget() and bp.CannotAttackGround) then
-
-                        if WeaponStateDialog then
-                            LOG("*AI DEBUG Weapon "..repr(bp.Label).." on "..repr(unit.BlueprintID).." has no target to shoot at")
-                        end
-
                         self:OnLostTarget()
 
                         HaltFireOrdered = true
@@ -766,10 +738,6 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
                     end
 					
                     muzzle = CurrentRackInfo.MuzzleBones[muzzleIndex]
-            
-                    if WeaponStateDialog then
-                        LOG("*AI DEBUG DefaultWeapon RackSalvo Firing State "..repr(bp.Label).." - preps rack "..self.CurrentRackNumber.." "..repr(CurrentRackInfo.RackBone).." at "..GetGameTick() )
-                    end
  					
                     if CurrentRackInfo.HideMuzzle == true then
                         ShowBone( unit, muzzle, true)
@@ -779,34 +747,16 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 					-- muzzle charge --
                     -------------------
                     if MuzzleChargeDelay and MuzzleChargeDelay > 0 then
-					
                         if Audio.MuzzleChargeStart then
                             PlaySound( self, Audio.MuzzleChargeStart)
                         end
-						
                         self:PlayFxMuzzleChargeSequence(muzzle)
-            
-                        if WeaponStateDialog then
-
-                            if self.EconDrain then
-                                LOG("*AI DEBUG DefaultWeapon RackSalvo Firing State "..repr(bp.Label).." Muzzle Charge Delay "..LOUDFLOOR(MuzzleChargeDelay * 10).." ticks (not firing cycle) at "..GetGameTick() )
-                            else
-                                LOG("*AI DEBUG DefaultWeapon RackSalvo Firing State "..repr(bp.Label).." Muzzle Charge Delay waiting "..LOUDFLOOR(MuzzleChargeDelay * 10).." ticks at "..GetGameTick() )
-                            end
-
-                        end
-						
                         WaitSeconds( MuzzleChargeDelay )
-
                     end
 
                     ------------------
 					-- muzzle fires --
                     ------------------					
-            
-                    if WeaponStateDialog then
-                        LOG("*AI DEBUG DefaultWeapon RackSalvo Firing State "..repr(bp.Label).." - FIRES rack "..self.CurrentRackNumber.." muzzle "..i.." at "..GetGameTick() )
-                    end
 
                     self:PlayFxMuzzleSequence(muzzle)                    
 					
@@ -842,17 +792,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
                     -------------------
 					-- muzzle salvo  --
                     -------------------
-                    if MuzzleSalvoDelay > 0 then
-            
-                        if WeaponStateDialog then
-
-                            if self.EconDrain then
-                                LOG("*AI DEBUG DefaultWeapon RackSalvo Firing State "..repr(bp.Label).." Muzzle Salvo Delay "..LOUDFLOOR(MuzzleSalvoDelay * 10).." ticks (not firing cycle) at "..GetGameTick() )
-                            else
-                                LOG("*AI DEBUG DefaultWeapon RackSalvo Firing State "..repr(bp.Label).." Muzzle Salvo Delay waiting "..LOUDFLOOR(MuzzleSalvoDelay * 10).." ticks at "..GetGameTick() )
-                            end
-                        end
-						
+                    if MuzzleSalvoDelay > 0 then		
                         WaitSeconds( MuzzleSalvoDelay )
                     end
                     
@@ -912,11 +852,6 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
         -- Set a bool so we won't fire if the target reticle is moved
         OnHaltFire = function(self)
-            
-            if ScenarioInfo.WeaponStateDialog then
-                LOG("*AI DEBUG DefaultWeapon RackSalvo Firing State OnHaltFire "..repr(self.bp.Label) )
-			end
-            
             self.HaltFireOrdered = true
         end,
     },
@@ -1090,20 +1025,12 @@ BareBonesWeapon = Class(BareBonesWeapon_QUIET) {
             
             local bp = self.bp
             local unit = self.unit
-            
-            if ScenarioInfo.WeaponStateDialog then
-                LOG("*AI DEBUG BareBonesWeapon RackSalvo Fire Ready State "..repr(bp.Label).." at "..GetGameTick() )
-            end
 
             self.WeaponCanFire = false
 			
             if self.EconDrain then
 
                 WaitFor(self.EconDrain)
-
-                if ScenarioInfo.WeaponStateDialog then
-                    LOG("*AI DEBUG BareBonesWeapon RackSalvo Fire Ready State "..repr(self.bp.Label).." Economy Event Ends at "..GetGameTick() )
-                end
 
             end
 			
@@ -1116,11 +1043,6 @@ BareBonesWeapon = Class(BareBonesWeapon_QUIET) {
     },
 
     OnFire = function(self)
-
-        if ScenarioInfo.WeaponStateDialog then
-            LOG("*AI DEBUG BareBonesWeapon RackSalvo Fire Ready State "..repr(self.bp.Label).." OnFire at "..GetGameTick() )
-        end
-
         local myProjectile = CreateProjectile( self.unit, projectilebp, 0, 0, 0, nil, nil, nil):SetCollision(false)
         
         if self.Data then
