@@ -31,8 +31,7 @@ do
 		NullifyUnitBlueprints(all_blueprints)
 		--
 		ProcessWeaponAlterations(all_blueprints, all_blueprints.Unit)
-		ProcessPropAlterations(all_blueprints)
-		ProcessDynamicLOD(all_blueprints)
+		ProcessLODs(all_blueprints)
 	end
 
 	--=======================================
@@ -168,7 +167,7 @@ do
 			CalculateLODOfProp(prop)
 		end
 	end
-	
+
 	local function CalculateLODsOfUnits(units)
 		for _, unit in units do
 			CalculateLODOfUnit(unit)
@@ -209,7 +208,7 @@ do
 		end
 	end
 
-	function CalculateLODs(all_blueprints)
+	function ProcessLODs(all_blueprints)
 		CalculateLODsOfUnits(all_blueprints.Prop)
 		CalculateLODsOfProps(all_blueprints.Unit)
 	end
