@@ -3,6 +3,17 @@ QUIET
 Rebalance Changelog
 ---------------
 
+# 1.62
+
+### Energy Charge
+- Fix T3 Mobile Artillery Energy Charge Cycle
+- Fix T3 Strategic Artillery Energy Charge Cycle
+- Fix T2 Static Artillery Energy Charge Cycle
+- Fix T4 Experimental Artillery Energy Charge Cycle
+- Fix Units with a unpack and pack animation getting stuck permanently
+- Improved Units with rack/muzzle effect & sounds 
+- Fix ACU Overcharge Energy Charge Cycle
+
 # 1.61
 
 ### ACU
