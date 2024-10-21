@@ -202,8 +202,6 @@ UnitBlueprint {
             
             RackRecoilDistance = -2,
 
-            RackSalvoFiresAfterCharge = true,
-
             RangeCategory = 'UWRC_IndirectFire',
 			
             RateOfFire = 10/90,

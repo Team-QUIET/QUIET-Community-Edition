@@ -1207,9 +1207,12 @@ Intel = {
 
             RackRecoilDistance = -0.5,
 
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+
             RangeCategory = 'UWRC_Countermeasure',
 
-            RateOfFire = 1,     -- relies upon charge cycle now
+            RateOfFire = 10/33,     -- relies upon charge cycle now
 
             TargetCheckInterval = 0.5,
 
