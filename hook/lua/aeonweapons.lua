@@ -349,6 +349,43 @@ ADFTractorClawStructure = Class(DefaultBeamWeapon) {
     FxMuzzleFlash = {},
 }
 
+AIFArtilleryMiasmaShellWeapon   = Class(DefaultProjectileWeapon) {
+    FxMuzzleFlash = {},
+
+    CreateProjectileForWeapon = function(self, bone)
+    
+        local proj = self:CreateProjectile(bone)
+        
+        local damageTable = self.damageTable
+        
+        local blueprint = self.bp
+        local data = false
+        
+        if blueprint.DoTDamage then
+        
+            data = {
+                Damage = blueprint.DoTDamage,
+                Duration = blueprint.DoTDuration,
+                Frequency = blueprint.DoTFrequency,
+                Radius = blueprint.DamageRadius,
+                Type = 'Normal',
+                DamageFriendly = blueprint.DamageFriendly,
+            }
+        end
+
+        if proj and not proj:BeenDestroyed() then
+        
+            proj:PassDamageData(damageTable)
+            
+            if data then
+                proj:PassData(data)
+            end
+        end
+
+        return proj
+    end,
+}
+
 TMAnovacatbluelaserweapon = Class(DefaultBeamWeapon) {
     BeamType = QCECollisionbeams.TMNovaCatBlueLaserBeam,
     FxMuzzleFlash = {},
