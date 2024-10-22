@@ -3,6 +3,17 @@ QUIET
 Rebalance Changelog
 ---------------
 
+# 1.64
+
+### Dynamic LODs
+- Updated Dynamic LODs to be more consistent with all units across the globe
+- Seperated Prop & Unit LOD Management to have different math for distances
+- (Cour. FAF)
+
+### Misc
+- Fix T1 Static Artillery Energy Cycle
+- Fix T2.5 Cybran Immortal Missiles Missing
+
 # 1.63
 
 ### Skirmishers
