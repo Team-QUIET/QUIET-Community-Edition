@@ -1,0 +1,237 @@
+UnitBlueprint {
+	Merge = true,
+	BlueprintId = "srb2103",
+	
+	AI = {
+        TargetBones = {'Turret'},
+    },
+    
+    Audio = {
+        Destroyed = Sound { Bank = 'URLDestroy', Cue = 'URB_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'Cybran_Select_Gun', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    Buffs = {},
+	
+    BuildIconSortPriority = 140,
+	
+    Categories = {
+        'SELECTABLE',
+		'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYCOMMANDER',
+        'CYBRAN',
+        'STRUCTURE',
+		'DEFENSE',
+        'TECH1',
+        'INDIRECTFIRE',
+        'ARTILLERY',
+        'DRAGBUILD',
+        'SIZE4',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SORTDEFENSE',
+    },
+
+    CollisionOffsetZ = -0.1,
+	
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 900,
+        MaxHealth = 900,
+        RegenRate = 2,
+        SurfaceThreatLevel = 12.8,
+    },
+	
+    Description = '<LOC srb2103>Light Field Artillery Installation',
+
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {LODCutoff = 100, ShaderName = 'Insect'},
+                {LODCutoff = 215, ShaderName = 'Insect'},
+            },
+        },
+        UniformScale = 0.2,
+    },
+    
+    Economy = {
+        BuildCostEnergy = 5400,
+        BuildCostMass = 550,
+        BuildTime = 600,
+		
+        RebuildBonusIds = {'srb2103'},
+    },
+	
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Cybran',
+        Icon = 'land',
+        SelectionPriority = 5,
+        UnitName = '<LOC srb2103_name>Little Bertha',
+    },
+	
+    Intel = {
+        VisionRadius = 24,
+    },
+	
+    Interface = {
+        HelpText = '<LOC srb2103>Light Artillery Installation',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.25,
+    LifeBarSize = 0.9,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+        MaxSteerForce = 0,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = 0,
+        SkirtOffsetZ = 0,
+        SkirtSizeX = 1,
+        SkirtSizeZ = 1,
+        TurnRate = 0,
+    },
+	
+    SelectionCenterOffsetZ = -.1,
+    SelectionSizeX = 0.35,
+    SelectionSizeZ = 0.35,
+    SelectionThickness = 1.2,
+	
+    SizeX = 0.6,
+    SizeY = 0.8,
+    SizeZ = 0.6,
+	
+    StrategicIconName = 'icon_structure1_artillery',
+    StrategicIconSortPriority = 180,
+	
+    Veteran = {
+        Level1 = 5,
+        Level2 = 10,
+        Level3 = 15,
+        Level4 = 20,
+        Level5 = 25,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+            
+            Audio = {
+                Fire = Sound {Bank = 'URLWeapon', Cue = 'URB2303_Cannon_Mol', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_LowArc',
+            
+			-- factional bonus --
+            Buffs = {
+            	{
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 1,
+                    Radius = 1.5,
+                    TargetAllow = 'LAND TECH1,NAVAL TECH1',
+                    TargetDisallow = 'TECH2,TECH3,EXPERIMENTAL,AIR,COMMAND,WALL',
+                },
+            },
+
+            CollideFriendly = false,
+			
+            Damage = 300,
+            DamageFriendly = true,
+            DamageRadius = 1.5,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Resonance Artillery',
+			
+            EnergyDrainPerSecond = 39,	-- 4 second charge
+            EnergyRequired = 156,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 1,
+            FiringTolerance = 0.3,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 55,
+            MinRadius = 5,
+
+            MuzzleVelocity = 18,
+			MuzzleVelocityReduceDistance = 50,
+			
+            ProjectileId = '/projectiles/CIFMolecularResonanceShell01/CIFMolecularResonanceShell01_proj.bp',
+            ProjectileLifetime = 12,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle'},
+                    RackBone = 'Turret_Recoil',
+                },
+            },
+
+            RackRecoilDistance = -1,
+
+            RackSalvoFiresAfterCharge = true,
+			
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 10/25,
+			RenderFireClock = true,
+
+            TargetCheckInterval = 2,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'SHIELD',
+				'INDIRECTFIRE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 30,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 15,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 20,
+			
+            Turreted = true,
+        },
+		
+    },
+	
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.5,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

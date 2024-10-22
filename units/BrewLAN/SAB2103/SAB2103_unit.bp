@@ -1,0 +1,254 @@
+UnitBlueprint {
+	Merge = true,
+	BlueprintId = "sab2103",
+
+    AI = {
+        TargetBones = { 'Turret' },
+    },
+	
+    Audio = {
+        Destroyed   = Sound { Bank = 'UALDestroy', Cue = 'UAB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'Aeon_Select_Gun', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    Buffs = {},
+	
+    BuildIconSortPriority = 140,
+	
+    Categories = {
+        'SELECTABLE',
+		'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYCOMMANDER',
+        'AEON',
+        'STRUCTURE',
+		'DEFENSE',
+        'TECH1',
+        'INDIRECTFIRE',
+        'ARTILLERY',
+        'DRAGBUILD',
+        'SIZE4',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SORTDEFENSE',
+    },
+	
+    CollisionOffsetY = -0.0,
+	
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 900,
+        MaxHealth = 900,
+        RegenRate = 1,
+        SurfaceThreatLevel = 12.8,
+    },
+	
+    Description = '<LOC sbui2103>Light Field Artillery Installation',
+	
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 100,
+                    Scrolling = true,
+                    ShaderName = 'Aeon',
+                },
+                {
+                    LODCutoff = 215,
+                    ShaderName = 'Aeon',
+                    MeshName = '/units/uab2101/uab2101_lod1.scm', 
+                    AlbedoName = '/units/uab2101/uab2101_lod1_albedo.dds', 
+                    NormalsName = '/units/uab2101/uab2101_lod1_normalsTS.dds', 
+                    SpecularName = '/units/uab2101/uab2101_lod1_specteam.dds', 
+                },
+            },
+        },
+
+        UniformScale = 0.06,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 4900,
+        BuildCostMass = 500,
+        BuildTime = 600,
+		
+        RebuildBonusIds = { 'sab2103' },
+    },
+	
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Aeon',
+        Icon = 'land',
+        SelectionPriority = 5,
+        UnitName = '<LOC sab2103_name>Charis',
+    },
+	
+    Intel = {
+        VisionRadius = 24,
+    },
+	
+    Interface = {
+        HelpText = '<LOC sbui2103>Light Artillery Installation',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.35,
+    LifeBarSize = 0.9,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+        MaxSteerForce = 0,
+        MeshExtentsX = 1,
+        MeshExtentsY = 1.1,
+        MeshExtentsZ = 1,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = 0,
+        SkirtOffsetZ = 0,
+        SkirtSizeX = 1,
+        SkirtSizeZ = 1,
+        TurnRate = 0,
+    },
+	
+    SelectionCenterOffsetZ = -.05,
+    SelectionSizeX = 0.55,
+    SelectionSizeZ = 0.55,
+    SelectionThickness = 0.71,
+	
+    SizeX = 0.5,
+    SizeY = 0.75,
+    SizeZ = 0.5,
+	
+    StrategicIconName = 'icon_structure1_artillery',
+    StrategicIconSortPriority = 180,
+	
+    Veteran = {
+     	Level1 = 5,
+        Level2 = 10,
+        Level3 = 15,
+        Level4 = 20,
+        Level5 = 25,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'UALWeapon', Cue = 'UAB2303_Cannon', LodCutoff = 'Weapon_LodCutoff'},
+            },
+            
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Buffs = {
+            	{
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 1,
+                    Radius = 1.5,
+                    TargetAllow = 'LAND TECH1,NAVAL TECH1',
+                    TargetDisallow = 'TECH2,TECH3,EXPERIMENTAL,AIR,COMMAND,WALL',
+                },
+            },
+
+            Damage = 60,
+            DamageFriendly = true,
+            DamageRadius = 1.5,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Charis Artillery',
+			
+			DoTPulses = 5,	-- 5 x 60 damage
+			DoTTime = 3,	-- applied over 3 seconds
+			
+            EnergyDrainPerSecond = 40,	-- 4 second charge
+            EnergyRequired = 159,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 1,
+            FiringTolerance = 0.3,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 55,
+            MinRadius = 5,
+
+            MuzzleVelocity = 18,
+			MuzzleVelocityReduceDistance = 50,
+			
+            ProjectileId = '/projectiles/AIFMiasmaShell01/AIFMiasmaShell01_proj.bp',
+            ProjectileLifetime = 12,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle'},
+                    RackBone = 'Turret_Recoil',
+                },
+            },
+
+            RackRecoilDistance = -1,
+
+            RackSalvoFiresAfterCharge = true,
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 10/25,
+			RenderFireClock = true,
+			
+            TargetCheckInterval = 2,
+            
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'SHIELD',
+                'ARTILLERY',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 30,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 20,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 20,
+			
+            Turreted = true,
+        },
+		
+    },
+	
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.3,
+        HealthMult = 0.9,
+        MassMult = 0.3,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}
