@@ -21,7 +21,7 @@ UnitBlueprint {
         MotionType = 'RULEUMT_Land',
         RotateOnSpot = false,
 		StandUpright = true,
-        TurnRadius = 0.5,
+        TurnRadius = 2,
         TurnRate = 45,
     },
 	
@@ -49,7 +49,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0.4,
             MuzzleSalvoSize = 2,
 
-            MuzzleVelocity = 33,
+            MuzzleVelocity = 36,
 			
 			ProjectileLifetime = 1,
 
