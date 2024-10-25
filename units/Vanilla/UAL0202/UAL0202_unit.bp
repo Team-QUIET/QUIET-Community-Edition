@@ -1,15 +1,24 @@
 UnitBlueprint {
-  Merge = true,
-  BlueprintId = "ual0202",
+    Merge = true,
+    BlueprintId = "ual0202",
 
-      Weapon = {
+    IgnoreEvenflow = true,
+
+    Economy = {
+        BuildCostEnergy = 3800,
+        BuildCostMass = 465,
+        BuildTime = 1778,
+		
+        MaintenanceConsumptionPerSecondEnergy = 10,
+    },
+
+    Weapon = {
         {
             RateOfFire = 2.5/10,
 
             TurretYaw = 0,
             TurretYawRange = 180,
             TurretYawSpeed = 90,
-
         },
     },
 }

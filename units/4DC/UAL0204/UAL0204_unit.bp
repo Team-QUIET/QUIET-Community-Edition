@@ -2,6 +2,8 @@ UnitBlueprint {
    Merge = true,
    BlueprintId = "ual0204",
 
+   IgnoreEvenflow = true,
+
    Display = {
         Abilities = {
             "<LOC ability_customizable>Customizable",
@@ -33,10 +35,10 @@ UnitBlueprint {
     },
 
     Economy = {
-        BuildCostEnergy = 5050,
-        BuildCostMass = 465,
+        BuildCostEnergy = 6650,
+        BuildCostMass = 515,
         BuildRate = 8,
-        BuildTime = 229,
+        BuildTime = 3320,
         
         MaintenanceConsumptionPerSecondEnergy = 50,
     },
@@ -62,13 +64,13 @@ UnitBlueprint {
         DragCoefficient = 0.2,
         MaxAcceleration = .75,
         MaxBrake = 1.5,
-        MaxSpeed = 3.6,
+        MaxSpeed = 3.7,
         MaxSpeedReverse = 2,
         MaxSteerForce = 10,
         MinSpeedPercent = 0,
         MotionType = "RULEUMT_Land",
-        TurnRadius = 8,
-        TurnRate = 44,
+        TurnRadius = 6,
+        TurnRate = 50,
     },
 
     Weapon = {

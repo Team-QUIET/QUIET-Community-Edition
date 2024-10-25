@@ -1,0 +1,247 @@
+UnitBlueprint {
+    
+    Source = '/units/XAL0203/XAL0203_unit.bp',
+
+    AI = {
+		GuardReturnRadius = 35,
+        GuardScanRadius = 30,
+    },
+
+    Audio = {
+        Destroyed = Sound { Bank = 'UALDestroy', Cue = 'UAL_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff' },
+        StartMove = Sound { Bank = 'XAL', Cue = 'XAL0203_Move_Start', LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection = Sound { Bank = 'Interface', Cue = 'Aeon_Select_Tank', LodCutoff = 'UnitMove_LodCutoff' },
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 2,
+            Level2 = 4,
+            Level3 = 6,
+            Level4 = 8,
+            Level5 = 10,
+        },
+    },
+	
+    BuildIconSortPriority = 20,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER3FACTORY',
+        'AEON',
+        'MOBILE',
+        'LAND',
+        'TECH2',
+        'DIRECTFIRE',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'HOVER',
+		'AMPHIBIOUS',
+    },
+	
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 1000,
+        MaxHealth = 1000,
+        RegenRate = 0,
+        SurfaceThreatLevel = 8.8,
+    },
+	
+    Description = '<LOC xal0203_desc>Assault HoverTank',
+	
+    Display = {
+        Abilities = {
+            '<LOC ability_amphib>Amphbious',
+            '<LOC ability_hover>Hover',
+        },
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 100,
+                    Scrolling = true,
+                    ShaderName = 'Aeon',
+                },
+                {
+                    AlbedoName = 'xal0203_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    ShaderName = 'Aeon',
+                    SpecularName = 'xal0203_lod1_specteam.dds',
+                },
+            },
+        },
+
+        UniformScale = 0.038,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 2150,
+        BuildCostMass = 220,
+        BuildTime = 1250,
+    },
+	
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Aeon',
+        Icon = 'amph',
+        UnitName = '<LOC xal0203_name>Blaze',
+    },
+	
+    Intel = {
+        VisionRadius = 24,
+        WaterVisionRadius = 8,
+    },
+	
+    Interface = {
+        HelpText = 'Rapid Assault Hovertank',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.6,
+    LifeBarSize = 0.8,
+	
+    Physics = {
+		BackUpDistance = 4,
+        BankingSlope = 0,
+        
+        BuildOnLayerCaps = { LAYER_Land = true },
+		
+        DragCoefficient = 0.2,
+		
+        Elevation = 0.15,
+		
+        MaxAcceleration = 4.0,
+        MaxBrake = 4.0,
+        MaxSpeed = 4.0,
+        MaxSpeedReverse = 4.0,
+		
+        MaxSteerForce = 20,
+        MeshExtentsX = 1,
+        MeshExtentsY = 0.5,
+        MeshExtentsZ = 1.2,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Hover',
+		
+        RotateBodyWhileMoving = true,
+		
+        RotateOnSpot = false,
+        TurnFacingRate = 120,
+        TurnRadius = 0,
+        TurnRate = 90,
+
+        WobbleFactor = 0.02,
+        WobbleSpeed = 0.01,
+        WaterSpeedMultiplier = 0.9,
+    },
+	
+    SelectionSizeX = 0.6,
+    SelectionSizeZ = 0.95,
+    SelectionThickness = 0.45,
+	
+    SizeX = 0.9,
+    SizeY = 0.5,
+    SizeZ = 1.2,
+	
+    StrategicIconName = 'icon_surface2_directfire',
+    StrategicIconSortPriority = 125,
+	
+    Transport = {
+        TransportClass = 2,
+    },
+	
+    Veteran = {
+        Level1 = 5,
+        Level2 = 10,
+        Level3 = 15,
+        Level4 = 20,
+        Level5 = 25,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'XAL_Weapon', Cue = 'XAL0203_QuantumAutogun', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 15,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Autoguns',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 2,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 24,
+
+            MuzzleVelocity = 45,
+			
+            ProjectileId = '/projectiles/ADFQuatumAutoGun01/ADFQuatumAutoGun01_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 1.15,
+            ProjectilesPerOnFire = 1,
+            RackBones = {
+                {
+                    MuzzleBones = {'Gun_Muzzle01','Gun_Muzzle02'},
+                    RackBone = 'Gun_Barrel',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 3,
+
+            TargetCheckInterval = 0.3,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS,-WALL',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Gun_Muzzle01',
+            TurretBonePitch = 'Gun_Barrel',
+            TurretBoneYaw = 'Gun_Turret',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 30,
+            TurretPitchSpeed = 45,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 135,
+			
+            Turreted = true,
+        },
+    },
+
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.3,
+        HealthMult = 0.9,
+        MassMult = 0.3,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}
