@@ -916,6 +916,8 @@ do
 			'xsbssg01',  -- Exp Square Shield Seraphim
 			'seb2404',   -- Exp Drop-Pod Artillery
 			'wel0405',   -- King Kraptor
+			'wsl0205',   -- Beshias
+			'wrl0207',   -- Cocoon
 		};
 		for i, bp in pairs(unitPruningId) do
 			if all_blueprints.Unit[bp] then

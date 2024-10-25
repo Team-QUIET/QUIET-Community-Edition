@@ -59,9 +59,9 @@ UnitBlueprint {
 
 			RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 10/10,	
+            RateOfFire = 10/90,	
 
-            TargetCheckInterval = 3,
+            TargetCheckInterval = 1,
 			
             TargetPriorities = {
                 "EXPERIMENTAL MOBILE ARTILLERY",
@@ -95,7 +95,7 @@ UnitBlueprint {
 			
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 6,
+            TurretYawSpeed = 50,
 			
             Turreted = true,
         },
@@ -154,9 +154,9 @@ UnitBlueprint {
 
             RackRecoilDistance = -36,
 
-            RateOfFire = 10/10,	
+            RateOfFire = 10/90,	
 
-            TargetCheckInterval = 3,
+            TargetCheckInterval = 1,
 
             TargetPriorities = {
                 "EXPERIMENTAL MOBILE ARTILLERY",
@@ -190,8 +190,8 @@ UnitBlueprint {
             TurretPitchSpeed = 6,
 			
             TurretYaw = 0,
-            TurretYawRange = 5,
-            TurretYawSpeed = 2,
+            TurretYawRange = 180,
+            TurretYawSpeed = 50,
 			
             Turreted = true,
         },
@@ -250,9 +250,9 @@ UnitBlueprint {
 
             RackRecoilDistance = -36,
 
-            RateOfFire = 10/10,	
+            RateOfFire = 10/90,	
 
-            TargetCheckInterval = 3,
+            TargetCheckInterval = 1,
 
             TargetPriorities = {
                 "EXPERIMENTAL MOBILE ARTILLERY",
@@ -285,8 +285,8 @@ UnitBlueprint {
             TurretPitchSpeed = 6,
 			
             TurretYaw = 0,
-            TurretYawRange = 5,
-            TurretYawSpeed = 2,
+            TurretYawRange = 180,
+            TurretYawSpeed = 50,
 			
             Turreted = true,
         },

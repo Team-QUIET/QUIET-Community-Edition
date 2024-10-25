@@ -22,7 +22,7 @@ UnitBlueprint {
         MotionType = 'RULEUMT_Amphibious',
 
         TurnRadius = 3,
-        TurnRate = 40,
+        TurnRate = 42.5,
     },
 	
     Weapon = {
@@ -51,7 +51,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0.2,
             MuzzleSalvoSize = 2,
 
-            MuzzleVelocity = 30,
+            MuzzleVelocity = 35,
 
 			ProjectileLifetime = 1.2,			
 

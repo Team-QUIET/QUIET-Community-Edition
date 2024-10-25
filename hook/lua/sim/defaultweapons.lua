@@ -90,6 +90,27 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
 	end,
 
+    -- modded this so only retrieve bp if old or new is 'stopped'
+    OnMotionHorzEventChange = function(self, new, old)
+        Weapon.OnMotionHorzEventChange(self, new, old)
+
+        local bp = self.bp
+
+        -- Handle weapons which must pack before moving
+        if bp.WeaponUnpackLocksMotion == true and old == 'Stopped' and self.WeaponPackState ~= 'Packed' then
+            self:PackAndMove()
+        end
+
+        -- Handle motion-triggered FiringRandomness changes
+        if bp.FiringRandomnessWhileMoving then
+            if old == 'Stopped' then
+                self:SetFiringRandomness(bp.FiringRandomnessWhileMoving)
+            elseif new == 'Stopped' then
+                self:SetFiringRandomness(bp.FiringRandomness)
+            end
+        end
+    end,
+
     StartEconomyDrain = function(self)
         if self.FirstShot then return end
         if self.unit:GetFractionComplete() ~= 1 then return end
