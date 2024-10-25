@@ -9,6 +9,12 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
+Please note that not all content within this repository is covered under the MIT License. Specifically, 
+any material derived from or related to the "BrewLAN" mod for Supreme Commander Forged Alliance 
+is excluded from this license and may be subject to its own terms and conditions.
+
+Portions of this software that are derived from FAForever are also licensed under the official MIT License.
+
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
@@ -19,9 +25,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-Please note that not all content within this repository is covered under the MIT License. Specifically, 
-any material derived from or related to the "BrewLAN" mod for Supreme Commander Forged Alliance 
-is excluded from this license and may be subject to its own terms and conditions.
-
-Portions of this software that are derived from FAForever are also licensed under the official MIT License.
