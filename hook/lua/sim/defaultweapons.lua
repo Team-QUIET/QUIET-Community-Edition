@@ -78,6 +78,20 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
             else
                 self.CBFP_CalcBallAcc = { Do = true, ProjectilesPerOnFire = 1 }
             end
+            
+            local muzzleSalvoSize = bp.MuzzleSalvoSize
+            local dropShort = bp.DropBombShort
+            local MathClamp = math.clamp
+            if dropShort then
+                self.DropBombShortRatio = MathClamp(1 - dropShort, 0, 1)
+            end
+            if muzzleSalvoSize > 1 then
+                -- center the spread on the target
+                self.SalvoSpreadStart = -0.5 - 0.5 * muzzleSalvoSize
+                -- adjusted time between bombs, this is multiplied by 0.5 to get the bombs overlapping a bit
+                -- (also pre-convert velocity from per-ticks to per-seconds by multiplying by 10)
+                self.AdjustedSalvoDelay = 5 * bp.MuzzleSalvoDelay
+            end
         end
 
         if not bp.EnabledByEnhancement then
@@ -738,10 +752,11 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
                         HaltFireOrdered = true
                     end
-
+                    
                     if self.HaltFireOrdered then
                         continue
                     end
+                    self.CurrentSalvoNumber = i
 
                     if CountedProjectile == true and bp.MaxProjectileStorage > 0 then
 					
@@ -829,7 +844,8 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
                 end
 
             end
-
+            
+            self.CurrentSalvoData = nil
             self.FirstShot = false
             self:StartEconomyDrain() -- the recharge begins as soon as the weapon starts firing
             self:OnWeaponFired() -- Used primarily by Overcharge
