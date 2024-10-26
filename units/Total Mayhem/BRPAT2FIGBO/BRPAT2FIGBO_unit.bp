@@ -64,7 +64,7 @@ UnitBlueprint {
 			
             Damage = 100,
             DamageFriendly = false,
-            DamageRadius = 2,
+            DamageRadius = 1,
             DamageType = 'Normal',
 			
             DisplayName = 'Losaare AA Autocannon',			
@@ -83,7 +83,7 @@ UnitBlueprint {
 
             MuzzleVelocity = 95,
 
-			ProjectileLifetime = 0.5,
+			ProjectileLifetimeUsesMultiplier = 1.5,
 
             RackFireTogether = false,
 
