@@ -42,11 +42,11 @@ UnitBlueprint {
     },
     Buffs = {
         Regen = {
-            Level1 = 10,
-            Level2 = 30,
-            Level3 = 60,
-            Level4 = 90,
-            Level5 = 120,
+            Level1 = 5,
+            Level2 = 10,
+            Level3 = 15,
+            Level4 = 30,
+            Level5 = 60,
         },
     },
     BuildIconSortPriority = 100,
@@ -238,11 +238,11 @@ UnitBlueprint {
         TransportClass = 4,
     },
     Veteran = {
-        Level1 = 100,
-        Level2 = 150,
-        Level3 = 250,
-        Level4 = 300,
-        Level5 = 350,
+        Level1 = 200,
+        Level2 = 350,
+        Level3 = 450,
+        Level4 = 500,
+        Level5 = 650,
     },
     Weapon = {
         {
