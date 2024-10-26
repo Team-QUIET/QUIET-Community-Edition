@@ -1,5 +1,7 @@
 UnitBlueprint {
 
+	IgnoreEvenflow = true,
+
 	AI = {
 		GuardScanRadius = 50,
 		TargetBones = { 'Turret' },
@@ -105,11 +107,11 @@ UnitBlueprint {
 	},
 
 	Economy = {
-		BuildCostEnergy = 12500,
-		BuildCostMass = 1200,
-		BuildTime = 625,
+		BuildCostEnergy = 16500,
+		BuildCostMass = 1450,
+		BuildTime = 6290,
 
-		MaintenanceConsumptionPerSecondEnergy = 150,
+		MaintenanceConsumptionPerSecondEnergy = 300,
 	},
 
 	General = {
@@ -205,7 +207,7 @@ UnitBlueprint {
 			BallisticArc = 'RULEUBA_None',
 			CollideFriendly = false,
 
-			Damage = 120,
+			Damage = 180,
 			DamageRadius = 0,
 			DamageType = 'Normal',
 
