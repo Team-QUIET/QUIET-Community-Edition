@@ -26,8 +26,6 @@ UnitBlueprint {
     
     Weapon = { --  Firing cycles based on the golden ratio to keep them out of sync as much as possible
         {
-            HeadingArcRange = 50,
-
             MaxRadius = 40,
             
             TargetPriorities = { 
@@ -44,35 +42,37 @@ UnitBlueprint {
             TurretPitchRange = 45, 
             TurretPitchSpeed = 45,  
 
-            TurretYawRange = 50,   
+            TurretYawRange = 180,   
             TurretYawSpeed = 50,
+
+            HeadingArcRange = 180,
         },
 
         {  
-            TurretYawRange = 50,   
+            TurretYawRange = 180,   
             TurretYawSpeed = 50,
 
-            HeadingArcRange = 50,
+            HeadingArcRange = 180,
         },
 
         {  
-            TurretYawRange = 50,   
+            TurretYawRange = 180,   
             TurretYawSpeed = 50,
 
-            HeadingArcRange = 50,
+            HeadingArcRange = 180,
         },
        
         {  
-            TurretYawRange = 50,   
+            TurretYawRange = 180,   
             TurretYawSpeed = 50,
 
-            HeadingArcRange = 50,
+            HeadingArcRange = 180,
         },
         {
-            TurretYawRange = 50,   
+            TurretYawRange = 180,   
             TurretYawSpeed = 50,
 
-            HeadingArcRange = 50,
+            HeadingArcRange = 180,
         },
 
         {
