@@ -59,7 +59,7 @@ UnitBlueprint {
 
             Damage = 25,
             DamageFriendly = false,
-            DamageRadius = 2,
+            DamageRadius = 0,
             DamageType = 'Normal',
 
             DisplayName = 'Electron Autocannon',
@@ -76,11 +76,11 @@ UnitBlueprint {
             MuzzleSalvoSize = 6,
             MuzzleVelocity = 120,
 
-            ProjectileLifetime = 0.4,
+            ProjectileLifetimeUsesMultiplier = 1.5,
 
             RangeCategory = 'UWRC_AntiAir',
 
-            RateOfFire = 3,
+            RateOfFire = 35/10,
 
             SlavedToBody = true,
             SlavedToBodyArcRange = 55,

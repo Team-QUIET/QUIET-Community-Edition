@@ -918,6 +918,8 @@ do
 			'wel0405',   -- King Kraptor
 			'wsl0205',   -- Beshias
 			'wrl0207',   -- Cocoon
+			'wsl0308',   -- Otheeka
+			'url0305',   -- Crawfish
 		};
 		for i, bp in pairs(unitPruningId) do
 			if all_blueprints.Unit[bp] then

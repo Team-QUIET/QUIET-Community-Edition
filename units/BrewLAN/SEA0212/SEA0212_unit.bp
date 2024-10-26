@@ -60,7 +60,7 @@ UnitBlueprint {
 
             Damage = 100,
             DamageFriendly = false,
-            DamageRadius = 1,
+            DamageRadius = 0,
             DamageType = 'Normal',
 
             DisplayName = 'Ginsu Pulse Beam',
@@ -78,11 +78,11 @@ UnitBlueprint {
 
             MuzzleVelocity = 120,
 
-            ProjectileLifetime = 0.6,
+            ProjectileLifetimeUsesMultiplier = 1.5,
 
             RangeCategory = 'UWRC_AntiAir',
 
-            RateOfFire = 2,             -- 200 DPS Air
+            RateOfFire = 25/10,             -- 200 DPS Air
 
             SlavedToBody = true,
             SlavedToBodyArcRange = 55,

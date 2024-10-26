@@ -673,6 +673,30 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
             end
         end,
 
+        DisabledWhileReloadingThread = function(self, rateOfFire)
+
+            -- attempts to fix weapons that intercept projectiles to being stuck on a projectile while reloading, preventing
+            -- other weapons from targeting that projectile. Is a side effect of the blueprint field `DesiredShooterCap`. This
+            -- is the more aggressive variant of `TargetResetWhenReady` as it completely disables the weapon. Should only be used
+            -- for weapons that do not visually track, such as torpedo defenses
+
+            local reloadTime = math.floor(10 * rateOfFire) - 1
+            if reloadTime > 4 then
+                if IsDestroyed(self) then
+                    return
+                end
+
+                self:SetEnabled(false)
+                WaitTicks(reloadTime)
+
+                if IsDestroyed(self) then
+                    return
+                end
+
+                self:SetEnabled(true)
+            end
+        end,
+
         Main = function(self)
             
             local bp                    = self.bp
@@ -882,10 +906,34 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
             end
         end,
 		
-		OnFire = function(self)
+		OnLostTarget = function(self)
 
-		end,
+            local unit = self.unit
+            if unit then
+                unit:OnLostTarget(self)
+            end
+            Weapon.OnLostTarget(self)
 
+            -- Some weapons look too ridiculous shooting into the air, so stop them from firing
+            -- stopping firing will cause the last shot of AttackGroundTries to not fire
+            local bp = self.bp
+            if bp.WeaponUnpacks then
+                -- since we're stopping firing anyway, also prevent skipping the reload state here
+                if bp.RackSalvoReloadTime > 0 then
+                    self.CurrentRackNumber = 1
+                    LOUDSTATE(self, self.RackSalvoReloadState)
+                else
+                    LOUDSTATE(self, self.WeaponPackingState)
+                end
+            elseif bp.MuzzleChargeDelay > 0.5 then
+                if bp.RackSalvoReloadTime > 0 then
+                    self.CurrentRackNumber = 1
+                    LOUDSTATE(self, self.RackSalvoReloadState)
+                else
+                    LOUDSTATE(self, self.IdleState)
+                end
+            end
+        end,
 
         -- Set a bool so we won't fire if the target reticle is moved
         OnHaltFire = function(self)

@@ -7,7 +7,11 @@ UnitBlueprint {
 
     Weapon = {
         {
+            Damage = 65,
+
             RateOfFire = 40/10,
+
+            MuzzleVelocity = 40,
 
             TurretYawSpeed = 90,
         },
