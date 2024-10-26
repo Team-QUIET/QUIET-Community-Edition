@@ -64,7 +64,7 @@ UnitBlueprint {
 			
             Damage = 100,
             DamageFriendly = false,
-            DamageRadius = 1,
+            DamageRadius = 0,
             DamageType = 'Normal',
 			
             DisplayName = 'Losaare AA Autocannon',			
@@ -89,7 +89,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_AntiAir',
 			
-            RateOfFire = 2,	-- 200 DPS
+            RateOfFire = 25/10,	-- 200 DPS
 
             SlavedToBody = true,
             SlavedToBodyArcRange = 55,

@@ -59,7 +59,7 @@ UnitBlueprint {
 
             Damage = 25,
             DamageFriendly = false,
-            DamageRadius = 1,
+            DamageRadius = 0,
             DamageType = 'Normal',
 
             DisplayName = 'Electron Autocannon',
@@ -80,7 +80,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_AntiAir',
 
-            RateOfFire = 3,
+            RateOfFire = 35/10,
 
             SlavedToBody = true,
             SlavedToBodyArcRange = 55,
