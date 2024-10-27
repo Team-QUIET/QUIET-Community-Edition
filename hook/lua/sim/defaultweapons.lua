@@ -73,11 +73,11 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 		
         if bp.FixBombTrajectory then
         
-            if bp.ProjectilesPerOnFire then
-                self.CBFP_CalcBallAcc = { Do = true, ProjectilesPerOnFire = bp.ProjectilesPerOnFire }
-            else
-                self.CBFP_CalcBallAcc = { Do = true, ProjectilesPerOnFire = 1 }
-            end
+            -- if bp.ProjectilesPerOnFire then
+            --     self.CBFP_CalcBallAcc = { Do = true, ProjectilesPerOnFire = bp.ProjectilesPerOnFire }
+            -- else
+            --     self.CBFP_CalcBallAcc = { Do = true, ProjectilesPerOnFire = 1 }
+            -- end
             
             local muzzleSalvoSize = bp.MuzzleSalvoSize
             local dropShort = bp.DropBombShort
@@ -124,6 +124,41 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
             end
         end
     end,
+
+    CreateProjectileAtMuzzle = function(self, muzzle)
+        local proj = self:CreateProjectileForWeapon(muzzle)
+        if not proj or proj:BeenDestroyed() then
+            return proj
+        end
+
+        local bp = self.Blueprint
+        if bp.DetonatesAtTargetHeight == true then
+            local pos = self:GetCurrentTargetPos()
+            if pos then
+                local theight = GetSurfaceHeight(pos[1], pos[3])
+                local hght = pos[2] - theight
+                proj:ChangeDetonateAboveHeight(hght)
+            end
+        end
+        if bp.Flare then
+            proj:AddFlare(bp.Flare)
+        end
+        if self.unit.Layer == 'Water' and bp.Audio.FireUnderWater then
+            self:PlaySound(bp.Audio.FireUnderWater)
+        elseif bp.Audio.Fire then
+            self:PlaySound(bp.Audio.Fire)
+        end
+
+        if bp.CountedProjectile then
+			self:CheckCountedMissileLaunch()
+		end
+
+        if bp.FixBombTrajectory then
+            self:CheckBallisticAcceleration(proj)
+        end
+
+        return proj
+    end;
 
     StartEconomyDrain = function(self)
         if self.FirstShot then return end
