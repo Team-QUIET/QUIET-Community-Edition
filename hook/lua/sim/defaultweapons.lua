@@ -7,8 +7,7 @@
 -- WeaponCharged, Firstshot, EconDrain = Nil, Forking EconomyDrainThread, and more
 -- Everything is now located in the actual EconomyDrainThread
 -- This goes through and adds variables back that are documented in the FA Blueprint Wiki
--- Current ones are: RackSalvoFiresAfterCharge
--- Current Modified are: RenderFireClock, FirstShot, EconDrain
+-- At this point, V1.66, essentially most of the DefaultWeapons stands as a complete rewrite.
 
 -- Many of these stats are written to not be full of bloat from the EnergyDrain & include some fixes for outlying issues.
 DefaultWeapons_QUIET = DefaultProjectileWeapon
@@ -38,9 +37,9 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
         
         local bp = self.bp
 		
-        if bp.RackRecoilDistance and bp.RackRecoilDistance != 0 then
+        if bp.RackRecoilDistance and bp.RackRecoilDistance ~= 0 then
 		
-			if bp.MuzzleSalvoDelay != 0 then
+			if bp.MuzzleSalvoDelay ~= 0 then
 				local strg = '*ERROR: You can not have a RackRecoilDistance with a MuzzleSalvoDelay not equal to 0, aborting weapon setup.  Weapon: ' .. bp.DisplayName .. ' on Unit: ' .. self.unit.BlueprintID
 				error(strg, 2)
 				return false
