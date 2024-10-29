@@ -43,36 +43,46 @@ UnitBlueprint {
             TurretPitchSpeed = 45,  
 
             TurretYawRange = 180,   
-            TurretYawSpeed = 50,
+            TurretYawSpeed = 180,
 
             HeadingArcRange = 180,
+
+            UseFiringSolutionInsteadOfAimBone = true,
         },
 
         {  
             TurretYawRange = 180,   
-            TurretYawSpeed = 50,
+            TurretYawSpeed = 180,
 
             HeadingArcRange = 180,
+
+            UseFiringSolutionInsteadOfAimBone = true,
         },
 
         {  
             TurretYawRange = 180,   
-            TurretYawSpeed = 50,
+            TurretYawSpeed = 180,
 
             HeadingArcRange = 180,
+
+            UseFiringSolutionInsteadOfAimBone = true,
         },
        
         {  
             TurretYawRange = 180,   
-            TurretYawSpeed = 50,
+            TurretYawSpeed = 180,
 
             HeadingArcRange = 180,
+
+            UseFiringSolutionInsteadOfAimBone = true,
         },
         {
             TurretYawRange = 180,   
-            TurretYawSpeed = 50,
+            TurretYawSpeed = 180,
 
             HeadingArcRange = 180,
+
+            UseFiringSolutionInsteadOfAimBone = true,
         },
 
         {
