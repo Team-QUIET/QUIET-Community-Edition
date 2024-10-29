@@ -292,6 +292,22 @@ do
 					end
 				end
 
+				-- Buff Buildtime on T2 or T3 Factories
+				-- Probably will have to buff Air Factories BT if Air gets too oppressive, but we'll see
+				if cats.BUILTBYTIER1FACTORY and cats.FACTORY and cats.STRUCTURE and cats.TECH2 then
+					if not bp.IgnoreEvenflow then
+						bp.IgnoreEvenflow = true
+					end
+
+					bp.Economy.BuildTime = 2000
+				elseif cats.BUILTBYTIER2FACTORY and cats.FACTORY and cats.STRUCTURE and cats.TECH3 then
+					if not bp.IgnoreEvenflow then
+						bp.IgnoreEvenflow = true
+					end
+
+					bp.Economy.BuildTime = 5000
+				end
+
 				-- all structures
 				-- LCE: Leaving this in here until we decide if we want to reset it to the default ranges instead of 9% least range
 				if cats.STRUCTURE then
