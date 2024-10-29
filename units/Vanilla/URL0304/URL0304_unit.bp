@@ -2,6 +2,12 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "url0304",
 
+    AI = {
+		--GuardReturnRadius = 0,
+        GuardScanRadius = 120,
+        NeedUnpack = true,
+    },
+
     Economy = {
         BuildCostEnergy = 8000,
         BuildCostMass = 800,
@@ -33,15 +39,15 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
             },
             
-            FiringRandomness = 1.2,
-            FiringTolerance = 2,
+            FiringRandomness = 2,
+            FiringTolerance = 0,
 			
             LeadTarget = true,
 			
             MaxRadius = 92,
             MinRadius = 10,
 
-            MuzzleVelocity = 22.5,
+            MuzzleVelocity = 24,
             MuzzleVelocityReduceDistance = 92,
 			
 			ProjectileLifetime = 15,
@@ -70,17 +76,19 @@ UnitBlueprint {
             TurretBoneYaw = 'Turret',
 			
             TurretPitch = 30,
-            TurretPitchRange = 60,
-            TurretPitchSpeed = 24,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 20,
 			
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 32,
+            TurretYawSpeed = 30,
 			
             Turreted = true,
 
+            WeaponCategory = "Artillery",
             WeaponRepackTimeout = 0,
-            WeaponUnpackAnimationRate = 1,
+            WeaponUnpackAnimation = "/units/URL0304/URL0304_Aactivate.sca",
+            WeaponUnpackAnimationRate = 0.8,
             WeaponUnpackLocksMotion = true,
             WeaponUnpacks = true,
         },

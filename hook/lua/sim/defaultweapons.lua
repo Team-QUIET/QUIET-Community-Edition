@@ -36,6 +36,10 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
         self.CurrentRackNumber = 1
         
         local bp = self.bp
+        local rof = self:GetWeaponRoF()
+        local rackBones = bp.RackBones
+        local muzzleSalvoSize = bp.MuzzleSalvoSize
+        local muzzleSalvoDelay = bp.MuzzleSalvoDelay
 		
         if bp.RackRecoilDistance and bp.RackRecoilDistance ~= 0 then
 		
@@ -62,6 +66,23 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
             self.RackRecoilReturnSpeed = bp.RackRecoilReturnSpeed or LOUDABS( dist / (( 1 / bp.RateOfFire ) - (bp.MuzzleChargeDelay or 0))) * 1.25
         end
 
+        -- Ensure firing cycle is compatible internally
+        local numRackBones = table.getn(rackBones)
+        local numMuzzles = 0
+        for _, rack in rackBones do
+            local muzzleBones = rack.MuzzleBones
+            numMuzzles = numMuzzles + table.getn(muzzleBones)
+        end
+        self.NumMuzzles = numMuzzles / numRackBones
+        self.NumRackBones = numRackBones
+        local totalMuzzleFiringTime = (self.NumMuzzles - 1) * muzzleSalvoDelay
+        if totalMuzzleFiringTime > (1 / rof) then
+            local strg = '*ERROR: The total time to fire muzzles is longer than the RateOfFire allows, aborting weapon setup.  Weapon: '
+                .. bp.DisplayName .. ' on Unit: ' .. self.unit:GetUnitId()
+            error(strg, 2)
+            return false
+        end
+
         if bp.EnergyChargeForFirstShot == false then
             self.FirstShot = true
         end
@@ -71,12 +92,6 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
         end
 		
         if bp.FixBombTrajectory then
-        
-            -- if bp.ProjectilesPerOnFire then
-            --     self.CBFP_CalcBallAcc = { Do = true, ProjectilesPerOnFire = bp.ProjectilesPerOnFire }
-            -- else
-            --     self.CBFP_CalcBallAcc = { Do = true, ProjectilesPerOnFire = 1 }
-            -- end
             
             local muzzleSalvoSize = bp.MuzzleSalvoSize
             local dropShort = bp.DropBombShort
@@ -122,6 +137,10 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
                 self:SetFiringRandomness(bp.FiringRandomness)
             end
         end
+    end,
+
+    PackAndMove = function(self)
+        LOUDSTATE(self, self.WeaponPackingState)
     end,
 
     CreateProjectileAtMuzzle = function(self, muzzle)
@@ -206,6 +225,12 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
     GetWeaponEnergyDrain = function(self, bp)
         local weapNRG = (self.bp.EnergyDrainPerSecond or 0) * (self.AdjEnergyMod or 1)
         return weapNRG
+    end,
+
+    ---@param self DefaultProjectileWeapon
+    ---@return number
+    GetWeaponRoF = function(self)
+        return self.bp.RateOfFire / (self.AdjRoFMod or 1)
     end,
 
     -- Played when a muzzle is fired. Mostly used for muzzle flashes
@@ -440,6 +465,10 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
     -- Includes the manual selection of a new target, and the issuing of a move order
     ---@param self DefaultProjectileWeapon
     OnLostTarget = function(self)
+        local bp = self.bp
+
+        LOG("OnLostTarget: unit =", self.unit:GetBlueprint().Description)
+        LOG("OnLostTarget: WeaponUnpacks =", bp.WeaponUnpacks)
         -- Issue 43
         -- Tell the owner this weapon has lost the target
         local unit = self.unit
@@ -449,10 +478,12 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
         Weapon.OnLostTarget(self)
 
-        if self.bp.WeaponUnpacks then
-            ChangeState(self, self.WeaponPackingState)
+        if bp.WeaponUnpacks then
+            LOG("OnLostTarget: entering WeaponPackingState")
+            LOUDSTATE(self, self.WeaponPackingState)
         else
-            ChangeState(self, self.IdleState)
+            LOG("OnLostTarget: not entering WeaponPackingState")
+            LOUDSTATE(self, self.IdleState)
         end
     end,
 
@@ -601,7 +632,6 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
             else
                 LOUDSTATE(self, self.RackSalvoFireReadyState)
             end
-
         end,
 
         OnFire = function(self)
@@ -688,7 +718,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
     },
 
     RackSalvoFiringState = State {
-	
+
         StateName = 'RackSalvoFiringState',
 
         WeaponWantEnabled = true,
@@ -721,6 +751,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
                 end
 
                 self:SetEnabled(false)
+                --LOG("DisabledWhileReloadingThread: disabling")
                 WaitTicks(reloadTime)
 
                 if IsDestroyed(self) then
@@ -728,42 +759,34 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
                 end
 
                 self:SetEnabled(true)
+                --LOG("DisabledWhileReloadingThread: enabling")
             end
         end,
 
         Main = function(self)
-            
+            local unit = self.unit
+            unit:SetBusy(true) -- set the unit to busy no matter what
+            if self.RecoilManipulators then
+                self:DestroyRecoilManips()
+            end
             local bp                    = self.bp
-            
             local Audio                 = bp.Audio
             local Buffs                 = bp.Buffs
-            local CountedProjectile     = bp.CountedProjectile or false
-            local MuzzleChargeDelay     = bp.MuzzleChargeDelay or false
+            local rackBoneCount         = self.NumRackBones
+            local CountedProjectile     = bp.CountedProjectile
+            local MuzzleChargeDelay     = bp.MuzzleChargeDelay
             local MuzzleSalvoDelay      = bp.MuzzleSalvoDelay
             local MuzzleSalvoSize       = bp.MuzzleSalvoSize
-            local NotExclusive          = bp.NotExclusive
+            local notExclusive           = bp.NotExclusive
             local RackBones             = bp.RackBones or {}
             local unit                  = self.unit
-            
-            local WeaponStateDialog     = ScenarioInfo.WeaponStateDialog
-            
-            -- ok -- with multiple weaponed units - this is the command that halts other weapons from firing
-            -- when Exclusive, all other weapons will 'pause' until this function completes
-            if NotExclusive then
-                SetBusy( unit, false )
-            end
-            
-			if self.RecoilManipulators then
-				self:DestroyRecoilManips()
-			end
-			
+            --LOG("RackSalvoFiringState: Started")
+
             local numRackFiring = self.CurrentRackNumber
-		
-			local TotalRacksOnWeapon = LOUDGETN(RackBones) or 1
-			
-            if bp.RackFireTogether == true then
-                numRackFiring = TotalRacksOnWeapon
-            end	
+            --This is done to make sure that when racks should fire together, they do
+            if bp.RackFireTogether then
+                numRackFiring = rackBoneCount
+            end
 			
             -- this used to be placed AFTER the firing events 
             if not self:BeenDestroyed() and
@@ -772,135 +795,112 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
                     self:ForkThread(self.RenderClockThread, 1 / bp.RateOfFire)
                 end
             end
-            
-            local CurrentRackInfo, MuzzlesToBeFired, NumMuzzlesFiring, muzzleIndex, muzzle, projectilefired
 
-            local HideBone          = HideBone
-            local LOUDGETN          = LOUDGETN
-            local PlaySound         = PlaySound
-            local ShowBone          = ShowBone
             local WaitSeconds       = WaitSeconds
 
             -- Most of the time this will only run once per rack, the only time it doesn't is when racks fire together.
-            while self.CurrentRackNumber <= numRackFiring and not self.HaltFireOrdered and not unit.Dead do
- 			
-                CurrentRackInfo = RackBones[self.CurrentRackNumber] or {}
+            while self.CurrentRackNumber <= numRackFiring and not self.HaltFireOrdered do
+                local rack = RackBones[self.CurrentRackNumber]
+                local muzzleBones = rack.MuzzleBones
+                local muzzleBoneCount = table.getn(muzzleBones)
+                local NumMuzzlesFiring = MuzzleSalvoSize or 1
+                local rackHideMuzzle = rack.HideMuzzle
 
-                if CurrentRackInfo.MuzzleBones then
-                    MuzzlesToBeFired = LOUDGETN( CurrentRackInfo.MuzzleBones )
-                else
-                    MuzzlesToBeFired = 1
-                end
-
-                NumMuzzlesFiring = MuzzleSalvoSize or 1
-
-                -- this is a highly questionable statement since it always overrides the MuzzleSalvoSize
-                -- IF the number of muzzles is different and the MuzzleSalvoDelay is zero
                 if MuzzleSalvoDelay == 0 then
-                    NumMuzzlesFiring = MuzzlesToBeFired
+                    NumMuzzlesFiring = muzzleBoneCount
                 end
 
-                muzzleIndex = 1
+                if bp.FixedSpreadRadius then
+                    local weaponPos = unit:GetPosition()
+                    local targetPos = self:GetCurrentTargetPos()
+                    local distance = VDist2(weaponPos[1], weaponPos[3], targetPos[1], targetPos[3])
+
+                    -- This formula was obtained empirically and somehow it works :)
+                    local randomness = 12 * bp.FixedSpreadRadius / distance
+
+                    self:SetFiringRandomness(randomness)
+                end
 
 				-- fire all the muzzles --
+                local muzzleIndex = 1
                 for i = 1, NumMuzzlesFiring do
-
-                    if not self.HaltFireOrdered and (not self:GetCurrentTarget() and bp.CannotAttackGround) then
-                        self:OnLostTarget()
-
-                        HaltFireOrdered = true
-                    end
-                    
                     if self.HaltFireOrdered then
-                        continue
+                        break
                     end
                     self.CurrentSalvoNumber = i
+                    local muzzle = muzzleBones[muzzleIndex]
+                    if rackHideMuzzle then
+                        unit:ShowBone(muzzle, true)
+                    end
 
-                    if CountedProjectile == true and bp.MaxProjectileStorage > 0 then
-					
-                        if bp.NukeWeapon == true then
-                            if unit:GetNukeSiloAmmoCount() <= 0 then
-                                self.WeaponCanFire = false
-                                continue
-                            end
-                        else
-                            if unit:GetTacticalSiloAmmoCount() <= 0 then
-                                self.WeaponCanFire = false
-                                continue
-                            end
-                        end
-                    end
-					
-                    muzzle = CurrentRackInfo.MuzzleBones[muzzleIndex]
- 					
-                    if CurrentRackInfo.HideMuzzle == true then
-                        ShowBone( unit, muzzle, true)
-                    end
-					
-                    -------------------
-					-- muzzle charge --
-                    -------------------
-                    if MuzzleChargeDelay and MuzzleChargeDelay > 0 then
-                        if Audio.MuzzleChargeStart then
-                            PlaySound( self, Audio.MuzzleChargeStart)
+
+                    -- Deal with Muzzle charging sequence
+                    if MuzzleChargeDelay > 0 then
+                        if MuzzleChargeDelay then
+                            self:PlaySound(MuzzleChargeDelay)
                         end
                         self:PlayFxMuzzleChargeSequence(muzzle)
-                        WaitSeconds( MuzzleChargeDelay )
+                        if notExclusive then
+                            unit:SetBusy(false)
+                        end
+                        WaitSeconds(MuzzleChargeDelay)
+
+                        if notExclusive then
+                            unit:SetBusy(true)
+                        end
+                    end
+                    self:PlayFxMuzzleSequence(muzzle)
+                    if rackHideMuzzle then
+                        unit:HideBone(muzzle, true)
+                    end
+                    if self.HaltFireOrdered then
+                        break
                     end
 
-                    ------------------
-					-- muzzle fires --
-                    ------------------					
+                    local proj = self:CreateProjectileAtMuzzle(muzzle)
 
-                    self:PlayFxMuzzleSequence(muzzle)                    
-					
-                    if CurrentRackInfo.HideMuzzle == true then
-                        HideBone( unit, muzzle, true)
-                    end
-
-                    projectilefired = self:CreateProjectileAtMuzzle(muzzle)
-                    
-                    if ScenarioInfo.ProjectileDialog and projectilefired then
-                        LOG("*AI DEBUG DefaultWeapon RackSalvo Firing State "..repr(bp.Label).." - FIRED rack "..self.CurrentRackNumber.." projectile is "..repr(projectilefired.BlueprintID).." at "..GetGameTick() )
-                    end
-
-                    if CountedProjectile and bp.MaxProjectileStorage > 0 then
-					
-                        if bp.NukeWeapon == true then
-						
+                    -- Decrement the ammo if they are a counted projectile
+                    if proj and not proj:BeenDestroyed() and CountedProjectile then
+                        if bp.NukeWeapon then
                             unit:NukeCreatedAtUnit()
                             unit:RemoveNukeSiloAmmo(1)
+                            -- Generate UI notification for automatic nuke ping
+                            local launchData = {
+                                army = self.Army - 1,
+                                location = (GetFocusArmy() == -1 or IsAlly(self.Army, GetFocusArmy())) and
+                                    self:GetCurrentTargetPos() or nil
+                            }
+                            if not Sync.NukeLaunchData then
+                                Sync.NukeLaunchData = {}
+                            end
+                            table.insert(Sync.NukeLaunchData, launchData)
                         else
                             unit:RemoveTacticalSiloAmmo(1)
                         end
-
                     end
-					
-                    muzzleIndex = muzzleIndex + 1
 
-					-- reset the muzzle index if fired all muzzles
-                    if muzzleIndex > MuzzlesToBeFired then
+                    -- Deal with muzzle firing sequence
+                    muzzleIndex = muzzleIndex + 1
+                    if muzzleIndex > muzzleBoneCount then
                         muzzleIndex = 1
                     end
+                    if MuzzleSalvoDelay > 0 then
+                        if notExclusive then
+                            unit:SetBusy(false)
+                        end
+                        WaitSeconds(MuzzleSalvoDelay)
 
-                    -------------------
-					-- muzzle salvo  --
-                    -------------------
-                    if MuzzleSalvoDelay > 0 then		
-                        WaitSeconds( MuzzleSalvoDelay )
+                        if notExclusive then
+                            unit:SetBusy(true)
+                        end
                     end
-                    
-                end
-                
-                if bp.CameraShakeRadius or bp.ShipRock or bp.RackRecoilDistance != 0 then
-                    self:PlayFxRackReloadSequence(bp)
-                end
-			
-				-- advance the rack number --
-                if self.CurrentRackNumber <= TotalRacksOnWeapon then
-                    self.CurrentRackNumber = self.CurrentRackNumber + 1
                 end
 
+                self:PlayFxRackReloadSequence()
+                local currentRackSalvoNumber = self.CurrentRackNumber
+                if currentRackSalvoNumber <= rackBoneCount then
+                    self.CurrentRackNumber = currentRackSalvoNumber + 1
+                end
             end
             
             self.CurrentSalvoData = nil
@@ -914,30 +914,43 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
             self.HaltFireOrdered = false
 
-            if self.CurrentRackNumber > TotalRacksOnWeapon then
+            if bp.DisableWhileReloading then
+                unit.Trash:Add(ForkThread(self.DisabledWhileReloadingThread, self, 1 / rof))
+            end
+
+            if self.CurrentRackNumber > rackBoneCount then
                 self.CurrentRackNumber = 1
                 if bp.RackSalvoReloadTime > 0 or self.EconDrain then
                     LOUDSTATE(self, self.RackSalvoReloadState)
+                    --LOG("RackSalvoFiringState: Going to RackSalvoReloadState")
                 elseif bp.RackSalvoChargeTime > 0 then
                     LOUDSTATE(self, self.IdleState)
+                    --LOG("RackSalvoFiringState: Going to IdleState")
                 elseif CountedProjectile then
                     if bp.WeaponUnpacks then
                         LOUDSTATE(self, self.WeaponPackingState)
+                        --LOG("RackSalvoFiringState: Going to WeaponPackingState")
                     else
                         LOUDSTATE(self, self.IdleState)
+                        --LOG("RackSalvoFiringState: Going to IdleState")
                     end
                 else
                     LOUDSTATE(self, self.RackSalvoFireReadyState)
+                    --LOG("RackSalvoFiringState: Going to RackSalvoFireReadyState")
                 end
             elseif CountedProjectile then
                 if bp.WeaponUnpacks then
                     LOUDSTATE(self, self.WeaponPackingState)
+                    --LOG("RackSalvoFiringState: Going to WeaponPackingState")
                 else
                     LOUDSTATE(self, self.IdleState)
+                    --LOG("RackSalvoFiringState: Going to IdleState")
                 end
             else
                 LOUDSTATE(self, self.RackSalvoFireReadyState)
+                --LOG("RackSalvoFiringState: Going to RackSalvoFireReadyState")
             end
+            --LOG("RackSalvoFiringState: Ended")
         end,
 		
 		OnLostTarget = function(self)
@@ -1023,7 +1036,6 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
             else
                 LOUDSTATE(self, self.IdleState)
             end
-			
         end,
 
         OnFire = function(self)
@@ -1079,6 +1091,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
         ---@param self DefaultProjectileWeapon
         Main = function(self)
+            LOG("Entering WeaponPackingState")
             local unit = self.unit
 
             if not IsDestroyed(unit) then
@@ -1092,10 +1105,11 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
             end
 
             self:AimManipulatorSetEnabled(false)
-            self:PlayFxWeaponPackSequence(bp)
+            self:PlayFxWeaponPackSequence()
             if bp.WeaponUnpackLocksMotion then
                 unit:SetImmobile(false)
             end
+            LOG("Exiting WeaponPackingState")
             LOUDSTATE(self, self.IdleState)
         end,
 

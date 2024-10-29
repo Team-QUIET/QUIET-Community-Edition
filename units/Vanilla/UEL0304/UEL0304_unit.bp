@@ -2,6 +2,12 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "uel0304",
 
+    AI = {
+		--GuardReturnRadius = 0,
+        GuardScanRadius = 120,
+        NeedUnpack = true,
+    },
+
     Economy = {
         BuildCostEnergy = 8000,
         BuildCostMass = 800,
@@ -45,7 +51,7 @@ UnitBlueprint {
             MaxRadius = 92,
             MinRadius = 5,
 
-            MuzzleVelocity = 22.5,
+            MuzzleVelocity = 24,
             MuzzleVelocityReduceDistance = 92,
 
             NotExclusive = true,

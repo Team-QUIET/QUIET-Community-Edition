@@ -2,6 +2,12 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "xsl0304",
 
+    AI = {
+		--GuardReturnRadius = 0,
+        GuardScanRadius = 120,
+        NeedUnpack = true,
+    },
+
     Economy = {
         BuildCostEnergy = 8000,
         BuildCostMass = 800,
@@ -64,7 +70,7 @@ UnitBlueprint {
 			
             MuzzleChargeDelay = 0.2,        -- .2 second delay
 
-            MuzzleVelocity = 22.5,
+            MuzzleVelocity = 24,
             MuzzleVelocityReduceDistance = 92,
 
 			ProjectileLifetime = 15,
