@@ -467,8 +467,8 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
     OnLostTarget = function(self)
         local bp = self.bp
 
-        LOG("OnLostTarget: unit =", self.unit:GetBlueprint().Description)
-        LOG("OnLostTarget: WeaponUnpacks =", bp.WeaponUnpacks)
+        --LOG("OnLostTarget: unit =", self.unit:GetBlueprint().Description)
+        --LOG("OnLostTarget: WeaponUnpacks =", bp.WeaponUnpacks)
         -- Issue 43
         -- Tell the owner this weapon has lost the target
         local unit = self.unit
@@ -479,10 +479,10 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
         Weapon.OnLostTarget(self)
 
         if bp.WeaponUnpacks then
-            LOG("OnLostTarget: entering WeaponPackingState")
+            --LOG("OnLostTarget: entering WeaponPackingState")
             LOUDSTATE(self, self.WeaponPackingState)
         else
-            LOG("OnLostTarget: not entering WeaponPackingState")
+            --LOG("OnLostTarget: not entering WeaponPackingState")
             LOUDSTATE(self, self.IdleState)
         end
     end,
