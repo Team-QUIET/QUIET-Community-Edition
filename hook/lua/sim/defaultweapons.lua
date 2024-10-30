@@ -149,7 +149,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
             return proj
         end
 
-        local bp = self.Blueprint
+        local bp = self.bp
         if bp.DetonatesAtTargetHeight == true then
             local pos = self:GetCurrentTargetPos()
             if pos then
@@ -920,7 +920,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
             if self.CurrentRackNumber > rackBoneCount then
                 self.CurrentRackNumber = 1
-                if bp.RackSalvoReloadTime > 0 or self.EconDrain then
+                if bp.RackSalvoReloadTime > 0 or (self.EconDrain and not bp.WeaponUnpackLocksMotion) then
                     LOUDSTATE(self, self.RackSalvoReloadState)
                     --LOG("RackSalvoFiringState: Going to RackSalvoReloadState")
                 elseif bp.RackSalvoChargeTime > 0 then
