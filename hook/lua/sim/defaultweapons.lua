@@ -764,25 +764,24 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
         end,
 
         Main = function(self)
-            local unit = self.unit
+            local unit                  = self.unit
             unit:SetBusy(true) -- set the unit to busy no matter what
             if self.RecoilManipulators then
                 self:DestroyRecoilManips()
             end
             local bp                    = self.bp
-            local Audio                 = bp.Audio
-            local Buffs                 = bp.Buffs
             local rackBoneCount         = self.NumRackBones
+            local numRackFiring         = self.CurrentRackNumber
+            local Buffs                 = bp.Buffs
             local CountedProjectile     = bp.CountedProjectile
             local MuzzleChargeDelay     = bp.MuzzleChargeDelay
             local MuzzleSalvoDelay      = bp.MuzzleSalvoDelay
             local MuzzleSalvoSize       = bp.MuzzleSalvoSize
-            local notExclusive           = bp.NotExclusive
+            local MuzzleChargeAudio     = bp.Audio.MuzzleChargeStart
+            local notExclusive          = bp.NotExclusive
             local RackBones             = bp.RackBones or {}
-            local unit                  = self.unit
             --LOG("RackSalvoFiringState: Started")
 
-            local numRackFiring = self.CurrentRackNumber
             --This is done to make sure that when racks should fire together, they do
             if bp.RackFireTogether then
                 numRackFiring = rackBoneCount
@@ -836,8 +835,8 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
                     -- Deal with Muzzle charging sequence
                     if MuzzleChargeDelay > 0 then
-                        if MuzzleChargeDelay then
-                            self:PlaySound(MuzzleChargeDelay)
+                        if MuzzleChargeAudio then
+                            self:PlaySound(MuzzleChargeAudio)
                         end
                         self:PlayFxMuzzleChargeSequence(muzzle)
                         if notExclusive then
