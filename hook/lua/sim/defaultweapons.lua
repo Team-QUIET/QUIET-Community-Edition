@@ -865,8 +865,8 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
                             unit:RemoveNukeSiloAmmo(1)
                             -- Generate UI notification for automatic nuke ping
                             local launchData = {
-                                army = self.Army - 1,
-                                location = (GetFocusArmy() == -1 or IsAlly(self.Army, GetFocusArmy())) and
+                                army = unit:GetAIBrain():GetArmyIndex() - 1,
+                                location = (GetFocusArmy() == -1 or IsAlly(unit:GetAIBrain():GetArmyIndex(), GetFocusArmy())) and
                                     self:GetCurrentTargetPos() or nil
                             }
                             if not Sync.NukeLaunchData then
@@ -877,7 +877,6 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
                             unit:RemoveTacticalSiloAmmo(1)
                         end
                     end
-
                     -- Deal with muzzle firing sequence
                     muzzleIndex = muzzleIndex + 1
                     if muzzleIndex > muzzleBoneCount then
@@ -1090,7 +1089,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
         ---@param self DefaultProjectileWeapon
         Main = function(self)
-            LOG("Entering WeaponPackingState")
+            --LOG("Entering WeaponPackingState")
             local unit = self.unit
 
             if not IsDestroyed(unit) then
@@ -1108,7 +1107,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
             if bp.WeaponUnpackLocksMotion then
                 unit:SetImmobile(false)
             end
-            LOG("Exiting WeaponPackingState")
+            --LOG("Exiting WeaponPackingState")
             LOUDSTATE(self, self.IdleState)
         end,
 

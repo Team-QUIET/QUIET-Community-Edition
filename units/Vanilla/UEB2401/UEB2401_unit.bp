@@ -4,7 +4,11 @@ UnitBlueprint {
 	
     Weapon = {
         {
+            Damage = 16000,
+            DamageRadius = 8,
             FiringRandomness = 0.05,
+
+            ProjectileLifetime = 1000,
 
             RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
