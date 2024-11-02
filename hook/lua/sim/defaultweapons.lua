@@ -143,41 +143,6 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
         LOUDSTATE(self, self.WeaponPackingState)
     end,
 
-    CreateProjectileAtMuzzle = function(self, muzzle)
-        local proj = self:CreateProjectileForWeapon(muzzle)
-        if not proj or proj:BeenDestroyed() then
-            return proj
-        end
-
-        local bp = self.bp
-        if bp.DetonatesAtTargetHeight == true then
-            local pos = self:GetCurrentTargetPos()
-            if pos then
-                local theight = GetSurfaceHeight(pos[1], pos[3])
-                local hght = pos[2] - theight
-                proj:ChangeDetonateAboveHeight(hght)
-            end
-        end
-        if bp.Flare then
-            proj:AddFlare(bp.Flare)
-        end
-        if self.unit.Layer == 'Water' and bp.Audio.FireUnderWater then
-            self:PlaySound(bp.Audio.FireUnderWater)
-        elseif bp.Audio.Fire then
-            self:PlaySound(bp.Audio.Fire)
-        end
-
-        if bp.CountedProjectile then
-			self:CheckCountedMissileLaunch()
-		end
-
-        if bp.FixBombTrajectory then
-            self:CheckBallisticAcceleration(proj)
-        end
-
-        return proj
-    end;
-
     StartEconomyDrain = function(self)
         if self.FirstShot then return end
         if self.unit:GetFractionComplete() ~= 1 then return end
