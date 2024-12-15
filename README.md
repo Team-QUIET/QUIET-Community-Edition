@@ -16,7 +16,7 @@ going forward.  If you are new, installation is relatively simple:
 2. Find your Supreme Commander: Forged Alliance installation.  For the Steam version, this is typically:
    * ```C:\Program Files (x86)\Steam\steamapps\common\Supreme Commander Forged Alliance\```
    * We will refer to this as the "root" SCFA path (the directory where the SCFA game is installed).
-3. Copy the SCFA_Updater.exe to the path above.
+3. Copy the QUIET_Updater.exe to the path above.
   * You should now have QUIET_Updater.exe in same folder as the root SCFA path; so the intended path would be:
     * ```C:\Program Files (x86)\Steam\steamapps\common\Supreme Commander Forged Alliance\QUIET_Updater.exe```
   * You will see other folders like \bin, \gamedata, \maps, \movies, etc. adjacent to where you copied the binary.
@@ -24,22 +24,24 @@ going forward.  If you are new, installation is relatively simple:
     * You may recieve a warning on whether to trust this binary from your operating system, or a requirement to run as administrator.
 5.  On the first run, the updater will extract its necessary local data, and then open a user interface for managing updating, downloading
     maps, and other helpful features.
-    * We highly recommend you opt to have the updater create shortcuts for future refrence: Tools -> Create Shortcuts
+    * We highly recommend you opt to have the updater create shortcuts for future reference: **Tools -> Create Shortcuts**
     * Future runs should be conveniently accessible from the desktop shortcut.
 
 ### Existing QUIET Users (legacy updater)
 Installation is identical to the above, except you will have an old version of the updater called SCFA_Updater.exe.
-This is no longer necessary going forward; QUIET_Updater.exe is the official version.
+This is no longer necessary going forward; **QUIET_Updater.exe**  is the official version.
 
 ## QUIET
-The QUIET Updater (installed above), will handle installing QUIET and related  mods.
-First time installation and later updating are both accomplished via the ```Update``` button in the user interface.
-Once QUIET is installed, all 3rd party mods are installed in the ```usermods``` folder local to QUIET.
+The QUIET Updater (installed above), will handle installing QUIET and related mods.
+First time installation and later updating are both accomplished via the **Update**  button in the user interface.
+Once QUIET is installed, all 3rd party mods are installed in the **usermods** folder local to QUIET.
 
 Installing will make the following changes:
-* QUIET will be installed along your existing SCFA installation, under the root SCFA path, in a ```QUIET``` folder.
-* QUIET and related mods will be installed in the default ```usermods``` subdirectory relative to QUIET, e.g.
-  *  ```C:\Program Files (x86)\Steam\steamapps\common\Supreme Commander Forged Alliance\QUIET\usermods\QUIET-Community-Edition```
+* QUIET will be installed along your existing SCFA installation, under the root SCFA path, in a QUIET folder.
+* QUIET and related mods will be installed in the default usermods subdirectory relative to QUIET:
+
+```C:\Program Files (x86)\Steam\steamapps\common\Supreme Commander Forged Alliance\QUIET\usermods\QUIET-Community-Edition\```
+
 *  The M28AI will be installed into ```usermods\M28AI``` as well.
 *  No changes to the base game data will occur; you can still play vanilla SCFA at any time.
 
@@ -55,14 +57,14 @@ Tools -> Open Mods Folder
 
 # Usage
 After installing the updater, and updating for the first time, all the relevant files for QUIET, QUIET, and M28AI
-should be available for use.  At this point, you can launch a game using the updater GUI via ```Run Game```, or click on
-the ```QUIET Forged Alliance``` shortcut if you opted to create one earlier.
+should be available for use.  At this point, you can launch a game using the updater GUI via **Run Game**, or click on
+the **QUIET Forged Alliance** shortcut if you opted to create one earlier.
 
 * On the first launch, you will need to create a new SCFA user profile to use the mods, otherwise errors may occur.
 
 Simply enable the mods you would like from your SCFA installation.
-- Globally for the game profile, via Extras -> Mod Manager
-- Locally (to a specific game lobby), via Game Options -> Mod Manager
+- Globally for the game profile, via **Extras -> Mod Manager**
+- Locally (to a specific game lobby), via **Game Options -> Mod Manager**
 
 The minimal expected setup would be enabling the "QUIET Standard"" mods button from the Mod Manager.
 
@@ -72,7 +74,7 @@ sure to select the M28AI when you add a computer player, from the AI drop down m
 
 # Main Changes
 
-View the full list of [changes](https://github.com/Team-QUIET/QUIET-Community-Edition/blob/main/changelog**.
+View the full list of [changes](https://github.com/Team-QUIET/QUIET-Community-Edition/blob/main/changelog).
 
 Aside from the plethora of unit changes, rebalancing, economy changes, and the like, the biggest addition is
 the inclusion of the M28 AI mod for additional PVE play.  M28 is developed independently, but it works very well with QUIET.
