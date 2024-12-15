@@ -2,22 +2,23 @@
 
 Welcome to **QUIET**! This project is a community-driven effort to enhance the gameplay experience of [LOUD Project Mod](https://github.com/LOUD-Project/Git-LOUD) by implementing balance changes, bug fixes, and introducing new features. We aim to create a dynamic, fun, and fair gaming environment for all players.
 
+![QUIET](quietLauncherSplash_1.jpg?raw=true)
+
 # Installation
 
 ## QUIET Updater Installation
-There is a QUIET updater that to be [PENDING] found at 
-[the latest release download link when it becomes available](https://github.com/QUIET-Community-Edition/loud-electron/releases/latest).
+There is a QUIET updater at [the project releases page](https://github.com/Team-QUIET/quiet-updater/releases/latest).
 
-This will be the preferred way to stay up to date with LOUD, the QUIET mod, and related mods like M28AI
-going forward.  If you are new to the LOUD ecosystem in general, installation is relatively simple: 
+This will be the preferred way to stay up to date with the QUIET mod, and related mods like M28AI
+going forward.  If you are new, installation is relatively simple:
 
-1. Download the latest binary release from above,  SCFA_Updater.exe
+1. Download the latest binary release from above,  QUIET_Updater.exe
 2. Find your Supreme Commander: Forged Alliance installation.  For the Steam version, this is typically:
    * ```C:\Program Files (x86)\Steam\steamapps\common\Supreme Commander Forged Alliance\```
    * We will refer to this as the "root" SCFA path (the directory where the SCFA game is installed).
 3. Copy the SCFA_Updater.exe to the path above.
-  * You should now have SCFA_Updater.exe in same folder as the root SCFA path; so the intended path would be: 
-    * ```C:\Program Files (x86)\Steam\steamapps\common\Supreme Commander Forged Alliance\SCFA_Updater.exe```
+  * You should now have QUIET_Updater.exe in same folder as the root SCFA path; so the intended path would be:
+    * ```C:\Program Files (x86)\Steam\steamapps\common\Supreme Commander Forged Alliance\QUIET_Updater.exe```
   * You will see other folders like \bin, \gamedata, \maps, \movies, etc. adjacent to where you copied the binary.
 4.  Once copied, you can execute the binary by 2x clicking it as with any application.
     * You may recieve a warning on whether to trust this binary from your operating system, or a requirement to run as administrator.
@@ -25,69 +26,101 @@ going forward.  If you are new to the LOUD ecosystem in general, installation is
     maps, and other helpful features.
     * We highly recommend you opt to have the updater create shortcuts for future refrence: Tools -> Create Shortcuts
     * Future runs should be conveniently accessible from the desktop shortcut.
-### Existing LOUD Users
-Installation is identical to the above, except you will already have a version of the SCFA_Updater.exe.  
-You will need to either delete or rename this binary, and the copy the SCFA_Updater.exe from the QUIET-Community-Edition into its place.  All shortcuts should continue to work as before.
 
-## LOUD 
-Since QUIET exists as mod on top of the broader LOUD project, you will need to have LOUD installed.
-The QUIET Updater (installed above), will handle installing and updating LOUD mod files, as well as installing QUIET and related user mods.
+### Existing QUIET Users (legacy updater)
+Installation is identical to the above, except you will have an old version of the updater called SCFA_Updater.exe.
+This is no longer necessary going forward; QUIET_Updater.exe is the official version.
+
+## QUIET
+The QUIET Updater (installed above), will handle installing QUIET and related  mods.
 First time installation and later updating are both accomplished via the ```Update``` button in the user interface.
-Once LOUD is installed, all 3rd party mods are installed in the ```usermods``` folder local to LOUD.
+Once QUIET is installed, all 3rd party mods are installed in the ```usermods``` folder local to QUIET.
 
 Installing will make the following changes:
-* LOUD will be installed along your existing SCFA installation, under the root SCFA path, in a ```LOUD``` folder.
-* QUIET and related mods will be installed in the default ```usermods``` subdirectory relative to LOUD, e.g.
-  *  ```C:\Program Files (x86)\Steam\steamapps\common\Supreme Commander Forged Alliance\LOUD\usermods\QUIET-Community-Edition```
+* QUIET will be installed along your existing SCFA installation, under the root SCFA path, in a ```QUIET``` folder.
+* QUIET and related mods will be installed in the default ```usermods``` subdirectory relative to QUIET, e.g.
+  *  ```C:\Program Files (x86)\Steam\steamapps\common\Supreme Commander Forged Alliance\QUIET\usermods\QUIET-Community-Edition```
 *  The M28AI will be installed into ```usermods\M28AI``` as well.
 *  No changes to the base game data will occur; you can still play vanilla SCFA at any time.
 
 Updating a current installation will make the following changes:
-* Files in the ```LOUD``` folder will be synchronized (overwritten) if they are out of date with the current release.
-* Folders in ```LOUD\usermods``` will be synchronized (overwritten) if their respective mods are out of date:
-  * QUIET
+* Files in the ```QUIET``` folder will be synchronized (overwritten) if they are out of date with the current release.
+* Folders in ```QUIET\usermods``` will be synchronized (overwritten) if their respective mods are out of date:
+  * QUIET-Community-Edition
   * M28AI
 
 ## usermods
-You can conveniently get to this folder through the updater using the top menu: 
+You can conveniently get to this folder through the updater using the top menu:
 Tools -> Open Mods Folder
 
-## Manual Installation
-* LOUD can be manually installed from the [onedrive linke](https://1drv.ms/u/s!AubmcwAIEAlzn2TwHzibrMTRySVj?e=MCevjP).  You will place the files in the ```LOUD`` subfolder as the updater would.
-
-* QUIET versions can be acquired from the [releases](https://github.com/Team-QUIET/QUIET-Community-Edition/releases/) link, 
-or more simply, directly download the [current release](https://github.com/Team-QUIET/QUIET-Community-Edition/releases/latest/download/QUIET-Community-Edition.zip) 
-as needed.
-If you download the [current release](https://github.com/Team-QUIET/QUIET-Community-Edition/releases/latest/download/QUIET-Community-Edition.zip), simply extract
-the zip archive into the ```usermods``` folder shown earlier.  NOTE: it is advisable (for manual installation), to delete any prior version of the QUIET folder in the usermods folder, since newer releases may move or delete files in the mod, and simply extracting could keep older files around).
-
-* M28AI You can download M28 in a similar fashion to QUIET from [here](https://github.com/Team-QUIET/M28AI/releases/latest) and choosing "Source Code".  Once downloaded, extract the zip file into ```usermods```.
-* You will need to rername the extracted M28AI folder from e.g. M28AI-127 to M28AI.
-
 # Usage
-After installing the updater, and updating for the first time, all the relevant files for LOUD, QUIET, and M28AI
+After installing the updater, and updating for the first time, all the relevant files for QUIET, QUIET, and M28AI
 should be available for use.  At this point, you can launch a game using the updater GUI via ```Run Game```, or click on
-the ```LOUD Forged Alliance``` shortcut if you opted to create one earlier.
+the ```QUIET Forged Alliance``` shortcut if you opted to create one earlier.
 
 * On the first launch, you will need to create a new SCFA user profile to use the mods, otherwise errors may occur.
 
-Simply enable the mods you would like from your SCFA installation.  
+Simply enable the mods you would like from your SCFA installation.
 - Globally for the game profile, via Extras -> Mod Manager
 - Locally (to a specific game lobby), via Game Options -> Mod Manager
 
-The minimal expected setup would be enabling the LOUD Standard mods toggle from the Mod Manager, 
-and QUIET (found at the bottom of the mod list among user mods).
-
-You can similarly enable M28AI as a usermod.
+The minimal expected setup would be enabling the "QUIET Standard"" mods button from the Mod Manager.
 
 When creating a game lobby, the QUIET mod changes will be present without any current
 user configuration in the lobby.  If you want to use the M28 AI in your game, make
-sure to select the M28AI when you add a computer player, from the AI drop down menu (default
-AI is LOUD).
+sure to select the M28AI when you add a computer player, from the AI drop down menu.
 
 # Main Changes
 
-View the full list of [changes](https://github.com/Team-QUIET/QUIET-Community-Edition/blob/main/Changelog.txt).
+View the full list of [changes](https://github.com/Team-QUIET/QUIET-Community-Edition/blob/main/changelog**.
+
+Aside from the plethora of unit changes, rebalancing, economy changes, and the like, the biggest addition is
+the inclusion of the M28 AI mod for additional PVE play.  M28 is developed independently, but it works very well with QUIET.
+We keep track with the frequent upstream releases.
+
+# Known Issues
+
+## Old Cached Shaders
+If you have played a variant of Supreme Commander (other than Forged Alliance: Forever), then you may have
+legacy shaders cached on your computer.  This could result in a seemingly random runtime crash, particularly
+when someone tries to build any naval units for the first time in game.
+
+QUIET leverages the excellent shader re-work done by FAF community.  To this end, you may need to clear out
+your shader cache one time, after which Supreme Commander will re-compile and cache the shaders the next time
+it runs (this is trivial to do and is not noticable to the user).
+
+Future versions of the QUIET updater will eliminate this problem by simply cleaning the shader files on update.
+Until then, you will need to follow one of the following options:
+
+### Use a script
+You can use the convenient [shader_cleaner batch file](https://github.com/FAForever/nomads/blob/develop/shader_cleaner.bat)
+from the FAF nomads mod.  This batch file directly accomplishes the manual option that follows.
+
+### Or, Manually Delete the Old Cached Shader Files
+Files that need to be deleted are possibly in 2 places:
+
+```
+%LOCALAPPDATA%\Gas Powered Games\Supreme Commander Forged Alliance\cache\
+%HOMEPATH%\Local Settings\Application Data\Gas Powered Games\Supreme Commander Forged Alliance\cache\
+```
+
+which should resolve to:
+
+```
+C:\Users\yournamehere\AppData\Local\Gas Powered Games\Supreme Commander Forged Alliance\cache
+C:\Users\yournamehere\Local Settings\Application Data\Gas Powered Games\Supreme Commander Forged Alliance\cache
+```
+
+The files that need to be deleted are
+- mesh.1.5.*
+- mesh.1.6.*
+
+(any file beginning with 'mesh' pretty much) ; if they exist.
+
+This is what the batch file linked above does (for convenience). They are
+compiled shader files that are built 1x and cached by SCFA. If you delete them,
+they are recompiled and cached in the same place.
+
 
 ---
 
