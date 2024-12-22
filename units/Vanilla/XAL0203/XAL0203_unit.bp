@@ -98,7 +98,7 @@ UnitBlueprint {
     },
 	
     Intel = {
-        VisionRadius = 24,
+        VisionRadius = 20,
         WaterVisionRadius = 8,
     },
 	
@@ -141,7 +141,7 @@ UnitBlueprint {
 
         WobbleFactor = 0.02,
         WobbleSpeed = 0.01,
-        WaterSpeedMultiplier = 0.9,
+        WaterSpeedMultiplier = 0.8,
     },
 	
     SelectionSizeX = 0.6,
@@ -190,7 +190,7 @@ UnitBlueprint {
 			
             Label = 'MainGun',
 			
-            MaxRadius = 24,
+            MaxRadius = 20,
 
             MuzzleVelocity = 45,
 			
