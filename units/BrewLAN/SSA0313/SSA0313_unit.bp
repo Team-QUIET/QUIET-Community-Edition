@@ -1,0 +1,205 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "ssa0313",
+	
+    Air = {
+        AutoLandTime = 1,
+        BankFactor = 5,
+        BankForward = false,
+        BreakOffDistance = 15,
+        BreakOffTrigger = 20,
+        CanFly = true,
+        CombatTurnSpeed = 1.9,
+        EngageDistance = 50,
+        KLift = 3,
+        KLiftDamping = 2.5,
+        KMove = 1.5,
+        KMoveDamping = 1,
+        KRoll = 1.5,
+        KRollDamping = 1,
+        KTurn = 1.5,
+        KTurnDamping = 2.3,
+        LiftFactor = 7,
+        MaxAirspeed = 33,
+        MinAirspeed = 11,
+        StartTurnDistance = 5,
+        TightTurnMultiplier = 1.02,
+        TurnSpeed = 1.9,
+        Winged = true,
+    },
+
+    Defense = {
+        MissileDetector = { AttachBone = 'MissileDetector' },
+        
+        AirThreatLevel = 96,
+        ArmorType = 'Light',
+        
+        Health = 4950,
+        MaxHealth = 4950,
+        RegenRate = 10,
+    },
+    
+    Economy = {
+        BuildCostEnergy = 100000,
+        BuildCostMass = 1390,
+        BuildTime = 6750,
+        
+        ResearchMultEnergy = 0.2,
+        MaintenanceConsumptionPerSecondEnergy = 75,
+    },
+    
+    Intel = {
+        RadarRadius = 56,
+        RadarStealth = true,
+        VisionRadius = 40,
+    },
+    
+    Weapon = {
+        {
+            Audio = {Fire = Sound {Bank = 'XSL_Weapon', Cue = 'XSL0402_Attack_Zap', LodCutoff = 'Weapon_LodCutoff'}},
+
+            AutoInitiateAttackCommand = true,            
+            BallisticArc = 'RULEUBA_None',
+            
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0.5,
+
+            CollideFriendly = false,
+            
+            Damage = 135,       -- 500 damage
+            DamageFriendly = false,
+            DamageType = 'Normal',
+            
+            DisplayName = 'Phason Laser',
+            
+            EnergyDrainPerSecond = 100, -- every 3 seconds = 166 DPS
+            EnergyRequired = 300,
+            
+            FireTargetLayerCapsTable = {Air = 'Air'},
+            FiringTolerance = 0,
+            
+            Label = 'PhasonBeam',
+            
+            MaxRadius = 43,
+            
+            RackBones = {
+                {
+                    MuzzleBones = {'Big_Ring'},
+                    RackBone = 'Big_Ring',
+                },
+            },
+
+            RackSalvoFiresAfterCharge = true,
+            
+            RateOfFire = 0.33,     -- controlled by charge
+
+            TargetCheckInterval = 0.7,
+
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'HIGHPRIAIR',
+                'ALLUNITS',
+            },
+
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR',            
+
+            TrackingRadius = 1.25,
+            
+            TurretBoneMuzzle = 'Big_Ring',
+            TurretBonePitch = 'Big_Ring',
+            TurretBoneYaw = 'Big_Ring',
+            
+            TurretPitch = 0,
+            TurretPitchRange = 42,
+            TurretPitchSpeed = 66,
+            
+            TurretYaw = 0,
+            TurretYawRange = 42,
+            TurretYawSpeed = 66,
+            
+            Turreted = true,
+        },
+
+        {
+            AlwaysRecheckTarget = true,
+            Audio = {Fire = Sound {Bank = 'XSA_Weapon', Cue = 'XSA0303_AA_AutoCanLosaare', LodCutoff = 'Weapon_LodCutoff'}},
+            
+            AutoInitiateAttackCommand = false,
+            BallisticArc = 'RULEUBA_None',
+            
+            CannotAttackGround = true,
+            CollideFriendly = false,
+            
+            Damage = 135,
+            DamageFriendly = false,
+            DamageType = 'Normal',
+            
+            DisplayName = 'Losaare AA Autocannon',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air',
+                Land = 'Air',
+                Water = 'Air',
+            },
+
+            FiringTolerance = 0,
+            
+            Label = 'AutoCannon',
+            
+            LeadTarget = true,
+            
+            MaxRadius = 40,
+            
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 100,
+            
+            ProjectileId = '/projectiles/SAALosaareAutoCannon01/SAALosaareAutoCannon01_proj.bp',
+            ProjectileLifetime = 0.5,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Med_Ring'},
+                    RackBone = 'Med_Ring',
+                },
+            },
+
+            RangeCategory = 'UWRC_AntiAir',
+            
+            RateOfFire = 4,   -- 720 DPS (90x2x4)
+            
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 42,
+            
+            TargetCheckInterval = 0.3,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'HIGHPRIAIR',
+                'SPECIALLOWPRI',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR',
+            
+            TurretBoneMuzzle = 'Med_Ring',
+            TurretBonePitch = 'Med_Ring',
+            TurretBoneYaw = 'Med_Ring',
+            
+            TurretPitch = 0,
+            TurretPitchRange = 42,
+            TurretPitchSpeed = 66,
+            
+            TurretYaw = 0,
+            TurretYawRange = 42,
+            TurretYawSpeed = 66,
+            
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+        },
+
+        {
+
+        },
+    },
+}

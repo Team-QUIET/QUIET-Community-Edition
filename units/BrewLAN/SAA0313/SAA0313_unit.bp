@@ -1,0 +1,243 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "saa0313",
+    
+    Air = {
+        AutoLandTime = 1,
+        BankFactor = 5,
+        BankForward = false,
+        BreakOffDistance = 15,
+        BreakOffTrigger = 20,
+        CanFly = true,
+        CombatTurnSpeed = 1.9,
+        EngageDistance = 50,
+        KLift = 3,
+        KLiftDamping = 2.5,
+        KMove = 1.5,
+        KMoveDamping = 1,
+        KRoll = 1.5,
+        KRollDamping = 1,
+        KTurn = 1.5,
+        KTurnDamping = 2.3,
+        LiftFactor = 7,
+        MaxAirspeed = 33,
+        MinAirspeed = 11,
+        StartTurnDistance = 5,
+        TightTurnMultiplier = 1.02,
+        TurnSpeed = 1.9,
+        Winged = true,
+    },
+    
+    Defense = {
+        MissileDetector = { AttachBone = 'MissileDetector' },
+        
+        AirThreatLevel = 95,
+        ArmorType = 'Light',
+        Health = 4855,
+        MaxHealth = 4855,
+
+        RegenRate = 10,
+    },
+    
+    Economy = {
+        BuildCostEnergy = 90000,
+        BuildCostMass = 1250,
+        BuildTime = 6750,
+        
+        ResearchMultEnergy = 0.2,
+        MaintenanceConsumptionPerSecondEnergy = 75,
+    },
+    
+    Intel = {
+        RadarRadius = 56,    
+        RadarStealth = true,
+        
+        Cloak = true,
+        
+        VisionRadius = 40,
+    },
+    
+    Weapon = {
+        {
+            AlwaysRecheckTarget = true,
+            Audio = {
+                BeamLoop = Sound { Bank = 'UALWeapon', Cue = 'UAL0401_Phason_Laser_Loop', LodCutoff = 'Weapon_LodCutoff' },
+               BeamStart = Sound { Bank = 'UALWeapon', Cue = 'UAL0401_Phason_Laser_Fire', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStop = Sound { Bank = 'UALWeapon', Cue = 'UAL0401_Phason_Laser_Stop', LodCutoff = 'Weapon_LodCutoff' },
+                  Unpack = Sound { Bank = 'UALWeapon', Cue = 'UAL0401_Phason_Laser_Charge', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            AutoInitiateAttackCommand = true,
+            
+            BallisticArc = 'RULEUBA_None',
+            
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0.5,
+            
+            CannotAttackGround = true,
+            CollideFriendly = false,
+            
+            Damage = 256,
+            DamageType = 'Normal',
+            
+            DisplayName = 'Focused Phason Laser',
+            
+            DoNotCollideList = {'MISSILE'},
+            
+            EnergyDrainPerSecond = 100,
+            EnergyRequired = 100,
+            
+            FireTargetLayerCapsTable = {
+                Air = 'Air',
+            },
+            
+            FiringTolerance = 1,
+            
+            Label = 'AAGun',
+            
+            MaxRadius = 44,
+            
+            RackBones = {
+                { MuzzleBones = {'Muzzle_L'}, RackBone = 'Barrel_L' },
+            },
+
+            RackRecoilDistance = 1,
+
+            RackSalvoFiresAfterCharge = true,
+            
+            RangeCategory = 'UWRC_AntiAir',
+            
+            RateOfFire = 1,       -- 495 DPS based on charge
+            
+            TargetCheckInterval = 1.5,
+
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'HIGHPRIAIR',
+                'EXPERIMENTAL',
+                'BOMBER',
+                'GROUNDATTACK',
+                'TRANSPORTATION',
+                'SPECIALLOWPRI',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'STRUCTURE,UNTARGETABLE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR',
+            
+            TurretBoneMuzzle = 'Muzzle_L',
+            TurretBonePitch = 'Muzzle_L',
+            TurretBoneYaw = 'Muzzle_L',
+            
+            TurretPitch = 0,
+            TurretPitchRange = 40,
+            TurretPitchSpeed = 60,
+            
+            TurretYaw = 0,
+            TurretYawRange = 40,
+            TurretYawSpeed = 60,
+            
+            Turreted = true,
+        },
+        {
+            AlwaysRecheckTarget = true,
+            Audio = {
+                BeamLoop = Sound { Bank = 'UALWeapon', Cue = 'UAL0401_Phason_Laser_Loop', LodCutoff = 'Weapon_LodCutoff' },
+               BeamStart = Sound { Bank = 'UALWeapon', Cue = 'UAL0401_Phason_Laser_Fire', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStop = Sound { Bank = 'UALWeapon', Cue = 'UAL0401_Phason_Laser_Stop', LodCutoff = 'Weapon_LodCutoff' },
+                  Unpack = Sound { Bank = 'UALWeapon', Cue = 'UAL0401_Phason_Laser_Charge', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0.5,
+            
+            CannotAttackGround = true,
+            CollideFriendly = false,
+            
+            Damage = 256,
+            DamageType = 'Normal',
+            
+            DisplayName = 'Focused Phason Laser',
+            
+            DoNotCollideList = {'MISSILE'},
+            
+            EnergyDrainPerSecond = 100,
+            EnergyRequired = 100,
+            
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Air = 'Air',
+            },
+            
+            FiringTolerance = 1,
+            
+            Label = 'AAGun',
+            
+            MaxRadius = 44,
+            
+            RackBones = {
+                { MuzzleBones = {'Muzzle_R'}, RackBone = 'Barrel_R' },
+            },
+
+            RackRecoilDistance = 1,
+
+            RackSalvoFiresAfterCharge = true,
+            
+            RateOfFire = 1,       -- another 495 - based on charge
+            
+            TargetCheckInterval = 1.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'HIGHPRIAIR',
+                'EXPERIMENTAL',
+                'BOMBER',
+                'GROUNDATTACK',
+                'TRANSPORTATION',
+                'SPECIALLOWPRI',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            
+            TurretBoneMuzzle = 'Muzzle_R',
+            TurretBonePitch = 'Muzzle_R',
+            TurretBoneYaw = 'Muzzle_R',
+            TurretDualManipulators = false,
+            
+            TurretPitch = 0,
+            TurretPitchRange = 40,
+            TurretPitchSpeed = 60,
+            
+            TurretYaw = 0,
+            TurretYawRange = 40,
+            TurretYawSpeed = 60,
+            
+            Turreted = true,
+        },
+
+        {
+            AboveWaterTargetsOnly = true,
+            Damage = 460,
+            DamageFriendly = true,
+            DamageRadius = 2.5,
+            DamageType = 'Normal',
+            DisplayName = 'Air Crash',
+            DummyWeapon = true,
+            FiringTolerance = 2,
+            Label = 'DeathImpact',
+            WeaponCategory = 'Death',
+        },
+    },
+
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.1,
+        HealthMult = 0.3,
+        MassMult = 0.3,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+            Water = true,
+        },
+    },
+}

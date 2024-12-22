@@ -1,0 +1,276 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "sea0313",
+	
+    Air = {
+        AutoLandTime = 1,
+        BankFactor = 5,
+        BankForward = false,
+        BreakOffDistance = 15,
+        BreakOffTrigger = 20,
+        CanFly = true,
+        CombatTurnSpeed = 1.9,
+        EngageDistance = 50,
+        KLift = 3,
+        KLiftDamping = 2.5,
+        KMove = 1.5,
+        KMoveDamping = 1,
+        KRoll = 1.5,
+        KRollDamping = 1,
+        KTurn = 1.5,
+        KTurnDamping = 2.3,
+        LiftFactor = 7,
+        MaxAirspeed = 33,
+        MinAirspeed = 11,
+        StartTurnDistance = 5,
+        TightTurnMultiplier = 1.03,
+        TurnSpeed = 1.9,
+        Winged = true,
+    },
+
+    Defense = {
+        MissileDetector = {AttachBone = 'MissileDetector'},
+        
+        AirThreatLevel = 95,
+        ArmorType = 'Light',
+        Health = 5050,
+        MaxHealth = 5050,
+        RegenRate = 10,
+    },
+    
+    Economy = {
+        BuildCostEnergy = 100000,
+        BuildCostMass = 1390,
+        BuildTime = 6750,
+        
+        ResearchMultEnergy = 0.2,
+        MaintenanceConsumptionPerSecondEnergy = 75,
+    },
+    
+    
+    Intel = {
+        RadarStealth = true,
+        RadarRadius = 56,
+        VisionRadius = 40,
+    },
+
+    Weapon = {
+        {
+            Audio = {Fire = Sound {Bank = 'UELWeapon', Cue = 'UEL0101_MachineGun', LodCutoff = 'Weapon_LodCutoff'}},
+
+            AutoInitiateAttackCommand = true,
+
+            BallisticArc = 'RULEUBA_None',
+            
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0.4,
+            
+            CannotAttackGround = true,
+            
+            CollideFriendly = false,
+            
+            Damage = 132,
+            DamageFriendly = false,
+            DamageType = 'Normal',
+            
+            DisplayName = 'Burst Helical Railgun',
+            
+            EnergyDrainPerSecond = 166,
+            EnergyRequired = 100,       -- 6 tick charge
+
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land|water',
+            },
+            
+            FiringTolerance = 1,
+            
+            Label = 'ParticleCannon',
+            
+            NotExclusive = true,
+            
+            MaxRadius = 42,
+            
+            RackBones = {
+                {
+                    MuzzleBones = {'Gun_001'},
+                    RackBone = 'Gun_001',
+                },
+            },
+            
+            RangeCategory = 'UWRC_AntiAir',
+            
+            RateOfFire = 1.4, 
+            
+            ReTargetOnMiss = true,
+            
+            TargetCheckInterval = 0.3,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'STRUCTURE,UNTARGETABLE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR',
+            
+            TrackingRadius = 1.25,
+            
+            TurretBoneMuzzle = 'Gun_001',
+            TurretBonePitch = 'Gun_001',
+            TurretBoneYaw = 'Gun_001',
+            
+            TurretPitch = 0,
+            TurretPitchRange = 40,
+            TurretPitchSpeed = 60,
+            
+            TurretYaw = 0,
+            TurretYawRange = 40,
+            TurretYawSpeed = 60,
+            
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+        },
+        {
+            Audio = {Fire = Sound {Bank = 'UELWeapon', Cue = 'UEL0101_MachineGun', LodCutoff = 'Weapon_LodCutoff'}},
+            BallisticArc = 'RULEUBA_None',
+            
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0.4,
+            
+            CannotAttackGround = false,
+            
+            CollideFriendly = false,
+            
+            Damage = 132,
+            DamageFriendly = false,
+            DamageType = 'Normal',
+            
+            DisplayName = 'Burst Helical Railgun',
+            
+            EnergyDrainPerSecond = 166,
+            EnergyRequired = 100,
+            
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land|water',
+                Land = 'Air|Land|water',
+                Water = 'Air|Land|water',
+            },
+            
+            FiringTolerance = 1,
+            
+            Label = 'ParticleCannon',
+            
+            LeadTarget = false,
+            
+            NotExclusive = true,
+            
+            MaxRadius = 42,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Gun_002'},
+                    RackBone = 'Gun_002',
+                },
+            },
+            
+            RateOfFire = 1.4,
+            
+            ReTargetOnMiss = true,
+
+            TargetCheckInterval = 0.3,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'STRUCTURE,UNTARGETABLE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR',
+            
+            TurretBoneMuzzle = 'Gun_002',
+            TurretBonePitch = 'Gun_002',
+            TurretBoneYaw = 'Gun_002',
+            
+            TurretPitch = 0,
+            TurretPitchRange = 40,
+            TurretPitchSpeed = 60,
+            
+            TurretYaw = 0,
+            TurretYawRange = 40,
+            TurretYawSpeed = 60,
+            
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+        },
+        
+        {
+            advancedTracking = true,
+            
+            AlwaysRecheckTarget = true,
+            Audio = {Fire = Sound {Bank = 'UELWeapon', Cue = 'UEB2304_Missile_Flayer', LodCutoff = 'Weapon_LodCutoff'}},
+            
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+            
+            Damage = 200,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+            
+            DisplayName = 'Flayer AAM Launcher',
+            
+            FireTargetLayerCapsTable = {
+                Air = 'Air',
+                Land = 'Air',
+                Water = 'Air',
+            },
+            
+            FiringTolerance = 30,
+            
+            Label = 'Missile',
+            
+            MaxRadius = 60,
+            
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 30,
+            
+            ProjectileId = '/projectiles/TAAMissileFlayer01/TAAMissileFlayer01_proj.bp',
+            ProjectileLifetime = 7,
+            
+            RackBones = {
+                {
+                    MuzzleBones = {'Gun_003'},
+                    RackBone = 'Gun_003',
+                },
+            },
+
+            RateOfFire = 0.5,   -- another 200 DPS
+            
+            TargetCheckInterval = 0.3,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TrackingRadius = 1.2,
+            
+            TurretBoneMuzzle = 'Gun_003',
+            TurretBonePitch = 'Gun_003',
+            TurretBoneYaw = 'Gun_003',
+            
+            TurretPitch = 25,
+            TurretPitchRange = 40,
+            TurretPitchSpeed = 60,
+            
+            TurretYaw = 0,
+            TurretYawRange = 32,
+            TurretYawSpeed = 60,
+            
+            Turreted = true,
+        },
+        
+        {
+            
+        },
+    },
+}
