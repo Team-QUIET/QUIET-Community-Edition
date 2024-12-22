@@ -1,11 +1,11 @@
 UnitBlueprint {
-  Merge = true,
-  BlueprintId = "sal0320",
+    Merge = true,
+    BlueprintId = "sal0320",
 
-      Weapon = {
+    Weapon = {
         {
 
-            RateOfFire = 13/10,
+            RateOfFire = 20/10,
             
         },
         {

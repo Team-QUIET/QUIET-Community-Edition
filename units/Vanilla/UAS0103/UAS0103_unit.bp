@@ -1,0 +1,211 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "uas0103",
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+			
+            Audio = {
+                BarrelLoop  = Sound { Bank = 'UAS', Cue = 'UAS_Turret_Sml_Loop', LodCutoff = 'Weapon_LodCutoff'},
+                BarrelStart = Sound { Bank = 'UAS', Cue = 'UAS_Turret_Sml_Start', LodCutoff = 'Weapon_LodCutoff'},
+                Fire        = Sound { Bank = 'UASWeapon', Cue = 'UAS0103_Cannon_Quantum', LodCutoff = 'Weapon_LodCutoff'},
+            },
+			
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 45,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Front Quantum Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0.1,
+			
+            HeadingArcCenter = 0,
+            HeadingArcRange = 150,
+			
+            Label = 'DeckGuns',
+			
+            MaxRadius = 38,
+			
+            MuzzleChargeDelay = 0.5,
+            MuzzleVelocity = 36,
+			
+            ProjectileId = '/projectiles/ADFQuantumCannon01/ADFQuantumCannon01_proj.bp',
+            ProjectileLifetime = 1.2,			
+			
+            RackBones = {
+                {
+                    MuzzleBones = { 'Turret_Front_Muzzle' },
+                    RackBone = 'Turret_Front_Barrel',
+                },
+            },
+			
+            RackRecoilDistance = -1,
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 1,	-- 45 DPS Surface
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 145,
+			
+            TargetCheckInterval = 1,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'NAVAL MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Turret_Front_Muzzle',
+            TurretBonePitch = 'Turret_Front_Barrel',
+            TurretBoneYaw = 'Turret_Front',
+			
+            TurretPitch = 10,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 40,
+			
+            TurretYaw = 0,
+            TurretYawRange = 150,
+            TurretYawSpeed = 48,
+			
+            Turreted = true,
+        },
+        {
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'UASWeapon', Cue = 'UAS0103_Cannon_Quantum', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 45,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Rear Quantum Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0.1,
+			
+            HeadingArcCenter = 180,
+            HeadingArcRange = 150,
+			
+            Label = 'DeckGuns',
+			
+            MaxRadius = 38,
+			
+            MuzzleChargeDelay = 0.5,
+            MuzzleVelocity = 36,
+			
+            ProjectileId = '/projectiles/ADFQuantumCannon01/ADFQuantumCannon01_proj.bp',
+            ProjectileLifetime = 1.2,
+			
+            RackBones = {
+                {
+                    MuzzleBones = { 'Turret_Back_Muzzle' },
+                    RackBone = 'Turret_Back',
+                },
+            },
+
+            RackRecoilDistance = -1,
+			
+            RateOfFire = 1,		-- another 45 DPS Surface
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 145,
+			
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'NAVAL MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Turret_Back_Muzzle',
+            TurretBonePitch = 'Turret_Back_Barrel',
+            TurretBoneYaw = 'Turret_Back',
+			
+            TurretPitch = 10,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 40,
+			
+            TurretYaw = 0,
+            TurretYawRange = 150,
+            TurretYawSpeed = 48,
+			
+            Turreted = true,
+        },
+		
+        {
+            advancedTracking = true,
+            
+            BallisticArc = 'RULEUBA_None',
+
+			CannotAttackGround = true,
+            CollideFriendly = false,
+
+            CountedProjectile = true,
+			
+            Damage = 2,
+			DamageFriendly = false,
+            DamageType = 'Normal',
+			
+            DisplayName = 'AntiTorpedo',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Seabed|Sub|Water',
+            },
+			
+            FiringTolerance = 10,
+			
+            Label = 'AntiTorpedo',
+			
+            MaxRadius = 32,
+            MinRadius = 5,
+
+            MuzzleSalvoDelay = 0,
+            MuzzleVelocity = 30,
+			
+            ProjectileId = '/projectiles/AIMAntiTorpedo01/AIMAntiTorpedo01_proj.bp',
+            ProjectileLifetime = 3,
+			
+            RackBones = {
+                {
+                    MuzzleBones = { 'Projectile01' },
+                    RackBone = 'Projectile01',
+                },
+            },
+
+            RangeCategory = 'UWRC_Countermeasure',
+			
+            RateOfFire = 10/67,
+			
+            TargetCheckInterval = 1.0,
+			
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictOnlyAllow = 'TORPEDO',
+            TargetType = 'RULEWTT_Projectile',
+            
+            WeaponRepackTimeout = 0,
+        },
+    },
+	
+}
