@@ -1,5 +1,5 @@
 UnitBlueprint {
-    AMerge = true,
+    Merge = true,
 	BlueprintId = "ura0303",
 
     Air = {
