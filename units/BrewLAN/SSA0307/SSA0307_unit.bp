@@ -1,0 +1,28 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "ssa0307",
+	
+    Air = {
+        AutoLandTime = 1,
+        BankFactor = 4,
+        BankForward = false,
+        BreakOffDistance = 34,
+        BreakOffIfNearNewTarget = true,
+        BreakOffTrigger = 15,
+        CanFly = true,
+        CombatTurnSpeed = 0.5,
+        EngageDistance = 75,
+        KLift = 3,
+        KLiftDamping = 2.5,
+        KRoll = 2,
+        KRollDamping = 4,
+        KTurn = 1,
+        KTurnDamping = 1,
+        LiftFactor = 7,
+        MaxAirspeed = 20,
+        MinAirspeed = 13,
+        StartTurnDistance = 5,
+        TurnSpeed = 1,
+        Winged = true,
+    },
+}
