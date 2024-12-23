@@ -1,8 +1,14 @@
 UnitBlueprint {
-  Merge = true,
-  BlueprintId = "xsl0104",
+    Merge = true,
+    BlueprintId = "xsl0104",
 
-      Weapon = {
+    Economy = {
+        BuildCostEnergy = 275,
+        BuildCostMass = 55,
+        BuildTime = 140,
+    },
+
+    Weapon = {
         {
 
             RateOfFire = 30/10,
