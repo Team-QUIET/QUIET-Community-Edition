@@ -791,13 +791,26 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
                     if self.HaltFireOrdered then
                         break
                     end
+                    -- Halt Mobile SMD & SMD from firing if the Launcher has no ammo
+                    if CountedProjectile and bp.MaxProjectileStorage > 0 then
+                        if bp.NukeWeapon == true then
+                            if unit:GetNukeSiloAmmoCount() <= 0 then
+                                self.WeaponCanFire = false
+                                continue
+                            end
+                        else
+                            if unit:GetTacticalSiloAmmoCount() <= 0 then
+                                self.WeaponCanFire = false
+                                continue
+                            end
+                        end
+                    end
+                    -- CurrentSalvoNumber is used to determine which rack is firing
                     self.CurrentSalvoNumber = i
                     local muzzle = muzzleBones[muzzleIndex]
                     if rackHideMuzzle then
                         unit:ShowBone(muzzle, true)
                     end
-
-
                     -- Deal with Muzzle charging sequence
                     if MuzzleChargeDelay > 0 then
                         if MuzzleChargeAudio then
