@@ -1295,17 +1295,299 @@ UnitBlueprint {
         {
            
         },
-		
-        {
+		{
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+			
+            Audio = {
+                Fire = Sound {Bank = 'UALWeapon',Cue = 'UAB2303_Cannon',LodCutoff = 'Weapon_LodCutoff'},
+            },
+            BallisticArc = 'RULEUBA_HighArc',
+			
+            CollideFriendly = false,
+			
+            Damage = 130,
+            DamageFriendly = true,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Miasma Artillery',
+			
+            DoTPulses = 5,          -- 5 x 130 damage every 9 seconds
+            DoTTime = 3,
             
+            EnergyChargeForFirstShot = false,
+
+            EnergyDrainPerSecond = 180,	-- 9 second charge --
+            EnergyRequired = 1620,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 1,
+            FiringTolerance = 1,
+			
+            Label = 'EXMiasmaArtillery01',
+			
+            MaxRadius = 100,
+            MinRadius = 10,
+			
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 28,
+			MuzzleVelocityReduceDistance = 75,
+            
+            NotExclusive = true,
+			
+            ProjectileId = '/projectiles/AIFMiasmaShell01/AIFMiasmaShell01_proj.bp',
+            ProjectileLifetime = 12,			
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Artillery_Muzzle_Right'},
+                    RackBone = 'Artillery_Barrel_Right',
+                },
+                {
+                    MuzzleBones = {'Artillery_Muzzle_Left'},
+                    RackBone = 'Artillery_Barrel_Left',
+                },
+            },
+            RackFireTogether = true,
+			
+            RackRecoilDistance = -2,
+
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+			
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 10/100,	-- controlled by energy -- every 9 seconds -- 144 DPS
+			
+            TargetCheckInterval = 2,
+            
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'STRUCTURE DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			
+            TurretBoneMuzzle = 'Artillery_Muzzle_Right',
+			TurretBoneDualMuzzle = 'Artillery_Muzzle_Left',
+            TurretBonePitch = 'Artillery_Barrel_Right',
+			TurretBoneDualPitch = 'Artillery_Barrel_Left',
+            TurretBoneYaw = 'Artillery_Pitch',
+			
+            TurretDualManipulators = true,
+			
+            TurretPitch = 10,
+            TurretPitchRange = 75,
+            TurretPitchSpeed = 30,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 45,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
         },
         {
-           
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+			
+            Audio = {
+                Fire = Sound {Bank = 'UALWeapon',Cue = 'UAB2303_Cannon',LodCutoff = 'Weapon_LodCutoff'},
+            },
+            BallisticArc = 'RULEUBA_HighArc',
+            CollideFriendly = false,
+			
+            Damage = 195,
+            DamageFriendly = true,
+            DamageRadius = 2.5,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Miasma Artillery',
+			
+            DoTPulses = 5,          -- 1950 damage every 8 seconds = 243 DPS
+            DoTTime = 3,
+			
+            EnergyChargeForFirstShot = false,
+
+            EnergyDrainPerSecond = 300,	-- 8 second charge --
+            EnergyRequired = 2400,
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+            FiringRandomness = 0.95,
+            FiringTolerance = 0.8,
+			
+            Label = 'EXMiasmaArtillery02',
+			
+            MaxRadius = 112,
+            MinRadius = 10,
+
+            MuzzleVelocity = 29,
+			MuzzleVelocityReduceDistance = 85,
+            
+            NotExclusive = true,
+			
+            ProjectileId = '/projectiles/AIFMiasmaShell01/AIFMiasmaShell01_proj.bp',
+            ProjectileLifetime = 12,			
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Artillery_Muzzle_Right'},
+                    RackBone = 'Artillery_Barrel_Right',
+                },
+                {
+                    MuzzleBones = {'Artillery_Muzzle_Left'},
+                    RackBone = 'Artillery_Barrel_Left',
+                },
+            },
+            RackFireTogether = true,
+
+            RackRecoilDistance = -2,
+
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+			
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 10/90,         -- controlled by charge -- 
+            TargetCheckInterval = 1,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'STRUCTURE DEFENSE',
+                'SPECIALLOWPRI',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			
+            TurretBoneMuzzle = 'Artillery_Muzzle_Right',
+			TurretBoneDualMuzzle = 'Artillery_Muzzle_Left',
+            TurretBonePitch = 'Artillery_Barrel_Right',
+			TurretBoneDualPitch = 'Artillery_Barrel_Left',
+            TurretBoneYaw = 'Artillery_Pitch',
+			
+            TurretDualManipulators = true,
+
+            TurretPitch = 10,
+            TurretPitchRange = 75,
+            TurretPitchSpeed = 30,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 45,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
         },
         {
-          
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+            Audio = {
+                Fire = Sound {Bank = 'UALWeapon',Cue = 'UAB2303_Cannon',LodCutoff = 'Weapon_LodCutoff'},
+            },
+            BallisticArc = 'RULEUBA_HighArc',
+            CollideFriendly = false,
+			
+            Damage = 260,
+            DamageFriendly = true,
+            DamageRadius = 2.9,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Miasma Artillery',
+			
+            DoTPulses = 5,      --- 2600 damage every 7 seconds = 371 DPS
+            DoTTime = 3,
+
+            EnergyChargeForFirstShot = false,
+
+			EnergyDrainPerSecond = 450,
+			EnergyRequired = 3150,
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+            FiringRandomness = 0.82,
+            FiringTolerance = 0.7,
+			
+            Label = 'EXMiasmaArtillery03',
+			
+            MaxRadius = 124,
+            MinRadius = 10,
+
+            MuzzleVelocity = 28,
+			MuzzleVelocityReduceDistance = 90,
+            
+            NotExclusive = true,
+
+            ProjectileId = '/projectiles/AIFMiasmaShell01/AIFMiasmaShell01_proj.bp',
+            ProjectileLifetime = 6.5,			
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Artillery_Muzzle_Right'},
+                    RackBone = 'Artillery_Barrel_Right',
+                },
+                {
+                    MuzzleBones = {'Artillery_Muzzle_Left'},
+                    RackBone = 'Artillery_Barrel_Left',
+                },
+            },
+            RackFireTogether = true,
+
+            RackRecoilDistance = -3,
+
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+			
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 10/80,	-- controlled by energy - every 7 seconds
+            TargetCheckInterval = 2,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'STRUCTURE DEFENSE',
+                'SPECIALLOWPRI',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			
+            TurretBoneMuzzle = 'Artillery_Muzzle_Right',
+			TurretBoneDualMuzzle = 'Artillery_Muzzle_Left',
+            TurretBonePitch = 'Artillery_Barrel_Right',
+			TurretBoneDualPitch = 'Artillery_Barrel_Left',
+            TurretBoneYaw = 'Artillery_Pitch',
+			
+            TurretDualManipulators = true,
+
+            TurretPitch = 10,
+            TurretPitchRange = 75,
+            TurretPitchSpeed = 30,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 45,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
         },
-		
         {
            
         },
