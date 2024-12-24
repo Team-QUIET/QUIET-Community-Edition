@@ -1326,6 +1326,7 @@ Intel = {
         {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
+            AlwaysRecheckTarget = true,
 
             BallisticArc = 'RULEUBA_None',
             CanAttackGround = true,
@@ -1372,7 +1373,7 @@ Intel = {
             RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
 
-            RangeCategory = 'UWRC_Countermeasure',
+            RangeCategory = "UWRC_DirectFire",
 			
             RateOfFire = 10/33,     -- relies upon the charge cycle
 
@@ -1395,6 +1396,9 @@ Intel = {
 			
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Direct Fire",
+            WeaponRepackTimeout = 0,
+            WeaponUnpacks = false,
         },
 
         {

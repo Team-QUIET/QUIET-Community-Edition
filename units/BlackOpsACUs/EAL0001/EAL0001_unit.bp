@@ -1223,7 +1223,7 @@ UnitBlueprint {
             FiringTolerance = 2,
 			Label = "OverCharge",
             ManualFire = true,
-            MaxRadius = 22,
+            MaxRadius = 30,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 25,			
@@ -1253,7 +1253,7 @@ UnitBlueprint {
             RateOfFire = 10/33,         -- relies upon the charge cycle
             SlavedToBody = false,
 			
-            TargetCheckInterval = 0,
+            TargetCheckInterval = 0.5,
             
             TargetRestrictDisallow = 'UNTARGETABLE',
 			

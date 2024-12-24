@@ -1466,6 +1466,7 @@ UnitBlueprint {
         {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
+            AlwaysRecheckTarget = true,
 
             Audio = {
                 Fire = Sound {Bank = 'XSL_Weapon',Cue = 'XSL0001_Chronotron_Cannon_OC',LodCutoff = 'Weapon_LodCutoff'},
@@ -1525,7 +1526,7 @@ UnitBlueprint {
             RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
 
-            RangeCategory = 'UWRC_Countermeasure',
+            RangeCategory = "UWRC_DirectFire",
 
             RateOfFire = 10/33,     -- relies upon charge cycle -- 
 
@@ -1547,6 +1548,9 @@ UnitBlueprint {
 
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Direct Fire",
+            WeaponRepackTimeout = 0,
+            WeaponUnpacks = false,
         },
         {
             AboveWaterTargetsOnly = true,
