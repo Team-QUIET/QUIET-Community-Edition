@@ -269,7 +269,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
     end,
 
     -- Played when a rack reloads. Mostly used for Recoil
-    PlayFxRackReloadSequence = function(self, blueprint)
+    PlayFxRackReloadSequence = function(self)
         local bp = self.bp
         local cameraShakeRadius = bp.CameraShakeRadius
         local cameraShakeMax = bp.CameraShakeMax
@@ -283,7 +283,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
             self.unit:ShakeCamera(cameraShakeRadius, cameraShakeMax, cameraShakeMin, cameraShakeDuration)
         end
         if bp.RackRecoilDistance and bp.RackRecoilDistance ~= 0 then
-            self:PlayRackRecoil({ bp.RackBones[self.CurrentRackNumber]}, bp)
+            self:PlayRackRecoil({ bp.RackBones[self.CurrentRackNumber]})
         end
     end,
 
@@ -326,8 +326,8 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
     -- Played when a weapon packs up
     -- There is no target, and all rack salvos are complete
-    PlayFxWeaponPackSequence = function(self, blueprint)
-        local bp = blueprint or self.bp
+    PlayFxWeaponPackSequence = function(self)
+        local bp = self.bp
         local close = self.unit.bp.Audio.Close
         if close then
             self:PlaySound(close)
@@ -345,15 +345,15 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
     end,
 
     -- Create the visual side of rack recoil
-    PlayRackRecoil = function(self, rackList, blueprint)
-    
+    PlayRackRecoil = function(self, rackList)
+        local bp = self.bp
         local CreateSlider = CreateSlider
         local LOUDINSERT = LOUDINSERT
         local SetPrecedence = SetPrecedence
         local TrashAdd = TrashAdd
         
         local unit = self.unit
-        local RackRecoilDistance = self.bp.RackRecoilDistance
+        local RackRecoilDistance = bp.RackRecoilDistance
         
         local tmpSldr
         
@@ -452,35 +452,58 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
         end
     end,
 
+    OnDestroy = function(self)
+        WeaponOnDestroy(self)
+        LOUDSTATE(self, self.DeadState)
+        self.Dead = true
+    end,
+
+    CanWeaponFire = function(self, bp, unit)
+    
+        if bp.CountedProjectile and bp.MaxProjectileStorage > 0 then
+
+            if not bp.NukeWeapon then
+                
+                if unit:GetTacticalSiloAmmoCount() <= 0 then
+                    return false
+                end
+            else
+                if unit:GetNukeSiloAmmoCount() <= 0 then
+                    return false
+                end
+            end
+        end
+
+        return self.WeaponCanFire
+    end,
+
     -- Present for Overcharge to hook into
     OnWeaponFired = function(self)
     end,
 
     -- I think this is triggered whenever the state changes to anything but DeadState
     OnEnterState = function(self)
+    
+        if not self.Dead then
+    
+            if self.WeaponWantEnabled != self.WeaponIsEnabled then
 
-        local weaponWantEnabled = self.WeaponWantEnabled
-        local weaponIsEnabled = self.WeaponIsEnabled
-        if weaponWantEnabled and not weaponIsEnabled then
-            self.WeaponIsEnabled = true
-            self:SetWeaponEnabled(true)
-        elseif not weaponWantEnabled and weaponIsEnabled then
-            local bp = self.bp
-            if bp.CountedProjectile ~= true then
-                self.WeaponIsEnabled = false
-                self:SetWeaponEnabled(false)
+                self:SetWeaponEnabled(self.WeaponWantEnabled)
+
             end
+
+            if self.AimControl then -- only turreted weapons have AimControl
+		
+                if self.WeaponAimEnabled != self.WeaponAimWantEnabled then
+
+                    self:AimManipulatorSetEnabled(self.WeaponAimWantEnabled)
+
+                end
+
+            end
+            
         end
 
-        local weaponAimWantEnabled = self.WeaponAimWantEnabled
-        local weaponAimIsEnabled = self.WeaponAimIsEnabled
-        if weaponAimWantEnabled and not weaponAimIsEnabled then
-            self.WeaponAimIsEnabled = true
-            self:AimManipulatorSetEnabled(true)
-        elseif not weaponAimWantEnabled and weaponAimIsEnabled then
-            self.WeaponAimIsEnabled = false
-            self:AimManipulatorSetEnabled(false)
-        end
     end,
 
     -- WEAPON STATES:
@@ -1159,4 +1182,159 @@ BareBonesWeapon = Class(BareBonesWeapon_QUIET) {
         end
     end,
 
+}
+
+OverchargeWeapon = Class(DefaultProjectileWeapon) {
+    NeedsUpgrade = false,
+    EnergyRequired = nil,
+
+    HasEnergy = function(self)
+        return self.Brain:GetEconomyStored('ENERGY') >= self.EnergyRequired
+    end,
+
+    CanOvercharge = function(self)
+        local unit = self.unit
+        return not unit:IsOverchargePaused() and self:HasEnergy() and not
+            self:UnitOccupied() and not
+            unit:IsUnitState('Enhancing') and not
+            unit:IsUnitState('Upgrading')
+    end,
+
+    StartEconomyDrain = function(self) -- OverchargeWeapon drains energy on impact
+    end,
+
+    UnitOccupied = function(self)
+        local unit = self.unit
+        return (unit:IsUnitState('Upgrading') and not unit:IsUnitState('Enhancing')) or
+            -- Don't let us shoot if we're upgrading, unless it's an enhancement task
+            unit:IsUnitState('Building') or
+            unit:IsUnitState('Repairing') or
+            unit:IsUnitState('Reclaiming')
+    end,
+
+    IsEnabled = function(self)
+        return self.enabled
+    end,
+    
+    PauseOvercharge = function(self)
+        local unit = self.unit
+        if not unit:IsOverchargePaused() then
+            unit:SetOverchargePaused(true)
+            self:OnDisableWeapon()
+            WaitSeconds(1/self:GetBlueprint().RateOfFire)
+            self.unit:SetOverchargePaused(false)
+        end
+    end,
+
+    OnCreate = function(self)
+        DefaultProjectileWeapon.OnCreate(self)
+        self.EnergyRequired = self.bp.EnergyRequired
+        self:SetWeaponEnabled(false)
+        local aimControl = self.AimControl
+        aimControl:SetEnabled(false)
+        aimControl:SetPrecedence(0)
+        self.unit:SetOverchargePaused(false)
+    end,
+
+    OnGotTargetA = function(self)
+        if self:CanOvercharge() then
+            DefaultProjectileWeapon.OnGotTarget(self)
+        else
+            self:OnDisableWeapon()
+        end
+    end,
+    
+    OnFire = function(self)
+        if self:CanOvercharge() then
+            DefaultProjectileWeapon.OnFire(self)
+        else
+            self:OnDisableWeapon()
+        end
+    end,
+
+    IsEnabled = function(self)
+        return self.enabled
+    end,
+
+    OnEnableWeapon = function(self)
+        if self:BeenDestroyed() then return end
+        DefaultProjectileWeapon.OnEnableWeapon(self)
+        local unit = self.unit
+        local weaponLabel = self.DesiredWeaponLabel
+        local aimControl = self.AimControl
+        self:SetWeaponEnabled(true)
+        if self:CanOvercharge() then
+            unit:SetWeaponEnabledByLabel(weaponLabel, false)
+        end
+        unit:BuildManipulatorSetEnabled(false)
+        aimControl:SetEnabled(true)
+        aimControl:SetPrecedence(20)
+        if unit.BuildArmManipulator then
+            unit.BuildArmManipulator:SetPrecedence(0)
+        end
+        aimControl:SetHeadingPitch( self.unit:GetWeaponManipulatorByLabel(weaponLabel):GetHeadingPitch() )
+        self.enabled = true
+    end,
+    
+    OnDisableWeapon = function(self)
+        local unit = self.unit
+        if self.unit:BeenDestroyed() then return end
+        self:SetWeaponEnabled(false)
+        local weaponLabel = self.DesiredWeaponLabel
+        local aimControl = self.AimControl
+        if not self:UnitOccupied() then
+            unit:SetWeaponEnabledByLabel(weaponLabel, true)
+        end
+        unit:BuildManipulatorSetEnabled(false)
+        aimControl:SetEnabled(false)
+        aimControl:SetPrecedence(0)
+        if unit.BuildArmManipulator then
+            unit.BuildArmManipulator:SetPrecedence(0)
+        end
+        unit:GetWeaponManipulatorByLabel(weaponLabel):SetHeadingPitch(aimControl:GetHeadingPitch())
+        self.enabled = false
+    end,
+
+    OnWeaponFired = function(self)
+        DefaultProjectileWeapon.OnWeaponFired(self)
+        self:ForkThread(self.PauseOvercharge)
+    end,
+    
+    IdleState = State(DefaultProjectileWeapon.IdleState) {    
+        OnGotTarget = function(self)
+            if self:CanOvercharge() then
+                DefaultProjectileWeapon.IdleState.OnGotTarget(self)
+            else
+                ForkThread(self.WaitUntilCanOCThread, self)
+            end
+        end,
+
+        WaitUntilCanOCThread = function(self)
+            while self.enabled and not self:CanOvercharge() do
+                WaitSeconds(0.1)
+            end
+
+            if self.enabled then
+                self:OnGotTarget()
+            end
+        end,
+
+        OnFire = function(self)
+            if self:CanOvercharge() then
+                ChangeState(self, self.RackSalvoFiringState)
+            else
+                self:OnDisableWeapon()
+            end
+        end,
+    },
+    
+    RackSalvoFireReadyState = State(DefaultProjectileWeapon.RackSalvoFireReadyState) {
+        OnFire = function(self)
+            if self:CanOvercharge() then
+                DefaultProjectileWeapon.RackSalvoFireReadyState.OnFire(self)
+            else
+                self:OnDisableWeapon()
+            end
+        end,
+    },              
 }

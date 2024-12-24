@@ -989,10 +989,6 @@ do
 		'urb2303',
 		'xsb2303',
 		'ueb2303',
-		'eal0001',
-		'eel0001',
-		'erl0001',
-		'esl0001',
 	};
 	-- This is temperory until all units are fixed correctly within the Blueprint
 	-- Will be removed once all units are fixed

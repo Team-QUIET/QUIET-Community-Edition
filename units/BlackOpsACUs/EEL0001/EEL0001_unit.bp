@@ -1337,10 +1337,7 @@ Intel = {
             DamageType = 'Overcharge',
 			
             DisplayName = 'Overcharge Cannon',
-			
-            EnergyChargeForFirstShot = false,
-
-            EnergyDrainPerSecond = 1500,
+            
             EnergyRequired = 4500,
 			
             FireTargetLayerCapsTable = {
