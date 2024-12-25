@@ -1,71 +1,79 @@
 UnitBlueprint {
     Merge = true,
-    BlueprintId = "urs0103",
-
+    BlueprintId = "ues0103",
+	
     Weapon = {
+	
+		-- Single Deck Gun --
         {
             AboveWaterTargetsOnly = true,
+
             Audio = {
-                BarrelLoop  = Sound { Bank = 'URS', Cue = 'URS_Turret_Sml_Loop', LodCutoff = 'Weapon_LodCutoff'},
-                BarrelStart = Sound { Bank = 'URS', Cue = 'URS_Turret_Sml_Start', LodCutoff = 'Weapon_LodCutoff'},
-                Fire        = Sound { Bank = 'URSWeapon', Cue = 'URS0103_Cannon', LodCutoff = 'Weapon_LodCutoff'},
+                BarrelLoop  = Sound { Bank = 'UES', Cue = 'UES_Turret_Sml_Loop', LodCutoff = 'Weapon_LodCutoff' },
+                BarrelStart = Sound { Bank = 'UES', Cue = 'UES_Turret_Sml_Start', LodCutoff = 'Weapon_LodCutoff' },
+                Fire        = Sound { Bank = 'UESWeapon', Cue = 'UES0103_Cannon_Sgl', LodCutoff = 'Weapon_LodCutoff' },
             },
-            BallisticArc = 'RULEUBA_LowArc',
+
+            BallisticArc = 'RULEUBA_None',
+
             CollideFriendly = false,
 			
-            Damage = 170,
+            Damage = 180,
             DamageRadius = 1,
             DamageType = 'Normal',
 			
-            DisplayName = 'Proton Cannon',
+            DisplayName = 'Gauss Cannon',
 			
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Seabed',
             },
 			
-            FiringRandomness = 0.1,
+            FiringRandomness = 0.2,
 			
-            Label = 'ProtonCannon',
+            Label = 'MainGun',
 			
             MaxRadius = 36,
 
-            MuzzleVelocity = 40,
+            MuzzleVelocity = 45,
 			
-            ProjectileId = '/projectiles/CDFProtonCannon04/CDFProtonCannon04_proj.bp',
+            ProjectileId = '/projectiles/TDFGauss01/TDFGauss01_proj.bp',
             ProjectileLifetime = 1,
-			
+
             RackBones = {
                 {
-                    MuzzleBones = {'Front_Muzzle'},
+                    MuzzleBones = {'Front_Turret_Muzzle'},
                     RackBone = 'Front_Turret_Barrel',
                 },
             },
 
-            RackRecoilDistance = -0.5,
+            RackRecoilDistance = -0.75,
 
             RangeCategory = 'UWRC_DirectFire',
 			
-            RateOfFire = 10/20,		-- 85 DPS Surface
+            RateOfFire = 10/20,		
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 155,
 			
-            TargetCheckInterval = 0.5,
+            TargetCheckInterval = 1,
+			
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'NAVAL MOBILE',
+                'MOBILE',
+                'DEFENSE',
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
+			
             TrackingRadius = 1.1,
 			
-            TurretBoneMuzzle = 'Front_Muzzle',
+            TurretBoneMuzzle = 'Front_Turret_Muzzle',
             TurretBonePitch = 'Front_Turret_Barrel',
             TurretBoneYaw = 'Front_Turret',
 			
-            TurretPitch = 0,
-            TurretPitchRange = 45,
-            TurretPitchSpeed = 60,
+            TurretPitch = 10,
+            TurretPitchRange = 40,
+            TurretPitchSpeed = 40,
 			
             TurretYaw = 0,
             TurretYawRange = 160,
@@ -73,57 +81,66 @@ UnitBlueprint {
 			
             Turreted = true,
         },
+		
+		-- T1 level UEF AA Railgun --
         {
             AlwaysRecheckTarget = true,
-
+			
             Audio = {
-                Fire = Sound { Bank = 'URSWeapon', Cue = 'URS0201_Cannon_Electron', LodCutoff = 'Weapon_LodCutoff' },
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB2104_Railgun', LodCutoff = 'Weapon_LodCutoff' },
             },
 
             BallisticArc = 'RULEUBA_None',
+			
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 5.25,
+            Damage = 10.5,
+			DamageFriendly = false,
             DamageType = 'Normal',
 			
-            DisplayName = 'Electron Autocannon',
+            DisplayName = 'Linked Railgun',
 			
             FireTargetLayerCapsTable = {
                 Water = 'Air',
             },
 			
-            FiringTolerance = 1,
+            FiringTolerance = 0.1,
 			
             Label = 'AAGun',
-            
-            LeadTarget = true,
+			
+			LeadTarget = true,
 			
             MaxRadius = 36,
 			
-            MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 45,
-            
-            ProjectileId = '/projectiles/CAAAutocannon01/CAAAutocannon01_proj.bp',
-			ProjectileLifetimeUsesMultiplier = 1.25,
-            ProjectilesPerOnFire = 1,		
+			
+            ProjectileId = '/projectiles/TAARailgun01/TAARailgun01_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 1.25,
+            ProjectilesPerOnFire = 1,
 
             RackBones = {
                 {
-                    MuzzleBones = {
-                        'Back_Turret_Muzzle01',
-                        'Back_Turret_Muzzle02',
-                        'Back_Turret_Muzzle03',
-                        'Back_Turret_Muzzle04',
-                    },
-                    RackBone = 'Back_Turret_Barrel',
+                    MuzzleBones = {'Back_Turret_Muzzle01'},
+                    RackBone = 'Back_Turret_Barrel01',
+                },
+                {
+                    MuzzleBones = {'Back_Turret_Muzzle02'},
+                    RackBone = 'Back_Turret_Barrel02',
                 },
             },
+
+            RackFireTogether = true,
+			
+            RackRecoilDistance = -0.5,
+
+            RackSlavedToTurret = true,
 			
             RangeCategory = 'UWRC_AntiAir',
 			
-            RateOfFire = 10/10,	
+            RateOfFire = 10/10,
+			
             TargetCheckInterval = 0.6,
 			
             TargetPriorities = {
@@ -135,12 +152,13 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			
             TrackingRadius = 1.2,
 			
-            TurretBoneMuzzle = 'Back_Turret_Barrel',
-            TurretBonePitch = 'Back_Turret_Barrel',
-            TurretBoneYaw = 'Back_Turret_AA',
-
+            TurretBoneMuzzle = 'Back_Turret_Muzzle01',
+            TurretBonePitch = 'Back_Turret_Barrel01',
+            TurretBoneYaw = 'Back_Turret',
+			
             TurretPitch = 45,
             TurretPitchRange = 60,
             TurretPitchSpeed = 90,
@@ -148,8 +166,8 @@ UnitBlueprint {
             TurretYaw = 0,
             TurretYawRange = 180,
             TurretYawSpeed = 120,
-			
-            Turreted = true,
+            
+			Turreted = true,
         },
     },
 }

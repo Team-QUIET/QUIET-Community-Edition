@@ -3,15 +3,62 @@ UnitBlueprint {
     BlueprintId = "xas0204",
 	
     Defense = {
-        MissileTorpDestroy = { AttachBone = {'XAS0204'}, Radius = 3.3, RedirectRateOfFire = 23, ProjectileCategories = {'TORPEDO'} },
+        -- Next QUIET Update will actually remove this in the Blueprint for now we can just disable it
+        MissileTorpDestroy = { AttachBone = {'XAS0204'}, Radius = 0, RedirectRateOfFire = 0, ProjectileCategories = {'TORPEDO'} },
+        ArmorType = 'Normal',
+        Health = 1650,
+        MaxHealth = 1650,
+        RegenRate = 0,
+        SubThreatLevel = 27.5,
     },
 	
+    Economy = {
+        BuildCostEnergy = 13500,
+        BuildCostMass = 1350,
+        BuildTime = 6000,
+    },
+	
+    Intel = {
+		FreeIntel = true,
+		RadarStealth = true,
+        SonarRadius = 60,
+        VisionRadius = 32,
+        WaterVisionRadius = 44,
+    },
+	
+    Physics = {
+        BackUpDistance = 8,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Sub = true,
+        },
+        CatchUpAcc = 10,
+        DragCoefficient = 0.2,
+        Elevation = -3,
+        MaxAcceleration = 2,
+        MaxBrake = 2,
+        MaxSpeed = 4.5,
+        MaxSpeedReverse = 4.5,
+        MaxSteerForce = 5,
+        MeshExtentsX = 0.6,
+        MeshExtentsY = 0.65,
+        MeshExtentsZ = 2.5,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_SurfacingSub',
+        TurnRadius = 8,
+        TurnRate = 50,
+    },
+
     Weapon = {
         {
+            Audio = {
+                Fire = Sound {Bank = 'UASWeapon',Cue = 'UAS0203_Torpedo',LodCutoff = 'Weapon_LodCutoff'},
+            },
+
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 			
-            Damage = 135,
+            Damage = 400,
             DamageType = 'Normal',
 			
             DisplayName = 'Chrono Torpedo',
@@ -21,38 +68,63 @@ UnitBlueprint {
                 Water = 'Seabed|Sub|Water',
             },
 			
-            FiringTolerance = 15,
+            FiringTolerance = 2,
 			
             Label = 'Torpedo',
 			
             MaxRadius = 48,
 			
-            MuzzleSalvoDelay = 0.9,
-            MuzzleSalvoSize = 2,
-            MuzzleVelocity = 2,
-			
+            MuzzleSalvoDelay = 0.6,
+            MuzzleSalvoSize = 4,
+            MuzzleVelocity = 5,
+            ProjectileId = '/projectiles/AANTorpedo01/AANTorpedo01_proj.bp',
             ProjectileLifetime = 7,
-
-            RackSalvoReloadTime = 1,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'Projectile_Front_Right',
+                        'Projectile_Front_Left',
+                        'Projectile_Right_Center02',
+                        'Projectile_Left_Center02',
+                    },
+                    RackBone = 'Projectile_Front_Right',
+                },
+            },
+            
+            RackSalvoReloadTime = 3,
 
             RangeCategory = 'UWRC_AntiNavy',
 			
-            RateOfFire = 1,	  
+            RateOfFire = 10/10,	
 			
             SlavedToBody = true,
-            SlavedToBodyArcRange = 20,
+            SlavedToBodyArcRange = 10,
 			
-            TargetCheckInterval = 2,
+            TargetCheckInterval = 0.5,
 			
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'SUBMERSIBLE',
-				'MOBILE',
-                'DEFENSE',
-                'ALLUNITS',
+                "SUBMERSIBLE",
+                "TECH2 LIGHTBOAT",
+                "(STRUCTURE * DEFENSE - ANTIAIR)",
+                "(TECH2 * MOBILE * NAVAL - CRUISER)",
+                "ANTINAVY",
+                "MOBILE",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
             TrackingRadius = 1.1,
+            TurretDualManipulators = false,
+            TurretPitch = 0,
+            TurretPitchRange = 0,
+            TurretPitchSpeed = 0,
+            TurretYaw = 0,
+            TurretYawRange = 0,
+            TurretYawSpeed = 0,
+            Turreted = false,
+            WeaponCategory = "Anti Navy",
         },
+
     },
 }

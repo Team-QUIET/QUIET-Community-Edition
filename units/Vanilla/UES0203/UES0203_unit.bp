@@ -1,0 +1,146 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "ues0203",
+
+    Intel = {
+		FreeIntel = true,
+		RadarStealth = false,
+        SonarRadius = 44,
+        VisionRadius = 24,
+        WaterVisionRadius = 28,
+    },
+	
+    Weapon = {
+        {
+            Audio = {
+                Fire            = Sound { Bank = 'UESWeapon', Cue = 'UES0203_Torpedo', LodCutoff = 'Weapon_LodCutoff' },
+                FireUnderWater  = Sound { Bank = 'UESWeapon', Cue = 'UES0203_Torpedo', LodCutoff = 'Weapon_LodCutoff' },                
+            },
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 200,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Angler Torpedo',
+
+            FireTargetLayerCapsTable = {
+                Sub = 'Seabed|Sub|Water',
+                Water = 'Seabed|Sub|Water',
+            },
+			
+            FiringTolerance = 1,
+			
+            Label = 'Torpedo',
+			
+            MaxRadius = 32,
+			
+            MuzzleSalvoDelay = 1,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 5,
+            ProjectileId = '/projectiles/TANAnglerTorpedo01/TANAnglerTorpedo01_proj.bp',
+            ProjectileLifetime = 7,
+            ProjectilesPerOnFire = 2,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Projectile01'},
+                    RackBone = 'Projectile01',
+                },
+                {
+                    MuzzleBones = {'Projectile02'},
+                    RackBone = 'Projectile02',
+                },
+            },
+            
+            RackSalvoReloadTime = 3, 
+
+            RangeCategory = 'UWRC_AntiNavy',
+			
+            RateOfFire = 10/40,
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 10,
+			
+            TargetCheckInterval = 1,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                "SUBMERSIBLE",
+                "TECH2 LIGHTBOAT",
+                "(STRUCTURE * DEFENSE - ANTIAIR)",
+                "(TECH2 * MOBILE * NAVAL - CRUISER)",
+                "ANTINAVY",
+                "MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
+            TrackingRadius = 1,
+            Turreted = false,
+            WeaponCategory = "Anti Navy",
+        },
+        {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB2101_Cannon_Sgl', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 40,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Light Plasma Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 2,
+			
+            Label = 'PlasmaGun',
+			
+            MaxRadius = 30,
+
+            MuzzleVelocity = 30,
+			
+            ProjectileId = '/projectiles/TDFPlasma01/TDFPlasma01_proj.bp',
+            ProjectileLifetime = 1.6,
+
+            RackBones = {
+                {
+                    MuzzleBones = { 'Turret_Muzzle' },
+                    RackBone = 'Turret_Barrel',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/20,		-- 20 DPS Surface
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 90,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+			
+            Turreted = true,
+        },
+    },
+}

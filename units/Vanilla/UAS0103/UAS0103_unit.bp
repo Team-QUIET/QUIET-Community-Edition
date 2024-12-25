@@ -51,7 +51,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_DirectFire',
 			
-            RateOfFire = 1,	-- 45 DPS Surface
+            RateOfFire = 10/10,	-- 45 DPS Surface
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 145,
@@ -76,7 +76,7 @@ UnitBlueprint {
 			
             TurretYaw = 0,
             TurretYawRange = 150,
-            TurretYawSpeed = 48,
+            TurretYawSpeed = 75,
 			
             Turreted = true,
         },
@@ -101,6 +101,8 @@ UnitBlueprint {
             },
 			
             FiringRandomness = 0.1,
+
+            RangeCategory = 'UWRC_DirectFire',
 			
             HeadingArcCenter = 180,
             HeadingArcRange = 150,
@@ -124,7 +126,7 @@ UnitBlueprint {
 
             RackRecoilDistance = -1,
 			
-            RateOfFire = 1,		-- another 45 DPS Surface
+            RateOfFire = 10/10,		-- another 45 DPS Surface
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 145,
@@ -149,7 +151,7 @@ UnitBlueprint {
 			
             TurretYaw = 0,
             TurretYawRange = 150,
-            TurretYawSpeed = 48,
+            TurretYawSpeed = 75,
 			
             Turreted = true,
         },
@@ -174,15 +176,15 @@ UnitBlueprint {
                 Water = 'Seabed|Sub|Water',
             },
 			
-            FiringTolerance = 10,
+            FiringTolerance = 1,
 			
             Label = 'AntiTorpedo',
 			
             MaxRadius = 32,
             MinRadius = 5,
 
-            MuzzleSalvoDelay = 0,
-            MuzzleVelocity = 30,
+            MuzzleSalvoDelay = 0.275,
+            MuzzleVelocity = 17,
 			
             ProjectileId = '/projectiles/AIMAntiTorpedo01/AIMAntiTorpedo01_proj.bp',
             ProjectileLifetime = 3,
@@ -196,7 +198,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_Countermeasure',
 			
-            RateOfFire = 10/67,
+            RateOfFire = 10/80,
 			
             TargetCheckInterval = 1.0,
 			
@@ -204,8 +206,7 @@ UnitBlueprint {
             TargetRestrictOnlyAllow = 'TORPEDO',
             TargetType = 'RULEWTT_Projectile',
             
-            WeaponRepackTimeout = 0,
+            WeaponRepackTimeout = 0.2, -- Careful when using this variable, as the Timeout resets when the weapon switches targets
         },
     },
-	
 }

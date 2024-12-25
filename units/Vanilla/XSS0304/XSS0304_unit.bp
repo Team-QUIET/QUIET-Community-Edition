@@ -3,6 +3,203 @@ UnitBlueprint {
     BlueprintId = "xss0304",
 	
     Defense = {
-        MissileTorpDestroy = { AttachBone = {'Projectile01','Exhaust01'}, Radius = 3.3, RedirectRateOfFire = 20, ProjectileCategories = {'TORPEDO'} },
+        -- Next QUIET Update will actually remove this in the Blueprint for now we can just disable it
+        MissileTorpDestroy = { AttachBone = {'Projectile01','Exhaust01'}, Radius = 0, RedirectRateOfFire = 0, ProjectileCategories = {'TORPEDO'} },
+    
+        ArmorType = 'Normal',
+        Health = 2750,
+        MaxHealth = 2750,
+        RegenRate = 6,
+
+        SubThreatLevel = 49,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 45000,
+        BuildCostMass = 4000,
+        BuildTime = 8000,
+    },
+	
+    Intel = {
+		FreeIntel = true,
+		RadarStealth = true,
+		SonarStealth = false,
+        SonarRadius = 88,
+        VisionRadius = 32,
+        WaterVisionRadius = 56,
+    },
+	
+    Physics = {
+        BackUpDistance = 8,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Sub = true,
+        },
+        CatchUpAcc = 10,
+		DiveSurfaceSpeed = 3,
+        DragCoefficient = 0.2,
+        Elevation = -3,
+        MaxAcceleration = 2,
+        MaxBrake = 2,
+        MaxSpeed = 5,
+        MaxSpeedReverse = 5,
+        MaxSteerForce = 5,
+        MeshExtentsX = 0.6,
+        MeshExtentsY = 0.65,
+        MeshExtentsZ = 2.5,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_SurfacingSub',
+        TurnRadius = 8,
+        TurnRate = 65,
+    },
+	
+    Weapon = {
+
+        {
+            advancedTracking = true,
+            
+            Audio = {
+                Fire            = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0203_Uall_Torpedo', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 1350,
+            DamageType = 'Normal',
+
+            DisplayName = 'Uall Cavitation Torpedo',
+			
+            FireTargetLayerCapsTable = {
+                Sub = 'Seabed|Sub|Water',
+                Water = 'Seabed|Sub|Water',
+            },
+			
+			FiringRandomness = 22,
+            FiringTolerance = 15,
+			
+            Label = 'Torpedo',
+			
+            MaxRadius = 70,
+			
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 45,
+			MuzzleVelocityRandom = 1,
+            NotExclusive = true,
+            ProjectileId = '/projectiles/SANUallCavitationTorpedo03/SANUallCavitationTorpedo03_proj.bp', -- fastest torpedo , highest damage
+            ProjectileLifetime = 8,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Projectile01','Projectile02','Projectile03'},
+                    RackBone = 'Projectile02',
+                },
+            },
+            
+            RackSalvoReloadTime = 3,
+
+            RangeCategory = 'UWRC_AntiNavy',
+			
+            RateOfFire = 10/10,
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                "SUBMERSIBLE",
+                "TECH2 LIGHTBOAT",
+                "(STRUCTURE * DEFENSE - ANTIAIR)",
+                "(TECH2 * MOBILE * NAVAL - CRUISER)",
+                "ANTINAVY",
+                "MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
+			TrackingRadius = 1.2,
+            WeaponCategory = "Anti Navy",
+        },
+
+        {
+            AboveWaterFireOnly = true,
+            AlwaysRecheckTarget = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0304_Losaare_AA', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 27.5,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Losaare AA Autocannon',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+			
+            FiringRandomness = 0,
+            FiringTolerance = 0.2,
+			
+            Label = 'AAAutoCannon',
+			
+			LeadTarget = true,
+			
+            MaxRadius = 55,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 4,
+            MuzzleVelocity = 90,
+            NotExclusive = true,
+            ProjectileId = '/projectiles/SAALosaareAutoCannon03/SAALosaareAutoCannon03_proj.bp',
+			ProjectileLifetime = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Front_Turret_Muzzle01','Front_Turret_Muzzle02'},
+                    RackBone = 'Front_Turret_Barrel01',
+                },
+            },
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 10/5,
+			
+            TargetCheckInterval = 1,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+				"AIR MOBILE TECH3 BOMBER",
+                "AIR MOBILE BOMBER",
+                "AIR MOBILE GROUNDATTACK",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE",
+                "ALLUNITS",
+            },
+			
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			TargetRestrictOnlyAllow = 'AIR',
+			
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Front_Turret_Muzzle01',
+            TurretBonePitch = 'Front_Turret_Barrel01',
+            TurretBoneYaw = 'Front_Turret',
+
+            TurretPitch = 15,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 80,
+			
+            Turreted = true,
+            WeaponCategory = "Anti Air",
+        },
     },
 }

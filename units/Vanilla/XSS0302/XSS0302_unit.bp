@@ -1,0 +1,704 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "xss0302",
+	
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 49000,
+        MaxHealth = 49000,
+        RegenRate = 12,
+        AirThreatLevel = 28,
+        SurfaceThreatLevel = 225,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 54000,
+        BuildCostMass = 9000,
+        BuildRate = 600,
+        BuildTime = 52500,
+    },
+	
+    Intel = {
+		FreeIntel = true,
+        RadarRadius = 48,
+        SonarRadius = 20,
+        VisionRadius = 50,
+        WaterVisionRadius = 48,
+    },
+	
+    Interface = {
+        HelpText = 'Battleship',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 7.5,
+    LifeBarSize = 4,
+	
+    Physics = {
+        BackUpDistance = 10,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Water = true,
+        },
+        CatchUpAcc = 10,
+        DragCoefficient = 0.2,
+        MaxAcceleration = 1.5,
+        MaxBrake = 1.5,
+        MaxSpeed = 3.5,
+        MaxSpeedReverse = 3.5,
+        MaxSteerForce = 5,
+        MeshExtentsX = 2.2,
+        MeshExtentsY = 2.2,
+        MeshExtentsZ = 8,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Water',
+        TurnRadius = 25,
+        TurnRate = 30,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                BarrelLoop  = Sound { Bank = 'UAS', Cue = 'UAS_Turret_Lrg_Loop', LodCutoff = 'WeaponBig_LodCutoff' },
+                BarrelStart = Sound { Bank = 'UAS', Cue = 'UAS_Turret_Lrg_Start', LodCutoff = 'WeaponBig_LodCutoff' },
+                Fire        = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0302_Quarnon_Cannon', LodCutoff = 'WeaponBig_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 600,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Quarnon Cannon',
+
+            EnergyRequired = 189,
+            EnergyDrainPerSecond = 135, 
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0.25,
+            FiringTolerance = 2,
+			
+            HeadingArcCenter = 0,
+            HeadingArcRange = 160,
+			
+            Label = 'Turret',
+			
+            MaxRadius = 128,
+
+            MuzzleChargeDelay = 0,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 40,
+            ProjectileId = "/projectiles/SDFHeavyQuarnonCannon01/SDFHeavyQuarnonCannon01_proj.bp",
+            ProjectilesPerOnFire = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Front_Turret_Muzzle01'},
+                    RackBone = 'Front_Turret_Barrel01',
+                },
+            },
+
+            RackRecoilDistance = -4,
+            RackRecoilReturnSpeed = 2,
+            
+            RackSalvoReloadTime = 0,
+
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/40,	
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 155,
+			
+            TargetCheckInterval = 2,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'NAVAL MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Front_Turret_Muzzle01',
+            TurretBonePitch = 'Front_Turret_Barrel01',
+            TurretBoneYaw = 'Front_Turret01',
+
+            TurretPitch = 10,
+            TurretPitchRange = 25,
+            TurretPitchSpeed = 10,
+			
+            TurretYaw = 0,
+            TurretYawRange = 160,
+            TurretYawSpeed = 45,
+			
+            Turreted = true,
+            WeaponCategory = "Direct Fire Naval",
+        },
+		
+        {
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                BarrelLoop  = Sound { Bank = 'UAS', Cue = 'UAS_Turret_Lrg_Loop', LodCutoff = 'WeaponBig_LodCutoff' },
+                BarrelStart = Sound { Bank = 'UAS', Cue = 'UAS_Turret_Lrg_Start', LodCutoff = 'WeaponBig_LodCutoff' },
+                Fire        = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0302_Quarnon_Cannon', LodCutoff = 'WeaponBig_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+            
+            Damage = 600,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+            
+            DisplayName = 'Quarnon Cannon',
+
+            EnergyRequired = 189,
+            EnergyDrainPerSecond = 135, 
+            
+            FireTargetLayerCapsTable = {
+                Water = 'Land|Water|Seabed',
+            },
+            FiringRandomness = 0.25,
+            FiringTolerance = 2,
+            
+            HeadingArcCenter = 0,
+            HeadingArcRange = 160,
+            
+            Label = 'Turret',
+            
+            MaxRadius = 128,
+            
+            PrefersPrimaryWeaponTarget = true,
+            MuzzleChargeDelay = 0,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 40,
+            ProjectileId = "/projectiles/SDFHeavyQuarnonCannon01/SDFHeavyQuarnonCannon01_proj.bp",
+            ProjectilesPerOnFire = 1,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Front_Turret_Muzzle02'},
+                    RackBone = 'Front_Turret_Barrel02',
+                },
+            },
+
+            RackRecoilDistance = -4,
+            RackRecoilReturnSpeed = 2,
+            
+            RackSalvoReloadTime = 0, 
+
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+			RateOfFire = 10/40,
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 155,
+			
+            TargetCheckInterval = 2,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'NAVAL MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Front_Turret_Muzzle02',
+            TurretBonePitch = 'Front_Turret_Barrel02',
+            TurretBoneYaw = 'Front_Turret02',
+
+            TurretPitch = 10,
+            TurretPitchRange = 25,
+            TurretPitchSpeed = 10,
+			
+            TurretYaw = 0,
+            TurretYawRange = 160,
+            TurretYawSpeed = 45,
+			
+            Turreted = true,
+            WeaponCategory = "Direct Fire Naval",
+        },
+		
+        {
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                BarrelLoop  = Sound { Bank = 'UAS', Cue = 'UAS_Turret_Lrg_Loop', LodCutoff = 'WeaponBig_LodCutoff' },
+                BarrelStart = Sound { Bank = 'UAS', Cue = 'UAS_Turret_Lrg_Start', LodCutoff = 'WeaponBig_LodCutoff' },
+                Fire        = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0302_Quarnon_Cannon', LodCutoff = 'WeaponBig_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 600,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Quarnon Cannon',
+
+            EnergyRequired = 189,
+            EnergyDrainPerSecond = 135, 
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0.25,
+            FiringTolerance = 2,
+            
+            HeadingArcCenter = 180,
+            HeadingArcRange = 165,
+			
+            Label = 'Turret',
+			
+            MaxRadius = 128,
+
+            PrefersPrimaryWeaponTarget = true,
+            MuzzleChargeDelay = 0,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 40,
+            ProjectileId = "/projectiles/SDFHeavyQuarnonCannon01/SDFHeavyQuarnonCannon01_proj.bp",
+            ProjectilesPerOnFire = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Back_Turret_Muzzle01'},
+                    RackBone = 'Back_Turret_Barrel01',
+                },
+            },
+
+            RackRecoilDistance = -4,
+            RackRecoilReturnSpeed = 2,
+            
+            RackSalvoReloadTime = 0,
+
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/40,	-- 200 DPS Surface
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 155,
+            
+            TargetCheckInterval = 2,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'NAVAL MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Back_Turret_Muzzle01',
+            TurretBonePitch = 'Back_Turret_Barrel01',
+            TurretBoneYaw = 'Back_Turret01',
+
+            TurretPitch = 10,
+            TurretPitchRange = 25,
+            TurretPitchSpeed = 10,
+			
+            TurretYaw = 0,
+            TurretYawRange = 160,
+            TurretYawSpeed = 45,
+			
+            Turreted = true,
+            WeaponCategory = "Direct Fire Naval",
+        },
+		
+        {
+            AimsStraightOnDisable = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0302_Missile_Defense', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CollideFriendly = false,
+
+            Damage = 2,
+            DamageType = 'Normal',
+
+            DisplayName = 'Ele-athrun Tactical Missile Defense',
+
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+            FiringTolerance = 1,
+
+            HeadingArcCenter = 90,
+            HeadingArcRange = 100,
+			
+            Label = 'AntiMissile',
+			
+            MaxRadius = 44,
+
+            MuzzleVelocity = 25,
+
+            NotExclusive = true,
+			
+            ProjectileId = '/projectiles/SIMAntiMissile02/SIMAntiMissile02_proj.bp',
+            ProjectileLifetime = 2,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Left_Turret_Muzzle01'},
+                    RackBone = 'Left_Turret_Barrel01',
+                },
+            },
+
+            RackSalvoSize = 1,
+			
+            RangeCategory = 'UWRC_Countermeasure',
+			
+            RateOfFire = 10/10,
+			
+            TargetCheckInterval = 0.5,
+            TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
+            TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',
+            TargetType = 'RULEWTT_Projectile',
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'Left_Turret_Muzzle01',
+            TurretBonePitch = 'Left_Turret_Barrel01',
+            TurretBoneYaw = 'Left_Turret01',
+
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 720,
+			
+            Turreted = true,
+        },
+		
+        {
+            AimsStraightOnDisable = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0302_Missile_Defense', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            
+            CollideFriendly = false,
+            
+            Damage = 2,
+            DamageType = 'Normal',
+            
+            DisplayName = 'Ele-athrun Tactical Missile Defense',
+            
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+            
+            FiringTolerance = 5,
+            
+            HeadingArcCenter = -90,
+            HeadingArcRange = 100,
+			
+            Label = 'AntiMissile',
+			
+            MaxRadius = 44,
+
+            MuzzleVelocity = 25,
+
+            NotExclusive = true,
+			
+            ProjectileId = '/projectiles/SIMAntiMissile02/SIMAntiMissile02_proj.bp',
+            ProjectileLifetime = 2,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Right_Turret_Muzzle03'},
+                    RackBone = 'Right_Turret_Barrel02',
+                },
+            },
+			
+            RangeCategory = 'UWRC_Countermeasure',
+			
+            RateOfFire = 10/10,
+			
+            TargetCheckInterval = 0.5,
+            TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
+            TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',
+            TargetType = 'RULEWTT_Projectile',
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'Right_Turret_Muzzle03',
+            TurretBonePitch = 'Right_Turret_Barrel02',
+            TurretBoneYaw = 'Right_Turret02',
+
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 720,
+			
+            Turreted = true,
+        },
+		
+        {
+            AlwaysRecheckTarget = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0302_Olaris_AA', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 80,
+            DamageFriendly = false,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+			
+            DetonatesAtTargetHeight = true,
+			
+            DisplayName = 'Olaris AA Artillery Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+			
+            FiringRandomness = 2.5,
+            FiringTolerance = 2,
+			
+            Label = 'AntiAir',
+			
+			LeadTarget = true,
+			
+            MaxRadius = 44,
+			
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 20,
+            ProjectileId = "/projectiles/SAAOlarisAAArtillery05/SAAOlarisAAArtillery05_proj.bp",
+            ProjectileLifetimeUsesMultiplier = 1.25,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Left_Turret_Muzzle02','Left_Turret_Muzzle03'},
+                    RackBone = 'Left_Turret_Barrel02',
+                },
+            },
+
+            RackRecoilDistance = -2,
+            RackRecoilReturnSpeed = 10,
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 10/10,	
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                "AIR MOBILE TECH3 BOMBER",
+                "AIR MOBILE BOMBER",
+                "AIR MOBILE GROUNDATTACK",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TrackingRadius = 1.15,
+			
+            TurretBoneMuzzle = 'Left_Turret_Muzzle03',
+            TurretBonePitch = 'Left_Turret_Barrel02',
+            TurretBoneYaw = 'Left_Turret02',
+			
+            TurretPitch = 45,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 180,
+			
+            Turreted = true,
+            WeaponCategory = "Anti Air",
+        },
+		
+        {
+            AlwaysRecheckTarget = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0302_Olaris_AA', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 80,
+            DamageFriendly = false,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+            DetonatesAtTargetHeight = true,
+			
+            DisplayName = 'Olaris AA Artillery Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+			
+            FiringRandomness = 2.5,
+            FiringTolerance = 2,
+			
+            Label = 'AntiAir',
+			LeadTarget = true,
+			
+            MaxRadius = 44,
+			
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 20,
+            ProjectileId = "/projectiles/SAAOlarisAAArtillery05/SAAOlarisAAArtillery05_proj.bp",
+            ProjectileLifetimeUsesMultiplier = 1.25,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Right_Turret_Muzzle01','Right_Turret_Muzzle02'},
+                    RackBone = 'Right_Turret_Barrel01',
+                },
+            },
+
+            RackRecoilDistance = -2,
+            RackRecoilReturnSpeed = 10,
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 10/10,		-- 140 DPS Air
+            
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                'HIGHPRIAIR',
+                "AIR MOBILE TECH3 BOMBER",
+                "AIR MOBILE BOMBER",
+                "AIR MOBILE GROUNDATTACK",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'Right_Turret_Muzzle01',
+            TurretBonePitch = 'Right_Turret_Barrel01',
+            TurretBoneYaw = 'Right_Turret01',
+
+            TurretPitch = 45,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 180,
+			
+            Turreted = true,
+            WeaponCategory = "Anti Air",
+        },
+		
+        {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0302_Inaino_Missile', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_None',
+
+            CollideFriendly = false,
+
+            CountedProjectile = true,
+			
+            Damage = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Inaino Strategic Missile Launcher',
+			
+            EnergyDrainPerSecond = 0,
+            EnergyRequired = 0,
+			
+            FireTargetLayerCapsTable = {
+                Seabed = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 2,
+			
+            ForceSingleFire = true,
+			
+            InitialProjectileStorage = 0,
+			
+            Label = 'InainoMissiles',
+			
+            ManualFire = 1,
+			
+            MaxProjectileStorage = 5,
+			
+            MaxRadius = 1024,
+            MinRadius = 128,
+
+            MuzzleVelocity = 0,
+
+            NotExclusive = true,
+			
+            NukeInnerRingDamage = 70000,
+            NukeInnerRingRadius = 30,
+            NukeInnerRingTicks = 24,
+            NukeInnerRingTotalTime = 0,
+            NukeOuterRingDamage = 500,
+            NukeOuterRingRadius = 40,
+            NukeOuterRingTicks = 20,
+            NukeOuterRingTotalTime = 0,
+			
+            NukeWeapon = true,
+			
+            ProjectileId = '/projectiles/SIFInainoStrategicMissile01/SIFInainoStrategicMissile01_proj.bp',
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Projectile01'},
+                    RackBone = 'Projectile01',
+                },
+            },
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 10/10,
+			
+            TargetCheckInterval = 0.5,
+            TargetRestrictDisallow = 'UNTARGETABLE',
+        },
+		
+    },
+	
+}
