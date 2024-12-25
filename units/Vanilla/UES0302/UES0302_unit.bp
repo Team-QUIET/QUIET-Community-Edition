@@ -86,6 +86,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 30,
             ProjectileId = "/projectiles/TDFGauss03/TDFGauss03_proj.bp",
+            ProjectileLifetimeUsesMultiplier = 1.5,
             ProjectilesPerOnFire = 3,
 
             RackBones = {
@@ -190,6 +191,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 30,
             ProjectileId = "/projectiles/TDFGauss03/TDFGauss03_proj.bp",
+            ProjectileLifetimeUsesMultiplier = 1.5,
             ProjectilesPerOnFire = 3,
             
             RackBones = {
@@ -295,6 +297,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 30,
             ProjectileId = "/projectiles/TDFGauss03/TDFGauss03_proj.bp",
+            ProjectileLifetimeUsesMultiplier = 1.5,
             ProjectilesPerOnFire = 3,
 
             RackBones = {

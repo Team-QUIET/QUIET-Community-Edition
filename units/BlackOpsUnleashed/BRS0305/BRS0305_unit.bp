@@ -98,7 +98,7 @@ UnitBlueprint {
             MuzzleVelocity = 5,
 			NotExclusive = true,
             ProjectileId = '/projectiles/CANTorpedoNanite02/CANTorpedoNanite02_proj.bp',
-            ProjectileLifetime = 8.5,
+            ProjectileLifetimeUsesMultiplier = 1.5,
 
             RackBones = {
                 {
@@ -172,7 +172,7 @@ UnitBlueprint {
 			MuzzleVelocityRandom = 2,
 			NotExclusive = true,
             ProjectileId = '/projectiles/CANKrilTorpedo01/CANKrilTorpedo01_proj.bp',
-            ProjectileLifetime = 10,
+            ProjectileLifetimeUsesMultiplier = 1.5,
 
             RackBones = {
                 {

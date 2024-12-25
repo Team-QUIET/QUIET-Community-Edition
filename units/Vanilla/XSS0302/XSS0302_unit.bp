@@ -97,6 +97,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 40,
             ProjectileId = "/projectiles/SDFHeavyQuarnonCannon01/SDFHeavyQuarnonCannon01_proj.bp",
+            ProjectileLifetimeUsesMultiplier = 1.5,
             ProjectilesPerOnFire = 1,
 
             RackBones = {
@@ -187,6 +188,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 40,
             ProjectileId = "/projectiles/SDFHeavyQuarnonCannon01/SDFHeavyQuarnonCannon01_proj.bp",
+            ProjectileLifetimeUsesMultiplier = 1.5,
             ProjectilesPerOnFire = 1,
 			
             RackBones = {
@@ -277,6 +279,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 40,
             ProjectileId = "/projectiles/SDFHeavyQuarnonCannon01/SDFHeavyQuarnonCannon01_proj.bp",
+            ProjectileLifetimeUsesMultiplier = 1.5,
             ProjectilesPerOnFire = 1,
 
             RackBones = {

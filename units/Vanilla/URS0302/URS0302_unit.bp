@@ -84,6 +84,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 30,
             ProjectileId = "/projectiles/CDFProtonCannon03/CDFProtonCannon03_proj.bp",
+            ProjectileLifetimeUsesMultiplier = 1.5,
             ProjectilesPerOnFire = 3,
 			
             RackBones = {
@@ -174,6 +175,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 30,
             ProjectileId = "/projectiles/CDFProtonCannon03/CDFProtonCannon03_proj.bp",
+            ProjectileLifetimeUsesMultiplier = 1.5,
             ProjectilesPerOnFire = 3,
 			
             RackBones = {
@@ -408,7 +410,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0.8,
             MuzzleSalvoSize = 2,
             MuzzleVelocity = 5,
-            ProjectileId = "/projectiles/CANTorpedoNanite01/CANTorpedoNanite01_proj.bp",
+            ProjectileId = "/projectiles/CANTorpedoNanite02/CANTorpedoNanite02_proj.bp",
             ProjectileLifetime = 7,
 			
             RackBones = {

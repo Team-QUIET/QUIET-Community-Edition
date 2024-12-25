@@ -88,7 +88,7 @@ UnitBlueprint {
 			MuzzleVelocityRandom = 1,
             NotExclusive = true,
             ProjectileId = '/projectiles/SANUallCavitationTorpedo03/SANUallCavitationTorpedo03_proj.bp', -- fastest torpedo , highest damage
-            ProjectileLifetime = 8,
+            ProjectileLifetimeUsesMultiplier = 1.5,
 			
             RackBones = {
                 {
