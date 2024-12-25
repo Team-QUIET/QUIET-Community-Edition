@@ -1,17 +1,60 @@
 UnitBlueprint {
     Merge = true,
-    BlueprintId = "ses0204",
+    BlueprintId = 'ses0204',
     
     Defense = {
-        MissileTorpDestroy = { AttachBone = {'Niode_M'}, Radius = 3.3, RedirectRateOfFire = 23, ProjectileCategories = {'TORPEDO'} },
+        -- Next QUIET Update will actually remove this in the Blueprint for now we can just disable it
+        MissileTorpDestroy = { AttachBone = {'Niode_M'}, Radius = 0, RedirectRateOfFire = 0, ProjectileCategories = {'TORPEDO'} },
+        AirThreatLevel = 10,
+        ArmorType = 'Normal',
+        Health = 1850,
+        MaxHealth = 1850,
+        RegenRate = 0,        
+        SubThreatLevel = 23,
+    },
+    
+    Economy = {
+        BuildCostEnergy = 12500,
+        BuildCostMass = 1075,
+        BuildTime = 5000,
+    },
+    
+    Intel = {
+        RadarStealth = false,
+        SonarRadius = 52,
+        SonarStealth = false,
+        VisionRadius = 32,
+        WaterVisionRadius = 32,
+    },
+    
+    Physics = {
+        BackUpDistance = 8,
+        CatchUpAcc = 10,
+        Elevation = -2.8,
+        MaxAcceleration = 2,
+        MaxBrake = 2,
+        MaxSpeed = 4.0,
+        MaxSpeedReverse = 4.0,
+        MaxSteerForce = 5,
+        MeshExtentsX = 0.6,
+        MeshExtentsY = 0.75,
+        MeshExtentsZ = 1.5,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_SurfacingSub',
+        TurnRadius = 5,
+        TurnRate = 60,
     },
     
     Weapon = {
         {
+            Audio = {
+                Fire            = Sound { Bank = 'UESWeapon', Cue = 'UES0203_Torpedo', LodCutoff = 'Weapon_LodCutoff' },
+                FireUnderWater  = Sound { Bank = 'UESWeapon', Cue = 'UES0203_Torpedo', LodCutoff = 'Weapon_LodCutoff' },
+            },
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             
-            Damage = 175,           -- most potent T2 torpedo
+            Damage = 200, 
             DamageType = 'Normal',
             
             DisplayName = 'Angler Torpedo',
@@ -21,40 +64,128 @@ UnitBlueprint {
                 Water = 'Seabed|Sub|Water',
             },
             
-            FiringTolerance = 15,
+            FiringTolerance = 2,
             
             Label = 'Torpedo',
             
             MaxRadius = 48,
             
-            MuzzleSalvoDelay = 0.82,
-            MuzzleSalvoSize = 1,
-            
-            MuzzleVelocity = 2,
-            
+            MuzzleSalvoDelay = 0.6,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 5,
+            ProjectileId = '/projectiles/TANAnglerTorpedo01/TANAnglerTorpedo01_proj.bp',
             ProjectileLifetime = 7,
             
-            RackSalvoReloadTime = 0.98,
+            RackBones = {
+                { MuzzleBones = { 'Niode_L', 'Niode_R' }, RackBone = 'Niode_M' },
+            },
+            
+            RackSalvoReloadTime = 3,
             
             RangeCategory = 'UWRC_AntiNavy',
             
-            RateOfFire = 1,
+            RateOfFire = 10/10, 
             
             TargetCheckInterval = 0.5,
             
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'MOBILE',
-                'STRUCTURE DEFENSE',
-                'SPECIALLOWPRI',
-                'ALLUNITS',
+                "SUBMERSIBLE",
+                "TECH2 LIGHTBOAT",
+                "(STRUCTURE * DEFENSE - ANTIAIR)",
+                "(TECH2 * MOBILE * NAVAL - CRUISER)",
+                "ANTINAVY",
+                "MOBILE",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
             TrackingRadius = 1.1,
+            TurretDualManipulators = false,
+            TurretPitch = 0,
+            TurretPitchRange = 0,
+            TurretPitchSpeed = 0,
+            TurretYaw = 0,
+            TurretYawRange = 0,
+            TurretYawSpeed = 0,
+            Turreted = false,
+            WeaponCategory = "Anti Navy",
         },
         
         {
+            AboveWaterFireOnly = true,
+            AlwaysRecheckTarget = true,
 
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB2204_Artillery_Flak', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_None',
+
+            CannotAttackGround = true,
+            CollideFriendly = false,
+            
+            Damage = 100,
+            DamageFriendly = false,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+            
+            DetonatesAtTargetHeight = true,
+            
+            DisplayName = 'Fragmentation Flak',
+            
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+            FiringRandomness = 2.5,
+            FiringTolerance = 1,
+            
+            Label = 'AAGun',
+            LeadTarget = true,
+            
+            MaxRadius = 44,
+            MuzzleVelocity = 45,
+            ProjectileId = '/projectiles/TAALightFragmentationShell01/TAALightFragmentationShell01_proj.bp',
+            ProjectileLifetime = 1,
+            
+            RackBones = {
+                { MuzzleBones = { 'Turret_Muzzle_R' }, RackBone = 'Turret_Muzzle_R' },
+                { MuzzleBones = { 'Turret_Muzzle_L' }, RackBone = 'Turret_Muzzle_L' },
+            },
+            RackFireTogether = false,
+            
+            RackRecoilDistance = -1,
+
+            RangeCategory = 'UWRC_AntiAir',
+            
+            RateOfFire = 10/6,
+
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                "AIR MOBILE BOMBER",
+                "AIR MOBILE GROUNDATTACK",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TrackingRadius = 1.2,
+            
+            TurretBoneMuzzle = 'Turret_Pitch',
+            TurretBonePitch = 'Turret_Pitch',
+            TurretBoneYaw = 'Turret_Yaw',
+            TurretDualManipulators = false,
+            
+            TurretPitch = 35,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 100,
+            
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 180,
+            
+            Turreted = true,
+            WeaponCategory = "Anti Air",
         },
+
     },
 }

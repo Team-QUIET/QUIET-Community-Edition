@@ -206,8 +206,7 @@ UnitBlueprint {
             TargetRestrictOnlyAllow = 'TORPEDO',
             TargetType = 'RULEWTT_Projectile',
             
-            WeaponRepackTimeout = 0,
+            WeaponRepackTimeout = 0.2, -- Careful when using this variable, as the Timeout resets when the weapon switches targets
         },
     },
-	
 }

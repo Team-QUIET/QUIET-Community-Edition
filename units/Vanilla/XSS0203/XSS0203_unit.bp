@@ -141,7 +141,7 @@ UnitBlueprint {
             Turreted = true,
             
             WeaponCategory = "Defense",
-            WeaponRepackTimeout = 0,
+            WeaponRepackTimeout = 0.2,
             WeaponUnpacks = false,
         },
         {
