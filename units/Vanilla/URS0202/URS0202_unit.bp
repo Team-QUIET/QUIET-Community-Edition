@@ -48,7 +48,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 30,
             ProjectileId = '/projectiles/CDFProtonCannon02/CDFProtonCannon02_proj.bp',
-            ProjectileLifetime = 2.6,
+            ProjectileLifetimeUsesMultiplier = 1.5,
 
             RackBones = {
                 {
@@ -211,7 +211,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 6,
             MuzzleVelocity = 30,
             ProjectileId = '/projectiles/CAANanoDart02/CAANanoDart02_proj.bp',
-            ProjectileLifetime = 5.5,
+            ProjectileLifetimeUsesMultiplier = 1.75,
 
             RackBones = {
                 {

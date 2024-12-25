@@ -113,7 +113,7 @@ UnitBlueprint {
             },
 			
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.05,
+            TrackingRadius = 1.0,
 			
             TurretBoneMuzzle = 'Front_Turret02_Muzzle01',
             TurretBonePitch = 'Front_Turret02_Barrel01',
@@ -125,7 +125,7 @@ UnitBlueprint {
 			
             TurretYaw = 0,
             TurretYawRange = 140,
-            TurretYawSpeed = 55,
+            TurretYawSpeed = 90,
 			
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
@@ -192,7 +192,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.05,
+            TrackingRadius = 1.0,
 			
             TurretBoneMuzzle = 'Back_Turret_Muzzle01',
             TurretBonePitch = 'Back_Turret_Barrel',
@@ -204,7 +204,7 @@ UnitBlueprint {
 			
             TurretYaw = 0,
             TurretYawRange = 140,
-            TurretYawSpeed = 55,
+            TurretYawSpeed = 90,
 			
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
