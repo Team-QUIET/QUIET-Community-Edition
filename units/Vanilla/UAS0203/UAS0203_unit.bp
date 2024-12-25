@@ -1,0 +1,86 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "uas0203",
+	
+    Intel = {
+		FreeIntel = true,
+		RadarStealth = false,
+        SonarRadius = 40,
+        VisionRadius = 24,
+        WaterVisionRadius = 28,
+    },
+	
+    Weapon = {
+        {
+            Audio = {
+                Fire            = Sound {Bank = 'UASWeapon',Cue = 'UAS0203_Torpedo',LodCutoff = 'Weapon_LodCutoff'},
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 200,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Chrono Torpedo',
+			
+            FireTargetLayerCapsTable = {
+                Sub = 'Seabed|Sub|Water',
+                Water = 'Seabed|Sub|Water',
+            },
+			
+            FiringTolerance = 1,
+			
+            Label = 'Torpedo',
+			
+            MaxRadius = 32,
+            
+            MuzzleSalvoDelay = 1,     -- 1.6 second firing cycle
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 5,
+            ProjectileId = '/projectiles/AANTorpedo01/AANTorpedo01_proj.bp',
+            ProjectileLifetime = 7,
+            ProjectilesPerOnFire = 2,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'muzzle_01','Muzzle_02'},
+                    RackBone = 'muzzle_01',
+                },
+            },
+            
+            RackSalvoReloadTime = 3,
+
+            RangeCategory = 'UWRC_AntiNavy',
+			
+            RateOfFire = 10/40,
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 10,
+
+            TargetCheckInterval = 2,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                "SUBMERSIBLE",
+                "TECH2 LIGHTBOAT",
+                "(STRUCTURE * DEFENSE - ANTIAIR)",
+                "(TECH2 * MOBILE * NAVAL - CRUISER)",
+                "ANTINAVY",
+                "MOBILE",
+                "ALLUNITS",
+            },
+			
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
+            TurretDualManipulators = false,
+            TurretPitch = 0,
+            TurretPitchRange = 0,
+            TurretPitchSpeed = 0,
+            TurretYaw = 0,
+            TurretYawRange = 0,
+            TurretYawSpeed = 0,
+            Turreted = false,
+            WeaponCategory = "Anti Navy",
+        },
+    },
+}

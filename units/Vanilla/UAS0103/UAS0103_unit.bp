@@ -176,7 +176,7 @@ UnitBlueprint {
                 Water = 'Seabed|Sub|Water',
             },
 			
-            FiringTolerance = 10,
+            FiringTolerance = 1,
 			
             Label = 'AntiTorpedo',
 			
