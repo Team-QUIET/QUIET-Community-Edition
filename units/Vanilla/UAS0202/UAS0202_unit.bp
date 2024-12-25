@@ -1,0 +1,293 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "uas0202",
+	
+    Defense = {
+        AirThreatLevel = 32,
+        ArmorType = 'Normal',
+        Health = 2800,
+        MaxHealth = 2800,
+        RegenRate = 0,
+        SurfaceThreatLevel = 15,
+    },
+	
+    Intel = {
+		FreeIntel = true,
+        RadarRadius = 96,
+        VisionRadius = 48,
+        WaterVisionRadius = 12,
+    },
+    
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                BarrelLoop          = Sound { Bank = 'UAS', Cue = 'UAS_Turret_Sml_Loop', LodCutoff = 'Weapon_LodCutoff' },
+                BarrelStart         = Sound { Bank = 'UAS', Cue = 'UAS_Turret_Sml_Start', LodCutoff = 'Weapon_LodCutoff' },
+                MuzzleChargeStart   = Sound { Bank = 'UASWeapon', Cue = 'UAS0202_Cannon_Quantum', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_LowArc',
+
+            CollideFriendly = false,
+			
+            Damage = 150,
+            DamageRadius = 1,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Dual Quantum Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Land|Water|Seabed',
+            },
+            
+            FiringRandomness = 0.5,
+            FiringTolerance = 2,
+            
+            Label = 'FrontTurret',
+            
+            MaxRadius = 71,
+            
+            MuzzleChargeDelay = 0.4,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 40,
+            ProjectileId = '/projectiles/ADFQuantumCannon01/ADFQuantumCannon01_proj.bp',
+            ProjectileLifetime = 2.5,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Muzzle_Front01','Muzzle_Front02'},
+                    RackBone = 'Turret_Front_Barrel',
+                },
+            },
+
+			RackFireTogether = true,
+            RackRecoilDistance = -1,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = true,
+            RangeCategory = 'UWRC_DirectFire',
+            
+            RateOfFire = 10/20,	
+            
+            TargetCheckInterval = 1,
+
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 135,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'NAVAL MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Turret_Front_Barrel',
+            TurretBonePitch = 'Turret_Front_Barrel',
+            TurretBoneYaw = 'Turret_Front',
+			
+            TurretPitch = 10,
+            TurretPitchRange = 40,
+            TurretPitchSpeed = 30,
+			
+            TurretYaw = 0,
+            TurretYawRange = 140,
+            TurretYawSpeed = 93,
+			
+            Turreted = true,
+            WeaponCategory = "Direct Fire Naval",
+        },
+        {
+            advancedTracking = true,
+            AlwaysRecheckTarget = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'UASWeapon', Cue = 'UAS0202_SAM', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 400,
+            DamageRadius = 0.10,
+            DamageType = 'Normal',
+            
+            DisplayName = 'Zealot AA Missile',
+            
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+            
+            FiringTolerance = 1,
+            
+            Label = 'AntiAirMissiles01',
+            
+            MaxRadius = 48,
+            
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 35,
+            ProjectileId = '/projectiles/AAAZealotMissile01/AAAZealotMissile01_proj.bp',
+            ProjectileLifetime = 6,
+            ProjectilesPerOnFire = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Muzzle_Right'},
+                    RackBone = 'Turret_Right_Barrel',
+                },
+            },
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 10/20,
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                "AIR MOBILE TECH3 BOMBER",
+                "AIR MOBILE BOMBER",
+                "AIR MOBILE GROUNDATTACK",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TrackingRadius = 1.2,
+            TurretBoneMuzzle = "Turret_Right_Barrel",
+            TurretBonePitch = "Turret_Right",
+            TurretBoneYaw = "Turret_Right",
+            TurretDualManipulators = false,
+            TurretPitch = 10,
+            TurretPitchRange = 40,
+            TurretPitchSpeed = 30,
+            TurretYaw = 10,
+            TurretYawRange = 20,
+            TurretYawSpeed = 30,
+            Turreted = false,
+            WeaponCategory = "Anti Air",
+        },
+        {
+            advancedTracking = true,
+            AlwaysRecheckTarget = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'UASWeapon', Cue = 'UAS0202_SAM', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CannotAttackGround = true,
+            CollideFriendly = false,
+
+            Damage = 400,
+            DamageRadius = 0.10,
+            DamageType = 'Normal',
+
+            DisplayName = 'Zealot AA Missile',
+
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+            FiringTolerance = 1,
+
+            Label = 'AntiAirMissiles02',
+
+            MaxRadius = 48,
+
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 35,
+            ProjectileId = '/projectiles/AAAZealotMissile01/AAAZealotMissile01_proj.bp',
+            ProjectileLifetime = 6,
+            ProjectilesPerOnFire = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Muzzle_Left'},
+                    RackBone = 'Turret_Left_Barrel',
+                },
+            },
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 10/20,		-- another 160 DPS Air
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                "AIR MOBILE TECH3 BOMBER",
+                "AIR MOBILE BOMBER",
+                "AIR MOBILE GROUNDATTACK",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TrackingRadius = 1.2,
+            TurretBoneMuzzle = "Turret_Left_Barrel",
+            TurretBonePitch = "Turret_Left",
+            TurretBoneYaw = "Turret_Left",
+            TurretDualManipulators = false,
+            TurretPitch = 10,
+            TurretPitchRange = 40,
+            TurretPitchSpeed = 30,
+            TurretYaw = 10,
+            TurretYawRange = 20,
+            TurretYawSpeed = 30,
+            Turreted = false,
+            WeaponCategory = "Anti Air",
+        },
+        {
+            Audio = {
+                Fire = Sound { Bank = 'UALWeapon', Cue = 'UAB4201_Anti_Missile', LodCutoff = 'Weapon_LodCutoff' },
+            },
+			
+            BallisticArc = 'RULEUBA_None',
+			
+            CollideFriendly = false,
+			
+            Damage = 30,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Will O Wisp Anti Missile',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+			
+			FiringRandomness = 20,
+            FiringTolerance = 360,
+			
+            Flare = { Category = 'MISSILE', Radius = 22 },
+			
+            Label = 'AntiMissile',
+			
+            MaxRadius = 24,
+
+            MuzzleVelocity = 7,
+			
+            ProjectileId = '/projectiles/AIMAntiMissile01/AIMAntiMissile01_proj.bp',
+			ProjectileLifetime = 4,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Projectile'},
+                    RackBone = 'Projectile',
+                },
+            },
+			
+            RangeCategory = 'UWRC_Countermeasure',
+			
+            RateOfFire = 10/10,
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
+            TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',
+            TargetType = 'RULEWTT_Projectile',
+            TrackingRadius = 1.2,
+        },
+    },
+}

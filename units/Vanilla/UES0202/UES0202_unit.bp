@@ -1,0 +1,356 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "ues0202",
+
+    Defense = {
+        AirThreatLevel = 32,
+        ArmorType = 'Normal',
+        Health = 3000,
+        MaxHealth = 3000,
+        RegenRate = 0,
+        SurfaceThreatLevel = 18,
+    },
+	
+    Intel = {
+		FreeIntel = true,
+        RadarRadius = 96,
+        VisionRadius = 48,
+        WaterVisionRadius = 12,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'UESWeapon', Cue = 'UES0202_Fire_Cruise', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CollideFriendly = false,
+            CountedProjectile = false,
+			
+            Damage = 300,
+            DamageFriendly = true,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Cruise Missile',
+            
+            EnergyRequired = 50,
+            EnergyDrainPerSecond = 5,
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 2,
+			
+            Label = 'CruiseMissile',
+			
+            MaxRadius = 105,
+            MinRadius = 12,
+			
+            MuzzleSalvoDelay = 1.5,
+            MuzzleSalvoSize = 4,
+            MuzzleVelocity = 3,
+            NotExclusive = true,
+            ProjectileId = '/projectiles/TIFMissileCruise04/TIFMissileCruise04_proj.bp',
+            ProjectileLifetime = 20,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Right_Projectile01'},
+                    RackBone = 'Right_Hatch01',
+                },
+                {
+                    MuzzleBones = {'Right_Projectile02'},
+                    RackBone = 'Right_Hatch02',
+                },
+                {
+                    MuzzleBones = {'Right_Projectile03'},
+                    RackBone = 'Right_Hatch03',
+                },
+                {
+                    MuzzleBones = {'Right_Projectile04'},
+                    RackBone = 'Right_Hatch04',
+                },
+                {
+                    MuzzleBones = {'Left_Projectile01'},
+                    RackBone = 'Left_Hatch01',
+                },
+                {
+                    MuzzleBones = {'Left_Projectile02'},
+                    RackBone = 'Left_Hatch02',
+                },
+                {
+                    MuzzleBones = {'Left_Projectile03'},
+                    RackBone = 'Left_Hatch03',
+                },
+                {
+                    MuzzleBones = {'Left_Projectile04'},
+                    RackBone = 'Left_Hatch04',
+                },
+            },
+
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+
+            RackSalvoSize = 1,
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 10/100,
+			
+            TargetCheckInterval = 3,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                "NAVAL MOBILE",
+                "TECH3 STRUCTURE",
+                "TECH2 STRUCTURE",
+                "TECH1 STRUCTURE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.15,
+            TurretDualManipulators = false,
+            TurretPitch = 0,
+            TurretPitchRange = 0,
+            TurretPitchSpeed = 0,
+            TurretYaw = 0,
+            TurretYawRange = 0,
+            TurretYawSpeed = 0,
+            Turreted = false,
+            WeaponCategory = "Missile",
+            WeaponRepackTimeout = 0,
+            WeaponUnpacks = false,
+        },
+        {
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                BarrelLoop = Sound { Bank = 'UES', Cue = 'UES_Turret_Sml_Loop', LodCutoff = 'Weapon_LodCutoff' },
+                BarrelStart = Sound { Bank = 'UES', Cue = 'UES_Turret_Sml_Start', LodCutoff = 'Weapon_LodCutoff' },
+                Fire = Sound { Bank = 'UESWeapon', Cue = 'UES0202_Cannon_Dbl', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CollideFriendly = false,
+			
+            Damage = 200,
+            DamageRadius = 1,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Gauss Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0.5,
+            FiringTolerance = 2,
+			
+            Label = 'FrontTurret01',
+			
+            MaxRadius = 70,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 30,
+            ProjectileId = '/projectiles/TDFGauss01/TDFGauss01_proj.bp',
+            ProjectileLifetime = 2.4,
+            ProjectilesPerOnFire = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Front_Turret01_Muzzle'},
+                    RackBone = 'Front_Turret01_Barrel01',
+                },
+            },
+
+            RackRecoilDistance = -0.75,
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/40,		-- 60 DPS Surface
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 115,
+            
+            TargetCheckInterval = 3,
+            
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'NAVAL MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.15,
+            
+            TurretBoneMuzzle = 'Front_Turret01_Muzzle',
+            TurretBonePitch = 'Front_Turret01_Barrel01',
+            TurretBoneYaw = 'Front_Turret01',
+            
+            TurretPitch = 10,
+            TurretPitchRange = 20,
+            TurretPitchSpeed = 30,
+            
+            TurretYaw = 0,
+            TurretYawRange = 120,
+            TurretYawSpeed = 80,
+            
+            Turreted = true,
+            WeaponCategory = "Direct Fire Naval",
+            WeaponRepackTimeout = 0,
+            WeaponUnpacks = false,
+        },
+        {
+            advancedTracking = true,
+
+            AlwaysRecheckTarget = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'UESWeapon', Cue = 'UES0202_Missile_Flayer', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 250,
+			DamageFriendly = false,
+			DamageRadius = 0.10,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Flayer SAM Launcher',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+            FiringTolerance = 10,
+			
+            Label = 'RearAATurret',
+			
+            MaxRadius = 55,
+			
+            MuzzleSalvoDelay = 0.4,
+            MuzzleSalvoSize = 4,
+            MuzzleVelocity = 30,
+            ProjectileId = '/projectiles/TAAMissileFlayer02/TAAMissileFlayer02_proj.bp',
+            ProjectileLifetime = 5,
+            ProjectilesPerOnFire = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'Back_Turret02_Projectile01',
+                        'Back_Turret02_Projectile02',
+                        'Back_Turret02_Projectile03',
+                        'Back_Turret02_Projectile04',
+                    },
+                    RackBone = 'Back_Turret02',
+                },
+            },
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 10/20,
+			
+            TargetCheckInterval = 1,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                "EXPERIMENTAL",
+                "AIR MOBILE TECH3 BOMBER",
+                "AIR MOBILE BOMBER",
+                "AIR MOBILE GROUNDATTACK",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR -SATELLITE',
+            TrackingRadius = 1.4,
+			
+            TurretBoneMuzzle = 'Back_Turret02_Projectile02',
+            TurretBonePitch = 'Back_Turret02',
+            TurretBoneYaw = 'Back_Turret02',
+			
+            TurretPitch = 25,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 90,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+			
+            Turreted = true,
+            WeaponCategory = "Anti Air",
+            WeaponRepackTimeout = 0,
+            WeaponUnpacks = false,
+        },
+        {
+            Audio = {
+                Fire = Sound { Bank = 'UESWeapon', Cue = 'UES0202_Phalanx', LodCutoff = 'Weapon_LodCutoff' },
+            },
+			
+            BallisticArc = 'RULEUBA_None',
+			
+            Damage = 2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Phalanx Anti Missile',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+			
+            FiringTolerance = 0,
+			
+            Label = 'PhalanxGun01',
+			
+            MaxRadius = 28,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 5,
+
+            MuzzleVelocity = 75,
+			
+            ProjectileId = '/projectiles/TDPhalanx01/TDPhalanx01_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 0.5,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Center_Turret_Muzzle'},
+                    RackBone = 'Center_Turret_Barrel',
+                },
+            },
+
+            RangeCategory = 'UWRC_Countermeasure',
+			
+            RateOfFire = 10/10,
+            TargetCheckInterval = 0.5,
+			
+            TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
+            TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',
+            TargetType = 'RULEWTT_Projectile',
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'Center_Turret_Muzzle',
+            TurretBonePitch = 'Center_Turret_Barrel',
+            TurretBoneYaw = 'Center_Turret',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 120,
+			
+            Turreted = true,
+        },
+    },
+}
