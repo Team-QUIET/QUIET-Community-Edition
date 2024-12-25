@@ -1,0 +1,458 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "xes0307",
+	
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 25000,
+        MaxHealth = 25000,
+        RegenRate = 0,
+        SubThreatLevel = 30,
+        SurfaceThreatLevel = 50,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 60000,
+        BuildCostMass = 7000,
+        BuildTime = 30000,
+    },
+	
+    Intel = {
+		FreeIntel = true,
+        RadarRadius = 78,
+        SonarRadius = 20,
+        VisionRadius = 50,
+        WaterVisionRadius = 58,
+    },
+
+    Physics = {
+        BackUpDistance = 12,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Water = true,
+        },
+        CatchUpAcc = 10,
+        DragCoefficient = 0.2,
+        MaxAcceleration = 3,
+        MaxBrake = 3,
+        MaxSpeed = 4.25,
+        MaxSpeedReverse = 4.25,
+        MaxSteerForce = 5,
+        MeshExtentsX = 1.25,
+        MeshExtentsY = 1.25,
+        MeshExtentsZ = 5.4,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Water',
+        TurnRadius = 25,
+        TurnRate = 35,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+
+            AimsStraightOnDisable = false,
+
+            Audio = {
+                Fire = Sound { Bank = 'XES_Weapons', Cue = 'XES0307_Plasma_Cannon', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            AutoInitiateAttackCommand = false,
+
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0,
+            BeamLifetime = 1.0,
+
+            CollideFriendly = false,
+			
+            Damage = 105,
+            DamageRadius = 1,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Dual-Barreled Hiro Plasma Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 0,
+			
+            Label = 'HiroCannon',
+			
+            MaxRadius = 85,
+			MinRadius = 2,
+			
+            MuzzleChargeDelay = 0,
+			MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            NeedPrep = true,
+            RackBones = {
+                {
+                    MuzzleBones = {'Front_Turret02_Muzzle01','Front_Turret02_Muzzle02'},
+                    RackBone = 'Front_Turret02_Barrel01',
+                },
+            },
+            RackFireTogether = true,
+            
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/67,		-- 2 beams doing 250 = 500 dmg / 2 seconds = 250 DPS Surface
+			
+			ReTargetOnMiss = true,
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 135,
+			
+            TargetCheckInterval = 0.2,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'NAVAL MOBILE',
+                'ALLUNITS',
+            },
+			
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.05,
+			
+            TurretBoneMuzzle = 'Front_Turret02_Muzzle01',
+            TurretBonePitch = 'Front_Turret02_Barrel01',
+            TurretBoneYaw = 'Front_Turret02',
+			
+            TurretPitch = 10,
+            TurretPitchRange = 35,
+            TurretPitchSpeed = 25,
+			
+            TurretYaw = 0,
+            TurretYawRange = 140,
+            TurretYawSpeed = 55,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Direct Fire Naval",
+            WeaponRepackTimeout = 2,
+            WeaponUnpacks = false,
+        },
+        {
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = false,
+
+            Audio = {
+                Fire = Sound { Bank = 'XES_Weapons', Cue = 'XES0307_Plasma_Cannon', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0,
+            BeamLifetime = 1,
+            CollideFriendly = false,
+			
+            Damage = 105,
+            DamageRadius = 1,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Dual-Barreled Hiro Plasma Cannon',
+
+            FireTargetLayerCapsTable = {
+                Water = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 0,
+			
+            Label = 'HiroCannon',
+			
+            MaxRadius = 85,
+			MinRadius = 2,
+			
+            MuzzleChargeDelay = 0,
+			MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            NeedPrep = true,
+            RackBones = {
+                {
+                    MuzzleBones = {'Back_Turret_Muzzle01','Back_Turret_Muzzle02'},
+                    RackBone = 'Back_Turret_Barrel',
+                },
+            },
+            RackFireTogether = true,
+            
+            RangeCategory = 'UWRC_DirectFire',
+
+            RateOfFire = 10/67,		
+			
+			ReTargetOnMiss = true,			
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 135,
+			
+            TargetCheckInterval = 0.2,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'NAVAL MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.05,
+			
+            TurretBoneMuzzle = 'Back_Turret_Muzzle01',
+            TurretBonePitch = 'Back_Turret_Barrel',
+            TurretBoneYaw = 'Back_Turret',
+			
+            TurretPitch = 10,
+            TurretPitchRange = 35,
+            TurretPitchSpeed = 30,
+			
+            TurretYaw = 0,
+            TurretYawRange = 140,
+            TurretYawSpeed = 55,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Direct Fire Naval",
+            WeaponRepackTimeout = 2,
+            WeaponUnpacks = false,
+        },
+		
+        {
+            Audio = {
+                Fire = Sound { Bank = 'XES_Weapons', Cue = 'XES0307_Angler_Torpedo', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+			
+            Buffs = {
+            	{
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 0.3,
+                    Radius = 2,
+                    TargetAllow = 'LAND TECH1,NAVAL TECH1,LAND TECH2',
+                    TargetDisallow = 'WALL,COMMAND,EXPERIMENTAL',
+                },
+            },
+ 
+            CollideFriendly = false,
+			
+            Damage = 300,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Angler Torpedo',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Seabed|Sub|Water',
+            },
+			
+            FiringTolerance = 60,
+			
+            Label = 'Torpedo',
+			
+            MaxRadius = 48,
+			
+            MuzzleSalvoDelay = 0.6,
+            MuzzleSalvoSize = 4,
+            MuzzleVelocity = 8,
+            ProjectileId = "/projectiles/TANAnglerTorpedo02/TANAnglerTorpedo02_proj.bp",
+            ProjectileLifetime = 7,
+            ProjectilesPerOnFire = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Projectile01','Projectile04','Projectile02','Projectile03'},
+                    RackBone = 'Projectile01',
+                },
+            },
+            
+            RackSalvoReloadTime = 3,   
+
+            RangeCategory = 'UWRC_AntiNavy',
+			
+            RateOfFire = 10/100,	           
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                "SUBMERSIBLE",
+                "MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
+            TrackingRadius = 1.1,
+            WeaponCategory = "Anti Navy",
+            WeaponRepackTimeout = 0,
+            WeaponUnpacks = false,
+        },
+		
+        {
+            Audio = {
+                Fire = Sound { Bank = 'XES_Weapons', Cue = 'XES0307_Phalanx_Gun', LodCutoff = 'Weapon_LodCutoff' },
+            },
+			
+            BallisticArc = 'RULEUBA_None',
+			CannotAttackGround = true,
+
+            Damage = 1,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Phalanx Anti Missile',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+			
+            FiringTolerance = 0,
+			
+            Label = 'PhalanxGun',
+			
+            MaxRadius = 28,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 5,
+
+            MuzzleVelocity = 75,
+			
+            ProjectileId = '/projectiles/TDPhalanx01/TDPhalanx01_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 0.5,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Front_Turret01_Muzzle01'},
+                    RackBone = 'Front_Turret01_Barrel01',
+                },
+            },
+
+            RangeCategory = 'UWRC_Countermeasure',
+			
+            RateOfFire = 10/10,
+            TargetCheckInterval = 0.3,
+			
+            TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
+            TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',
+            TargetType = 'RULEWTT_Projectile',
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'Front_Turret01_Barrel01',
+            TurretBonePitch = 'Front_Turret01_Barrel01',
+            TurretBoneYaw = 'Front_Turret01',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 180,
+			
+            Turreted = true,
+        },
+		
+        {
+            advancedTracking = true,
+            
+            BallisticArc = 'RULEUBA_None',
+			
+			CannotAttackGround = true,			
+            CollideFriendly = false,
+
+            CountedProjectile = true,
+			
+            Damage = 2,
+            DamageType = 'Normal',
+
+            DisplayName = 'AntiTorpedo',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Sub|Water|Seabed',
+            },
+			
+            FiringTolerance = 2,
+			
+            HeadingArcCenter = -90,
+            HeadingArcRange = 90,
+			
+            Label = 'AntiTorpedo',
+			
+            MaxRadius = 24,
+
+            MuzzleSalvoDelay = 0.5,
+            MuzzleVelocity = 7,
+			
+            ProjectileId = '/projectiles/AIMAntiTorpedo01/AIMAntiTorpedo01_proj.bp',
+            ProjectileLifetime = 3,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Projectile01'},
+                    RackBone = 'Projectile01',
+                },
+            },
+
+            RangeCategory = 'UWRC_Countermeasure',
+			
+            RateOfFire = 10/40,     -- controlled by MuzzleSalvoDelay and WeaponRepackTimeout - 1 every 1.5 seconds
+			
+            TargetCheckInterval = 0.5,
+
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictOnlyAllow = 'TORPEDO',
+            TargetType = 'RULEWTT_Projectile',
+            
+            WeaponRepackTimeout = 0.2,
+        },
+		
+        {
+            advancedTracking = true,
+            
+            BallisticArc = 'RULEUBA_None',
+			
+			CannotAttackGround = true,			
+            CollideFriendly = false,
+
+            CountedProjectile = true,
+			
+            Damage = 2,
+            DamageType = 'Normal',
+
+            DisplayName = 'AntiTorpedo',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Sub|Water|Seabed',
+            },
+			
+            FiringTolerance = 2,
+			
+            HeadingArcCenter = 90,
+            HeadingArcRange = 90,
+			
+            Label = 'AntiTorpedo',
+			
+            MaxRadius = 24,
+
+            MuzzleSalvoDelay = 0.5,
+            MuzzleVelocity = 7,
+			
+            ProjectileId = '/projectiles/AIMAntiTorpedo01/AIMAntiTorpedo01_proj.bp',
+            ProjectileLifetime = 3,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Projectile04'},
+                    RackBone = 'Projectile04',
+                },				
+            },
+
+            RateOfFire = 10/40,     -- controlled by MuzzleSalvoDelay and WeaponRepackTimeout - 1 every 1.5 seconds
+			
+            TargetCheckInterval = 0.5,
+
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictOnlyAllow = 'TORPEDO',
+            TargetType = 'RULEWTT_Projectile',
+            
+            WeaponRepackTimeout = 0.2,
+        },                
+
+    },
+}
