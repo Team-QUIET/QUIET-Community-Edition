@@ -1,8 +1,358 @@
 UnitBlueprint {
-  Merge = true,
-  BlueprintId = "brs0305",
-
-  Defense = {
-        TorpRedirectField01 = { AttachBone = 'XRS0305', Radius = 5.6, RedirectRateOfFire = 20 },
+    Merge = true,
+    BlueprintId = "brs0305",
+	
+    Defense = {
+        -- Next QUIET Update will actually remove this in the Blueprint for now we can just disable it
+        TorpRedirectField01 = { AttachBone = 'XRS0305', Radius = 0, RedirectRateOfFire = 0 },
+        ArmorType = 'Normal',
+        Health = 5000,
+        MaxHealth = 5000,
+        RegenRate = 12,
+        SubThreatLevel = 42,
+        SurfaceThreatLevel = 7,
     },
-  }
+	
+    Economy = {
+        BuildCostEnergy = 50000,
+        BuildCostMass = 5000,
+        BuildTime = 8500,
+    },
+	
+    Intel = {
+		FreeIntel = true,
+        RadarStealth = false,
+		SonarStealth = false,
+        SonarRadius = 64,
+        VisionRadius = 41,
+        WaterVisionRadius = 41,
+    },
+	
+    Physics = {
+        BackUpDistance = 8,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Sub = true,
+        },
+        CatchUpAcc = 10,
+        DragCoefficient = 0.2,
+        Elevation = -2.8,
+        MaxAcceleration = 2,
+        MaxBrake = 2,
+        MaxSpeed = 4.5,
+        MaxSpeedReverse = 4.5,
+        MaxSteerForce = 5,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_SurfacingSub',
+        TurnRadius = 12,
+        TurnRate = 36,
+    },
+	
+    Weapon = {
+
+		-- So we have 2 Torpedo launchers
+		-- the first fires two standard (but long range) torps - typical torpedo system
+		-- The second fires a salvo of 6 Kril torps (timed AOE damage) torpedoes
+		
+        {
+            advancedTracking = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'URSWeapon', Cue = 'URS0203_Torpedo_Nanite', LodCutoff = 'Weapon_LodCutoff' },
+            },
+			
+            BallisticArc = 'RULEUBA_None',
+			
+            Buffs = {
+            	{
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 0.3,
+                    Radius = 2,
+                    TargetAllow = 'TECH1',
+                    TargetDisallow = 'WALL,COMMAND,EXPERIMENTAL',
+                },
+            },
+	
+            CollideFriendly = false,
+			
+            Damage = 200,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Nanite Torpedo',
+			
+            FireTargetLayerCapsTable = {
+                Sub = 'Seabed|Sub|Water',
+                Water = 'Seabed|Sub|Water',
+            },
+			
+            FiringTolerance = 2,
+			
+            Label = 'Torpedo01',
+			
+            MaxRadius = 55,
+			
+            MuzzleSalvoDelay = 0.4,
+            MuzzleSalvoSize = 4,
+            MuzzleVelocity = 5,
+			NotExclusive = true,
+            ProjectileId = '/projectiles/CANTorpedoNanite02/CANTorpedoNanite02_proj.bp',
+            ProjectileLifetime = 8.5,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Left_Projectile','Right_Projectile'},
+                    RackBone = 'Right_Projectile',
+                },
+            },
+            
+            RackSalvoReloadTime = 3, 
+
+            RangeCategory = 'UWRC_AntiNavy',
+			
+            RateOfFire = 10/10,	
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 30,
+			
+            TargetCheckInterval = 1,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                "SUBMERSIBLE",
+                "TECH2 LIGHTBOAT",
+                "(STRUCTURE * DEFENSE - ANTIAIR)",
+                "(TECH2 * MOBILE * NAVAL - CRUISER)",
+                "ANTINAVY",
+                "MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
+            TrackingRadius = 1.1,
+
+            Turreted = false,
+            WeaponCategory = "Anti Navy",
+        },
+		
+        {
+            advancedTracking = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'XRL_Weapon', Cue = 'XRB2308_Kril_Torpedo', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 100,
+            DamageRadius = 2,
+			DamageType = 'Normal',
+			
+            DisplayName = 'Kril Torpedo',
+			
+            DoTPulses = 5,
+            DoTTime = 3,
+			
+            FireTargetLayerCapsTable = {
+                Sub = 'Seabed|Sub|Water',
+                Water = 'Seabed|Sub|Water',
+            },
+			
+			FiringRandomness = 35,
+            FiringTolerance = 2,
+			
+            Label = 'Torpedo02',
+			
+            MaxRadius = 60,
+			
+            MuzzleSalvoDelay = 0.8,
+            MuzzleSalvoSize = 8,
+            MuzzleVelocity = 20,
+			MuzzleVelocityRandom = 2,
+			NotExclusive = true,
+            ProjectileId = '/projectiles/CANKrilTorpedo01/CANKrilTorpedo01_proj.bp',
+            ProjectileLifetime = 10,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Torpedo01','Torpedo02','Torpedo03','Torpedo04','Torpedo05','Torpedo06'},
+                    RackBone = 'Torpedo01',
+                },
+            },
+            
+            RackSalvoReloadTime = 6, 
+
+            RangeCategory = 'UWRC_AntiNavy',
+			
+            RateOfFire = 10/10,		
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 10,
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                "SUBMERSIBLE",
+                "TECH2 LIGHTBOAT",
+                "(STRUCTURE * DEFENSE - ANTIAIR)",
+                "(TECH2 * MOBILE * NAVAL - CRUISER)",
+                "ANTINAVY",
+                "MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
+            TrackingRadius = 1.2,
+            Turreted = false,
+            WeaponCategory = "Anti Navy",
+        },
+		
+		-- 2 Deck Guns --
+		
+        {
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = false,
+
+            Audio = {
+                Fire = Sound { Bank = 'URLWeapon', Cue = 'URL0303_Bolter', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_LowArc',
+			
+            CollideFriendly = false,
+			
+            Damage = 35,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Light Pulse Laser',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 2,
+			
+            Label = 'DeckGun',
+			
+            MaxRadius = 35,
+
+            MuzzleVelocity = 30,
+			
+            ProjectileId = '/projectiles/CDFBolter02/CDFBolter02_proj.bp',
+            ProjectileLifetime = 1.2,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret01_Muzzle01','Turret01_Muzzle02'},
+                    RackBone = 'Turret01_Barrel01',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/10,	
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 135,
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'NAVAL MOBILE',
+                'SPECIALLOWPRI',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Turret01_Muzzle01',
+            TurretBonePitch = 'Turret01_Barrel01',
+            TurretBoneYaw = 'Turret01',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 90,
+			
+            TurretYaw = 0,
+            TurretYawRange = 120,
+            TurretYawSpeed = 50,
+			
+            Turreted = true,
+            WeaponCategory = "Direct Fire Naval",
+        },
+		
+        {
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = false,
+            Audio = {
+                Fire = Sound {
+                    Bank = 'URLWeapon',
+                    Cue = 'URL0303_Bolter',
+                    LodCutoff = 'Weapon_LodCutoff',
+                },
+            },
+            BallisticArc = 'RULEUBA_LowArc',
+			
+            CollideFriendly = false,
+			
+            Damage = 35,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Light Pulse Laser',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 2,
+			
+            Label = 'DeckGun',
+			
+            MaxRadius = 35,
+
+            MuzzleVelocity = 30,
+			
+            ProjectileId = '/projectiles/CDFBolter02/CDFBolter02_proj.bp',
+            ProjectileLifetime = 1.6,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret02_Muzzle01','Turret02_Muzzle02'},
+                    RackBone = 'Turret02_Barrel01',
+                },
+            },
+
+            RateOfFire = 10/10,
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 135,
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'NAVAL MOBILE',
+                'SPECIALLOWPRI',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Turret02_Muzzle01',
+            TurretBonePitch = 'Turret02_Barrel01',
+            TurretBoneYaw = 'Turret02',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 120,
+            TurretPitchSpeed = 90,
+			
+            TurretYaw = 0,
+            TurretYawRange = 140,
+            TurretYawSpeed = 50,
+			
+            Turreted = true,
+            WeaponCategory = "Direct Fire Naval",
+        },
+		
+    },
+}
