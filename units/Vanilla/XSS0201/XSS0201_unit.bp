@@ -2,17 +2,283 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "xss0201",
 	
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 7500,
+        MaxHealth = 7500,
+        RegenRate = 4,
+
+        SubThreatLevel = 30,
+        SurfaceThreatLevel = 27,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 16500,
+        BuildCostMass = 2275,
+        BuildTime = 11250,
+    },
+	
+    Intel = {
+		FreeIntel = true,
+        RadarRadius = 38,
+        SonarRadius = 46,
+        VisionRadius = 46,
+        WaterVisionRadius = 46,
+    },
+	
+    Physics = {
+        BackUpDistance = 8,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Sub = true,
+            LAYER_Water = true,
+        },
+        CatchUpAcc = 10,
+        DragCoefficient = 0.2,
+		DiveSurfaceSpeed = 3.0,
+        Elevation = -2.5,
+        MaxAcceleration = 2,
+        MaxBrake = 2.5,
+        MaxSpeed = 4,
+        MaxSpeedReverse = 4,
+        MaxSteerForce = 5,
+        MeshExtentsX = 1.1,
+        MeshExtentsY = 1.1,
+        MeshExtentsZ = 3.6,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_SurfacingSub',
+        TurnRadius = 15,
+        TurnRate = 50,
+    },
+	
     Weapon = {
         {
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = false,
+            
+            Audio = {
+                BeamLoop    = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0201_Ultrachromatic_Beam', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStart   = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0201_Ultrachromatic_Beam_Start', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStop    = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0201_Ultrachromatic_Beam_Stop', LodCutoff = 'Weapon_LodCutoff' },
+            },
 
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0,
+            BeamLifetime = 1,
+            
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 85,	
+            DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Ultrachromatic Beam Generator',
+			
+            DoNotCollideList = {'TORPEDO','MISSILE'},
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 0,
+			
+            Label = 'Turret',
+			
+            MaxRadius = 60,
+            MuzzleChargeDelay = 0,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            NeedPrep = true,
+            NotExclusive = true,
+            RackBones = {
+                {
+                    MuzzleBones = {'Front_Turret_Muzzle'},
+                    RackBone = 'Front_Turret_Barrel',
+                },
+            },
+            
+            RackSalvoReloadTime = 3,
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/10,	
+			ReTargetOnMiss = true,
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 135,
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'NAVAL MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Front_Turret_Muzzle',
+            TurretBonePitch = 'Front_Turret_Barrel',
+            TurretBoneYaw = 'Front_Turret',
+			
+            TurretPitch = 10,
+            TurretPitchRange = 35,
+            TurretPitchSpeed = 30,
+			
+            TurretYaw = 0,
+            TurretYawRange = 140,
+            TurretYawSpeed = 93,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Direct Fire Naval",
+            WeaponRepackTimeout = 2,
+            WeaponUnpacks = false,
         },
 		
         {
-        
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = true,
+
+            Audio = {
+                BeamLoop    = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0201_Ultrachromatic_Beam', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStart   = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0201_Ultrachromatic_Beam_Start', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStop    = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0201_Ultrachromatic_Beam_Stop', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0,
+            BeamLifetime = 1,
+            
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 85,	
+            DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Ultrachromatic Beam Generator',
+			
+            DoNotCollideList = {'TORPEDO','MISSILE'},
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Land|Water|Seabed',
+            },
+
+            FiringTolerance = 0,
+			
+            Label = 'Turret',
+			
+            MaxRadius = 60,
+            MuzzleChargeDelay = 0,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            NeedPrep = true,
+            NotExclusive = true,
+            PrefersPrimaryWeaponTarget = true,
+            RackBones = {
+                {
+                    MuzzleBones = {'Back_Turret_Muzzle'},
+                    RackBone = 'Back_Turret_Barrel',
+                },
+            },
+            
+            RackSalvoReloadTime = 3,
+			
+            RateOfFire = 10/10,		
+			ReTargetOnMiss = true,
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 135,
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'NAVAL MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.15,
+			
+            TurretBoneMuzzle = 'Back_Turret_Muzzle',
+            TurretBonePitch = 'Back_Turret_Barrel',
+            TurretBoneYaw = 'Back_Turret',
+			
+            TurretPitch = 10,
+            TurretPitchRange = 35,
+            TurretPitchSpeed = 30,
+			
+            TurretYaw = 0,
+            TurretYawRange = 140,
+            TurretYawSpeed = 93,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Direct Fire Naval",
+            WeaponRepackTimeout = 2,
+            WeaponUnpacks = false,
         },
 		
         {
-           
+            Audio = {
+                Fire            = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0201_AnaIt_Torpedo', LodCutoff = 'Weapon_LodCutoff' },
+                FireUnderwater  = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0201_AnaIt_Torpedo', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 750,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Ana-it Torpedo Launcher',
+			
+            FireTargetLayerCapsTable = {
+                Sub = 'Seabed|Sub|Water',
+                Water = 'Seabed|Sub|Water',
+            },
+            
+            FiringTolerance = 2,
+            
+            Label = 'Torpedo',
+            
+            MaxRadius = 44,
+            
+            MuzzleSalvoDelay = 0.6,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 5,
+            NotExclusive = true,
+            ProjectileId = "/projectiles/SANAnaitTorpedo01/SANAnaitTorpedo01_proj.bp",
+            ProjectileLifetime = 7,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Projectile01','Projectile02'},
+                    RackBone = 'Projectile01',
+                },
+            },
+            
+            RackSalvoReloadTime = 3,
+
+            RangeCategory = 'UWRC_AntiNavy',
+			
+            RateOfFire = 10/10,	
+			
+            TargetCheckInterval = 1,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                "SUBMERSIBLE",
+                "(STRUCTURE * DEFENSE - ANTIAIR)",
+                "(TECH2 * MOBILE * NAVAL - CRUISER)",
+                "MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
+            Turreted = false,
+            WeaponCategory = "Anti Navy",
         },
 		
         {
@@ -35,7 +301,7 @@ UnitBlueprint {
                 Water = 'Seabed|Sub|Water',
             },
 			
-            FiringTolerance = 50,
+            FiringTolerance = 1,
 			
             Label = 'AntiTorpedo',
 
@@ -45,14 +311,20 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0.2,
             MuzzleSalvoSize = 2,
             MuzzleVelocity = 10,
-			
+            ProjectileId = '/projectiles/SANAjelluAntiTorpedo01/SANAjelluAntiTorpedo01_proj.bp',
             ProjectileLifetime = 3,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Projectile02'},
+                    RackBone = 'Projectile02',
+                },
+            },
 
             RangeCategory = 'UWRC_Countermeasure',
 			
-            RateOfFire = 1,
-
             RackSalvoReloadTime = 3.5,
+            RateOfFire = 10/10,
 			
             TargetCheckInterval = 0.5,
 			
