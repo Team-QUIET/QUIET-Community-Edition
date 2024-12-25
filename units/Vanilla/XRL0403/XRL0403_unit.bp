@@ -1,6 +1,16 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "xrl0403",
+
+    Intel = {
+		FreeIntel = true,
+        RadarStealth = false,
+        SonarStealth = false,
+		RadarRadius = 96,
+        SonarRadius = 56,
+        VisionRadius = 44,
+        WaterVisionRadius = 36,
+    },
 	
     Economy = {
         BuildCostEnergy = 785500,
