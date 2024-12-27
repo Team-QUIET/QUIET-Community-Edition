@@ -221,7 +221,7 @@ UnitBlueprint {
 			
             Damage = 250,
 			DamageFriendly = false,
-			DamageRadius = 0.10,
+			DamageRadius = 1.25,
             DamageType = 'Normal',
 			
             DisplayName = 'Flayer SAM Launcher',

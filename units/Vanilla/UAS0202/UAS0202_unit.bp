@@ -110,7 +110,7 @@ UnitBlueprint {
             CollideFriendly = false,
 			
             Damage = 400,
-            DamageRadius = 0.10,
+            DamageRadius = 1,
             DamageType = 'Normal',
             
             DisplayName = 'Zealot AA Missile',
@@ -182,7 +182,7 @@ UnitBlueprint {
             CollideFriendly = false,
 
             Damage = 400,
-            DamageRadius = 0.10,
+            DamageRadius = 1,
             DamageType = 'Normal',
 
             DisplayName = 'Zealot AA Missile',

@@ -120,12 +120,12 @@ UnitBlueprint {
             MaxRadius = 55,
 
 			MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
+            MuzzleSalvoSize = 2,
             MuzzleVelocity = 20,
             NotExclusive = true,
             ProjectileId = '/projectiles/SAAOlarisAAArtillery04/SAAOlarisAAArtillery04_proj.bp',
 			ProjectileLifetimeUsesMultiplier = 1.25,
-            ProjectilesPerOnFire = 1,
+            ProjectilesPerOnFire = 2,
 
             RackBones = {
                 {
