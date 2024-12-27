@@ -12,6 +12,8 @@ UnitBlueprint {
         {
             FiringTolerance = 3,
 
+            MuzzleVelocity = 20,
+
             ProjectileLifetime = 4.5,
 
             TurretYawSpeed = 135,
@@ -19,6 +21,8 @@ UnitBlueprint {
 		
         {
             RateOfFire = 15/10,
+
+            MuzzleVelocity = 20,
 
             TurretYawSpeed = 135,
         },
