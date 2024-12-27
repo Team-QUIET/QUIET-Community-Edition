@@ -1,0 +1,116 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'uab2304',
+    
+    Defense = {
+        AirThreatLevel = 44,
+        ArmorType = 'Structure',
+        Health = 3250,
+        MaxHealth = 3250,
+        RegenRate = 0,
+    },
+    
+    Economy = {
+        BuildCostEnergy = 11000,
+        BuildCostMass = 1100,
+        BuildTime = 950,
+        
+        RebuildBonusIds = {'uab2304'},
+    },
+    
+    Weapon = {
+        {
+			advancedTracking = true,
+            AlwaysRecheckTarget = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'UALWeapon', Cue = 'UAB2304_SAM', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+			
+            Buffs = {
+                {
+                    Add = { OnImpact = true },
+                    BuffType = 'FUELRATIO',
+                    BuffValue = 3.5,
+                    TargetAllow = 'AIR MOBILE',
+                },
+            },
+			
+            CannotAttackGround = true,
+            CollideFriendly = false,
+            
+            Damage = 260,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+            
+            DisplayName = 'Zealot AA Missile',
+            
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Water = 'Air',
+            },
+            
+            FiringTolerance = 1,
+
+            Label = 'AAMissileRack',
+            
+            MaxRadius = 52,
+            
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 30,
+            
+            ProjectileId = '/projectiles/AAAZealotMissile02/AAAZealotMissile02_proj.bp',
+            ProjectileLifetime = 5,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle01','Turret_Muzzle02'},
+                    RackBone = 'Turret_Barrel',
+                },
+            },
+
+            RackSlavedToTurret = true,
+            
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 10/10,
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                'HIGHPRIAIR',
+                "EXPERIMENTAL",
+                "AIR MOBILE TECH3 BOMBER",
+                "AIR MOBILE TECH3 GROUNDATTACK",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE TECH2 BOMBER",
+                "AIR MOBILE TECH2 GROUNDATTACK",
+                "AIR MOBILE TECH3 ANTIAIR",
+                "AIR MOBILE TECH1 BOMBER",
+                "AIR MOBILE TECH1 GROUNDATTACK",
+                "AIR MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR -SATELLITE',
+            TrackingRadius = 1.4,
+            
+            TurretBoneMuzzle = 'Turret_Muzzle01',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = false,
+            
+            TurretPitch = 25,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 80,
+            
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 180,
+            
+            Turreted = true,
+        },
+    },
+}

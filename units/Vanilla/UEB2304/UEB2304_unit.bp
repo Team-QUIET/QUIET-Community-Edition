@@ -1,0 +1,120 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'ueb2304',
+	
+    Defense = {
+        AirThreatLevel = 43.5,
+        ArmorType = 'Structure',
+        Health = 4035,
+        MaxHealth = 4035,
+        RegenRate = 0,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 10500,
+        BuildCostMass = 1150,
+        BuildTime = 950,
+        
+        RebuildBonusIds = {'ueb2304'},
+    },
+	
+    Weapon = {
+        {
+			advancedTracking = true,
+            AlwaysRecheckTarget = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB2304_Missile_Flayer', LodCutoff = 'Weapon_LodCutoff'},
+            },
+
+            BallisticArc = 'RULEUBA_None',
+			
+            Buffs = {
+                {
+                    Add = { OnImpact = true },
+                    BuffType = 'FUELRATIO',
+                    BuffValue = 2.5,
+                    TargetAllow = 'AIR MOBILE',
+                },
+            },
+	
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 185,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'SAM Launcher',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Water = 'Air',
+            },
+            FiringTolerance = 1,
+			
+            Label = 'AAMissileRack',
+			
+            MaxRadius = 52,
+            
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 6,
+            MuzzleVelocity = 35,
+            
+            ProjectileId = '/projectiles/TAAMissileFlayer01/TAAMissileFlayer01_proj.bp',
+            ProjectileLifetime = 5,
+
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'Turret_Muzzle_Left01',
+                        'Turret_Muzzle_Right01',
+                        'Turret_Muzzle_Left02',
+                        'Turret_Muzzle_Right02',
+                        'Turret_Muzzle_Left03',
+                        'Turret_Muzzle_Right03',
+                    },
+                    RackBone = 'Turret_Barrel',
+                },
+            },
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 10/20,	-- six missiles every two seconds
+            TargetCheckInterval = 0.3,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                "EXPERIMENTAL",
+                "AIR MOBILE TECH3 BOMBER",
+                "AIR MOBILE TECH3 GROUNDATTACK",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE TECH2 BOMBER",
+                "AIR MOBILE TECH2 GROUNDATTACK",
+                "AIR MOBILE TECH3 ANTIAIR",
+                "AIR MOBILE TECH1 BOMBER",
+                "AIR MOBILE TECH1 GROUNDATTACK",
+                "AIR MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR',
+            TrackingRadius = 1.4,
+			
+            TurretBoneMuzzle = 'Turret_Barrel',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 25,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 120,
+
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 180,
+            
+            Turreted = true,
+        },
+    },
+}

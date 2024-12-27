@@ -1,6 +1,22 @@
 UnitBlueprint {
     Merge = true,
 	BlueprintId = "xsb2304",
+
+    Defense = {
+        AirThreatLevel = 44,
+        ArmorType = 'Structure',
+        Health = 3250,
+        MaxHealth = 3250,
+        RegenRate = 2,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 11500,
+        BuildCostMass = 1100,
+        BuildTime = 950,
+		
+        RebuildBonusIds = {'xsb2304'},
+    },
 	
     Weapon = {
         {	
@@ -9,7 +25,8 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 55,
+            Damage = 275,
+            DamageRadius = 0,
             DamageType = 'Normal',
 			
             DisplayName = 'AA Autocannon',
@@ -19,30 +36,38 @@ UnitBlueprint {
                 Water = 'Air',
             },
 			FiringRandomness = 0,
-            FiringTolerance = 0.05,
+            FiringTolerance = 0,
 			
 			LeadTarget = true,
 			
             MaxRadius = 55,
 			
-            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoDelay = 0.6,
             MuzzleSalvoSize = 2,
 			
-            MuzzleVelocity = 100,
+            MuzzleVelocity = 150,
 			
             ProjectileLifetimeUsesMultiplier = 1.25,
             ProjectilesPerOnFire = 2,
 			
             RangeCategory = 'UWRC_AntiAir',
 			
-            RateOfFire = 4,		-- 440 DPS Air
-            TargetCheckInterval = 0.1,
+            RateOfFire = 10/22,	
+            TargetCheckInterval = 0.5,
 			
             TargetPriorities = {
                 'HIGHPRIAIR',
-                'BOMBER',
-                'GROUNDATTACK',
-                'AIR',
+                "EXPERIMENTAL",
+                "AIR MOBILE TECH3 BOMBER",
+                "AIR MOBILE TECH3 GROUNDATTACK",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE TECH2 BOMBER",
+                "AIR MOBILE TECH2 GROUNDATTACK",
+                "AIR MOBILE TECH3 ANTIAIR",
+                "AIR MOBILE TECH1 BOMBER",
+                "AIR MOBILE TECH1 GROUNDATTACK",
+                "AIR MOBILE",
+                "ALLUNITS",
             },
 			
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
@@ -59,9 +84,11 @@ UnitBlueprint {
 			
             TurretYaw = 0,
             TurretYawRange = 360,
-            TurretYawSpeed = 88,
+            TurretYawSpeed = 180,
 			
             Turreted = true,
+            WeaponCategory = "Anti Air",
+            WeaponUnpacks = false,
         },
     },
 }
