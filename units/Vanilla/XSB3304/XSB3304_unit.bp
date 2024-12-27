@@ -2,16 +2,32 @@ UnitBlueprint {
     Merge = true,
 	BlueprintId = "xsb3304",
 
+    Defense = {
+        AirThreatLevel = 44,
+        ArmorType = 'Structure',
+        Health = 4350,
+        MaxHealth = 4350,
+        RegenRate = 2,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 8500,
+        BuildCostMass = 825,
+        BuildTime = 950,
+		
+        RebuildBonusIds = {'xsb3304'},
+    },
+
     Weapon = {
         {
             AlwaysRecheckTarget = true,
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 95,
+            Damage = 115,
 			
             DamageFriendly = false,
-            DamageRadius = 4.4,
+            DamageRadius = 4.75,
             DamageType = 'Normal',
 			
             DetonatesAtTargetHeight = true,
@@ -32,22 +48,22 @@ UnitBlueprint {
 			
             MaxRadius = 55,
 			
-            MuzzleSalvoDelay = 0.1,     -- 3 ticks while firing
-            MuzzleSalvoSize = 4,
-            MuzzleVelocity = 55,
+            MuzzleSalvoDelay = 0.6,   
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 45,
 			
             ProjectileLifetimeUsesMultiplier = 1.25,
             ProjectilesPerOnFire = 2,
 
-            RackSalvoChargeTime = 0.2,  -- 2 ticks prior to firing
+            RackSalvoChargeTime = 0.2,  
 
-            RackSalvoReloadTime = 0.9,  -- 9 ticks after firing
+            RackSalvoReloadTime = 0.5,  
 
             RackSlavedToTurret = true,
             
             RangeCategory = 'UWRC_AntiAir',
 			
-            RateOfFire = 10,	-- 4 Shots every 1.4 seconds = 270 DPS -- ROF Doesn't really do anything here except make sure we can fire every tick if we're ready --
+            RateOfFire = 10/1,
             
             TargetCheckInterval = 0.5,
 			
@@ -76,7 +92,7 @@ UnitBlueprint {
             TurretPitchSpeed = 180,
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 70,
+            TurretYawSpeed = 90,
             Turreted = true,
         },
     },

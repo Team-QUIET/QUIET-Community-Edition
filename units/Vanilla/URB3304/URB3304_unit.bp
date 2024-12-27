@@ -2,6 +2,22 @@ UnitBlueprint {
     Merge = true,
 	BlueprintId = "urb3304",
 
+    Defense = {
+        AirThreatLevel = 44,
+        ArmorType = 'Structure',
+        Health = 4100,
+        MaxHealth = 4100,
+        RegenRate = 8,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 8000,
+        BuildCostMass = 800,
+        BuildTime = 950,
+		
+        RebuildBonusIds = {'urb3304'},
+    },
+
     Weapon = {
         {
             AlwaysRecheckTarget = true,
@@ -10,10 +26,10 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 70,
+            Damage = 80,
 			
             DamageFriendly = false,
-            DamageRadius = 4.4,
+            DamageRadius = 5,
             DamageType = 'Normal',
 			
             DetonatesAtTargetHeight = true,
@@ -40,7 +56,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_AntiAir',
 			
-            RateOfFire = 2,
+            RateOfFire = 10/5,
 			
             TargetCheckInterval = 0.3,
 			
@@ -69,7 +85,7 @@ UnitBlueprint {
             TurretPitchSpeed = 180,
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 80,
+            TurretYawSpeed = 90,
             Turreted = true,
         },
     },
