@@ -11,7 +11,9 @@ UnitBlueprint {
     },
 	
     Weapon = {
-        {
+        {   
+            advancedTracking = true,
+            
             Audio = {
                 Fire            = Sound {Bank = 'UASWeapon',Cue = 'UAS0203_Torpedo',LodCutoff = 'Weapon_LodCutoff'},
             },
