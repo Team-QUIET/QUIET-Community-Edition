@@ -120,22 +120,30 @@ UnitBlueprint {
             MaxRadius = 55,
 
 			MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 2,
+            MuzzleSalvoSize = 1,
             MuzzleVelocity = 20,
             NotExclusive = true,
             ProjectileId = '/projectiles/SAAOlarisAAArtillery04/SAAOlarisAAArtillery04_proj.bp',
 			ProjectileLifetimeUsesMultiplier = 1.25,
-            ProjectilesPerOnFire = 2,
+            ProjectilesPerOnFire = 1,
 
             RackBones = {
                 {
-                    MuzzleBones = {'Left_Turret01_Muzzle01'},
-                    RackBone = 'Left_Turret01_Barrel',
+                    MuzzleBones = {
+                        "Left_Turret01_Muzzle01",
+                        "Left_Turret01_Muzzle02",
+                    },
+                    RackBone = "Left_Turret01_Barrel",
                 },
             },
 
+            RackFireTogether = true,
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = true,
             RangeCategory = 'UWRC_AntiAir',
             RateOfFire = 10/5,		
 			
@@ -168,6 +176,7 @@ UnitBlueprint {
             TurretYawSpeed = 90,
 			
             Turreted = true,
+            WeaponCategory = "Anti Air",
         },
         {
             AlwaysRecheckTarget = true,
@@ -211,6 +220,13 @@ UnitBlueprint {
                 },
             },
 			
+            RackFireTogether = true,
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 0,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = true,
             RangeCategory = 'UWRC_AntiAir',
 			
             RateOfFire = 10/3,
