@@ -29,10 +29,6 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 	
         WeaponOnCreate(self)
 
-        self.HadTarget = false
-        self.WeaponCanFire = true
-        self.WeaponIsEnabled = false
-
         self.CurrentRackNumber = 1
         
         local bp = self.bp
@@ -111,6 +107,8 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
         if not bp.EnabledByEnhancement then
 
             self:SetWeaponEnabled(true)
+            self.WeaponIsEnabled = true
+            self.WeaponCanFire = true
             
             LOUDSTATE( self, self.IdleState)
             
