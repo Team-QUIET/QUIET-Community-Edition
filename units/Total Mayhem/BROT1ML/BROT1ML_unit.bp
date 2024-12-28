@@ -7,7 +7,9 @@ UnitBlueprint {
 
             MuzzleSalvoDelay = 0.2,
 
-            RateOfFire = 10/10,
+            RenderFireClock = true,
+
+            RateOfFire = 10/165,
 
             TurretPitchSpeed = 80,
 

@@ -29,4 +29,85 @@ UnitBlueprint {
 
         ShowIntelOnSelect = true,		
     },
+
+    Weapon = {
+        {
+            AlwaysRecheckTarget = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB2304_Missile_Flayer', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 200,
+            DamageType = 'Normal',
+			
+            DisplayName = 'SAM Launcher',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+            },
+            FiringTolerance = 40,
+			
+            Label = 'MissileRack01',
+			
+            MaxRadius = 48,
+			
+            MuzzleSalvoDelay = 0.3,
+            MuzzleSalvoSize = 6,
+            MuzzleVelocity = 36,
+			
+            ProjectileId = '/projectiles/TAAMissileFlayer01/TAAMissileFlayer01_proj.bp',
+            ProjectileLifetime = 2.8,
+
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'Turret_Muzzle_001',
+                        'Turret_Muzzle_004',
+                        'Turret_Muzzle_002',
+                        'Turret_Muzzle_005',
+                        'Turret_Muzzle_003',
+                        'Turret_Muzzle_006',
+                    },
+                    RackBone = 'Turret_Barrel',
+                },
+            },
+            
+            RackSalvoReloadTime = 1.5,  -- firing cycle 3.3 seconds
+			
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 10/20,             -- controlled by salvo times = 6 x 200 = 1200/3.3 = 363 DPS Air
+			
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'HIGHPRIAIR',
+                'BOMBER',
+                'GROUNDATTACK',
+                'TRANSPORTATION',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Turret_Pitch',
+            TurretBonePitch = 'Turret_Pitch',
+            TurretBoneYaw = 'Turret_Yaw',
+			
+            TurretPitch = 25,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 70,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 65,
+			
+            Turreted = true,
+        },
+    },
 }

@@ -29,6 +29,10 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 	
         WeaponOnCreate(self)
 
+        self.HadTarget = false
+        self.WeaponCanFire = true
+        self.WeaponIsEnabled = false
+
         self.CurrentRackNumber = 1
         
         local bp = self.bp
@@ -105,15 +109,9 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
         end
 
         if not bp.EnabledByEnhancement then
-
             self:SetWeaponEnabled(true)
-            self.WeaponIsEnabled = true
-            self.WeaponCanFire = true
-            
             LOUDSTATE( self, self.IdleState)
-            
         end
-
 	end,
 
     -- modded this so only retrieve bp if old or new is 'stopped'
@@ -858,7 +856,8 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
                     local proj = self:CreateProjectileAtMuzzle(muzzle)
 
                     -- Decrement the ammo if they are a counted projectile
-                    if proj and not proj:BeenDestroyed() and CountedProjectile then
+                    -- The "or" is a hack for fixing billy nuke not Removing NukeSiloAmmo properly
+                    if (proj and not proj:BeenDestroyed() and CountedProjectile) or (CountedProjectile and bp.MaxProjectileStorage > 0)then
                         if bp.NukeWeapon then
                             unit:NukeCreatedAtUnit()
                             unit:RemoveNukeSiloAmmo(1)
