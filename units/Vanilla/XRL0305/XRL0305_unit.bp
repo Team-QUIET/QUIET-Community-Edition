@@ -27,13 +27,18 @@ UnitBlueprint {
 			
             MaxRadius = 34,
 
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
             MuzzleVelocity = 40,
+            ProjectileId = "/projectiles/CDFHeavyDisintegratorPulseLaser01/CDFHeavyDisintegratorPulseLaser01_proj.bp",
+            ProjectileLifetimeUsesMultiplier = 1.15,
+            ProjectilesPerOnFire = 1,
 			
 			ProjectileLifetime = 1,
 
             RangeCategory = 'UWRC_DirectFire',
 			
-            RateOfFire = 2,	-- 450 DPS
+            RateOfFire = 10/5,	-- 450 DPS
 			
             TargetCheckInterval = 0.5,
             TargetPriorities = {
@@ -57,9 +62,63 @@ UnitBlueprint {
             TurretYawSpeed = 90,
 
             Turreted = true,
+            WeaponCategory = "Direct Fire",
         },
         {
-           
+            Audio = {
+                Fire = Sound { Bank = 'XRL_Weapon', Cue = 'XRL0305_Torpedo_Nanite', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+
+            BelowWaterFireOnly = true,
+
+            CollideFriendly = false,
+			
+            Damage = 200,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Nanite Torpedo Launcher',
+			
+            FireTargetLayerCapsTable = {
+                Seabed = 'Seabed|Sub|Water',
+            },
+			
+            FiringTolerance = 2,
+			
+            Label = 'Torpedo',
+			
+            MaxRadius = 35,
+			
+            MuzzleSalvoDelay = 0.8,
+            MuzzleSalvoSize = 2,
+
+            MuzzleVelocity = 3,
+			
+            ProjectileId = '/projectiles/CANTorpedoNanite02/CANTorpedoNanite02_proj.bp',
+            ProjectileLifetime = 8,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Projectile01','Projectile02'},
+                    RackBone = 'Turret',
+                },
+            },
+            
+            RackSalvoReloadTime = 2.4,      -- 2 torps of 200 = 400 every 4 seconds = 100 DPS
+
+            RangeCategory = 'UWRC_AntiNavy',
+			
+            RateOfFire = 10/20,
+            TargetCheckInterval = 2,
+
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS,-WALL',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
         },
     },
 }
