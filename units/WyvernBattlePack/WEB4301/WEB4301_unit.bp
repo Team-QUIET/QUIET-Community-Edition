@@ -41,7 +41,7 @@ UnitBlueprint{
 
             RangeCategory = "UWRC_Countermeasure",
 
-            RateOfFire = 10/20,
+            RateOfFire = 20/10,
 
             TargetCheckInterval = 0.1,
 
