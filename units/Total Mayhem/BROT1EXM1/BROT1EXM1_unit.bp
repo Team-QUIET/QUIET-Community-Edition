@@ -131,7 +131,7 @@ UnitBlueprint {
 			
             MaxRadius = 29,
 			
-            MuzzleSalvoDelay = 0.4,
+            MuzzleSalvoDelay = 0.2,
             MuzzleSalvoSize = 6,
             MuzzleVelocity = 17,
 			
@@ -143,7 +143,9 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_IndirectFire',
 
-            RateOfFire = 10/10,	-- 15dps
+            RenderFireClock = true,
+
+            RateOfFire = 10/100,	-- 15dps
 			
             TargetCheckInterval = 2.5,
             TargetPriorities = {
