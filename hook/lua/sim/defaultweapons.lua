@@ -856,7 +856,8 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
                     local proj = self:CreateProjectileAtMuzzle(muzzle)
 
                     -- Decrement the ammo if they are a counted projectile
-                    if proj and not proj:BeenDestroyed() and CountedProjectile then
+                    -- The "or" is a hack for fixing billy nuke not Removing NukeSiloAmmo properly
+                    if (proj and not proj:BeenDestroyed() and CountedProjectile) or (CountedProjectile and bp.MaxProjectileStorage > 0)then
                         if bp.NukeWeapon then
                             unit:NukeCreatedAtUnit()
                             unit:RemoveNukeSiloAmmo(1)
