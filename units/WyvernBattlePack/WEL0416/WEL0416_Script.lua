@@ -359,14 +359,6 @@ WEL0416 = Class(TWalkingLandUnit) {
         self:CreateWreckage(Random(0.1,1))
         self:Destroy()
     end,
-	
-    OnShieldIsUp = function (self)
-        self:SetCanTakeDamage(false)
-    end,
-
-    OnShieldIsDown = function (self)
-        self:SetCanTakeDamage(true) 
-    end,
 }
 	
 TypeClass = WEL0416
