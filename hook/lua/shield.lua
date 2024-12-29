@@ -992,7 +992,8 @@ Shield = Class(QCEShield) {
 }
 
 -- Unit shields typically hug the shape of the unit
-UnitShield = Class(Shield){
+QCEUnitShield = UnitShield
+UnitShield = Class(QCEUnitShield){
 
     OnCreate = function(self,spec)
 
