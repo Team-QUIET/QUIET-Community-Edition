@@ -7,9 +7,7 @@ ui_only = false
 selectable = true
 enabled = true
 uid = "zzzzzzze-fffe-fffe-fffe-94ccddf9599f"
-requires = {
-  "zzzzzzze-fffe-fffe-fffe-71aabbf8363f", --QUIET
-}
+requires = { }
 conflicts = { 
   "ffffffff-6f00-4864-9599-4133236eea7a", --LOUD Evenflow Engineers
 }
