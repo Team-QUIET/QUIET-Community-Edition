@@ -6,13 +6,5 @@ SSL0311 = Class(SWalkingLandUnit) {
     Weapons = {
         MainGun = Class(SDFAireauBolterWeapon) {}
     },
-
-    OnShieldIsUp = function (self)
-        self:SetCanTakeDamage(false)
-    end,
-
-    OnShieldIsDown = function (self)
-        self:SetCanTakeDamage(true) 
-    end,
 }
 TypeClass = SSL0311

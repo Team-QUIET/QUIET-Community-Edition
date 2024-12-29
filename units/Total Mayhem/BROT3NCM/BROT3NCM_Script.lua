@@ -50,13 +50,5 @@ BROT3NCM = Class(AWalkingLandUnit) {
         end
 
 	end,
-
-    OnShieldIsUp = function (self)
-        self:SetCanTakeDamage(false)
-    end,
-
-    OnShieldIsDown = function (self)
-        self:SetCanTakeDamage(true) 
-    end,
 }
 TypeClass = BROT3NCM

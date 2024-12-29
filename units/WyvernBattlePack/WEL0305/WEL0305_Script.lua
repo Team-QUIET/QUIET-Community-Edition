@@ -62,14 +62,6 @@ WEL0305 = Class(TWalkingLandUnit) {
         
 		TML = Class(TAMPhalanxWeapon) {},
     },
-
-    OnShieldIsUp = function (self)
-        self:SetCanTakeDamage(false)
-    end,
-
-    OnShieldIsDown = function (self)
-        self:SetCanTakeDamage(true) 
-    end,
 }
 
 TypeClass = WEL0305

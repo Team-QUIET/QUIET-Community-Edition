@@ -69,19 +69,30 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
         -- Ensure firing cycle is compatible internally
         local numRackBones = table.getn(rackBones)
         local numMuzzles = 0
+
         for _, rack in rackBones do
             local muzzleBones = rack.MuzzleBones
             numMuzzles = numMuzzles + table.getn(muzzleBones)
         end
+
         self.NumMuzzles = numMuzzles / numRackBones
         self.NumRackBones = numRackBones
         local totalMuzzleFiringTime = (self.NumMuzzles - 1) * muzzleSalvoDelay
+
         if totalMuzzleFiringTime > (1 / rof) then
+            -- This is the example of a bad fire rate
+            -- if we have MuzzleSalvoDelay = 0.4,
+            --             MuzzleSalvoSize = 4,
+            -- which is 0.4 x 4 
+            -- and the rate of fire is 10/10 which is 1 
+            -- and we are getting total time to fire muzzles is longer than the RoF allows
+            -- if it is not fixed the weapon will trigger multiple OnFire() events without actually firing the weapon
             local strg = '*ERROR: The total time to fire muzzles is longer than the RateOfFire allows, aborting weapon setup.  Weapon: '
                 .. bp.DisplayName .. ' on Unit: ' .. self.unit:GetUnitId()
             error(strg, 2)
             return false
         end
+
 
         if bp.EnergyChargeForFirstShot == false then
             self.FirstShot = true

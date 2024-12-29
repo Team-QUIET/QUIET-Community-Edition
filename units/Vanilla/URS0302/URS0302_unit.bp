@@ -499,7 +499,7 @@ UnitBlueprint {
             TargetType = 'RULEWTT_Projectile',
             TrackingRadius = 1.2,
 			
-            TurretBoneMuzzle = 'Left_Muzzle02',
+            TurretBoneMuzzle = 'Left_Muzzle01',
             TurretBonePitch = 'Left_Turret01',
             TurretBoneYaw = 'Left_Turret01',
 
@@ -562,7 +562,7 @@ UnitBlueprint {
             TargetType = 'RULEWTT_Projectile',
             TrackingRadius = 1.2,
 			
-            TurretBoneMuzzle = 'Right_Muzzle02',
+            TurretBoneMuzzle = 'Right_Muzzle01',
             TurretBonePitch = 'Right_Turret',
             TurretBoneYaw = 'Right_Turret',
 

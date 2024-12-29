@@ -152,7 +152,7 @@ Shield = Class(QCEShield) {
 		self.OffHealth = -1
 
         -- copy over information from specifiaction
-        self.Size = spec.Size
+        self.Size = spec.Size or 10
         self.Owner = spec.Owner
         self.MeshBp = spec.Mesh
         self.MeshZBp = spec.MeshZ
@@ -193,11 +193,11 @@ Shield = Class(QCEShield) {
         self.DamagedRegular = {}
         self.DamagedOverspill = {}
 
-		self:SetSize(spec.Size)
-
         -- set some internal state related to shields
         self._IsUp = false
-        self.ShieldType = 'Bubble'
+        self.MyShieldType = 'Shield'
+
+        self:SetSize(spec.Size)
 
         -- attach us to the owner
         EntityAttachBoneTo(self, -1, spec.Owner, -1)
@@ -222,6 +222,8 @@ Shield = Class(QCEShield) {
   
         SetStat( self.Owner,'SHIELDHP', spec.ShieldMaxHealth )
         SetStat( self.Owner,'SHIELDREGEN', spec.ShieldRegenRate)
+
+        self.Enabled = true
 		
 		if ScenarioInfo.ShieldDialog then
 			LOG("*AI DEBUG Shield created on "..__blueprints[self.Owner.BlueprintID].Description) 
@@ -321,6 +323,11 @@ Shield = Class(QCEShield) {
             local brain = self.Brain
             local position = EntityGetPosition(self.Owner)
 
+            -- Safety Check for nil shield size
+            if self.Size == nil then
+                self.Size = 10
+            end
+
             -- diameter where other shields overlap with us or are contained by us
             local diameter = LargestShieldDiameter + self.Size
 
@@ -346,10 +353,10 @@ Shield = Class(QCEShield) {
                     -- store reference to reduce table lookups
                     shieldOther = other.MyShield
 
-                    -- check if it is a different unti and that it has an active shield with a radius
+                    -- check if it is a different unit and that it has an active shield with a radius
                     -- larger than 0, as engine defaults shield table to 0
                     if shieldOther
-                        and shieldOther.ShieldType ~= "Personal"
+                        and shieldOther.MyShieldType ~= "Personal"
                         and shieldOther:IsUp()
                         and shieldOther.Size
                         and shieldOther.Size > 0
@@ -456,9 +463,9 @@ Shield = Class(QCEShield) {
 
         -- damage correction for overspill, do not apply to personal shields
 
-        --LOG("The Shieldtype is "..repr(self.ShieldType))
+        -- LOG("The MyShieldType is "..repr(self.MyShieldType))
 
-        if self.ShieldType ~= "Personal" then
+        if self.MyShieldType ~= "Personal" then
 
             local instigatorId = (instigator and instigator.EntityId) or false
             if instigatorId then
@@ -494,8 +501,10 @@ Shield = Class(QCEShield) {
         if self.Owner ~= instigator then
             local absorbed = self:OnGetDamageAbsorption(instigator, amount, dmgType)
 
-            --LOG("We're calculating the damage now... - ApplyDamage Function")
-            --LOG("Absorbed is "..repr(absorbed))
+            -- Safety Check for nil shield size
+            if self.Size == nil then
+                self.Size = 10
+            end
 
             -- take some damage
             EntityAdjustHealth(self, instigator, -absorbed)
@@ -539,7 +548,7 @@ Shield = Class(QCEShield) {
         if -- prevent recursively applying overspill
         doOverspill
             -- personal shields do not have overspill damage
-            and self.ShieldType ~= "Personal"
+            and self.MyShieldType ~= "Personal"
             -- we consider damage without an instigator irrelevant, typically force events
             and IsEntity(instigator)
             -- we consider damage that is 1 or lower irrelevant, typically force events
@@ -742,6 +751,11 @@ Shield = Class(QCEShield) {
     end,
 
     CreateShieldMesh = function(self)
+
+        -- Safety Check for nil shield size
+        if self.Size == nil then
+            self.Size = 10
+        end
         
         local vec = VectorCached
         vec[1] = 0
@@ -816,21 +830,23 @@ Shield = Class(QCEShield) {
 			local WaitTicks = WaitTicks
 			
 			local aiBrain = self.Owner:GetAIBrain()
+            self.Enabled = true
+            --LOG("We are in the OnState Function and self.Enabled is" .. repr(self.Enabled) .. " for unit "..__blueprints[self.Owner.BlueprintID].Description)
 			
             -- If the shield was turned off; use the recharge time before turning back on
             if self.OffHealth >= 0 then
 			
                 self.Owner:SetMaintenanceConsumptionActive()
-				
+                
                 self:ChargingUp( 0, self.ShieldEnergyDrainRechargeTime )
                 
                 -- If the shield has less than full health, allow the shield to begin regening
                 if GetHealth(self) < GetMaxHealth(self) and self.RegenRate > 0 then
-				
+                
                     self.RegenThread = self:ForkThread(self.RegenStartThread)
 
                 end
-				
+            
             end
             
             -- We are no longer turned off
@@ -842,7 +858,7 @@ Shield = Class(QCEShield) {
 			self:CreateShieldMesh()
 
             WaitTicks(10)
-            
+			
             -- Test in here if we have run out of power
             while true do
 			
@@ -872,7 +888,9 @@ Shield = Class(QCEShield) {
     OffState = State {
 
         Main = function(self)
-		
+            
+            self.Enabled = false
+
 			-- No regen during off state
 			if self.RegenThread then
 				KillThread(self.RegenThread)
@@ -971,5 +989,350 @@ Shield = Class(QCEShield) {
         end,
     },
 	
+}
+
+-- Unit shields typically hug the shape of the unit
+UnitShield = Class(Shield){
+
+    OnCreate = function(self,spec)
+
+        self.Trash = TrashBag()
+        self.Owner = spec.Owner
+        self.ImpactEffects = EffectTemplate[spec.ImpactEffects]        
+        self.CollisionSizeX = spec.CollisionSizeX or 1
+		self.CollisionSizeY = spec.CollisionSizeY or 1
+		self.CollisionSizeZ = spec.CollisionSizeZ or 1
+		self.CollisionCenterX = spec.CollisionCenterX or 0
+		self.CollisionCenterY = spec.CollisionCenterY or 0
+		self.CollisionCenterZ = spec.CollisionCenterZ or 0
+		self.OwnerShieldMesh = spec.OwnerShieldMesh or ''
+
+		Shield.OnCreate(self,spec)
+        self.MyShieldType = 'Personal'
+
+    end,
+
+    ApplyDamage = function(self, instigator, amount, vector, dmgType, doOverspill)
+        -- We want all personal shields to pass overkill damage
+        -- Was handled by self.PassOverkillDamage bp value, now defunct
+        if self.Owner ~= instigator then
+            local overkill = self:GetOverkill(instigator, amount, dmgType)
+            if overkill > 0 and self.Owner and IsUnit(self.Owner) then
+                self.Owner:DoTakeDamage(instigator, overkill, vector, dmgType)
+            end
+        end
+
+        Shield.ApplyDamage(self, instigator, amount, vector, dmgType, doOverspill)
+    end,
+
+    -- I've turned off impact effects on skin shields simply for performance 
+    -- the effect is so small, and only lasts .3 seconds, it seemed an easy choice
+    CreateImpactEffect = function(self, vector)
+    end,
+
+    CreateShieldMesh = function(self)
+	
+  		self:SetCollisionShape( 'Box', self.CollisionCenterX, self.CollisionCenterY, self.CollisionCenterZ, self.CollisionSizeX, self.CollisionSizeY, self.CollisionSizeZ)
+		
+		self.Owner:SetMesh(self.OwnerShieldMesh,true)
+		
+        self.Owner:OnShieldIsUp()
+		
+    end,
+	
+    RemoveShield = function(self)
+	
+        self:SetCollisionShape('None')
+		
+		self.Owner:SetMesh(self.Owner:GetBlueprint().Display.MeshBlueprint, true)
+		
+        self.Owner:OnShieldIsDown()
+		
+    end,
+
+    OnDestroy = function(self)
+	
+        if not self.Owner.MyShield or self.Owner.MyShield:GetEntityId() == self:GetEntityId() then
+		
+	        self.Owner:SetMesh(self.Owner:GetBlueprint().Display.MeshBlueprint, true)
+			
+		end
+		
+		self:UpdateShieldRatio(0)
+        ChangeState(self, self.DeadState)
+    end,
+
+}
+
+-- AntiArtillery shields are typical bubbles but only intercept certain projectiles
+QCEAntiArtilleryShield = AntiArtilleryShield
+AntiArtilleryShield = Class(QCEAntiArtilleryShield){
+
+    OnCreate = function(self, spec)
+        Shield.OnCreate(self, spec)
+        self.MyShieldType = 'AntiArtilleryShield'
+    end,
+
+    OnCollisionCheckWeapon = function(self, firingWeapon)
+
+        local bp = firingWeapon.bp
+		
+        if not bp.CollideFriendly then
+		
+            if self.Army == firingWeapon.unit.Army then
+			
+                return false
+				
+            end
+			
+        end
+		
+        -- Check DNC list
+		if bp.DoNotCollideList then
+		
+			for _,v in bp.DoNotCollideList do
+			
+				if LOUDENTITY( LOUDPARSE(v), self) then
+				
+					return false
+					
+				end
+				
+			end
+			
+		end
+		
+        if bp.ArtilleryShieldBlocks then
+		
+            return true
+			
+        end
+		
+        return false
+		
+    end,
+
+    -- Return true to process this collision, false to ignore it.
+    OnCollisionCheck = function(self,other)
+	
+		local otherArmy = GetArmy(other)
+	
+        if otherArmy == -1 then
+            return false
+        end
+		
+        if other.DamageData.ArtilleryShieldBlocks and IsEnemy( self.Army, otherArmy ) then
+            return true
+        end
+		
+        if other:GetBlueprint().Physics.CollideFriendlyShield and other.DamageData.ArtilleryShieldBlocks then
+            return true
+        end
+		
+        return false
+		
+    end,
+	
+}
+
+-- Hunker Shields take no damage while on --
+QCEDomeHunkerShield = DomeHunkerShield
+DomeHunkerShield = Class(QCEDomeHunkerShield) {
+	
+	OnCollisionCheckWeapon = function(self, firingWeapon)
+		return true
+	end,
+
+	OnCollisionCheck = function(self,other)
+		if GetArmy(other) == -1 then
+			return true
+		end
+
+		return true
+	end,
+}
+
+-- Hunker Shields are time limited shields that take no damage --
+QCEPersonalHunkerShield = PersonalHunkerShield
+PersonalHunkerShield = Class(QCEPersonalHunkerShield) {
+
+    OnCreate = function(self, spec)
+        Shield.OnCreate(self, spec)
+        self.MyShieldType = 'HunkerPersonal'
+    end,
+
+
+	OnDamage =  function(self,instigator,amount,vector,type)
+	end, 
+
+    CreateImpactEffect = function(self, vector)
+    end,
+
+    CreateShieldMesh = function(self)
+	
+		self:SetCollisionShape( 'Box', self.CollisionCenterX, self.CollisionCenterY, self.CollisionCenterZ, self.CollisionSizeX, self.CollisionSizeY, self.CollisionSizeZ)
+		
+		SetMesh( self.Owner, self.OwnerShieldMesh, true )
+    end,
+
+    RemoveShield = function(self)
+	
+        self:SetCollisionShape('None')
+		
+		SetMesh( self.Owner, self.Owner:GetBlueprint().Display.MeshBlueprint, true )
+    end,
+
+    OnDestroy = function(self)
+	
+        if not self.Owner.MyShield or self.Owner.MyShield:GetEntityId() == self:GetEntityId() then
+		
+	        SetMesh( self.Owner, self.Owner:GetBlueprint().Display.MeshBlueprint, true)
+		end
+		
+		self:UpdateShieldRatio(0)
+        ChangeState(self, self.DeadState)
+    end,
+
+}
+
+QCEProjectedShield = ProjectedShield
+ProjectedShield = Class(QCEProjectedShield){
+
+    OnDamage =  function(self,instigator,amount,vector,type)
+	
+        --Count how many projectors are going to be receiving the damage.
+        local pCount = self:CheckProjectors()
+		
+        --If there are none, then something has happened and we need to kill the shield.
+        if pCount == 0 then
+            self.Owner:DestroyShield()
+        else
+            
+			ForkThread(self.CreateImpactEffect, self, vector)
+
+            --Calculate the damage now, once, and before we fuck with the numbers.
+            self:DistributeDamage(instigator,amount,vector,type)
+        end
+    end,
+
+    CheckProjectors = function(self)
+	
+        local pCount = 0
+		
+        for i, projector in self.Owner.Projectors do
+		
+            if IsUnit(projector) and projector.MyShield and projector.MyShield:GetHealth() > 0 then
+                pCount = pCount + 1
+            end
+        end
+		
+        return pCount
+    end,
+
+    DistributeDamage = function(self,instigator,amount,vector,type)
+	
+        local pCount = self:CheckProjectors()
+		
+        if pCount == 0 and not self.Owner.Dead then
+            self.Owner:OnDamage(instigator,amount,vector,type)
+        end
+		
+        local damageToDeal = amount / pCount
+        local overKillDamage, ProjectorHealth = 0,0
+		
+        for i, projector in self.Owner.Projectors do
+		
+            ProjectorHealth = projector.MyShield:GetHealth()
+			
+            projector.MyShield:OnDamage(instigator,damageToDeal,vector,type)
+			
+            --If it looked like too much damage, remove it from the projector list, and count the overkill
+            if ProjectorHealth <= damageToDeal then
+                overKillDamage = overKillDamage + LOUDMAX(damageToDeal - ProjectorHealth, 0)
+                projector.ShieldProjectionEnabled = false
+                projector:ClearShieldProjections()
+            end
+        end
+		
+        if overKillDamage > 0 then
+            self:DistributeDamage(instigator,overKillDamage,vector,type)
+        end
+		
+    end,
+
+    CreateImpactEffect = function(self, vector)
+
+        local AttachBeamEntityToEntity = AttachBeamEntityToEntity
+        local CreateEmitterAtBone = CreateEmitterAtBone
+        local WaitTicks = coroutine.yield
+
+        if not self.Dead then
+
+            -- Safety Check for nil shield size
+            if self.Size == nil then
+                self.Size = 10
+            end
+        
+            local army = self.Army
+            
+            local OffsetLength = LOUDSQRT( LOUDPOW( vector[1], 2 ) + LOUDPOW( vector[2], 2 ) + LOUDPOW(vector[3], 2 ) )
+            
+            local ImpactMesh = Entity( self.ImpactEntitySpecs )
+		
+            Warp( ImpactMesh, self:GetPosition())
+		
+            if self.ImpactMeshBp then
+                
+                local vec = VectorCached
+
+                vec[1] = -vector.x
+                vec[2] = -vector.y
+                vec[3] = -vector.z
+                
+                ImpactMesh:SetOrientation(OrientFromDir( vec ),true)            
+
+                ImpactMesh:SetMesh(self.ImpactMeshBp)
+                ImpactMesh:SetDrawScale(self.Size)
+
+            end
+            
+            local beams = {}
+	
+            for i, Pillar in self.Owner.Projectors do
+
+                if self:IsValidBone(0) and Pillar:IsValidBone('Gem') then
+                    beams[i] = AttachBeamEntityToEntity(self, 0, Pillar, 'Gem', army, Pillar:GetBlueprint().Defense.Shield.ShieldTargetBeam)
+                end
+            end
+            
+            if self.ImpactEffects and not self.Dead then
+		
+                for k, v in self.ImpactEffects do
+                    CreateEmitterAtBone( ImpactMesh, -1, army, v ):OffsetEmitter(0,0,OffsetLength)
+                end
+            end
+		
+            WaitTicks(5)
+		
+            for i, v in beams do
+                v:Destroy()
+            end
+		
+            WaitTicks(45)
+        
+            ImpactMesh:Destroy()
+            
+        end
+        
+    end,
+
+    OnCollisionCheck = function(self,other)
+    
+        if self:CheckProjectors() == 0 then
+            return false
+        end
+        
+        return Shield.OnCollisionCheck(self,other)
+    end,
 }
 end -- Do End
