@@ -17,6 +17,7 @@ requires = {
 	"fffffffe-6e98-4864-9599-4133236eea7a", -- LOUD Unit Additions
 	"ffffffff-6e98-4864-9599-4133236eea7a", -- LOUD Integrated Storage
 	"ffffffff-ffff-ffff-ffff-fffffffffffe", -- LOUD Structure Enhancements
+	"zzzzzzze-fffe-fffe-fffe-94ccddf9599f", -- QUIET - Economy & Flow
 }
 conflicts = {
 	"ffffffff-9d4e-11dc-8314-0800200c0605", -- LOUD Enhanced Commanders
