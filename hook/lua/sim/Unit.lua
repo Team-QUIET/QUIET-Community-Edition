@@ -33,13 +33,10 @@ Unit = Class(QCEUnit) {
                     excessDamageRatio = -excess / maxHealth
 					
                 end
-				
-                Kill( self, instigator, damageType, excessDamageRatio)
-				
+				Kill( self, instigator, damageType, excessDamageRatio)
             end
-			
-        end
-
+		end
+		
         -- Handle incoming OC damage for ACUs
         if damageType == 'Overcharge' and LOUDENTITY(categories.COMMAND, self) then
 

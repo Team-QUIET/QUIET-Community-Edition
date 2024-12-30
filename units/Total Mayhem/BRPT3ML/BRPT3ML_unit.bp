@@ -1,7 +1,7 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "brpt3ml",
-	
+    
     Weapon = {
         {
             AboveWaterTargetsOnly = true,
@@ -10,9 +10,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
 			
-            Damage = 125,
+            Damage = 136,
             DamageRadius = 3.5,
-            DamageType = 'Normal',       -- unique penalty to this unit --
+            DamageType = 'Normal',
             DamageFriendly = false,
 			
             DisplayName = 'Light Quarnon Cannon',
@@ -31,7 +31,7 @@ UnitBlueprint {
             MaxRadius = 88,
             MinRadius = 22,
 			
-            MuzzleSalvoDelay = 0.8,         -- 3.2 seconds to discharge
+            MuzzleSalvoDelay = 0.6,         -- 2.4 seconds to discharge
 
             MuzzleSalvoSize = 4,
 
@@ -42,10 +42,13 @@ UnitBlueprint {
             ProjectileLifetime = 12,
 
             RangeCategory = 'UWRC_IndirectFire',
+
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
 			
-            RateOfFire = 1,     -- rate controlled by charge - every 5 seconds = 500/5
+            RateOfFire = 10/76,  
 			
-            TargetCheckInterval = 1,
+            TargetCheckInterval = 0.5,
 			
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -55,7 +58,7 @@ UnitBlueprint {
             },
 			
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.05,
+            TrackingRadius = 1.1,
 			
             TurretBoneMuzzle = 'muzzle01',
             TurretBonePitch = 'Left_Arm_B01',

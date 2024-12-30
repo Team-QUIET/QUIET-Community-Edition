@@ -97,6 +97,25 @@ local IEffectOffsetEmitter = moho.IEffect.OffsetEmitter
 
 local CategoriesOverspill = categories.SHIELD * categories.DEFENSE
 
+-- default values for a shield specification table (to be passed to native code)
+local DEFAULT_OPTIONS = {
+    Mesh = '',
+    MeshZ = '',
+    ImpactMesh = '',
+    ImpactEffects = '',
+    Size = 10,
+    ShieldMaxHealth = 250,
+    ShieldRechargeTime = 10,
+    ShieldEnergyDrainRechargeTime = 10,
+    ShieldVerticalOffset = -1,
+    ShieldRegenRate = 1,
+    ShieldRegenStartTime = 5,
+    PassOverkillDamage = false,
+
+    -- flags for mods
+    -- SkipAttachmentCheck = false, -- defaults to nil, same as false
+}
+
 LargestShieldDiameter = 0
 for k, bp in __blueprints do
     -- check for blueprints that have a shield and a shield size set
@@ -118,6 +137,9 @@ Shield = Class(QCEShield) {
     --LOG("We've entered LCE Version of Shield.lua"),
 
     __init = function(self, spec)
+        -- Apply default options
+        local spec = TableAssimilate(spec, DEFAULT_OPTIONS)
+
         _c_CreateShield(self, spec)
     end,
 
@@ -152,7 +174,7 @@ Shield = Class(QCEShield) {
 		self.OffHealth = -1
 
         -- copy over information from specifiaction
-        self.Size = spec.Size or 10
+        self.Size = spec.Size
         self.Owner = spec.Owner
         self.MeshBp = spec.Mesh
         self.MeshZBp = spec.MeshZ
@@ -323,11 +345,6 @@ Shield = Class(QCEShield) {
             local brain = self.Brain
             local position = EntityGetPosition(self.Owner)
 
-            -- Safety Check for nil shield size
-            if self.Size == nil then
-                self.Size = 10
-            end
-
             -- diameter where other shields overlap with us or are contained by us
             local diameter = LargestShieldDiameter + self.Size
 
@@ -428,10 +445,18 @@ Shield = Class(QCEShield) {
     end,
     
     GetOverkill = function(self,instigator,amount,type)
+        -- Like armor damage, first multiply by armor reduction, then apply handicap
+        -- See SimDamage.cpp (DealDamage function) for how this should work
+        amount = amount * (self.Owner:GetArmorMult(type))
+        amount = amount * (1.0 - ArmyGetHandicap(self.Army))
+        local finalVal = amount - EntityGetHealth(self)
+        if finalVal < 0 or type == "FAF_AntiShield" then
+            finalVal = 0
+        end
+        return finalVal
     end,    
 
     OnDamage = function(self, instigator, amount, vector, damageType)
-
         -- only applies to trees
         if damageType == "TreeForce" or damageType == "TreeFire" then
             return
@@ -499,12 +524,8 @@ Shield = Class(QCEShield) {
         -- do damage logic for shield
 
         if self.Owner ~= instigator then
+            --LOG("Calling OnGetDamageAbsorption")
             local absorbed = self:OnGetDamageAbsorption(instigator, amount, dmgType)
-
-            -- Safety Check for nil shield size
-            if self.Size == nil then
-                self.Size = 10
-            end
 
             -- take some damage
             EntityAdjustHealth(self, instigator, -absorbed)
@@ -580,7 +601,6 @@ Shield = Class(QCEShield) {
     end,
 
     RegenStartThread = function(self)
-	
 		local AdjustHealth = AdjustHealth
 		local GetHealth = GetHealth
 		local GetMaxHealth = GetMaxHealth
@@ -616,7 +636,6 @@ Shield = Class(QCEShield) {
     end,
 
     CreateImpactEffect = function(self, vector)
-
         if IsDestroyed(self) then
             return
         end
@@ -751,12 +770,6 @@ Shield = Class(QCEShield) {
     end,
 
     CreateShieldMesh = function(self)
-
-        -- Safety Check for nil shield size
-        if self.Size == nil then
-            self.Size = 10
-        end
-        
         local vec = VectorCached
         vec[1] = 0
         vec[2] = self.ShieldVerticalOffset
@@ -821,7 +834,6 @@ Shield = Class(QCEShield) {
     OnState = State {
 	
         Main = function(self)
-		
 			local GetHealth = GetHealth
 			local GetMaxHealth = GetMaxHealth
 			local GetResourceConsumed = moho.unit_methods.GetResourceConsumed
@@ -888,7 +900,6 @@ Shield = Class(QCEShield) {
     OffState = State {
 
         Main = function(self)
-            
             self.Enabled = false
 
 			-- No regen during off state
@@ -920,7 +931,6 @@ Shield = Class(QCEShield) {
     DamageRechargeState = State {
 	
         Main = function(self)
-
 			-- No regen during off state
 			if self.RegenThread then
 				KillThread(self.RegenThread)
@@ -948,7 +958,6 @@ Shield = Class(QCEShield) {
     EnergyDrainRechargeState = State {
 	
         Main = function(self)
-
 			-- No regen during off state
 			if self.RegenThread then
 				KillThread(self.RegenThread)
@@ -992,8 +1001,9 @@ Shield = Class(QCEShield) {
 }
 
 -- Unit shields typically hug the shape of the unit
-QCEUnitShield = UnitShield
-UnitShield = Class(QCEUnitShield){
+UnitShield = Class(Shield){
+
+    RemainEnabledWhenAttached = true,
 
     OnCreate = function(self,spec)
 
@@ -1032,8 +1042,9 @@ UnitShield = Class(QCEUnitShield){
     end,
 
     CreateShieldMesh = function(self)
-	
-  		self:SetCollisionShape( 'Box', self.CollisionCenterX, self.CollisionCenterY, self.CollisionCenterZ, self.CollisionSizeX, self.CollisionSizeY, self.CollisionSizeZ)
+        -- Personal shields (unit shields) don't handle collisions anymore.
+        -- This is done in the Unit's OnDamage function instead.
+  		self:SetCollisionShape('None')
 		
 		self.Owner:SetMesh(self.OwnerShieldMesh,true)
 		
@@ -1066,8 +1077,7 @@ UnitShield = Class(QCEUnitShield){
 }
 
 -- AntiArtillery shields are typical bubbles but only intercept certain projectiles
-QCEAntiArtilleryShield = AntiArtilleryShield
-AntiArtilleryShield = Class(QCEAntiArtilleryShield){
+AntiArtilleryShield = Class(Shield){
 
     OnCreate = function(self, spec)
         Shield.OnCreate(self, spec)
@@ -1137,8 +1147,7 @@ AntiArtilleryShield = Class(QCEAntiArtilleryShield){
 }
 
 -- Hunker Shields take no damage while on --
-QCEDomeHunkerShield = DomeHunkerShield
-DomeHunkerShield = Class(QCEDomeHunkerShield) {
+DomeHunkerShield = Class(Shield) {
 	
 	OnCollisionCheckWeapon = function(self, firingWeapon)
 		return true
@@ -1154,8 +1163,7 @@ DomeHunkerShield = Class(QCEDomeHunkerShield) {
 }
 
 -- Hunker Shields are time limited shields that take no damage --
-QCEPersonalHunkerShield = PersonalHunkerShield
-PersonalHunkerShield = Class(QCEPersonalHunkerShield) {
+PersonalHunkerShield = Class(Shield) {
 
     OnCreate = function(self, spec)
         Shield.OnCreate(self, spec)
@@ -1196,8 +1204,7 @@ PersonalHunkerShield = Class(QCEPersonalHunkerShield) {
 
 }
 
-QCEProjectedShield = ProjectedShield
-ProjectedShield = Class(QCEProjectedShield){
+ProjectedShield = Class(Shield){
 
     OnDamage =  function(self,instigator,amount,vector,type)
 	
@@ -1268,11 +1275,6 @@ ProjectedShield = Class(QCEProjectedShield){
         local WaitTicks = coroutine.yield
 
         if not self.Dead then
-
-            -- Safety Check for nil shield size
-            if self.Size == nil then
-                self.Size = 10
-            end
         
             local army = self.Army
             
