@@ -493,7 +493,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
     
         if not self.Dead then
     
-            if self.WeaponWantEnabled != self.WeaponIsEnabled then
+            if self.WeaponWantEnabled ~= self.WeaponIsEnabled then
 
                 self:SetWeaponEnabled(self.WeaponWantEnabled)
 
@@ -501,7 +501,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 
             if self.AimControl then -- only turreted weapons have AimControl
 		
-                if self.WeaponAimEnabled != self.WeaponAimWantEnabled then
+                if self.WeaponAimEnabled ~= self.WeaponAimWantEnabled then
 
                     self:AimManipulatorSetEnabled(self.WeaponAimWantEnabled)
 
