@@ -27,10 +27,12 @@ UnitBlueprint {
     },
 	
     Weapon = {
-    
         -- Missiles --
-        
         {	
+            RenderFireClock = true, 
+
+            RateOfFire = 10/24,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 "STRUCTURE * ANTIAIR",
@@ -43,9 +45,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
         },
-        
         -- Shield Drain Autoguns x 2 --
-		
         {
            
         },
@@ -57,6 +57,5 @@ UnitBlueprint {
         {
             
         },
-		
     },  
 }

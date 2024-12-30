@@ -1,0 +1,242 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'brlk001',
+	
+    Weapon = {
+		{
+			advancedTracking = true,
+            AlwaysRecheckTarget = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'URSWeapon', Cue = 'URS0202_Nano_Dart', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+			
+            CannotAttackGround = true,
+			
+            CollideFriendly = false,
+			
+            Damage = 100,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Nanodart Launcher AA',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+            },
+			
+            FiringTolerance = 10,
+			
+            Label = 'AAGun',
+			
+            MaxRadius = 48,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 6,
+
+            MuzzleVelocity = 32,
+
+            ProjectileId = '/projectiles/CAANanoDart03/CAANanoDart03_proj.bp',
+            ProjectileLifetime = 4,
+
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'Turret_Muzzle_01',
+						'Turret_Muzzle_04',
+						'Turret_Muzzle_02',
+						'Turret_Muzzle_05',
+						'Turret_Muzzle_03',
+						'Turret_Muzzle_06',
+                    },
+                    RackBone = 'Turret_Barrel01',
+                },
+            },
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 10/6,	-- 360 DPS Air
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'HIGHPRIAIR',
+                'BOMBER',
+                'GROUNDATTACK',
+                'MOBILE',
+            },
+			
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			
+			ToggleWeapon = 'GroundGun',
+			
+            TrackingRadius = 1.2,
+
+            TurretBoneMuzzle = 'Turret_Muzzle_01',
+            TurretBonePitch = 'Turret_Barrel01',
+			TurretBoneYaw = 'Turret01',
+			
+            TurretPitch = 35,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 80,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 80,
+			
+            Turreted = true,
+        },
+		{
+            AlwaysRecheckTarget = true,
+
+            BallisticArc = 'RULEUBA_None',
+
+            BeamCollisionDelay = 0.2,
+            BeamLifetime = 0,
+
+			CannotAttackGround = true,
+			ContinuousBeam = true,
+
+            CollideFriendly = false,
+
+            Damage = 0.1,
+            DamageFriendly = false,
+            DamageType = 'Normal',
+
+            DisplayName = 'Targeting Laser',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+            },
+
+            FiringTolerance = 2,
+
+            Label = 'Lazor',
+
+            MaxRadius = 50,
+
+			PreferPrimaryWeaponTarget = true,
+            ProjectileLifetimeUsesMultiplier = 1.1,
+
+            RackBones = {
+                {
+                    MuzzleBones = { 'Lazor' },
+                    RackBone = 'Lazor',
+                },
+            },
+
+            RateOfFire = 2,
+
+            ReTargetOnMiss = true,
+
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'HIGHPRIAIR',
+                'BOMBER',
+                'GROUNDATTACK',
+                'MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TrackingRadius = 1.2,
+
+            TurretBoneMuzzle = 'Lazor',
+            TurretBonePitch = 'Lazor',
+            TurretBoneYaw = 'Lazor',
+
+            TurretPitch = 0,
+            TurretPitchRange = 180,
+            TurretPitchSpeed = 180,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 180,
+
+            Turreted = true,
+			UseFiringSolutionInsteadOfAimBone = true,
+        },
+		{
+            AlwaysRecheckTarget = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'URSWeapon', Cue = 'URS0202_Nano_Dart', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            
+            CollideFriendly = false,
+			
+            Damage = 100,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Nanodart Ground Launcher',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land',
+            },
+			
+			FiringRandomness = 0.6,
+            FiringTolerance = 2,
+			
+            Label = 'GroundGun',
+			
+            MaxRadius = 30,
+			
+            MuzzleSalvoDelay = 0.5,
+            MuzzleSalvoSize = 6,
+
+            MuzzleVelocity = 10,
+			
+            ProjectileId = '/projectiles/CAANanoDart05/CAANanoDart05_proj.bp',
+            ProjectileLifetime = 3,
+
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'Turret_Muzzle_01',
+						'Turret_Muzzle_04',
+						'Turret_Muzzle_02',
+						'Turret_Muzzle_05',
+						'Turret_Muzzle_03',
+						'Turret_Muzzle_06',
+                    },
+                    RackBone = 'Turret_Barrel01',
+                },
+            },
+            
+            RackSalvoReloadTime = 2,  
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/30,	
+			
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'STRUCTURE DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+			ToggleWeapon = 'AAGun',
+			
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Turret_Muzzle_01',
+            TurretBonePitch = 'Turret_Barrel01',
+			TurretBoneYaw = 'Turret01',
+			
+            TurretPitch = 35,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 90,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 60,
+            Turreted = true,
+        },
+    },
+}
