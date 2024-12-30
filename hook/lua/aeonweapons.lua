@@ -1,6 +1,7 @@
 ---  /lua/aeonweapons.lua
 ---  Default definitions of Aeon weapons
 ---  Credit to Jip (FAF) for GC TractorClaw Rework
+---  QUIET's First Overhaul, Courtesy of FAF!
 
 local Entity = import('/lua/sim/Entity.lua').Entity
 local Weapon = import('/lua/sim/weapon.lua').Weapon

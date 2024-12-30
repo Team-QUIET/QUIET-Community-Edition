@@ -6,6 +6,41 @@
 QCEUnit = Unit
 Unit = Class(QCEUnit) {
 
+    OnDamage = function(self, instigator, amount, vector, damageType)
+        local platoon = self.PlatoonHandle
+
+        -- if the unit is in a platoon that exists and that platoon has a CallForHelpAI
+		-- I should probably do this thru a callback but it's much easier to find and work with it here until I have it right
+		if platoon.CallForHelpAI or platoon.RetreatAI then
+			
+			if (not platoon.DistressCall) and (not platoon.UnderAttack) then
+
+                local aiBrain = GetAIBrain(self)
+
+                if PlatoonExists( aiBrain, platoon ) then
+			
+                    -- turn on the UnderAttack flag and process it
+                    if not platoon.UnderAttack then
+                        platoon:ForkThread( platoon.PlatoonUnderAttack, aiBrain)
+                    end
+                end
+				
+			end
+        end
+
+        if self.CanTakeDamage then
+            -- Pass damage to an active personal shield, as personal shields no longer have collisions
+            local myShield = self.MyShield
+            if myShield.MyShieldType == "Personal" and myShield:IsOn() then
+                self:DoOnDamagedCallbacks(instigator)
+                self.MyShield:ApplyDamage(instigator, amount, vector, damageType)
+            elseif damageType ~= "FAF_AntiShield" then
+                self:DoOnDamagedCallbacks(instigator)
+                self:DoTakeDamage(instigator, amount, vector, damageType)
+            end
+        end
+    end,
+
     DoTakeDamage = function(self, instigator, amount, vector, damageType)
 
 		local GetHealth = GetHealth
