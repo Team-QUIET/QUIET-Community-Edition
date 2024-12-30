@@ -484,9 +484,8 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
         return self.WeaponCanFire
     end,
 
-    -- Present for Overcharge to hook into
-    OnWeaponFired = function(self)
-    end,
+    -- QCE OnWeaponFired function was here
+    -- Moved to QUIET Base Repo -- 12/31/2024 -- Azraeelian Angel
 
     -- I think this is triggered whenever the state changes to anything but DeadState
     OnEnterState = function(self)

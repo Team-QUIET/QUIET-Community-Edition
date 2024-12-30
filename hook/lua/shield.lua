@@ -457,16 +457,8 @@ Shield = Class(QCEShield) {
         return finalVal
     end,    
 
-    OnDamage = function(self, instigator, amount, vector, damageType)
-        -- only applies to trees
-        if damageType == "TreeForce" or damageType == "TreeFire" then
-            return
-        end
-
-        -- Only called when a shield is directly impacted, so not for Personal Shields
-        -- This means personal shields never have ApplyDamage called with doOverspill as true
-        self:ApplyDamage(instigator, amount, vector, damageType, true)
-    end,
+    -- QCE OnDamage function was here
+    -- Moved to QUIET Base Repo -- 12/31/2024 -- Azraeelian Angel
 
     ApplyDamage = function(self, instigator, amount, vector, dmgType, doOverspill)
 
@@ -750,9 +742,8 @@ Shield = Class(QCEShield) {
         return false
     end,
 
-    IsUp = function(self)
-        return (self:IsOn() and self.Enabled)
-    end,
+    -- QCE IsUp function was here
+    -- Moved to QUIET Base Repo -- 12/31/2024 -- Azraeelian Angel
 
     RemoveShield = function(self)
         self._IsUp = false
