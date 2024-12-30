@@ -1,8 +1,9 @@
 -- WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * QUIET Hook for Shield.lua' ) 
 -- This warning allows us to see exactly where our Hook Line starts so we can debug the exact line thats causing an error easier
+-- Begins at Line 998 
+-- to get the exact line number, you can substract the line number of the line where the error occurs by the line 998 in this file
 
 --  /lua/shield.lua
--- Added support for hunker shields
 
 do -- encasing the code in do .... end means that you dont have to worry about using unique variables
 
@@ -52,7 +53,7 @@ local KillThread = KillThread
 
 local CreateEmitterAtBone = CreateEmitterAtBone
 
-local VectorCached = { 0, 0, 0 }
+local VectorCached = Vector(0, 0, 0)
 	
 local AdjustHealth      = moho.entity_methods.AdjustHealth
 local GetArmy           = moho.entity_methods.GetArmy        
@@ -649,9 +650,9 @@ Shield = Class(QCEShield) {
         local vc = VectorCached
 
         -- compute distance to offset effect
-        local x = vector[1]
-        local y = vector[2]
-        local z = vector[3]
+        local x = vector[1] or 0 -- 0 safe check for now
+        local y = vector[2] or 0 -- 0 safe check for now
+        local z = vector[3] or 0 -- 0 safe check for now
         local d = LOUDSQRT(x * x + y * y + z * z)
 
         -- allocate an entity
