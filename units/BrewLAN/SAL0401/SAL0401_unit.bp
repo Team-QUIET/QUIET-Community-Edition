@@ -1,11 +1,117 @@
 UnitBlueprint {
-  Merge = true,
-  BlueprintId = "sal0401",
-      Weapon = {
+    Merge = true,
+    BlueprintId = "sal0401",
+  
+    Weapon = {
         {
-
+            AboveWaterTargetsOnly = true,
+			ArtilleryShieldBlocks = true,
+            
+            Audio = {
+                BarrelLoop          = Sound { Bank = 'UAS', Cue = 'UAS_Turret_Lrg_Loop', LodCutoff = 'WeaponBig_LodCutoff'},
+                BarrelStart         = Sound { Bank = 'UAS', Cue = 'UAS_Turret_Lrg_Start', LodCutoff = 'WeaponBig_LodCutoff'},
+                Fire                = Sound { Bank = 'UASWeapon', Cue = 'UAS0401_Cannon_Oblivion', LodCutoff = 'WeaponBig_LodCutoff'},
+                MuzzleChargeStart   = Sound { Bank = 'UASWeapon', Cue = 'UAS0401_Cannon_Oblv_Charge', LodCutoff = 'WeaponBig_LodCutoff'},
+            },
+            
             AutoInititeAttackCommand = false,			
+            
+            BallisticArc = 'RULEUBA_LowArc',
+			
+            Buffs = {
+                {
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 1.3,
+                    Radius = 2.2,
+                    TargetAllow = 'ALLUNITS',
+                    TargetDisallow = 'COMMAND,SUBCOMMANDER,AIR,MISSILE,WALL',
+                },
+            },
 
+            CollideFriendly = false,
+			
+            Damage = 6000,
+            DamageFriendly = true,
+            DamageRadius = 6,
+            
+            DamageType = 'ShieldMult1.5',  
+			
+            DisplayName = 'Oblivion Cannon',
+            
+            EnergyRequired = 18000,
+            EnergyDrainPerSecond = 3600,     
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0.1,
+			FiringRandomnessWhileMoving = 0.3,
+            FiringTolerance = 1,
+			
+            Label = 'MainGun',
+            
+			LeadTarget = true,
+			
+            MaxRadius = 112,
+			MinRadius = 18,
+			
+            MuzzleChargeDelay = 0.5,   
+
+            MuzzleVelocity = 40,
+			MuzzleVelocityRandom = 0,
+            MuzzleVelocityReduceDistance = 100,
+			
+            NotExclusive = true,
+			
+            ProjectileId = '/projectiles/ADFOblivionCannon04/ADFOblivionCannon04_proj.bp',
+            ProjectileLifetime = 8,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Muzzle'},
+                    RackBone = 'Barrel',
+                },
+            },
+
+            RackRecoilDistance = -3,
+
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 10/57,	
+
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'SHIELD',
+                'EXPERIMENTAL',
+                'ARTILLERY',
+				'DEFENSE',
+                'MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TurretBoneMuzzle = 'Muzzle',
+            TurretBonePitch = 'Barrel',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 40,
+            TurretPitchSpeed = 30,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+			
+            Turreted = true,
         },
         {
 
