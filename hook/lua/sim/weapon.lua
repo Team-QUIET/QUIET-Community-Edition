@@ -1,5 +1,5 @@
 QCEWeapon = Weapon
-Weapon = Class(QCEWeapon) {
+Weapon = ClassWeapon(QCEWeapon) {
 
     ---@param self Weapon
     OnGotTarget = function(self)

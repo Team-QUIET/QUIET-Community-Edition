@@ -11,7 +11,7 @@
 
 -- Many of these stats are written to not be full of bloat from the EnergyDrain & include some fixes for outlying issues.
 DefaultWeapons_QUIET = DefaultProjectileWeapon
-DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
+DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
 
     FxRackChargeMuzzleFlash = {},
     FxRackChargeMuzzleFlashScale = 1,
@@ -1153,7 +1153,7 @@ DefaultProjectileWeapon = Class(DefaultWeapons_QUIET) {
 }
 
 BareBonesWeapon_QUIET = BareBonesWeapon
-BareBonesWeapon = Class(BareBonesWeapon_QUIET) {
+BareBonesWeapon = ClassWeapon(BareBonesWeapon_QUIET) {
     
     RackSalvoFireReadyState = State {
 
@@ -1191,7 +1191,7 @@ BareBonesWeapon = Class(BareBonesWeapon_QUIET) {
 
 }
 
-OverchargeWeapon = Class(DefaultProjectileWeapon) {
+OverchargeWeapon = ClassWeapon(DefaultProjectileWeapon) {
     NeedsUpgrade = false,
     EnergyRequired = nil,
 
@@ -1243,7 +1243,7 @@ OverchargeWeapon = Class(DefaultProjectileWeapon) {
         self.unit:SetOverchargePaused(false)
     end,
 
-    OnGotTargetA = function(self)
+    OnGotTarget = function(self)
         if self:CanOvercharge() then
             DefaultProjectileWeapon.OnGotTarget(self)
         else

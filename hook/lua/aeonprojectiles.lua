@@ -6,7 +6,7 @@ local EmitterProjectile                     = DefaultProjectile.EmitterProjectil
 ------------------
 -- Aeon Prototype Hades ShoulderCannon
 ------------------
-AeonBROT3HADES2proj = Class(EmitterProjectile) {
+AeonBROT3HADES2proj = ClassProjectile(EmitterProjectile) {
 
     FxTrails = EffectTemplate.SZthuthaamArtilleryProjectileFXTrails,
     FxTrailOffset = 0,
@@ -26,7 +26,7 @@ AeonBROT3HADES2proj = Class(EmitterProjectile) {
 ------------------
 -- Aeon Prototype Hades cannons
 ------------------
-AeonBROT3HADESproj = Class(EmitterProjectile) {
+AeonBROT3HADESproj = ClassProjectile(EmitterProjectile) {
     FxTrails = {'/effects/emitters/oblivion_cannon_munition_01_emit.bp'},
     FxImpactUnit = EffectTemplate.AQuantumDisruptorHit01,
     FxUnitHitScale = 2.4,

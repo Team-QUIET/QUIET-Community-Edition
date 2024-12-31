@@ -1,5 +1,5 @@
 QCEAirUnit = AirUnit
-AirUnit = Class(QCEAirUnit) {
+AirUnit = ClassUnit(QCEAirUnit) {
 
     OnHealthChanged = function(self, new, old)
 

@@ -55,47 +55,48 @@ local CreateEmitterAtBone = CreateEmitterAtBone
 
 local VectorCached = Vector(0, 0, 0)
 	
-local AdjustHealth      = moho.entity_methods.AdjustHealth
-local GetArmy           = moho.entity_methods.GetArmy        
-local GetBlueprint      = moho.entity_methods.GetBlueprint
-local GetHealth         = moho.entity_methods.GetHealth
-local GetMaxHealth      = moho.entity_methods.GetMaxHealth
-local SetMesh           = moho.entity_methods.SetMesh
+local AdjustHealth      = _G.moho.entity_methods.AdjustHealth
+local GetArmy           = _G.moho.entity_methods.GetArmy        
+local GetBlueprint      = _G.moho.entity_methods.GetBlueprint
+local GetHealth         = _G.moho.entity_methods.GetHealth
+local GetMaxHealth      = _G.moho.entity_methods.GetMaxHealth
+local SetMesh           = _G.moho.entity_methods.SetMesh
 
-local GetArmorMult      = moho.unit_methods.GetArmorMult
-local GetStat           = moho.unit_methods.GetStat
-local SetStat           = moho.unit_methods.SetStat
-local SetShieldRatio    = moho.unit_methods.SetShieldRatio
+local GetArmorMult      = _G.moho.unit_methods.GetArmorMult
+local GetStat           = _G.moho.unit_methods.GetStat
+local SetStat           = _G.moho.unit_methods.SetStat
+local SetShieldRatio    = _G.moho.unit_methods.SetShieldRatio
 
-local EntityGetHealth = moho.entity_methods.GetHealth
-local EntityGetMaxHealth = moho.entity_methods.GetMaxHealth
-local EntitySetHealth = moho.entity_methods.SetHealth
-local EntitySetMaxHealth = moho.entity_methods.SetMaxHealth
-local EntityAdjustHealth = moho.entity_methods.AdjustHealth
-local EntityGetArmy = moho.entity_methods.GetArmy
-local EntityGetEntityId = moho.entity_methods.GetEntityId
-local EntitySetVizToFocusPlayer = moho.entity_methods.SetVizToFocusPlayer
-local EntitySetVizToEnemies = moho.entity_methods.SetVizToEnemies
-local EntitySetVizToAllies = moho.entity_methods.SetVizToAllies
-local EntitySetVizToNeutrals = moho.entity_methods.SetVizToNeutrals
-local EntityAttachBoneTo = moho.entity_methods.AttachBoneTo
-local EntityGetPosition = moho.entity_methods.GetPosition
-local EntityGetPositionXYZ = moho.entity_methods.GetPositionXYZ
-local EntitySetMesh = moho.entity_methods.SetMesh
-local EntitySetDrawScale = moho.entity_methods.SetDrawScale
-local EntitySetOrientation = moho.entity_methods.SetOrientation
-local EntityDestroy = moho.entity_methods.Destroy
-local EntityBeenDestroyed = moho.entity_methods.BeenDestroyed
-local EntitySetCollisionShape = moho.entity_methods.SetCollisionShape
+local EntityGetHealth = _G.moho.entity_methods.GetHealth
+local EntityGetMaxHealth = _G.moho.entity_methods.GetMaxHealth
+local EntitySetHealth = _G.moho.entity_methods.SetHealth
+local EntitySetMaxHealth = _G.moho.entity_methods.SetMaxHealth
+local EntityAdjustHealth = _G.moho.entity_methods.AdjustHealth
+local EntityGetArmy = _G.moho.entity_methods.GetArmy
+local EntityGetEntityId = _G.moho.entity_methods.GetEntityId
+local EntitySetVizToFocusPlayer = _G.moho.entity_methods.SetVizToFocusPlayer
+local EntitySetVizToEnemies = _G.moho.entity_methods.SetVizToEnemies
+local EntitySetVizToAllies = _G.moho.entity_methods.SetVizToAllies
+local EntitySetVizToNeutrals = _G.moho.entity_methods.SetVizToNeutrals
+local EntityAttachBoneTo = _G.moho.entity_methods.AttachBoneTo
+local EntityGetPosition = _G.moho.entity_methods.GetPosition
+local EntityGetPositionXYZ = _G.moho.entity_methods.GetPositionXYZ
+local EntitySetMesh = _G.moho.entity_methods.SetMesh
+local EntitySetDrawScale = _G.moho.entity_methods.SetDrawScale
+local EntitySetOrientation = _G.moho.entity_methods.SetOrientation
+local EntityDestroy = _G.moho.entity_methods.Destroy
+local EntityBeenDestroyed = _G.moho.entity_methods.BeenDestroyed
+local EntitySetCollisionShape = _G.moho.entity_methods.SetCollisionShape
 
-local EntitySetParentOffset = moho.entity_methods.SetParentOffset
+local EntitySetParentOffset = _G.moho.entity_methods.SetParentOffset
 
-local UnitSetScriptBit = moho.unit_methods.SetScriptBit
-local UnitIsUnitState = moho.unit_methods.IsUnitState
-local UnitRevertCollisionShape = moho.unit_methods.RevertCollisionShape
+local UnitSetScriptBit = _G.moho.unit_methods.SetScriptBit
+local UnitIsUnitState = _G.moho.unit_methods.IsUnitState
+local UnitRevertCollisionShape = _G.moho.unit_methods.RevertCollisionShape
 
-local IEffectOffsetEmitter = moho.IEffect.OffsetEmitter
+local IEffectOffsetEmitter = _G.moho.IEffect.OffsetEmitter
 
+-- cache categories computations
 local CategoriesOverspill = categories.SHIELD * categories.DEFENSE
 
 -- default values for a shield specification table (to be passed to native code)
@@ -132,7 +133,7 @@ for k, bp in __blueprints do
 end
 
 QCEShield = Shield
-Shield = Class(QCEShield) {
+Shield = ClassShield(QCEShield) {
 
     RemainEnabledWhenAttached = false,
     --LOG("We've entered LCE Version of Shield.lua"),
@@ -993,7 +994,7 @@ Shield = Class(QCEShield) {
 }
 
 -- Unit shields typically hug the shape of the unit
-UnitShield = Class(Shield){
+UnitShield = ClassShield(Shield){
 
     RemainEnabledWhenAttached = true,
 
@@ -1069,7 +1070,7 @@ UnitShield = Class(Shield){
 }
 
 -- AntiArtillery shields are typical bubbles but only intercept certain projectiles
-AntiArtilleryShield = Class(Shield){
+AntiArtilleryShield = ClassShield(Shield){
 
     OnCreate = function(self, spec)
         Shield.OnCreate(self, spec)
@@ -1139,7 +1140,7 @@ AntiArtilleryShield = Class(Shield){
 }
 
 -- Hunker Shields take no damage while on --
-DomeHunkerShield = Class(Shield) {
+DomeHunkerShield = ClassShield(Shield) {
 	
 	OnCollisionCheckWeapon = function(self, firingWeapon)
 		return true
@@ -1155,7 +1156,7 @@ DomeHunkerShield = Class(Shield) {
 }
 
 -- Hunker Shields are time limited shields that take no damage --
-PersonalHunkerShield = Class(Shield) {
+PersonalHunkerShield = ClassShield(Shield) {
 
     OnCreate = function(self, spec)
         Shield.OnCreate(self, spec)
@@ -1196,7 +1197,7 @@ PersonalHunkerShield = Class(Shield) {
 
 }
 
-ProjectedShield = Class(Shield){
+ProjectedShield = ClassShield(Shield){
 
     OnDamage =  function(self,instigator,amount,vector,type)
 	
