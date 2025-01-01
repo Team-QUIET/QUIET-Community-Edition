@@ -65,7 +65,7 @@ UnitBlueprint {
                 "TECH1 MOBILE",
                 "(STRUCTURE * DEFENSE - ANTIMISSILE)",
                 "ALLUNITS",
-            }
+            },
             TargetRestrictDisallow = 'UNTARGETABLE,WALL',
             TrackingRadius = 1.05,
 			
