@@ -70,10 +70,17 @@ UnitBlueprint {
             TargetCheckInterval = 1,
 			
             TargetPriorities = {
-                'SPECIALHIGHPRI',
-                'DEFENSE',
-				'STRUCTURE,-WALL',
-                'MOBILE',
+                "SPECIALHIGHPRI",
+                "ANTISHIELD",
+                "SNIPER",
+                "(ARTILLERY - TECH1)",
+                "SHIELD",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "STRUCTURE DEFENSE ANTIMISSILE",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "ALLUNITS",
             },
 			
             TargetRestrictDisallow = 'UNTARGETABLE',
