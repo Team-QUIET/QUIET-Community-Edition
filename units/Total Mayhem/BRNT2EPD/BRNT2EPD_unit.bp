@@ -66,13 +66,16 @@ UnitBlueprint {
 			
             RateOfFire = 10/10,
             TargetCheckInterval = 1.0,
-			
             TargetPriorities = {
-                'EXPERIMENTAL',
-                'SPECIALHIGHPRI',
-                'MOBILE -AIR',
-                'ALLUNITS',
-            },
+                "EXPERIMENTAL",
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            }
+
             TargetRestrictDisallow = 'UNTARGETABLE',
 			
             TrackingRadius = 1.05,			

@@ -86,12 +86,13 @@ UnitBlueprint {
             
             TargetCheckInterval = 2,
             TargetPriorities = {
-                'SPECIALHIGHPRI',
-                'DEFENSE',
-                'MOBILE',
-                'ALLUNITS,-WALL',
-            },
-            TargetRestrictDisallow = 'UNTARGETABLE',
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },            TargetRestrictDisallow = 'UNTARGETABLE',
             TrackingRadius = 1.2,
 
             TurretBoneMuzzle = 'Main_Turret_Muzzle',
@@ -151,10 +152,12 @@ UnitBlueprint {
 			
             TargetCheckInterval = 0.6,
             TargetPriorities = {
-                'SPECIALHIGHPRI',
-                'MOBILE',
-                'DEFENSE',
-                'ALLUNITS,-WALL',
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             TrackingRadius = 0,
