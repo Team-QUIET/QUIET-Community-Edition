@@ -33,29 +33,29 @@ local TrashDestroy = TrashBag.Destroy
 
 local wep, wpTarget
 
-ESL0001 = Class( SWalkingLandUnit ) {
+ESL0001 = ClassUnit( SWalkingLandUnit ) {
 
     DeathThreadDestructionWaitTime = 2,
 	
 	BuffFields = {
 
-		RegenField1 = Class(BuffField){},
-		RegenField2 = Class(BuffField){},
+		RegenField1 = ClassWeapon(BuffField){},
+		RegenField2 = ClassWeapon(BuffField){},
 	},
 	
     Weapons = {
 	
-        DeathWeapon = Class(SIFCommanderDeathWeapon) {},
+        DeathWeapon = ClassWeapon(SIFCommanderDeathWeapon) {},
 		
-        ChronotronCannon = Class(SDFChronotronCannonWeapon) {},
+        ChronotronCannon = ClassWeapon(SDFChronotronCannonWeapon) {},
 		
-        TargetPainter = Class(Targeting) { FxMuzzleFlash = false },
+        TargetPainter = ClassWeapon(Targeting) { FxMuzzleFlash = false },
 		
-        EXTorpedoLauncher01 = Class(SANAnaitTorpedo) { FxMuzzleFlash = false },
-        EXTorpedoLauncher02 = Class(SANAnaitTorpedo) { FxMuzzleFlash = false },
-        EXTorpedoLauncher03 = Class(SANAnaitTorpedo) { FxMuzzleFlash = false },
+        EXTorpedoLauncher01 = ClassWeapon(SANAnaitTorpedo) { FxMuzzleFlash = false },
+        EXTorpedoLauncher02 = ClassWeapon(SANAnaitTorpedo) { FxMuzzleFlash = false },
+        EXTorpedoLauncher03 = ClassWeapon(SANAnaitTorpedo) { FxMuzzleFlash = false },
 		
-        EXBigBallCannon01 = Class(SeraACUBigBallWeapon) {
+        EXBigBallCannon01 = ClassWeapon(SeraACUBigBallWeapon) {
 		
             PlayFxMuzzleChargeSequence = function(self, muzzle)
 
@@ -82,7 +82,7 @@ ESL0001 = Class( SWalkingLandUnit ) {
             end,
 		},
 		
-        EXBigBallCannon02 = Class(SeraACUBigBallWeapon) {
+        EXBigBallCannon02 = ClassWeapon(SeraACUBigBallWeapon) {
 		
             PlayFxMuzzleChargeSequence = function(self, muzzle)
 
@@ -109,7 +109,7 @@ ESL0001 = Class( SWalkingLandUnit ) {
             end,
 		},
 		
-        EXBigBallCannon03 = Class(SeraACUBigBallWeapon) {
+        EXBigBallCannon03 = ClassWeapon(SeraACUBigBallWeapon) {
 		
             PlayFxMuzzleChargeSequence = function(self, muzzle)
 
@@ -136,14 +136,14 @@ ESL0001 = Class( SWalkingLandUnit ) {
             end,
 		},
 		
-        EXRapidCannon01 = Class(SeraACURapidWeapon) {},
-        EXRapidCannon02 = Class(SeraACURapidWeapon) {},
-        EXRapidCannon03 = Class(SeraACURapidWeapon) {},
+        EXRapidCannon01 = ClassWeapon(SeraACURapidWeapon) {},
+        EXRapidCannon02 = ClassWeapon(SeraACURapidWeapon) {},
+        EXRapidCannon03 = ClassWeapon(SeraACURapidWeapon) {},
 		
-        EXAA01 = Class(SAAOlarisCannonWeapon) {},
-        EXAA02 = Class(SAAOlarisCannonWeapon) {},
+        EXAA01 = ClassWeapon(SAAOlarisCannonWeapon) {},
+        EXAA02 = ClassWeapon(SAAOlarisCannonWeapon) {},
 
-        OverCharge = Class(SDFChronotronOverChargeCannonWeapon) {},
+        OverCharge = ClassWeapon(SDFChronotronOverChargeCannonWeapon) {},
     },
 
 

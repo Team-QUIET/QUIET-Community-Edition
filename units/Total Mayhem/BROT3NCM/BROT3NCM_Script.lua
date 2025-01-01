@@ -17,21 +17,21 @@ local MissileRedirect = import('/lua/defaultantiprojectile.lua').MissileTorpDest
 local TrashAdd = TrashBag.Add
 
 
-BROT3NCM = Class(AWalkingLandUnit) {
+BROT3NCM = ClassUnit(AWalkingLandUnit) {
 
     Weapons = {
 
-        MainLaser = Class(TMAnovacatgreenlaserweapon) {FxMuzzleFlashScale = 0.5},	
+        MainLaser = ClassWeapon(TMAnovacatgreenlaserweapon) {FxMuzzleFlashScale = 0.5},	
 
-        laserblu = Class(TMAnovacatbluelaserweapon) {FxMuzzleFlashScale = 0},
-        laserred = Class(MicrowaveLaser) {FxMuzzleFlashScale = 0},
-        lasermix = Class(TMAmizurabluelaserweapon) {FxMuzzleFlashScale = 0},
+        laserblu = ClassWeapon(TMAnovacatbluelaserweapon) {FxMuzzleFlashScale = 0},
+        laserred = ClassWeapon(MicrowaveLaser) {FxMuzzleFlashScale = 0},
+        lasermix = ClassWeapon(TMAmizurabluelaserweapon) {FxMuzzleFlashScale = 0},
 
-        AAMissiles = Class(AAAZealotMissileWeapon) {},
+        AAMissiles = ClassWeapon(AAAZealotMissileWeapon) {},
 		
-        robottalk = Class(AAAZealotMissileWeapon) { FxMuzzleFlashScale = 0 },
+        robottalk = ClassWeapon(AAAZealotMissileWeapon) { FxMuzzleFlashScale = 0 },
 		
-        DeathWeapon = Class(TIFCommanderDeathWeapon) {},
+        DeathWeapon = ClassWeapon(TIFCommanderDeathWeapon) {},
     },
 	
 	OnStopBeingBuilt = function(self,builder,layer)

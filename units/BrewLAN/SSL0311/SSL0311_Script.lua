@@ -2,9 +2,9 @@ local SWalkingLandUnit = import('/lua/defaultunits.lua').WalkingLandUnit
 
 local SDFAireauBolterWeapon = import('/lua/seraphimweapons.lua').SDFAireauBolterWeapon
 
-SSL0311 = Class(SWalkingLandUnit) {
+SSL0311 = ClassUnit(SWalkingLandUnit) {
     Weapons = {
-        MainGun = Class(SDFAireauBolterWeapon) {}
+        MainGun = ClassWeapon(SDFAireauBolterWeapon) {}
     },
 }
 TypeClass = SSL0311

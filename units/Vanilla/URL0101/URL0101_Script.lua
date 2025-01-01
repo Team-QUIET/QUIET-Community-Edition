@@ -1,7 +1,7 @@
 local CWalkingLandUnit = import('/lua/defaultunits.lua').WalkingLandUnit
 local Entity = import('/lua/sim/Entity.lua').Entity
 
-URL0101 = Class(CWalkingLandUnit) {
+URL0101 = ClassUnit(CWalkingLandUnit) {
 
     OnStopBeingBuilt = function(self,builder,layer)
 	

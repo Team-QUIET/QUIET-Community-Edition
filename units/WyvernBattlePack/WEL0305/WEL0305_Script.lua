@@ -11,13 +11,13 @@ local CreateBoneEffects = import('/lua/effectutilities.lua').CreateBoneEffects
 
 local Effects = import('/lua/effecttemplates.lua')
 
-WEL0305 = Class(TWalkingLandUnit) {
+WEL0305 = ClassUnit(TWalkingLandUnit) {
 
     Weapons = {
     
-        PlasmaCannon01 = Class(TDFIonizedPlasmaCannon) {},
+        PlasmaCannon01 = ClassWeapon(TDFIonizedPlasmaCannon) {},
         
-		GatlingCannon = Class(TDFPlasmaCannonWeapon) {
+		GatlingCannon = ClassWeapon(TDFPlasmaCannonWeapon) {
         
 			PlayFxWeaponPackSequence = function(self)
             
@@ -58,9 +58,9 @@ WEL0305 = Class(TWalkingLandUnit) {
             end,
 		},
         
-		AA = Class(TAALinkedRailgun) {},
+		AA = ClassWeapon(TAALinkedRailgun) {},
         
-		TML = Class(TAMPhalanxWeapon) {},
+		TML = ClassWeapon(TAMPhalanxWeapon) {},
     },
 }
 

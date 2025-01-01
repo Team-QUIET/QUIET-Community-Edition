@@ -4,13 +4,13 @@ local CAAMissileNaniteWeapon = import('/lua/sim/DefaultWeapons.lua').DefaultProj
 
 local EffectUtil = import('/lua/EffectUtilities.lua')
 
-SRL0320 = Class(CLandUnit) {
+SRL0320 = ClassUnit(CLandUnit) {
 
 	IntelEffects = { { Bones = { 0 }, Offset = { 0, 1, 0 }, Type = 'Jammer01' } },
 
 	Weapons = {
 
-		MainGun = Class(CAAMissileNaniteWeapon) {
+		MainGun = ClassWeapon(CAAMissileNaniteWeapon) {
 
 			CreateProjectileAtMuzzle = function(self, muzzle)
 

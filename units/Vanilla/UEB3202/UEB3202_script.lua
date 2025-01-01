@@ -1,6 +1,6 @@
 local TSonarUnit = import('/lua/defaultunits.lua').SonarUnit
 
-UEB3202 = Class(TSonarUnit) {
+UEB3202 = ClassUnit(TSonarUnit) {
     TimedSonarTTIdleEffects = {
         { Bones = {'UEB3202'}, Offset = {0,-1.3,0}, Type = 'SonarBuoy01' },
     },

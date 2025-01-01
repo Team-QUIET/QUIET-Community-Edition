@@ -22,19 +22,19 @@ local ADFLaserHighIntensityWeapon = WeaponsFile.ADFLaserHighIntensityWeapon
 local AAAZealotMissileWeapon = WeaponsFile.AAAZealotMissileWeapon
 local ADFChronoDampener = WeaponsFile.ADFChronoDampener
 
-UAL0402 = Class(AWalkingLandUnit) {
+UAL0402 = ClassUnit(AWalkingLandUnit) {
 
     Weapons = {
     
-        RightArm = Class(ADFPhasonLaser) {},
+        RightArm = ClassWeapon(ADFPhasonLaser) {},
         
-        LeftArm = Class(ADFLaserHighIntensityWeapon) {},
+        LeftArm = ClassWeapon(ADFLaserHighIntensityWeapon) {},
         
-        Shoulder = Class(ADFGravitonProjectorWeapon) {},
+        Shoulder = ClassWeapon(ADFGravitonProjectorWeapon) {},
         
-        AA = Class(AAAZealotMissileWeapon) {},
+        AA = ClassWeapon(AAAZealotMissileWeapon) {},
         
-        ChronoDampener = Class(ADFChronoDampener) {},        
+        ChronoDampener = ClassWeapon(ADFChronoDampener) {},        
     },
 --[[
     OnCreate = function(self,builder,layer)

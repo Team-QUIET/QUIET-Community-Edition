@@ -4,10 +4,10 @@ local TANTorpedoAngler = import('/lua/terranweapons.lua').TANTorpedoAngler
 
 local CreateBuildCubeThread = import('/lua/EffectUtilities.lua').CreateBuildCubeThread
 
-UES0305 = Class(TSeaUnit) {
+UES0305 = ClassUnit(TSeaUnit) {
 
     Weapons = {
-        Torpedo01 = Class(TANTorpedoAngler) {},
+        Torpedo01 = ClassWeapon(TANTorpedoAngler) {},
     },
     
     TimedSonarTTIdleEffects = {
