@@ -5,7 +5,7 @@ local CreateDecal = CreateDecal
 local CreateLightParticle = CreateLightParticle
 local DamageArea = DamageArea
 
-SBOZhanaseeBombProjectile01 = Class(SZhanaseeBombProjectile){
+SBOZhanaseeBombProjectile01 = ClassProjectile(SZhanaseeBombProjectile){
 
     OnImpact = function(self, TargetType, TargetEntity)   
         CreateLightParticle(self, -1, self:GetArmy(), 26, 5, 'sparkle_white_add_08', 'ramp_white_24' )

@@ -7,7 +7,7 @@
 local SChronatronCannonOverCharge = import("/lua/seraphimprojectiles.lua").SChronatronCannonOverCharge
 local OverchargeProjectile = import("/lua/sim/defaultprojectiles.lua").OverchargeProjectile
 
-SDFChronatronCannon02 = Class(SChronatronCannonOverCharge, OverchargeProjectile) {
+SDFChronatronCannon02 = ClassProjectile(SChronatronCannonOverCharge, OverchargeProjectile) {
 
     ---@param self SDFChronatronCannon02
     ---@param targetType string
