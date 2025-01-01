@@ -28,9 +28,99 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Light',
-        Health = 1100,
-        MaxHealth = 1100,
-        RegenRate = 6,
+        Health = 800,
+        MaxHealth = 800,
+        RegenRate = 8,
         SurfaceThreatLevel = 6.4,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'URAWeapon', Cue = 'URA0203_Rock_Pack', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            AutoInitiateAttackCommand = true,
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 40,
+			DamageFriendly = false,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Iridium Rocket Pack',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land|Water',
+                Land = 'Air|Land|Water',
+            },
+			
+            FiringRandomness = 0,
+            FiringTolerance = 2,
+			
+            Label = 'Missile01',
+			
+            LeadTarget = true,
+
+            MaxRadius = 26,
+			
+            MuzzleSalvoDelay = 0.3,
+            MuzzleSalvoSize = 2,
+
+            MuzzleVelocity = 30,
+			
+            ProjectileId = '/projectiles/CDFRocketIridium01/CDFRocketIridium01_proj.bp',
+			ProjectileLifetime = 1.2,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Right_Projectile','Left_Projectile'},
+                    RackBone = 'Right_Projectile',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/10,
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "ANTIAIR",
+                "GROUNDATTACK",
+                "ALLUNITS",
+            },
+			
+            TargetRestrictDisallow = 'HIGHALTAIR,UNTARGETABLE,WALL',
+            TrackingRadius = 1.1,
+			
+            TurretBoneDualMuzzle = 'Left_Projectile',
+            TurretBoneDualPitch = 'Left_Projectile',
+
+            TurretBoneMuzzle = 'Right_Projectile',
+            TurretBonePitch = 'Right_Projectile',
+
+            TurretBoneYaw = 'Right_Projectile',
+
+            TurretDualManipulators = true,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 360,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+        },
+        {
+
+        },
     },
 }
