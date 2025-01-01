@@ -39,8 +39,8 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
 	
 	BuffFields = {
 
-		RegenField1 = ClassWeapon(BuffField){},
-		RegenField2 = ClassWeapon(BuffField){},
+		RegenField1 = Class(BuffField){},
+		RegenField2 = Class(BuffField){},
 	},
 	
     Weapons = {
@@ -158,132 +158,140 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
         self:AddBuildRestriction( categories.SERAPHIM * ( categories.BUILTBYTIER4COMMANDER) )
     end,
 
-    CreateBuildEffects = function( self, unitBeingBuilt, order )
-        EffectUtil.CreateSeraphimUnitEngineerBuildingEffects( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
-    end,
-
     OnPrepareArmToBuild = function(self)
 
         if self.Dead then return end
-
+        
         self:BuildManipulatorSetEnabled(true)
-
         self.BuildArmManipulator:SetPrecedence(20)
+
+        self.BuildArmManipulator:SetHeadingPitch( self:GetWeaponManipulatorByLabel('TargetPainter'):GetHeadingPitch() )
+
         self.wcBuildMode = true
 
 		self:ForkThread(self.WeaponConfigCheck)
-
-        self.BuildArmManipulator:SetHeadingPitch( self:GetWeaponManipulatorByLabel('ChronotronCannon'):GetHeadingPitch() )
     end,
 
-    OnFailedToBuild = function(self)
+    CreateBuildEffects = function( self, unitBeingBuilt, order )
 
-        SWalkingLandUnit.OnFailedToBuild(self)
+        EffectUtil.CreateSeraphimUnitEngineerBuildingEffects( self, unitBeingBuilt, __blueprints[self.BlueprintID].General.BuildBones.BuildEffectBones, self.BuildEffectsBag )   
 
-        if self.Dead then return end
-
-        self:BuildManipulatorSetEnabled(false)
-
-        self.BuildArmManipulator:SetPrecedence(0)
-        self.wcBuildMode = false
-
-		self:ForkThread(self.WeaponConfigCheck)
-
-        self:GetWeaponManipulatorByLabel('ChronotronCannon'):SetHeadingPitch( self.BuildArmManipulator:GetHeadingPitch() )
     end,
 
     OnStartBuild = function(self, unitBeingBuilt, order)
-
-        local bp = self:GetBlueprint()
-
-        if order != 'Upgrade' or bp.Display.ShowBuildEffectsDuringUpgrade then
-            self:StartBuildingEffects(unitBeingBuilt, order)
+    
+        SWalkingLandUnit.OnStartBuild(self, unitBeingBuilt, order)
+        
+        if self.Animator then
+            self.Animator:SetRate(0)
         end
-
-        self:DoOnStartBuildCallbacks(unitBeingBuilt)
-        self:SetActiveConsumptionActive()
-
-        self:PlayUnitSound('Construct')
-        self:PlayUnitAmbientSound('ConstructLoop')
-
-        if bp.General.UpgradesTo and unitBeingBuilt:GetUnitId() == bp.General.UpgradesTo and order == 'Upgrade' then
-            self.Upgrading = true
-            self.BuildingUnit = false        
-            unitBeingBuilt.DisallowCollisions = true
-        end
-
+        
         self.UnitBeingBuilt = unitBeingBuilt
         self.UnitBuildOrder = order
-        self.BuildingUnit = true
-    end,  
+        self.BuildingUnit = true        
+    end,
 
     OnStopBuild = function(self, unitBeingBuilt)
-
+	
         SWalkingLandUnit.OnStopBuild(self, unitBeingBuilt)
-
+		
         if self.Dead then return end
-
+		
+        if self.IdleAnim then
+            self.Animator:PlayAnim(self.IdleAnim, true)
+        end
+		
         self:BuildManipulatorSetEnabled(false)
-
         self.BuildArmManipulator:SetPrecedence(0)
+		
         self.wcBuildMode = false
-
+		
 		self:ForkThread(self.WeaponConfigCheck)
-        self:GetWeaponManipulatorByLabel('ChronotronCannon'):SetHeadingPitch( self.BuildArmManipulator:GetHeadingPitch() )
-
+		
+        self:GetWeaponManipulatorByLabel('TargetPainter'):SetHeadingPitch( self.BuildArmManipulator:GetHeadingPitch() )
+		
         self.UnitBeingBuilt = nil
         self.UnitBuildOrder = nil
-        self.BuildingUnit = false
+        self.BuildingUnit = false          
+    end,
+
+    OnFailedToBuild = function(self)
+    
+        SWalkingLandUnit.OnFailedToBuild(self)
+        
+        if self.Dead then return end
+        
+        self:BuildManipulatorSetEnabled(false)
+        self.BuildArmManipulator:SetPrecedence(0)
+
+        self.wcBuildMode = false
+		self:ForkThread(self.WeaponConfigCheck)
+
+        self:GetWeaponManipulatorByLabel('TargetPainter'):SetHeadingPitch( self.BuildArmManipulator:GetHeadingPitch() )
     end,
 
     OnStopCapture = function(self, target)
-
+    
         SWalkingLandUnit.OnStopCapture(self, target)
-
+        
         if self.Dead then return end
-
+        
         self:BuildManipulatorSetEnabled(false)
-
         self.BuildArmManipulator:SetPrecedence(0)
-        self.wcBuildMode = false
 
+        self:GetWeaponManipulatorByLabel('TargetPainter'):SetHeadingPitch( self.BuildArmManipulator:GetHeadingPitch() )
+
+        self.wcBuildMode = false
 		self:ForkThread(self.WeaponConfigCheck)
-        self:GetWeaponManipulatorByLabel('ChronotronCannon'):SetHeadingPitch( self.BuildArmManipulator:GetHeadingPitch() )
     end,
 
     OnFailedCapture = function(self, target)
-
+    
         SWalkingLandUnit.OnFailedCapture(self, target)
-
+        
         if self.Dead then return end
-
+        
         self:BuildManipulatorSetEnabled(false)
-
         self.BuildArmManipulator:SetPrecedence(0)
-        self.wcBuildMode = false
 
+        self:GetWeaponManipulatorByLabel('TargetPainter'):SetHeadingPitch( self.BuildArmManipulator:GetHeadingPitch() )
+
+        self.wcBuildMode = false
 		self:ForkThread(self.WeaponConfigCheck)
-        self:GetWeaponManipulatorByLabel('ChronotronCannon'):SetHeadingPitch( self.BuildArmManipulator:GetHeadingPitch() )
     end,
 
     OnStopReclaim = function(self, target)
-
+    
         SWalkingLandUnit.OnStopReclaim(self, target)
-
+        
         if self.Dead then return end
-
+        
         self:BuildManipulatorSetEnabled(false)
-
         self.BuildArmManipulator:SetPrecedence(0)
-        self.wcBuildMode = false
 
+        self:GetWeaponManipulatorByLabel('TargetPainter'):SetHeadingPitch( self.BuildArmManipulator:GetHeadingPitch() )
+
+        self.wcBuildMode = false
 		self:ForkThread(self.WeaponConfigCheck)
-        self:GetWeaponManipulatorByLabel('ChronotronCannon'):SetHeadingPitch( self.BuildArmManipulator:GetHeadingPitch() )
     end,
 
     OnStopBeingBuilt = function(self,builder,layer)
 
         SWalkingLandUnit.OnStopBeingBuilt(self,builder,layer)
+
+        if self.Dead then return end
+
+        self.Animator = CreateAnimator(self)
+        self.Animator:SetPrecedence(0)
+        
+        if self.IdleAnim then
+            self.Animator:PlayAnim( __blueprints[self.BlueprintID].Display.AnimationIdle, true)
+            for k, v in self.DisabledBones do
+                self.Animator:SetBoneEnabled(v, false)
+            end
+        end
+
+        self:BuildManipulatorSetEnabled(false)
 
         self:DisableUnitIntel('Cloak')
         self:DisableUnitIntel('CloakField')
@@ -498,57 +506,18 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
 		if self.wcBuildMode then
 
 			self:SetWeaponEnabledByLabel('TargetPainter', false)
-			self:SetWeaponEnabledByLabel('ChronotronCannon', false)
-			self:SetWeaponEnabledByLabel('OverCharge', false)
 
-			self:SetWeaponEnabledByLabel('EXTorpedoLauncher01', false)
-			self:SetWeaponEnabledByLabel('EXTorpedoLauncher02', false)
-			self:SetWeaponEnabledByLabel('EXTorpedoLauncher03', false)
-
-			self:SetWeaponEnabledByLabel('EXBigBallCannon01', false)
-			self:SetWeaponEnabledByLabel('EXBigBallCannon02', false)
-			self:SetWeaponEnabledByLabel('EXBigBallCannon03', false)
-
-			self:SetWeaponEnabledByLabel('EXRapidCannon01', false)
-			self:SetWeaponEnabledByLabel('EXRapidCannon02', false)
-			self:SetWeaponEnabledByLabel('EXRapidCannon03', false)
 		end
 
 		if self.wcOCMode then
 
 			self:SetWeaponEnabledByLabel('TargetPainter', false)
-			self:SetWeaponEnabledByLabel('ChronotronCannon', false)
 
-			self:SetWeaponEnabledByLabel('EXTorpedoLauncher01', false)
-			self:SetWeaponEnabledByLabel('EXTorpedoLauncher02', false)
-			self:SetWeaponEnabledByLabel('EXTorpedoLauncher03', false)
-
-			self:SetWeaponEnabledByLabel('EXBigBallCannon01', false)
-			self:SetWeaponEnabledByLabel('EXBigBallCannon02', false)
-			self:SetWeaponEnabledByLabel('EXBigBallCannon03', false)
-
-			self:SetWeaponEnabledByLabel('EXRapidCannon01', false)
-			self:SetWeaponEnabledByLabel('EXRapidCannon02', false)
-			self:SetWeaponEnabledByLabel('EXRapidCannon03', false)
 		end
-
+        
 		if not self.wcBuildMode and not self.wcOCMode then
-
-			self:SetWeaponEnabledByLabel('TargetPainter', true)
-			self:SetWeaponEnabledByLabel('ChronotronCannon', true)
-			self:SetWeaponEnabledByLabel('OverCharge', false)
-
-			self:SetWeaponEnabledByLabel('EXTorpedoLauncher01', false)
-			self:SetWeaponEnabledByLabel('EXTorpedoLauncher02', false)
-			self:SetWeaponEnabledByLabel('EXTorpedoLauncher03', false)
-
-			self:SetWeaponEnabledByLabel('EXBigBallCannon01', false)
-			self:SetWeaponEnabledByLabel('EXBigBallCannon02', false)
-			self:SetWeaponEnabledByLabel('EXBigBallCannon03', false)
-
-			self:SetWeaponEnabledByLabel('EXRapidCannon01', false)
-			self:SetWeaponEnabledByLabel('EXRapidCannon02', false)
-			self:SetWeaponEnabledByLabel('EXRapidCannon03', false)
+		
+			self:SetWeaponEnabledByLabel('TargetPainter', true) 
 
 			if self.wcTorp01 then
 
@@ -659,16 +628,6 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
                 self:HideBone('Right_AA_Mount', true)
 				self:SetWeaponEnabledByLabel('EXAA02', false)
 			end
-            
-            --[[if self.OCOverdrive then
-                wep = self:GetWeaponByLabel('OverCharge')
-				wep:ChangeMaxRadius(self:GetBlueprint().Weapon[3].MaxRadius + 10)
-                wep:ChangeProjectileBlueprint('/mods/BlackOpsACUs/projectiles/OmegaOverCharge01/OmegaOverCharge01_proj.bp')
-            else
-                wep = self:GetWeaponByLabel('OverCharge')
-				wep:ChangeMaxRadius(self:GetBlueprint().Weapon[3].MaxRadius)
-                wep:ChangeProjectileBlueprint('/projectiles/SDFChronatronCannon02/SDFChronatronCannon02_proj.bp')
-            end]]
 		end
     end,
 
