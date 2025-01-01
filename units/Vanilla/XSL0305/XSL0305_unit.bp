@@ -8,8 +8,16 @@ UnitBlueprint {
     },
 	
     Defense = {
-        Health = 690,
-        MaxHealth = 690,
+        Health = 425,
+        MaxHealth = 425,
+    },
+
+    Economy = {
+        BuildCostEnergy = 27000,
+        BuildCostMass = 800,
+        BuildTime = 4000,
+
+        MaintenanceConsumptionPerSecondEnergy = 250,
     },
 	
     Physics = {
@@ -39,7 +47,7 @@ UnitBlueprint {
             CollideFriendly = false,
 			
             Damage = 700,
-            DamageType = 'Normal',
+            DamageType = 'ShieldMult0.5',
 			
             DisplayName = 'Sih Energy Rifle',
 			
@@ -69,6 +77,7 @@ UnitBlueprint {
 
             TargetCheckInterval = 3,
             TargetPriorities = {
+                "SPECIALHIGHPRI",
                 "SNIPER",
                 "(ARTILLERY - TECH1)",
                 "ANTISHIELD",
@@ -106,7 +115,7 @@ UnitBlueprint {
 			
             Damage = 2800,
             DamageRadius = 0,
-            DamageType = 'ShieldMult1.2',    
+            DamageType = 'ShieldMult0.25',    
 			
             DisplayName = 'Sih Energy Rifle',
             
@@ -118,7 +127,7 @@ UnitBlueprint {
             },
             FiringRandomnessWhileMoving = 0.2,
 			
-            FiringTolerance = 3,
+            FiringTolerance = 0.5,
 			
             IgnoreIfDisabled = true,
 			
@@ -143,6 +152,7 @@ UnitBlueprint {
 			
             TargetCheckInterval = 3,
             TargetPriorities = {
+                "SPECIALHIGHPRI",
                 "SNIPER",
                 "(ARTILLERY - TECH1)",
                 "SHIELD",

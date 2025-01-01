@@ -85,7 +85,7 @@ UnitBlueprint {
 
             Damage = 700,
             DamageRadius = 0,
-            DamageType = "Normal",
+            DamageType = "ShieldMult0.5",
 
             DisplayName = "Sniper Piercing",
 
@@ -116,6 +116,7 @@ UnitBlueprint {
 
             TargetCheckInterval = 1,
             TargetPriorities = {
+                "SPECIALHIGHPRI",
                 "SNIPER",
                 "(ARTILLERY - TECH1)",
                 "ANTISHIELD",

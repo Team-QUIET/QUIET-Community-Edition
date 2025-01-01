@@ -8,21 +8,21 @@ UnitBlueprint {
     },
 	
     Defense = {
-        Health = 560,
-        MaxHealth = 560,
+        Health = 400,
+        MaxHealth = 400,
+    },
+
+    Economy = {
+        BuildCostEnergy = 25000,
+        BuildCostMass = 775,
+        BuildTime = 360,
     },
 	
     Display = {
         Abilities = {
-            'Shield Damage Bonus',
+            'Shield Damage Reduction -50%',
 			'High Range',
         },
-    },
-    
-    Economy = {
-        BuildCostEnergy = 13750,
-        BuildCostMass = 775,
-        BuildTime = 360,
     },
 
     Physics = {
@@ -51,7 +51,7 @@ UnitBlueprint {
             CollideFriendly = false,
 			
             Damage = 1200,
-            DamageType = 'ShieldMult1.2',     
+            DamageType = 'ShieldMult0.5',     
 			
             DisplayName = 'Heavy Disruptor Cannon',
             
@@ -89,6 +89,7 @@ UnitBlueprint {
             RenderFireClock = true,
 			
             TargetPriorities = {
+                "SPECIALHIGHPRI",
                 "SNIPER",
                 "(ARTILLERY - TECH1)",
                 "ANTISHIELD",
