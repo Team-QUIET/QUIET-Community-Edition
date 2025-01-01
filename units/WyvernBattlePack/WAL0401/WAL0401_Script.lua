@@ -27,9 +27,9 @@ local MathSin = math.sin
 local ZeroDegrees = Vector(0, 0, 1)
 local SignCheck = Vector(1, 0, 0)
 
-WAL0401 = Class(AWalkingLandUnit) {
+WAL0401 = ClassUnit(AWalkingLandUnit) {
     Weapons = {
-        EyeWeapon = Class(ADFPhasonLaser) {
+        EyeWeapon = ClassWeapon(ADFPhasonLaser) {
             CreateProjectileAtMuzzle = function(self, muzzle)
                 ADFPhasonLaser.CreateProjectileAtMuzzle(self, muzzle)
 
@@ -43,8 +43,8 @@ WAL0401 = Class(AWalkingLandUnit) {
                 end
             end,
         },
-        RightArmTractor = Class(ADFTractorClaw) {},
-        LeftArmTractor = Class(ADFTractorClaw) {},
+        RightArmTractor = ClassWeapon(ADFTractorClaw) {},
+        LeftArmTractor = ClassWeapon(ADFTractorClaw) {},
     },
 
     OnCreate = function (self, spec)

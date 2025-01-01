@@ -4,7 +4,7 @@
 -- Hook
 -- Reason: Adjusting overkillRatio from 0.10 to 0.30 to allow more Wreckage to be created even if there large overkill, I.E T4 AA shooting down T2 Gunships.
 QCEUnit = Unit
-Unit = Class(QCEUnit) {
+Unit = ClassUnit(QCEUnit) {
 
     DoTakeDamage = function(self, instigator, amount, vector, damageType)
 

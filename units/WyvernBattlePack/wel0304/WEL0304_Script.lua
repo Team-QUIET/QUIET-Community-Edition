@@ -10,13 +10,13 @@ local EffectUtils = import('/lua/effectutilities.lua')
 local Effects = import('/lua/effecttemplates.lua')
 local EffectTemplate = import('/lua/EffectTemplates.lua')
 
-WEL0304 = Class(TLandUnit) {
+WEL0304 = ClassUnit(TLandUnit) {
 
     Weapons = {
         
-        AssaultCannon = Class(TDFGaussCannonWeapon) {},
+        AssaultCannon = ClassWeapon(TDFGaussCannonWeapon) {},
         
-        MiniGun = Class(TDFHeavyPlasmaCannonWeapon) {
+        MiniGun = ClassWeapon(TDFHeavyPlasmaCannonWeapon) {
         
             PlayFxWeaponPackSequence = function(self)
             

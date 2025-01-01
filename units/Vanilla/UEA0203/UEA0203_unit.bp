@@ -29,9 +29,86 @@ UnitBlueprint {
     
     Defense = {
         ArmorType = 'Light',
-        Health = 1100,
-        MaxHealth = 1100,
-        RegenRate = 4,
+        Health = 925,
+        MaxHealth = 925,
+        RegenRate = 0,
         SurfaceThreatLevel = 6.4,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'UEAWeapon', Cue = 'UEA0203_Riot_Gun', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            AutoInitiateAttackCommand = true,
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 13,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Riot Gun',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land|Water|Seabed',
+                Land = 'Air|Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0,
+            FiringTolerance = 2,
+			
+            Label = 'Turret01',
+			
+            MaxRadius = 24,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 3,
+
+            MuzzleVelocity = 40,
+			
+            ProjectileId = '/projectiles/TDFRiot01/TDFRiot01_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 1.1,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Muzzle'},
+                    RackBone = 'Muzzle',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/5,	
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "ANTIAIR",
+                "GROUNDATTACK",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'HIGHALTAIR, UNTARGETABLE',
+			
+            TurretBoneMuzzle = 'Muzzle',
+            TurretBonePitch = 'Muzzle',
+            TurretBoneYaw = 'Muzzle',
+			
+            TurretPitch = -40,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 360,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+			
+            Turreted = true,
+        },
+        {
+
+        },
     },
 }

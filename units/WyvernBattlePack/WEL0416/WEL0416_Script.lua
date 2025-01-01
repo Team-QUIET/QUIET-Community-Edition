@@ -24,13 +24,13 @@ local TDFGaussCannonWeapon = TerranWeaponFile.TDFLandGaussCannonWeapon
 local EXCEMPArrayBeam01 = BattlePackWeaponFile.EXCEMPArrayBeam01 
 local ExWifeMaincannonWeapon01 = BattlePackWeaponFile.ExWifeMaincannonWeapon01 
 
-WEL0416 = Class(TWalkingLandUnit) {
+WEL0416 = ClassUnit(TWalkingLandUnit) {
 
     Weapons = {
     
-		EXTargetPainter = Class(EXCEMPArrayBeam01) {},
+		EXTargetPainter = ClassWeapon(EXCEMPArrayBeam01) {},
         
-		HeadWeapon = Class(EXCEMPArrayBeam01) {
+		HeadWeapon = ClassWeapon(EXCEMPArrayBeam01) {
         
             OnWeaponFired = function(self, muzzle)
             
@@ -52,17 +52,17 @@ WEL0416 = Class(TWalkingLandUnit) {
             end,
         },
         
-		ArmLaser = Class(ExWifeMaincannonWeapon01) {},  
+		ArmLaser = ClassWeapon(ExWifeMaincannonWeapon01) {},  
 
-		ChinGun = Class(TDFRiotWeapon) {},
+		ChinGun = ClassWeapon(TDFRiotWeapon) {},
         
-		CheekGun = Class(TDFHiroPlasmaCannon) {},
+		CheekGun = ClassWeapon(TDFHiroPlasmaCannon) {},
         
-		TacticalMissiles = Class(TSAMLauncher) {}, 
+		TacticalMissiles = ClassWeapon(TSAMLauncher) {}, 
         
-		ShoulderTurret = Class(TDFGaussCannonWeapon) {FxMuzzleFlashScale = 0.25},
+		ShoulderTurret = ClassWeapon(TDFGaussCannonWeapon) {FxMuzzleFlashScale = 0.25},
         
-		AA = Class(TSAMLauncher) {},
+		AA = ClassWeapon(TSAMLauncher) {},
     },
 	
 	OnCreate = function(self,builder,layer)

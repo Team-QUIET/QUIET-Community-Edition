@@ -28,9 +28,87 @@ UnitBlueprint {
 
     Defense = {
         ArmorType = 'Light',
-        Health = 1100,
-        MaxHealth = 1100,
-        RegenRate = 4,
+        Health = 850,
+        MaxHealth = 850,
+        RegenRate = 0,
         SurfaceThreatLevel = 6,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+			
+            Audio = {
+                Fire = Sound { Bank = 'UAAWeapon', Cue = 'UAA0203_Laser_Lgt', LodCutoff = 'Weapon_LodCutoff' },
+            },
+			
+            AutoInitiateAttackCommand = true,
+			
+            BallisticArc = 'RULEUBA_None',
+			
+            CollideFriendly = false,
+			
+            Damage = 20,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Light Laser',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land|Water|Seabed',
+                Land = 'Air|Land|Water|Seabed',
+            },
+			
+			FiringRandomness = 0,
+            FiringTolerance = 2,
+			
+            Label = 'Turret',
+			
+            MaxRadius = 24,
+			
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 4,
+
+            MuzzleVelocity = 45,
+			
+            ProjectileId = '/projectiles/ADFLaserLight01/ADFLaserLight01_proj.bp',
+            ProjectileLifetime = 0.6,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle01','Turret_Muzzle02','Turret_Muzzle03','Turret_Muzzle04'},
+                    RackBone = 'Turret_Barrel',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/10,		
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "ANTIAIR",
+                "GROUNDATTACK",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'HIGHALTAIR, UNTARGETABLE',
+			
+            TurretBoneMuzzle = 'Turret_Muzzle01',
+            TurretBonePitch = 'C_Barrel',
+            TurretBoneYaw = 'C_Turret',
+			
+            TurretPitch = -20,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 360,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+			
+            Turreted = true,
+        },
+        {
+
+        },
     },
 }

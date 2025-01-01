@@ -18,28 +18,28 @@ local EffectTemplate = import('/lua/EffectTemplates.lua')
 --local TMEffectTemplate = import('/mods/TotalMayhem/lua/TMEffectTemplates.lua')
 local AANChronoTorpedoWeapon = AWeapons.AANChronoTorpedoWeapon
 
-BROT3HADES = Class(AWalkingLandUnit) {
+BROT3HADES = ClassUnit(AWalkingLandUnit) {
 	Weapons = {
-		laserblue = Class(TMAnovacatbluelaserweapon) {
+		laserblue = ClassWeapon(TMAnovacatbluelaserweapon) {
 		},
-		laserblue2 = Class(TMAnovacatbluelaserweapon) {
+		laserblue2 = ClassWeapon(TMAnovacatbluelaserweapon) {
 		},
-		Torpedo2 = Class(AANChronoTorpedoWeapon) {
+		Torpedo2 = ClassWeapon(AANChronoTorpedoWeapon) {
 		},
-		MainGun = Class(TDFGaussCannonWeapon) {  
+		MainGun = ClassWeapon(TDFGaussCannonWeapon) {  
 			FxMuzzleFlashScale = 3.95,
 			FxMuzzleFlash = EffectTemplate.ASDisruptorCannonChargeMuzzle01,
 		}, 
-		MainGun2 = Class(TDFGaussCannonWeapon) {  
+		MainGun2 = ClassWeapon(TDFGaussCannonWeapon) {  
 			FxMuzzleFlashScale = 3.95,
 			FxMuzzleFlash = EffectTemplate.ASDisruptorCannonChargeMuzzle01,
 		}, 
-		MainGun3 = Class(ADFCannonOblivionWeapon) {  
+		MainGun3 = ClassWeapon(ADFCannonOblivionWeapon) {  
 			FxMuzzleFlashScale = 2,
 		}, 
-		AntiAirMissiles2 = Class(AAAZealotMissileWeapon) {
+		AntiAirMissiles2 = ClassWeapon(AAAZealotMissileWeapon) {
 		},
-		robottalk = Class(AAAZealotMissileWeapon) {
+		robottalk = ClassWeapon(AAAZealotMissileWeapon) {
 			FxMuzzleFlashScale = 0,
 		},
 	}, 

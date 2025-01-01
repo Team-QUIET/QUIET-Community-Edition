@@ -28,9 +28,156 @@ UnitBlueprint {
 
     Defense = {
         ArmorType = 'Light',
-        Health = 1150,
-        MaxHealth = 1150,
-        RegenRate = 5,
+        Health = 900,
+        MaxHealth = 900,
+        RegenRate = 6,
         SurfaceThreatLevel = 7,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+			
+            Audio = {
+                Fire = Sound { Bank = 'XSA_Weapon', Cue = 'XSA0203_Phasic_Autogun_Hvy', LodCutoff = 'Weapon_LodCutoff' },
+            },
+			
+            AutoInitiateAttackCommand = true,
+			
+            BallisticArc = 'RULEUBA_None',
+			
+            CollideFriendly = false,
+			
+            Damage = 20,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Phasic Autogun',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land|Water|Seabed',
+                Land = 'Air|Land|Water|Seabed',
+            },
+			
+			FiringRandomness = 0,
+            FiringTolerance = 2,
+			
+            Label = 'Turret',
+			
+            MaxRadius = 24,
+			
+            MuzzleSalvoDelay = 0.3,
+            MuzzleSalvoSize = 2,
+
+            MuzzleVelocity = 40,
+			
+            ProjectileId = '/projectiles/SDFHeavyPhasicAutogun02/SDFHeavyPhasicAutogun02_proj.bp',
+			ProjectileLifetime = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Left_Muzzle01','Left_Muzzle02'},
+                    RackBone = 'Left_Turret_Barrel',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/10,		
+			
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                "ANTIAIR",
+                "GROUNDATTACK",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'HIGHALTAIR, UNTARGETABLE, SATELLITE',
+			
+            TurretBoneMuzzle = 'Left_Muzzle01',
+            TurretBonePitch = 'Left_Turret_Barrel',
+            TurretBoneYaw = 'Left_Turret',
+			
+            TurretPitch = -20,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 360,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+			
+            Turreted = true,
+            WeaponCategory = "Direct Fire",
+        },
+        {
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'XSA_Weapon', Cue = 'XSA0203_Phasic_Autogun_Hvy', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 20,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Phasic Autogun',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land|Water',
+                Land = 'Air|Land|Water',
+            },
+
+			FiringRandomness = 0,
+            FiringTolerance = 2,
+			
+            Label = 'Turret',
+			
+            MaxRadius = 24,
+			
+            MuzzleSalvoDelay = 0.3,
+            MuzzleSalvoSize = 2,
+
+            MuzzleVelocity = 40,
+			
+            ProjectileId = '/projectiles/SDFHeavyPhasicAutogun02/SDFHeavyPhasicAutogun02_proj.bp',
+			ProjectileLifetime = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Right_Muzzle01','Right_Muzzle02'},
+                    RackBone = 'Right_Turret_Barrel',
+                },
+            },
+			
+            RateOfFire = 10/6,		
+			
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                "ANTIAIR",
+                "GROUNDATTACK",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'HIGHALTAIR, UNTARGETABLE, SATELLITE',
+
+            TurretBoneMuzzle = 'Right_Muzzle01',
+            TurretBonePitch = 'Right_Turret_Barrel',
+            TurretBoneYaw = 'Right_Turret',
+			
+            TurretPitch = -20,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 360,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+			
+            Turreted = true,
+            WeaponCategory = "Direct Fire",
+        },
+        {
+
+        },
     },
 }

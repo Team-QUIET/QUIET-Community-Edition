@@ -19,7 +19,7 @@ local DefaultBeamWeapon = WeaponFile.DefaultBeamWeapon
 ---@class ADFTractorClaw
 ---@field TractorTrash TrashBag
 ---@field RunningTractorThread boolean
-ADFTractorClaw = Class(Weapon) {
+ADFTractorClaw = ClassWeapon(Weapon) {
 
     VacuumFx = EffectTemplate.ACollossusTractorBeamVacuum01,
     TractorFx = EffectTemplate.ATractorAmbient,
@@ -345,12 +345,12 @@ ADFTractorClaw = Class(Weapon) {
 }
 
 ---@class ADFTractorClawStructure : DefaultBeamWeapon
-ADFTractorClawStructure = Class(DefaultBeamWeapon) {
+ADFTractorClawStructure = ClassWeapon(DefaultBeamWeapon) {
     BeamType = TractorClawCollisionBeam,
     FxMuzzleFlash = {},
 }
 
-AIFArtilleryMiasmaShellWeapon   = Class(DefaultProjectileWeapon) {
+AIFArtilleryMiasmaShellWeapon   = ClassWeapon(DefaultProjectileWeapon) {
     FxMuzzleFlash = {},
 
     CreateProjectileForWeapon = function(self, bone)
@@ -387,7 +387,7 @@ AIFArtilleryMiasmaShellWeapon   = Class(DefaultProjectileWeapon) {
     end,
 }
 
-TMAnovacatbluelaserweapon = Class(DefaultBeamWeapon) {
+TMAnovacatbluelaserweapon = ClassWeapon(DefaultBeamWeapon) {
     BeamType = QCECollisionbeams.TMNovaCatBlueLaserBeam,
     FxMuzzleFlash = {},
     FxChargeMuzzleFlash = {},

@@ -6,7 +6,7 @@ local function GetRandomFloat( Min, Max )
     return Min + (Random() * (Max-Min) )
 end
 
-CDFRocketIridium03 = Class(CIridiumRocketProjectile) {
+CDFRocketIridium03 = ClassProjectile(CIridiumRocketProjectile) {
     OnCreate = function(self)
         CIridiumRocketProjectile.OnCreate(self)
         self:SetCollisionShape('Sphere', 0, 0, 0, 2.0)

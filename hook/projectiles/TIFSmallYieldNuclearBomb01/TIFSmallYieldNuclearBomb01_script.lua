@@ -1,6 +1,6 @@
 local TIFSmallYieldNuclearBombProjectile = import('/lua/terranprojectiles.lua').TArtilleryAntiMatterProjectile
 
-TIFSmallYieldNuclearBomb01 = Class(TIFSmallYieldNuclearBombProjectile) {
+TIFSmallYieldNuclearBomb01 = ClassProjectile(TIFSmallYieldNuclearBombProjectile) {
 
 	PolyTrail = '/effects/emitters/default_polytrail_04_emit.bp',
 	FxLandHitScale = 0.5,

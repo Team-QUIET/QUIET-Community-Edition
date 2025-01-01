@@ -2,7 +2,7 @@ local EmitterProjectile = import('/lua/sim/defaultprojectiles.lua').EmitterProje
 local EffectTemplate = import('/lua/EffectTemplates.lua')
 local GetRandomFloat = import('/lua/utilities.lua').GetRandomFloat
 
-TIFTacticalBomb01 = Class(EmitterProjectile) {
+TIFTacticalBomb01 = ClassProjectile(EmitterProjectile) {
 
 	PolyTrail = '/effects/emitters/default_polytrail_04_emit.bp',
     FxTrails = {},

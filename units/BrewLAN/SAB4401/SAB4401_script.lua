@@ -8,7 +8,7 @@ local Shield = import('/lua/shield.lua').Shield
 local CreateFlash = import('/lua/defaultexplosions.lua').CreateFlash
 local EffectTemplate = import('/lua/EffectTemplates.lua')
 
-SAB4401 = Class(AShieldStructureUnit) {
+SAB4401 = ClassUnit(AShieldStructureUnit) {
 
     ShieldEffects = {
         '/effects/emitters/aeon_shield_generator_t2_01_emit.bp',

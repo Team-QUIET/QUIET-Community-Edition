@@ -8,7 +8,7 @@ local TLaserBotProjectile = import('/lua/terranprojectiles.lua').TLaserBotProjec
 local OverchargeProjectile = import("/lua/sim/defaultprojectiles.lua").OverchargeProjectile
 local EffectTemplate = import("/lua/effecttemplates.lua")
 
-TDFOverCharge01 = Class(TLaserBotProjectile, OverchargeProjectile) {
+TDFOverCharge01 = ClassProjectile(TLaserBotProjectile, OverchargeProjectile) {
     FxTrails = EffectTemplate.TCommanderOverchargeFXTrail01,
     FxTrailScale = 1.0,
 

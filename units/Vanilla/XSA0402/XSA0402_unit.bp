@@ -44,7 +44,6 @@ UnitBlueprint {
             DamageRadius = 19,
             DamageType = 'Normal',
             DisplayName = 'Ohwalli Strategic Bomb',
-            EffectiveRadius = 38,
             EnergyDrainPerSecond = 1950,    -- this would be in addition to the 1000 it already drains - u might think this is excessive - but not even close.
                                             -- According to formula, this weapon should require close to 30k drain to recharge in 10 seconds
             EnergyRequired = 29250,         -- 15 seconds to charge - 
@@ -64,10 +63,10 @@ UnitBlueprint {
             NeedToComputeBombDrop = true,
 			HeadingArcCenter = 0,
 			HeadingArcRange = 360,
-            MaxRadius = 90,
-            EffectiveRadius = 90,		
+            MaxRadius = 90,	
+            EffectiveRadius = 38,
             NotExclusive = true,
-            RateOfFire = 1,         -- controlled entirely by charge cycle --
+            RateOfFire = 10/100,  
             RackFireTogether = false,
             RackRecoilDistance = 0,
             RackReloadTimeout = 12,
@@ -77,14 +76,14 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             SlavedToBody = false,
             SlavedToBodyArcRange = 360,
-            TargetCheckInterval = 2,
+            TargetCheckInterval = 0.5,
             TargetPriorities = {
-                'SPECIALHIGHPRI -AIR',
-				'EXPERIMENTAL -AIR',
-                'STRUCTURE -WALL',
-                'MOBILE -AIR',
-				'ENGINEER',
-                'ALLUNITS -WALL',
+                "SPECIALHIGHPRI",
+				"STRUCTURE",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = "UNTARGETABLE",
             TurretDualManipulators = false,
