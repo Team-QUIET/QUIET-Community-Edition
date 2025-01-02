@@ -309,7 +309,7 @@ do
 				end
 
 				-- all structures
-				-- LCE: Leaving this in here until we decide if we want to reset it to the default ranges instead of 9% least range
+				-- QCE: Leaving this in here until we decide if we want to reset it to the default ranges instead of 9% least range
 				if cats.STRUCTURE then
 					-- the purpose of this alteration is to address the parity of T2 and T3 static defenses with respect to mobile units
 					-- I felt, and the numbers clearly show, that a tremendous range difference crept into the game as many 3rd party
@@ -383,9 +383,47 @@ do
 						end
 					end
 				end
+
+				-- Global Intel Buff 
+				-- Hopefully this will help Players & AI deal with stealth and cloak more easily 
+				-- INTEL needs absolute values and can not have demical values
+				if cats.STRUCTURE and cats.INTELLIGENCE and (cats.RADAR or cats.OMNI) then
+					do
+						if cats.TECH1 and bp.Intel.RadarRadius then
+							bp.Intel.RadarRadius = 116
+						elseif cats.TECH2 and bp.Intel.RadarRadius then
+							bp.Intel.RadarRadius = 200
+						elseif cats.TECH3 and bp.Intel.RadarRadius and bp.Intel.OmniRadius and bp.Intel.ReactivateTime and bp.Economy.MaintenanceConsumptionPerSecondEnergy then
+							bp.Intel.RadarRadius = 512
+							bp.Intel.OmniRadius = 200
+							bp.Intel.ReactivateTime = 6
+
+							bp.Economy.MaintenanceConsumptionPerSecondEnergy = 3000
+
+							--LOG(bp.BlueprintId .. ' : Setting INTEL values - RadarRadius : ' .. bp.Intel.RadarRadius .. ' OmniRadius : ' .. bp.Intel.OmniRadius .. ' MaintenanceConsumptionPerSecondEnergy : ' .. bp.Economy.MaintenanceConsumptionPerSecondEnergy .. ' ReactivateTime : ' .. bp.Intel.ReactivateTime)
+						end
+					end
+				end
+
+				-- Global Intel Buff 
+				-- Hopefully this will help Players & AI deal with stealth and cloak more easily 
+				-- INTEL needs absolute values and can not have demical values
+				if cats.INTELLIGENCE and cats.SONAR then
+					do
+						if (cats.STRUCTURE or cats.NAVAL) and cats.TECH1 and bp.Intel.SonarRadius then
+							bp.Intel.SonarRadius = 116
+						elseif (cats.STRUCTURE or cats.NAVAL) and cats.TECH2 and bp.Intel.SonarRadius then
+							bp.Intel.SonarRadius = 200
+						elseif (cats.STRUCTURE or cats.NAVAL) and cats.TECH3 and bp.Intel.SonarRadius and bp.Intel.ReactivateTime and bp.Economy.MaintenanceConsumptionPerSecondEnergy then
+							bp.Intel.SonarRadius = 368
+							bp.Intel.ReactivateTime = 6
+
+							bp.Economy.MaintenanceConsumptionPerSecondEnergy = 750
+						end
+					end
+				end
 			end
 		end
-		--LOG("*AI DEBUG Adding NAVAL Wreckage information and setting wreckage lifetime")
 	end
 
 	--=======================================
