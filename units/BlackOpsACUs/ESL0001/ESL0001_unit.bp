@@ -76,7 +76,7 @@ UnitBlueprint {
 	
     Defense = {
 
-        MissileTorpDestroy = { AttachBone = 'Body', Radius = 5, RedirectRateOfFire = 8, ProjectileCategories = {'TACTICAL MISSILE','TORPEDO'} },
+        MissileTorpDestroy = { AttachBone = 'Body', Radius = 0, RedirectRateOfFire = 0, ProjectileCategories = {'TACTICAL MISSILE','TORPEDO'} },
 		
         LambdaRedirect01 = { AttachBone = 'Left_Turret_Muzzle', Radius = 7, RedirectRateOfFire = 6 },
         LambdaRedirect02 = { AttachBone = 'Right_Turret_Muzzle', Radius = 9, RedirectRateOfFire = 6 },
@@ -88,9 +88,9 @@ UnitBlueprint {
         
         EconomyThreatLevel = 640,
         
-        Health = 27500,
-        MaxHealth = 27500,
-        RegenRate = 16,
+        Health = 18500,
+        MaxHealth = 18500,
+        RegenRate = 10,
         
         SurfaceThreatLevel = 45,
         
@@ -107,11 +107,11 @@ UnitBlueprint {
             '<LOC ability_deathaoe>Volatile',
             '<LOC ability_notcap>Not Capturable',
             '<LOC ability_omni>Omni Sensor',
-            '<LOC ability_personalstealth>Personal Stealth',
+            'N/A',
             '<LOC ability_radar>Radar',
             '<LOC ability_sonar>Sonar',
-            '<LOC ability_tacmissiledef>Tactical Missile Defense',
-            '<LOC ability_torpedodef>Personal Torpedo Defense',
+            'N/A',
+            'N/A',
         },
 
         AnimationWalk = '/mods/BlackopsACUs/units/esl0001/esl0001_awalk.sca',
@@ -282,9 +282,9 @@ UnitBlueprint {
 
         EXImprovedEngineering = {
 
-            BuildCostEnergy = 26000,
-            BuildCostMass = 2500,
-            BuildTime = 2500,
+            BuildCostEnergy = 42000,
+            BuildCostMass = 1600,
+            BuildTime = 1250,
 
             BuildableCategoryAdds = 'BUILTBYTIER2COMMANDER SERAPHIM',
 
@@ -321,9 +321,9 @@ UnitBlueprint {
 
         EXAdvancedEngineering = {
 
-            BuildCostEnergy = 75000,
+            BuildCostEnergy = 145000,
             BuildCostMass = 7250,
-            BuildTime = 7500,
+            BuildTime = 5850,
 
             BuildableCategoryAdds = 'BUILTBYTIER3COMMANDER SERAPHIM',
 
@@ -367,9 +367,9 @@ UnitBlueprint {
 
         EXExperimentalEngineering = {
 
-            BuildCostEnergy = 230000,
-            BuildCostMass = 22500,
-            BuildTime = 23000,
+            BuildCostEnergy = 389500,
+            BuildCostMass = 16950,
+            BuildTime = 22600,
 
             BuildableCategoryAdds = 'BUILTBYTIER4COMMANDER SERAPHIM',
 
@@ -408,9 +408,9 @@ UnitBlueprint {
 
         EXCombatEngineering = {
 
-            BuildCostEnergy = 26000,
-            BuildCostMass = 2500,
-            BuildTime = 2500,
+            BuildCostEnergy = 42000,
+            BuildCostMass = 1600,
+            BuildTime = 1250,
 
             BuildableCategoryAdds = 'BUILTBYTIER2COMMANDER SERAPHIM',
 
@@ -447,9 +447,9 @@ UnitBlueprint {
 
         EXAssaultEngineering = {
 
-            BuildCostEnergy = 75000,
+            BuildCostEnergy = 145000,
             BuildCostMass = 7250,
-            BuildTime = 7500,
+            BuildTime = 5850,
 
             BuildableCategoryAdds = 'BUILTBYTIER3COMMANDER SERAPHIM',
 
@@ -488,9 +488,9 @@ UnitBlueprint {
 
         EXApocalypticEngineering = {
 
-            BuildCostEnergy = 230000,
-            BuildCostMass = 22500,
-            BuildTime = 23000,
+            BuildCostEnergy = 389500,
+            BuildCostMass = 16950,
+            BuildTime = 22600,
 
             BuildableCategoryAdds = 'BUILTBYTIER4COMMANDER SERAPHIM',
 
@@ -529,9 +529,9 @@ UnitBlueprint {
 
         EXChronotronBooster = {
 
-            BuildCostEnergy = 7500,
-            BuildCostMass = 750,
-            BuildTime = 750,
+            BuildCostEnergy = 21500,
+            BuildCostMass = 845,
+            BuildTime = 1000,
 
             Icon = 'exrzb1',
 
@@ -677,9 +677,9 @@ UnitBlueprint {
 
         EXStormCannon = {
 
-            BuildCostEnergy = 21000,
-            BuildCostMass = 900,
-            BuildTime = 2100,
+            BuildCostEnergy = 76000,
+            BuildCostMass = 3200,
+            BuildTime = 1950,
 
             Icon = 'exramc1',
 
@@ -715,9 +715,9 @@ UnitBlueprint {
 
         EXStormCannonII = {
 
-            BuildCostEnergy = 56000,
-            BuildCostMass = 1900,
-            BuildTime = 5600,
+            BuildCostEnergy = 172500,
+            BuildCostMass = 6250,
+            BuildTime = 3475,
 
             Icon = 'exramc2',
 
@@ -754,9 +754,9 @@ UnitBlueprint {
 
         EXStormCannonIII = {
 
-            BuildCostEnergy = 165000,
-            BuildCostMass = 5400,
-            BuildTime = 16500,
+            BuildCostEnergy = 256500,
+            BuildCostMass = 9875,
+            BuildTime = 11350,
 
             Icon = 'exramc3',
 
@@ -794,9 +794,9 @@ UnitBlueprint {
 
         EXRapidCannon = {
 
-            BuildCostEnergy = 21000,
-            BuildCostMass = 840,
-            BuildTime = 1800,
+            BuildCostEnergy = 59000,
+            BuildCostMass = 2900,
+            BuildTime = 1650,
 
             Icon = 'exrgec1',
 
@@ -830,9 +830,9 @@ UnitBlueprint {
 
         EXRapidCannonII = {
 
-            BuildCostEnergy = 42000,
-            BuildCostMass = 1400,
-            BuildTime = 4200,
+            BuildCostEnergy = 142500,
+            BuildCostMass = 5100,
+            BuildTime = 2975,
 
             Icon = 'exrgec2',
 
@@ -868,9 +868,9 @@ UnitBlueprint {
 
         EXRapidCannonIII = {
 
-            BuildCostEnergy = 130000,
-            BuildCostMass = 4200,
-            BuildTime = 13000,
+            BuildCostEnergy = 216500,
+            BuildCostMass = 8375,
+            BuildTime = 9550,
 
             Icon = 'exrgec3',
 
@@ -906,9 +906,9 @@ UnitBlueprint {
 		
         EXIntelEnhancementT2 = {
 
-            BuildCostEnergy = 3600,
-            BuildCostMass = 180,
-            BuildTime = 360,
+            BuildCostEnergy = 21000,
+            BuildCostMass = 900,
+            BuildTime = 1250,
 
             Icon = 'excint1',
             
@@ -945,9 +945,9 @@ UnitBlueprint {
 
         EXIntelEnhancementT3 = {
 
-            BuildCostEnergy = 27000,
-            BuildCostMass = 2200,
-            BuildTime = 2700,
+            BuildCostEnergy = 67000,
+            BuildCostMass = 2150,
+            BuildTime = 3200,
 
             Icon = 'excint2',
             
@@ -986,9 +986,9 @@ UnitBlueprint {
 		
         EXPersonalTeleporter = {
 
-            BuildCostEnergy = 95000,
-            BuildCostMass = 4800,
-            BuildTime = 9500,
+            BuildCostEnergy = 450000,
+            BuildCostMass = 8000,
+            BuildTime = 11500,
 
             Icon = 'exbtele',
 
@@ -1021,9 +1021,9 @@ UnitBlueprint {
 
         EXL1Lambda = {
 
-            BuildCostEnergy = 22000,
-            BuildCostMass = 680,
-            BuildTime = 2200,
+            BuildCostEnergy = 31910,
+            BuildCostMass = 2035,
+            BuildTime = 1545,
             
             ConsumptionPerSecondEnergy = 120,
 
@@ -1056,9 +1056,9 @@ UnitBlueprint {
 
         EXL2Lambda = {
 
-            BuildCostEnergy = 36000,
-            BuildCostMass = 1325,
-            BuildTime = 3500,
+            BuildCostEnergy = 65000,
+            BuildCostMass = 4135,
+            BuildTime = 3900,
             
             ConsumptionPerSecondEnergy = 320,
 
@@ -1093,9 +1093,9 @@ UnitBlueprint {
 
         EXArmorPlating = {
 
-            BuildCostEnergy = 32000,
-            BuildCostMass = 4200,
-            BuildTime = 3200,
+            BuildCostEnergy = 31910,
+            BuildCostMass = 2035,
+            BuildTime = 1545,
 
             Icon = 'exbarmor',
 
@@ -1130,9 +1130,9 @@ UnitBlueprint {
 
         EXStealthField = {
 
-            BuildCostEnergy = 12000,
-            BuildCostMass = 675,
-            BuildTime = 1200,
+            BuildCostEnergy = 65000,
+            BuildCostMass = 4135,
+            BuildTime = 3900,
 
             ConsumptionPerSecondEnergy = 325,
 
@@ -1171,9 +1171,9 @@ UnitBlueprint {
 
         EXCloakingSubsystems = {
 
-            BuildCostEnergy = 32100,
-            BuildCostMass = 4000,
-            BuildTime = 3210,
+            BuildCostEnergy = 147000,
+            BuildCostMass = 7800,
+            BuildTime = 7950,
 
             ConsumptionPerSecondEnergy = 725,
 
@@ -1485,7 +1485,7 @@ UnitBlueprint {
 
             DisplayName = 'Chronotron Overcharge Cannon',
 
-            EnergyRequired = 4500,
+            EnergyRequired = 7500,
 
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',

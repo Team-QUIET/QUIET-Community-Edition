@@ -2,6 +2,242 @@ UnitBlueprint {
     Merge = true,
 	BlueprintId = "eel0001",
 
+    AI = {
+        GuardRadius = 10,
+		InitialAutoMode = false,
+        TargetBones = {'Head','Right_Arm_B01','Left_Arm_B01','Torso','Left_Leg_B01','Right_Leg_B01'},
+    },
+	
+    Audio = {
+        CommanderArrival            = Sound { Bank = 'UEL', Cue = 'UEL0001_Gate_In',         LodCutoff = 'UnitMove_LodCutoff' },
+        Construct                   = Sound { Bank = 'UEL', Cue = 'UEL0001_Construct_Start', LodCutoff = 'UnitMove_LodCutoff' },
+        FootFallGeneric             = Sound { Bank = 'UEL', Cue = 'UEL0001_Move_Step',       LodCutoff = 'UnitMove_LodCutoff' },
+        FootFallGenericSeabed       = Sound { Bank = 'UEL', Cue = 'UEL0001_Move_UW_Step',    LodCutoff = 'UnitMove_LodCutoff' },
+        StartMove                   = Sound { Bank = 'UEL', Cue = 'UEL0001_Move_Start',      LodCutoff = 'UnitMove_LodCutoff' },
+        StartReclaim                = Sound { Bank = 'UEL', Cue = 'UEL0001_Reclaim_Start',   LodCutoff = 'UnitMove_LodCutoff' },
+        StopMove                    = Sound { Bank = 'UEL', Cue = 'UEL0001_Move_Stop',       LodCutoff = 'UnitMove_LodCutoff' },
+        LaunchSat                   = Sound { Bank = 'XEL_Weapons', Cue = 'XEB2402_Launch',  LodCutoff = 'UnitMove_LodCutoff' },		
+        Killed                      = Sound { Bank = 'Explosions', Cue = 'UEF_Nuke_Impact',  LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection                 = Sound { Bank = 'Interface', Cue = 'UEF_Select_Commander', LodCutoff = 'UnitMove_LodCutoff' },
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 4,
+            Level2 = 8,
+            Level3 = 11,
+            Level4 = 14,
+            Level5 = 17,
+        },
+        VisionRadius = {
+            Level1 = 2,
+            Level2 = 2,
+            Level3 = 2,
+            Level4 = 2,
+            Level5 = 2,        
+        },
+        WaterVisionRadius = {
+            Level1 = 2,
+            Level2 = 2,
+            Level3 = 2,
+            Level4 = 2,
+            Level5 = 2,        
+        },
+    },
+	
+    Categories = {
+        'SELECTABLE',
+        'UEF',
+        'MOBILE',
+        'COMMAND',
+        'REPAIR',
+        'ENGINEER',
+        'CONSTRUCTION',
+        'RECLAIM',
+        'CAPTURE',
+        'LAND',
+        'VISIBLETORECON',
+        'PATROLHELPER',
+        'SHOWQUEUE',
+        'SILO',
+        'VERIFYMISSILEUI',
+        'OVERLAYOMNI',
+        'OVERLAYRADAR',
+        'OVERLAYSONAR',
+        'ANTITELEPORT',
+        'OVERLAYMISC',
+    },
+	
+    Defense = {
+
+        MissileTorpDestroy = { AttachBone = 'Head', Radius = 0, RedirectRateOfFire = 0, ProjectileCategories = {'TACTICAL MISSILE','TORPEDO'} },
+
+        ArmorType = 'Commander',
+        
+        EconomyThreatLevel = 670,
+        
+        Health = 20150,         -- +241%
+        MaxHealth = 20150,
+        RegenRate = 6,
+        
+        SurfaceThreatLevel = 45,
+		
+		NoTeleDistance = 55,
+		MaxTeleRange = 350,
+    },
+	
+    Description = '<LOC eel0001_desc>Armored Command Unit',
+	
+    Display = {
+        Abilities = {
+            '<LOC ability_amphibious>Amphibious',
+            '<LOC ability_customizable>Customizable',
+            '<LOC ability_deathaoe>Volatile',
+            '<LOC ability_notcap>Not Capturable',
+            '<LOC ability_omni>Omni Sensor',
+            'N/A',
+            '<LOC ability_radar>Radar',
+            '<LOC ability_sonar>Sonar',
+            'N/A',
+            'N/A',
+        },
+
+        AnimationWalk = '/mods/BlackopsACUs/units/eel0001/eel0001_a001.sca',
+        AnimationWalkRate = 1.5,
+		
+        AttackReticleSize = 55,
+		
+        DamageEffects = {
+            { Bone = 0, OffsetX = 0.25, OffsetY = 0.75, OffsetZ = 0 },
+            { Bone = 0, OffsetX = -0.25, OffsetY = 0.75, OffsetZ = 0 },
+            { Bone = 0, OffsetX = -0.35, OffsetY = 0.1, OffsetZ = 0 },
+        },
+
+        IdleEffects = {
+            Seabed = {
+                Effects = {
+                    { Bones = {'Left_Arm_B02','Right_Arm_B02','Left_Arm_Muzzle','Right_Arm_Muzzle'}, Scale = 7, Type = 'UnderWater01' },
+                },
+            },
+        },
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                { LODCutoff = 175, ShaderName = 'Unit' },
+            },
+        },
+
+        MovementEffects = {
+
+            Land = {
+
+                Footfall = {
+                    Bones = {
+                        {
+                            FootBone = 'Left_Footfall',
+                            HipBone = 'Left_Leg_B01',
+                            KneeBone = 'Left_Leg_B02',
+                            Tread = {
+                                TreadMarks = 'CommanderPrint_albedo',
+                                TreadMarksSizeX = 0.6,
+                                TreadMarksSizeZ = 0.6,
+                                TreadOffset = {0.32,0,0.55},
+                            },
+                            Type = 'FootFall02',
+                        },
+                        {
+                            FootBone = 'Left_Footfall01',
+                            HipBone = 'Right_Leg_B01',
+                            KneeBone = 'Right_Leg_B02',
+                            Tread = {
+                                TreadMarks = 'CommanderPrint_albedo',
+                                TreadMarksSizeX = 0.6,
+                                TreadMarksSizeZ = 0.6,
+                                TreadOffset = {0.45,0,0.6},
+                            },
+                            Type = 'FootFall02',
+                        },
+                    },
+                },
+            },
+
+            Seabed = {
+
+                Effects = {
+                    { Bones = {'Left_Arm_B02','Right_Arm_B02','Left_Arm_Muzzle','Right_Arm_Muzzle','Left_Foot','Right_Foot'}, Scale = 4, Type = 'UnderWater01' },
+                },
+
+                Footfall = {
+                    Bones = {
+                        {
+                            FootBone = 'Left_Footfall',
+                            HipBone = 'Left_Leg_B01',
+                            KneeBone = 'Left_Leg_B02',
+                            Tread = {
+                                TreadMarks = 'CommanderPrint_albedo',
+                                TreadMarksSizeX = 0.6,
+                                TreadMarksSizeZ = 0.6,
+                                TreadOffset = {0.32,0,0.55},
+                            },
+                            Type = 'FootFall02',
+                        },
+                        {
+                            FootBone = 'Left_Footfall01',
+                            HipBone = 'Right_Leg_B01',
+                            KneeBone = 'Right_Leg_B02',
+                            Tread = {
+                                TreadMarks = 'CommanderPrint_albedo',
+                                TreadMarksSizeX = 0.6,
+                                TreadMarksSizeZ = 0.6,
+                                TreadOffset = {-0.45,0,0.6},
+                            },
+                            Type = 'FootFall02',
+                        },
+                    },
+                },
+            },
+        },
+
+        TransportAnimation = {
+            { Animation = '/mods/BlackopsACUs/units/eel0001/eel0001_afold.sca', Weight = 100 },
+        },
+        
+        TransportDropAnimation = {
+            { Animation = '/mods/BlackopsACUs/units/eel0001/eel0001_aunfold.sca', Weight = 100 },
+        },
+
+        UniformScale = 0.107,
+    },
+
+    Economy = {
+        BuildCostEnergy = 100000,
+        BuildCostMass = 10000,
+        BuildRate = 10,
+
+        BuildTime = 10000,
+
+        BuildableCategory = {
+            'BUILTBYCOMMANDER UEF',
+            'BUILTBYTIER2COMMANDER UEF',
+            'BUILTBYTIER3COMMANDER UEF',
+            'BUILTBYTIER4COMMANDER UEF',
+        },
+
+        MaxBuildDistance = 14,
+
+        NaturalProducer = true,
+
+        ProductionPerSecondEnergy = 20,
+        ProductionPerSecondMass = 2,
+		
+        StorageEnergy = 5000,
+        StorageMass = 650,
+
+        -- for teleporter
+		TeleportBurstEnergyCost = 5000,
+    },
+
     Enhancements = {
         Slots = {
             Back = {
@@ -28,9 +264,9 @@ UnitBlueprint {
 		
         EXImprovedEngineering = {
 
-            BuildCostEnergy = 26000,
-            BuildCostMass = 2500,
-            BuildTime = 2500,
+            BuildCostEnergy = 42000,
+            BuildCostMass = 1600,
+            BuildTime = 1250,
 
             BuildableCategoryAdds = 'BUILTBYTIER2COMMANDER UEF',
 
@@ -67,9 +303,9 @@ UnitBlueprint {
 		
         EXAdvancedEngineering = {
 
-            BuildCostEnergy = 75000,
+            BuildCostEnergy = 145000,
             BuildCostMass = 7250,
-            BuildTime = 7500,
+            BuildTime = 5850,
 
             BuildableCategoryAdds = 'BUILTBYTIER3COMMANDER UEF',
 
@@ -108,9 +344,9 @@ UnitBlueprint {
 		
         EXExperimentalEngineering = {
 
-            BuildCostEnergy = 230000,
-            BuildCostMass = 22500,
-            BuildTime = 23000,
+            BuildCostEnergy = 389500,
+            BuildCostMass = 16950,
+            BuildTime = 22600,
 
             BuildableCategoryAdds = 'BUILTBYTIER4COMMANDER UEF',
 
@@ -149,9 +385,9 @@ UnitBlueprint {
 		
         EXCombatEngineering = {
 
-            BuildCostEnergy = 26000,
-            BuildCostMass = 2500,
-            BuildTime = 2500,
+            BuildCostEnergy = 42000,
+            BuildCostMass = 1600,
+            BuildTime = 1250,
 
             BuildableCategoryAdds = 'BUILTBYTIER2COMMANDER UEF',
 
@@ -188,9 +424,9 @@ UnitBlueprint {
 		
         EXAssaultEngineering = {
 
-            BuildCostEnergy = 75000,
+            BuildCostEnergy = 145000,
             BuildCostMass = 7250,
-            BuildTime = 7500,
+            BuildTime = 5850,
 
 			BuildableCategoryAdds = 'BUILTBYTIER3COMMANDER UEF',
 
@@ -229,9 +465,9 @@ UnitBlueprint {
 		
         EXApocalypticEngineering = {
 
-            BuildCostEnergy = 230000,
-            BuildCostMass = 22500,
-            BuildTime = 23000,
+            BuildCostEnergy = 389500,
+            BuildCostMass = 16950,
+            BuildTime = 22600,
 
             BuildableCategoryAdds = 'BUILTBYTIER4COMMANDER UEF',
 
@@ -270,9 +506,9 @@ UnitBlueprint {
 		
         EXZephyrBooster = {
 
-            BuildCostEnergy = 7500,
-            BuildCostMass = 750,
-            BuildTime = 750,
+            BuildCostEnergy = 21500,
+            BuildCostMass = 845,
+            BuildTime = 1000,
 
             Icon = 'exrzb1',
 
@@ -418,9 +654,9 @@ UnitBlueprint {
 
         EXAntiMatterCannon = {
 
-            BuildCostEnergy = 20750,
-            BuildCostMass = 1000,
-            BuildTime = 2075,
+            BuildCostEnergy = 76000,
+            BuildCostMass = 3200,
+            BuildTime = 1950,
 
             Icon = 'exramc1',
 
@@ -456,9 +692,9 @@ UnitBlueprint {
 		
         EXImprovedContainmentBottle = {
 
-            BuildCostEnergy = 52500,
-            BuildCostMass = 2000,
-            BuildTime = 5250,
+            BuildCostEnergy = 172500,
+            BuildCostMass = 6250,
+            BuildTime = 3475,
 
             Icon = 'exramc2',
 
@@ -495,9 +731,9 @@ UnitBlueprint {
 		
         EXPowerBooster = {
 
-            BuildCostEnergy = 150000,
-            BuildCostMass = 6000,
-            BuildTime = 15000,
+            BuildCostEnergy = 256500,
+            BuildCostMass = 9875,
+            BuildTime = 11350,
 
             Icon = 'exramc3',
 
@@ -534,8 +770,8 @@ UnitBlueprint {
 		
         EXGattlingEnergyCannon = {
 
-            BuildCostEnergy = 16500,
-            BuildCostMass = 945,
+            BuildCostEnergy = 59000,
+            BuildCostMass = 2900,
             BuildTime = 1650,
 
             Icon = 'exrgec1',
@@ -571,9 +807,9 @@ UnitBlueprint {
 		
         EXImprovedCoolingSystem = {
 
-            BuildCostEnergy = 40000,
-            BuildCostMass = 1650,
-            BuildTime = 4000,
+            BuildCostEnergy = 142500,
+            BuildCostMass = 5100,
+            BuildTime = 2975,
 
             Icon = 'exrgec2',
 
@@ -610,9 +846,9 @@ UnitBlueprint {
 		
         EXEnergyShellHardener = {
 
-            BuildCostEnergy = 135000,
-            BuildCostMass = 6000,
-            BuildTime = 13500,
+            BuildCostEnergy = 216500,
+            BuildCostMass = 8375,
+            BuildTime = 9550,
 
             Icon = 'exrgec3',
 
@@ -649,9 +885,9 @@ UnitBlueprint {
 		
         EXIntelEnhancementT2 = {
 
-            BuildCostEnergy = 3600,
-            BuildCostMass = 180,
-            BuildTime = 360,
+            BuildCostEnergy = 21000,
+            BuildCostMass = 900,
+            BuildTime = 1250,
 
             Icon = 'excint1',
             
@@ -688,9 +924,9 @@ UnitBlueprint {
 
         EXIntelEnhancementT3 = {
 
-            BuildCostEnergy = 27000,
-            BuildCostMass = 2200,
-            BuildTime = 2700,
+            BuildCostEnergy = 67000,
+            BuildCostMass = 2150,
+            BuildTime = 3200,
 
             Icon = 'excint2',
             
@@ -729,9 +965,9 @@ UnitBlueprint {
 		
         EXSatelliteSystem = {
 
-            BuildCostEnergy = 35000,
-            BuildCostMass = 3500,
-            BuildTime = 3500,
+            BuildCostEnergy = 121000,
+            BuildCostMass = 2950,
+            BuildTime = 6800,
 
             Icon = 'excint3',
             
@@ -770,9 +1006,9 @@ UnitBlueprint {
 
         EXShieldBubble = {
 
-            BuildCostEnergy = 7500,
-            BuildCostMass = 500,
-            BuildTime = 750,
+            BuildCostEnergy = 31910,
+            BuildCostMass = 2035,
+            BuildTime = 1545,
 
             Icon = 'exbsh1',
 
@@ -791,8 +1027,8 @@ UnitBlueprint {
 
             ShieldEnergyDrainRechargeTime = 5,
             ShieldMaxHealth = 8500,
-            ShieldRechargeTime = 14,
-            ShieldRegenRate = 98,
+            ShieldRechargeTime = 28,
+            ShieldRegenRate = 100,
             ShieldRegenStartTime = 1,
             ShieldSize = 8,
             ShieldVerticalOffset = -2,
@@ -826,9 +1062,9 @@ UnitBlueprint {
 		
         EXActiveSkinShield = {
 
-            BuildCostEnergy = 18900,
-            BuildCostMass = 2087,
-            BuildTime = 1890,
+            BuildCostEnergy = 65000,
+            BuildCostMass = 4135,
+            BuildTime = 3900,
 
             Icon = 'exbsh2',
 
@@ -848,8 +1084,8 @@ UnitBlueprint {
 
             ShieldEnergyDrainRechargeTime = 5,
             ShieldMaxHealth = 16000,
-            ShieldRechargeTime = 20,
-            ShieldRegenRate = 181,
+            ShieldRechargeTime = 30,
+            ShieldRegenRate = 200,
             ShieldRegenStartTime = 1,
             ShieldSize = 3,
             ShieldVerticalOffset = 0,
@@ -883,9 +1119,9 @@ UnitBlueprint {
 		
         EXAdvancedSkinShield = {
 
-            BuildCostEnergy = 21250,
-            BuildCostMass = 2866,
-            BuildTime = 2125,
+            BuildCostEnergy = 147000,
+            BuildCostMass = 7800,
+            BuildTime = 7950,
 
             Icon = 'exbsh3',
 
@@ -940,9 +1176,9 @@ UnitBlueprint {
 		
         EXTyphoonBubble = {
 
-            BuildCostEnergy = 8500,
-            BuildCostMass = 2200,
-            BuildTime = 850,
+            BuildCostEnergy = 295000,
+            BuildCostMass = 9800,
+            BuildTime = 9950,
 
             Icon = 'exbsh4',
 
@@ -1104,9 +1340,9 @@ UnitBlueprint {
 		
         EXPersonalTeleporter = {
 
-            BuildCostEnergy = 95000,
-            BuildCostMass = 4800,
-            BuildTime = 9500,
+            BuildCostEnergy = 450000,
+            BuildCostMass = 8000,
+            BuildTime = 11500,
 
             Icon = 'exbtele',
 
@@ -1215,7 +1451,7 @@ UnitBlueprint {
 
     },
 
-Intel = {
+    Intel = {
 
         FreeIntel = false,
 
@@ -1339,7 +1575,7 @@ Intel = {
 			
             DisplayName = 'Overcharge Cannon',
             
-            EnergyRequired = 4500,
+            EnergyRequired = 7500,
 			
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
