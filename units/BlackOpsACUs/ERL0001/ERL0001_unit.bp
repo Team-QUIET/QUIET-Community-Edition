@@ -2,6 +2,246 @@ UnitBlueprint {
     Merge = true,
 	BlueprintId = "erl0001",
 
+    AI = {
+        GuardRadius = 10,
+        TargetBones = {'Head','Torso','Right_Arm_B01','Left_Arm_B01','Back_Upgrade','Left_Leg_B01','Right_Leg_B01'},
+    },
+	
+    Audio = {
+        CommanderArrival        = Sound { Bank = 'URL', Cue = 'URL0001_Gate_In',         LodCutoff = 'UnitMove_LodCutoff' },
+        Construct               = Sound { Bank = 'URL', Cue = 'URL0001_Construct_Start', LodCutoff = 'UnitMove_LodCutoff' },
+        FootFallGeneric         = Sound { Bank = 'URL', Cue = 'URL0001_Move_Step',       LodCutoff = 'UnitMove_LodCutoff' },
+        FootFallGenericSeabed   = Sound { Bank = 'URL', Cue = 'URL0001_Move_UW_Step',    LodCutoff = 'UnitMove_LodCutoff' },
+        StartMove               = Sound { Bank = 'URL', Cue = 'URL0001_Move_Start',      LodCutoff = 'UnitMove_LodCutoff' },
+        StartReclaim            = Sound { Bank = 'URL', Cue = 'URL0001_Reclaim_Start',   LodCutoff = 'UnitMove_LodCutoff' },
+        StopMove                = Sound { Bank = 'URL', Cue = 'URL0001_Move_Stop',       LodCutoff = 'UnitMove_LodCutoff' },
+        Killed                  = Sound { Bank = 'Explosions', Cue = 'Cybran_Nuke_Impact', LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection             = Sound { Bank = 'Interface', Cue = 'Cybran_Select_Commander', LodCutoff = 'UnitMove_LodCutoff' },
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 5,
+            Level2 = 10,
+            Level3 = 14,
+            Level4 = 17,
+            Level5 = 20,
+        },
+        VisionRadius = {
+            Level1 = 2,
+            Level2 = 2,
+            Level3 = 2,
+            Level4 = 2,
+            Level5 = 2,        
+        },
+        WaterVisionRadius = {
+            Level1 = 2,
+            Level2 = 2,
+            Level3 = 2,
+            Level4 = 2,
+            Level5 = 2,        
+        },
+    },
+
+    BuffFields = { OpticalInterferenceField = 'CybranACUOpticalDisruptionBuffField' },
+	
+    Categories = {
+        'SELECTABLE',
+        'CYBRAN',
+        'MOBILE',
+        'COMMAND',
+        'REPAIR',
+        'ENGINEER',
+        'CONSTRUCTION',
+        'RECLAIM',
+        'CAPTURE',
+        'LAND',
+        'VISIBLETORECON',
+        'PATROLHELPER',
+        'SHOWQUEUE',
+        'OVERLAYCOUNTERINTEL',
+        'OVERLAYOMNI',
+        'OVERLAYRADAR',
+        'OVERLAYSONAR',
+        'ANTITELEPORT',
+        'OVERLAYMISC',
+    },
+    
+    Defense = {
+
+        MissileTorpDestroy = { AttachBone = 'Head', Radius = 0, RedirectRateOfFire = 0, ProjectileCategories = {'TACTICAL MISSILE','TORPEDO'} },
+
+        ArmorType = 'Commander',
+        
+        EconomyThreatLevel = 610,
+        
+        Health = 15200,
+        MaxHealth = 15200,
+        RegenRate = 17,
+        
+        SurfaceThreatLevel = 45,
+
+		NoTeleDistance = 55,
+		MaxTeleRange = 350,
+    },
+    
+    Description = '<LOC erl0001_desc>Armored Command Unit',
+    
+    Display = {
+        Abilities = {
+            '<LOC ability_amphibious>Amphibious',
+            '<LOC ability_customizable>Customizable',
+            '<LOC ability_deathaoe>Volatile',
+            '<LOC ability_notcap>Not Capturable',
+            '<LOC ability_omni>Omni Sensor',
+            'N/A',
+            '<LOC ability_radar>Radar',
+            '<LOC ability_sonar>Sonar',
+            'N/A',
+            'N/A',
+        },
+        
+        AnimationWalk = '/mods/BlackopsACUs/units/erl0001/ERL0001_AWalk03.sca',
+        AnimationWalkRate = 0.43,
+		
+        DamageEffects = {
+            { Bone = 0, OffsetX = 0.25, OffsetY = 0.75, OffsetZ = 0 },
+            { Bone = 0, OffsetX = -0.25, OffsetY = 0.75, OffsetZ = 0 },
+            { Bone = 0, OffsetX = -0.35, OffsetY = 0.1, OffsetZ = 0 },
+        },
+
+        IdleEffects = {
+            Seabed = {
+                Effects = {
+                    { Bones = {'Left_Arm_B01','Right_Arm_B01','Turret_Muzzle_01','Turret_Muzzle_02'},
+                        Scale = 7,
+                        Type = 'UnderWater01',
+                    },
+                },
+            },
+        },
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                { LODCutoff = 100, ShaderName = 'Insect' },
+                { AlbedoName = 'erl0001_lod1_albedo.dds', LODCutoff = 215, ShaderName = 'Insect', SpecularName = 'erl0001_lod1_specteam.dds' },
+            },
+        },
+
+        MovementEffects = {
+
+            Land = {
+
+                Footfall = {
+                    Bones = {
+                        {
+                            FootBone = 'Left_Footprint',
+                            HipBone = 'Left_Leg_B01',
+                            KneeBone = 'Left_Leg_B02',
+                            Tread = {
+                                TreadMarks = 'CommanderPrint_albedo',
+                                TreadMarksSizeX = 0.5,
+                                TreadMarksSizeZ = 0.5,
+                                TreadOffset = {0.15,0,0.45},
+                            },
+                            Type = 'FootFall02',
+                        },
+                        {
+                            FootBone = 'Right_Footprint',
+                            HipBone = 'Right_Leg_B01',
+                            KneeBone = 'Right_Leg_B02',
+                            Tread = {
+                                TreadMarks = 'CommanderPrint_albedo',
+                                TreadMarksSizeX = 0.5,
+                                TreadMarksSizeZ = 0.5,
+                                TreadOffset = {-0.15,0,0.45},
+                            },
+                            Type = 'FootFall02',
+                        },
+                    },
+                },
+            },
+
+            Seabed = {
+
+                Effects = {
+                    {
+                        Bones = {'Left_Arm_B01','Right_Arm_B01','Turret_Muzzle_01','Turret_Muzzle_02','Left_Foot_B01','Right_Foot_B01'},
+                        Scale = 4,
+                        Type = 'UnderWater01',
+                    },
+                },
+
+                Footfall = {
+                    Bones = {
+                        {
+                            FootBone = 'Left_Footprint',
+                            HipBone = 'Left_Leg_B01',
+                            KneeBone = 'Left_Leg_B02',
+                            Tread = {
+                                TreadMarks = 'CommanderPrint_albedo',
+                                TreadMarksSizeX = 0.5,
+                                TreadMarksSizeZ = 0.5,
+                                TreadOffset = {0.15,0,0.45},
+                            },
+                            Type = 'FootFall02',
+                        },
+                        {
+                            FootBone = 'Right_Footprint',
+                            HipBone = 'Right_Leg_B01',
+                            KneeBone = 'Right_Leg_B02',
+                            Tread = {
+                                TreadMarks = 'CommanderPrint_albedo',
+                                TreadMarksSizeX = 0.5,
+                                TreadMarksSizeZ = 0.5,
+                                TreadOffset = {-0.15,0,0.45},
+                            },
+                            Type = 'FootFall02',
+                        },
+                    },
+                },
+            },
+        },
+
+        TransportAnimation = {
+            { Animation = '/mods/BlackopsACUs/units/erl0001/erl0001_afold.sca', Weight = 100 },
+        },
+
+        TransportDropAnimation = {
+            { Animation = '/mods/BlackopsACUs/units/erl0001/erl0001_aunfold.sca', Weight = 100 },
+        },
+
+        UniformScale = 0.17,
+    },
+
+    Economy = {
+        BuildCostEnergy = 100000,
+        BuildCostMass = 10000,
+        BuildRate = 10,
+
+        BuildTime = 10000,
+
+        BuildableCategory = {
+            'BUILTBYCOMMANDER CYBRAN',
+            'BUILTBYTIER2COMMANDER CYBRAN',
+            'BUILTBYTIER3COMMANDER CYBRAN',
+            'BUILTBYTIER4COMMANDER CYBRAN',
+        },
+
+        MaxBuildDistance = 14,
+
+        NaturalProducer = true,
+
+        ProductionPerSecondEnergy = 20,
+        ProductionPerSecondMass = 2,
+
+        StorageEnergy = 5000,
+        StorageMass = 650,
+
+		TeleportBurstEnergyCost = 5000,
+    },
+
     Enhancements = {
         Slots = {
             Back = {
@@ -28,9 +268,9 @@ UnitBlueprint {
         
         EXImprovedEngineering = {
 
-            BuildCostEnergy = 26000,
-            BuildCostMass = 2500,
-            BuildTime = 2500,
+            BuildCostEnergy = 42000,
+            BuildCostMass = 1600,
+            BuildTime = 1250,
 
             BuildableCategoryAdds = 'BUILTBYTIER2COMMANDER CYBRAN',
 
@@ -67,9 +307,9 @@ UnitBlueprint {
 
         EXAdvancedEngineering = {
 
-            BuildCostEnergy = 75000,
+            BuildCostEnergy = 145000,
             BuildCostMass = 7250,
-            BuildTime = 7500,
+            BuildTime = 5850,
 
             BuildableCategoryAdds = 'BUILTBYTIER3COMMANDER CYBRAN',
 
@@ -107,9 +347,9 @@ UnitBlueprint {
 
         EXExperimentalEngineering = {
 
-            BuildCostEnergy = 230000,
-            BuildCostMass = 22500,
-            BuildTime = 23000,
+            BuildCostEnergy = 389500,
+            BuildCostMass = 16950,
+            BuildTime = 22600,
 
             BuildableCategoryAdds = 'BUILTBYTIER4COMMANDER CYBRAN',
 
@@ -148,9 +388,9 @@ UnitBlueprint {
 
         EXCombatEngineering = {
 
-            BuildCostEnergy = 26000,
-            BuildCostMass = 2500,
-            BuildTime = 2500,
+            BuildCostEnergy = 42000,
+            BuildCostMass = 1600,
+            BuildTime = 1250,
 
             BuildableCategoryAdds = 'BUILTBYTIER2COMMANDER CYBRAN',
 
@@ -187,9 +427,9 @@ UnitBlueprint {
 
         EXAssaultEngineering = {
 
-            BuildCostEnergy = 75000,
+            BuildCostEnergy = 145000,
             BuildCostMass = 7250,
-            BuildTime = 7500,
+            BuildTime = 5850,
 			
             BuildableCategoryAdds = 'BUILTBYTIER3COMMANDER CYBRAN',
 			
@@ -228,9 +468,9 @@ UnitBlueprint {
 
         EXApocalypticEngineering = {
 
-            BuildCostEnergy = 230000,
-            BuildCostMass = 22500,
-            BuildTime = 23000,
+            BuildCostEnergy = 389500,
+            BuildCostMass = 16950,
+            BuildTime = 22600,
 
             BuildableCategoryAdds = 'BUILTBYTIER4COMMANDER CYBRAN',
 
@@ -270,9 +510,9 @@ UnitBlueprint {
 
         EXRipperBooster = {
 
-            BuildCostEnergy = 7500,
-            BuildCostMass = 750,
-            BuildTime = 750,
+            BuildCostEnergy = 21500,
+            BuildCostMass = 845,
+            BuildTime = 1000,
 
             Icon = 'exrzb1',
 
@@ -418,9 +658,9 @@ UnitBlueprint {
 
         EXEMPArray = {
 
-            BuildCostEnergy = 27000,
-            BuildCostMass = 720,
-            BuildTime = 1800,
+            BuildCostEnergy = 59000,
+            BuildCostMass = 2900,
+            BuildTime = 1650,
 
             Icon = 'exramc1',
 
@@ -455,9 +695,9 @@ UnitBlueprint {
 
         EXImprovedCapacitors = {
 
-            BuildCostEnergy = 64000,
-            BuildCostMass = 2250,
-            BuildTime = 6400,
+            BuildCostEnergy = 142500,
+            BuildCostMass = 5100,
+            BuildTime = 2975,
 
             Icon = 'exramc2',
 
@@ -494,9 +734,9 @@ UnitBlueprint {
 
         EXPowerBooster = {
 
-            BuildCostEnergy = 155000,
-            BuildCostMass = 6000,
-            BuildTime = 15000,
+            BuildCostEnergy = 216500,
+            BuildCostMass = 8375,
+            BuildTime = 9550,
 
             Icon = 'exramc3',
 
@@ -533,9 +773,9 @@ UnitBlueprint {
 
         EXMasor = {
 
-            BuildCostEnergy = 16500,
-            BuildCostMass = 945,
-            BuildTime = 1650,
+            BuildCostEnergy = 76000,
+            BuildCostMass = 3200,
+            BuildTime = 1950,
 
             Icon = 'exrgec1',
 
@@ -574,9 +814,9 @@ UnitBlueprint {
 
         EXImprovedCoolingSystem = {
 
-            BuildCostEnergy = 28000,
-            BuildCostMass = 1800,
-            BuildTime = 2800,
+            BuildCostEnergy = 172500,
+            BuildCostMass = 6250,
+            BuildTime = 3475,
 
             Icon = 'exrgec2',
 
@@ -617,9 +857,9 @@ UnitBlueprint {
 
         EXAdvancedEmitterArray = {
 
-            BuildCostEnergy = 105000,
-            BuildCostMass = 4900,
-            BuildTime = 10500,
+            BuildCostEnergy = 256500,
+            BuildCostMass = 9875,
+            BuildTime = 11350,
 
             Icon = 'exrgec3',
 
@@ -660,9 +900,9 @@ UnitBlueprint {
 		
         EXIntelEnhancementT2 = {
 
-            BuildCostEnergy = 3600,
-            BuildCostMass = 180,
-            BuildTime = 360,
+            BuildCostEnergy = 21000,
+            BuildCostMass = 900,
+            BuildTime = 1250,
 
             Icon = 'excint1',
             
@@ -695,9 +935,9 @@ UnitBlueprint {
 
         EXIntelEnhancementT3 = {
 
-            BuildCostEnergy = 27000,
-            BuildCostMass = 2200,
-            BuildTime = 2700,
+            BuildCostEnergy = 67000,
+            BuildCostMass = 2150,
+            BuildTime = 3200,
 
             Icon = 'excint2',
             
@@ -732,9 +972,9 @@ UnitBlueprint {
 
         EXPerimeterOptics = {
 
-            BuildCostEnergy = 32100,
-            BuildCostMass = 3600,
-            BuildTime = 3210,
+            BuildCostEnergy = 139000,
+            BuildCostMass = 3250,
+            BuildTime = 7100,
 
             Icon = 'excint3',
 
@@ -769,9 +1009,9 @@ UnitBlueprint {
 		
         EXPersonalTeleporter = {
 
-            BuildCostEnergy = 95000,
-            BuildCostMass = 4800,
-            BuildTime = 9500,
+            BuildCostEnergy = 450000,
+            BuildCostMass = 8000,
+            BuildTime = 11500,
 
             Icon = 'exbtele',
 
@@ -806,9 +1046,9 @@ UnitBlueprint {
 
         EXAgilityPackage = {
 
-            BuildCostEnergy = 42000,
-            BuildCostMass = 1950,
-            BuildTime = 4200,
+            BuildCostEnergy = 31910,
+            BuildCostMass = 2035,
+            BuildTime = 1545,
 
             Icon = 'exbagile',
 
@@ -843,9 +1083,9 @@ UnitBlueprint {
 
         EXArmorPlating = {
 
-            BuildCostEnergy = 32000,
-            BuildCostMass = 4200,
-            BuildTime = 3200,
+            BuildCostEnergy = 65000,
+            BuildCostMass = 4135,
+            BuildTime = 3900,
 
             Icon = 'exbarmor',
 
@@ -882,9 +1122,9 @@ UnitBlueprint {
 
         EXRegenPackage = {
 
-            BuildCostEnergy = 32000,
-            BuildCostMass = 10800,
-            BuildTime = 3200,
+            BuildCostEnergy = 147000,
+            BuildCostMass = 7800,
+            BuildTime = 7950,
 
             Icon = 'exbregen',
 
@@ -921,9 +1161,9 @@ UnitBlueprint {
 
         EXStealthField = {
 
-            BuildCostEnergy = 12000,
-            BuildCostMass = 675,
-            BuildTime = 1200,
+            BuildCostEnergy = 31910,
+            BuildCostMass = 2035,
+            BuildTime = 1545,
 
             ConsumptionPerSecondEnergy = 325,
 
@@ -960,9 +1200,9 @@ UnitBlueprint {
 
         EXCloakingSubsystems = {
 
-            BuildCostEnergy = 32100,
-            BuildCostMass = 4000,
-            BuildTime = 3210,
+            BuildCostEnergy = 147000,
+            BuildCostMass = 7800,
+            BuildTime = 7950,
 
             ConsumptionPerSecondEnergy = 725,
 
@@ -1001,9 +1241,9 @@ UnitBlueprint {
 
         EXDeviatorField = {
 
-            BuildCostEnergy = 42500,
-            BuildCostMass = 3500,
-            BuildTime = 4250,
+            BuildCostEnergy = 295000,
+            BuildCostMass = 9800,
+            BuildTime = 9950,
 
             ConsumptionPerSecondEnergy = 1125,
 
@@ -1039,9 +1279,9 @@ UnitBlueprint {
 
             Slot = 'Back',
         },
-},
+    },
 
-Intel = {
+    Intel = {
 
         Cloak = true,
         CloakFieldRadius = 0,
