@@ -1,0 +1,228 @@
+UnitBlueprint {
+
+    AI = {
+        TargetBones = {'Turret'},
+    },
+	
+    Audio = {
+        Destroyed   = Sound { Bank = 'UALDestroy', Cue = 'UAB_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'Aeon_Select_Gun', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    Buffs = {},
+	
+    BuildIconSortPriority = 120,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYCOMMANDER',
+        'AEON',
+        'STRUCTURE',
+        'DEFENSE',
+        'TECH1',
+        'ANTIAIR',
+        'DRAGBUILD',
+        'SIZE4',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SORTDEFENSE',
+    },
+	
+    CollisionOffsetY = -0.45,
+	
+    Defense = {
+        AirThreatLevel = 8.4,
+        ArmorType = 'Structure',
+        Health = 1400,
+        MaxHealth = 1400,
+        RegenRate = 0.5,
+    },
+	
+    Description = '<LOC uab2104_desc>Basic AA Defense',
+	
+    Display = {
+        Abilities = {
+            '<LOC ability_aquatic>Aquatic: can be built on water',
+        },
+
+        DamageEffects = {
+            {
+                Bone = 0,
+                OffsetX = 0,
+                OffsetY = 0.75,
+                OffsetZ = 0,
+            },
+        },
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 100,
+                    ShaderName = 'Aeon',
+                },
+                {
+                    AlbedoName = 'uab2104_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    ShaderName = 'Aeon',
+                    SpecularName = 'uab2104_lod1_specteam.dds',
+                },
+            },
+        },
+
+        UniformScale = 0.06,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 1800,
+        BuildCostMass = 180,
+        BuildTime = 180,
+		
+        RebuildBonusIds = {'uab2104'},
+    },
+	
+    Footprint = { MinWaterDepth = 1 },
+	
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Aeon',
+        Icon = 'amph',
+        SelectionPriority = 5,
+        UnitName = '<LOC uab2104_name>Seeker',
+    },
+	
+    Intel = {
+        VisionRadius = 24,
+    },
+	
+    Interface = {
+        HelpText = 'Basic AA Defense',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.35,
+    LifeBarSize = 0.9,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
+        DragCoefficient = 0.2,	
+        MaxSteerForce = 0,
+        MeshExtentsX = 1,
+        MeshExtentsY = 1.25,
+        MeshExtentsZ = 1,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = 0,
+        SkirtOffsetZ = 0,
+        SkirtSizeX = 1,
+        SkirtSizeZ = 1,
+        TurnRate = 0,
+    },
+	
+    SelectionSizeX = 0.55,
+    SelectionSizeZ = 0.55,
+    SelectionThickness = 0.71,
+	
+    SizeX = 0.5,
+    SizeY = 1.2,
+    SizeZ = 0.5,
+	
+    StrategicIconName = 'icon_structure1_antiair',
+    StrategicIconSortPriority = 205,
+	
+    Veteran = {
+        Level1 = 4,
+        Level2 = 8,
+        Level3 = 12,
+        Level4 = 16,
+        Level5 = 20,
+    },
+	
+    Weapon = {
+        {
+            AlwaysRecheckTarget = true,
+            Audio = {
+                Fire = Sound { Bank = 'UALWeapon', Cue = 'UAB2104_Pulse_Battery', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_None',
+
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 26,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Sonic Pulse Battery',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Water = 'Air',
+            },
+			
+            FiringTolerance = 0.5,
+			
+            Label = 'AAGun',
+
+			LeadTarget = false,
+			
+            MaxRadius = 40,
+			MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 3,
+            MuzzleVelocity = 45,
+            ProjectileId = '/projectiles/AAASonicPulse01/AAASonicPulse01_proj.bp',
+			ProjectileLifetimeUsesMultiplier = 1.25,
+            ProjectilesPerOnFire = 3,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle'},
+                    RackBone = 'Turret_Barrel',
+                },
+            },
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 10/6,	
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "EXPERIMENTAL",
+                "AIR MOBILE TECH3 BOMBER",
+                "AIR MOBILE BOMBER",
+                "AIR MOBILE GROUNDATTACK",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TrackingRadius = 1.4,
+			
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 45,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 180,
+			
+            Turreted = true,
+            WeaponCategory = "Anti Air",
+        },
+    },
+}
