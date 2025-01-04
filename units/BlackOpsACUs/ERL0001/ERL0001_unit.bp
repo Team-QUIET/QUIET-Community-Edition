@@ -1414,7 +1414,7 @@ UnitBlueprint {
 
             DisplayName = 'Overcharge Cannon',
 
-            EnergyRequired = 4500,
+            EnergyRequired = 7500,
 
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
