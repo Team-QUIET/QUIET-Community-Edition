@@ -196,6 +196,7 @@ UnitBlueprint {
             TargetCheckInterval = 0.5,
 			
             TargetPriorities = {
+                "SPECIALHIGHPRI",
                 "EXPERIMENTAL",
                 "AIR MOBILE TECH3 BOMBER",
                 "AIR MOBILE BOMBER",
