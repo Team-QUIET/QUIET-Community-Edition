@@ -42,8 +42,8 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Normal',
-        Health = 1000,
-        MaxHealth = 1000,
+        Health = 750,
+        MaxHealth = 750,
         RegenRate = 0,
         SurfaceThreatLevel = 8.8,
     },
@@ -77,8 +77,8 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 2150,
-        BuildCostMass = 220,
+        BuildCostEnergy = 2400,
+        BuildCostMass = 260,
         BuildTime = 1250,
     },
 	
@@ -98,7 +98,7 @@ UnitBlueprint {
     },
 	
     Intel = {
-        VisionRadius = 20,
+        VisionRadius = 18,
         WaterVisionRadius = 8,
     },
 	
