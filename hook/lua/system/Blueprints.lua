@@ -972,6 +972,7 @@ do
 			'wrl0207',   -- Cocoon
 			'wsl0308',   -- Otheeka
 			'url0305',   -- Crawfish
+			'uaa0206',   -- Abolisher
 		};
 		for i, bp in pairs(unitPruningId) do
 			if all_blueprints.Unit[bp] then
