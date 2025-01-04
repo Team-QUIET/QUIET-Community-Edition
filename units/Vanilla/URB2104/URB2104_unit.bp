@@ -1,12 +1,14 @@
 UnitBlueprint {
+    Merge = true,
+    BlueprintId = "urb2104",
 
     AI = {
         TargetBones = {'Turret'},
     },
 	
     Audio = {
-        Destroyed   = Sound { Bank = 'UALDestroy', Cue = 'UAB_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff'},
-        UISelection = Sound { Bank = 'Interface', Cue = 'Aeon_Select_Gun', LodCutoff = 'UnitMove_LodCutoff'},
+        Destroyed   = Sound { Bank = 'URLDestroy', Cue = 'URB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'Cybran_Select_Gun', LodCutoff = 'UnitMove_LodCutoff'},
     },
 	
     Buffs = {},
@@ -19,7 +21,7 @@ UnitBlueprint {
         'BUILTBYTIER2ENGINEER',
         'BUILTBYTIER3ENGINEER',
         'BUILTBYCOMMANDER',
-        'AEON',
+        'CYBRAN',
         'STRUCTURE',
         'DEFENSE',
         'TECH1',
@@ -31,57 +33,51 @@ UnitBlueprint {
         'SORTDEFENSE',
     },
 	
-    CollisionOffsetY = -0.45,
+    CollisionOffsetY = -0.55,
 	
     Defense = {
         AirThreatLevel = 8.4,
         ArmorType = 'Structure',
-        Health = 800,
-        MaxHealth = 800,
-        RegenRate = 0.5,
-    },
+        EconomyThreatLevel = 3,
+        Health = 700,
+        MaxHealth = 700,
+        RegenRate = 2,
+	},
 	
-    Description = '<LOC uab2104_desc>Basic AA Defense',
+    Description = '<LOC urb2104_desc>Basic AA Defense',
 	
     Display = {
+	
         Abilities = {
-            '<LOC ability_aquatic>Aquatic: can be built on water',
+            '<LOC ability_aquatic>Aquatic',
         },
-
-        DamageEffects = {
-            {
-                Bone = 0,
-                OffsetX = 0,
-                OffsetY = 0.75,
-                OffsetZ = 0,
-            },
-        },
+		
+        AnimationOpen = '/units/urb2104/URB2104_aagro.sca',
 
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
                     LODCutoff = 100,
-                    ShaderName = 'Aeon',
+                    ShaderName = 'Insect',
                 },
                 {
-                    AlbedoName = 'uab2104_lod1_albedo.dds',
+                    AlbedoName = 'urb2104_lod1_albedo.dds',
                     LODCutoff = 215,
-                    ShaderName = 'Aeon',
-                    SpecularName = 'uab2104_lod1_specteam.dds',
+                    ShaderName = 'Insect',
+                    SpecularName = 'urb2104_lod1_specteam.dds',
                 },
             },
         },
-
-        UniformScale = 0.06,
+        UniformScale = 0.2,
     },
 	
     Economy = {
         BuildCostEnergy = 1500,
         BuildCostMass = 150,
-        BuildTime = 180,
+        BuildTime = 250,
 		
-        RebuildBonusIds = {'uab2104'},
+        RebuildBonusIds = {'urb2104'},
     },
 	
     Footprint = { MinWaterDepth = 1 },
@@ -92,10 +88,10 @@ UnitBlueprint {
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
         },
-        FactionName = 'Aeon',
+        FactionName = 'Cybran',
         Icon = 'amph',
         SelectionPriority = 5,
-        UnitName = '<LOC uab2104_name>Seeker',
+        UnitName = '<LOC urb2104_name>Tracer',
     },
 	
     Intel = {
@@ -107,8 +103,8 @@ UnitBlueprint {
     },
 	
     LifeBarHeight = 0.075,
-    LifeBarOffset = 0.35,
-    LifeBarSize = 0.9,
+    LifeBarOffset = 0.25,
+    LifeBarSize = 0.75,
 	
     Physics = {
         BankingSlope = 0,
@@ -116,11 +112,8 @@ UnitBlueprint {
             LAYER_Land = true,
             LAYER_Water = true,
         },
-        DragCoefficient = 0.2,	
+        DragCoefficient = 0.2,
         MaxSteerForce = 0,
-        MeshExtentsX = 1,
-        MeshExtentsY = 1.25,
-        MeshExtentsZ = 1,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = 0,
@@ -130,13 +123,13 @@ UnitBlueprint {
         TurnRate = 0,
     },
 	
-    SelectionSizeX = 0.55,
-    SelectionSizeZ = 0.55,
-    SelectionThickness = 0.71,
+    SelectionSizeX = 0.35,
+    SelectionSizeZ = 0.35,
+    SelectionThickness = 1.1,
 	
-    SizeX = 0.5,
-    SizeY = 1.2,
-    SizeZ = 0.5,
+    SizeX = 0.7,
+    SizeY = 1.4,
+    SizeZ = 0.7,
 	
     StrategicIconName = 'icon_structure1_antiair',
     StrategicIconSortPriority = 205,
@@ -153,17 +146,16 @@ UnitBlueprint {
         {
             AlwaysRecheckTarget = true,
             Audio = {
-                Fire = Sound { Bank = 'UALWeapon', Cue = 'UAB2104_Pulse_Battery', LodCutoff = 'Weapon_LodCutoff' },
+                Fire = Sound { Bank = 'URSWeapon', Cue = 'URS0201_Cannon_Electron', LodCutoff = 'Weapon_LodCutoff' },
             },
             BallisticArc = 'RULEUBA_None',
-
             CannotAttackGround = true,
             CollideFriendly = false,
 			
             Damage = 18,
             DamageType = 'Normal',
 			
-            DisplayName = 'Sonic Pulse Battery',
+            DisplayName = 'Electron Autocannon',
 			
             FireTargetLayerCapsTable = {
                 Land = 'Air',
@@ -173,27 +165,35 @@ UnitBlueprint {
             FiringTolerance = 0.5,
 			
             Label = 'AAGun',
-
+			
 			LeadTarget = false,
 			
             MaxRadius = 40,
-			MuzzleSalvoDelay = 0.2,
-            MuzzleSalvoSize = 3,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 2,
             MuzzleVelocity = 45,
-            ProjectileId = '/projectiles/AAASonicPulse01/AAASonicPulse01_proj.bp',
-			ProjectileLifetimeUsesMultiplier = 1.25,
-            ProjectilesPerOnFire = 3,
+            ProjectileId = "/projectiles/CAAAutocannon01/CAAAutocannon01_proj.bp",
+            ProjectileLifetimeUsesMultiplier = 1.25,
+            ProjectilesPerOnFire = 2,
 
             RackBones = {
                 {
-                    MuzzleBones = {'Turret_Muzzle'},
+                    MuzzleBones = {'Turret_Muzzle_01'},
+                    RackBone = 'Turret_Barrel',
+                },
+                {
+                    MuzzleBones = {'Turret_Muzzle_02'},
                     RackBone = 'Turret_Barrel',
                 },
             },
+            RackFireTogether = false,
+            
+            RackReloadTimeout = 10,
 
             RangeCategory = 'UWRC_AntiAir',
 			
-            RateOfFire = 10/6,	
+            RateOfFire = 10/4,		-- 84 DPS Air
 			
             TargetCheckInterval = 0.5,
             TargetPriorities = {
@@ -208,7 +208,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
             TrackingRadius = 1.4,
 			
-            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBoneMuzzle = 'Turret_Muzzle_01',
             TurretBonePitch = 'Turret_Barrel',
             TurretBoneYaw = 'Turret',
             TurretDualManipulators = false,
@@ -222,7 +222,6 @@ UnitBlueprint {
             TurretYawSpeed = 180,
 			
             Turreted = true,
-            WeaponCategory = "Anti Air",
         },
     },
 }

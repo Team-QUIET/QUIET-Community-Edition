@@ -1,12 +1,15 @@
 UnitBlueprint {
-
+    Merge = true,
+    BlueprintId = "ueb2104",
+    
     AI = {
         TargetBones = {'Turret'},
     },
 	
     Audio = {
-        Destroyed   = Sound { Bank = 'UALDestroy', Cue = 'UAB_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff'},
-        UISelection = Sound { Bank = 'Interface', Cue = 'Aeon_Select_Gun', LodCutoff = 'UnitMove_LodCutoff'},
+        Destroyed   = Sound { Bank = 'UELDestroy', Cue = 'UEB_Destroy_Med_Land', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'UEF_Select_Gun', LodCutoff = 'UnitMove_LodCutoff'},
+		
     },
 	
     Buffs = {},
@@ -19,7 +22,7 @@ UnitBlueprint {
         'BUILTBYTIER2ENGINEER',
         'BUILTBYTIER3ENGINEER',
         'BUILTBYCOMMANDER',
-        'AEON',
+        'UEF',
         'STRUCTURE',
         'DEFENSE',
         'TECH1',
@@ -31,30 +34,22 @@ UnitBlueprint {
         'SORTDEFENSE',
     },
 	
-    CollisionOffsetY = -0.45,
+    CollisionOffsetY = -0.6,
 	
     Defense = {
         AirThreatLevel = 8.4,
         ArmorType = 'Structure',
-        Health = 800,
-        MaxHealth = 800,
+        Health = 900,
+        MaxHealth = 900,
         RegenRate = 0.5,
     },
 	
-    Description = '<LOC uab2104_desc>Basic AA Defense',
+    Description = '<LOC ueb2104_desc>Basic AA Defense',
 	
     Display = {
+	
         Abilities = {
             '<LOC ability_aquatic>Aquatic: can be built on water',
-        },
-
-        DamageEffects = {
-            {
-                Bone = 0,
-                OffsetX = 0,
-                OffsetY = 0.75,
-                OffsetZ = 0,
-            },
         },
 
         Mesh = {
@@ -62,26 +57,26 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 100,
-                    ShaderName = 'Aeon',
+                    ShaderName = 'Unit',
                 },
                 {
-                    AlbedoName = 'uab2104_lod1_albedo.dds',
+                    AlbedoName = 'ueb2104_lod1_albedo.dds',
                     LODCutoff = 215,
-                    ShaderName = 'Aeon',
-                    SpecularName = 'uab2104_lod1_specteam.dds',
+                    ShaderName = 'Unit',
+                    SpecularName = 'ueb2104_lod1_specteam.dds',
                 },
             },
         },
 
-        UniformScale = 0.06,
+        UniformScale = 0.155,
     },
 	
     Economy = {
         BuildCostEnergy = 1500,
         BuildCostMass = 150,
-        BuildTime = 180,
+        BuildTime = 200,
 		
-        RebuildBonusIds = {'uab2104'},
+        RebuildBonusIds = {'ueb2104'},
     },
 	
     Footprint = { MinWaterDepth = 1 },
@@ -92,10 +87,10 @@ UnitBlueprint {
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
         },
-        FactionName = 'Aeon',
+        FactionName = 'UEF',
         Icon = 'amph',
         SelectionPriority = 5,
-        UnitName = '<LOC uab2104_name>Seeker',
+        UnitName = '<LOC ueb2104_name>Railgun',
     },
 	
     Intel = {
@@ -116,11 +111,11 @@ UnitBlueprint {
             LAYER_Land = true,
             LAYER_Water = true,
         },
-        DragCoefficient = 0.2,	
+        DragCoefficient = 0.2,
         MaxSteerForce = 0,
-        MeshExtentsX = 1,
-        MeshExtentsY = 1.25,
-        MeshExtentsZ = 1,
+        MeshExtentsX = 1.1,
+        MeshExtentsY = 1.15,
+        MeshExtentsZ = 1.1,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = 0,
@@ -134,9 +129,9 @@ UnitBlueprint {
     SelectionSizeZ = 0.55,
     SelectionThickness = 0.71,
 	
-    SizeX = 0.5,
-    SizeY = 1.2,
-    SizeZ = 0.5,
+    SizeX = 0.6,
+    SizeY = 1.35,
+    SizeZ = 0.6,
 	
     StrategicIconName = 'icon_structure1_antiair',
     StrategicIconSortPriority = 205,
@@ -153,17 +148,18 @@ UnitBlueprint {
         {
             AlwaysRecheckTarget = true,
             Audio = {
-                Fire = Sound { Bank = 'UALWeapon', Cue = 'UAB2104_Pulse_Battery', LodCutoff = 'Weapon_LodCutoff' },
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB2104_Railgun', LodCutoff = 'Weapon_LodCutoff'},
             },
-            BallisticArc = 'RULEUBA_None',
 
+            BallisticArc = 'RULEUBA_None',
+			
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 18,
+            Damage = 19,
             DamageType = 'Normal',
 			
-            DisplayName = 'Sonic Pulse Battery',
+            DisplayName = 'Linked Railgun',
 			
             FireTargetLayerCapsTable = {
                 Land = 'Air',
@@ -173,29 +169,32 @@ UnitBlueprint {
             FiringTolerance = 0.5,
 			
             Label = 'AAGun',
-
 			LeadTarget = false,
 			
             MaxRadius = 40,
-			MuzzleSalvoDelay = 0.2,
-            MuzzleSalvoSize = 3,
+			
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
             MuzzleVelocity = 45,
-            ProjectileId = '/projectiles/AAASonicPulse01/AAASonicPulse01_proj.bp',
-			ProjectileLifetimeUsesMultiplier = 1.25,
-            ProjectilesPerOnFire = 3,
-
+            ProjectileId = "/projectiles/TAARailgun01/TAARailgun01_proj.bp",
+            ProjectileLifetimeUsesMultiplier = 1.25,
+            ProjectilesPerOnFire = 2,
+			
             RackBones = {
                 {
-                    MuzzleBones = {'Turret_Muzzle'},
+                    MuzzleBones = {'Turret_Muzzle_01','Turret_Muzzle_02'},
                     RackBone = 'Turret_Barrel',
                 },
             },
+             
+            RackRecoilDistance = -0.5,
 
             RangeCategory = 'UWRC_AntiAir',
 			
-            RateOfFire = 10/6,	
+            RateOfFire = 10/7,
 			
             TargetCheckInterval = 0.5,
+			
             TargetPriorities = {
                 "EXPERIMENTAL",
                 "AIR MOBILE TECH3 BOMBER",
@@ -206,9 +205,10 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.4,
-			
-            TurretBoneMuzzle = 'Turret_Muzzle',
+            
+            TrackingRadius = 1.2,
+            
+            TurretBoneMuzzle = 'Turret_Muzzle_01',
             TurretBonePitch = 'Turret_Barrel',
             TurretBoneYaw = 'Turret',
             TurretDualManipulators = false,
@@ -223,6 +223,8 @@ UnitBlueprint {
 			
             Turreted = true,
             WeaponCategory = "Anti Air",
+            WeaponRepackTimeout = 0,
+            WeaponUnpacks = false,
         },
     },
 }

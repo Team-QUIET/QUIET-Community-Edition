@@ -1,25 +1,23 @@
 UnitBlueprint {
+    Merge = true,
+    BlueprintId = "xsb2104",
 
-    AI = {
-        TargetBones = {'Turret'},
-    },
-	
     Audio = {
-        Destroyed   = Sound { Bank = 'UALDestroy', Cue = 'UAB_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff'},
-        UISelection = Sound { Bank = 'Interface', Cue = 'Aeon_Select_Gun', LodCutoff = 'UnitMove_LodCutoff'},
+        Destroyed   = Sound { Bank = 'XSL_Destroy', Cue = 'XSB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_gun', LodCutoff = 'UnitMove_LodCutoff'},
     },
-	
+
     Buffs = {},
-	
+
     BuildIconSortPriority = 120,
-	
+
     Categories = {
         'SELECTABLE',
         'BUILTBYTIER1ENGINEER',
         'BUILTBYTIER2ENGINEER',
         'BUILTBYTIER3ENGINEER',
         'BUILTBYCOMMANDER',
-        'AEON',
+        'SERAPHIM',
         'STRUCTURE',
         'DEFENSE',
         'TECH1',
@@ -30,31 +28,24 @@ UnitBlueprint {
         'RECLAIMABLE',
         'SORTDEFENSE',
     },
-	
-    CollisionOffsetY = -0.45,
-	
+
+    CollisionOffsetY = -0.25,
+
     Defense = {
         AirThreatLevel = 8.4,
         ArmorType = 'Structure',
-        Health = 800,
-        MaxHealth = 800,
-        RegenRate = 0.5,
+        EconomyThreatLevel = 3,
+        Health = 850,
+        MaxHealth = 850,
+        RegenRate = 1,
     },
-	
-    Description = '<LOC uab2104_desc>Basic AA Defense',
-	
+
+    Description = '<LOC xsb2104_desc>Basic AA Defense',
+
     Display = {
+
         Abilities = {
             '<LOC ability_aquatic>Aquatic: can be built on water',
-        },
-
-        DamageEffects = {
-            {
-                Bone = 0,
-                OffsetX = 0,
-                OffsetY = 0.75,
-                OffsetZ = 0,
-            },
         },
 
         Mesh = {
@@ -62,61 +53,64 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 100,
-                    ShaderName = 'Aeon',
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    ShaderName = 'Seraphim',
                 },
                 {
-                    AlbedoName = 'uab2104_lod1_albedo.dds',
+                    AlbedoName = 'xsb2104_lod1_albedo.dds',
                     LODCutoff = 215,
-                    ShaderName = 'Aeon',
-                    SpecularName = 'uab2104_lod1_specteam.dds',
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    ShaderName = 'Seraphim',
+                    SpecularName = 'xsb2104_lod1_specteam.dds',
                 },
             },
         },
 
-        UniformScale = 0.06,
+        UniformScale = 0.037,
     },
-	
+
     Economy = {
         BuildCostEnergy = 1500,
         BuildCostMass = 150,
-        BuildTime = 180,
+        BuildTime = 250,
 		
-        RebuildBonusIds = {'uab2104'},
+        RebuildBonusIds = { 'xsb2104' },
     },
-	
+
     Footprint = { MinWaterDepth = 1 },
-	
+
     General = {
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
         },
-        FactionName = 'Aeon',
+        FactionName = 'Seraphim',
         Icon = 'amph',
         SelectionPriority = 5,
-        UnitName = '<LOC uab2104_name>Seeker',
+
+        UnitName = '<LOC xsb2104_name>Ialla',
     },
-	
+
     Intel = {
         VisionRadius = 24,
     },
-	
+
     Interface = {
         HelpText = 'Basic AA Defense',
     },
-	
+
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.35,
     LifeBarSize = 0.9,
-	
+
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
             LAYER_Land = true,
             LAYER_Water = true,
         },
-        DragCoefficient = 0.2,	
+        DragCoefficient = 0.2,
         MaxSteerForce = 0,
         MeshExtentsX = 1,
         MeshExtentsY = 1.25,
@@ -129,73 +123,74 @@ UnitBlueprint {
         SkirtSizeZ = 1,
         TurnRate = 0,
     },
-	
-    SelectionSizeX = 0.55,
-    SelectionSizeZ = 0.55,
-    SelectionThickness = 0.71,
-	
+
+    SelectionSizeX = 0.35,
+    SelectionSizeZ = 0.35,
+    SelectionThickness = 1.1,
+
     SizeX = 0.5,
-    SizeY = 1.2,
+    SizeY = 1,
     SizeZ = 0.5,
-	
+
     StrategicIconName = 'icon_structure1_antiair',
     StrategicIconSortPriority = 205,
-	
+
     Veteran = {
-        Level1 = 4,
-        Level2 = 8,
-        Level3 = 12,
-        Level4 = 16,
-        Level5 = 20,
+        Level1 = 3,
+        Level2 = 6,
+        Level3 = 9,
+        Level4 = 12,
+        Level5 = 15,
     },
-	
+
     Weapon = {
         {
             AlwaysRecheckTarget = true,
             Audio = {
-                Fire = Sound { Bank = 'UALWeapon', Cue = 'UAB2104_Pulse_Battery', LodCutoff = 'Weapon_LodCutoff' },
+                Fire = Sound { Bank = 'XSB_Weapon', Cue = 'XSB2104_Shleo_AA_Autogun', LodCutoff = 'Weapon_LodCutoff' },
             },
             BallisticArc = 'RULEUBA_None',
-
             CannotAttackGround = true,
             CollideFriendly = false,
-			
-            Damage = 18,
+
+            Damage = 12,
             DamageType = 'Normal',
-			
-            DisplayName = 'Sonic Pulse Battery',
-			
+
+            DisplayName = 'Shleo AA AutoGun',
+
             FireTargetLayerCapsTable = {
                 Land = 'Air',
                 Water = 'Air',
             },
-			
+
             FiringTolerance = 0.5,
-			
+
             Label = 'AAGun',
 
 			LeadTarget = false,
-			
+
             MaxRadius = 40,
-			MuzzleSalvoDelay = 0.2,
-            MuzzleSalvoSize = 3,
+
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 2,
             MuzzleVelocity = 45,
-            ProjectileId = '/projectiles/AAASonicPulse01/AAASonicPulse01_proj.bp',
-			ProjectileLifetimeUsesMultiplier = 1.25,
-            ProjectilesPerOnFire = 3,
+            ProjectileId = "/projectiles/SAAShleoAAGatlingGun02/SAAShleoAAGatlingGun02_proj.bp",
+            ProjectileLifetimeUsesMultiplier = 1.25,
+            ProjectilesPerOnFire = 2,
 
             RackBones = {
                 {
-                    MuzzleBones = {'Turret_Muzzle'},
+                    MuzzleBones = {'Turret_Muzzle01','Turret_Muzzle02'},
                     RackBone = 'Turret_Barrel',
                 },
             },
 
             RangeCategory = 'UWRC_AntiAir',
-			
-            RateOfFire = 10/6,	
-			
+
+            RateOfFire = 10/3,
+
             TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 "EXPERIMENTAL",
                 "AIR MOBILE TECH3 BOMBER",
@@ -206,21 +201,21 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.4,
-			
-            TurretBoneMuzzle = 'Turret_Muzzle',
+            TrackingRadius = 1.1,
+
+            TurretBoneMuzzle = 'Turret_Aiming_Bone',
             TurretBonePitch = 'Turret_Barrel',
             TurretBoneYaw = 'Turret',
             TurretDualManipulators = false,
-			
+
             TurretPitch = 45,
             TurretPitchRange = 45,
             TurretPitchSpeed = 180,
-			
+
             TurretYaw = 0,
             TurretYawRange = 180,
             TurretYawSpeed = 180,
-			
+
             Turreted = true,
             WeaponCategory = "Anti Air",
         },
