@@ -47,18 +47,23 @@ UnitBlueprint {
 			LeadTarget = true,
 			
             MaxRadius = 55,
-			
-            MuzzleSalvoDelay = 0.6,   
-            MuzzleSalvoSize = 2,
+            
+            -- Unused 
+            MuzzleSalvoDelay = 0,
+            RackSalvoReloadTime = 0,     
+            MuzzleSalvoSize = 1,
+            -- Unused
+
             MuzzleVelocity = 45,
 			
             ProjectileLifetimeUsesMultiplier = 1.25,
             ProjectilesPerOnFire = 2,
 
-            RackSalvoChargeTime = 0.2,  
-
-            RackSalvoReloadTime = 0.5,  
-
+            RackFireTogether = true,
+            RackSalvoChargeTime = 0.1,
+            RenderFireClock = true,
+            RackSalvoFiresAfterCharge = true,
+            RackSalvoSize = 1,
             RackSlavedToTurret = true,
             
             RangeCategory = 'UWRC_AntiAir',
