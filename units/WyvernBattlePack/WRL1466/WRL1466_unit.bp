@@ -1,6 +1,245 @@
 UnitBlueprint {
-  Merge = true,
-  BlueprintId = "wrl1466",
+    Merge = true,
+    BlueprintId = "wrl1466",
+
+    AI = {
+        GuardScanRadius = 52,
+        
+        TargetBones = {"RocketPods","MainTurret_Yaw","XRL0403","Right_Leg01_B02","NewLeg"},
+    },
+    
+    Audio = {
+        FootFallGeneric       = Sound { Bank = 'URL',         Cue = 'URL0001_Move_Step',    LodCutoff = 'UnitMove_LodCutoff' },
+        FootFallGenericSeabed = Sound { Bank = 'XRL',         Cue = 'XRL0403_Move_UW_Step', LodCutoff = 'UnitMove_LodCutoff' },
+        StartMove             = Sound { Bank = 'XRL',         Cue = 'XRL0403_Move_Start',   LodCutoff = 'UnitMove_LodCutoff' },
+        StopMove              = Sound { Bank = 'XRL',         Cue = 'XRL0403_Move_Stop',    LodCutoff = 'UnitMove_LodCutoff' },
+        Destroyed             = Sound { Bank = 'XRL_Destroy', Cue = 'XRL0403_Death',        LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection           = Sound { Bank = 'Interface',   Cue = 'Cybran_Select_Spider', LodCutoff = 'UnitMove_LodCutoff' },
+    },
+    
+    Buffs = {
+        Regen = {
+            Level1 = 11,
+            Level2 = 22,
+            Level3 = 33,
+            Level4 = 44,
+            Level5 = 55,
+        },
+    },
+    
+    BuildIconSortPriority = 20,
+    
+    Categories = {
+        "AMPHIBIOUS",
+        "BUILTBYTIER4COMMANDER",
+        "CYBRAN",
+        "DIRECTFIRE",
+        "DRAGBUILD",
+        "EXPERIMENTAL",
+        "LAND",
+        "MOBILE",
+        "NEEDMOBILEBUILD",
+        "OVERLAYRADAR",
+        "RECLAIMABLE",
+        "SELECTABLE",
+        "VISIBLETORECON",
+    },
+
+    Defense = {
+
+        AntiMissile = { AttachBone = "MainTurret_Yaw", Radius = 6, RedirectRateOfFire = 9, ProjectileCategories = { "TACTICAL MISSILE" } },
+
+        ArmorType = "Experimental",
+        Health = 74500,
+        MaxHealth = 74500,
+        RegenRate = 33,
+
+        AirThreatLevel = 48,
+        SurfaceThreatLevel = 290,
+    },
+
+    Description = "<LOC wrl1466_desc>Experimental Heavy Assault Roachbot (Raider)",
+
+    Display = {
+        Abilities = {
+            "<LOC ability_aa>Anti-Air",
+            "<LOC ability_amphibious>Amphibious",
+            'N/A',
+            "<LOC ability_deathaoe>Volatile",
+            "<LOC ability_tacticalmissledeflect>Tactical Missile Deflection",
+        },
+        
+        AnimationActivate = "/mods/BattlePack/units/WRL1466/WRL1466_awake.sca",
+        AnimationDeath   = { { Animation = "/mods/BattlePack/units/WRL1466/WRL1466_adeath.sca", Weight = 100 } },
+        AnimationWalk    = "/mods/BattlePack/units/WRL1466/WRL1466_AWalk.sca",
+        AnimationWalkRate = 3,
+        
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                { LODCutoff = 400, SecondaryName = "/mods/BattlePack/units/WRL1466/WRL1466_secondary.dds", ShaderName = "Insect" },
+            },
+        },
+        
+        MovementEffects = {
+            Land = {
+                Footfall = {
+                    Bones = {
+                        {
+                            FootBone = "Left_Footfall_01",
+                            HipBone = "Left_Leg01_B01",
+                            KneeBone = "Left_Leg01_B02",
+                            MaxFootFall = -0.25,
+                            Offset = { z = -1 },
+                            Scale = 1.5,
+                            StraightLegs = false,
+                            Type = "FootFall01",
+                        },
+                        {
+                            FootBone = "Left_Footfall_02",
+                            HipBone = "Left_Leg02_B01",
+                            KneeBone = "NewLeg",
+                            MaxFootFall = -0.25,
+                            Offset = { z = -1 },
+                            Scale = 1.5,
+                            StraightLegs = false,
+                            Type = "FootFall01",
+                        },
+                        {
+                            FootBone = "Left_Footfall_03",
+                            HipBone = "Left_Leg01_B03",
+                            KneeBone = "Left_Leg01_B04",
+                            MaxFootFall = -0.25,
+                            Offset = { z = -1 },
+                            Scale = 1.5,
+                            StraightLegs = false,
+                            Type = "FootFall01",
+                        },
+                        {
+                            FootBone = "Right_Footfall_01",
+                            HipBone = "Right_Leg01_B01",
+                            KneeBone = "Right_Leg01_B02",
+                            MaxFootFall = -0.25,
+                            Offset = { z = -1 },
+                            Scale = 1.5,
+                            StraightLegs = false,
+                            Type = "FootFall01",
+                        },
+                        {
+                            FootBone = "Right_Footfall_02",
+                            HipBone = "Right_Leg02_B01",
+                            KneeBone = "Right_Leg02_B02",
+                            MaxFootFall = -0.25,
+                            Offset = { z = -1 },
+                            Scale = 1.5,
+                            StraightLegs = false,
+                            Type = "FootFall01",
+                        },
+                        {
+                            FootBone = "Right_Footfall_03",
+                            HipBone = "Right_Leg01_B03",
+                            KneeBone = "Right_Leg01_B04",
+                            MaxFootFall = -0.25,
+                            Offset = { z = -1 },
+                            Scale = 1.5,
+                            StraightLegs = false,
+                            Type = "FootFall01",
+                        },
+                    },
+
+                    Damage = {
+                        Amount = 2100,
+                        DamageFriendly = false,
+                        Radius = 1,
+                        Type = "ExperimentalFootfall",
+                    },
+                },
+            },
+        },
+        
+        UniformScale = 0.0325,
+    },
+
+    Economy = {
+        BuildCostEnergy = 825000,
+        BuildCostMass = 56500,
+        BuildTime = 13750,
+    },
+
+    General = {
+        CapCost = 10,
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = "Cybran",
+        Icon = "amph",
+        UnitName = "<LOC wrl1466_name>Storm Strider",
+    },
+
+    Intel = {
+        FreeIntel = false,
+
+        RadarStealth = false,
+        SonarStealth = false,
+        
+        RadarRadius = 56,
+        VisionRadius = 40,
+        WaterVisionRadius = 24,
+    },
+
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 3.25,
+    LifeBarSize = 6,
+
+    Physics = {
+        BackupDistance = 10,
+        BankingSlope = 0,
+        DragCoefficient = 0.2,
+        LayerChangeOffsetHeight = -3,
+        MaxAcceleration = 0.7,
+        MaxBrake = 2.8,
+        MaxSpeed = 2.8,
+        MaxSpeedReverse = 2.8,
+        MaxSteerForce = 0,
+        MinSpeedPercent = 0,
+        MotionType = "RULEUMT_Amphibious",
+        SinkLower = true,
+        SkirtOffsetX = -1.5,
+        SkirtOffsetZ = -1.5,
+        SkirtSizeX = 6,
+        SkirtSizeZ = 6,
+        TurnRadius = 5,
+        TurnRate = 15,
+    },
+
+    SelectionCenterOffsetZ = -0.5,
+    SelectionSizeX = 3.75,
+    SelectionSizeZ = 3.75,
+    SelectionThickness = 0.28,
+
+    CollisionOffsetY = 0,
+
+    SizeX = 4,
+    SizeY = 4,
+    SizeZ = 4,
+
+    StrategicIconName = "icon_seabed4_directfire",
+    StrategicIconSortPriority = 45,
+
+    Transport = { TransportClass = 10 },
+
+    Veteran = {
+        Level1 = 75,
+        Level2 = 150,
+        Level3 = 225,
+        Level4 = 300,
+        Level5 = 375,
+    },
     
     Weapon = {
         {
@@ -17,10 +256,149 @@ UnitBlueprint {
 
         },
         {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = true,
 
+            Audio = {
+                BeamLoop  = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Loop',   LodCutoff = 'Weapon_LodCutoff' },
+                BeamStart = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Start',  LodCutoff = 'Weapon_LodCutoff' },
+                BeamStop  = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Stop',   LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = "RULEUBA_None",
+            
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0.5,
+
+            CollideFriendly = false,
+
+            Damage = 24,
+            DamageType = "Normal",
+
+            DisplayName = "AA Micro Laser",
+
+            DoNotCollideList = {"MISSILE"},
+            
+            FireTargetLayerCapsTable = {
+                Land = "Air",
+                Seabed = "Air",
+            },
+            FiringTolerance = 2,
+
+            Label = "AALaser",
+
+            MaxRadius = 48,
+
+            NotExclusive = true,
+            RackBones = {
+                {
+                    MuzzleBones = { "FrontMini_TurretMuzzle001" },
+                    RackBone = "FrontMini_TurretBarrel001",
+                },
+            },
+            RackReloadTimeout = 1,
+
+            RangeCategory = "UWRC_AntiAir",
+            
+            RateOfFire = 1, 
+
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "HIGHPRIAIR",
+                "BOMBER",
+                "GROUNDATTACK",
+                "AIR MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = "UNTARGETABLE,SATELLITE",
+            TrackingRadius = 1.1,
+
+            TurretBoneMuzzle = "FrontMini_TurretMuzzle001",
+            TurretBonePitch = "FrontMini_TurretBarrel001",
+            TurretBoneYaw = "FrontMini_Turret001",
+
+            TurretPitch = 0,
+            TurretPitchRange = 180,
+            TurretPitchSpeed = 80,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 80,
+
+            Turreted = true,
         },
         {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = true,
+            
+            Audio = {
+                BeamLoop  = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Loop',   LodCutoff = 'Weapon_LodCutoff' },
+                BeamStart = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Start',  LodCutoff = 'Weapon_LodCutoff' },
+                BeamStop  = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Stop',   LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = "RULEUBA_None",
+            
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0.5,
+            
+            CollideFriendly = false,
+            
+            Damage = 24,
+            DamageType = "Normal",
+            
+            DisplayName = "AA Micro Laser",
+            
+            DoNotCollideList = {"MISSILE"},
+            
+            FireTargetLayerCapsTable = {
+                Land = "Air",
+                Seabed = "Air",
+            },
+            FiringTolerance = 2,
+            
+            Label = "AALaser",
 
+            MaxRadius = 48,
+
+            NotExclusive = true,
+            RackBones = {
+                {
+                    MuzzleBones = { "FrontMini_TurretMuzzle002" },
+                    RackBone = "FrontMini_TurretBarrel002",
+                },
+            },
+            RackReloadTimeout = 1,
+
+            RateOfFire = 1,
+
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "HIGHPRIAIR",
+                "BOMBER",
+                "GROUNDATTACK",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = "UNTARGETABLE,SATELLITE",
+            TrackingRadius = 1.1,
+
+            TurretBoneMuzzle = "FrontMini_TurretMuzzle002",
+            TurretBonePitch = "FrontMini_TurretBarrel002",
+            TurretBoneYaw = "FrontMini_Turret002",
+
+            TurretPitch = 0,
+            TurretPitchRange = 180,
+            TurretPitchSpeed = 80,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 80,
+
+            Turreted = true,
         },
         {
 

@@ -2,18 +2,273 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "xrl0403",
 
+    AI = {
+		GuardScanRadius = 64,
+		GuardReturnRadius = 80,
+        
+        TargetBones = {'Left_Turret','Right_Turret','AA_Turret','Left_Leg02_B01','Left_Leg01_B01','Right_Leg02_B01','Right_Leg01_B01','XRL0403'},
+    },
+    
+    Audio = {
+        Construct               = Sound { Bank = 'XRL', Cue = 'XRL0403_Construct_Start', LodCutoff = 'UnitMove_LodCutoff' },
+        StartMove               = Sound { Bank = 'XRL', Cue = 'XRL0403_Move_Start',      LodCutoff = 'UnitMove_LodCutoff' },
+        FootFallGeneric         = Sound { Bank = 'URL', Cue = 'URL0402_Move_Footfall',   LodCutoff = 'UnitMove_LodCutoff' },
+        FootFallGenericSeabed   = Sound { Bank = 'URL', Cue = 'URL0402_Move_UW_Step',    LodCutoff = 'UnitMove_LodCutoff' },
+        Destroyed               = Sound { Bank = 'XRL_Destroy', Cue = 'XRL0403_Death',   LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection             = Sound { Bank = 'Interface', Cue = 'Cybran_Select_Spider', LodCutoff = 'UnitMove_LodCutoff' },
+    },
+    
+    Buffs = {
+        Regen = {
+            Level1 = 15,
+            Level2 = 30,
+            Level3 = 45,
+            Level4 = 60,
+            Level5 = 75,
+        },
+    },
+    
+    BuildIconSortPriority = 30,
+    
+    Categories = {
+        'SELECTABLE',
+		'BUILTBYTIER4COMMANDER',
+        'CYBRAN',
+        'MOBILE',
+        'LAND',
+		'AMPHIBIOUS',
+		'DIRECTFIRE',
+        'EXPERIMENTAL',
+        'CONSTRUCTION',
+        'NEEDMOBILEBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'DRAGBUILD',
+        'SHOWQUEUE',
+		'OVERLAYRADAR',
+        'OVERLAYSONAR',
+        'OVERLAYMISC',
+        'SUPREMACY',
+    },
+    
+    CollisionOffsetY = 2,
+    CollisionOffsetZ = -0.6,
+    
+    Defense = {
+
+        MissileTorpDestroy = { AttachBone = {'Flare_Muzzle01','Flare_Muzzle04','Flare_Muzzle06'}, Radius = 3.8, RedirectRateOfFire = 9, ProjectileCategories = {'TORPEDO'} },
+    
+        ArmorType = 'Experimental',
+
+        Health = 110000,
+        MaxHealth = 110000,
+        RegenRate = 30,
+
+        AirThreatLevel = 24,
+        SubThreatLevel = 40,
+        SurfaceThreatLevel = 776.2,
+    },
+    
+    Description = '<LOC xrl0403_desc>Experimental Heavy Assault Megabot (Assault)',
+    
+    Display = {
+        Abilities = {
+            '<LOC ability_factory>Factory',
+            "<LOC ability_amphibious>Amphibious",
+            "<LOC ability_aa>Anti-Air",
+            '<LOC ability_radar>Radar',
+            '<LOC ability_sonar>Sonar',
+            '<LOC ability_omni>Omni Sensor',
+            "<LOC ability_torpedo>Torpedo Barrage",
+            '<LOC ability_torpedodef>Personal & AntiTorpedo Defense',
+            '<LOC ability_personalstealth>Personal Stealth',
+        },
+
+        AnimationActivate = '/units/xrl0403/xrl0403_awake.sca',
+        AnimationDeath = { { Animation = '/units/xrl0403/xrl0403_adeath.sca',Weight = 100 } },
+        AnimationWalk = '/units/xrl0403/xrl0403_awalk01.sca',
+        
+        AnimationWalkRate = 3.6,
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 200,
+                    MeshName = '/Units/xrl0404/xrl0404_LOD0.scm',
+                    ShaderName = 'Insect',
+                },
+                {
+                    AlbedoName = 'xrl0403_lod1_albedo.dds',
+                    LODCutoff = 400,
+                    MeshName = '/Units/xrl0404/xrl0404_LOD1.scm',
+                    ShaderName = 'Insect',
+                    SpecularName = 'xrl0403_lod1_specteam.dds',
+                },
+            },
+        },
+        MovementEffects = {
+            Land = {
+                Footfall = {
+                    Bones = {
+                        {
+                            FootBone = 'Left_Footfall_01',
+                            HipBone = 'Left_Leg01_B01',
+                            KneeBone = 'Left_Leg01_B02',
+                            MaxFootFall = -0.25,
+                            Offset = {z = -1},
+                            Scale = 1.5,
+                            StraightLegs = false,
+                            Type = 'FootFall01',
+                        },
+                        {
+                            FootBone = 'Left_Footfall_02',
+                            HipBone = 'Left_Leg02_B01',
+                            KneeBone = 'Left_Leg02_B02',
+                            MaxFootFall = -0.25,
+                            Offset = {z = -1},
+                            Scale = 1.5,
+                            StraightLegs = false,
+                            Type = 'FootFall01',
+                        },
+                        {
+                            FootBone = 'Right_Footfall_01',
+                            HipBone = 'Right_Leg01_B01',
+                            KneeBone = 'Right_Leg01_B02',
+                            MaxFootFall = -0.25,
+                            Offset = {z = -1},
+                            Scale = 1.5,
+                            StraightLegs = false,
+                            Type = 'FootFall01',
+                        },
+                        {
+                            FootBone = 'Right_Footfall_02',
+                            HipBone = 'Right_Leg02_B01',
+                            KneeBone = 'Right_Leg02_B02',
+                            MaxFootFall = -0.25,
+                            Offset = {z = -1},
+                            Scale = 1.5,
+                            StraightLegs = false,
+                            Type = 'FootFall01',
+                        },
+                    },
+                    
+                    Damage = {
+                        Amount = 2250,
+                        DamageFriendly = false,
+                        Radius = 1,
+                        Type = 'ExperimentalFootfall',
+                    },
+                },
+            },
+        },
+
+        UniformScale = 0.055,
+    },
+
+    Economy = {
+        BuildCostEnergy = 785500,
+        BuildCostMass = 46000,
+        BuildRate = 200,
+        BuildTime = 46000,
+
+        MaintenanceConsumptionPerSecondEnergy = 1500,
+		
+        BuildableCategory = {
+            'xrl0002',
+            'xrl0003',
+            'xrl0004',
+            'xrl0005',
+            'brl0006',
+            'brl0007',
+            'brl0008',
+            'brl0009',
+            'brl0010',
+            'brl0011',
+            'brlk005',
+			'drlk005',
+        },
+        MaxBuildDistance = 3,
+    },
+
+    General = {
+		CapCost = 10,
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Cybran',
+        Icon = 'amph',
+        UnitName = '<LOC xrl0403_name>Megalith',
+    },
+
     Intel = {
-		FreeIntel = true,
+		FreeIntel = false,
         RadarStealth = false,
         SonarStealth = false,
-		RadarRadius = 96,
+		RadarRadius = 56,
         SonarRadius = 56,
         VisionRadius = 44,
         WaterVisionRadius = 36,
     },
+
+    Interface = {
+        HelpText = 'Heavy Assault Megabot',
+    },
 	
-    Economy = {
-        BuildCostEnergy = 785500,
-        BuildCostMass = 46000,
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 3.7,
+    LifeBarSize = 9,
+	
+    Physics = {
+        BackUpDistance = 12,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+            LAYER_Water = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 1.2,
+        MaxSpeed = 2.4,
+        MaxSpeedReverse = 1.2,
+        MaxSteerForce = 0,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Amphibious',
+        SinkLower = true,
+        SkirtOffsetX = -1.5,
+        SkirtOffsetZ = -1.5,
+        SkirtSizeX = 9,
+        SkirtSizeZ = 9,
+        TurnRadius = 15,
+        TurnRate = 45,
+        WaterSpeedMultiplier = 1.2,
+    },
+	
+    SelectionSizeX = 5.3,
+    SelectionSizeZ = 5.3,
+    SelectionThickness = 0.35,
+	
+    SizeX = 4.6,
+    SizeY = 3.5,
+    SizeZ = 7.3,
+	
+    StrategicIconName = 'icon_seabed4_land',
+    StrategicIconSortPriority = 45,
+	
+    Transport = {
+        TransportClass = 10,
+    },
+	
+    Veteran = {
+        Level1 = 40,
+        Level2 = 80,
+        Level3 = 120,
+        Level4 = 160,
+        Level5 = 200,
     },
 }

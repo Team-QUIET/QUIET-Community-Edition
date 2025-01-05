@@ -2,7 +2,231 @@ UnitBlueprint {
     Merge = true,
 	BlueprintId = "brl0401",
 
-  Veteran = {
+	AI = {
+        GuardScanRadius = 58,
+        TargetBones = {'Head','Torso','Carapace','Left_Leg_2','Right_Leg_1','Right_Leg_3','Left_Front_Toe'},
+    },
+	
+    Audio = {
+        Destroyed               = Sound { Bank = 'XRL_Destroy', Cue = 'XRL0403_Death', LodCutoff = 'UnitMove_LodCutoff' },
+        StartMove               = Sound { Bank = 'XRL', Cue = 'XRL0403_Move_Start', LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection             = Sound { Bank = 'Interface', Cue = 'Cybran_Select_Spider', LodCutoff = 'UnitMove_LodCutoff' },
+		ExperimentalDetected    = Sound { Bank = 'BlackOpsSB', Cue = 'b_roar_1', LodCutoff = 'UnitMove_LodCutoff' },		
+        DoneBeingBuilt          = Sound { Bank = 'BlackOpsSB', Cue = 'b_roar_1', LodCutoff = 'UnitMove_LodCutoff' },
+		NukeExplosion           = Sound { Bank = 'Explosions', Cue = 'Cybran_Nuke_Impact', LodCutoff = 'Weapon_LodCutoff' },
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 100,
+            Level2 = 200,
+            Level3 = 300,
+            Level4 = 400,
+            Level5 = 500,
+        },
+    },
+	
+    BuildIconSortPriority = 190,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER4COMMANDER',
+        'CYBRAN',
+        'MOBILE',
+        'LAND',
+		'AMPHIBIOUS',
+        'MASSIVE',
+        'EXPERIMENTAL',
+        'NEEDMOBILEBUILD',
+        'INDIRECTFIRE',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'OVERLAYDEFENSE',
+    },
+	
+    Defense = {
+        ArmorType = 'Experimental',
+
+        Health = 75000,
+        MaxHealth = 75000,
+        RegenRate = 125,
+
+        AirThreatLevel = 180,
+        SurfaceThreatLevel = 960,
+    },
+	
+    Description = '<LOC brl0401_desc>Regenerative Heavy Siege Mech (Brawler/Siege)',
+	
+    Display = {
+		Abilities = {
+            '<LOC ability_amphibious>Amphibious',
+            "<LOC ability_aa>Anti-Air",
+            '<LOC ability_massive>Massive',            
+            'Tac Missile Barrage',
+            'Siege Mode (Toggle to Transform into Siege Mode)',
+        },
+        
+        AnimationDeath = {
+            {
+                Animation = '/mods/BlackOpsUnleashed/units/BRL0401/BRL0401_ADeath01.sca',
+                AnimationRateMax = 0.4,
+                AnimationRateMin = 0.4,
+                Weight = 100,
+            },
+        },
+
+        AnimationWalk = '/mods/BlackOpsUnleashed/units/BRL0401/BRL0401_AWalk01.sca',
+        AnimationDeploy = '/mods/BlackOpsUnleashed/units/BRL0401/BRL0401_Deploy.sca',
+		AnimationPackUp = '/mods/BlackOpsUnleashed/units/BRL0401/BRL0401_PackUp.sca',
+        AnimationWalkRate = 0.75,
+        
+        Mesh = { IconFadeInZoom = 130, LODs = { {LODCutoff = 300,ShaderName = 'Insect'} } },
+        
+        MovementEffects = {
+        
+            Land = {
+                Footfall = {
+                    Bones = {
+                        {
+                            FootBone = 'R_FootFall',
+                            MaxFootFall = -0.25,
+                            StraightLegs = false,
+                            Tread = {
+                                TreadLifeTime = 45,
+                                TreadMarks = '/mods/BlackOpsUnleashed/env/common/splats/Basilisk_Foot_albedo.dds',
+                                TreadMarksSizeX = 2.3,
+                                TreadMarksSizeZ = 2.1,
+                                TreadOffset = {-1.4,0,1.7},
+                            },
+                            Type = 'FootFall01',
+                            Scale = 1.8,
+                        },
+                        {
+                            FootBone = 'L_FootFall',
+                            MaxFootFall = -0.25,
+                            StraightLegs = false,
+                            Tread = {
+                                TreadLifeTime = 45,
+                                TreadMarks = '/mods/BlackOpsUnleashed/env/common/splats/Basilisk_Foot_albedo.dds',
+                                TreadMarksSizeX = 2.3,
+                                TreadMarksSizeZ = 2.1,
+                                TreadOffset = {1.4,0,1.7},
+                            },
+                            Type = 'FootFall01',
+                            Scale = 1.8,
+                        },
+                    },
+
+                    Damage = {
+                        Amount = 3500,
+                        DamageFriendly = false,
+                        Radius = 2,
+                        Type = 'ExperimentalFootfall',
+                    },
+                },
+            },
+        },
+
+        UniformScale = 0.15,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 1750000,
+        BuildCostMass = 90000,
+        BuildTime = 175000,
+    },
+	
+    Footprint = {
+        SizeX = 4,
+        SizeZ = 4,
+    },
+		
+    General = {
+		CapCost = 12,
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Cybran',
+        Icon = 'amph',
+        
+        ToggleCaps = { RULEUTC_WeaponToggle = true },
+        
+        OrderOverrides = {
+            RULEUTC_WeaponToggle = { bitmapId = 'toggle-weapon-direct', helpText = 'transform_siege' },
+        },
+        
+        UnitName = '<LOC brl0401_name>Basilisk',
+    },
+	
+    Intel = {
+        VisionRadius = 44,
+		WaterVisionRadius = 20,
+    },
+	
+    Interface = {
+        HelpText = 'Heavy Siege Mech',
+    },
+	
+    LifeBarHeight = 0.08,
+    LifeBarOffset = 0.6,
+    LifeBarSize = 4,
+	
+    Physics = {
+        BackUpDistance = 9,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+        },
+        DragCoefficient = 0.2,
+        LayerChangeOffsetHeight = -5.5,
+        MaxAcceleration = 1.2,
+        MaxBrake = 2.4,
+        MaxSpeed = 2.4,
+        MaxSpeedReverse = 1.8,
+        MaxSteerForce = 10,
+        MeshExtentsX = 1.1,
+        MeshExtentsY = 1.5,
+        MeshExtentsZ = 2.4,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Amphibious',
+        SinkLower = true,
+		
+        SkirtOffsetX = -1.5,
+        SkirtOffsetZ = -1.5,
+		
+        SkirtSizeX = 6,
+        SkirtSizeZ = 6,
+		
+        StandUpright = true,
+		
+        TurnRadius = 12,
+        TurnRate = 22,
+    },
+	
+    SelectionCenterOffsetZ = -0.15,
+    SelectionSizeX = 2.65,
+    SelectionSizeZ = 2.65,
+    SelectionThickness = 0.7,
+	
+    SizeX = 3.2,
+    SizeY = 5.8,
+    SizeZ = 2.8,
+	
+    StrategicIconName = 'icon_seabed4_artillery',
+    StrategicIconSortPriority = 115,
+	
+    Transport = {
+        CanFireFromTransport = false,
+        TransportClass = 4,
+    },
+
+  	Veteran = {
         Level1 = 120,
         Level2 = 240,
         Level3 = 360,
@@ -10,43 +234,108 @@ UnitBlueprint {
         Level5 = 600,
     },
 
-	    Weapon = {
+	Weapon = {
 		{
 
-        	},
+        },
 		{
 
-        	},
+        },
 		{
 
-        	},
+        },
 		{
 
 		},
 		{
-
 			AutoInitiateAttackCommand = false,
+        },
+        {
 
-        	},
-        	{
-
-        	},
+        },
 		{
 
-        	},
-        	{
-
+        },
+        {
 			AutoInitiateAttackCommand = false,
-
-        	},
+        },
 		{
 
-        	},
-        	{
+        },
+        -- AA Missile weapon system -- 
+        {
+            AboveWaterFireOnly = true,
+            AlwaysRecheckTarget = true,
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = true,
+			
+            Audio = {
+                Fire = Sound { Bank = 'URSWeapon', Cue = 'URS0202_Nano_Dart', LodCutoff = 'Weapon_LodCutoff' },
+            },
 
-        	},
-        	{
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 100,
+			DoTTime = 1,
+			DoTPulses = 3,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Heavy Las Missile 1',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Seabed = 'Air',
+            },
+            FiringTolerance = 360,
+			
+            Label = 'LasMissile',
+			
+            MaxRadius = 60,
+			
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 4,
 
-        	},
-    	},
+			MuzzleVelocity = 8,
+			
+            NotExclusive = true,
+			
+			ProjectileId = '/mods/BlackOpsUnleashed/projectiles/BasAAMissile01/BasAAMissile01_proj.bp',
+            ProjectileLifetime = 8,
+            
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'AA_Missile_1',
+						'AA_Missile_2',
+						'AA_Missile_3',
+						'AA_Missile_4',
+						'AA_Missile_5',
+						'AA_Missile_6',
+                    },
+                    RackBone = 'AA_Missile_1',
+                },
+            },
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 10/20,
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'HIGHPRIAIR',
+                'BOMBER',
+                'GROUNDATTACK',
+                'AIR MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+            Turreted = false,
+        },
+        {
+
+        },
+    },
 }
