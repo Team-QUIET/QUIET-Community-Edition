@@ -4,6 +4,249 @@ UnitBlueprint{
 
     ScriptClass = 'WEL0416',
     ScriptModule = '/mods/QUIET-Community-Edition/units/WyvernBattlePack/WEL0416/WEL0416_Script.lua',
+
+    Description = "<LOC wel0416_desc>Experimental Regenerative Ultra Heavy Assault Mech",
+
+    AI = {
+        GuardScanRadius = 60,
+        TargetBones = {"Head","NewTorso","Right_Leg_B02","Left_Leg_B04"},
+    },
+
+    Audio = {
+        DeathExplosion        = Sound { Bank = 'UELDestroy',   Cue = 'UEB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff' },
+        Destroyed             = Sound { Bank = 'UELDestroy',   Cue = 'UEL_Destroy_Sml_Land',       LodCutoff = 'UnitMove_LodCutoff' },
+        DoneBeingBuilt        = Sound { Bank = 'BattlePackSB', Cue = 'NewBasilisk_Roar',           LodCutoff = 'UnitMove_LodCutoff' },
+        FootFallGeneric       = Sound { Bank = 'BattlePackSB', Cue = 'Revamp_StarAdder_Footstep',  LodCutoff = 'UnitMove_LodCutoff' },
+        FootFallGenericSeabed = Sound { Bank = 'UAL',          Cue = 'UAL0401_Move_UW_Step',       LodCutoff = 'UnitMove_LodCutoff' },
+        Roar                  = Sound { Bank = 'UALWeapon',    Cue = 'UAL0401_Tractor_Beam',       LodCutoff = 'Weapon_LodCutoff' },
+        StartMove             = Sound { Bank = 'UEL',          Cue = 'UEL0001_Move_Start',         LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection           = Sound { Bank = 'Interface',    Cue = 'UEF_Select_Commander',       LodCutoff = 'UnitMove_LodCutoff' },
+    },
+
+    Buffs = {
+        Regen = {
+            Level1 = 5,
+            Level2 = 10,
+            Level3 = 20,
+            Level4 = 40,
+            Level5 = 80,
+        },
+    },
+
+    BuildIconSortPriority = 30,
+
+    Categories = {
+        "AMPHIBIOUS",
+        "BUILTBYTIER4COMMANDER",
+        "DIRECTFIRE",
+        "DRAGBUILD",
+        "EXPERIMENTAL",
+        "LAND",
+        "MOBILE",
+        "NEEDMOBILEBUILD",
+        "RECLAIMABLE",
+        "SELECTABLE",
+        "UEF",
+        "VISIBLETORECON",
+    },
+
+    Defense = {
+        AirThreatLevel = 56,
+        ArmorType = "Experimental",
+        Health = 70000,
+        MaxHealth = 70000,
+        RegenRate = 100,
+
+        Shield = {
+            ImpactEffects = "UEFShieldHit01",
+            OwnerShieldMesh = "/mods/BattlePack/units/WEL0416/WEL0416_PersonalShield_mesh",
+            PersonalShield = true,
+            RegenAssistMult = 60,
+            ShieldEnergyDrainRechargeTime = 5,
+            ShieldMaxHealth = 14000,
+            ShieldRechargeTime = 24,
+            ShieldRegenRate = 145,
+            ShieldRegenStartTime = 0.9,
+            ShieldSize = 3,
+            ShieldVerticalOffset = 0,
+        },
+
+        SurfaceThreatLevel = 1263.4,
+    },
+
+    Display = {
+        Abilities = {
+            "<LOC ability_aa>Anti-Air",
+            "<LOC ability_amphibious>Amphibious",
+            "<LOC ability_personalshield>Personal Shield",
+        },
+
+        AnimationDeath = {
+            {
+                Animation = "/mods/BattlePack/units/WEL0416/WEL0416_adeath.sca",
+                AnimationRateMax = 1.25,
+                AnimationRateMin = 0.75,
+                Weight = 100,
+            },
+            {
+                Animation = "/mods/BattlePack/units/WEL0416/WEL0416_adeath02.sca",
+                AnimationRateMax = 1.25,
+                AnimationRateMin = 0.75,
+                Weight = 100,
+            },
+            {
+                Animation = "/mods/BattlePack/units/WEL0416/WEL0416_adeath03.sca",
+                AnimationRateMax = 1.25,
+                AnimationRateMin = 0.75,
+                Weight = 100,
+            },
+        },
+        AnimationWalk = "/mods/BattlePack/units/WEL0416/WEL0416_awalk.sca",
+        AnimationWalkRate = 1.4,
+
+        Mesh = { IconFadeInZoom = 130, LODs = { { LODCutoff = 300, ShaderName = "Unit" } } },
+
+        MovementEffects = {
+            Land = {
+                Effects = {
+                    { Bones = {"Left_Exhaust","Right_Exhaust"}, Type = "GroundKickup01" },
+                },
+                Footfall = {
+                    Bones = {
+                        {
+                            FootBone = "Right_Exhaust",
+                            HipBone = "Right_Leg_B03",
+                            KneeBone = "Right_Leg_B04",
+                            MaxFootFall = -0.25,
+                            Offset = { z = 0 },
+                            StraightLegs = false,
+                            Type = "FootFall01",
+                        },
+                        {
+                            FootBone = "Left_Exhaust",
+                            HipBone = "Left_Leg_B03",
+                            KneeBone = "Left_Leg_B04",
+                            MaxFootFall = -0.25,
+                            Offset = { z = 0 },
+                            StraightLegs = false,
+                            Type = "FootFall01",
+                        },
+                    },
+
+                    CameraShake = {
+                        Interval = 1,
+                        MaxShakeEpicenter = 0.125,
+                        MinShakeAtRadius = 0,
+                        Radius = 10,
+                    },
+
+                    Damage = {
+                        Amount = 4500,
+                        DamageFriendly = false,
+                        Radius = 2,
+                        Type = "ExperimentalFootfall",
+                    },
+                },
+            },
+        },
+
+        UniformScale = 0.2,
+    },
+
+    Economy = {
+        BuildCostEnergy = 1100000,
+        BuildCostMass = 92000,
+        BuildTime = 46000,
+
+        MaintenanceConsumptionPerSecondEnergy = 850,
+    },
+
+    Footprint = {
+        SizeX = 4,
+        SizeZ = 4,
+    },
+
+    General = {
+        CapCost = 7,
+
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = "UEF",
+        Icon = "amph",
+
+        OrderOverrides = {
+            RULEUTC_ShieldToggle = { bitmapId = "shield-personal", helpText = "toggle_shield_personal" },
+        },
+
+        ToggleCaps = { RULEUTC_ShieldToggle = true },
+
+        UnitName = "<LOC wel0416_name>Dragonite",
+    },
+
+    Intel = {
+        VisionRadius = 40,
+        WaterVisionRadius = 20,
+    },
+
+    LifeBarHeight = 0.2,
+    LifeBarOffset = 3.35,
+    LifeBarSize = 5.75,
+
+    Physics = {
+        BackUpDistance = 15,
+        BankingSlope = 3,
+        DragCoefficient = 0.2,
+        Elevation = 1,
+
+        LayerChangeOffsetHeight = -5,
+
+        MaxAcceleration = 1.25,
+        MaxBrake = 2.5,
+        MaxSpeed = 2.5,
+        MaxSpeedReverse = 1.25,
+        MaxSteerForce = 1000,
+        MeshExtentsX = 5,
+        MeshExtentsY = 6,
+        MeshExtentsZ = 4.5,
+        MinSpeedPercent = 0,
+        MotionType = "RULEUMT_Amphibious",
+        SkirtOffsetX = -1.5,
+        SkirtOffsetZ = -1.5,
+        SkirtSizeX = 6,
+        SkirtSizeZ = 6,
+        TurnRadius = 3,
+        TurnRate = 36,
+    },
+
+    SelectionCenterOffsetX = 0,
+    SelectionCenterOffsetZ = 0,
+    SelectionSizeX = 3,
+    SelectionSizeZ = 3,
+    SelectionThickness = 0.34,
+
+    SizeX = 4.0,
+    SizeY = 5.8,
+    SizeZ = 3.5,
+
+    StrategicIconName = "icon_seabed4_directfire",
+    StrategicIconSortPriority = 45,
+
+    Transport = { TransportClass = 10 },
+
+    Veteran = {
+        Level1 = 75,
+        Level2 = 125,
+        Level3 = 180,
+        Level4 = 215,
+        Level5 = 275,
+    },
     
     Weapon = {
         {
