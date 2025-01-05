@@ -39,8 +39,6 @@ UnitBlueprint {
         BuildCostMass = 515,
         BuildRate = 8,
         BuildTime = 3320,
-        
-        MaintenanceConsumptionPerSecondEnergy = 50,
     },
 
     Defense = {
