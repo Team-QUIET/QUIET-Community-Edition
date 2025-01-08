@@ -1,19 +1,213 @@
 UnitBlueprint {
-  Merge = true,
-  BlueprintId = "brnt3blasp",
+    Merge = true,
+    BlueprintId = "brnt3blasp",
 
-      Weapon = {
+    AI = { 
+        GuardScanRadius = 35, 
+		TargetBones = {'Turret','AttachPoint','legb2','toe05'},
+    },
+	
+    Audio = {
+        Killed          = Sound { Bank = 'TM_EXPLOSIONS', Cue = 'TMBIGROBOTDEATHFX', LodCutoff = 'UnitMove_LodCutoff' },
+        StartMove       = Sound { Bank = 'URL', Cue = 'URL0303_Move_Start', LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection     = Sound { Bank = 'Interface', Cue = 'Cybran_Select_Bot', LodCutoff = 'UnitMove_LodCutoff' },
+		DeathExplosion  = Sound { Bank = 'Explosions', Cue = 'UEF_Nuke_Impact', LodCutoff = 'UnitMove_LodCutoff' },
+		Destroyed       = Sound { Bank = 'Explosions', Cue = 'UEF_Nuke_Impact', LodCutoff = 'UnitMove_LodCutoff' },
+        FootFallGeneric = Sound { Bank = 'UEL', Cue = 'UEL0001_Move_Step', LodCutoff = 'UnitMove_LodCutoff' },
+        FootFallGenericSeabed = Sound { Bank = 'UEL', Cue = 'UEL0001_Move_UW_Step', LodCutoff = 'UnitMove_LodCutoff' },
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 7,
+            Level2 = 14,
+            Level3 = 21,
+            Level4 = 28,
+            Level5 = 35,
+        },
+    },
+	
+    BuildIconSortPriority = 12,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER4COMMANDER',
+        'UEF',
+        'MOBILE',
+        'MASSIVE',
+        'LAND',
+        'AMPHIBIOUS',
+        'EXPERIMENTAL',
+        'DIRECTFIRE',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'OVERLAYDIRECTFIRE',
+        'OVERLAYDEFENSE',
+        'OVERLAYRADAR',
+        'OVERLAYANTIAIR',
+        'NEEDMOBILEBUILD',
+        'DRAGBUILD',
+    },
+	
+    Defense = {
+        ArmorType = 'Experimental',
+        Health = 59500,
+        MaxHealth = 59500,
+        RegenRate = 7,
+        SurfaceThreatLevel = 530.2,
+    },
+	
+    Description = '<LOC brnt3blasp_desc>Experimental Medium Assault Mech (Assault)',
+	
+    Display = {
+        Abilities = {
+            '<LOC ability_amphibious>Amphibious',
+			'Shoulder Rifles, Arm Lasers',
+			'Rocket Barrage',
+			'Dual Role Riot Guns',
+        },
+        
+        AnimationDeath = { {Animation = '/mods/TotalMayhem/units/BRNT3BLASP/BRNT3BLASP_Death.sca',Weight = 100} },
+        AnimationWalk = '/mods/TotalMayhem/units/BRNT3BLASP/BRNT3BLASP_Walk.sca',
+        AnimationWalkRate = 2.3,
+		
+        Mesh = { IconFadeInZoom = 200, LODs = { {LODCutoff = 350,ShaderName = 'Unit'} } },
+        
+        MovementEffects = {
+            Land = {
+                Footfall = {
+                    Bones = {
+                        {
+                            FootBone = 'footfall01',
+                            HipBone = 'footfall01',
+                            KneeBone = 'footfall01',
+                            MaxFootFall = -0.25,
+                            Offset = {z = -1},
+                            StraightLegs = false,
+                            Type = 'FootFall01',
+                        },
+                        {
+                            FootBone = 'footfall02',
+                            HipBone = 'footfall02',
+                            KneeBone = 'footfall02',
+                            MaxFootFall = -0.25,
+                            Offset = {z = -1},
+                            StraightLegs = false,
+                            Type = 'FootFall01',
+                        },
+                    },
+                    
+                    Damage = {
+                        Amount = 1100,
+                        DamageFriendly = false,
+                        Radius = 1,
+                        Type = 'ExperimentalFootfall',
+                    },
+                },
+            },
+        },
+
+        UniformScale = 0.040,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 411000,
+        BuildCostMass = 21750,
+        BuildTime = 40000,
+    },
+	
+    General = {
+		CapCost = 3.5,
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'UEF',
+        Icon = 'amph',
+        UnitName = '<LOC brnt3blasp_name>Blood Asp',
+    },
+	
+    Intel = {
+        VisionRadius = 36,
+		WaterVisionRadius = 16,
+    },
+	
+    Interface = {
+        HelpText = 'Medium Assault Mech',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 1.35,
+    LifeBarSize = 2.5,
+	
+    Physics = {
+        BackUpDistance = 10,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+        },
+        DragCoefficient = 0.2,
+        
+        LayerChangeOffsetHeight = -3,
+
+        MaxAcceleration = 1,
+        MaxBrake = 2.9,
+        MaxSpeed = 2.9,
+        MaxSpeedReverse = 2.9,
+        MaxSteerForce = 10,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Amphibious',
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+        SkirtSizeX = 4,
+        SkirtSizeZ = 4,
+		StandUpright = true,
+
+        TurnRadius = 4,
+        TurnRate = 30,
+
+		WaterSpeedMultiplier = 1.2,
+    },
+
+    SelectionSizeX = 2.4,
+    SelectionSizeZ = 2.4,
+    SelectionThickness = 0.35,
+	
+    SizeX = 2.2,
+    SizeY = 3.5,
+    SizeZ = 2.2,
+	
+    StrategicIconName = 'icon_seabed4_directfire',
+	
+    StrategicIconSortPriority = 115,
+	
+    Veteran = {
+        Level1 = 50,
+        Level2 = 75,
+        Level3 = 100,
+        Level4 = 125,
+        Level5 = 150,
+	},
+	
+    Transport = {
+        TransportClass = 4,
+    },
+
+    Weapon = {
         {
-
-            AutoInitiateAttackCommand = false,
+        AutoInitiateAttackCommand = false,
 			
-			TurretYawSpeed = 60,
-	},
+		TurretYawSpeed = 60,
+	    },
         {
-		
-			TurretYawSpeed = 60,
-
-	},
+		TurretYawSpeed = 60,
+	    },
         {
 
         },
@@ -22,13 +216,12 @@ UnitBlueprint {
         },
         {
 
-	},
+	    },
         {
 
-	},		
+	    },		
         {
-		
-		AboveWaterFireOnly = true,
+		    AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
             
             Audio = {
@@ -111,8 +304,7 @@ UnitBlueprint {
             TurretYawSpeed = 90,
 			
             Turreted = true,
-
-	},
+	    },
         {
 
         },

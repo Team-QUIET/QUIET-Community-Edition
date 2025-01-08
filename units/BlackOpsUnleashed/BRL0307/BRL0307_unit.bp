@@ -7,7 +7,7 @@ UnitBlueprint {
             EnergyDrainPerSecond = 175,
             EnergyRequired = 700,
 
-            FiringRandomnessWhileMoving = 0.5,
+            FiringRandomnessWhileMoving = 1.25,
 
             RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,

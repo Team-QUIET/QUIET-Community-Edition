@@ -4,13 +4,13 @@ UnitBlueprint {
 
 	Economy = {
         BuildCostMass = 30000,
-	BuildCostEnergy = 475000,
-    	},
+	    BuildCostEnergy = 475000,
+    },
 
-	    Weapon = {
+	Weapon = {
         {
 
-            Damage = 375,
+            Damage = 300,
             DamageRadius = 2.5,
             DamageType = 'Normal',
 			
@@ -31,7 +31,7 @@ UnitBlueprint {
             
             RackSalvoReloadTime = 13.6,
 			
-            RateOfFire = 1,
+            RateOfFire = 10/32,
 
             TurretDualManipulators = true,
 			

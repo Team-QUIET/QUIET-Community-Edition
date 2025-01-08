@@ -37,7 +37,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 			
-            Damage = 15,
+            Damage = 12,
             DamageType = 'Normal',
 			
             DisplayName = 'Gatling Cannon',

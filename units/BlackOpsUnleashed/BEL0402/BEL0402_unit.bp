@@ -11,7 +11,7 @@ UnitBlueprint {
         ArmorType = 'Experimental',
         Health = 124000,
         MaxHealth = 124000,
-        RegenRate = 30,
+        RegenRate = 20,
     },
 
     General = {
@@ -22,6 +22,14 @@ UnitBlueprint {
 	
     Interface = {
         HelpText = 'Experimental Ultra Heavy Breacher Bot',
+    },
+
+    Intel = {
+		FreeIntel = false,
+        
+        RadarRadius = 64,
+        VisionRadius = 40,
+		WaterVisionRadius = 24,
     },
 	
     Physics = {
@@ -35,7 +43,7 @@ UnitBlueprint {
 		
         LayerChangeOffsetHeight = -4.3,
 		
-        MaxAcceleration = 2.8,
+        MaxAcceleration = 1.6,
         MaxBrake = 2.8,
         MaxSpeed = 2.8,
         MaxSpeedReverse = 0,

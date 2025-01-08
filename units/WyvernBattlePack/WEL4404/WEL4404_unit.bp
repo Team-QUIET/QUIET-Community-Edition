@@ -55,7 +55,7 @@ UnitBlueprint{
         ArmorType = "Experimental",
         Health = 55000,
         MaxHealth = 55000,
-        RegenRate = 12,
+        RegenRate = 6,
         SurfaceThreatLevel = 587,
     },
 
@@ -84,7 +84,8 @@ UnitBlueprint{
         BuildCostEnergy = 411000,
         BuildCostMass = 23500,
         BuildTime = 6850,
-        MaintenanceConsumptionPerSecondEnergy = 80,
+
+        MaintenanceConsumptionPerSecondEnergy = 1250,
     },
 
     General = {
@@ -111,8 +112,9 @@ UnitBlueprint{
     },
 
     Intel = {
-        RadarRadius = 64,
+        RadarRadius = 42,
         RadarStealth = true,
+        SonarStealth = true,
         VisionRadius = 36,
         WaterVisionRadius = 20,
     },
@@ -131,8 +133,8 @@ UnitBlueprint{
         LayerChangeOffsetHeight = -3.2,
         
         MaxAcceleration = 2,
-        MaxBrake = 3.5,
-        MaxSpeed = 3.5,
+        MaxBrake = 2.8,
+        MaxSpeed = 2.8,
         MaxSpeedReverse = 3,
         MaxSteerForce = 0,
         MinSpeedPercent = 0,

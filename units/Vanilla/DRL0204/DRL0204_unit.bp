@@ -64,13 +64,13 @@ UnitBlueprint {
             },
 			
             FiringRandomness = 0.1,
-            FiringRandomnessWhileMoving = 0.2,
+            FiringRandomnessWhileMoving = 0.45,
 			
             FiringTolerance = 0.1,
 
             LeadTarget = true,
 			
-            MaxRadius = 37,
+            MaxRadius = 36,
 			
             MuzzleSalvoDelay = 0.65,
             MuzzleSalvoSize = 3,

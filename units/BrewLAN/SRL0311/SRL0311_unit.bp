@@ -24,9 +24,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
             
-            Damage = 215,
+            Damage = 185,
             DamageFriendly = true,
-            DamageRadius = 2.5,
+            DamageRadius = 2.25,
             DamageType = 'Normal',
             
             DisplayName = 'Iridium Rocket Barrage',
@@ -41,6 +41,7 @@ UnitBlueprint {
             },
             
             FiringRandomness = 4,
+            FiringRandomnessWhileMoving = 5.5,
             FiringTolerance = 4,
             
             Label = 'MainGun',
