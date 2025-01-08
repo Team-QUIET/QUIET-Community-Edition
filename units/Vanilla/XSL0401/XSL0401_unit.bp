@@ -1,0 +1,668 @@
+UnitBlueprint {
+    Merge = true,
+    Name = 'xsl0401',
+
+    AI = {
+		GuardScanRadius = 45,
+		GuardReturnRadius = 55,
+        TargetBones = {'Torso','Head','Left_Leg_B03','Right_Leg_B15'},
+    },
+	
+    Audio = {
+		EnemyUnitDetectedAeon   = Sound { Bank = 'XGG',Cue = 'XGG_HQ_GD1_04188'},
+		EnemyUnitDetectedUEF    = Sound { Bank = 'XGG',Cue = 'XGG_HQ_GD1_04188'},
+		EnemyUnitDetectedCybran = Sound { Bank = 'XGG',Cue = 'XGG_HQ_GD1_04188'},
+        Killed                  = Sound { Bank = 'XSL', Cue = 'XSL0401_Death', LodCutoff = 'UnitMove_LodCutoff'},
+        StartMove               = Sound { Bank = 'XSL', Cue = 'XSL0401_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection             = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_Bot', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 15,
+            Level2 = 30,
+            Level3 = 45,
+            Level4 = 60,
+            Level5 = 75,
+        },
+    },
+	
+    BuildIconSortPriority = 30,
+	
+    Categories = {
+        'SELECTABLE',
+		'BUILTBYTIER4COMMANDER',
+        'SERAPHIM',
+        'MOBILE',
+        'LAND',
+		'AMPHIBIOUS',
+		'SUBMERSIBLE',
+        'EXPERIMENTAL',
+		'INDIRECTFIRE',
+        'NEEDMOBILEBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'DRAGBUILD',
+        'SHOWATTACKRETICLE',
+		'OVERLAYANTIAIR',
+		'OVERLAYINDIRECTFIRE',
+    },
+	
+    CollisionOffsetY = 0.3,
+	
+    Defense = {
+        AirThreatLevel = 45,
+        ArmorType = 'Experimental',
+        Health = 67000,
+        MaxHealth = 67000,
+        RegenRate = 10,
+        SurfaceThreatLevel = 618.9,
+    },
+	
+    Description = '<LOC xsl0401_desc>Experimental Heavy Assault Bot (Assault)',
+	
+    Display = {
+        Abilities = {
+            "<LOC ability_aa>Anti-Air",
+            '<LOC ability_amphibious>Amphibious',
+            '<LOC ability_deathaoe>Volatile',
+        },
+
+        AnimationActivate = '/units/XSL0401/XSL0401_activate.sca',
+
+        AnimationDeath = {
+            {
+                Animation = '/units/XSL0401/XSL0401_Adeath01.sca',
+                AnimationRateMax = 1,
+                AnimationRateMin = 1,
+                Weight = 100,
+            },
+            {
+                Animation = '/units/XSL0401/XSL0401_Adeath02.sca',
+                AnimationRateMax = 1,
+                AnimationRateMin = 1,
+                Weight = 100,
+            },
+        },
+		
+        AnimationWalk = '/units/XSL0401/XSL0401_awalk.sca',
+        AnimationWalkRate = 1.1,
+		
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 500,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    Scrolling = true,
+                    ShaderName = 'Seraphim',
+                },
+            },
+        },
+		
+        MovementEffects = {
+            Land = {
+                Footfall = {
+                    Bones = {
+                        {
+                            FootBone = 'Right_Foot',
+                            HipBone = 'Right_Leg_B01',
+                            KneeBone = 'Right_Leg_B02',
+                            MaxFootFall = -0.25,
+                            Offset = {z = -1},
+                            StraightLegs = false,
+                            Tread = {
+                                TreadLifeTime = 135,
+                                TreadMarks = 'CommanderPrint_albedo',
+                                TreadMarksSizeX = 1.7,
+                                TreadMarksSizeZ = 1.7,
+                                TreadOffset = {-1,0,2},
+                            },
+                            Type = 'FootFall01',
+                        },
+                        {
+                            FootBone = 'Left_Foot',
+                            HipBone = 'Left_Leg_B17',
+                            KneeBone = 'Left_Leg_B14',
+                            MaxFootFall = -0.25,
+                            Offset = {z = -1},
+                            StraightLegs = false,
+                            Tread = {
+                                TreadLifeTime = 135,
+                                TreadMarks = 'CommanderPrint_albedo',
+                                TreadMarksSizeX = 1.7,
+                                TreadMarksSizeZ = 1.7,
+                                TreadOffset = {1,0,2},
+                            },
+                            Type = 'FootFall01',
+                        },
+                    },
+                    Damage = {
+                        Amount = 2500,
+                        DamageFriendly = false,
+                        Radius = 1,
+                        Type = 'ExperimentalFootfall',
+                    },
+                },
+            },
+        },
+        UniformScale = 0.05,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 460000,
+        BuildCostMass = 22500,
+        BuildTime = 46000,
+    },
+	
+    General = {
+		CapCost = 5,
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Seraphim',
+        Icon = 'amph',
+        UnitName = '<LOC xsl0401_name>Ythotha',
+    },
+	
+    Intel = {
+        VisionRadius = 48,
+        WaterVisionradius = 24,
+    },
+	
+    Interface = {
+        HelpText = 'Heavy Assault Bot',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 2.3,
+    LifeBarSize = 3.25,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+        },
+        DragCoefficient = 0.2,
+        
+        LayerChangeOffsetHeight = -7.25,
+
+        MaxAcceleration = 1.2,
+        MaxBrake = 2.4,
+        MaxSpeed = 2.4,
+        MaxSpeedReverse = 2.4,
+        MaxSteerForce = 10,
+        MeshExtentsX = 2.75,
+        MeshExtentsY = 6.75,
+        MeshExtentsZ = 3,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Amphibious',
+        SkirtOffsetX = -1.5,
+        SkirtOffsetZ = -0.5,
+        SkirtSizeX = 5,
+        SkirtSizeZ = 5,
+        StandUpright = true,
+        TurnRadius = 3,
+        TurnRate = 48,
+    },
+	
+    SelectionSizeX = 2.2,
+    SelectionSizeZ = 1.6,
+    SelectionThickness = 0.32,
+	
+    SizeX = 2.5,
+    SizeY = 8.5,
+    SizeZ = 1.5,
+	
+    StrategicIconName = 'icon_seabed4_directfire',
+    StrategicIconSortPriority = 115,
+	
+    Transport = {
+        TransportClass = 10,
+    },
+	
+    Veteran = {
+        Level1 = 20,
+        Level2 = 40,
+        Level3 = 60,
+        Level4 = 80,
+        Level5 = 100,
+    },
+	
+    Weapon = {
+        {   
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = true,
+            Audio = {
+                Fire                = Sound { Bank = 'XSL_Weapon', Cue = 'XSL0401_Exp_Phason_Fire', LodCutoff = 'Weapon_LodCutoff' },
+                MuzzleChargeStart   = Sound { Bank = 'XSL_Weapon', Cue = 'XSL0401_Exp_Phason_Charge', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 8000,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Experimental Phason Beam Generator',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 0.5,
+			
+            Label = 'EyeWeapon',
+			
+            MaxRadius = 46,
+            MinRadius = 4,
+			
+            MuzzleChargeDelay = 2.5,
+
+            MuzzleVelocity = 8,
+			
+            NotExclusive = true,
+			
+            ProjectileId = '/projectiles/SDFExperimentalPhasonProj01/SDFExperimentalPhasonProj01_proj.bp',
+			ProjectileLifetime = 6,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Head'},
+                    RackBone = 'Head',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 0.2,		---- 1600 DPS
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 40,
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+				'STRUCTURE -WALL',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TurretBoneMuzzle = 'Head',
+            TurretBonePitch = 'Head',
+            TurretBoneYaw = 'Head',
+
+            TurretPitch = -20,
+            TurretPitchRange = 50,
+            TurretPitchSpeed = 28,
+			
+            TurretYaw = 0,
+            TurretYawRange = 40,
+            TurretYawSpeed = 40,
+
+            Turreted = true,
+        },
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = false,
+            Audio = {
+                Fire = Sound { Bank = 'XSL_Weapon', Cue = 'XSL0401_Gatling_Cannon', LodCutoff = 'Weapon_LodCutoff'},
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 550,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Gatling Plasma Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0.3,
+			FiringRandomnessWhileMoving = 0.6,
+			
+            FiringTolerance = 0.1,
+			
+            HeadingArcCenter = 10,
+            HeadingArcRange = 60,
+			
+            Label = 'LeftArm',
+			
+            MaxRadius = 46,
+
+            MuzzleVelocity = 40,
+			
+            NoPause = true,
+
+            NotExclusive = true,
+			
+            PrefersPrimaryWeaponTarget = true,
+            ProjectileId = '/projectiles/SDFAireauWeapon01/SDFAireauWeapon01_proj.bp',
+			ProjectileLifetime = 1.5,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'LeftHand_Muzzle'},
+                    RackBone = 'LeftHand_Muzzle',
+                },
+            },
+
+            RateOfFire = 3,			---- 1650 DPS
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 60,
+			
+            TargetCheckInterval = 0.25,
+			
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+
+            TurretBoneMuzzle = 'LeftHand_Muzzle',
+            TurretBonePitch = 'Left_Arm_B07',
+            TurretBoneYaw = 'Left_Arm_B10',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 50,
+			
+            TurretYaw = 0,
+            TurretYawRange = 60,
+            TurretYawSpeed = 39,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+        },
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = true,
+            Audio = {
+                Fire                = Sound { Bank = 'XSL_Weapon', Cue = 'XSL0401_SinnUnthe_Fire', LodCutoff = 'Weapon_LodCutoff' },
+                MuzzleChargeStart   = Sound { Bank = 'XSL_Weapon', Cue = 'XSL0401_SinnUnthe_Charge', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 1200,
+            DamageRadius = 5,
+			
+            DamageType = 'Normal',
+			
+            DisplayName = 'Heavy Sinn Unthe Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+            },
+			
+			FiringRandomness = 0.4,
+			FiringRandomnessWhileMoving = 0.9,
+			
+            FiringTolerance = 0.5,
+			
+            HeadingArcCenter = -10,
+            HeadingArcRange = 60,
+			
+            Label = 'RightArm',
+			
+            MaxRadius = 48,
+            MinRadius = 0,
+			
+            MuzzleChargeDelay = 2.5,
+
+            MuzzleVelocity = 40,
+			
+            NotExclusive = true,
+			
+            ProjectileId = '/projectiles/SDFSinnuntheWeapon01/SDFSinnuntheWeapon01_proj.bp',
+			ProjectileLifetime = 1.5,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'RightHand_Muzzle'},
+                    RackBone = 'RightHand_Muzzle',
+                },
+            },
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 0.3,			---- 360 DPS
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 60,
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TurretBoneMuzzle = 'RightHand_Muzzle',
+            TurretBonePitch = 'Right_Arm_B03',
+            TurretBoneYaw = 'Right_Arm_B07',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 50,
+			
+            TurretYaw = 0,
+            TurretYawRange = 60,
+            TurretYawSpeed = 35,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+        },
+		
+        {
+            AboveWaterFireOnly = true,
+            AlwaysRecheckTarget = true,
+            Audio = {
+                Fire = Sound { Bank = 'XSL_Weapon', Cue = 'XSL0401_Aire_Autocannon', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 75,
+            DamageFriendly = false,
+            DamageRadius = 2.5,
+            DamageType = 'Normal',
+			
+            DetonatesAtTargetHeight = true,
+			
+            DisplayName = 'Olaris AA Artillery Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Seabed = 'Air',
+            },
+			
+            FiringRandomness = 0.1,
+            FiringTolerance = 0.2,
+			
+            HeadingArcCenter = 90,
+            HeadingArcRange = 90,
+			
+            Label = 'AA',
+			LeadTarget = true,
+			
+            MaxRadius = 40,
+
+            MuzzleVelocity = 60,
+
+            NotExclusive = true,
+			
+            ProjectileId = '/projectiles/SAAOlarisAAArtillery03/SAAOlarisAAArtillery03_proj.bp',
+			ProjectileLifetime = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Left_AA_Muzzle'},
+                    RackBone = 'Left_AA_Barrel03',
+                },
+            },
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 3,	-- 225 DPS Air
+			
+            TargetCheckInterval = 0.2,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'HIGHPRIAIR',
+                'BOMBER',
+                'GROUNDATTACK',
+                'AIR MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TrackingRadius = 1.2,
+            
+            TurretBoneMuzzle = 'Left_AA_Muzzle',
+            TurretBonePitch = 'Left_AA_Turret03',
+            TurretBoneYaw = 'Left_AA_Turret03',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 85,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 90,
+            TurretYawSpeed = 100,
+			
+            Turreted = true,
+        },
+		
+        {
+            AboveWaterFireOnly = true,
+            AlwaysRecheckTarget = true,
+            Audio = {
+                Fire = Sound { Bank = 'XSL_Weapon', Cue = 'XSL0401_Aire_Autocannon', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 75,
+            DamageFriendly = false,
+            DamageRadius = 2.5,
+            DamageType = 'Normal',
+			
+            DetonatesAtTargetHeight = true,
+			
+            DisplayName = 'Olaris AA Artillery Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Seabed = 'Air',
+            },
+			
+            FiringRandomness = 0.1,
+            FiringTolerance = 0.2,
+			
+            HeadingArcCenter = -90,
+            HeadingArcRange = 90,
+			
+            Label = 'AA',
+			
+			LeadTarget = true,
+            MaxRadius = 40,
+
+            MuzzleVelocity = 60,
+
+            NotExclusive = true,
+
+            ProjectileId = '/projectiles/SAAOlarisAAArtillery03/SAAOlarisAAArtillery03_proj.bp',
+			ProjectileLifetime = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Right_AA_Muzzle'},
+                    RackBone = 'Right_AA_Barrel02',
+                },
+            },
+
+            RateOfFire = 3,	-- 225 DPS Air
+			
+            TargetCheckInterval = 0.2,
+			
+            TargetPriorities = {
+                'HIGHPRIAIR',
+                'BOMBER',
+                'GROUNDATTACK',
+                'MOBILE',
+                'ALLUNITS',
+            },
+			
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'Right_AA_Muzzle',
+            TurretBonePitch = 'Right_AA_Turret02',
+            TurretBoneYaw = 'Right_AA_Turret02',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 85,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 90,
+            TurretYawSpeed = 100,
+			
+            Turreted = true,
+        },
+		
+        {
+            AboveWaterTargetsOnly = true,
+            Damage = 6500,
+            DamageFriendly = true,
+            DamageRadius = 8,
+            DamageType = 'Normal',
+            DisplayName = 'Collossus Death',
+            DummyWeapon = true,
+            Label = 'CollossusDeath',
+        },
+		
+    },
+	
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.2,
+        HealthMult = 0.35,
+        MassMult = 0.5,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+            Seabed = true,
+        },
+    },
+}

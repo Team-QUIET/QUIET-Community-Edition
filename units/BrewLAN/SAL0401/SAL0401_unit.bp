@@ -1,7 +1,16 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "sal0401",
-  
+    
+    Defense = {
+        ArmorType = 'Experimental',
+        EconomyThreatLevel = 490,
+        Health = 23000,
+        MaxHealth = 23000,
+        RegenRate = 6,
+        SurfaceThreatLevel = 383.3,
+    },
+
     Weapon = {
         {
             AboveWaterTargetsOnly = true,

@@ -1,12 +1,234 @@
 UnitBlueprint {
-  Merge = true,
-  BlueprintId = "bal0403",
+    Merge = true,
+    BlueprintId = "bal0403",
+
+    AI = {
+        GuardScanRadius = 110,
+        TargetBones = {'Target02','Target03','F_L_Leg_B01','F_R_Leg_B01','Barrel01'},
+        NeedUnpack = false,
+    },
+	
+    Audio = {
+        DeathExplosion  = Sound { Bank = 'UALDestroy', Cue = 'UAB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff' },
+        StartMove       = Sound { Bank = 'URL', Cue = 'URL0402_Move_Start', LodCutoff = 'UnitMove_LodCutoff' },
+        Destroyed       = Sound { Bank = 'UALDestroy', Cue = 'UAB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff'},
+        DoneBeingBuilt  = Sound { Bank = 'UAB', Cue = 'UAB2302_Activate', LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection     = Sound { Bank = 'Interface', Cue = 'Aeon_Select_Gun', LodCutoff = 'UnitMove_LodCutoff' },
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 10,
+            Level2 = 20,
+            Level3 = 30,
+            Level4 = 40,
+            Level5 = 50,
+        },
+    },
+	
+    BuildIconSortPriority = 140,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER4COMMANDER',
+        'AEON',
+        'MOBILE',
+        'LAND',
+		'AMPHIBIOUS',
+        'INDIRECTFIRE',
+        'SNIPER',
+        'EXPERIMENTAL',
+        'NEEDMOBILEBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'OVERLAYRADAR',
+        'DRAGBUILD',
+    },
+	
+    CollisionOffsetY = 1.25,
+	CollisionOffsetZ = 0.8,
+	
+    Defense = {
+        ArmorType = 'Experimental',
+		EconomyThreatLevel = 90,
+        Health = 41000,
+        MaxHealth = 41000,
+        RegenRate = 10,
+        SurfaceThreatLevel = 417.6,
+    },
+	
+    Description = '<LOC bal0403_desc>Experimental Sniper Bot (Sniper)',
+	
+    Display = {
+	
+        Abilities = {
+            '<LOC ability_amphibious>Amphibious',
+            '<LOC ability_deathaoe>Volatile',
+			'<LOC ability_radar>Radar',
+            '<LOC ability_personalstealth>Personal Stealth',
+        },
+		
+        AnimationActivate   = '/mods/BlackOpsUnleashed/units/BAL0403/BAL0403_AActivate01.sca',
+        AnimationOpen       = '/mods/BlackOpsUnleashed/units/BAL0403/BAL0403_ADeploy01.sca',
+        AnimationDeath      = { {Animation = '/mods/BlackOpsUnleashed/units/BAL0401/BAL0403_ADeath01.sca', Weight = 100 } },
+        AnimationWalk       = '/mods/BlackOpsUnleashed/units/BAL0403/BAL0403_AWalk01.sca',
+        AnimationWalkRate   = 2.5,
+        
+        Mesh = { IconFadeInZoom = 130, LODs = { { LODCutoff = 500, ShaderName = 'Aeon' } } },
+        
+        MovementEffects = {
+            Land = {
+                Footfall = {
+                    Bones = {
+                        {
+                            FootBone = 'L_FootFall01',
+                            HipBone = 'F_L_Leg_B01',
+                            KneeBone = 'F_L_Leg_B02',
+                            MaxFootFall = -0.25,
+                            Offset = {z = -1},
+                            StraightLegs = false,
+                            Type = 'FootFall01',
+                        },
+                        {
+                            FootBone = 'L_FootFall02',
+                            HipBone = 'B_L_Leg_B01',
+                            KneeBone = 'B_L_Leg_B02',
+                            MaxFootFall = -0.25,
+                            Offset = {z = -1},
+                            StraightLegs = false,
+                            Type = 'FootFall01',
+                        },
+                        {
+                            FootBone = 'R_FootFall01',
+                            HipBone = 'F_R_Leg_B01',
+                            KneeBone = 'F_R_Leg_B02',
+                            MaxFootFall = -0.25,
+                            Offset = {z = -1},
+                            StraightLegs = false,
+                            Type = 'FootFall01',
+                        },
+                        {
+                            FootBone = 'R_FootFall02',
+                            HipBone = 'B_R_Leg_B01',
+                            KneeBone = 'B_R_Leg_B02',
+                            MaxFootFall = -0.25,
+                            Offset = {z = -1},
+                            StraightLegs = false,
+                            Type = 'FootFall01',
+                        },
+                    },
+
+                    Damage = {
+                        Amount = 1000,
+                        DamageFriendly = false,
+                        Radius = 1,
+                        Type = 'ExperimentalFootfall',
+                    },
+                },
+            },
+        },
+
+        UniformScale = 0.225,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 300000,
+        BuildCostMass = 21000,
+        BuildTime = 15600,
+    },
+	
+    Footprint = {
+        SizeX = 4,
+        SizeZ = 4,
+    },
+	
+    General = {
+		CapCost = 8,
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Aeon',
+        Icon = 'land',
+        SelectionPriority = 5,
+        UnitName = '<LOC bal0403_name>Interrogater',
+    },
+	
+    Intel = {
+		FreeIntel = true,
+        
+		RadarRadius = 56,
+        VisionRadius = 40,
+		WaterVisionRadius = 20,
+        
+		RadarStealth = false,
+		SonarStealth = false,
+    },
+	
+    Interface = {
+        HelpText = 'Sniper Bot',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 2.35,
+    LifeBarSize = 4,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+            LAYER_Water = true,
+        },
+        DragCoefficient = 0.2,
+        LayerChangeOffsetHeight = -3,
+        MaxAcceleration = 0.45,
+        MaxSpeed = 2.4,
+        MaxSpeedReverse = 2.3,
+        MaxSteerForce = 0,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Amphibious',
+        SinkLower = true,
+		
+        SkirtOffsetX = -1.5,
+        SkirtOffsetZ = -0.5,
+		
+        SkirtSizeX = 6,
+        SkirtSizeZ = 6,
+		
+        TurnRadius = 2.5,
+        TurnRate = 20,
+		
+		WaterSpeedMultiplier = 1.25,
+    },
+	
+    SelectionCenterOffsetZ = -1.25,
+    SelectionSizeX = 3.1,
+    SelectionSizeZ = 3.1,
+    SelectionThickness = 0.3,
+	
+    SizeX = 2.0,
+    SizeY = 1.2,
+    SizeZ = 5.1,
+	
+    StrategicIconName = 'icon_seabed4_sniper',
+    StrategicIconSortPriority = 175,
+	
+    Veteran = {
+        Level1 = 30,
+        Level2 = 60,
+        Level3 = 90,
+        Level4 = 120,
+        Level5 = 150,
+    },
     
     Weapon = {
         {
-
             AutoInitiateAttackCommand = false,
-
         },
         {
 

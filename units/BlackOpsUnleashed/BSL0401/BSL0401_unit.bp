@@ -1,19 +1,243 @@
 UnitBlueprint {
-  Merge = true,
-  BlueprintId = "bsl0401",
+    Merge = true,
+    BlueprintId = "bsl0401",
 
-      Weapon = {
+    AI = {
+        GuardScanRadius = 50,
+
+        TargetBones = {	'BSL0401','Focus_Beam03_Emitter01','Beam_Point_Focus02'},
+		
+		AssistHeartbeatInterval = 0.5, -- def. 1, time in seconds between drone and carrier management heartbeats
+        DroneControlRange = 50, -- def. 70,  maximum distance the drone can stray from the carrier before being recalled (70 is the goliath's radar range)
+        DroneReturnRange = 25, -- def. control range / 2, radius at which returning drones will have command input and weapons re-enabled
+        AirMonitorRange = 30, -- def. (control range + 10) / 2, radius that the drone heartbeat will check for hostile gunships 
+    },
+	
+    Audio = {
+        Killed = Sound { Bank = 'XSL', Cue = 'XSL0401_Death', LodCutoff = 'UnitMove_LodCutoff'},
+        StartMove = Sound { Bank = 'XSL', Cue = 'XSL0401_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_Bot', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 16,
+            Level2 = 32,
+            Level3 = 48,
+            Level4 = 54,
+            Level5 = 70,
+        },
+    },
+	
+    BuildIconSortPriority = 30,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER4COMMANDER',
+        'SERAPHIM',
+		'AMPHIBIOUS',
+		'HOVER',
+        'MOBILE',
+        'LAND',
+        'MASSIVE',
+        'EXPERIMENTAL',
+        'NEEDMOBILEBUILD',
+        'DIRECTFIRE',
+        'PODSTAGINGPLATFORM',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'DRAGBUILD',
+    },
+	
+    CollisionOffsetY = -0.4,
+	
+    Defense = {
+        AirThreatLevel = 40,
+        
+        ArmorType = 'Experimental',
+        
+        Health = 52000,
+        MaxHealth = 52000,
+        
+        RegenRate = 16,
+        
+        SurfaceThreatLevel = 509,
+    },
+	
+    Description = '<LOC bsl0401_desc>Experimental Heavy Hover Tank (Assault)',
+	
+    Display = {
+        Abilities = {
+            '<LOC ability_hover>Hover',
+			'Multi-stage Phason Cascade Beam',
+			'7 x Attack Drones',
+            "<LOC ability_aa>Anti-Air",
+            '<LOC ability_deathaoe>Volatile',
+        },
+        
+		AnimationDeath = {
+            {
+                Animation = '/mods/BlackOpsUnleashed/units/BSL0401/BSL0401_aDeath01.sca',
+				AnimationRateMax = 4.0,
+                AnimationRateMin = 4.0,
+                Weight = 100,
+            },
+			{
+                Animation = '/mods/BlackOpsUnleashed/units/BSL0401/BSL0401_aDeath02.sca',
+				AnimationRateMax = 4.0,
+                AnimationRateMin = 4.0,
+                Weight = 100,
+            },
+			{
+                Animation = '/mods/BlackOpsUnleashed/units/BSL0401/BSL0401_aDeath03.sca',
+				AnimationRateMax = 4.0,
+                AnimationRateMin = 4.0,
+                Weight = 100,
+            },
+        },
+        
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 500,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    Scrolling = true,
+                    ShaderName = 'Seraphim',
+                },
+            },
+        },
+        
+        UniformScale = 0.5,
+    },
+	
+	DroneData = {
+        Drone1 = { Attachpoint = 'AttachSpecial01', UnitID = 'BSA0004'},
+		Drone2 = { Attachpoint = 'AttachSpecial02', UnitID = 'BSA0004'},
+		Drone3 = { Attachpoint = 'AttachSpecial03', UnitID = 'BSA0004'},
+		Drone4 = { Attachpoint = 'AttachSpecial04', UnitID = 'BSA0004'},
+		Drone5 = { Attachpoint = 'AttachSpecial05', UnitID = 'BSA0004'},
+		Drone6 = { Attachpoint = 'AttachSpecial06', UnitID = 'BSA0004'},
+		Drone7 = { Attachpoint = 'AttachSpecial07', UnitID = 'BSA0004'},
+    }, 
+	
+    Economy = {
+        BuildCostEnergy = 423000,
+        BuildCostMass = 18000,
+        BuildTime = 6500,
+		
+		BuildRate = 25, 	-- for drones
+    },
+	
+    General = {
+		CapCost = 5,
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Seraphim',
+        Icon = 'amph',
+        UnitName = '<LOC bsl0401_name>Yenzotha',
+
+		ToggleCaps = {
+            RULEUTC_SpecialToggle = true,
+            RULEUTC_WeaponToggle = true,
+        },
+        
+        OrderOverrides = {
+            RULEUTC_SpecialToggle = { bitmapId = 'dock', helpText = 'drone_recal' },
+            RULEUTC_WeaponToggle = { bitmapId = 'area-assist', helpText = 'drone_assist' },
+        }, 
+    },
+	
+    Intel = {
+        VisionRadius = 40,
+        WaterVisionRadius = 20,
+    },
+	
+    Interface = {
+        HelpText = 'Heavy Hover Tank',
+    },
+	
+    LifeBarHeight = 0.08,
+    LifeBarOffset = 2.3,
+    LifeBarSize = 3.0,
+	
+    Physics = {
+        BankingSlope = 0,
+		BackUpDistance = 4,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
+        DragCoefficient = 0.2,
+		Elevation = 1,
+        
+        MaxAcceleration = 1.5,
+        MaxBrake = 1.5,
+        MaxSpeed = 3.0,
+        MaxSpeedReverse = 3.0,
+        
+        MaxSteerForce = 10,
+        
+        MeshExtentsX = 2.75,
+        MeshExtentsY = 6.75,
+        MeshExtentsZ = 3,
+        
+        MinSpeedPercent = 0,
+        
+        MotionType = 'RULEUMT_Hover',
+        
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+        SkirtSizeX = 7,
+        SkirtSizeZ = 8,
+        
+        RotateBodyWhileMoving = true,
+        
+		TurnFacingRate = 40,
+        TurnRadius = 0,
+        TurnRate = 36,
+        
+		WobbleFactor = 0.03,
+        WobbleSpeed = 0.001,
+    },
+	
+    SelectionSizeX = 2.2,
+    SelectionSizeZ = 4.6,
+    SelectionThickness = 0.32,
+	
+    SizeX = 4.0,
+    SizeY = 1.9,
+    SizeZ = 8.0,
+	
+    StrategicIconName = 'icon_surface4_directfire',
+    StrategicIconSortPriority = 115,
+	
+    Transport = {
+        TransportClass = 4,
+    },
+	
+    Veteran = {
+        Level1 = 20,
+        Level2 = 40,
+        Level3 = 60,
+        Level4 = 80,
+        Level5 = 100,
+    },
+
+    Weapon = {
         {
-
-            AutoInitiateAttackCommand = false,
-
-        },
-	    {
-
             AutoInitiateAttackCommand = false,
         },
 	    {
-
+            AutoInitiateAttackCommand = false,
+        },
+	    {
             AutoInitiateAttackCommand = false,
         },
         {

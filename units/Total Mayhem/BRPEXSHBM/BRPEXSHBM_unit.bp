@@ -1,12 +1,340 @@
 UnitBlueprint {
-  Merge = true,
-  BlueprintId = "brpexshbm",
+    Merge = true,
+    BlueprintId = "brpexshbm",
 
-      Weapon = {
+    AI = {
+		GuardScanRadius = 115,
+		GuardReturnRadius = 130,
+        TargetBones = {'Arm01','Torso01','Left_Leg_B10','Left_Leg_B11','Object04','AttchPoint'},
+    },
+    
+    Audio = {
+        FootFallGeneric         = Sound { Bank = 'TM_UEFWEAPONS', Cue = 'UEFMAYHEMFOOTSTEPFX', LodCutoff = 'UnitMove_LodCutoff'},
+        FootFallGenericSeabed   = Sound { Bank = 'TM_UEFWEAPONS', Cue = 'UEFMAYHEMFOOTSTEPFX', LodCutoff = 'UnitMove_LodCutoff' },
+		DeathExplosion          = Sound {	Bank = 'Explosions',	Cue = 'UEF_Nuke_Impact',	LodCutoff = 'UnitMove_LodCutoff'},
+		Destroyed               = Sound {	Bank = 'Explosions',	Cue = 'UEF_Nuke_Impact',	LodCutoff = 'UnitMove_LodCutoff'},
+        Killed                  = Sound { Bank = 'TM_EXPLOSIONS', Cue = 'TMBIGROBOTDEATHFX', LodCutoff = 'UnitMove_LodCutoff'},
+        StartMove               = Sound { Bank = 'XSL', Cue = 'XSL0001_Move_Start', LodCutoff = 'UnitMove_LodCutoff' },
+        StopMove                = Sound { Bank = 'XSL', Cue = 'XSL0001_Move_Stop', LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection             = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_Commander', LodCutoff = 'UnitMove_LodCutoff' },
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 18,
+            Level2 = 36,
+            Level3 = 54,
+            Level4 = 72,
+            Level5 = 90,
+        },
+    },
+	
+	BuildIconSortPriority = 110,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER4COMMANDER',
+        'NEEDMOBILEBUILD',
+        'DRAGBUILD',
+        'SERAPHIM',
+		'MASSIVE',
+        'MOBILE',
+		'AMPHIBIOUS',
+		'SUBMERSIBLE',
+        'LAND',
+        'EXPERIMENTAL',
+		'INDIRECTFIRE',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+		'OVERLAYRADAR',
+		'OVERLAYOMNI',
+		'OVERLAYCOUNTERINTEL',
+    },
+	
+	CollisionOffsetY = 1.2,
+	
+    Defense = {
+
+        ArmorType = 'Normal',
+        Health = 98500,
+        MaxHealth = 98500,
+        RegenRate = 20,
+        
+        SurfaceThreatLevel = 1393.5,
+    },
+	
+    Description = '<LOC brpexshbm_desc>Experimental Heavy Artillery Support Bot (Artillery)',
+	
+    Display = {
+	
+        Abilities = {
+            'Massive',
+			'Artillery',
+            "<LOC ability_aa>Anti-Air",
+            '<LOC ability_amphibious>Amphibious',
+            '<LOC ability_personalstealth>Stealth Field',
+            'N/A',
+        },
+		
+        AnimationDeath = {
+            {
+                Animation = '/mods/TotalMayhem/units/BRPEXSHBM/BRPEXSHBM_Death1.sca',
+                AnimationRateMax = 1.27,
+                AnimationRateMin = 1.27,
+                Weight = 100,
+            },
+        },
+		
+        AnimationWalk = '/mods/TotalMayhem/units/BRPEXSHBM/BRPEXSHBM_Walk.sca',
+        AnimationWalkRate = 2.4,
+		
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+				{
+					AlbedoName = '/Units/xsl0001/xsl0001_Albedo.dds',
+					NormalsName = '/Units/xsl0001/xsl0001_NormalsTS.DDS',
+                    LODCutoff = 500,
+					LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+					Scrolling = true,
+                    ShaderName = 'Seraphim',
+					SpecularName = '/Units/xsl0001/xsl0001_SpecTeam.dds',
+                },
+            },
+        },
+        
+        MovementEffects = {
+            Land = {
+                Footfall = {
+                    Bones = {
+                        {
+                            FootBone = 'footfall01',
+                            HipBone = 'footfall01',
+                            KneeBone = 'footfall01',
+                            MaxFootFall = -0.25,
+                            Offset = {z = -1},
+                            StraightLegs = false,
+                            Tread = {
+                                TreadLifeTime = 1,
+                                TreadMarks = 'collosus_tread_02',
+                                TreadMarksSizeX = 0.0,
+                                TreadMarksSizeZ = 0.0,
+                                TreadOffset = {-0.95,0,.85},
+                            },
+                            Type = 'FootFall01',
+                        },
+                        {
+                            FootBone = 'footfall02',
+                            HipBone = 'footfall02',
+                            KneeBone = 'footfall02',
+                            MaxFootFall = -0.25,
+                            Offset = {z = -1},
+                            StraightLegs = false,
+                            Tread = {
+                                TreadLifeTime = 1,
+                                TreadMarks = 'collosus_tread_02',
+                                TreadMarksSizeX = 0.0,
+                                TreadMarksSizeZ = 0.0,
+                                TreadOffset = {-0.95,0,0.85},
+                            },
+                            Type = 'FootFall01',
+                        },
+                        {
+                            FootBone = 'footfall03',
+                            HipBone = 'footfall03',
+                            KneeBone = 'footfall03',
+                            MaxFootFall = -0.25,
+                            Offset = {z = -1},
+                            StraightLegs = false,
+                            Tread = {
+                                TreadLifeTime = 1,
+                                TreadMarks = 'collosus_tread_02',
+                                TreadMarksSizeX = 0.0,
+                                TreadMarksSizeZ = 0.0,
+                                TreadOffset = {-0.95,0,0.85},
+                            },
+                            Type = 'FootFall01',
+                        },
+                        {
+                            FootBone = 'footfall04',
+                            HipBone = 'footfall04',
+                            KneeBone = 'footfall04',
+                            MaxFootFall = -0.25,
+                            Offset = {z = -1},
+                            StraightLegs = false,
+                            Tread = {
+                                TreadLifeTime = 1,
+                                TreadMarks = 'collosus_tread_02',
+                                TreadMarksSizeX = 0.0,
+                                TreadMarksSizeZ = 0.0,
+                                TreadOffset = {-0.95,0,0.85},
+                            },
+                            Type = 'FootFall01',
+                        },
+                        {
+                            FootBone = 'footfall05',
+                            HipBone = 'footfall05',
+                            KneeBone = 'footfall05',
+                            MaxFootFall = -0.25,
+                            Offset = {z = -1},
+                            StraightLegs = false,
+                            Tread = {
+                                TreadLifeTime = 1,
+                                TreadMarks = 'collosus_tread_02',
+                                TreadMarksSizeX = 0.0,
+                                TreadMarksSizeZ = 0.0,
+                                TreadOffset = {-0.95,0,0.85},
+                            },
+                            Type = 'FootFall01',
+                        },
+                        {
+                            FootBone = 'footfall06',
+                            HipBone = 'footfall06',
+                            KneeBone = 'footfall06',
+                            MaxFootFall = -0.25,
+                            Offset = {z = -1},
+                            StraightLegs = false,
+                            Tread = {
+                                TreadLifeTime = 1,
+                                TreadMarks = 'collosus_tread_02',
+                                TreadMarksSizeX = 0.0,
+                                TreadMarksSizeZ = 0.0,
+                                TreadOffset = {-0.95,0,0.85},
+                            },
+                            Type = 'FootFall01',
+                        },
+                    },
+                    
+                    CameraShake = {
+                        Interval = 0.15,
+                        MaxShakeEpicenter = 0.2,
+                        MinShakeAtRadius = 0,
+                        Radius = 15,
+                    },
+                    
+                    Damage = {
+                        Amount = 2100,
+                        DamageFriendly = false,
+                        Radius = 1.2,
+                        Type = 'ExperimentalFootfall',
+                    },
+                },
+            },
+        },
+
+        UniformScale = 0.09,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 1080000,
+        BuildCostMass = 63500,
+        BuildTime = 18000,
+		
+		MaintenanceConsumptionPerSecondEnergy = 2150,
+    },
+    
+    Footprint = {
+        SizeX = 4,
+        SizeZ = 4,
+    },
+	
+    General = {
+		CapCost = 6,
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Seraphim',
+        Icon = 'amph',
+        UnitName = '<LOC brpexshbm_name>Thaez-Atha',
+    },
+	
+    Intel = {
+		RadarStealth = true,
+		RadarStealthFieldRadius = 32,
+		SonarStealth = true,
+		SonarStealthFieldRadius = 32,
+
+        OmniRadius = 0,
+		RadarRadius = 62,
+        VisionRadius = 40,
+		WaterVisionRadius = 24,
+    },
+	
+    Interface = {
+        HelpText = 'Ultra Heavy Artillery Support Bot',
+    },
+	
+    LifeBarHeight = 0.2,
+    LifeBarOffset = 2.75,
+    LifeBarSize = 8,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+        },
+        DragCoefficient = 0.2,
+
+        LayerChangeOffsetHeight = -2.4,
+		
+        MaxAcceleration = 0.6,
+        MaxBrake = 2.2,
+        MaxSpeed = 2.2,
+        MaxSpeedReverse = 2,
+		
+        MaxSteerForce = 10,
+		
+        MeshExtentsX = 2.5,
+        MeshExtentsY = 2.3,
+        MeshExtentsZ = 2.3,
+		
+        MinSpeedPercent = 0,
+		
+        SkirtOffsetX = -3.5,
+        SkirtOffsetZ = -3.5,
+		
+        SkirtSizeX = 10,
+        SkirtSizeZ = 9,
+		
+        MotionType = 'RULEUMT_Amphibious',
+		
+        TurnRadius = 5,
+        TurnRate = 22,
+    },
+	
+    SelectionSizeX = 6.5,
+    SelectionSizeZ = 6.5,
+    SelectionThickness = 0.3,
+	
+    SizeX = 4.2,
+    SizeY = 2.8,
+    SizeZ = 5.0,
+	
+    StrategicIconName = 'icon_seabed4_artillery',
+    StrategicIconSortPriority = 115,
+	
+    Veteran = {
+        Level1 = 40,
+        Level2 = 80,
+        Level3 = 120,
+        Level4 = 160,
+        Level5 = 200,
+    },
+	
+    Transport = {
+        TransportClass = 10,
+    },
+  
+
+    Weapon = {
         {
-
             AutoInitiateAttackCommand = false,
-
         },
         {
       
