@@ -1197,7 +1197,12 @@ PersonalHunkerShield = ClassShield(Shield) {
 
 }
 
-ProjectedShield = ClassShield(Shield){
+ProjectedShield = ClassShield(Shield) {
+
+    OnCreate = function(self, spec)
+        Shield.OnCreate(self, spec)
+        self.MyShieldType = 'Shield'
+    end,
 
     OnDamage =  function(self,instigator,amount,vector,type)
 	
