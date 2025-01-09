@@ -308,31 +308,6 @@ do
 					bp.Economy.BuildTime = 5000
 				end
 
-				-- all structures
-				-- QCE: Leaving this in here until we decide if we want to reset it to the default ranges instead of 9% least range
-				if cats.STRUCTURE then
-					-- the purpose of this alteration is to address the parity of T2 and T3 static defenses with respect to mobile units
-					-- I felt, and the numbers clearly show, that a tremendous range difference crept into the game as many 3rd party
-					-- point defenses were added - blame the UEF Ravager for setting a bad precedent with a range of 65 - others that
-					-- followed often went beyond that, which made even mobile artillery effectively pointless, and greatly encouraged
-					-- 'turtling' instead of mobile warfare
-
-					-- This mod addresses that by bringing any DIRECTFIRE structures back into some kind of normalacy and giving the
-					-- mobile units some chance of getting within firing range before being completely shellacked.
-					if cats.DIRECTFIRE then
-						if cats.EXPERIMENTAL then
-							--LOG("*AI DEBUG Modifying Weapon Range on EXPERIMENTAL "..bp.Description)
-
-							for ik, wep in bp.Weapon do
-								if wep.MaxRadius and wep.MaxRadius > 60 then
-									--LOG("*AI DEBUG MaxRadius goes from "..wep.MaxRadius.." to "..math.floor(wep.MaxRadius * 0.91))
-									wep.MaxRadius = math.floor(wep.MaxRadius * 0.91)
-								end
-							end
-						end
-					end
-				end
-
 				-- Adds DRAGBUILD to all Units
 				local CatsMisc = {
 					'DRAGBUILD',
