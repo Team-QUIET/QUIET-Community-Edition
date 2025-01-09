@@ -948,6 +948,11 @@ do
 			'wsl0308',   -- Otheeka
 			'url0305',   -- Crawfish
 			'uaa0206',   -- Abolisher
+			'srl0312',   -- Toxotai
+			'brpt3bt',   -- Hethaamah
+			'brot3bt',   -- Transoma
+			'sal0320',   -- Armillary
+			'wrl0309',   -- Python
 		};
 		for i, bp in pairs(unitPruningId) do
 			if all_blueprints.Unit[bp] then
