@@ -66,6 +66,7 @@ UnitBlueprint {
             MaxRadius = 90,	
             EffectiveRadius = 38,
             NotExclusive = true,
+            RenderFireClock = true,
             RateOfFire = 10/100,  
             RackFireTogether = false,
             RackRecoilDistance = 0,
