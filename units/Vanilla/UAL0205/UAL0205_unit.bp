@@ -52,7 +52,7 @@ UnitBlueprint {
 			
             Damage = 72,
             DamageFriendly = false,
-            DamageRadius = 3,
+            DamageRadius = 4,
             DamageType = 'Normal',
 			
             DetonatesAtTargetHeight = true,
@@ -80,11 +80,11 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_AntiAir',
 			
-            RateOfFire = 2,
+            RateOfFire = 20/10,
 			
             SlavedToBody = true,
 			
-            TargetCheckInterval = 0.3,
+            TargetCheckInterval = 0.5,
 			
             TargetPriorities = {
                 "(AIR * MOBILE * EXPERIMENTAL - BOMBER)",
@@ -110,7 +110,7 @@ UnitBlueprint {
 			
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 45,
+            TurretYawSpeed = 90,
 			
             Turreted = true,
         },

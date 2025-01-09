@@ -40,7 +40,7 @@ UnitBlueprint {
 			
             Damage = 40,
             DamageFriendly = false,
-            DamageRadius = 3,
+            DamageRadius = 4,
             DamageType = 'Normal',
 			
             DetonatesAtTargetHeight = true,
@@ -68,7 +68,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_AntiAir',
 			
-            RateOfFire = 2,		---- 144 DPS Air
+            RateOfFire = 20/10,		---- 144 DPS Air
 			
             TargetCheckInterval = 0.5,
 			
@@ -96,7 +96,7 @@ UnitBlueprint {
 			
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 60,
+            TurretYawSpeed = 90,
 			
             Turreted = true,
         },
