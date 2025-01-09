@@ -953,6 +953,7 @@ do
 			'brot3bt',   -- Transoma
 			'sal0320',   -- Armillary
 			'wrl0309',   -- Python
+			'xel0308',   -- Hermes
 		};
 		for i, bp in pairs(unitPruningId) do
 			if all_blueprints.Unit[bp] then
