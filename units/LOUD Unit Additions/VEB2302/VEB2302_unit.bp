@@ -1,0 +1,11 @@
+UnitBlueprint {
+  Merge = true,
+  BlueprintId = "veb2302",
+
+      Weapon = {
+        {
+            EnergyRequired = 1600,
+
+	  },
+  },
+}

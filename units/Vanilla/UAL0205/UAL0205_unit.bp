@@ -76,7 +76,7 @@ UnitBlueprint {
 			
             ProjectileLifetimeUsesMultiplier = 1.25,
 
-            RackSalvoChargeTime = 0.1,
+            RackSalvoChargeTime = 0, -- bad xfer, 0 in faf. 0.1 causes 1/2 ROF
 
             RangeCategory = 'UWRC_AntiAir',
 			
