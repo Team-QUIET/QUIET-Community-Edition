@@ -51,7 +51,7 @@ UnitBlueprint {
 			
 			ProjectileLifetimeUsesMultiplier = 1.25,
 			
-            RackSalvoChargeTime = 0.1,
+            RackSalvoChargeTime = 0, --drops DPS from 320 (advertised) to 270 if we use 0.1,
 
             RackSalvoReloadTime = 0.4,
 

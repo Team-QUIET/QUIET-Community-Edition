@@ -4,7 +4,7 @@ UnitBlueprint {
 
       Weapon = {
         {
-        
+            RackSalvoReloadTime = 0, --base has RSRLT, drops dps to 295 from advertised 320  
             RateOfFire = 10/10,
 
             TurretPitchRange = 60,

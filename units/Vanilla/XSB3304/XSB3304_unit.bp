@@ -60,7 +60,7 @@ UnitBlueprint {
             ProjectilesPerOnFire = 2,
 
             RackFireTogether = true,
-            RackSalvoChargeTime = 0.1,
+            RackSalvoChargeTime = 0, --0.1 induces onfire misses, 1/2 ROf...
             RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
             RackSalvoSize = 1,

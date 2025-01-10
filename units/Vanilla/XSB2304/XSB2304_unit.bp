@@ -25,7 +25,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 275,
+            Damage = 600, --ends up at 545 DPS.
             DamageRadius = 0,
             DamageType = 'Normal',
 			
