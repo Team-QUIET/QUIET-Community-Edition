@@ -169,7 +169,7 @@ UnitBlueprint {
             FiringTolerance = 0.5,
 			
             Label = 'AAGun',
-			LeadTarget = false,
+			LeadTarget = true,
 			
             MaxRadius = 40,
 			

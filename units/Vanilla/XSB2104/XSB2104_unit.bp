@@ -167,7 +167,7 @@ UnitBlueprint {
 
             Label = 'AAGun',
 
-			LeadTarget = false,
+			LeadTarget = true,
 
             MaxRadius = 40,
 
