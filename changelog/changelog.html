@@ -1,0 +1,4808 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-02-12 Wed 02:17 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>QUIET Change Log</title>
+<meta name="author" content="Various" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
+<style>pre.src {background-color: #303030; color: #e5e5e5;}</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">QUIET Change Log</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org93fd878">1.85</a>
+<ul>
+<li><a href="#orgd7ee121">General Changes</a></li>
+</ul>
+</li>
+<li><a href="#org6f7d8a0">1.84</a>
+<ul>
+<li><a href="#orgdd26ac2">General Changes</a></li>
+<li><a href="#org1762b4a">Comment:</a>
+<ul>
+<li><a href="#org104cada">T4 UEF Star Adder</a></li>
+<li><a href="#orgb80eecb">T3 UEF Juggernaut</a></li>
+<li><a href="#orgbe97c90">T4 UEF Dragonite</a></li>
+<li><a href="#orgf4eb68c">T4 UEF Fatboy</a></li>
+<li><a href="#org26f160c">T4 UEF Mayhem</a></li>
+<li><a href="#org356d8be">T4 UEF Bloodasp</a></li>
+<li><a href="#org8d7fcef">T4 UEF Goliath</a></li>
+<li><a href="#orgb9fef33">T4 Cybran Megalith</a></li>
+<li><a href="#org1be117d">T4 Cybran Storm Strider*</a></li>
+<li><a href="#orgc7d3cab">T4 Cybran Megaroach</a></li>
+<li><a href="#orgdf1d653">T4 Cybran Madbolo</a></li>
+<li><a href="#org0b92067">T4 Cybran Basilisk</a></li>
+<li><a href="#orgfce11cb">T4 Cybran Avalanche</a></li>
+<li><a href="#org706b00a">T4 Seraphim Yenah-lao</a></li>
+<li><a href="#org72f2f1e">T4 Seraphim Tha-Yath</a></li>
+<li><a href="#orgdb0ce5f">T4 Seraphim Athusil</a></li>
+<li><a href="#org773d4b9">T4 Seraphim Thaez-Atha</a></li>
+<li><a href="#org6256ec5">T4 Seraphim Yath-Us</a></li>
+<li><a href="#orgfe8f86c">T4 Seraphim Yenzotha</a></li>
+<li><a href="#org4084e73">T4 Seraphim Seth Ilhaas</a></li>
+<li><a href="#orge72fab3">T4 Seraphim Ythotha</a></li>
+<li><a href="#org05fd792">T4 Aeon Inquisitor</a></li>
+<li><a href="#org1281d98">T4 Aeon Genesis</a></li>
+<li><a href="#org35ad7d2">T4 Aeon Interrogater</a></li>
+<li><a href="#org49b7474">T4 Aeon Elias</a></li>
+<li><a href="#org390163c">T4 Aeon Absolution</a></li>
+<li><a href="#orgb128618">T3 Cybran Operative</a></li>
+<li><a href="#orga9a743b">T2 Cybran Deceiver</a></li>
+<li><a href="#orgbfd3e8a">T2 Cybran Hoptile</a></li>
+<li><a href="#org568bb0e">T2 Cybran Hippo</a></li>
+<li><a href="#org4df0c70">T3 Cybran Hailfire</a></li>
+<li><a href="#org0acfad9">T3 Cybran Triseptitron</a></li>
+<li><a href="#orgb96865d">T3 Cybran Mastodon</a></li>
+<li><a href="#org8923690">T2 UEF Mongoose</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org23b337d">1.83</a>
+<ul>
+<li><a href="#org93b6ac3">General Changes</a>
+<ul>
+<li><a href="#orga59087a">T3 Cybran Trilobyte</a></li>
+<li><a href="#org5c1600e">T3 Aeon Vindicator</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org6ca8eb5">1.82</a>
+<ul>
+<li><a href="#org8ceda9f">General Changes</a>
+<ul>
+<li><a href="#org9e78f71">T2 Aeon Hover Tank*</a></li>
+<li><a href="#org0654f62">T3 UEF Juggernaut*</a></li>
+<li><a href="#org445af60">T3 Cybran Dervish*</a></li>
+<li><a href="#org29967d5">T3 Seraphim Thaam-Thuum*</a></li>
+<li><a href="#org975423d">T1 Static Anti Air*</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org1d40b83">1.81</a>
+<ul>
+<li><a href="#org5fd8548">General Changes</a>
+<ul>
+<li><a href="#org184c63a">Terrain Shader Improvements (Better Graphics)</a></li>
+<li><a href="#org8d4ae15">Massive Performance Optimizations (Bigger Games)</a></li>
+<li><a href="#org199de3f">Enhanced Target Priorities (Smarter Targeting)</a></li>
+</ul>
+</li>
+<li><a href="#org2372c5a">Balance Changes</a>
+<ul>
+<li><a href="#orgf29edb6">T3 Snipers</a></li>
+<li><a href="#orge3e4a11">T2 Snipers</a></li>
+<li><a href="#org6670718">T2 Gunships</a></li>
+<li><a href="#orgedaeb34">T4 Seraphim Bomber</a></li>
+<li><a href="#orgaf40de2">Radar &amp; Sonar Buildings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgbc10389">1.80</a>
+<ul>
+<li><a href="#org6a593f7">General Changes</a></li>
+<li><a href="#orgbf9b37f">Balance Changes</a>
+<ul>
+<li><a href="#org80e15cc">T4 Aeon Absolution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org033a10e">1.79</a>
+<ul>
+<li><a href="#org601057d">General Changes</a></li>
+</ul>
+</li>
+<li><a href="#orgd230967">1.77</a>
+<ul>
+<li><a href="#orgb89592a">General Changes</a>
+<ul>
+<li><a href="#orgd13c34f">T3 Cybran Cruiser*</a></li>
+<li><a href="#orgbc80982">T3 Cybran Battleship*</a></li>
+<li><a href="#org275f19c">T3 Cybran Submarine*</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgf1970b2">1.76</a>
+<ul>
+<li><a href="#orge6f5e74">General Changes</a>
+<ul>
+<li><a href="#org7c747b4">T3 UEF TMD*</a></li>
+<li><a href="#org2b673e8">T3.5 Cybran Gunship*</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org95193fc">1.75</a>
+<ul>
+<li><a href="#orgdb4d0fb">General Changes</a></li>
+<li><a href="#org9e8145d">Changelog Comments:</a>
+<ul>
+<li><a href="#org5ad5057">T1 Mobile AA*</a></li>
+<li><a href="#org7cc58e4">T2 Seraphim Cruiser*</a></li>
+<li><a href="#org360ab53">T2 Aeon Submarine*</a></li>
+<li><a href="#org834232f">T3 SAM*</a></li>
+<li><a href="#org8f9d483">T3 Flak*</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgf9fd6e5">1.74</a>
+<ul>
+<li><a href="#orga179220">General Changes</a>
+<ul>
+<li><a href="#orgd680c21">T2 Cruisers*</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org853403b">1.73</a>
+<ul>
+<li><a href="#orgf58873d">T1 Sea</a></li>
+</ul>
+</li>
+<li><a href="#org94602e4">1.72</a>
+<ul>
+<li><a href="#org332ead1">General Changes</a></li>
+</ul>
+</li>
+<li><a href="#org95031de">1.71</a>
+<ul>
+<li><a href="#org2a834fb">General Changes</a>
+<ul>
+<li><a href="#orgb3abd09">T3 Torpedo Bomber*</a></li>
+<li><a href="#org7213fe9">T2 Torpedo Bomber*</a></li>
+<li><a href="#org3927b04">T2 Gunship*</a></li>
+<li><a href="#org366e5f4">T1 MAA*</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org84f5e18">1.70</a>
+<ul>
+<li><a href="#org9448fde">General Changes</a>
+<ul>
+<li><a href="#org8f24f22">T3 Air Superiority Fighter*</a></li>
+<li><a href="#org3a0f59c">T3.5 Air Penetration Fighter*</a></li>
+<li><a href="#orgc311917">T2 Blaze*</a></li>
+<li><a href="#org0bc109d">T3 Armilliary*</a></li>
+<li><a href="#orga925bc7">T1 Frigates*</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org9b19b6a">1.69</a>
+<ul>
+<li><a href="#org4b0d1fd">General Changes</a></li>
+</ul>
+</li>
+<li><a href="#orgfb690f2">1.67</a>
+<ul>
+<li><a href="#org8a3c307">General Changes</a></li>
+</ul>
+</li>
+<li><a href="#orgbd95a05">1.67</a>
+<ul>
+<li><a href="#orgddf8718">General Changes</a></li>
+</ul>
+</li>
+<li><a href="#org3c3f95d">1.66</a>
+<ul>
+<li><a href="#org48334e2">General Changes</a>
+<ul>
+<li><a href="#org34082fb">T3 Cybran Penetrator Gunship*</a></li>
+<li><a href="#org98bda60">T2 Fighters*</a></li>
+<li><a href="#org727e394">T4 Aeon Avernus*</a></li>
+<li><a href="#org2d65edc">T3 Seraphim Land*</a></li>
+<li><a href="#org469554f">T3 Cybran Land*</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orge6d9fe4">1.65</a>
+<ul>
+<li><a href="#orgeec5fbf">General Changes</a></li>
+<li><a href="#orgf46f41a">T3 Barrage Artillery (All Factions)</a></li>
+<li><a href="#org2f417b5">T2 UEF Shield Boat</a></li>
+<li><a href="#org4a7e5df">Seraphim T2 Land</a>
+<ul>
+<li><a href="#orge59879f">T2 Seraphim Iltha</a></li>
+<li><a href="#org7561419">T2 Seraphim Ilsavoh</a></li>
+</ul>
+</li>
+<li><a href="#org47fc6f8">Aeon T2 Land</a>
+<ul>
+<li><a href="#org2c6b0c7">T2 Aeon Sniper</a></li>
+<li><a href="#org8c243fa">T2 Aeon Blaze</a></li>
+<li><a href="#orgc294e08">T2 Aeon Obsidian</a></li>
+</ul>
+</li>
+<li><a href="#orgbbadda8"><b>Cybran T2 Land</b></a></li>
+</ul>
+</li>
+<li><a href="#org871f6ac">1.64</a>
+<ul>
+<li><a href="#org7c07d95">Dynamic LODs</a></li>
+<li><a href="#org7f36b17">Misc</a></li>
+</ul>
+</li>
+<li><a href="#org37ef345">1.63</a>
+<ul>
+<li><a href="#org8f21b92">Skirmishers</a>
+<ul>
+<li><a href="#orgc2c5137">T2 Aeon Sniper</a></li>
+<li><a href="#org50b6750">Mongoose</a></li>
+<li><a href="#org8a20e3d">Hoplite</a></li>
+</ul>
+</li>
+<li><a href="#orgd9e46ff">Energy Charge</a>
+<ul>
+<li><a href="#orgfed60bc">T3 Cybran Hailfire</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orge309cb8">1.62</a>
+<ul>
+<li><a href="#org6460c63">Energy Charge</a></li>
+</ul>
+</li>
+<li><a href="#org681573c">1.61</a>
+<ul>
+<li><a href="#org7936a23">ACU</a></li>
+<li><a href="#orgea097dd">Energy Charge</a></li>
+</ul>
+</li>
+<li><a href="#orgaa72458">1.60</a>
+<ul>
+<li><a href="#orge4e7652">Energy Charge</a></li>
+<li><a href="#orgf7fadfc">Reclaim</a></li>
+<li><a href="#org98094e9">Misc</a></li>
+</ul>
+</li>
+<li><a href="#org49e533b">1.59</a>
+<ul>
+<li><a href="#orgac9815e">ACU</a></li>
+<li><a href="#orgd992d61">Citadel Mk1</a></li>
+<li><a href="#org97ec3bd">Soul Ripper Mk1</a></li>
+<li><a href="#orgaa28fbd">Soul Ripper Mk2</a></li>
+</ul>
+</li>
+<li><a href="#orgcad190f">1.58</a>
+<ul>
+<li><a href="#orgf874b9b">T2 Gunships</a></li>
+<li><a href="#org2e46c21">ACU</a></li>
+<li><a href="#orgb80231c">ACU (Cybran)</a></li>
+<li><a href="#orga9f00c7">Misc</a></li>
+</ul>
+</li>
+<li><a href="#org3403d0b">1.57</a>
+<ul>
+<li><a href="#orgf29cfdd">Misc</a></li>
+</ul>
+</li>
+<li><a href="#org01eab66">1.56</a>
+<ul>
+<li><a href="#org6173696">ACU</a></li>
+<li><a href="#org0ca97b6">Misc</a></li>
+</ul>
+</li>
+<li><a href="#org702241c">1.55</a>
+<ul>
+<li><a href="#orgc139ff9">Misc</a></li>
+</ul>
+</li>
+<li><a href="#org2dacd07">1.54</a>
+<ul>
+<li><a href="#org80ff85f">Air</a></li>
+<li><a href="#org871609b">T4 UEF Star Adder</a></li>
+<li><a href="#org205ffd5">T2 MML</a></li>
+<li><a href="#org7453f19">T3 Cybran Leviathan</a></li>
+<li><a href="#org7cf565e">Misc</a></li>
+</ul>
+</li>
+<li><a href="#org399d556">1.53</a>
+<ul>
+<li><a href="#org253ca3c">T3 Pen Bombers</a></li>
+<li><a href="#org5217fb5">T3 Cybran Sub Hunter</a></li>
+</ul>
+</li>
+<li><a href="#org6433f74">1.52</a>
+<ul>
+<li><a href="#org53ac3bf">ACU Engineer Upgrades</a></li>
+<li><a href="#orgd26990f">Bombers</a></li>
+<li><a href="#org7a72103">T3 UEF Brimstone</a></li>
+</ul>
+</li>
+<li><a href="#org5623576">1.51</a>
+<ul>
+<li><a href="#org277c15b">Misc</a></li>
+</ul>
+</li>
+<li><a href="#orgeebd3e8">1.50</a>
+<ul>
+<li><a href="#org44b47ff">Transports</a></li>
+<li><a href="#orgd5fdaec">Misc</a></li>
+</ul>
+</li>
+<li><a href="#orgf2e7dd7">1.49</a>
+<ul>
+<li><a href="#orga679e10">Mavor &amp; RFSAC</a></li>
+<li><a href="#org7558be3">T2 Destroyers</a></li>
+<li><a href="#org108b58a">T3 UEF Juggernaut</a></li>
+<li><a href="#org82bab16">T3 Aeon Armillary</a></li>
+</ul>
+</li>
+<li><a href="#orgbcafef1">1.48</a>
+<ul>
+<li><a href="#org0f1b40b">Global</a></li>
+<li><a href="#orgfa1ec03">Seraphim ACU</a></li>
+<li><a href="#orgced9d58">T3 Mobile Artillery</a></li>
+<li><a href="#orgb6de1bd">Seraphim TMD</a></li>
+<li><a href="#orgf20d2ef">Misc</a></li>
+</ul>
+</li>
+<li><a href="#org121158c">1.47</a></li>
+<li><a href="#org0fd6893">1.46</a>
+<ul>
+<li><a href="#orgc323f26">Physics Reworks</a></li>
+<li><a href="#org82005ca">ACUs</a></li>
+<li><a href="#orgf82778a">T2 Destroyers</a></li>
+<li><a href="#org0e5377b">Misc</a></li>
+</ul>
+</li>
+<li><a href="#orgd327e16">1.45</a>
+<ul>
+<li><a href="#org5c1d345">Yaw Rate Increase</a></li>
+<li><a href="#orge25a3a0">T3 UEF Banisher</a></li>
+<li><a href="#org764ed2e">T3 Aeon Armillary</a></li>
+<li><a href="#orgefeba2b">T3 Cybran Hailfire</a></li>
+<li><a href="#org1d90d66">T4 Aeon Pillar of Prominence</a></li>
+<li><a href="#org74b5a92">T3 Cybran Dervish</a></li>
+<li><a href="#org0ca92ad">T3 UEF Bull</a></li>
+<li><a href="#orgb19a0b3">T3 Cybran Mastodon</a></li>
+<li><a href="#org4dd6d82">T1 Aeon Wavecrest</a></li>
+</ul>
+</li>
+<li><a href="#org7ebda0d">1.44</a>
+<ul>
+<li><a href="#org5327fcc">T1 Cybran Sky Slammer</a></li>
+<li><a href="#org4fcd79b">T1 Aeon Artos</a></li>
+<li><a href="#org6604bae">T1 Scouts</a></li>
+<li><a href="#orgc7ef89d">T4 Aeon Eliash</a></li>
+<li><a href="#orga19e522">T4 Cybran Vulture</a></li>
+<li><a href="#org9f923c0">Misc</a></li>
+</ul>
+</li>
+<li><a href="#orgc07f228">1.43</a>
+<ul>
+<li><a href="#org6c979bd">ACU</a></li>
+<li><a href="#orgd450f22">T1.5</a></li>
+<li><a href="#org28b327b">Misc</a></li>
+</ul>
+</li>
+<li><a href="#org819d304">1.42</a>
+<ul>
+<li><a href="#org7f65e62">T4 Cybran Madbolo</a></li>
+<li><a href="#org740e3a2">Misc</a></li>
+</ul>
+</li>
+<li><a href="#orgc4aeea3">1.41</a>
+<ul>
+<li><a href="#org82912fb">T2 Aeon Amphorak</a></li>
+<li><a href="#org385197c">T2 Cybran Hoplite</a></li>
+<li><a href="#org346a85e">Misc</a></li>
+</ul>
+</li>
+<li><a href="#orgc6abfeb">1.40</a>
+<ul>
+<li><a href="#org7ae4d0c">T2 UEF Mongoose</a></li>
+<li><a href="#org0a667ab">Overcharge</a></li>
+<li><a href="#orgb522bd1">T3 Barrage Artillery</a></li>
+<li><a href="#org5bd5f49">Misc</a></li>
+</ul>
+</li>
+<li><a href="#org6d96563">1.39</a>
+<ul>
+<li><a href="#org374020e">T1, T2, T3 Aeon Artillery</a></li>
+</ul>
+</li>
+<li><a href="#org9d9dea4">1.38</a>
+<ul>
+<li><a href="#org2cf55ef">Torpedo Defenses</a></li>
+</ul>
+</li>
+<li><a href="#orga9ea598">1.37</a>
+<ul>
+<li><a href="#org14c5381">T4 Aeon Avernus</a></li>
+<li><a href="#org4dae483">T4 Cybran Vulture</a></li>
+<li><a href="#org84d22c7">Misc</a></li>
+</ul>
+</li>
+<li><a href="#org8b35acd">1.36</a>
+<ul>
+<li><a href="#orgc1758ba">T4 Aeon Eliash</a></li>
+<li><a href="#org8711715">T3 Aeon Mobile Artillery</a></li>
+<li><a href="#org3514175">T4 Cybran Madbolo</a></li>
+<li><a href="#org69de2d4">T3 UEF Brimstone</a></li>
+<li><a href="#orgad201a0">T1 Mayor PD</a></li>
+</ul>
+</li>
+<li><a href="#org01e9f89">1.35</a>
+<ul>
+<li><a href="#orgbcc39f1">T2 MML</a></li>
+<li><a href="#org5f8d94b">T3 Mobile Artillery</a></li>
+<li><a href="#org71043b5">T3 Barrage Artillery (Accouts for Overspill now in balancing)</a></li>
+</ul>
+</li>
+<li><a href="#org70790de">1.34</a>
+<ul>
+<li><a href="#orgde88096">No More Roaming</a></li>
+<li><a href="#orgf0a1fa0">Shields</a></li>
+<li><a href="#org51a677f">T2 Cybran Hoplite</a></li>
+<li><a href="#orgd3ddd62">T2 UEF Mongoose</a></li>
+<li><a href="#orgbdff79e">T3 Pervical | Brick | Harbinger</a></li>
+<li><a href="#orgddf13ce">T3 UEF Pervical</a></li>
+<li><a href="#org17ed985">T3 Aeon Harbinger</a></li>
+<li><a href="#orgd4bfd93">T3 Seraphim Thau Battery</a></li>
+<li><a href="#org3c1a8e4">T4 Cybran Megalith</a></li>
+<li><a href="#orgee0beb9">Misc</a></li>
+</ul>
+</li>
+<li><a href="#orgffcd4d9">1.33</a>
+<ul>
+<li><a href="#orgf54df65">Weapon States</a></li>
+<li><a href="#orgcd13fb0">Misc</a></li>
+</ul>
+</li>
+<li><a href="#orgc64bbfa">1.32</a>
+<ul>
+<li><a href="#org565384e">Wraith</a></li>
+<li><a href="#org5e64cc4">Factories</a></li>
+<li><a href="#org1dfb17d">T2 Pillar Tank</a></li>
+<li><a href="#org782caff">Misc</a></li>
+</ul>
+</li>
+<li><a href="#org55a21d8">1.31</a>
+<ul>
+<li><a href="#org4f50f7d">Shield Overspill</a></li>
+<li><a href="#org4bd4ce8">T3 Seraphim Oteethka</a></li>
+<li><a href="#org2a84cb5">T2 Cybran Hoptile</a></li>
+</ul>
+</li>
+<li><a href="#org1c24133">1.30</a>
+<ul>
+<li><a href="#org9c5002b">T3 UEF Helltank</a>
+<ul>
+<li><a href="#org97bc4a1">Riot beams</a></li>
+<li><a href="#orgd31c13e">Rocket Salvo</a></li>
+<li><a href="#org2d885cf">Railgun</a></li>
+<li><a href="#org3146e16">Ravager</a></li>
+</ul>
+</li>
+<li><a href="#org8261924">T3 UEF Juggernant</a>
+<ul>
+<li><a href="#orgc9e0c04">Gauss cannon</a></li>
+<li><a href="#org1ea4e5b">Gatling 2x</a></li>
+</ul>
+</li>
+<li><a href="#org853a84d">T2 Cybran Mobile Bomb</a></li>
+<li><a href="#org2972b2f">T4 Cybran Basilisk</a></li>
+<li><a href="#orgb362dec">ACU Overcharge Rework:</a></li>
+<li><a href="#orged20355">Removed Units</a></li>
+</ul>
+</li>
+<li><a href="#org13ef4e2">1.29</a>
+<ul>
+<li><a href="#org6a5f757">T2 Seraphim Ilsavoh &amp; T2.5 Ilsavoh</a></li>
+<li><a href="#org310e8b9">T2 UEF Rommel</a></li>
+<li><a href="#orgd00a403">T4 Mothra</a></li>
+<li><a href="#org23f9b69">Unit Removal</a></li>
+<li><a href="#org5e6e530">T2 Cybran Ambush Unit</a></li>
+<li><a href="#orga582908">T2.5 UEF Land Unit</a></li>
+<li><a href="#org320f3a0">T1.5 Land Units</a></li>
+<li><a href="#org2451f26">Misc</a></li>
+</ul>
+</li>
+<li><a href="#orgcc28750">1.28</a>
+<ul>
+<li><a href="#org3f556e0">T1 Shard AA Boat</a></li>
+<li><a href="#org5da89a1">T2 Submarine Hunters</a></li>
+<li><a href="#org806936c">T2 Destroyers</a></li>
+<li><a href="#org9b1cbae">Air Overhaul</a></li>
+</ul>
+</li>
+<li><a href="#org0c5aca7">9/15/24</a>
+<ul>
+<li><a href="#org1082478">T3 Seraphim Submarine</a></li>
+<li><a href="#orge21bb9e">T2 Destroyers</a></li>
+<li><a href="#org0042251">T2 Torpedo Bombers</a></li>
+<li><a href="#org555742f">Bombers</a></li>
+<li><a href="#org5435548">T2 Static Flak &amp; T3 Static Flak</a></li>
+<li><a href="#org5dd36c1">T2 Cybran Immortal</a></li>
+<li><a href="#org69f1342">Misc</a></li>
+</ul>
+</li>
+<li><a href="#orgf8d5bd5">9/14/2024</a>
+<ul>
+<li><a href="#org1f7ec0e">Aeon T2 Sniper</a></li>
+<li><a href="#orgc1b4237">T2 Mobile Flak</a></li>
+<li><a href="#org58ef09f">T3 Sniper</a>
+<ul>
+<li><a href="#orga55c478">Aeon:</a></li>
+<li><a href="#org87235c3">Seraphim:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgff5d9bf">9/12/2024</a>
+<ul>
+<li><a href="#orgeec0b11">UEF T4 Goliath</a>
+<ul>
+<li><a href="#org869ec40">Missile Barrage:</a></li>
+<li><a href="#orgb68504a">Flamethrower Arms:</a></li>
+<li><a href="#org93af55a">Death Nuke:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgfee8efc">9/10/2024</a></li>
+<li><a href="#org4e34f9a">1.22</a>
+<ul>
+<li><a href="#org0e1b778">Reclaim</a></li>
+<li><a href="#org32ca358">T1 &amp; T2 Land</a></li>
+<li><a href="#orgea8afaa">T3 Barrage Artillery</a>
+<ul>
+<li><a href="#org1fc1e5f">Aeon:</a></li>
+<li><a href="#orge60abb9">UEF:</a></li>
+<li><a href="#org812ff48">Cybran:</a></li>
+<li><a href="#orgc5c6de2">Seraphim:</a></li>
+</ul>
+</li>
+<li><a href="#org5041717">T4 Eliash Medium Rapid Assault Bot</a></li>
+</ul>
+</li>
+<li><a href="#orgebdb270">1.02/1.021</a>
+<ul>
+<li><a href="#org9fd9703">T3 Triseptitron</a></li>
+<li><a href="#orgbc84ac8">T4 Galactic Colossus (GC) / T4 Universal Colossus (UC)</a></li>
+<li><a href="#org6a951fb">T4 Eliash Medium Rapid Assault Bot</a>
+<ul>
+<li><a href="#orgdfb952a">Main Weapon</a></li>
+</ul>
+</li>
+<li><a href="#orgcfac0b6">T2 Aeon Sniper</a></li>
+</ul>
+</li>
+<li><a href="#org07368e1">1.0.1</a></li>
+<li><a href="#org22a04d3">1.0.0</a>
+<ul>
+<li><a href="#orga0efd72">Reclaim Changes</a></li>
+<li><a href="#org4722a7a">T3 Penetration Bombers</a>
+<ul>
+<li><a href="#org63de39c">Aeon:</a></li>
+<li><a href="#org6cddda9">UEF:</a></li>
+<li><a href="#orgb8a6ee2">Cybran:</a></li>
+<li><a href="#orgf97ed6e">Seraphim:</a></li>
+</ul>
+</li>
+<li><a href="#org723b7bf">T3 Static Artillery</a></li>
+<li><a href="#org51b2fbb">T2 Aeon Sniper</a></li>
+<li><a href="#org860154a">T3 Mobile Sensor Arrays</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org93fd878" class="outline-2">
+<h2 id="org93fd878">1.85</h2>
+<div class="outline-text-2" id="text-org93fd878">
+<ul class="org-ul">
+<li>2025-01-09</li>
+</ul>
+</div>
+<div id="outline-container-orgd7ee121" class="outline-3">
+<h3 id="orgd7ee121">General Changes</h3>
+<div class="outline-text-3" id="text-orgd7ee121">
+<ul class="org-ul">
+<li>Removed 9% Decrease in Range from Experimental PD</li>
+<li>Removed Hermes, Python, Armillary, Toxotai, Hethaamah, Transoma</li>
+<li>Fixed T2 Flak having 1 Less Damage Radius then Designed</li>
+<li>T3 UEF Banisher no longer can target High Altitude Air (ASF &amp; Strats)</li>
+<li>New Ahwassa Bomb Effects &amp; Damage Module (Initial Damage then once the
+effect fully charges up the rest of the damage is applied)</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6f7d8a0" class="outline-2">
+<h2 id="org6f7d8a0">1.84</h2>
+<div class="outline-text-2" id="text-org6f7d8a0">
+<ul class="org-ul">
+<li>2025-01-08</li>
+</ul>
+</div>
+<div id="outline-container-orgdd26ac2" class="outline-3">
+<h3 id="orgdd26ac2">General Changes</h3>
+<div class="outline-text-3" id="text-orgdd26ac2">
+<ul class="org-ul">
+<li>Removed MaintenanceCostEnergyPerSecond from T2 and T3 Sniper as It
+wasn't needed to balance the unit and It was not working as intended.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1762b4a" class="outline-3">
+<h3 id="org1762b4a">Comment:</h3>
+<div class="outline-text-3" id="text-org1762b4a">
+<p>
+Energy Review was done in order to account more accurately for Stealth /
+Mobile Stealth as It should be treated in a similar way to Mobile
+Shields &amp; Personal Shields. <code>The Following Changes were made:</code>
+</p>
+</div>
+<div id="outline-container-org104cada" class="outline-4">
+<h4 id="org104cada">T4 UEF Star Adder</h4>
+<div class="outline-text-4" id="text-org104cada">
+<ul class="org-ul">
+<li>MaintenanceCostEnergyPerSecond: 80 -&gt; 1250</li>
+<li>Radar Radius: 64 -&gt; 42</li>
+<li>RegenRate: 12 -&gt; 6 - Speed: 3.5 -&gt; 2.8</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb80eecb" class="outline-4">
+<h4 id="orgb80eecb">T3 UEF Juggernaut</h4>
+<div class="outline-text-4" id="text-orgb80eecb">
+<ul class="org-ul">
+<li>MaintenanceCostEnergyPerSecond: 20 -&gt; 95</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbe97c90" class="outline-4">
+<h4 id="orgbe97c90">T4 UEF Dragonite</h4>
+<div class="outline-text-4" id="text-orgbe97c90">
+<ul class="org-ul">
+<li>MaintenanceCostEnergyPerSecond: 212 -&gt; 850</li>
+<li>Veterancy Kills Required Increased</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf4eb68c" class="outline-4">
+<h4 id="orgf4eb68c">T4 UEF Fatboy</h4>
+<div class="outline-text-4" id="text-orgf4eb68c">
+<ul class="org-ul">
+<li>MaintenanceCostEnergyPerSecond: 400 -&gt; 950</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org26f160c" class="outline-4">
+<h4 id="org26f160c">T4 UEF Mayhem</h4>
+<div class="outline-text-4" id="text-org26f160c">
+<ul class="org-ul">
+<li>RegenRate: 40 -&gt; 15</li>
+<li>Radar Radius: 96 -&gt; 64</li>
+<li>Sonar Radius: 60 -&gt; 64</li>
+<li>Omni Radar Removed</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org356d8be" class="outline-4">
+<h4 id="org356d8be">T4 UEF Bloodasp</h4>
+<div class="outline-text-4" id="text-org356d8be">
+<ul class="org-ul">
+<li>RegenRate: 14 -&gt; 7</li>
+<li>Speed: 3.0 -&gt; 2.9</li>
+<li>Veterancy Kills Required Increased</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8d7fcef" class="outline-4">
+<h4 id="org8d7fcef">T4 UEF Goliath</h4>
+<div class="outline-text-4" id="text-org8d7fcef">
+<ul class="org-ul">
+<li>RegenRate: 30 -&gt; 20</li>
+<li>Radar Radius: 96 -&gt; 64</li>
+<li>Max Acceleration: 2.8 -&gt; 1.6</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb9fef33" class="outline-4">
+<h4 id="orgb9fef33">T4 Cybran Megalith</h4>
+<div class="outline-text-4" id="text-orgb9fef33">
+<ul class="org-ul">
+<li>BuildRate: 180 -&gt; 200</li>
+<li>Radar Radius: 96 -&gt; 56</li>
+<li>Sonar Radius: 60 -&gt; 56</li>
+<li>Max Acceleration: 2.4 -&gt; 1.2</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1be117d" class="outline-4">
+<h4 id="org1be117d">T4 Cybran Storm Strider*</h4>
+<div class="outline-text-4" id="text-org1be117d">
+<ul class="org-ul">
+<li>Anti Air Damage: 48 -&gt; 24 (Had 480 DPS in AA but now</li>
+</ul>
+<p>
+has 240)
+</p>
+<ul class="org-ul">
+<li>Unit Cap: 8 -&gt; 10</li>
+<li>Rader Radius: 96 -&gt; 56</li>
+<li>Stealth Removed</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc7d3cab" class="outline-4">
+<h4 id="orgc7d3cab">T4 Cybran Megaroach</h4>
+<div class="outline-text-4" id="text-orgc7d3cab">
+<ul class="org-ul">
+<li>Anti Air Damage: 50 -&gt; 25 (Had 800 DPS</li>
+</ul>
+<p>
+in AA but now has 400)
+</p>
+<ul class="org-ul">
+<li>RegenRate: 48 -&gt; 24</li>
+<li>Omni Radar Removed</li>
+<li>Stealth Removed</li>
+<li>Radar Radius: 96 -&gt; 56</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdf1d653" class="outline-4">
+<h4 id="orgdf1d653">T4 Cybran Madbolo</h4>
+<div class="outline-text-4" id="text-orgdf1d653">
+<ul class="org-ul">
+<li>Fixed Rate Of Rate</li>
+<li>Rocket Barrage Damage: 375 -&gt; 300</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0b92067" class="outline-4">
+<h4 id="org0b92067">T4 Cybran Basilisk</h4>
+<div class="outline-text-4" id="text-org0b92067">
+<ul class="org-ul">
+<li>Unit Cap: 7 -&gt; 12</li>
+<li><b>Anti Air</b>
+<code>This Unit now had 2.2k DPS in AA but now has 600 DPS in AA</code></li>
+<li>DoT Pulse: 5 -&gt; 3</li>
+<li>MuzzleSalvoSize: 6 -&gt; 4</li>
+<li>Rate of Fire: 0.6 -&gt; 0.5</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfce11cb" class="outline-4">
+<h4 id="orgfce11cb">T4 Cybran Avalanche</h4>
+<div class="outline-text-4" id="text-orgfce11cb">
+<ul class="org-ul">
+<li>Max Speed: 2.4 -&gt; 1.8 (This thing was as fast as a</li>
+</ul>
+<p>
+Basilisk for context)
+</p>
+<ul class="org-ul">
+<li>Radar Radius: 96 -&gt; 56</li>
+<li>RegenRate: 40 -&gt; 20</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org706b00a" class="outline-4">
+<h4 id="org706b00a">T4 Seraphim Yenah-lao</h4>
+<div class="outline-text-4" id="text-org706b00a">
+<ul class="org-ul">
+<li>Max Speed: 3.0 -&gt; 2.6</li>
+<li>Regen Rate: 15 -&gt; 10</li>
+<li>Stealth Removed</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org72f2f1e" class="outline-4">
+<h4 id="org72f2f1e">T4 Seraphim Tha-Yath</h4>
+<div class="outline-text-4" id="text-org72f2f1e">
+<ul class="org-ul">
+<li>Cost Mass: 10000 -&gt; 12500</li>
+<li>Cost Energy: 80000 -&gt; 90000</li>
+<li>Max Speed: 3.3 -&gt; 3.0</li>
+<li>Stealth Removed</li>
+<li>Free Intel Removed <b>Anti Air</b></li>
+<li>Anti Air Damage: 72 -&gt; 102</li>
+<li>DamageRadius: 2.4 -&gt; 4</li>
+<li>Max Radius: 40 -&gt; 60</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdb0ce5f" class="outline-4">
+<h4 id="orgdb0ce5f">T4 Seraphim Athusil</h4>
+<div class="outline-text-4" id="text-orgdb0ce5f">
+<ul class="org-ul">
+<li>Max Speed: 2.9 -&gt; 2.6</li>
+<li>Regen Rate: 20 -&gt; 10</li>
+<li>Radar Removed</li>
+<li>Stealth Removed</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org773d4b9" class="outline-4">
+<h4 id="org773d4b9">T4 Seraphim Thaez-Atha</h4>
+<div class="outline-text-4" id="text-org773d4b9">
+<ul class="org-ul">
+<li>MaintenanceCostEnergyPerSecond: 900 -&gt; 2150 (Due to Stealth Field &amp; Personal Stealth)</li>
+<li>Radar Radius: 96 -&gt; 64</li>
+<li>Omni Removed</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org6256ec5" class="outline-4">
+<h4 id="org6256ec5">T4 Seraphim Yath-Us</h4>
+<div class="outline-text-4" id="text-org6256ec5">
+<ul class="org-ul">
+<li>Max Speed: 3.4 -&gt; 3.0</li>
+<li>Stealth Removed</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfe8f86c" class="outline-4">
+<h4 id="orgfe8f86c">T4 Seraphim Yenzotha</h4>
+<div class="outline-text-4" id="text-orgfe8f86c">
+<ul class="org-ul">
+<li>Max Speed: 3.3 -&gt; 3.0</li>
+<li>Max Acceleration: 1.0 -&gt; 1.5</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4084e73" class="outline-4">
+<h4 id="org4084e73">T4 Seraphim Seth Ilhaas</h4>
+<div class="outline-text-4" id="text-org4084e73">
+<ul class="org-ul">
+<li>Radar Radius: 64 -&gt; 56</li>
+<li>Max Speed: 3.4 -&gt; 3.0</li>
+<li>Max Acceleration: 1.0 -&gt; 1.5</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge72fab3" class="outline-4">
+<h4 id="orge72fab3">T4 Seraphim Ythotha</h4>
+<div class="outline-text-4" id="text-orge72fab3">
+<ul class="org-ul">
+<li>Max Speed: 2.6 -&gt; 2.4</li>
+<li>Max Acceleration: 1.6 -&gt; 1.2</li>
+<li>Regen Rate: 20 -&gt; 10</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org05fd792" class="outline-4">
+<h4 id="org05fd792">T4 Aeon Inquisitor</h4>
+<div class="outline-text-4" id="text-org05fd792">
+<ul class="org-ul">
+<li>Max Acceleration: 0.35 -&gt; 1.3</li>
+<li>Radar Added (56 Radius)</li>
+<li>Stealth Removed</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1281d98" class="outline-4">
+<h4 id="org1281d98">T4 Aeon Genesis</h4>
+<div class="outline-text-4" id="text-org1281d98">
+<ul class="org-ul">
+<li>Cost Mass: 19000 -&gt; 26000</li>
+<li>Cost Energy: 385000 -&gt; 435000</li>
+<li>Max Speed: 3.3 -&gt; 2.6</li>
+<li>Max Acceleration: 1.1 -&gt; 1.3</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org35ad7d2" class="outline-4">
+<h4 id="org35ad7d2">T4 Aeon Interrogater</h4>
+<div class="outline-text-4" id="text-org35ad7d2">
+<ul class="org-ul">
+<li>Stealth Removed</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org49b7474" class="outline-4">
+<h4 id="org49b7474">T4 Aeon Elias</h4>
+<div class="outline-text-4" id="text-org49b7474">
+<ul class="org-ul">
+<li>Unit Cap: 4 -&gt; 6</li>
+<li>Max Speed: 2.9 -&gt; 2.6</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org390163c" class="outline-4">
+<h4 id="org390163c">T4 Aeon Absolution</h4>
+<div class="outline-text-4" id="text-org390163c">
+<ul class="org-ul">
+<li>Max Health: 36000 -&gt; 23000</li>
+<li>Regen Rate: 12 -&gt; 6</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb128618" class="outline-4">
+<h4 id="orgb128618">T3 Cybran Operative</h4>
+<div class="outline-text-4" id="text-orgb128618">
+<ul class="org-ul">
+<li>Unit Cap: 1 -&gt; 3</li>
+<li>MaintenanceCostEnergyPerSecond: 150 -&gt; 465</li>
+<li>RadarStealthFieldRadius: 28 -&gt; 24</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga9a743b" class="outline-4">
+<h4 id="orga9a743b">T2 Cybran Deceiver</h4>
+<div class="outline-text-4" id="text-orga9a743b">
+<ul class="org-ul">
+<li>Unit Cap: 1 -&gt; 2</li>
+<li>MaintenanceCostEnergyPerSecond: 40 -&gt; 190</li>
+<li>RadarStealthFieldRadius: 20 -&gt; 16</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgbfd3e8a" class="outline-4">
+<h4 id="orgbfd3e8a">T2 Cybran Hoptile</h4>
+<div class="outline-text-4" id="text-orgbfd3e8a">
+<ul class="org-ul">
+<li>FiringRandomnessWhileMoving: 0.2 -&gt; 0.45</li>
+<li>Max Radius: 37 -&gt; 36</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org568bb0e" class="outline-4">
+<h4 id="org568bb0e">T2 Cybran Hippo</h4>
+<div class="outline-text-4" id="text-org568bb0e">
+<ul class="org-ul">
+<li>Damage Radius: 1.42 -&gt; 1.25</li>
+<li>Damage: 25 -&gt; 20</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org4df0c70" class="outline-4">
+<h4 id="org4df0c70">T3 Cybran Hailfire</h4>
+<div class="outline-text-4" id="text-org4df0c70">
+<ul class="org-ul">
+<li>FiringRandomnessWhileMoving: 0.5 -&gt; 1.25</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0acfad9" class="outline-4">
+<h4 id="org0acfad9">T3 Cybran Triseptitron</h4>
+<div class="outline-text-4" id="text-org0acfad9">
+<ul class="org-ul">
+<li>Damage: 215 -&gt; 185</li>
+<li>Damage Radius: 2.5 -&gt; 2.25</li>
+<li>Added FiringRandomnessWhileMoving: 5.5</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb96865d" class="outline-4">
+<h4 id="orgb96865d">T3 Cybran Mastodon</h4>
+<div class="outline-text-4" id="text-orgb96865d">
+<ul class="org-ul">
+<li>FiringRandomnessWhileMoving: 0 -&gt; 1.5</li>
+<li>Damage: 55 -&gt; 35</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8923690" class="outline-4">
+<h4 id="org8923690">T2 UEF Mongoose</h4>
+<div class="outline-text-4" id="text-org8923690">
+<ul class="org-ul">
+<li>Damage: 15 -&gt; 12 (Gatling Gun)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org23b337d" class="outline-2">
+<h2 id="org23b337d">1.83</h2>
+<div class="outline-text-2" id="text-org23b337d">
+<ul class="org-ul">
+<li>2025-01-05</li>
+</ul>
+</div>
+<div id="outline-container-org93b6ac3" class="outline-3">
+<h3 id="org93b6ac3">General Changes</h3>
+<div class="outline-text-3" id="text-org93b6ac3">
+<ul class="org-ul">
+<li>Removed T2 Aeon Gunship Abolisher</li>
+<li>Fix Seraphim T3 Flak only firing 1 projectile (doing half damage)
+instead of 2 projectiles</li>
+</ul>
+</div>
+
+<div id="outline-container-orga59087a" class="outline-4">
+<h4 id="orga59087a">T3 Cybran Trilobyte</h4>
+<div class="outline-text-4" id="text-orga59087a">
+<ul class="org-ul">
+<li>Damage: 55 -&gt; 48</li>
+<li>Health: 2500 -&gt; 1800</li>
+<li>Muzzle Velocity: 88 -&gt; 60</li>
+<li>Muzzle Velocity Randomness: 5 -&gt; 0</li>
+<li>TurretYawSpeed: 115 -&gt; 180</li>
+<li>Radar Radius: 72 -&gt; 52</li>
+<li>Max Speed: 2.9 -&gt; 2.6</li>
+<li>Energy Maintenance: 0 -&gt; 80</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5c1600e" class="outline-4">
+<h4 id="org5c1600e">T3 Aeon Vindicator</h4>
+<div class="outline-text-4" id="text-org5c1600e">
+<ul class="org-ul">
+<li><b>Shield Upgrade</b>
+<ul class="org-ul">
+<li>Shield Recharge Time: 28 -&gt; 38</li>
+<li>Shield Size: 16 -&gt; 14</li>
+<li>Buildtime: 1000 -&gt; 1250</li>
+<li>Cost Mass: 285 -&gt; 355</li>
+<li>Cost Energy: 2850 -&gt; 4150</li>
+</ul></li>
+<li>Damage: (Serpentine Missile) 75 -&gt; 50</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6ca8eb5" class="outline-2">
+<h2 id="org6ca8eb5">1.82</h2>
+<div class="outline-text-2" id="text-org6ca8eb5">
+<ul class="org-ul">
+<li>2025-01-04</li>
+</ul>
+</div>
+<div id="outline-container-org8ceda9f" class="outline-3">
+<h3 id="org8ceda9f">General Changes</h3>
+<div class="outline-text-3" id="text-org8ceda9f">
+<ul class="org-ul">
+<li><b>ACU Rework</b>
+<ul class="org-ul">
+<li>All ACU Upgrades have been completely reworked to be more consistent
+with the rest of the game. Specifically, the ACUs should Engineering
+should be more inline when tech is becoming available (i.e
+Engineering Upgrades are available earlier). ACU Weapons are pushed
+back towards Late T2 &amp; Early T3 into Late T4. You will no longer be
+able to easily rush ACU Weapon &amp; Shield Upgrades to shut down T1
+Aggression.</li>
+
+<li>Bubble Shield Upgrade receives a significant nerf to it's recharge
+time from 14 to 28 seconds.</li>
+<li><a href="https://docs.google.com/spreadsheets/d/13l-XlQKuCe39zEOENO-_f-EQvyrGwvsc-o7CVcyXe2k/edit?usp=sharing">https://docs.google.com/spreadsheets/d/13l-XlQKuCe39zEOENO-_f-EQvyrGwvsc-o7CVcyXe2k/edit?usp=sharing</a>
+, This link provides a visual representation of the changes to the
+ACU upgrades.</li>
+<li>All ACUs have had their health significantly decreased by a measure
+of generally 9 - 10k depending on race.</li>
+<li>All ACUs Overcharge Energy Required from 4500 -&gt; 7500 (To be
+activated in-general i.e can't overcharge at all unless you have
+7500 energy or more)</li>
+</ul></li>
+</ul>
+</div>
+
+<div id="outline-container-org9e78f71" class="outline-4">
+<h4 id="org9e78f71">T2 Aeon Hover Tank*</h4>
+<div class="outline-text-4" id="text-org9e78f71">
+<ul class="org-ul">
+<li>Health: 1000 -&gt; 750</li>
+<li>Mass Cost: 220 -&gt; 260</li>
+<li>Energy Cost: 2150 -&gt; 2400</li>
+<li>Vision: 20 -&gt; 18</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0654f62" class="outline-4">
+<h4 id="org0654f62">T3 UEF Juggernaut*</h4>
+<div class="outline-text-4" id="text-org0654f62">
+<ul class="org-ul">
+<li>Mass Cost: 3250 -&gt; 3125</li>
+<li>Energy Cost: 36000 -&gt; 31500</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org445af60" class="outline-4">
+<h4 id="org445af60">T3 Cybran Dervish*</h4>
+<div class="outline-text-4" id="text-org445af60">
+<ul class="org-ul">
+<li>Mass Cost: 3100 -&gt; 3250</li>
+<li>Energy Cost: 33500 -&gt; 36000</li>
+<li>MaxAcceleration: 2.2 -&gt; 1.2 (Matches all other T3.5)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org29967d5" class="outline-4">
+<h4 id="org29967d5">T3 Seraphim Thaam-Thuum*</h4>
+<div class="outline-text-4" id="text-org29967d5">
+<ul class="org-ul">
+<li>Mass Cost: 3100 -&gt; 3300</li>
+<li>Energy Cost: 31500 -&gt; 36000</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org975423d" class="outline-4">
+<h4 id="org975423d">T1 Static Anti Air*</h4>
+<div class="outline-text-4" id="text-org975423d">
+<ul class="org-ul">
+<li>Health: 1400 -&gt; 800</li>
+<li>Weapon Firing between all factions has been diversified (meaning
+they all have bit different DPS and Stats)</li>
+<li>Weapon Damage was significantly reduced in exchange for mobility</li>
+<li>TurretYawRate: 90 -&gt; 180</li>
+<li>TurretPitchRate: 60 -&gt; 45</li>
+<li>TurretYawRange: 360 -&gt; 180</li>
+<li>Mass Cost: 200 -&gt; 150</li>
+<li>Energy Cost: 2000 -&gt; 1500</li>
+<li>Fix Target Priorities so they are actuall targetting the right units
+(i.e bombers, gunships, transports, then fighters)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1d40b83" class="outline-2">
+<h2 id="org1d40b83">1.81</h2>
+<div class="outline-text-2" id="text-org1d40b83">
+<ul class="org-ul">
+<li>2025-01-02</li>
+</ul>
+</div>
+<div id="outline-container-org5fd8548" class="outline-3">
+<h3 id="org5fd8548">General Changes</h3>
+<div class="outline-text-3" id="text-org5fd8548">
+</div>
+<div id="outline-container-org184c63a" class="outline-4">
+<h4 id="org184c63a">Terrain Shader Improvements (Better Graphics)</h4>
+<div class="outline-text-4" id="text-org184c63a">
+<p>
+The new, better way of calculating the water absorption is now available for all
+terrain shaders. The only requirement is that the light multiplier is set to
+more than 2.1.
+</p>
+
+<p>
+Decals now use PBR light calculations if the terrain shader uses it, making them
+more consistent with the ground they are on.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8d4ae15" class="outline-4">
+<h4 id="org8d4ae15">Massive Performance Optimizations (Bigger Games)</h4>
+<div class="outline-text-4" id="text-org8d4ae15">
+</div>
+<ul class="org-ul">
+<li><a id="org2112540"></a>Class Optimization<br />
+<div class="outline-text-5" id="text-org2112540">
+<p>
+(Credits to FAF for this amazing work!)
+</p>
+
+<p>
+Significant Performance Optimizations have been done to the Class.lua. We
+properly pre-allocate the table for units, shields, weapons, projectiles, damage
+instances, effects, decals and all the other parts of this game.
+</p>
+
+<p>
+We now properly pre-allocate them all, drastically reducing the frequency at
+which the engine ends up calling the resize function.
+</p>
+
+<p>
+<b>Throughout the entire game you can expect 10% to 30% more performance on
+average, depending on what is happening.</b>
+</p>
+</div>
+</li>
+
+<li><a id="orgaa13dd9"></a>Entity Effects Optimization<br />
+<div class="outline-text-5" id="text-orgaa13dd9">
+<p>
+Entity Effects have been converted to DummyProjectiles meaning that the engine
+no longer has to caculate additional physics and more for them. This is
+essential and saves a lot of performance specifically when lots of reclaim is on
+the map and there are a lot of explosion effects/units being destroyed.
+</p>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-org199de3f" class="outline-4">
+<h4 id="org199de3f">Enhanced Target Priorities (Smarter Targeting)</h4>
+<div class="outline-text-4" id="text-org199de3f">
+<p>
+Introduce Enhanced Target Priorities allowing units like Snipers, Artillery, and
+etc to have more complex and specific targets.
+</p>
+
+<p>
+Massive work has been done to reintroduced Tier'd Targetting to ensure units are
+NOT just targeting the first unit they see, but are targetting the <b>best</b>
+targets available. This is a huge improvement to the game, allowing for the
+player to focus less on micro-management and more on macro-management.
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org2372c5a" class="outline-3">
+<h3 id="org2372c5a">Balance Changes</h3>
+<div class="outline-text-3" id="text-org2372c5a">
+</div>
+<div id="outline-container-orgf29edb6" class="outline-4">
+<h4 id="orgf29edb6">T3 Snipers</h4>
+<div class="outline-text-4" id="text-orgf29edb6">
+<ul class="org-ul">
+<li>T3 Snipers now cost an average of around 50% more energy to
+produce.</li>
+<li>T3 Snipers do significantly less damage to Shields around (50%
+Less)</li>
+<li>T3 Snipers now have a 250 E Upkeep</li>
+<li>T3 Snipers Ability Tooltips have been updated</li>
+<li>T3 Snipers no longer have stealth</li>
+<li>T3 Snipers Health Reduced by 100</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge3e4a11" class="outline-4">
+<h4 id="orge3e4a11">T2 Snipers</h4>
+<div class="outline-text-4" id="text-orge3e4a11">
+<ul class="org-ul">
+<li>T2 Snipers do significantly less damage to Shields around (50%
+Less)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6670718" class="outline-4">
+<h4 id="org6670718">T2 Gunships</h4>
+<div class="outline-text-4" id="text-org6670718">
+<ul class="org-ul">
+<li>T2 Gunships TurretYawSpeed has been increased 90 from 60</li>
+<li>T2 Gunships TurretYawRange has been increased from 90 to 180</li>
+<li>T2 Gunships health has been reduced by 400 around the board (not
+accounting for factional diversity)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgedaeb34" class="outline-4">
+<h4 id="orgedaeb34">T4 Seraphim Bomber</h4>
+<div class="outline-text-4" id="text-orgedaeb34">
+<ul class="org-ul">
+<li>T4 Seraphim Bomber Rate of Fire is fixed and now properly can
+release the bomb on time</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgaf40de2" class="outline-4">
+<h4 id="orgaf40de2">Radar &amp; Sonar Buildings</h4>
+<div class="outline-text-4" id="text-orgaf40de2">
+<ul class="org-ul">
+<li>T1 and T2 Radars receive a 10% Radar Radius Increase</li>
+<li>T3 Omni receives a 60% Radar Radius Increase &amp; 30% Omni Radius
+Increase</li>
+<li>T3 Omni receives an extra 1000 E Upkeep</li>
+<li>T3 Omni ReactivateTime decreased from 12 to 6</li>
+<li>Sonar Receives all same changes as above but T3 Sonar goes from
+500 E Upkeep to 750 E Upkeep</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbc10389" class="outline-2">
+<h2 id="orgbc10389">1.80</h2>
+<div class="outline-text-2" id="text-orgbc10389">
+<ul class="org-ul">
+<li>2024-12-31</li>
+</ul>
+</div>
+<div id="outline-container-org6a593f7" class="outline-3">
+<h3 id="org6a593f7">General Changes</h3>
+<div class="outline-text-3" id="text-org6a593f7">
+<ul class="org-ul">
+<li>Fix Shield.lua Shield Impact Effects not being applied properly.</li>
+<li>Moved 3 Functions to Base Repo to better Support M28 AI</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgbf9b37f" class="outline-3">
+<h3 id="orgbf9b37f">Balance Changes</h3>
+<div class="outline-text-3" id="text-orgbf9b37f">
+</div>
+<div id="outline-container-org80e15cc" class="outline-4">
+<h4 id="org80e15cc">T4 Aeon Absolution</h4>
+<div class="outline-text-4" id="text-org80e15cc">
+<ul class="org-ul">
+<li>Damage Radius 3.5 -&gt; 6</li>
+<li>Damage increased from 10% Bonus Against Shields to 50% Bonus
+Against Shields</li>
+<li>TurretYawSpeed 22 -&gt; 90</li>
+<li>FiringRandomness 0.18 -&gt; 0.1</li>
+<li>FiringRandomnessWhileMoving 0.48 -&gt; 0.3</li>
+<li>Fixed The Rate of Fire causing the unit to miss it's OnFire()
+event</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org033a10e" class="outline-2">
+<h2 id="org033a10e">1.79</h2>
+<div class="outline-text-2" id="text-org033a10e">
+<ul class="org-ul">
+<li>2024-12-30</li>
+</ul>
+</div>
+
+<div id="outline-container-org601057d" class="outline-3">
+<h3 id="org601057d">General Changes</h3>
+<div class="outline-text-3" id="text-org601057d">
+<ul class="org-ul">
+<li><b>General Changes</b>
+
+<ul class="org-ul">
+<li>Fix Shield.lua Personal Shields initializing legacy code instead of
+the New Shield.lua Code</li>
+<li>Fix Shield.lua not carrying default values resulting in some Nil
+Values</li>
+<li>Shield.lua now applies to all Shield Types (Personal, Bubble, and
+etc) meaning that Personal Shields now interact correctly with AoE
+Weapons not allowing AoE to damage the base Health of the Unit. The
+Shield is now treated as an additional health layer to the Unit and
+no longer carries it's own collision sphere/box. Damage that
+overkills the shield now applies onto the base health of the unit.</li>
+<li>Fix Multiple Units with Rate Of Fire Errors (many having too short
+of Rate of Fires)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd230967" class="outline-2">
+<h2 id="orgd230967">1.77</h2>
+<div class="outline-text-2" id="text-orgd230967">
+<ul class="org-ul">
+<li>2024-12-29</li>
+</ul>
+</div>
+<div id="outline-container-orgb89592a" class="outline-3">
+<h3 id="orgb89592a">General Changes</h3>
+<div class="outline-text-3" id="text-orgb89592a">
+<ul class="org-ul">
+<li><b>General Changes</b>
+
+<ul class="org-ul">
+<li>Fix Shield.lua ShieldTypes not being passed right</li>
+<li>Fix Shield.lua ALL Units with Personal Shields have AOE Pass through
+the Shields if they did have not special code that prevented it. (No
+more extra code !!!)</li>
+<li>Fix Shield.lua not passing self.Size correctly for Personal Shields
+units resulting in invisible Nil Values</li>
+<li>Fix Shield.lua not passing IsOn and Enabled Values correctly for
+Shields</li>
+</ul></li>
+</ul>
+</div>
+
+<div id="outline-container-orgd13c34f" class="outline-4">
+<h4 id="orgd13c34f">T3 Cybran Cruiser*</h4>
+<div class="outline-text-4" id="text-orgd13c34f">
+<ul class="org-ul">
+<li>T3 Cybran Cruiser Health from 22500 to 20500</li>
+<li>T3 Cybran Cruiser RoF Fixed so it does not trigger OnFire() Events
+when it should not</li>
+<li>T3 Cybran Cruiser 6700M &amp; 55000E to 6950M &amp; 64500E</li>
+<li>T3 Cybran Cruiser AA DamageRadius from 0 to 1</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgbc80982" class="outline-4">
+<h4 id="orgbc80982">T3 Cybran Battleship*</h4>
+<div class="outline-text-4" id="text-orgbc80982">
+<ul class="org-ul">
+<li>T3 Cybran Battleship AA Muzzles are now fixed so they work</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org275f19c" class="outline-4">
+<h4 id="org275f19c">T3 Cybran Submarine*</h4>
+<div class="outline-text-4" id="text-org275f19c">
+<ul class="org-ul">
+<li>T3 Cybran Submarine RoF Fixed so it does not trigger OnFire() Events
+when it should not</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf1970b2" class="outline-2">
+<h2 id="orgf1970b2">1.76</h2>
+<div class="outline-text-2" id="text-orgf1970b2">
+<ul class="org-ul">
+<li>2024-12-28</li>
+</ul>
+</div>
+<div id="outline-container-orge6f5e74" class="outline-3">
+<h3 id="orge6f5e74">General Changes</h3>
+<div class="outline-text-3" id="text-orge6f5e74">
+<ul class="org-ul">
+<li><b>General Changes</b>
+
+<ul class="org-ul">
+<li>Fix OnEnterState erroring due to bad data</li>
+<li>Fix 3 Units having RoF Errors meaning their weapons were triggering
+in-correct OnFire() events</li>
+</ul></li>
+</ul>
+</div>
+
+<div id="outline-container-org7c747b4" class="outline-4">
+<h4 id="org7c747b4">T3 UEF TMD*</h4>
+<div class="outline-text-4" id="text-org7c747b4">
+<ul class="org-ul">
+<li>T3 UEF TMD TurretYawSpeed from 62 to 280</li>
+<li>T3 UEF TMD RoF from 10/10 to 20/10</li>
+</ul>
+<ul class="org-ul">
+<li><b>UEF ACU Tactical Nuke</b>
+
+<ul class="org-ul">
+<li>Fix Nuke Silo not emptying when Nuke is fired</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2b673e8" class="outline-4">
+<h4 id="org2b673e8">T3.5 Cybran Gunship*</h4>
+<div class="outline-text-4" id="text-org2b673e8">
+<ul class="org-ul">
+<li>T3.5 Cybran Gunship minimum speed from 13 to 6</li>
+<li>T3.5 Cybran Gunship maximum speed from 15 to 14</li>
+<li>T3.5 Cybran Gunship turnrate from 1 to 0.4</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org95193fc" class="outline-2">
+<h2 id="org95193fc">1.75</h2>
+<div class="outline-text-2" id="text-org95193fc">
+<ul class="org-ul">
+<li>2024-12-27</li>
+</ul>
+</div>
+<div id="outline-container-orgdb4d0fb" class="outline-3">
+<h3 id="orgdb4d0fb">General Changes</h3>
+</div>
+
+<div id="outline-container-org9e8145d" class="outline-3">
+<h3 id="org9e8145d">Changelog Comments:</h3>
+<div class="outline-text-3" id="text-org9e8145d">
+<ul class="org-ul">
+<li><code>AA</code>: Mobile AA is nerfed in Muzzle Velocity due to it's ability to
+hit high fast flying targets unintentionally. This has been corrected,
+and it can now no longer tear apart T3 &amp; T2 Bombers/Fighters, but
+should still work against Gunships.</li>
+
+<li><code>SAMs/Flak</code>: SAMs &amp; Flak have been diversified to encourage players to
+build them versus different options. Flak is intented to be used
+versus Gunships. SAMs are intended to be used versus Fighters &amp;
+Bombers. Damage on Both Flak &amp; SAMs has been increased to counter T3
+Gunships/Bombers a bit better. Seraphim SAM should perform
+significantly better and not miss. SAMs lost a good bit of their HP
+while Flak gained HP (Cybran is excluded due to their high regen, they
+have gained).</li>
+</ul>
+</div>
+
+<div id="outline-container-org5ad5057" class="outline-4">
+<h4 id="org5ad5057">T1 Mobile AA*</h4>
+<div class="outline-text-4" id="text-org5ad5057">
+<ul class="org-ul">
+<li>T1 Mobile AA (UEF, Seraphim, Aeon)receives a -15 Muzzle Velocity</li>
+<li>T1 Mobile AA (Cybran) receives a +5 Muzzle Velocity</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7cc58e4" class="outline-4">
+<h4 id="org7cc58e4">T2 Seraphim Cruiser*</h4>
+<div class="outline-text-4" id="text-org7cc58e4">
+<ul class="org-ul">
+<li>T2 Seraphim Cruiser was firing with only one Muzzle, reducing it's
+DPS by 50%. This has been corrected, it will now fire with both
+Muzzles.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org360ab53" class="outline-4">
+<h4 id="org360ab53">T2 Aeon Submarine*</h4>
+<div class="outline-text-4" id="text-org360ab53">
+<ul class="org-ul">
+<li>T2 Aeon Submarine receives advancedTracking allowing its torpedos to
+redirect to different targets if the original target is destroyed.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org834232f" class="outline-4">
+<h4 id="org834232f">T3 SAM*</h4>
+<div class="outline-text-4" id="text-org834232f">
+<ul class="org-ul">
+<li>All SAM HP Reduced by 500 HP (Cybran Reduced by 800 HP)</li>
+<li>All SAM FiringTolerance from 12 to 1 <code>=</code></li>
+<li>T3 SAM <code>(Aeon)</code> Cost from 902M &amp; 9872E to 1100M &amp; 11000E</li>
+<li>TurretYawSpeed to 180 from 60</li>
+<li>Damage from 220 to 260 <code>=</code></li>
+<li>T3 SAM <code>(UEF)</code> Cost from 950M &amp; 10000E to 1150M &amp; 10500E</li>
+<li>TurretYawSpeed to 180 from 60</li>
+<li>Damage from 125 to 185 <code>=</code></li>
+<li>T3 SAM <code>(Cybran)</code> Cost from 950M &amp; 10000E to 1050M &amp; 13000E</li>
+<li>TurretYawSpeed to 180 from 60</li>
+<li>Damage from 220 to 260 <code>=</code></li>
+<li>T3 SAM <code>(Seraphim)</code> Cost from 950M &amp; 10000E to 1100M &amp; 11500E</li>
+<li>TurretYawSpeed to 180 from 88</li>
+<li>Damage from 55 to 280</li>
+<li>RoF from 4 to 2</li>
+<li>Fixed Seraphim SAM missing due to extremely high RoF</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8f9d483" class="outline-4">
+<h4 id="org8f9d483">T3 Flak*</h4>
+<div class="outline-text-4" id="text-org8f9d483">
+<ul class="org-ul">
+<li>Flak HP Increased by 1200 HP (Cybran Reduced by 400 HP) <code>=</code></li>
+<li>T3 Flak <code>(Aeon)</code> Cost from 1000M &amp; 10000E to 800M &amp; 8500E</li>
+<li>TurretYawSpeed to 90 from 60</li>
+<li>Damage from 120 to 160</li>
+<li>DamageRadius from 4.4 to 4 <code>=</code></li>
+<li>T3 Flak <code>(UEF)</code> Cost from 1000M &amp; 10000E to 950M &amp; 9250E</li>
+<li>TurretYawSpeed to 90 from 60</li>
+<li>Damage from 72 to 112</li>
+<li>DamageRadius from 4.4 to 4.5 <code>=</code></li>
+<li>T3 Flak <code>(Cybran)</code> Cost from 1000M &amp; 10000E to 750M &amp; 8000E</li>
+<li>TurretYawSpeed to 90 from 80</li>
+<li>Damage from 70 to 80</li>
+<li>DamageRadius from 4.4 to 5 <code>=</code></li>
+<li>T3 Flak <code>(Seraphim)</code> Cost from 1000M &amp; 10000E to 825M &amp; 8500E</li>
+<li>TurretYawSpeed to 90 from 80</li>
+<li>Damage from 90 to 115</li>
+<li>DamageRadius from 4.4 to 4.75</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf9fd6e5" class="outline-2">
+<h2 id="orgf9fd6e5">1.74</h2>
+<div class="outline-text-2" id="text-orgf9fd6e5">
+<ul class="org-ul">
+<li>2024-12-27</li>
+</ul>
+</div>
+<div id="outline-container-orga179220" class="outline-3">
+<h3 id="orga179220">General Changes</h3>
+<div class="outline-text-3" id="text-orga179220">
+</div>
+<div id="outline-container-orgd680c21" class="outline-4">
+<h4 id="orgd680c21">T2 Cruisers*</h4>
+<div class="outline-text-4" id="text-orgd680c21">
+<ul class="org-ul">
+<li>Fix T2 Cruisers not being able to hit targets flying away from them.</li>
+<li>Fix Seraphim T2 Cruiser having less projectiles firing then it was
+supposed to.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org853403b" class="outline-2">
+<h2 id="org853403b">1.73</h2>
+<div class="outline-text-2" id="text-org853403b">
+<ul class="org-ul">
+<li>2024-12-25</li>
+</ul>
+</div>
+<div id="outline-container-orgf58873d" class="outline-3">
+<h3 id="orgf58873d">T1 Sea</h3>
+<div class="outline-text-3" id="text-orgf58873d">
+<ul class="org-ul">
+<li><code>Frigate:</code> AA should be generally less effective and Early Game Naval
+MUST be supported by the Air and no Navy should be allowed to this Air
+Support without suffering significantly from Enemy Torpedo Bombers.
+Torpedo Defense should be much less effective and only come in as a
+stopgap method whether then a full defense method.</li>
+<li><code>Submarines:</code> should not be able to fill a frontline role and should
+be subsectioned to Support Roles in formations of Battleships,
+Destroyers, and Frigates. They should be able to be used to support
+the frontline, but not BE the frontline. ### T2 Sea</li>
+<li><code>Cruisers:</code> Each Faction's Cruiser serves a different purpose and
+should be able to be used to support the frontline, but not BE the
+frontline. They should have a more effective AA then Frigates &amp; Mobile
+Hover Flak as well as any other form of AA that might not be a naval
+asset.</li>
+<li><code>Destroyers:</code> Each Faction's Destroyer serves a different purpose and
+should be able to be used to as the frontline. Frigates will most
+likely continue to be used till Tech 3 Phase in which they will be
+phased out however during the Tech 2. They most likely will still see
+heavy usage. Destroyers have (receiving a -200 mass discount) should
+be able to more cost effective. They serve as a long range kiting
+force; Frigates will soak most of the damage till the Tech 3 Phase, in
+which by then Destroyers will be the main soaking force for
+Battleships.</li>
+<li><code>Submarines:</code> T2 Submarines Torpedo Defense has been completely
+removed, this means they will not be able to fight other Submarines
+effectively, unless with the best micro (this is intentional).
+Submarines will be used for ambushing and killing enemy ships
+reinforcing and such to the Combat Zones (i.e imagine Seton's Clutch
+20km in a Gyle Cast) ### T3 Sea</li>
+<li><code>Submarines:</code> T3 Submarines Torpedo Defense has been completely
+removed as well as their sonar stealth. These two submarines are used
+VASTLY different from T2 Submarines. The Assault Submarine (Cybran) is
+a frontline submarine (highest hp and the most numerous torpedos to
+overwhelm destroyer TD) meant to make up for their lacking battleship
+and the Seraphim Submarine is used to support via ambushing and
+flanking, it has the highest damage output of all submarines and
+fastest torpedos (but lowest hp except for T1 Submarines).</li>
+<li><code>Battleships:</code> Battleships have been directly been buffed in both HP,
+Damage, and Range. They are the backbone of the Navy supported by
+their Destroyers, Submarines, and Cruisers. They are the most
+expensive unit in the Naval Area. They will be used for the frontline
+and will be the most difficult to kill.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org94602e4" class="outline-2">
+<h2 id="org94602e4">1.72</h2>
+<div class="outline-text-2" id="text-org94602e4">
+<ul class="org-ul">
+<li>2024-12-24</li>
+</ul>
+</div>
+<div id="outline-container-org332ead1" class="outline-3">
+<h3 id="org332ead1">General Changes</h3>
+<div class="outline-text-3" id="text-org332ead1">
+<ul class="org-ul">
+<li><b>Overrall</b>
+
+<ul class="org-ul">
+<li>Fix Rapid Fire Miasma Cannon Bug on Aeon ACU</li>
+<li>Fix SMDs &amp; Mobile SMDs being able to fire even with no ammo</li>
+<li>Fix Commander OC needing to be double clicked on target multiple
+times</li>
+<li>Fix Commander OC causing M28 to suicide</li>
+<li>Fix Commander OC being classified as Countermeasure :KEKW:
+@maudlin27</li>
+<li>Fix Game Crashing if EnergyRequiredPerSecond wasnt defined in the
+Blueprint</li>
+<li>Fix UI Order Attack Command not even using the correct Behavior</li>
+<li>Fix small bugs with UI-Side Overcharge Order</li>
+
+<li>Moved ACU Overcharge to a unique state that allows it behavior
+without a EnergyRequiredPerSecond but a EnergyRequired (Meaning it's
+completely RoF Dependent)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org95031de" class="outline-2">
+<h2 id="org95031de">1.71</h2>
+<div class="outline-text-2" id="text-org95031de">
+<ul class="org-ul">
+<li>2024-12-23</li>
+</ul>
+</div>
+<div id="outline-container-org2a834fb" class="outline-3">
+<h3 id="org2a834fb">General Changes</h3>
+<div class="outline-text-3" id="text-org2a834fb">
+</div>
+<div id="outline-container-orgb3abd09" class="outline-4">
+<h4 id="orgb3abd09">T3 Torpedo Bomber*</h4>
+<div class="outline-text-4" id="text-orgb3abd09">
+<ul class="org-ul">
+<li>All T3 TB have received a significant maneuverability increase</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7213fe9" class="outline-4">
+<h4 id="org7213fe9">T2 Torpedo Bomber*</h4>
+<div class="outline-text-4" id="text-org7213fe9">
+<ul class="org-ul">
+<li>All T2 TB have received a significant maneuverability increase</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3927b04" class="outline-4">
+<h4 id="org3927b04">T2 Gunship*</h4>
+<div class="outline-text-4" id="text-org3927b04">
+<ul class="org-ul">
+<li>All T2 Gunships have received a significant maneuverability increase</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org366e5f4" class="outline-4">
+<h4 id="org366e5f4">T1 MAA*</h4>
+<div class="outline-text-4" id="text-org366e5f4">
+<ul class="org-ul">
+<li>Cost Doubled for <code>Energy &amp; Mass</code></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org84f5e18" class="outline-2">
+<h2 id="org84f5e18">1.70</h2>
+<div class="outline-text-2" id="text-org84f5e18">
+<ul class="org-ul">
+<li>2024-12-22</li>
+</ul>
+</div>
+<div id="outline-container-org9448fde" class="outline-3">
+<h3 id="org9448fde">General Changes</h3>
+<div class="outline-text-3" id="text-org9448fde">
+</div>
+<div id="outline-container-org8f24f22" class="outline-4">
+<h4 id="org8f24f22">T3 Air Superiority Fighter*</h4>
+<div class="outline-text-4" id="text-org8f24f22">
+<ul class="org-ul">
+<li>All T3 Air Superiority Fighters (ASF) have received a <code>100% DPS</code>
+increase</li>
+<li>All T3 ASF have received a significant maneuverability increase</li>
+<li>All T3 ASF have received a slight health increase</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3a0f59c" class="outline-4">
+<h4 id="org3a0f59c">T3.5 Air Penetration Fighter*</h4>
+<div class="outline-text-4" id="text-org3a0f59c">
+<ul class="org-ul">
+<li>All T3 Air Penetration Fighters (APF) have received a <code>50% DPS</code>
+increase</li>
+<li>All T3 APF have received a significant maneuverability increase</li>
+<li>All T3 APF have received a significant health increase</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc311917" class="outline-4">
+<h4 id="orgc311917">T2 Blaze*</h4>
+<div class="outline-text-4" id="text-orgc311917">
+<ul class="org-ul">
+<li>T2 Blaze receives an additional <code>10%</code> Speed Reduction while in water</li>
+<li>T2 Blaze <code>Vision &amp; Weapon Range</code> has been adjusted by 4 going from
+<code>24 -&gt; 20</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0bc109d" class="outline-4">
+<h4 id="org0bc109d">T3 Armilliary*</h4>
+<div class="outline-text-4" id="text-org0bc109d">
+<ul class="org-ul">
+<li>T3 Armilliary goes from <code>13/10 RoF to 20/10 RoF</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga925bc7" class="outline-4">
+<h4 id="orga925bc7">T1 Frigates*</h4>
+<div class="outline-text-4" id="text-orga925bc7">
+<ul class="org-ul">
+<li>T1 Aeon Frigate receives a significant nerf to it's
+<code>Torpedo Defense</code></li>
+<li>T1 Cybran Frigate receives a significant nerf to it's
+<code>Anti Air Defense</code></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9b19b6a" class="outline-2">
+<h2 id="org9b19b6a">1.69</h2>
+<div class="outline-text-2" id="text-org9b19b6a">
+<ul class="org-ul">
+<li>2024-11-2</li>
+</ul>
+</div>
+<div id="outline-container-org4b0d1fd" class="outline-3">
+<h3 id="org4b0d1fd">General Changes</h3>
+<div class="outline-text-3" id="text-org4b0d1fd">
+<ul class="org-ul">
+<li><b>Overrall</b>
+
+<ul class="org-ul">
+<li>Fixed Aeon T4 Overlord Death Animation</li>
+<li>Fixed Nuke Launchers not completing firing cycle</li>
+<li>Small Fix for Mavor</li>
+<li>Moved CreateProjectileAtMuzzle to Official Repo</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfb690f2" class="outline-2">
+<h2 id="orgfb690f2">1.67</h2>
+<div class="outline-text-2" id="text-orgfb690f2">
+<ul class="org-ul">
+<li>2024-10-31</li>
+</ul>
+</div>
+<div id="outline-container-org8a3c307" class="outline-3">
+<h3 id="org8a3c307">General Changes</h3>
+<div class="outline-text-3" id="text-org8a3c307">
+<ul class="org-ul">
+<li><b>Overrall</b>
+<ul class="org-ul">
+<li>Fix Some Units Not Firing</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbd95a05" class="outline-2">
+<h2 id="orgbd95a05">1.67</h2>
+<div class="outline-text-2" id="text-orgbd95a05">
+<ul class="org-ul">
+<li>2024-10-30</li>
+</ul>
+</div>
+<div id="outline-container-orgddf8718" class="outline-3">
+<h3 id="orgddf8718">General Changes</h3>
+<div class="outline-text-3" id="text-orgddf8718">
+<ul class="org-ul">
+<li><b>Overrall</b>
+<ul class="org-ul">
+<li>Fully Fixed Units being stuck to the ground if they had
+<code>bp.WeaponUnpackLocksMotion</code> due to them going into the ReloadState
+and never being allowed to repack.</li>
+<li>Fix Various small bugs with projectiles</li>
+<li>Fix BallisticAcc not always being performed when needed too</li>
+<li>Fix T3 Penetrator Gunship hitting ground with Laser</li>
+<li>Fix T2/T3 Factories BuildTime being extremely high for no reason</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3c3f95d" class="outline-2">
+<h2 id="org3c3f95d">1.66</h2>
+<div class="outline-text-2" id="text-org3c3f95d">
+<ul class="org-ul">
+<li>2024-10-27</li>
+</ul>
+</div>
+<div id="outline-container-org48334e2" class="outline-3">
+<h3 id="org48334e2">General Changes</h3>
+<div class="outline-text-3" id="text-org48334e2">
+<ul class="org-ul">
+<li><b>Overrall</b>
+
+<ul class="org-ul">
+<li>Fixed Units getting stuck in their packing/unpacking animations
+<code>Part 6</code></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="outline-container-org34082fb" class="outline-4">
+<h4 id="org34082fb">T3 Cybran Penetrator Gunship*</h4>
+<div class="outline-text-4" id="text-org34082fb">
+<ul class="org-ul">
+<li>Explanation: The Penetrator Gunship had mobility issues that
+prevented its lasers from firing consistently. Expanding the yaw and
+arc heading ranges addresses this issue, improving weapon alignment.</li>
+<li><b>Arc Heading Range</b>: Increased from <code>50</code> to <code>180</code></li>
+</ul>
+<p>
+<b>**</b> Turret Yaw Range*: Increased from <code>50</code> to <code>180</code>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org98bda60" class="outline-4">
+<h4 id="org98bda60">T2 Fighters*</h4>
+<div class="outline-text-4" id="text-org98bda60">
+<ul class="org-ul">
+<li>Explanation: T2 Fighters struggled to hit high-speed bombers and
+gunships due to their damage radius. The damage radius has been
+reverted to 0, and rate of fire increased to enhance their
+effectiveness, especially against T1 Fighters.</li>
+<li><b>Projectile Lifetime Multiplier</b>: Set to <code>1.5</code></li>
+<li><b>Damage Radius</b>: Reverted from <code>2</code> to <code>0</code></li>
+<li><b>Rate of Fire</b>: Increased from <code>20/10</code> to <code>25/10</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org727e394" class="outline-4">
+<h4 id="org727e394">T4 Aeon Avernus*</h4>
+<div class="outline-text-4" id="text-org727e394">
+<ul class="org-ul">
+<li>Explanation: The Avernus was gaining veterancy too quickly and had a
+high regen rate at higher veterancy levels, creating balance issues.
+The kill requirements and regen rates have been adjusted to curb
+this.</li>
+<li><b>Veterancy Kills</b>: Adjusted thresholds for each level: Level1==200=,
+Level2==350=, Level3==450=, Level4==500=, Level5==650=</li>
+<li><b>Regen Rate</b>: Adjusted per level: Level1==5=, Level2==10=,
+Level3==15=, Level4==30=, Level5==60=</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2d65edc" class="outline-4">
+<h4 id="org2d65edc">T3 Seraphim Land*</h4>
+<div class="outline-text-4" id="text-org2d65edc">
+<ul class="org-ul">
+<li>Explanation: The T3 Ilsatha unit underperformed for its cost,
+especially after the Otheeka's removal. A damage and muzzle velocity
+buff makes it more effective and worth its cost.</li>
+<li><b>Removed Otheeka</b></li>
+</ul>
+<p>
+<b>**</b> T3 Ilsatha*
+</p>
+
+<ul class="org-ul">
+<li><b>Damage</b>: Increased from <code>55</code> to <code>65</code></li>
+<li><b>Muzzle Velocity</b>: Increased from <code>30</code> to <code>40</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org469554f" class="outline-4">
+<h4 id="org469554f">T3 Cybran Land*</h4>
+<div class="outline-text-4" id="text-org469554f">
+<ul class="org-ul">
+<li>Explanation: The T3 Cybran Slink's effectiveness was too high for
+its energy upkeep and build time, leading to an imbalance. These
+changes adjust its costs and damage output to better balance its
+role as a unique T3.5 MAA unit.</li>
+<li><b>Removed Crawfish</b></li>
+</ul>
+<p>
+<b>**</b> T3 Slink*
+</p>
+
+<ul class="org-ul">
+<li><b>Damage</b>: Increased from <code>120</code> to <code>180</code></li>
+<li><b>Energy Cost</b>: Increased from <code>12500</code> to <code>16500</code></li>
+<li><b>Mass Cost</b>: Increased from <code>1250</code> to <code>1450</code></li>
+<li><b>Build Time</b>: Increased from <code>41</code> seconds to <code>62</code> seconds</li>
+<li><b>Energy Maintenance</b> Increased from <code>150</code> to <code>300</code></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge6d9fe4" class="outline-2">
+<h2 id="orge6d9fe4">1.65</h2>
+<div class="outline-text-2" id="text-orge6d9fe4">
+<ul class="org-ul">
+<li>2024-10-25</li>
+</ul>
+</div>
+<div id="outline-container-orgeec5fbf" class="outline-3">
+<h3 id="orgeec5fbf">General Changes</h3>
+<div class="outline-text-3" id="text-orgeec5fbf">
+<ul class="org-ul">
+<li>Fixed Units getting stuck in their packing/unpacking animations</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf46f41a" class="outline-3">
+<h3 id="orgf46f41a">T3 Barrage Artillery (All Factions)</h3>
+<div class="outline-text-3" id="text-orgf46f41a">
+<ul class="org-ul">
+<li>Explanation: The T3 Barrage Artillery's rate of fire was drastically
+reduced to fix an unintended rapid fire issue, while the turret's
+yaw range and speed were corrected to stop alignment problems when
+aiming. Additionally, target acquisition was made faster for better
+responsiveness.</li>
+<li>Rate of Fire: Corrected to <code>10/90</code> from <code>10/10</code></li>
+<li>Turret Yaw Range: Fixed to <code>180</code></li>
+<li>Turret Yaw Speed: Fixed to <code>50</code></li>
+<li>Target Check Interval: Lowered to <code>1</code> from <code>3</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2f417b5" class="outline-3">
+<h3 id="org2f417b5">T2 UEF Shield Boat</h3>
+<div class="outline-text-3" id="text-org2f417b5">
+<ul class="org-ul">
+<li>Explanation: The T2 UEF Shield Boat was rebalanced to reduce its
+durability and tweak shield mechanics, making it regenerate faster
+but start later, with a larger shield size and adjusted damage
+spillover. Its vertical offset was changed to fix issues with air
+units.</li>
+<li>Shield Max Health: Reduced from <code>8500</code> to <code>5500</code></li>
+<li>Shield Energy Drain Recharge Time: Reduced from <code>6.2</code> to <code>5</code></li>
+<li>Shield Regen Rate: Increased from <code>55</code> to <code>80</code></li>
+<li>Shield Regen Start Time: Increased from <code>2</code> to <code>3</code></li>
+<li>Shield Size: Increased from <code>62</code> to <code>120</code></li>
+<li>Shield Spill Over Damage Modifier: Set to <code>0.50</code> (This was
+previously <code>15%</code> but had a special <code>50%</code> damage spillover specific
+to shield boats)</li>
+<li>Shield Vertical Offset: Changed from <code>-15</code> to <code>-50</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4a7e5df" class="outline-3">
+<h3 id="org4a7e5df">Seraphim T2 Land</h3>
+<div class="outline-text-3" id="text-org4a7e5df">
+<p>
+Seraphim T2 Land units struggled due to poor turn radius and muzzle velocity,
+resulting in performance issues. These changes aim to address these weaknesses
+by improving weapon speed and maneuverability.
+</p>
+
+<p>
+Additionally, the redundant T2 Shield Protector Bot was removed.
+</p>
+
+<p>
+<b>Removed T2 Shield Protector Bot</b>
+</p>
+</div>
+<div id="outline-container-orge59879f" class="outline-4">
+<h4 id="orge59879f">T2 Seraphim Iltha</h4>
+<div class="outline-text-4" id="text-orge59879f">
+<ul class="org-ul">
+<li>Muzzle Velocity: Increased from <code>30</code> to <code>35</code></li>
+<li>Turn Rate: Increased from <code>40</code> to <code>42.5</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7561419" class="outline-4">
+<h4 id="org7561419">T2 Seraphim Ilsavoh</h4>
+<div class="outline-text-4" id="text-org7561419">
+<ul class="org-ul">
+<li>Muzzle Velocity: Increased from <code>32</code> to <code>36</code></li>
+<li>Turn Radius: Increased from <code>0.5</code> to <code>2</code></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org47fc6f8" class="outline-3">
+<h3 id="org47fc6f8">Aeon T2 Land</h3>
+<div class="outline-text-3" id="text-org47fc6f8">
+<p>
+Aeon T2 Land was overly dependent on the T2 Aeon Sniper, making it the dominant
+choice at T2. These adjustments balance the power dynamic, making other units
+like Blaze and Obsidian more viable by adjusting costs, stats, and
+functionality.
+</p>
+</div>
+
+<div id="outline-container-org2c6b0c7" class="outline-4">
+<h4 id="org2c6b0c7">T2 Aeon Sniper</h4>
+<div class="outline-text-4" id="text-org2c6b0c7">
+<ul class="org-ul">
+<li>Build Time: Increased from <code>11</code> seconds to <code>47</code> seconds</li>
+<li>Energy Cost: Increased from <code>5050</code> to <code>6650</code></li>
+<li>Mass Cost: Increased from <code>465</code> to <code>515</code></li>
+<li>Turn Rate: Increased from <code>44</code> to <code>50</code></li>
+<li>Turn Radius: Reduced from <code>8</code> to <code>6</code></li>
+<li>Max Speed: Increased from <code>3.6</code> to <code>3.7</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8c243fa" class="outline-4">
+<h4 id="org8c243fa">T2 Aeon Blaze</h4>
+<div class="outline-text-4" id="text-org8c243fa">
+<ul class="org-ul">
+<li>Weapon Attachment: Main weapon is now attached to the turret
+bone, fixing "hover pathfinding issues"</li>
+<li>Water Speed: Reduced by <code>10%</code></li>
+<li>Rate of Fire: Increased from <code>2</code> to <code>3</code></li>
+<li>Damage: Reduced from <code>20</code> to <code>15</code></li>
+<li>Muzzle Velocity: Increased from <code>20</code> to <code>45</code></li>
+<li>Mass Cost: Reduced from <code>250</code> to <code>220</code></li>
+<li>Health: Increased from <code>900</code> to <code>1000</code></li>
+<li>Regen Rate: Reduced from <code>2</code> to <code>0</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc294e08" class="outline-4">
+<h4 id="orgc294e08">T2 Aeon Obsidian</h4>
+<div class="outline-text-4" id="text-orgc294e08">
+<ul class="org-ul">
+<li>Build Time: Reduced from <code>33</code> seconds to <code>25</code> seconds</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbbadda8" class="outline-3">
+<h3 id="orgbbadda8"><b>Cybran T2 Land</b></h3>
+<div class="outline-text-3" id="text-orgbbadda8">
+<p>
+Stealth has been proven to be a powerful ability for Cybran as it's main trait,
+therefore the need of a mobile shield is non existing.
+</p>
+
+<p>
+<b>Removed T2 Cybran Mobile Shield</b>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org871f6ac" class="outline-2">
+<h2 id="org871f6ac">1.64</h2>
+<div class="outline-text-2" id="text-org871f6ac">
+</div>
+<div id="outline-container-org7c07d95" class="outline-3">
+<h3 id="org7c07d95">Dynamic LODs</h3>
+<div class="outline-text-3" id="text-org7c07d95">
+<ul class="org-ul">
+<li>Updated Dynamic LODs to be more consistent with all units across the globe</li>
+<li>Seperated Prop &amp; Unit LOD Management to have different math for distances
+(Courtsy of FAF)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7f36b17" class="outline-3">
+<h3 id="org7f36b17">Misc</h3>
+<div class="outline-text-3" id="text-org7f36b17">
+<ul class="org-ul">
+<li>Fix T1 Static Artillery Energy Cycle</li>
+<li>Fix T2.5 Cybran Immortal Missiles Missing</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org37ef345" class="outline-2">
+<h2 id="org37ef345">1.63</h2>
+<div class="outline-text-2" id="text-org37ef345">
+</div>
+<div id="outline-container-org8f21b92" class="outline-3">
+<h3 id="org8f21b92">Skirmishers</h3>
+<div class="outline-text-3" id="text-org8f21b92">
+</div>
+<div id="outline-container-orgc2c5137" class="outline-4">
+<h4 id="orgc2c5137">T2 Aeon Sniper</h4>
+<div class="outline-text-4" id="text-orgc2c5137">
+<ul class="org-ul">
+<li>Health: 750 -&gt; 435</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org50b6750" class="outline-4">
+<h4 id="org50b6750">Mongoose</h4>
+<div class="outline-text-4" id="text-org50b6750">
+<ul class="org-ul">
+<li>Health: 900 -&gt; 600</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org8a20e3d" class="outline-4">
+<h4 id="org8a20e3d">Hoplite</h4>
+<div class="outline-text-4" id="text-org8a20e3d">
+<ul class="org-ul">
+<li>Health: 780 -&gt; 515</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd9e46ff" class="outline-3">
+<h3 id="orgd9e46ff">Energy Charge</h3>
+<div class="outline-text-3" id="text-orgd9e46ff">
+<ul class="org-ul">
+<li>Fix T3 Barrage Artillery Energy Charge Cycle</li>
+<li>Fix T3 Cybran Triseptitron Energy Charge Cycle</li>
+</ul>
+</div>
+
+<div id="outline-container-orgfed60bc" class="outline-4">
+<h4 id="orgfed60bc">T3 Cybran Hailfire</h4>
+<div class="outline-text-4" id="text-orgfed60bc">
+<ul class="org-ul">
+<li>Add Energy Charge Cycle</li>
+<li>Energy Charge: -175</li>
+<li>Energy Required: 700</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge309cb8" class="outline-2">
+<h2 id="orge309cb8">1.62</h2>
+<div class="outline-text-2" id="text-orge309cb8">
+</div>
+<div id="outline-container-org6460c63" class="outline-3">
+<h3 id="org6460c63">Energy Charge</h3>
+<div class="outline-text-3" id="text-org6460c63">
+<ul class="org-ul">
+<li>Fix T3 Mobile Artillery Energy Charge Cycle</li>
+<li>Fix T3 Strategic Artillery Energy Charge Cycle</li>
+<li>Fix T2 Static Artillery Energy Charge Cycle</li>
+<li>Fix T4 Experimental Artillery Energy Charge Cycle</li>
+<li>Fix Units with a unpack and pack animation getting stuck permanently</li>
+<li>Improved Units with rack/muzzle effect &amp; sounds</li>
+<li>Fix ACU Overcharge Energy Charge Cycle</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org681573c" class="outline-2">
+<h2 id="org681573c">1.61</h2>
+<div class="outline-text-2" id="text-org681573c">
+</div>
+<div id="outline-container-org7936a23" class="outline-3">
+<h3 id="org7936a23">ACU</h3>
+<div class="outline-text-3" id="text-org7936a23">
+<ul class="org-ul">
+<li>Fix Cybran &amp; Seraphim ACU missing with their main gun</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgea097dd" class="outline-3">
+<h3 id="orgea097dd">Energy Charge</h3>
+<div class="outline-text-3" id="text-orgea097dd">
+<p>
+Energy Charge Cycle involves fixing long delays that cause the Unit to
+lose over 100% of it's DPS causing the unit to be extremely weaker then
+intended - Fix T3 Rocket PD Energy Charge Cycle - Fix T3 Sniper Energy
+Charge Cycle - Fix T3 Mobile Artillery Energy Charge Cycle - Fix T2
+Sniper Energy Charge Cycle
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgaa72458" class="outline-2">
+<h2 id="orgaa72458">1.60</h2>
+<div class="outline-text-2" id="text-orgaa72458">
+</div>
+<div id="outline-container-orge4e7652" class="outline-3">
+<h3 id="orge4e7652">Energy Charge</h3>
+<div class="outline-text-3" id="text-orge4e7652">
+<ul class="org-ul">
+<li>All Units that have <code>RackSalvoFiresAfterCharge = true,</code> manually
+<code>RenderFireClock</code> instead of through <code>StartEconomyDrain Function</code></li>
+<li>Fix Experimental Artillery &amp; T3 Strategic Artillery not having
+<code>RackSalvoFiresAfterCharge = true,</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf7fadfc" class="outline-3">
+<h3 id="orgf7fadfc">Reclaim</h3>
+<div class="outline-text-3" id="text-orgf7fadfc">
+<ul class="org-ul">
+<li>Fix long standing bug that was causing QUIET Reclaim Adjustments to
+not function</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org98094e9" class="outline-3">
+<h3 id="org98094e9">Misc</h3>
+<div class="outline-text-3" id="text-org98094e9">
+<ul class="org-ul">
+<li>Fix Seraphim Fighter Missing Target</li>
+<li>Fix T2 Tactical Bombers Dropping Short <code>Again</code></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org49e533b" class="outline-2">
+<h2 id="org49e533b">1.59</h2>
+<div class="outline-text-2" id="text-org49e533b">
+</div>
+<div id="outline-container-orgac9815e" class="outline-3">
+<h3 id="orgac9815e">ACU</h3>
+<div class="outline-text-3" id="text-orgac9815e">
+<ul class="org-ul">
+<li>Removed Stealth</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd992d61" class="outline-3">
+<h3 id="orgd992d61">Citadel Mk1</h3>
+<div class="outline-text-3" id="text-orgd992d61">
+<ul class="org-ul">
+<li>Fix Underside turrets Missing DualManipulators,
+<code>50% of guns would not pitch</code>, causing 50% of the guns to always fire
+at max range.</li>
+<li>Set fire rates to integer values</li>
+<li>Increased all turret pitch and yaw speeds</li>
+<li>Matching weapons had inconsistent stats, fixed.</li>
+<li>Removed AutoInitiateAttackCommand behavior</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org97ec3bd" class="outline-3">
+<h3 id="org97ec3bd">Soul Ripper Mk1</h3>
+<div class="outline-text-3" id="text-org97ec3bd">
+<ul class="org-ul">
+<li>Weapon ranges increased, yaw and pitch speeds up, paired weapons stats
+properly synced (they weren't before).</li>
+<li>SR1 is more effective at dealing with groups of units and
+entrenched/shielded groups than SR2.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgaa28fbd" class="outline-3">
+<h3 id="orgaa28fbd">Soul Ripper Mk2</h3>
+<div class="outline-text-3" id="text-orgaa28fbd">
+<ul class="org-ul">
+<li>Extended weapon ranges, yaw and pitch speeds up, weapon behaviors
+altered</li>
+<li>SR2 is more effective at dealing concentrated damage on single targets
+than SR1. SR2 has more powerful AA than SR1.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcad190f" class="outline-2">
+<h2 id="orgcad190f">1.58</h2>
+<div class="outline-text-2" id="text-orgcad190f">
+</div>
+<div id="outline-container-orgf874b9b" class="outline-3">
+<h3 id="orgf874b9b">T2 Gunships</h3>
+<div class="outline-text-3" id="text-orgf874b9b">
+<ul class="org-ul">
+<li>Health: 1400 -&gt; 1100</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2e46c21" class="outline-3">
+<h3 id="org2e46c21">ACU</h3>
+<div class="outline-text-3" id="text-org2e46c21">
+<ul class="org-ul">
+<li>Removed AirLayer Targetting</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb80231c" class="outline-3">
+<h3 id="orgb80231c">ACU (Cybran)</h3>
+<div class="outline-text-3" id="text-orgb80231c">
+<ul class="org-ul">
+<li>Fix Cybran ACU Laser</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga9f00c7" class="outline-3">
+<h3 id="orga9f00c7">Misc</h3>
+<div class="outline-text-3" id="text-orga9f00c7">
+<ul class="org-ul">
+<li>Fix A Few Blueprint Variables</li>
+<li>Fix Amphorak Blueprint</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3403d0b" class="outline-2">
+<h2 id="org3403d0b">1.57</h2>
+<div class="outline-text-2" id="text-org3403d0b">
+</div>
+<div id="outline-container-orgf29cfdd" class="outline-3">
+<h3 id="orgf29cfdd">Misc</h3>
+<div class="outline-text-3" id="text-orgf29cfdd">
+<ul class="org-ul">
+<li>Fix UEF ACU Firing when reclaiming</li>
+<li>Fix Gunships having bad Yaw &amp; Pitch Rates</li>
+<li>Fix Cybran Engineers being unkillable</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org01eab66" class="outline-2">
+<h2 id="org01eab66">1.56</h2>
+<div class="outline-text-2" id="text-org01eab66">
+</div>
+<div id="outline-container-org6173696" class="outline-3">
+<h3 id="org6173696">ACU</h3>
+<div class="outline-text-3" id="text-org6173696">
+<ul class="org-ul">
+<li>Main Gun Rate Of Fire: 2 -&gt; 1</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0ca97b6" class="outline-3">
+<h3 id="org0ca97b6">Misc</h3>
+<div class="outline-text-3" id="text-org0ca97b6">
+<ul class="org-ul">
+<li>Fix T2 UEF Tactical Bomber Dropping Bomb Too Early</li>
+<li>Fix AoE Applying 1 Tick Too Late</li>
+<li>Fix T2 Fighters Not Being Able To Hit T2 Tactical Bombers</li>
+<li>Fix T2 Sniper YawRate</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org702241c" class="outline-2">
+<h2 id="org702241c">1.55</h2>
+<div class="outline-text-2" id="text-org702241c">
+</div>
+<div id="outline-container-orgc139ff9" class="outline-3">
+<h3 id="orgc139ff9">Misc</h3>
+<div class="outline-text-3" id="text-orgc139ff9">
+<ul class="org-ul">
+<li>YawRates have been increased on many PDs</li>
+<li>Fixed Bone Issue on the Mastodon Rocket Pods causing them to miss</li>
+<li>Fixed Many Audio Issues on Total Mayhem Units</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2dacd07" class="outline-2">
+<h2 id="org2dacd07">1.54</h2>
+<div class="outline-text-2" id="text-org2dacd07">
+</div>
+<div id="outline-container-org80ff85f" class="outline-3">
+<h3 id="org80ff85f">Air</h3>
+<div class="outline-text-3" id="text-org80ff85f">
+<ul class="org-ul">
+<li>Removed Debuffs to Speed when Aircraft is Damaged</li>
+<li>Removed Debuffs to FuelRatio from all <code>flak/maa/staticaa</code> when
+Aircraft is Damaged</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org871609b" class="outline-3">
+<h3 id="org871609b">T4 UEF Star Adder</h3>
+<div class="outline-text-3" id="text-org871609b">
+<ul class="org-ul">
+<li>Fixed Star Adder Lasers Missing</li>
+<li>Reworked Lasers to be two seperate weapons</li>
+<li>PPC Cannons Damage: 1000 -&gt; 2000</li>
+<li>Beam Laser Damage: 350 -&gt; 175</li>
+<li>Beam Lasers Now Rapid Fire To Balance Out Damage Decrease</li>
+<li>Fixed Walking Animation To Make Him Not <code>Slide</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org205ffd5" class="outline-3">
+<h3 id="org205ffd5">T2 MML</h3>
+<div class="outline-text-3" id="text-org205ffd5">
+<ul class="org-ul">
+<li>All Speed Nerfed By 0.05</li>
+<li>Many Other Stats Standardized Across The Board</li>
+<li>MMLs should all be around the Same Strength with <code>Cybran Viper</code> being
+the best</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7453f19" class="outline-3">
+<h3 id="org7453f19">T3 Cybran Leviathan</h3>
+<div class="outline-text-3" id="text-org7453f19">
+<ul class="org-ul">
+<li>Torp Defense Rate of Fire: 8 -&gt; 20
+<code>**Twenty Would Mean Lower In This Case**</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7cf565e" class="outline-3">
+<h3 id="org7cf565e">Misc</h3>
+<div class="outline-text-3" id="text-org7cf565e">
+<ul class="org-ul">
+<li>Removed Variable Transport Speeds Due To Multiple Bugs</li>
+<li>Fixed Penetrator Bombers Not Dropping Bombs Reliably</li>
+<li>Fixed QCE not being enabled properly</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org399d556" class="outline-2">
+<h2 id="org399d556">1.53</h2>
+<div class="outline-text-2" id="text-org399d556">
+</div>
+<div id="outline-container-org253ca3c" class="outline-3">
+<h3 id="org253ca3c">T3 Pen Bombers</h3>
+<div class="outline-text-3" id="text-org253ca3c">
+<ul class="org-ul">
+<li>Fix Pen Bombers sometimes not dropping when they should</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5217fb5" class="outline-3">
+<h3 id="org5217fb5">T3 Cybran Sub Hunter</h3>
+<div class="outline-text-3" id="text-org5217fb5">
+<ul class="org-ul">
+<li>Nerf Torpedo Defense Rate Of Fire from 8 to 20</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6433f74" class="outline-2">
+<h2 id="org6433f74">1.52</h2>
+<div class="outline-text-2" id="text-org6433f74">
+</div>
+<div id="outline-container-org53ac3bf" class="outline-3">
+<h3 id="org53ac3bf">ACU Engineer Upgrades</h3>
+<div class="outline-text-3" id="text-org53ac3bf">
+<ul class="org-ul">
+<li>Buildtime, Mass, and Energy Reduced by 25%</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd26990f" class="outline-3">
+<h3 id="orgd26990f">Bombers</h3>
+<div class="outline-text-3" id="text-orgd26990f">
+<ul class="org-ul">
+<li>All Bomber Projectiles have been returned to Vanilla Physics</li>
+<li>All Bomber Projectiles no longer home-in on targets</li>
+
+<li>Too compensate for this, all bombers receive <code>large AoE Buffs</code>, T2
+Bombers also receive <code>Damage Buff</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7a72103" class="outline-3">
+<h3 id="org7a72103">T3 UEF Brimstone</h3>
+<div class="outline-text-3" id="text-org7a72103">
+<ul class="org-ul">
+<li>Fixed Brimstone MuzzleBones not existing <code>(Causing massive LOG Spam)</code></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5623576" class="outline-2">
+<h2 id="org5623576">1.51</h2>
+<div class="outline-text-2" id="text-org5623576">
+</div>
+<div id="outline-container-org277c15b" class="outline-3">
+<h3 id="org277c15b">Misc</h3>
+<div class="outline-text-3" id="text-org277c15b">
+<ul class="org-ul">
+<li>Fixed TransportSpeedReduction NIL</li>
+<li>Fixed SSL0311 Shield Not Stopping AoE</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgeebd3e8" class="outline-2">
+<h2 id="orgeebd3e8">1.50</h2>
+<div class="outline-text-2" id="text-orgeebd3e8">
+</div>
+<div id="outline-container-org44b47ff" class="outline-3">
+<h3 id="org44b47ff">Transports</h3>
+<div class="outline-text-3" id="text-org44b47ff">
+<p>
+The movement speed of transports now changes based on how many and which
+types of units they have loaded.
+</p>
+
+<ul class="org-ul">
+<li>Units slow down transports based on their <code>TransportSpeedReduction</code> stat.
+If a unit has a  <code>TransportSpeedReduction</code> of 1, each instance of this unit will slow
+down the transport's <code>MaxAirspeed</code> by 1.</li>
+</ul>
+
+<p>
+The primary implication of this change is that the effectiveness of the later T2/T3 Transport Drops are
+significantly reduced in an intuitive way. Although this adds an
+additional mechanic to the game that encourages more micro and strategic
+thinking when placing units on a transport.
+</p>
+
+<ul class="org-ul">
+<li>TransportSpeedReduction: 0.15 (Tech 1 land units)</li>
+<li>TransportSpeedReduction: 0.3 (Tech 2 land units)</li>
+<li>TransportSpeedReduction: 0.6 (Tech 3 land units)</li>
+<li>TransportSpeedReduction: 1 (ACUs and SACUs)</li>
+<li>TransportSpeedReduction: 1 (Tech 4 land units)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd5fdaec" class="outline-3">
+<h3 id="orgd5fdaec">Misc</h3>
+<div class="outline-text-3" id="text-orgd5fdaec">
+<p>
+ Fixed Miasma Artillery Overshooting <code>2nd Fix</code> All legacy Standard Mods are now
+required to run QUIET to prevent crashing if you were not loading all the legacy
+Standard Mods by accident
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf2e7dd7" class="outline-2">
+<h2 id="orgf2e7dd7">1.49</h2>
+<div class="outline-text-2" id="text-orgf2e7dd7">
+</div>
+<div id="outline-container-orga679e10" class="outline-3">
+<h3 id="orga679e10">Mavor &amp; RFSAC</h3>
+<div class="outline-text-3" id="text-orga679e10">
+<p>
+<b>Included Additional Units That Had RackSalvoFiresAfterCharge Within QCE</b>
+</p>
+
+<p>
+<b>Mavor now has RackSalvoFiresAfterCharge set to true to provide it with accurate
+Rate of Fire</b>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7558be3" class="outline-3">
+<h3 id="org7558be3">T2 Destroyers</h3>
+<div class="outline-text-3" id="text-org7558be3">
+<p>
+RackSalvoReloadTime: 3.5 Seconds
+</p>
+</div>
+</div>
+
+<div id="outline-container-org108b58a" class="outline-3">
+<h3 id="org108b58a">T3 UEF Juggernaut</h3>
+<div class="outline-text-3" id="text-org108b58a">
+<p>
+Shield: 2250 -&gt; 4400
+</p>
+</div>
+</div>
+
+<div id="outline-container-org82bab16" class="outline-3">
+<h3 id="org82bab16">T3 Aeon Armillary</h3>
+<div class="outline-text-3" id="text-org82bab16">
+<p>
+Rate Of Fire: 30/10 -&gt; 13/10
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbcafef1" class="outline-2">
+<h2 id="orgbcafef1">1.48</h2>
+<div class="outline-text-2" id="text-orgbcafef1">
+</div>
+<div id="outline-container-org0f1b40b" class="outline-3">
+<h3 id="org0f1b40b">Global</h3>
+<div class="outline-text-3" id="text-org0f1b40b">
+<p>
+All Units Guard Radius are now all santized and standardized. This will heavily
+improve usage of Patrol &amp; Attack Move.
+</p>
+
+<p>
+Units now no longer walk into enemy when on Attack Move and Engineer Attack
+Move when reclaiming will perform significantly better
+</p>
+
+<p>
+All Units now have significantly more accurate Overlays for different Weapon
+Ranges. Any Unit that was missing Weapon Ranges will now have them displayed
+properly and accurately.
+</p>
+
+<p>
+All Units now have accurate speeds that cooperate better with their collision
+box and collision sphere size. This will enable Gunships &amp; Beam Weapons to hit
+significantly more often.
+</p>
+
+<p>
+All Units now have an AverageDensity based on HP which allows the Engine
+determine who pushes who in a collision event. This allows heavier units to move
+through lighter units with ease and heavily improves Pathfinding in certain
+situations.
+</p>
+
+<p>
+All Weapons [Units] now have a standardized and santized TargetCheckInterval
+based on their weapon type. Weapons also all have a standardized TrackingRadius
+and Variables included [AlwaysRecheckTarget] are now also standardized and will
+significantly improve Weapon Behavior
+</p>
+
+<p>
+Props now have a much larger visual display and should appear much easier and
+at a higher camera angle then previously
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfa1ec03" class="outline-3">
+<h3 id="orgfa1ec03">Seraphim ACU</h3>
+<div class="outline-text-3" id="text-orgfa1ec03">
+<p>
+<b>Lower Number is Buff</b>
+ACU Lambda Rate of Fire: 9 -&gt; 7
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgced9d58" class="outline-3">
+<h3 id="orgced9d58">T3 Mobile Artillery</h3>
+<div class="outline-text-3" id="text-orgced9d58">
+<p>
+Mass Cost: 500 -&gt; 800
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb6de1bd" class="outline-3">
+<h3 id="orgb6de1bd">Seraphim TMD</h3>
+<div class="outline-text-3" id="text-orgb6de1bd">
+<p>
+Rate of Fire: 1.05 -&gt; 1.3
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf20d2ef" class="outline-3">
+<h3 id="orgf20d2ef">Misc</h3>
+<div class="outline-text-3" id="text-orgf20d2ef">
+<p>
+Fix T4 Cybran Monkeylord Weapons being Broken Remove T3 UEF Walrus
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org121158c" class="outline-2">
+<h2 id="org121158c">1.47</h2>
+<div class="outline-text-2" id="text-org121158c">
+<p>
+Fixed 7.13 WeaponState Issue A Long Term Fix is being worked on for future
+releases
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0fd6893" class="outline-2">
+<h2 id="org0fd6893">1.46</h2>
+<div class="outline-text-2" id="text-org0fd6893">
+</div>
+<div id="outline-container-orgc323f26" class="outline-3">
+<h3 id="orgc323f26">Physics Reworks</h3>
+<div class="outline-text-3" id="text-orgc323f26">
+<p>
+<b>Physics Reworks allow them to be more microable and able to drop bombs more
+reliably</b>
+</p>
+
+<p>
+Penetrator Bombers T3 Gunships T3 (Including Penetrator Gunships)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org82005ca" class="outline-3">
+<h3 id="org82005ca">ACUs</h3>
+<div class="outline-text-3" id="text-org82005ca">
+<p>
+[Main-Gun] Damage: 120 -&gt; 100
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf82778a" class="outline-3">
+<h3 id="orgf82778a">T2 Destroyers</h3>
+<div class="outline-text-3" id="text-orgf82778a">
+<p>
+[Torpedo-Defense] MuzzleSalvoDelay: 0 -&gt; 0.2
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0e5377b" class="outline-3">
+<h3 id="org0e5377b">Misc</h3>
+<div class="outline-text-3" id="text-org0e5377b">
+<p>
+All Units now have the DRAGBUILD Category
+</p>
+
+<p>
+Removed T4 UEF Ivan
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd327e16" class="outline-2">
+<h2 id="orgd327e16">1.45</h2>
+<div class="outline-text-2" id="text-orgd327e16">
+</div>
+<div id="outline-container-org5c1d345" class="outline-3">
+<h3 id="org5c1d345">Yaw Rate Increase</h3>
+<div class="outline-text-3" id="text-org5c1d345">
+<p>
+Many units have received a 2 second~ Yaw Rate now and should be
+microable this applies to most units in the game currently
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge25a3a0" class="outline-3">
+<h3 id="orge25a3a0">T3 UEF Banisher</h3>
+<div class="outline-text-3" id="text-orge25a3a0">
+<p>
+ROF: 25/10 -&gt; 18/10 AA Missile Denations at 10 Height Now
+</p>
+</div>
+</div>
+
+<div id="outline-container-org764ed2e" class="outline-3">
+<h3 id="org764ed2e">T3 Aeon Armillary</h3>
+<div class="outline-text-3" id="text-org764ed2e">
+<p>
+Damage: 75 -&gt; 65
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgefeba2b" class="outline-3">
+<h3 id="orgefeba2b">T3 Cybran Hailfire</h3>
+<div class="outline-text-3" id="text-orgefeba2b">
+<p>
+FiringRandomnessWhileMoving: 0.7 -&gt; 0.5
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1d90d66" class="outline-3">
+<h3 id="org1d90d66">T4 Aeon Pillar of Prominence</h3>
+<div class="outline-text-3" id="text-org1d90d66">
+<p>
+ShieldRegenRate: 230 -&gt; 520 (Allows it's shields on other units to be
+healed more quickly)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org74b5a92" class="outline-3">
+<h3 id="org74b5a92">T3 Cybran Dervish</h3>
+<div class="outline-text-3" id="text-org74b5a92">
+<p>
+Dervish Rockets receive the same rework as Madbolo &amp; Vulture
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0ca92ad" class="outline-3">
+<h3 id="org0ca92ad">T3 UEF Bull</h3>
+<div class="outline-text-3" id="text-org0ca92ad">
+<p>
+[Rockets] MuzzleChargeDelay: 0.6 -&gt; 0.3 MaxRadius: 48 -&gt; 44
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb19a0b3" class="outline-3">
+<h3 id="orgb19a0b3">T3 Cybran Mastodon</h3>
+<div class="outline-text-3" id="text-orgb19a0b3">
+<p>
+[Rockets] FiringRandomnessWhileMoving: 3.5 -&gt; 1.5
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4dd6d82" class="outline-3">
+<h3 id="org4dd6d82">T1 Aeon Wavecrest</h3>
+<div class="outline-text-3" id="text-org4dd6d82">
+<p>
+MuzzleSalvoDelay: 0.3 -&gt; 0.2
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7ebda0d" class="outline-2">
+<h2 id="org7ebda0d">1.44</h2>
+<div class="outline-text-2" id="text-org7ebda0d">
+</div>
+<div id="outline-container-org5327fcc" class="outline-3">
+<h3 id="org5327fcc">T1 Cybran Sky Slammer</h3>
+<div class="outline-text-3" id="text-org5327fcc">
+<p>
+FiringTolerance 0.6 -&gt; 3 YawTurretSpeed 36 -&gt; 135
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4fcd79b" class="outline-3">
+<h3 id="org4fcd79b">T1 Aeon Artos</h3>
+<div class="outline-text-3" id="text-org4fcd79b">
+<p>
+Health 210 -&gt; 140 (Missile) Range 32 -&gt; 30
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6604bae" class="outline-3">
+<h3 id="org6604bae">T1 Scouts</h3>
+<div class="outline-text-3" id="text-org6604bae">
+<p>
+Stealth Removed
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc7ef89d" class="outline-3">
+<h3 id="orgc7ef89d">T4 Aeon Eliash</h3>
+<div class="outline-text-3" id="text-orgc7ef89d">
+<p>
+Mass Cost 21000 -&gt; 26000
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga19e522" class="outline-3">
+<h3 id="orga19e522">T4 Cybran Vulture</h3>
+<div class="outline-text-3" id="text-orga19e522">
+<p>
+Please refer to PR #220 for the extensives changelog
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9f923c0" class="outline-3">
+<h3 id="org9f923c0">Misc</h3>
+<div class="outline-text-3" id="text-org9f923c0">
+<p>
+Fixed Evenflow not applying to all units if one unit contained
+"IgnoreEvenflow" Value. Fixed T3 Cybran PD "Hades"
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc07f228" class="outline-2">
+<h2 id="orgc07f228">1.43</h2>
+<div class="outline-text-2" id="text-orgc07f228">
+</div>
+<div id="outline-container-org6c979bd" class="outline-3">
+<h3 id="org6c979bd">ACU</h3>
+<div class="outline-text-3" id="text-org6c979bd">
+<p>
+TurretYawSpeed [Main Weapon] 48 -&gt; 90 Main Weapon Damage 70 -&gt; 120 Range
+Equalized to OverCharge Range of 30 Speed from 1.45 -&gt; 1.7
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd450f22" class="outline-3">
+<h3 id="orgd450f22">T1.5</h3>
+<div class="outline-text-3" id="text-orgd450f22">
+<p>
+All T1.5 now are the first users of the ability to ignore Evenflow They
+now follow guidelines of a much heavier buildtime with some slight
+reductions in cost and some factional diversity increase (this is an
+ongoing effort) Please Review PR #219 for the stat changes
+</p>
+</div>
+</div>
+
+<div id="outline-container-org28b327b" class="outline-3">
+<h3 id="org28b327b">Misc</h3>
+<div class="outline-text-3" id="text-org28b327b">
+<p>
+Fix Thau Battery Projectiles disappearing before hitting the ground
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org819d304" class="outline-2">
+<h2 id="org819d304">1.42</h2>
+<div class="outline-text-2" id="text-org819d304">
+</div>
+<div id="outline-container-org7f65e62" class="outline-3">
+<h3 id="org7f65e62">T4 Cybran Madbolo</h3>
+<div class="outline-text-3" id="text-org7f65e62">
+<p>
+MassCost 21750 -&gt; 30000
+EnergyCost 300000 -&gt; 475000
+</p>
+</div>
+</div>
+
+<div id="outline-container-org740e3a2" class="outline-3">
+<h3 id="org740e3a2">Misc</h3>
+<div class="outline-text-3" id="text-org740e3a2">
+<p>
+Fix Thug being unbuildable (2nd try) Fix Scorpion having Stealth
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc4aeea3" class="outline-2">
+<h2 id="orgc4aeea3">1.41</h2>
+<div class="outline-text-2" id="text-orgc4aeea3">
+<p>
+Many Units have received YawTurretSpeed Buffs to allow them to be
+microable if you are interested in what units please check PR #209 for
+reference
+</p>
+</div>
+
+<div id="outline-container-org82912fb" class="outline-3">
+<h3 id="org82912fb">T2 Aeon Amphorak</h3>
+<div class="outline-text-3" id="text-org82912fb">
+<p>
+Damage is brought in line with other T2.5 (Around 120DPS)
+</p>
+
+<p>
+No longer cost energy to fire
+</p>
+</div>
+</div>
+
+<div id="outline-container-org385197c" class="outline-3">
+<h3 id="org385197c">T2 Cybran Hoplite</h3>
+<div class="outline-text-3" id="text-org385197c">
+<p>
+RoF = 10/40 Damage reduced from 75 -&gt; 65
+</p>
+</div>
+</div>
+
+<div id="outline-container-org346a85e" class="outline-3">
+<h3 id="org346a85e">Misc</h3>
+<div class="outline-text-3" id="text-org346a85e">
+<ul class="org-ul">
+<li>Fixed AI not being able to Overcharge</li>
+<li>Introduce Various new economic rebalances in our Submod called QCE Economy &amp;
+Flow, please refer to commit #707be96325bcbae0951caf29d76962611acad45a for
+reference</li>
+<li>Fixed Avernus Shoulder Cannon Projectile being extremely small</li>
+<li>Fixed Eliash not actually having a visual shield on the unit</li>
+<li>Fixed Thug PD not being buildable</li>
+<li>Fixed Pegasus ShieldIsUp (AoE can not splash through the</li>
+</ul>
+<p>
+Pegasus Personal Shield)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc6abfeb" class="outline-2">
+<h2 id="orgc6abfeb">1.40</h2>
+<div class="outline-text-2" id="text-orgc6abfeb">
+</div>
+<div id="outline-container-org7ae4d0c" class="outline-3">
+<h3 id="org7ae4d0c">T2 UEF Mongoose</h3>
+<div class="outline-text-3" id="text-org7ae4d0c">
+<p>
+Grenade Launcher: Damage 62 -&gt; 49
+RoF for Gatling Gun 1 Second -&gt; 1.2 Second
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0a667ab" class="outline-3">
+<h3 id="org0a667ab">Overcharge</h3>
+<div class="outline-text-3" id="text-org0a667ab">
+<p>
+Energy Ratio 6 -&gt; 9 (TLDR It takes more energy to do more damage)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb522bd1" class="outline-3">
+<h3 id="orgb522bd1">T3 Barrage Artillery</h3>
+<div class="outline-text-3" id="text-orgb522bd1">
+<p>
+Nerfed FiringRandomness 1.25 -&gt; 2.25 AoF nerfed from by a universal number of 1
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5bd5f49" class="outline-3">
+<h3 id="org5bd5f49">Misc</h3>
+<div class="outline-text-3" id="text-org5bd5f49">
+<ul class="org-ul">
+<li>Fixed Dragonite Shield Not Actually Protecting It</li>
+<li>Fixed Eliash Shield Not Actually Protecting It</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6d96563" class="outline-2">
+<h2 id="org6d96563">1.39</h2>
+<div class="outline-text-2" id="text-org6d96563">
+</div>
+<div id="outline-container-org374020e" class="outline-3">
+<h3 id="org374020e">T1, T2, T3 Aeon Artillery</h3>
+<div class="outline-text-3" id="text-org374020e">
+<p>
+Fix Artillery Overshooting for Aeon
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9d9dea4" class="outline-2">
+<h2 id="org9d9dea4">1.38</h2>
+<div class="outline-text-2" id="text-org9d9dea4">
+</div>
+<div id="outline-container-org2cf55ef" class="outline-3">
+<h3 id="org2cf55ef">Torpedo Defenses</h3>
+<div class="outline-text-3" id="text-org2cf55ef">
+<p>
+All vanilla torpedo defenses have been 'altered' so that they are now targetable
+by surface weapons
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga9ea598" class="outline-2">
+<h2 id="orga9ea598">1.37</h2>
+<div class="outline-text-2" id="text-orga9ea598">
+</div>
+<div id="outline-container-org14c5381" class="outline-3">
+<h3 id="org14c5381">T4 Aeon Avernus</h3>
+<div class="outline-text-3" id="text-org14c5381">
+<p>
+<b>Comparable To King Kraptor</b>
+</p>
+
+<p>
+Meant for dealing with Experimentals only, lacks almost any AOE so it's weak vs
+larger T3 Armies however deals massive precision DPS vs Experimentals. The
+bigger and heavier the Experimental, the better. (Except Avalanche lol)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4dae483" class="outline-3">
+<h3 id="org4dae483">T4 Cybran Vulture</h3>
+<div class="outline-text-3" id="text-org4dae483">
+<p>
+Receives Rocket Barrage Rework Equal to Madbolo
+</p>
+</div>
+</div>
+
+<div id="outline-container-org84d22c7" class="outline-3">
+<h3 id="org84d22c7">Misc</h3>
+<div class="outline-text-3" id="text-org84d22c7">
+<p>
+Fix Hardlock on Naval Maps
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8b35acd" class="outline-2">
+<h2 id="org8b35acd">1.36</h2>
+<div class="outline-text-2" id="text-org8b35acd">
+</div>
+<div id="outline-container-orgc1758ba" class="outline-3">
+<h3 id="orgc1758ba">T4 Aeon Eliash</h3>
+<div class="outline-text-3" id="text-orgc1758ba">
+<p>
+Transformed Personal Shield -&gt; Bubble Shield
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8711715" class="outline-3">
+<h3 id="org8711715">T3 Aeon Mobile Artillery</h3>
+<div class="outline-text-3" id="text-org8711715">
+<p>
+Removed +20% Shield Damage
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3514175" class="outline-3">
+<h3 id="org3514175">T4 Cybran Madbolo</h3>
+<div class="outline-text-3" id="text-org3514175">
+<p>
+All Weapons Ranges Increases Rework Primary Weapon Rocket Barrage (High
+Muzzle Velocity, More Accuracy, More Rockets)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org69de2d4" class="outline-3">
+<h3 id="org69de2d4">T3 UEF Brimstone</h3>
+<div class="outline-text-3" id="text-org69de2d4">
+<p>
+Yawspeed 27 -&gt; 45 Fix Brimstone Overshooting
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgad201a0" class="outline-3">
+<h3 id="orgad201a0">T1 Mayor PD</h3>
+<div class="outline-text-3" id="text-orgad201a0">
+<p>
+Yawspeed 45 -&gt; 90
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org01e9f89" class="outline-2">
+<h2 id="org01e9f89">1.35</h2>
+<div class="outline-text-2" id="text-org01e9f89">
+</div>
+<div id="outline-container-orgbcc39f1" class="outline-3">
+<h3 id="orgbcc39f1">T2 MML</h3>
+<div class="outline-text-3" id="text-orgbcc39f1">
+<p>
+Speed 3 -&gt; 2.85
+</p>
+</div>
+</div>
+<div id="outline-container-org5f8d94b" class="outline-3">
+<h3 id="org5f8d94b">T3 Mobile Artillery</h3>
+<div class="outline-text-3" id="text-org5f8d94b">
+<p>
+Fix the unpack rate that was making units stuck in place
+</p>
+</div>
+</div>
+<div id="outline-container-org71043b5" class="outline-3">
+<h3 id="org71043b5">T3 Barrage Artillery (Accouts for Overspill now in balancing)</h3>
+<div class="outline-text-3" id="text-org71043b5">
+<p>
+DamageRadius reduced by 1 on all FiringRandomness 1.25 -&gt; 2.25
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org70790de" class="outline-2">
+<h2 id="org70790de">1.34</h2>
+<div class="outline-text-2" id="text-org70790de">
+</div>
+<div id="outline-container-orgde88096" class="outline-3">
+<h3 id="orgde88096">No More Roaming</h3>
+<div class="outline-text-3" id="text-orgde88096">
+<p>
+Removed Roaming Behavior From All Experimentals
+</p>
+</div>
+</div>
+<div id="outline-container-orgf0a1fa0" class="outline-3">
+<h3 id="orgf0a1fa0">Shields</h3>
+<div class="outline-text-3" id="text-orgf0a1fa0">
+<p>
+General Info on shields is that they will take longer to regenerate, many stats
+have been standardized then redistributed to give a bit more diversity to the
+shields.
+</p>
+
+<p>
+Integrated Shields received a bit of a hard bonking as their stats were not
+justified by the current cost. They were all given 20k+ E Cost and around
+500-1000 Mass Cost as well as given the regeneration nerfs and etc.
+</p>
+
+<p>
+Shields offset were standardized a bit to prevent some of the outrageous shield
+layering. (Anti Artillery Shield for UEF is untouched by any of these changes as
+well as Cybran Shields inbetween the final &amp; first upgrade)
+</p>
+
+<p>
+All Square Shields have been removed and replaced by significantly buffed
+BrewLAN Experimental Shields that have been completely reworked to fit into the
+Experimental Phase of the game.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org51a677f" class="outline-3">
+<h3 id="org51a677f">T2 Cybran Hoplite</h3>
+<div class="outline-text-3" id="text-org51a677f">
+<p>
+Range 42 -&gt; 37
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd3ddd62" class="outline-3">
+<h3 id="orgd3ddd62">T2 UEF Mongoose</h3>
+<div class="outline-text-3" id="text-orgd3ddd62">
+<p>
+Range 34 -&gt; 32
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbdff79e" class="outline-3">
+<h3 id="orgbdff79e">T3 Pervical | Brick | Harbinger</h3>
+<div class="outline-text-3" id="text-orgbdff79e">
+<p>
+TurretYawSpeed 35 -&gt; 90
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgddf13ce" class="outline-3">
+<h3 id="orgddf13ce">T3 UEF Pervical</h3>
+<div class="outline-text-3" id="text-orgddf13ce">
+<p>
+Damage 900 -&gt; 1450 RoF 0.5 -&gt; 0.23
+</p>
+</div>
+</div>
+
+<div id="outline-container-org17ed985" class="outline-3">
+<h3 id="org17ed985">T3 Aeon Harbinger</h3>
+<div class="outline-text-3" id="text-org17ed985">
+<p>
+No Longer Fires two shoots in one Salvo RoF increased to 2 (2 Shoots 2
+Salvos)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd4bfd93" class="outline-3">
+<h3 id="orgd4bfd93">T3 Seraphim Thau Battery</h3>
+<div class="outline-text-3" id="text-orgd4bfd93">
+<p>
+-20% Reduction Against Shields Removed DamageRadius 2 -&gt; 3.5
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3c1a8e4" class="outline-3">
+<h3 id="org3c1a8e4">T4 Cybran Megalith</h3>
+<div class="outline-text-3" id="text-org3c1a8e4">
+<p>
+Energy Cost 450000 -&gt; 785500
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgee0beb9" class="outline-3">
+<h3 id="orgee0beb9">Misc</h3>
+<div class="outline-text-3" id="text-orgee0beb9">
+<p>
+Removed Cybran T3 Sniper
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgffcd4d9" class="outline-2">
+<h2 id="orgffcd4d9">1.33</h2>
+<div class="outline-text-2" id="text-orgffcd4d9">
+</div>
+<div id="outline-container-orgf54df65" class="outline-3">
+<h3 id="orgf54df65">Weapon States</h3>
+<div class="outline-text-3" id="text-orgf54df65">
+<p>
+All Weapon States (Excluding WeaponFiringState) have been rewritten to a
+cleaner standard and to reduce the amount of unnessacry states many
+units were going through. This causes latency and delay as well as other
+strange bugs in units. This is a extremely deep and fundamental change
+to the game and I expect some units to be broken. (Please report them in
+our discord ASAP for hotfixes)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcd13fb0" class="outline-3">
+<h3 id="orgcd13fb0">Misc</h3>
+<div class="outline-text-3" id="text-orgcd13fb0">
+<p>
+Fix T2 UEF Statue rockets
+</p>
+
+<p>
+Fix T2 UEF Pillar DPS
+</p>
+
+<p>
+Fix T3 Aeon Wraith Pathfinding
+</p>
+
+<p>
+Fix T3 Cybran Tripple Threat DPS &amp; Firing States
+</p>
+
+<p>
+Fix T3 UEF Brimstone DPS &amp; Firing States
+</p>
+
+<p>
+Fix T3 Aeon Mothra DPS &amp; Firing States
+</p>
+
+<p>
+Fix T3 Cybran Neolith DPS &amp; Firing States
+</p>
+
+<p>
+Fix Seraphim Commander not shooting the correct projectile
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc64bbfa" class="outline-2">
+<h2 id="orgc64bbfa">1.32</h2>
+<div class="outline-text-2" id="text-orgc64bbfa">
+</div>
+<div id="outline-container-org565384e" class="outline-3">
+<h3 id="org565384e">Wraith</h3>
+<div class="outline-text-3" id="text-org565384e">
+<ul class="org-ul">
+<li>Acceleration 1.5 -&gt; 2</li>
+<li>BackUpDistance = 10</li>
+<li>TurnFacingRate 20 -&gt; 55</li>
+<li>TurnRate 22 -&gt; 50</li>
+<li>RotateOnSpot = True</li>
+</ul>
+
+<p>
+Fixed The Pathfinding &amp; Improved the Micro on Wraith (This allows the guns to move more freely)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5e64cc4" class="outline-3">
+<h3 id="org5e64cc4">Factories</h3>
+<div class="outline-text-3" id="text-org5e64cc4">
+<p>
+T2 Engineers can now build T2 Factories T3 Engineers can now build T3 Factories
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1dfb17d" class="outline-3">
+<h3 id="org1dfb17d">T2 Pillar Tank</h3>
+<div class="outline-text-3" id="text-org1dfb17d">
+<p>
+Health 1250 -&gt; 1500
+</p>
+</div>
+</div>
+
+<div id="outline-container-org782caff" class="outline-3">
+<h3 id="org782caff">Misc</h3>
+<div class="outline-text-3" id="text-org782caff">
+<p>
+Removed Stun from Dalek, Thug, Anode, Hippo, Ambush Bot
+</p>
+
+<p>
+Removed Notha &amp; Vesinee
+</p>
+
+<p>
+Fixed DPS &amp; Damage on The T4 PD "Neolith"
+</p>
+
+<p>
+Reverted Damage nerf to the T4 PD "Mothra"
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org55a21d8" class="outline-2">
+<h2 id="org55a21d8">1.31</h2>
+<div class="outline-text-2" id="text-org55a21d8">
+</div>
+<div id="outline-container-org4f50f7d" class="outline-3">
+<h3 id="org4f50f7d">Shield Overspill</h3>
+<div class="outline-text-3" id="text-org4f50f7d">
+<ul class="org-ul">
+<li>DISCLAIMER: This significantly nerfs shields and SIGNIFICANTLY &amp;
+FUNDAMENTALLY changes the entire flow of the game. It can not be
+stressed enough that when playing 1.31 please take this into account.</li>
+</ul>
+
+<p>
+Shield Overspill is a brand new functionality for the QUIET Project (although
+FAF has had it for a long time). It introduces the ability for Weapons with AoE
+to spread the damage out through multiple shields. This effectively nerfs Mobile
+Shield Stacking, Static Shield Stacking &amp; makes (T2, T3, T4) Artillery as well
+as any unit that wields a significant weapon with large AoE a massive threat to
+layered shielding.
+</p>
+
+<p>
+Currently AoE Damage is spread throughout shields by a 15% per Shield.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4bd4ce8" class="outline-3">
+<h3 id="org4bd4ce8">T3 Seraphim Oteethka</h3>
+<div class="outline-text-3" id="text-org4bd4ce8">
+<ul class="org-ul">
+<li>Stun Duration 1 -&gt; 0.15 (Seconds)</li>
+<li>Stun Radius 1 -&gt; 0.5</li>
+<li>FiringRandomnessWhileMoving 0.5 -&gt; 0.75</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2a84cb5" class="outline-3">
+<h3 id="org2a84cb5">T2 Cybran Hoptile</h3>
+<div class="outline-text-3" id="text-org2a84cb5">
+<p>
+Removed Stun from Rockets
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1c24133" class="outline-2">
+<h2 id="org1c24133">1.30</h2>
+<div class="outline-text-2" id="text-org1c24133">
+</div>
+<div id="outline-container-org9c5002b" class="outline-3">
+<h3 id="org9c5002b">T3 UEF Helltank</h3>
+<div class="outline-text-3" id="text-org9c5002b">
+<p>
+Removed AMPHIBIOUS Removed SUBMERSIBLE
+BuildCostEnergy = 15500, &#x2013; was 17500
+BuildCostMass = 1425, &#x2013; was 1725
+</p>
+</div>
+<div id="outline-container-org97bc4a1" class="outline-4">
+<h4 id="org97bc4a1">Riot beams</h4>
+<div class="outline-text-4" id="text-org97bc4a1">
+<p>
+MaxRadius = 14, &#x2013;was 28
+</p>
+</div>
+</div>
+<div id="outline-container-orgd31c13e" class="outline-4">
+<h4 id="orgd31c13e">Rocket Salvo</h4>
+<div class="outline-text-4" id="text-orgd31c13e">
+<p>
+from 44 MaxRadius to 42 MaxRadius
+</p>
+</div>
+</div>
+<div id="outline-container-org2d885cf" class="outline-4">
+<h4 id="org2d885cf">Railgun</h4>
+<div class="outline-text-4" id="text-org2d885cf">
+<p>
+Damage = 875, &#x2013; was 750
+MaxRadius = 42, &#x2013; was 40
+RateOfFire = 0.225, &#x2013; was 0.3
+</p>
+</div>
+</div>
+<div id="outline-container-org3146e16" class="outline-4">
+<h4 id="org3146e16">Ravager</h4>
+<div class="outline-text-4" id="text-org3146e16">
+<p>
+Damage = 35, &#x2013; was 50
+MaxRadius = 16, &#x2013; was 36
+Health = 2750, &#x2013; was 5150
+MaxHealth = 2750, &#x2013; was 5150
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8261924" class="outline-3">
+<h3 id="org8261924">T3 UEF Juggernant</h3>
+<div class="outline-text-3" id="text-org8261924">
+<p>
+Health = 4200, &#x2013; was 3150
+MaxHealth = 4200, &#x2013; was 3150
+BuildCostEnergy = 36000, &#x2013; was 24000
+BuildCostMass = 3250, &#x2013; was 1950
+</p>
+</div>
+<div id="outline-container-orgc9e0c04" class="outline-4">
+<h4 id="orgc9e0c04">Gauss cannon</h4>
+<div class="outline-text-4" id="text-orgc9e0c04">
+<p>
+MaxRadius = 32, &#x2013; was 39 &#x2013;
+</p>
+</div>
+</div>
+<div id="outline-container-org1ea4e5b" class="outline-4">
+<h4 id="org1ea4e5b">Gatling 2x</h4>
+<div class="outline-text-4" id="text-org1ea4e5b">
+<p>
+MaxRadius = 28, &#x2013; was 30
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org853a84d" class="outline-3">
+<h3 id="org853a84d">T2 Cybran Mobile Bomb</h3>
+<div class="outline-text-3" id="text-org853a84d">
+<p>
+It receives permanent cloak but has it's stealth removed It can not be manually
+attacked into the target and will also cause 1.1k dmg if killed (volatile
+ability)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2972b2f" class="outline-3">
+<h3 id="org2972b2f">T4 Cybran Basilisk</h3>
+<div class="outline-text-3" id="text-org2972b2f">
+<p>
+Basilisk receives a doubled veterancy level increase to account for its
+extremely powerful AA capability.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb362dec" class="outline-3">
+<h3 id="orgb362dec">ACU Overcharge Rework:</h3>
+<div class="outline-text-3" id="text-orgb362dec">
+<p>
+ACU Overcharge rework applies to all Commanders are a standardized
+number system.
+</p>
+
+<ul class="org-ul">
+<li>commandDamage = 400</li>
+<li>energyMult = 0.9</li>
+<li>maxDamage = 25000</li>
+<li>minDamage = 1250</li>
+<li>structureDamage = 800</li>
+</ul>
+
+<p>
+This is the number table for all Commanders, CommandDamage and
+StructureDamage are unique hard values for all (Commanders &amp; Structures)
+Damage is calculated base off the Energy aviable in your storage and can
+use up to 90% of your energy storage.
+</p>
+
+<p>
+The maxDamage it can deliver is 25000 however this takes significant amount of
+storage (the calculated value would be somewhere around 70k e storage) The
+cooldown is rapid however takes around 3 seconds for a full recharge of the OC
+once used. -&gt; EnergyDrainPerSecond = 1500, -&gt; EnergyRequired = 4500,
+</p>
+
+<p>
+With around 20k e storage, your commander can now easily demolish his
+way through a T3.5 Army especially if he's a fully combat vetted and
+upgrade Commander. He will still struggle with Experimentals as the peak
+damage is VERY hard to reach.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orged20355" class="outline-3">
+<h3 id="orged20355">Removed Units</h3>
+<div class="outline-text-3" id="text-orged20355">
+<p>
+T3 UEF Ironfist
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org13ef4e2" class="outline-2">
+<h2 id="org13ef4e2">1.29</h2>
+<div class="outline-text-2" id="text-org13ef4e2">
+</div>
+<div id="outline-container-org6a5f757" class="outline-3">
+<h3 id="org6a5f757">T2 Seraphim Ilsavoh &amp; T2.5 Ilsavoh</h3>
+<div class="outline-text-3" id="text-org6a5f757">
+<p>
+YawSpeed increased from 30 -&gt; 90 or 75 (t2.5)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org310e8b9" class="outline-3">
+<h3 id="org310e8b9">T2 UEF Rommel</h3>
+<div class="outline-text-3" id="text-org310e8b9">
+<p>
+Rommel Tech 3 -&gt; Tech 2 All Stats generally taken from the T2 Banshee
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd00a403" class="outline-3">
+<h3 id="orgd00a403">T4 Mothra</h3>
+<div class="outline-text-3" id="text-orgd00a403">
+<p>
+Damage 2950 -&gt; 1475 DamageRadius 2.5 -&gt; 2 Range 100 -&gt; 88
+</p>
+</div>
+</div>
+
+<div id="outline-container-org23f9b69" class="outline-3">
+<h3 id="org23f9b69">Unit Removal</h3>
+<div class="outline-text-3" id="text-org23f9b69">
+<p>
+UEF: T2 Janus, T3 Warhammer, T4 Rampage, T2 Banshee Cybran: T2 Cosair
+All: Experimental Resource Storages
+</p>
+
+<p>
+UEF Pillar / Cybran Hoplite / UEF Mongoose TurretYawSpeed from 45 -&gt; 90
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5e6e530" class="outline-3">
+<h3 id="org5e6e530">T2 Cybran Ambush Unit</h3>
+<div class="outline-text-3" id="text-org5e6e530">
+<p>
+Removed Stealth Cloaking is always on now
+</p>
+
+<ul class="org-ul">
+<li>Health 900 -&gt; 1000</li>
+<li>RegenRate 1 -&gt; 7.5</li>
+<li>Range increased to 30 from 28</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga582908" class="outline-3">
+<h3 id="orga582908">T2.5 UEF Land Unit</h3>
+<div class="outline-text-3" id="text-orga582908">
+<p>
+FiringRandomness 0.3 -&gt; 0 (Guass Weapons)
+FiringRandomnessWhenMoving 0.9 -&gt; 0.35 (Guass Weapons)
+FiringRandomness 0.3 -&gt; 0 (Gatling Weapons)
+MuzzleVelocity 29 -&gt; 30
+TurretYawSpeed 45 -&gt; 60 (Gatling Weapons)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org320f3a0" class="outline-3">
+<h3 id="org320f3a0">T1.5 Land Units</h3>
+<div class="outline-text-3" id="text-org320f3a0">
+<p>
+All speed reduced from 3.1-3.4 to a generalized 2.65-2.7 MaxSpeed
+</p>
+
+<p>
+Acceleration reduced from 1.5 to 1.15 in most cases (this is also generalized)
+</p>
+
+<p>
+T1.5 Aeon Unit receives a rocket range reduction from 34 to 28
+</p>
+
+<p>
+T1.5 UEF Unit receives 1 DamageRadius &amp; range standardized with other T1.5 units
+as it's speed is standardized now.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2451f26" class="outline-3">
+<h3 id="org2451f26">Misc</h3>
+<div class="outline-text-3" id="text-org2451f26">
+<p>
+Athusil Hitbox is fixed so Laser Units don't miss
+</p>
+
+<p>
+Mongoose Snap Behavior and Gatling Gun sometimes locking up completely is now fixed
+</p>
+
+<p>
+Slink Cloak now fully works and does not require you to reenable it after it
+fires
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcc28750" class="outline-2">
+<h2 id="orgcc28750">1.28</h2>
+<div class="outline-text-2" id="text-orgcc28750">
+</div>
+<div id="outline-container-org3f556e0" class="outline-3">
+<h3 id="org3f556e0">T1 Shard AA Boat</h3>
+<div class="outline-text-3" id="text-org3f556e0">
+<p>
+Shard receives a significant 20 -&gt; 12.5 DPS Nerf as well as AoE
+Reduction from 2 -&gt; 1.25 to stop it from dominating T2 Torpedo Bombers
+via spam.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5da89a1" class="outline-3">
+<h3 id="org5da89a1">T2 Submarine Hunters</h3>
+<div class="outline-text-3" id="text-org5da89a1">
+<p>
+Projectile Count Reduced from 3 -&gt; 1
+Damage reduced by 50%
+SalvoDelay increase to 1 Second on all T2 Submarines
+Torpedo Defense on Submarine Hunters from 9 -&gt; 23 RoF
+Torpedo Defense Range on Submarine Hunters from 3.2 -&gt; 3.3
+</p>
+</div>
+</div>
+
+<div id="outline-container-org806936c" class="outline-3">
+<h3 id="org806936c">T2 Destroyers</h3>
+<div class="outline-text-3" id="text-org806936c">
+<p>
+T2 Destroyers receive another Torpedo Defense Buff to combat submarines
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9b1cbae" class="outline-3">
+<h3 id="org9b1cbae">Air Overhaul</h3>
+<div class="outline-text-3" id="text-org9b1cbae">
+<p>
+Air Overhaul introduces many fixes to physics of Bombers &amp;
+Rebalancing of Fighters to make T2 Fighters relevant and T1 Fighters far
+less effective.
+</p>
+
+<p>
+T1 Air Fighters: 20 HP Reduction 5-10% DPS Reduction
+</p>
+
+<p>
+T2 Air Fighters: 50% Increase in Dps 3k E Cost Reduction 30 M Cost
+Reduction
+</p>
+
+<p>
+Health: 1300 - 1500 (Depending on Faction)
+</p>
+
+<p>
+Misc: All Bombers physics reworked to allow them to properly be micro'd and
+bombs dropped significantly better
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0c5aca7" class="outline-2">
+<h2 id="org0c5aca7">9/15/24</h2>
+<div class="outline-text-2" id="text-org0c5aca7">
+</div>
+<div id="outline-container-org1082478" class="outline-3">
+<h3 id="org1082478">T3 Seraphim Submarine</h3>
+<div class="outline-text-3" id="text-org1082478">
+<p>
+Slight Nerf to Seraphim Submarine to prevent the meta where you would
+shift g 5-6 seraphim subs on top of each other and their torp defense
+would infinitely be able to defend a SIGNIFICANT amount of torps.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge21bb9e" class="outline-3">
+<h3 id="orge21bb9e">T2 Destroyers</h3>
+<div class="outline-text-3" id="text-orge21bb9e">
+<p>
+All Torpedo Defense on Destroyers significantly buffed should be able to crush
+T1 Subs at a relative similar cost efficiency
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0042251" class="outline-3">
+<h3 id="org0042251">T2 Torpedo Bombers</h3>
+<div class="outline-text-3" id="text-org0042251">
+<p>
+Torpedo Bombers nerfed to original 800-860 Health Values with a slight increase
+in E cost &amp; M cost. Relative Cost increase was 2k more e and 50 more mass
+</p>
+</div>
+</div>
+
+<div id="outline-container-org555742f" class="outline-3">
+<h3 id="org555742f">Bombers</h3>
+<div class="outline-text-3" id="text-org555742f">
+<p>
+Fixed Bombers not dropping bombs properly also nerfs dodge micro against
+bombers as well, i.e means early bombers and such are much stronger and
+harder to dodge
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5435548" class="outline-3">
+<h3 id="org5435548">T2 Static Flak &amp; T3 Static Flak</h3>
+<div class="outline-text-3" id="text-org5435548">
+<p>
+Buff Flak against Gunships &amp; Remove most of it's usefulness against fast flying
+strategic bombers and fighters (Making sams more useful) Comparable Values to
+the Static except higher rank and generally more damage (although of course more
+cost)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5dd36c1" class="outline-3">
+<h3 id="org5dd36c1">T2 Cybran Immortal</h3>
+<div class="outline-text-3" id="text-org5dd36c1">
+<p>
+Cybran should NOT be receiving Stealth or Cloak on 99% of their units as they
+have powerful mobile stealth &amp; cloaking fields in both T2 &amp; T3 Removed Stealth
+</p>
+</div>
+</div>
+
+<div id="outline-container-org69f1342" class="outline-3">
+<h3 id="org69f1342">Misc</h3>
+<div class="outline-text-3" id="text-org69f1342">
+<p>
+Fix Target Priorities for certain units. They will target Protector Bots
+properly again.
+</p>
+
+<p>
+Evenflow is now integrated into Economy &amp; Flow.It is
+now strongly recommended to use this version as it goes hand and hand
+with QCE.
+</p>
+
+<p>
+Additional tweaks into Economy &amp; Flow include Hydrocarbons put into line with T2
+Pgen &amp; T3 Pgen cost and production of energy.
+</p>
+
+<p>
+Another Additional tweak includes reduction in buildtime on the Enhancements on
+T3 Factories Fixed T3 Seraphim SAM Missing ASF &amp; Strategic Bombers Fixed Czar
+never catching up to a target when using an attack command
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf8d5bd5" class="outline-2">
+<h2 id="orgf8d5bd5">9/14/2024</h2>
+<div class="outline-text-2" id="text-orgf8d5bd5">
+</div>
+<div id="outline-container-org1f7ec0e" class="outline-3">
+<h3 id="org1f7ec0e">Aeon T2 Sniper</h3>
+<div class="outline-text-3" id="text-org1f7ec0e">
+<p>
+Reload Speed 6 -&gt; 7 Seconds Removed Stealth MaxSpeed 3.8 -&gt; 3.6
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc1b4237" class="outline-3">
+<h3 id="orgc1b4237">T2 Mobile Flak</h3>
+<div class="outline-text-3" id="text-orgc1b4237">
+<p>
+Buff Flak against Gunships &amp; Remove most of it's usefulness against
+fast flying strategic bombers and fighters (Making sams more useful)
+</p>
+
+<p>
+All Flak: Normalize Speed to Allow Micro'ing
+</p>
+<ul class="org-ul">
+<li>DamageRadius: 1.5 -&gt; 3</li>
+<li>TurretYaw: 360 -&gt; 180 TurretYawSpeed: (A: 45 | C: 30 | U: 60 | S: 40)</li>
+<li>Muzzle Velocity: 48 -&gt; 20</li>
+<li>FiringRandomness: 0.5 -&gt; 2.5</li>
+<li>MaxRadius: 36 -&gt; 40</li>
+</ul>
+
+<p>
+Significant Buff to TargetPriorities
+</p>
+</div>
+</div>
+
+<div id="outline-container-org58ef09f" class="outline-3">
+<h3 id="org58ef09f">T3 Sniper</h3>
+<div class="outline-text-3" id="text-org58ef09f">
+<p>
+Snipers are all now more nimble to allow micro &amp; also to allow them
+to be relevant especially in QUIET where there is a lot more Indirect
+then Vanilla or FAF (Might still need more buffs)
+</p>
+
+<ul class="org-ul">
+<li>Normalize Speed to Allow Micro'ing</li>
+<li>Significant Buff to TargetPriorities</li>
+<li>DamageType = 'ShieldMult1.2', (20% Shield Damage)</li>
+<li>FiringTolerance: 0.1 -&gt; 2</li>
+</ul>
+</div>
+<div id="outline-container-orga55c478" class="outline-4">
+<h4 id="orga55c478">Aeon:</h4>
+<div class="outline-text-4" id="text-orga55c478">
+<ul class="org-ul">
+<li>ReloadSpeed: 9 -&gt; 6 Seconds</li>
+<li>TurretYaw: 360 -&gt; 180</li>
+<li>TurretYawSpeed: 30 -&gt; 90</li>
+<li>Removed Unpacking Animation</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org87235c3" class="outline-4">
+<h4 id="org87235c3">Seraphim:</h4>
+<div class="outline-text-4" id="text-org87235c3">
+<ul class="org-ul">
+<li>SniperMode FiringTolerance: 0.1 -&gt; 3</li>
+<li>ReloadSpeed: 19 -&gt; 10 Seconds</li>
+<li>TurretYaw: 360 -&gt; 180</li>
+<li>TurretYawSpeed: 30 -&gt; 90</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgff5d9bf" class="outline-2">
+<h2 id="orgff5d9bf">9/12/2024</h2>
+<div class="outline-text-2" id="text-orgff5d9bf">
+</div>
+<div id="outline-container-orgeec0b11" class="outline-3">
+<h3 id="orgeec0b11">UEF T4 Goliath</h3>
+<div class="outline-text-3" id="text-orgeec0b11">
+<p>
+Significant Buff to TargetPriorities Forced the Goliath to turn with
+it's weapons when not being moved commanded Reclassed to Breacher Class
+</p>
+
+<p>
+Added Effects to its Missile Barrage
+</p>
+
+<ul class="org-ul">
+<li>Health 104000 -&gt; 124000</li>
+</ul>
+</div>
+
+<div id="outline-container-org869ec40" class="outline-4">
+<h4 id="org869ec40">Missile Barrage:</h4>
+<div class="outline-text-4" id="text-org869ec40">
+<ul class="org-ul">
+<li>Firing Randomness 3 -&gt; 5</li>
+<li>Damage 600 -&gt; 1000</li>
+<li>DamageRadius 3 -&gt; 4</li>
+<li>ProjectileLifetimeUsesMultiplier = 1</li>
+</ul>
+
+<p>
+Missiles now ZigZag and create a random scatter barrage meaning the missiles no
+longer all hit the targetground perfectly. (This makes it extremely hard for TMD
+to intercept them)
+</p>
+
+<ul class="org-ul">
+<li>Missile Health 1 -&gt; 2</li>
+<li>MaxSpeed 20 -&gt; 10</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb68504a" class="outline-4">
+<h4 id="orgb68504a">Flamethrower Arms:</h4>
+<div class="outline-text-4" id="text-orgb68504a">
+<ul class="org-ul">
+<li>DPS: 480 DPS -&gt; 880 DPS</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org93af55a" class="outline-4">
+<h4 id="org93af55a">Death Nuke:</h4>
+<div class="outline-text-4" id="text-org93af55a">
+<ul class="org-ul">
+<li>Damage 14,700 -&gt; 32,890</li>
+<li>InnerRadius 12 -&gt; 18</li>
+<li>OuterRadius 24 -&gt; 38</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfee8efc" class="outline-2">
+<h2 id="orgfee8efc">9/10/2024</h2>
+<div class="outline-text-2" id="text-orgfee8efc">
+<p>
+Fixed Barrage Artillery not being correctly modified Added Submod called
+"Economy &amp; Flow" will be added to modlist when you add the full LCE to
+your usermods folder. Economy &amp; Flow affects factories cost, mass
+extractor income &amp; cost and will eventually include a custom version of
+Evenflow. Removed AirSpawnWaves from all AIs in LOUD
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4e34f9a" class="outline-2">
+<h2 id="org4e34f9a">1.22</h2>
+<div class="outline-text-2" id="text-org4e34f9a">
+<ul class="org-ul">
+<li>9/8/2024</li>
+</ul>
+</div>
+<div id="outline-container-org0e1b778" class="outline-3">
+<h3 id="org0e1b778">Reclaim</h3>
+<div class="outline-text-3" id="text-org0e1b778">
+<p>
+Reclaim that contains 90% of it's mass or higher is reduced to 75%
+however if the reclaim is lower then 75% on a unit's wreckage it is
+brought back up to 75%
+</p>
+</div>
+</div>
+
+<div id="outline-container-org32ca358" class="outline-3">
+<h3 id="org32ca358">T1 &amp; T2 Land</h3>
+<div class="outline-text-3" id="text-org32ca358">
+<p>
+T1 &amp; T2 were overperforming especially T1 Land against both T2 &amp; T3,
+similarly T2 was overperforming vs T3.
+</p>
+
+<p>
+The intended purpose of this change is to extend the gap between tiers.
+</p>
+
+<p>
+Removed 12% Speed &amp; Health Buff given to T1 Land in Blueprints.lua
+</p>
+
+<p>
+Removed 6% Speed &amp; Health Buff given to T2 Land in Blueprints.lua
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgea8afaa" class="outline-3">
+<h3 id="orgea8afaa">T3 Barrage Artillery</h3>
+<div class="outline-text-3" id="text-orgea8afaa">
+<p>
+Barrage Artillery is buffed to make it more cost efficient vs
+building additional T2 Artillery.
+</p>
+
+<p>
+Redid TargetPriorities for All T3 Barrage.
+</p>
+</div>
+
+<div id="outline-container-org1fc1e5f" class="outline-4">
+<h4 id="org1fc1e5f">Aeon:</h4>
+<div class="outline-text-4" id="text-org1fc1e5f">
+<ul class="org-ul">
+<li>Damage 265 -&gt; 530</li>
+<li>DamageRadius 2 -&gt; 3</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge60abb9" class="outline-4">
+<h4 id="orge60abb9">UEF:</h4>
+<div class="outline-text-4" id="text-orge60abb9">
+<ul class="org-ul">
+<li>Damage 1500 -&gt; 3000</li>
+<li>DamageRadius 2 -&gt; 3</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org812ff48" class="outline-4">
+<h4 id="org812ff48">Cybran:</h4>
+<div class="outline-text-4" id="text-org812ff48">
+<ul class="org-ul">
+<li>Damage 1200 -&gt; 2400</li>
+<li>DamageRadius 2.8 -&gt; 3.8</li>
+<li>StunRadius 2 -&gt; 3</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc5c6de2" class="outline-4">
+<h4 id="orgc5c6de2">Seraphim:</h4>
+<div class="outline-text-4" id="text-orgc5c6de2">
+<ul class="org-ul">
+<li>Damage 1300 -&gt; 2600</li>
+<li>Damage Radius 2.4 -&gt; 3.4</li>
+<li>DamageType Normal -&gt; ShieldMult1.5 (50% More Damage to Shields)</li>
+<li>Muzzle Velocity 33 -&gt; 66</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5041717" class="outline-3">
+<h3 id="org5041717">T4 Eliash Medium Rapid Assault Bot</h3>
+<div class="outline-text-3" id="text-org5041717">
+<p>
+The Eliash receives a small buff to it's personal shield Shield
+</p>
+<ul class="org-ul">
+<li>21000 -&gt; 26000</li>
+<li>ShieldRegenStartTime 1 -&gt; 0.5</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-orgebdb270" class="outline-2">
+<h2 id="orgebdb270">1.02/1.021</h2>
+<div class="outline-text-2" id="text-orgebdb270">
+<ul class="org-ul">
+<li>9/3/2024</li>
+</ul>
+</div>
+<div id="outline-container-org9fd9703" class="outline-3">
+<h3 id="org9fd9703">T3 Triseptitron</h3>
+<div class="outline-text-3" id="text-org9fd9703">
+<p>
+Rocket Damage 125 -&gt; 215
+</p>
+
+<p>
+Range 80 -&gt; 90
+</p>
+
+<p>
+DamageRadius 2 -&gt; 2.5
+</p>
+
+<p>
+FiringRandomness 1.4 -&gt; 4
+</p>
+
+<p>
+Fixed issue where it was overshooting it's target always
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbc84ac8" class="outline-3">
+<h3 id="orgbc84ac8">T4 Galactic Colossus (GC) / T4 Universal Colossus (UC)</h3>
+<div class="outline-text-3" id="text-orgbc84ac8">
+<ul class="org-ul">
+<li>Fixed GC/UC Tractor Claws (This makes them SIGNIFICANTLY more powerful)</li>
+<li>GC/UC Tractor Claws now crush units over time that have a health over</li>
+</ul>
+<p>
+5000
+</p>
+<ul class="org-ul">
+<li>UC Tractor Claws deal 9999 every 11 Ticks</li>
+<li>GC Tractor Claws deal 4999 every 11 Ticks</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6a951fb" class="outline-3">
+<h3 id="org6a951fb">T4 Eliash Medium Rapid Assault Bot</h3>
+<div class="outline-text-3" id="text-org6a951fb">
+<p>
+Mass Cost 26000 -&gt; 21000
+</p>
+
+<p>
+Energy Cost 420000 -&gt; 480000
+</p>
+
+<p>
+Health 66500 -&gt; 18500
+</p>
+
+<p>
+Shield = 21000
+</p>
+
+<p>
+ShieldRegenRate = 240
+</p>
+
+<p>
+ShieldRechargeTime = 12
+</p>
+</div>
+
+<div id="outline-container-orgdfb952a" class="outline-4">
+<h4 id="orgdfb952a">Main Weapon</h4>
+<div class="outline-text-4" id="text-orgdfb952a">
+<p>
+Buffed Auto TargetPriorities
+</p>
+
+<p>
+10000 -&gt; 5000 DPS
+</p>
+
+<p>
+EnergyDrainPerSecond = 650
+</p>
+
+<p>
+EnergyRequired = 3250
+AA Weapon 300 -&gt; 400 Damage
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcfac0b6" class="outline-3">
+<h3 id="orgcfac0b6">T2 Aeon Sniper</h3>
+<div class="outline-text-3" id="text-orgcfac0b6">
+<p>
+TargetPriorities Readjusted to increase Micro Focus Remove Shield
+</p>
+
+<p>
+Ignoring from Projectile MaintenanceConsumptionPerSecondEnergy 20 -&gt; 50
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org07368e1" class="outline-2">
+<h2 id="org07368e1">1.0.1</h2>
+<div class="outline-text-2" id="text-org07368e1">
+<ul class="org-ul">
+<li>9/2/2024</li>
+</ul>
+
+<p>
+Hotfix for T2 Aeon Sniper not firing
+</p>
+</div>
+</div>
+
+<div id="outline-container-org22a04d3" class="outline-2">
+<h2 id="org22a04d3">1.0.0</h2>
+<div class="outline-text-2" id="text-org22a04d3">
+<ul class="org-ul">
+<li>9/2/2024</li>
+</ul>
+</div>
+<div id="outline-container-orga0efd72" class="outline-3">
+<h3 id="orga0efd72">Reclaim Changes</h3>
+<div class="outline-text-3" id="text-orga0efd72">
+<p>
+Reclaim Changes were simple. The Single Goal in Mind was to encourage
+early aggression but punish late game mistakes i.e losing entire army
+without delivering significant damage.
+</p>
+
+<p>
+All Wrecks have been fixed to prevent permanent disappear of Wreckage/Reclaim
+Overkill Ratio on Wreckage disappearing has been changed from 10% to 30% meaning
+you have to overkill said unit by 30% to not receive the wreckage Naval Reclaim
+no longer gives 30% of the energy in the Wreckage
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4722a7a" class="outline-3">
+<h3 id="org4722a7a">T3 Penetration Bombers</h3>
+<div class="outline-text-3" id="text-org4722a7a">
+<p>
+Pen Bombers are very strong, with the ability to easily punch through
+most AA &amp; having cheap stealth. This change was needed to prevent early
+Pen Bomber Rushes specifically in Teamgames.Many changes are aimed at
+some of the first steps towards significantly diversifying units
+</p>
+</div>
+
+<div id="outline-container-org63de39c" class="outline-4">
+<h4 id="org63de39c">Aeon:</h4>
+<div class="outline-text-4" id="text-org63de39c">
+<p>
+Mass Cost 4300 -&gt; 5300
+Energy Cost 165000 -&gt; 195000
+Stealth Energy Cost Upkeep 50 -&gt; 250
+MaxAirspeed 19 -&gt; 17
+MinAirspeed 15 -&gt; 14
+TurnSpeed 1.0 -&gt; 1.1
+</p>
+</div>
+</div>
+<div id="outline-container-org6cddda9" class="outline-4">
+<h4 id="org6cddda9">UEF:</h4>
+<div class="outline-text-4" id="text-org6cddda9">
+<p>
+Mass Cost 4750 -&gt; 5750
+Energy Cost 180000 -&gt; 2100000
+Stealth Energy Cost Upkeep 50 -&gt; 300
+Health 6800 -&gt; 7200
+MaxAirspeed 19 -&gt; 18
+TurnSpeed 1.0 -&gt; 0.8
+Small Yield Nuclear Bomb Damage 1900k -&gt; 1200
+Lancer Standoff ASM Barrage Damage 600 -&gt; 1150
+Lancer Standoff ASM Barrage DamageRadius 2 -&gt; 3.5
+</p>
+</div>
+</div>
+<div id="outline-container-orgb8a6ee2" class="outline-4">
+<h4 id="orgb8a6ee2">Cybran:</h4>
+<div class="outline-text-4" id="text-orgb8a6ee2">
+<p>
+Mass Cost 4750 -&gt; 5500
+Energy Cost 180000 -&gt; 190000
+Stealth Energy Cost Upkeep 50 -&gt; 300
+Health 4750 -&gt; 4250
+RegenRate 10 -&gt; 25
+MaxAirspeed 19 -&gt; 20
+MinAirspeed 15 -&gt; 16
+TurnSpeed 1.0 -&gt; 1.1
+</p>
+</div>
+</div>
+<div id="outline-container-orgf97ed6e" class="outline-4">
+<h4 id="orgf97ed6e">Seraphim:</h4>
+<div class="outline-text-4" id="text-orgf97ed6e">
+<p>
+Mass Cost 4750 -&gt; 5750
+Energy Cost 180000 -&gt; 195000
+Stealth Energy Cost Upkeep 50 -&gt; 250
+Health 6250 -&gt; 5250
+MaxAirspeed 19 -&gt; 18
+MinAirspeed 15 -&gt; 14
+Bombs 3200 -&gt; 4200
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org723b7bf" class="outline-3">
+<h3 id="org723b7bf">T3 Static Artillery</h3>
+<div class="outline-text-3" id="text-org723b7bf">
+<p>
+Revert to the FAF Cost of T3 Static Artillery
+</p>
+</div>
+</div>
+
+<div id="outline-container-org51b2fbb" class="outline-3">
+<h3 id="org51b2fbb">T2 Aeon Sniper</h3>
+<div class="outline-text-3" id="text-org51b2fbb">
+<p>
+The Aeon Sniper was dominating T2, T3, and even early T4 Phase in
+some games, this called for a immediate nerf.
+</p>
+
+<p>
+Its main strength lies in its speed and with the reduction, it should allow
+players to catch them much easier. The cost will also make them less efficient
+and the EnergyRequired will make the Reload much longer as well by 3 more
+seconds.
+</p>
+
+<p>
+Mass Cost 320 -&gt; 465
+</p>
+
+<p>
+Energy Cost 3850 -&gt; 5050
+</p>
+
+<p>
+MaxSpeed 4.0 -&gt; 3.8
+</p>
+
+<p>
+EnergyRequired (Recharge - Main Weapon) 880 -&gt; 1320
+</p>
+</div>
+</div>
+
+<div id="outline-container-org860154a" class="outline-3">
+<h3 id="org860154a">T3 Mobile Sensor Arrays</h3>
+<div class="outline-text-3" id="text-org860154a">
+<p>
+Mobile Sensor Arrays Omni was too small combined with the small omni
+on static radar led to Stealth &amp; Cloak being far too powerful &amp; annoying
+for players.
+</p>
+
+<p>
+Energy Cost Upkeep 850 -&gt; 1500 OmniRadius 56 -&gt; 112
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2 Feb 2025</p>
+<p class="author">Author: Various</p>
+<p class="date">Created: 2025-02-12 Wed 02:17</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

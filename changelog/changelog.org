@@ -1,0 +1,1899 @@
+# -*- mode: org; -*-
+
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+
+#+HTML_HEAD: <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+#+HTML_HEAD: <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
+
+#+HTML_HEAD: <style>pre.src {background-color: #303030; color: #e5e5e5;}</style>
+#+options: num:0
+
+#+TITLE: QUIET Change Log
+#+AUTHOR: Various
+#+DATE: 2 Feb 2025
+#+VERSION: 1.85
+
+** 1.85
+- 2025-01-09
+*** General Changes
+- Removed 9% Decrease in Range from Experimental PD
+- Removed Hermes, Python, Armillary, Toxotai, Hethaamah, Transoma
+- Fixed T2 Flak having 1 Less Damage Radius then Designed
+- T3 UEF Banisher no longer can target High Altitude Air (ASF & Strats)
+- New Ahwassa Bomb Effects & Damage Module (Initial Damage then once the
+  effect fully charges up the rest of the damage is applied)
+
+** 1.84
+- 2025-01-08
+*** General Changes
+- Removed MaintenanceCostEnergyPerSecond from T2 and T3 Sniper as It
+  wasn't needed to balance the unit and It was not working as intended.
+
+*** Comment:
+Energy Review was done in order to account more accurately for Stealth /
+Mobile Stealth as It should be treated in a similar way to Mobile
+Shields & Personal Shields. =The Following Changes were made:=
+**** T4 UEF Star Adder
+  - MaintenanceCostEnergyPerSecond: 80 -> 1250
+  - Radar Radius: 64 -> 42
+  - RegenRate: 12 -> 6 - Speed: 3.5 -> 2.8
+**** T3 UEF Juggernaut
+  - MaintenanceCostEnergyPerSecond: 20 -> 95
+**** T4 UEF Dragonite
+  - MaintenanceCostEnergyPerSecond: 212 -> 850
+  - Veterancy Kills Required Increased
+**** T4 UEF Fatboy
+  - MaintenanceCostEnergyPerSecond: 400 -> 950
+**** T4 UEF Mayhem
+  - RegenRate: 40 -> 15
+  - Radar Radius: 96 -> 64
+  - Sonar Radius: 60 -> 64
+  - Omni Radar Removed
+**** T4 UEF Bloodasp
+  - RegenRate: 14 -> 7
+  - Speed: 3.0 -> 2.9
+  - Veterancy Kills Required Increased
+**** T4 UEF Goliath
+  - RegenRate: 30 -> 20
+  - Radar Radius: 96 -> 64
+  - Max Acceleration: 2.8 -> 1.6
+**** T4 Cybran Megalith
+  - BuildRate: 180 -> 200
+  - Radar Radius: 96 -> 56
+  - Sonar Radius: 60 -> 56
+  - Max Acceleration: 2.4 -> 1.2
+**** T4 Cybran Storm Strider*
+  - Anti Air Damage: 48 -> 24 (Had 480 DPS in AA but now
+has 240)
+  - Unit Cap: 8 -> 10
+  - Rader Radius: 96 -> 56
+  - Stealth Removed
+**** T4 Cybran Megaroach
+  - Anti Air Damage: 50 -> 25 (Had 800 DPS
+in AA but now has 400)
+  - RegenRate: 48 -> 24
+  - Omni Radar Removed
+  - Stealth Removed
+  - Radar Radius: 96 -> 56
+**** T4 Cybran Madbolo
+  - Fixed Rate Of Rate
+  - Rocket Barrage Damage: 375 -> 300
+**** T4 Cybran Basilisk
+  - Unit Cap: 7 -> 12
+  - *Anti Air*
+    =This Unit now had 2.2k DPS in AA but now has 600 DPS in AA=
+  - DoT Pulse: 5 -> 3
+  - MuzzleSalvoSize: 6 -> 4
+  - Rate of Fire: 0.6 -> 0.5
+**** T4 Cybran Avalanche
+  - Max Speed: 2.4 -> 1.8 (This thing was as fast as a
+Basilisk for context)
+  - Radar Radius: 96 -> 56
+  - RegenRate: 40 -> 20
+**** T4 Seraphim Yenah-lao
+  - Max Speed: 3.0 -> 2.6
+  - Regen Rate: 15 -> 10
+  - Stealth Removed
+**** T4 Seraphim Tha-Yath
+  - Cost Mass: 10000 -> 12500
+  - Cost Energy: 80000 -> 90000
+  - Max Speed: 3.3 -> 3.0
+  - Stealth Removed
+  - Free Intel Removed *Anti Air*
+  - Anti Air Damage: 72 -> 102
+  - DamageRadius: 2.4 -> 4
+  - Max Radius: 40 -> 60
+**** T4 Seraphim Athusil
+  - Max Speed: 2.9 -> 2.6
+  - Regen Rate: 20 -> 10
+  - Radar Removed
+  - Stealth Removed
+**** T4 Seraphim Thaez-Atha
+  - MaintenanceCostEnergyPerSecond: 900 -> 2150 (Due to Stealth Field & Personal Stealth)
+  - Radar Radius: 96 -> 64
+  - Omni Removed
+**** T4 Seraphim Yath-Us
+  - Max Speed: 3.4 -> 3.0
+  - Stealth Removed
+**** T4 Seraphim Yenzotha
+  - Max Speed: 3.3 -> 3.0
+  - Max Acceleration: 1.0 -> 1.5
+**** T4 Seraphim Seth Ilhaas
+  - Radar Radius: 64 -> 56
+  - Max Speed: 3.4 -> 3.0
+  - Max Acceleration: 1.0 -> 1.5
+**** T4 Seraphim Ythotha
+  - Max Speed: 2.6 -> 2.4
+  - Max Acceleration: 1.6 -> 1.2
+  - Regen Rate: 20 -> 10
+**** T4 Aeon Inquisitor
+  - Max Acceleration: 0.35 -> 1.3
+  - Radar Added (56 Radius)
+  - Stealth Removed
+**** T4 Aeon Genesis
+  - Cost Mass: 19000 -> 26000
+  - Cost Energy: 385000 -> 435000
+  - Max Speed: 3.3 -> 2.6
+  - Max Acceleration: 1.1 -> 1.3
+**** T4 Aeon Interrogater
+  - Stealth Removed
+**** T4 Aeon Elias
+  - Unit Cap: 4 -> 6
+  - Max Speed: 2.9 -> 2.6
+**** T4 Aeon Absolution
+  - Max Health: 36000 -> 23000
+  - Regen Rate: 12 -> 6
+**** T3 Cybran Operative
+  - Unit Cap: 1 -> 3
+  - MaintenanceCostEnergyPerSecond: 150 -> 465
+  - RadarStealthFieldRadius: 28 -> 24
+**** T2 Cybran Deceiver
+  - Unit Cap: 1 -> 2
+  - MaintenanceCostEnergyPerSecond: 40 -> 190
+  - RadarStealthFieldRadius: 20 -> 16
+**** T2 Cybran Hoptile
+  - FiringRandomnessWhileMoving: 0.2 -> 0.45
+  - Max Radius: 37 -> 36
+**** T2 Cybran Hippo
+  - Damage Radius: 1.42 -> 1.25
+  - Damage: 25 -> 20
+**** T3 Cybran Hailfire
+  - FiringRandomnessWhileMoving: 0.5 -> 1.25
+**** T3 Cybran Triseptitron
+  - Damage: 215 -> 185
+  - Damage Radius: 2.5 -> 2.25
+  - Added FiringRandomnessWhileMoving: 5.5
+**** T3 Cybran Mastodon
+  - FiringRandomnessWhileMoving: 0 -> 1.5
+  - Damage: 55 -> 35
+**** T2 UEF Mongoose
+  - Damage: 15 -> 12 (Gatling Gun)
+
+** 1.83
+- 2025-01-05
+*** General Changes
+- Removed T2 Aeon Gunship Abolisher
+- Fix Seraphim T3 Flak only firing 1 projectile (doing half damage)
+  instead of 2 projectiles
+
+**** T3 Cybran Trilobyte
+  - Damage: 55 -> 48
+  - Health: 2500 -> 1800
+  - Muzzle Velocity: 88 -> 60
+  - Muzzle Velocity Randomness: 5 -> 0
+  - TurretYawSpeed: 115 -> 180
+  - Radar Radius: 72 -> 52
+  - Max Speed: 2.9 -> 2.6
+  - Energy Maintenance: 0 -> 80
+
+**** T3 Aeon Vindicator
+  - *Shield Upgrade*
+    - Shield Recharge Time: 28 -> 38
+    - Shield Size: 16 -> 14
+    - Buildtime: 1000 -> 1250
+    - Cost Mass: 285 -> 355
+    - Cost Energy: 2850 -> 4150
+  - Damage: (Serpentine Missile) 75 -> 50
+
+** 1.82
+- 2025-01-04
+*** General Changes
+- *ACU Rework*
+  - All ACU Upgrades have been completely reworked to be more consistent
+    with the rest of the game. Specifically, the ACUs should Engineering
+    should be more inline when tech is becoming available (i.e
+    Engineering Upgrades are available earlier). ACU Weapons are pushed
+    back towards Late T2 & Early T3 into Late T4. You will no longer be
+    able to easily rush ACU Weapon & Shield Upgrades to shut down T1
+    Aggression.
+    
+  - Bubble Shield Upgrade receives a significant nerf to it's recharge
+    time from 14 to 28 seconds.
+  - https://docs.google.com/spreadsheets/d/13l-XlQKuCe39zEOENO-_f-EQvyrGwvsc-o7CVcyXe2k/edit?usp=sharing
+    , This link provides a visual representation of the changes to the
+    ACU upgrades.
+  - All ACUs have had their health significantly decreased by a measure
+    of generally 9 - 10k depending on race.
+  - All ACUs Overcharge Energy Required from 4500 -> 7500 (To be
+    activated in-general i.e can't overcharge at all unless you have
+    7500 energy or more)
+
+**** T2 Aeon Hover Tank*
+  - Health: 1000 -> 750
+  - Mass Cost: 220 -> 260
+  - Energy Cost: 2150 -> 2400
+  - Vision: 20 -> 18
+
+**** T3 UEF Juggernaut*
+  - Mass Cost: 3250 -> 3125
+  - Energy Cost: 36000 -> 31500
+
+**** T3 Cybran Dervish*
+  - Mass Cost: 3100 -> 3250
+  - Energy Cost: 33500 -> 36000
+  - MaxAcceleration: 2.2 -> 1.2 (Matches all other T3.5)
+
+**** T3 Seraphim Thaam-Thuum*
+  - Mass Cost: 3100 -> 3300
+  - Energy Cost: 31500 -> 36000
+
+**** T1 Static Anti Air*
+  - Health: 1400 -> 800
+  - Weapon Firing between all factions has been diversified (meaning
+    they all have bit different DPS and Stats)
+  - Weapon Damage was significantly reduced in exchange for mobility
+  - TurretYawRate: 90 -> 180
+  - TurretPitchRate: 60 -> 45
+  - TurretYawRange: 360 -> 180
+  - Mass Cost: 200 -> 150
+  - Energy Cost: 2000 -> 1500
+  - Fix Target Priorities so they are actuall targetting the right units
+    (i.e bombers, gunships, transports, then fighters)
+
+** 1.81
+- 2025-01-02
+*** General Changes
+**** Terrain Shader Improvements (Better Graphics)
+
+The new, better way of calculating the water absorption is now available for all
+terrain shaders. The only requirement is that the light multiplier is set to
+more than 2.1.
+
+Decals now use PBR light calculations if the terrain shader uses it, making them
+more consistent with the ground they are on.
+
+**** Massive Performance Optimizations (Bigger Games)
+
+***** Class Optimization
+(Credits to FAF for this amazing work!)
+
+Significant Performance Optimizations have been done to the Class.lua. We
+properly pre-allocate the table for units, shields, weapons, projectiles, damage
+instances, effects, decals and all the other parts of this game.
+
+We now properly pre-allocate them all, drastically reducing the frequency at
+which the engine ends up calling the resize function.
+
+*Throughout the entire game you can expect 10% to 30% more performance on
+average, depending on what is happening.*
+
+***** Entity Effects Optimization
+Entity Effects have been converted to DummyProjectiles meaning that the engine
+no longer has to caculate additional physics and more for them. This is
+essential and saves a lot of performance specifically when lots of reclaim is on
+the map and there are a lot of explosion effects/units being destroyed.
+
+**** Enhanced Target Priorities (Smarter Targeting)
+
+Introduce Enhanced Target Priorities allowing units like Snipers, Artillery, and
+etc to have more complex and specific targets.
+
+Massive work has been done to reintroduced Tier'd Targetting to ensure units are
+NOT just targeting the first unit they see, but are targetting the *best*
+targets available. This is a huge improvement to the game, allowing for the
+player to focus less on micro-management and more on macro-management.
+
+
+*** Balance Changes
+**** T3 Snipers
+    - T3 Snipers now cost an average of around 50% more energy to
+      produce.
+    - T3 Snipers do significantly less damage to Shields around (50%
+      Less)
+    - T3 Snipers now have a 250 E Upkeep
+    - T3 Snipers Ability Tooltips have been updated
+    - T3 Snipers no longer have stealth
+    - T3 Snipers Health Reduced by 100
+
+**** T2 Snipers
+    - T2 Snipers do significantly less damage to Shields around (50%
+      Less)
+
+**** T2 Gunships
+    - T2 Gunships TurretYawSpeed has been increased 90 from 60
+    - T2 Gunships TurretYawRange has been increased from 90 to 180
+    - T2 Gunships health has been reduced by 400 around the board (not
+      accounting for factional diversity)
+
+**** T4 Seraphim Bomber
+    - T4 Seraphim Bomber Rate of Fire is fixed and now properly can
+      release the bomb on time
+
+**** Radar & Sonar Buildings
+    - T1 and T2 Radars receive a 10% Radar Radius Increase
+    - T3 Omni receives a 60% Radar Radius Increase & 30% Omni Radius
+      Increase
+    - T3 Omni receives an extra 1000 E Upkeep
+    - T3 Omni ReactivateTime decreased from 12 to 6
+    - Sonar Receives all same changes as above but T3 Sonar goes from
+      500 E Upkeep to 750 E Upkeep
+
+** 1.80
+- 2024-12-31
+*** General Changes
+  - Fix Shield.lua Shield Impact Effects not being applied properly.
+  - Moved 3 Functions to Base Repo to better Support M28 AI
+
+*** Balance Changes
+**** T4 Aeon Absolution
+    - Damage Radius 3.5 -> 6
+    - Damage increased from 10% Bonus Against Shields to 50% Bonus
+      Against Shields
+    - TurretYawSpeed 22 -> 90
+    - FiringRandomness 0.18 -> 0.1
+    - FiringRandomnessWhileMoving 0.48 -> 0.3
+    - Fixed The Rate of Fire causing the unit to miss it's OnFire()
+      event
+
+** 1.79
+- 2024-12-30
+
+*** General Changes
+- *General Changes*
+
+  - Fix Shield.lua Personal Shields initializing legacy code instead of
+    the New Shield.lua Code
+  - Fix Shield.lua not carrying default values resulting in some Nil
+    Values
+  - Shield.lua now applies to all Shield Types (Personal, Bubble, and
+    etc) meaning that Personal Shields now interact correctly with AoE
+    Weapons not allowing AoE to damage the base Health of the Unit. The
+    Shield is now treated as an additional health layer to the Unit and
+    no longer carries it's own collision sphere/box. Damage that
+    overkills the shield now applies onto the base health of the unit.
+  - Fix Multiple Units with Rate Of Fire Errors (many having too short
+    of Rate of Fires)
+
+** 1.77
+- 2024-12-29
+*** General Changes
+- *General Changes*
+
+  - Fix Shield.lua ShieldTypes not being passed right
+  - Fix Shield.lua ALL Units with Personal Shields have AOE Pass through
+    the Shields if they did have not special code that prevented it. (No
+    more extra code !!!)
+  - Fix Shield.lua not passing self.Size correctly for Personal Shields
+    units resulting in invisible Nil Values
+  - Fix Shield.lua not passing IsOn and Enabled Values correctly for
+    Shields
+
+**** T3 Cybran Cruiser*
+
+  - T3 Cybran Cruiser Health from 22500 to 20500
+  - T3 Cybran Cruiser RoF Fixed so it does not trigger OnFire() Events
+    when it should not
+  - T3 Cybran Cruiser 6700M & 55000E to 6950M & 64500E
+  - T3 Cybran Cruiser AA DamageRadius from 0 to 1
+
+**** T3 Cybran Battleship*
+
+  - T3 Cybran Battleship AA Muzzles are now fixed so they work
+
+**** T3 Cybran Submarine*
+
+  - T3 Cybran Submarine RoF Fixed so it does not trigger OnFire() Events
+    when it should not
+
+** 1.76
+- 2024-12-28
+*** General Changes
+
+- *General Changes*
+
+  - Fix OnEnterState erroring due to bad data
+  - Fix 3 Units having RoF Errors meaning their weapons were triggering
+    in-correct OnFire() events
+
+**** T3 UEF TMD*
+
+  - T3 UEF TMD TurretYawSpeed from 62 to 280
+  - T3 UEF TMD RoF from 10/10 to 20/10
+
+- *UEF ACU Tactical Nuke*
+
+  - Fix Nuke Silo not emptying when Nuke is fired
+
+**** T3.5 Cybran Gunship*
+
+  - T3.5 Cybran Gunship minimum speed from 13 to 6
+  - T3.5 Cybran Gunship maximum speed from 15 to 14
+  - T3.5 Cybran Gunship turnrate from 1 to 0.4
+
+** 1.75
+- 2024-12-27
+*** General Changes
+
+*** Changelog Comments:
+
+- =AA=: Mobile AA is nerfed in Muzzle Velocity due to it's ability to
+  hit high fast flying targets unintentionally. This has been corrected,
+  and it can now no longer tear apart T3 & T2 Bombers/Fighters, but
+  should still work against Gunships.
+  
+- =SAMs/Flak=: SAMs & Flak have been diversified to encourage players to
+  build them versus different options. Flak is intented to be used
+  versus Gunships. SAMs are intended to be used versus Fighters &
+  Bombers. Damage on Both Flak & SAMs has been increased to counter T3
+  Gunships/Bombers a bit better. Seraphim SAM should perform
+  significantly better and not miss. SAMs lost a good bit of their HP
+  while Flak gained HP (Cybran is excluded due to their high regen, they
+  have gained).
+
+**** T1 Mobile AA*
+
+  - T1 Mobile AA (UEF, Seraphim, Aeon)receives a -15 Muzzle Velocity
+  - T1 Mobile AA (Cybran) receives a +5 Muzzle Velocity
+
+**** T2 Seraphim Cruiser*
+
+  - T2 Seraphim Cruiser was firing with only one Muzzle, reducing it's
+    DPS by 50%. This has been corrected, it will now fire with both
+    Muzzles.
+
+**** T2 Aeon Submarine*
+
+  - T2 Aeon Submarine receives advancedTracking allowing its torpedos to
+    redirect to different targets if the original target is destroyed.
+
+**** T3 SAM*
+
+  - All SAM HP Reduced by 500 HP (Cybran Reduced by 800 HP)
+  - All SAM FiringTolerance from 12 to 1 ===
+  - T3 SAM =(Aeon)= Cost from 902M & 9872E to 1100M & 11000E
+  - TurretYawSpeed to 180 from 60
+  - Damage from 220 to 260 ===
+  - T3 SAM =(UEF)= Cost from 950M & 10000E to 1150M & 10500E
+  - TurretYawSpeed to 180 from 60
+  - Damage from 125 to 185 ===
+  - T3 SAM =(Cybran)= Cost from 950M & 10000E to 1050M & 13000E
+  - TurretYawSpeed to 180 from 60
+  - Damage from 220 to 260 ===
+  - T3 SAM =(Seraphim)= Cost from 950M & 10000E to 1100M & 11500E
+  - TurretYawSpeed to 180 from 88
+  - Damage from 55 to 280
+  - RoF from 4 to 2
+  - Fixed Seraphim SAM missing due to extremely high RoF
+
+**** T3 Flak*
+
+  - Flak HP Increased by 1200 HP (Cybran Reduced by 400 HP) ===
+  - T3 Flak =(Aeon)= Cost from 1000M & 10000E to 800M & 8500E
+  - TurretYawSpeed to 90 from 60
+  - Damage from 120 to 160
+  - DamageRadius from 4.4 to 4 ===
+  - T3 Flak =(UEF)= Cost from 1000M & 10000E to 950M & 9250E
+  - TurretYawSpeed to 90 from 60
+  - Damage from 72 to 112
+  - DamageRadius from 4.4 to 4.5 ===
+  - T3 Flak =(Cybran)= Cost from 1000M & 10000E to 750M & 8000E
+  - TurretYawSpeed to 90 from 80
+  - Damage from 70 to 80
+  - DamageRadius from 4.4 to 5 ===
+  - T3 Flak =(Seraphim)= Cost from 1000M & 10000E to 825M & 8500E
+  - TurretYawSpeed to 90 from 80
+  - Damage from 90 to 115
+  - DamageRadius from 4.4 to 4.75
+
+** 1.74
+- 2024-12-27
+*** General Changes
+
+**** T2 Cruisers*
+
+  - Fix T2 Cruisers not being able to hit targets flying away from them.
+  - Fix Seraphim T2 Cruiser having less projectiles firing then it was
+    supposed to.
+
+** 1.73
+- 2024-12-25
+*** T1 Sea
+- =Frigate:= AA should be generally less effective and Early Game Naval
+  MUST be supported by the Air and no Navy should be allowed to this Air
+  Support without suffering significantly from Enemy Torpedo Bombers.
+  Torpedo Defense should be much less effective and only come in as a
+  stopgap method whether then a full defense method.
+- =Submarines:= should not be able to fill a frontline role and should
+  be subsectioned to Support Roles in formations of Battleships,
+  Destroyers, and Frigates. They should be able to be used to support
+  the frontline, but not BE the frontline. ### T2 Sea
+- =Cruisers:= Each Faction's Cruiser serves a different purpose and
+  should be able to be used to support the frontline, but not BE the
+  frontline. They should have a more effective AA then Frigates & Mobile
+  Hover Flak as well as any other form of AA that might not be a naval
+  asset.
+- =Destroyers:= Each Faction's Destroyer serves a different purpose and
+  should be able to be used to as the frontline. Frigates will most
+  likely continue to be used till Tech 3 Phase in which they will be
+  phased out however during the Tech 2. They most likely will still see
+  heavy usage. Destroyers have (receiving a -200 mass discount) should
+  be able to more cost effective. They serve as a long range kiting
+  force; Frigates will soak most of the damage till the Tech 3 Phase, in
+  which by then Destroyers will be the main soaking force for
+  Battleships.
+- =Submarines:= T2 Submarines Torpedo Defense has been completely
+  removed, this means they will not be able to fight other Submarines
+  effectively, unless with the best micro (this is intentional).
+  Submarines will be used for ambushing and killing enemy ships
+  reinforcing and such to the Combat Zones (i.e imagine Seton's Clutch
+  20km in a Gyle Cast) ### T3 Sea
+- =Submarines:= T3 Submarines Torpedo Defense has been completely
+  removed as well as their sonar stealth. These two submarines are used
+  VASTLY different from T2 Submarines. The Assault Submarine (Cybran) is
+  a frontline submarine (highest hp and the most numerous torpedos to
+  overwhelm destroyer TD) meant to make up for their lacking battleship
+  and the Seraphim Submarine is used to support via ambushing and
+  flanking, it has the highest damage output of all submarines and
+  fastest torpedos (but lowest hp except for T1 Submarines).
+- =Battleships:= Battleships have been directly been buffed in both HP,
+  Damage, and Range. They are the backbone of the Navy supported by
+  their Destroyers, Submarines, and Cruisers. They are the most
+  expensive unit in the Naval Area. They will be used for the frontline
+  and will be the most difficult to kill.
+
+** 1.72
+- 2024-12-24
+*** General Changes
+- *Overrall*
+
+  - Fix Rapid Fire Miasma Cannon Bug on Aeon ACU
+  - Fix SMDs & Mobile SMDs being able to fire even with no ammo
+  - Fix Commander OC needing to be double clicked on target multiple
+    times
+  - Fix Commander OC causing M28 to suicide
+  - Fix Commander OC being classified as Countermeasure :KEKW:
+    @maudlin27
+  - Fix Game Crashing if EnergyRequiredPerSecond wasnt defined in the
+    Blueprint
+  - Fix UI Order Attack Command not even using the correct Behavior
+  - Fix small bugs with UI-Side Overcharge Order
+
+  - Moved ACU Overcharge to a unique state that allows it behavior
+    without a EnergyRequiredPerSecond but a EnergyRequired (Meaning it's
+    completely RoF Dependent)
+
+** 1.71
+- 2024-12-23
+*** General Changes
+**** T3 Torpedo Bomber*
+
+  - All T3 TB have received a significant maneuverability increase
+
+**** T2 Torpedo Bomber*
+
+  - All T2 TB have received a significant maneuverability increase
+
+**** T2 Gunship*
+
+  - All T2 Gunships have received a significant maneuverability increase
+
+**** T1 MAA*
+
+  - Cost Doubled for =Energy & Mass=
+
+** 1.70
+- 2024-12-22
+*** General Changes
+**** T3 Air Superiority Fighter*
+
+  - All T3 Air Superiority Fighters (ASF) have received a =100% DPS=
+    increase
+  - All T3 ASF have received a significant maneuverability increase
+  - All T3 ASF have received a slight health increase
+
+**** T3.5 Air Penetration Fighter*
+
+  - All T3 Air Penetration Fighters (APF) have received a =50% DPS=
+    increase
+  - All T3 APF have received a significant maneuverability increase
+  - All T3 APF have received a significant health increase
+
+**** T2 Blaze*
+
+  - T2 Blaze receives an additional =10%= Speed Reduction while in water
+  - T2 Blaze =Vision & Weapon Range= has been adjusted by 4 going from
+    =24 -> 20=
+
+**** T3 Armilliary*
+
+  - T3 Armilliary goes from =13/10 RoF to 20/10 RoF=
+
+**** T1 Frigates*
+
+  - T1 Aeon Frigate receives a significant nerf to it's
+    =Torpedo Defense=
+  - T1 Cybran Frigate receives a significant nerf to it's
+    =Anti Air Defense=
+
+** 1.69
+- 2024-11-2
+*** General Changes
+- *Overrall*
+
+  - Fixed Aeon T4 Overlord Death Animation
+  - Fixed Nuke Launchers not completing firing cycle
+  - Small Fix for Mavor
+  - Moved CreateProjectileAtMuzzle to Official Repo
+
+** 1.67
+- 2024-10-31
+*** General Changes
+
+- *Overrall*
+  - Fix Some Units Not Firing
+
+** 1.67
+- 2024-10-30
+*** General Changes
+- *Overrall*
+  - Fully Fixed Units being stuck to the ground if they had
+    =bp.WeaponUnpackLocksMotion= due to them going into the ReloadState
+    and never being allowed to repack.
+  - Fix Various small bugs with projectiles
+  - Fix BallisticAcc not always being performed when needed too
+  - Fix T3 Penetrator Gunship hitting ground with Laser
+  - Fix T2/T3 Factories BuildTime being extremely high for no reason
+
+** 1.66
+- 2024-10-27
+*** General Changes
+- *Overrall*
+
+  - Fixed Units getting stuck in their packing/unpacking animations
+    =Part 6=
+
+**** T3 Cybran Penetrator Gunship*
+
+  - Explanation: The Penetrator Gunship had mobility issues that
+    prevented its lasers from firing consistently. Expanding the yaw and
+    arc heading ranges addresses this issue, improving weapon alignment.
+  - *Arc Heading Range*: Increased from =50= to =180=
+  **** Turret Yaw Range*: Increased from =50= to =180=
+
+**** T2 Fighters*
+
+  - Explanation: T2 Fighters struggled to hit high-speed bombers and
+    gunships due to their damage radius. The damage radius has been
+    reverted to 0, and rate of fire increased to enhance their
+    effectiveness, especially against T1 Fighters.
+  - *Projectile Lifetime Multiplier*: Set to =1.5=
+  - *Damage Radius*: Reverted from =2= to =0=
+  - *Rate of Fire*: Increased from =20/10= to =25/10=
+
+**** T4 Aeon Avernus*
+
+  - Explanation: The Avernus was gaining veterancy too quickly and had a
+    high regen rate at higher veterancy levels, creating balance issues.
+    The kill requirements and regen rates have been adjusted to curb
+    this.
+  - *Veterancy Kills*: Adjusted thresholds for each level: Level1==200=,
+    Level2==350=, Level3==450=, Level4==500=, Level5==650=
+  - *Regen Rate*: Adjusted per level: Level1==5=, Level2==10=,
+    Level3==15=, Level4==30=, Level5==60=
+
+**** T3 Seraphim Land*
+
+  - Explanation: The T3 Ilsatha unit underperformed for its cost,
+    especially after the Otheeka's removal. A damage and muzzle velocity
+    buff makes it more effective and worth its cost.
+  - *Removed Otheeka*
+  **** T3 Ilsatha*
+
+    - *Damage*: Increased from =55= to =65=
+    - *Muzzle Velocity*: Increased from =30= to =40=
+
+**** T3 Cybran Land*
+
+  - Explanation: The T3 Cybran Slink's effectiveness was too high for
+    its energy upkeep and build time, leading to an imbalance. These
+    changes adjust its costs and damage output to better balance its
+    role as a unique T3.5 MAA unit.
+  - *Removed Crawfish*
+  **** T3 Slink*
+
+    - *Damage*: Increased from =120= to =180=
+    - *Energy Cost*: Increased from =12500= to =16500=
+    - *Mass Cost*: Increased from =1250= to =1450=
+    - *Build Time*: Increased from =41= seconds to =62= seconds
+    - *Energy Maintenance* Increased from =150= to =300=
+
+** 1.65
+- 2024-10-25
+*** General Changes
+
+  - Fixed Units getting stuck in their packing/unpacking animations
+
+*** T3 Barrage Artillery (All Factions)
+
+  - Explanation: The T3 Barrage Artillery's rate of fire was drastically
+    reduced to fix an unintended rapid fire issue, while the turret's
+    yaw range and speed were corrected to stop alignment problems when
+    aiming. Additionally, target acquisition was made faster for better
+    responsiveness.
+  - Rate of Fire: Corrected to =10/90= from =10/10=
+  - Turret Yaw Range: Fixed to =180=
+  - Turret Yaw Speed: Fixed to =50=
+  - Target Check Interval: Lowered to =1= from =3=
+
+*** T2 UEF Shield Boat
+
+  - Explanation: The T2 UEF Shield Boat was rebalanced to reduce its
+    durability and tweak shield mechanics, making it regenerate faster
+    but start later, with a larger shield size and adjusted damage
+    spillover. Its vertical offset was changed to fix issues with air
+    units.
+  - Shield Max Health: Reduced from =8500= to =5500=
+  - Shield Energy Drain Recharge Time: Reduced from =6.2= to =5=
+  - Shield Regen Rate: Increased from =55= to =80=
+  - Shield Regen Start Time: Increased from =2= to =3=
+  - Shield Size: Increased from =62= to =120=
+  - Shield Spill Over Damage Modifier: Set to =0.50= (This was
+    previously =15%= but had a special =50%= damage spillover specific
+    to shield boats)
+  - Shield Vertical Offset: Changed from =-15= to =-50=
+
+*** Seraphim T2 Land
+
+Seraphim T2 Land units struggled due to poor turn radius and muzzle velocity,
+resulting in performance issues. These changes aim to address these weaknesses
+by improving weapon speed and maneuverability.
+
+Additionally, the redundant T2 Shield Protector Bot was removed.
+
+*Removed T2 Shield Protector Bot*
+**** T2 Seraphim Iltha
+
+    - Muzzle Velocity: Increased from =30= to =35=
+    - Turn Rate: Increased from =40= to =42.5=
+
+**** T2 Seraphim Ilsavoh
+
+    - Muzzle Velocity: Increased from =32= to =36=
+    - Turn Radius: Increased from =0.5= to =2=
+
+*** Aeon T2 Land
+
+Aeon T2 Land was overly dependent on the T2 Aeon Sniper, making it the dominant
+choice at T2. These adjustments balance the power dynamic, making other units
+like Blaze and Obsidian more viable by adjusting costs, stats, and
+functionality.
+
+**** T2 Aeon Sniper
+    - Build Time: Increased from =11= seconds to =47= seconds
+    - Energy Cost: Increased from =5050= to =6650=
+    - Mass Cost: Increased from =465= to =515=
+    - Turn Rate: Increased from =44= to =50=
+    - Turn Radius: Reduced from =8= to =6=
+    - Max Speed: Increased from =3.6= to =3.7=
+
+**** T2 Aeon Blaze
+
+    - Weapon Attachment: Main weapon is now attached to the turret
+      bone, fixing "hover pathfinding issues"
+    - Water Speed: Reduced by =10%=
+    - Rate of Fire: Increased from =2= to =3=
+    - Damage: Reduced from =20= to =15=
+    - Muzzle Velocity: Increased from =20= to =45=
+    - Mass Cost: Reduced from =250= to =220=
+    - Health: Increased from =900= to =1000=
+    - Regen Rate: Reduced from =2= to =0=
+
+**** T2 Aeon Obsidian
+    - Build Time: Reduced from =33= seconds to =25= seconds
+
+*** *Cybran T2 Land*
+Stealth has been proven to be a powerful ability for Cybran as it's main trait,
+therefore the need of a mobile shield is non existing.
+
+*Removed T2 Cybran Mobile Shield*
+
+** 1.64
+
+*** Dynamic LODs
+- Updated Dynamic LODs to be more consistent with all units across the globe
+- Seperated Prop & Unit LOD Management to have different math for distances
+  (Courtsy of FAF)
+
+*** Misc
+- Fix T1 Static Artillery Energy Cycle
+- Fix T2.5 Cybran Immortal Missiles Missing
+
+** 1.63
+*** Skirmishers
+**** T2 Aeon Sniper
+- Health: 750 -> 435
+**** Mongoose
+- Health: 900 -> 600
+**** Hoplite
+- Health: 780 -> 515
+
+*** Energy Charge
+
+- Fix T3 Barrage Artillery Energy Charge Cycle
+- Fix T3 Cybran Triseptitron Energy Charge Cycle
+
+**** T3 Cybran Hailfire
+
+- Add Energy Charge Cycle
+- Energy Charge: -175
+- Energy Required: 700
+
+** 1.62
+*** Energy Charge
+
+- Fix T3 Mobile Artillery Energy Charge Cycle
+- Fix T3 Strategic Artillery Energy Charge Cycle
+- Fix T2 Static Artillery Energy Charge Cycle
+- Fix T4 Experimental Artillery Energy Charge Cycle
+- Fix Units with a unpack and pack animation getting stuck permanently
+- Improved Units with rack/muzzle effect & sounds
+- Fix ACU Overcharge Energy Charge Cycle
+
+** 1.61
+
+*** ACU
+
+- Fix Cybran & Seraphim ACU missing with their main gun
+
+*** Energy Charge
+
+Energy Charge Cycle involves fixing long delays that cause the Unit to
+lose over 100% of it's DPS causing the unit to be extremely weaker then
+intended - Fix T3 Rocket PD Energy Charge Cycle - Fix T3 Sniper Energy
+Charge Cycle - Fix T3 Mobile Artillery Energy Charge Cycle - Fix T2
+Sniper Energy Charge Cycle
+
+** 1.60
+
+*** Energy Charge
+
+- All Units that have =RackSalvoFiresAfterCharge = true,= manually
+  =RenderFireClock= instead of through =StartEconomyDrain Function=
+- Fix Experimental Artillery & T3 Strategic Artillery not having
+  =RackSalvoFiresAfterCharge = true,=
+
+*** Reclaim
+
+- Fix long standing bug that was causing QUIET Reclaim Adjustments to
+  not function
+
+*** Misc
+
+- Fix Seraphim Fighter Missing Target
+- Fix T2 Tactical Bombers Dropping Short =Again=
+
+** 1.59
+
+*** ACU
+
+- Removed Stealth
+
+*** Citadel Mk1
+
+- Fix Underside turrets Missing DualManipulators,
+  =50% of guns would not pitch=, causing 50% of the guns to always fire
+  at max range.
+- Set fire rates to integer values
+- Increased all turret pitch and yaw speeds
+- Matching weapons had inconsistent stats, fixed.
+- Removed AutoInitiateAttackCommand behavior
+
+*** Soul Ripper Mk1
+
+- Weapon ranges increased, yaw and pitch speeds up, paired weapons stats
+  properly synced (they weren't before).
+- SR1 is more effective at dealing with groups of units and
+  entrenched/shielded groups than SR2.
+
+*** Soul Ripper Mk2
+
+- Extended weapon ranges, yaw and pitch speeds up, weapon behaviors
+  altered
+- SR2 is more effective at dealing concentrated damage on single targets
+  than SR1. SR2 has more powerful AA than SR1.
+
+** 1.58
+
+*** T2 Gunships
+- Health: 1400 -> 1100
+
+*** ACU
+
+- Removed AirLayer Targetting
+
+*** ACU (Cybran)
+
+- Fix Cybran ACU Laser
+
+*** Misc
+
+- Fix A Few Blueprint Variables
+- Fix Amphorak Blueprint
+
+** 1.57
+
+*** Misc
+- Fix UEF ACU Firing when reclaiming
+- Fix Gunships having bad Yaw & Pitch Rates
+- Fix Cybran Engineers being unkillable
+
+** 1.56
+*** ACU
+- Main Gun Rate Of Fire: 2 -> 1
+
+*** Misc
+- Fix T2 UEF Tactical Bomber Dropping Bomb Too Early
+- Fix AoE Applying 1 Tick Too Late
+- Fix T2 Fighters Not Being Able To Hit T2 Tactical Bombers
+- Fix T2 Sniper YawRate
+
+** 1.55
+*** Misc
+
+- YawRates have been increased on many PDs
+- Fixed Bone Issue on the Mastodon Rocket Pods causing them to miss
+- Fixed Many Audio Issues on Total Mayhem Units
+
+** 1.54
+*** Air
+- Removed Debuffs to Speed when Aircraft is Damaged
+- Removed Debuffs to FuelRatio from all =flak/maa/staticaa= when
+  Aircraft is Damaged
+
+*** T4 UEF Star Adder
+- Fixed Star Adder Lasers Missing
+- Reworked Lasers to be two seperate weapons
+- PPC Cannons Damage: 1000 -> 2000
+- Beam Laser Damage: 350 -> 175
+- Beam Lasers Now Rapid Fire To Balance Out Damage Decrease
+- Fixed Walking Animation To Make Him Not =Slide=
+
+*** T2 MML
+- All Speed Nerfed By 0.05
+- Many Other Stats Standardized Across The Board
+- MMLs should all be around the Same Strength with =Cybran Viper= being
+  the best
+
+*** T3 Cybran Leviathan
+- Torp Defense Rate of Fire: 8 -> 20
+  =**Twenty Would Mean Lower In This Case**=
+
+*** Misc
+- Removed Variable Transport Speeds Due To Multiple Bugs
+- Fixed Penetrator Bombers Not Dropping Bombs Reliably
+- Fixed QCE not being enabled properly
+
+** 1.53
+
+*** T3 Pen Bombers
+
+- Fix Pen Bombers sometimes not dropping when they should
+
+*** T3 Cybran Sub Hunter
+- Nerf Torpedo Defense Rate Of Fire from 8 to 20
+
+** 1.52
+*** ACU Engineer Upgrades
+- Buildtime, Mass, and Energy Reduced by 25%
+
+*** Bombers
+- All Bomber Projectiles have been returned to Vanilla Physics
+- All Bomber Projectiles no longer home-in on targets
+
+- Too compensate for this, all bombers receive =large AoE Buffs=, T2
+  Bombers also receive =Damage Buff=
+
+*** T3 UEF Brimstone
+
+- Fixed Brimstone MuzzleBones not existing =(Causing massive LOG Spam)=
+
+** 1.51
+
+*** Misc
+
+- Fixed TransportSpeedReduction NIL
+- Fixed SSL0311 Shield Not Stopping AoE
+
+** 1.50
+*** Transports
+The movement speed of transports now changes based on how many and which
+types of units they have loaded.
+
+- Units slow down transports based on their =TransportSpeedReduction= stat.
+  If a unit has a  =TransportSpeedReduction= of 1, each instance of this unit will slow
+  down the transport's =MaxAirspeed= by 1.
+
+The primary implication of this change is that the effectiveness of the later T2/T3 Transport Drops are
+significantly reduced in an intuitive way. Although this adds an
+additional mechanic to the game that encourages more micro and strategic
+thinking when placing units on a transport.
+
+- TransportSpeedReduction: 0.15 (Tech 1 land units)
+- TransportSpeedReduction: 0.3 (Tech 2 land units)
+- TransportSpeedReduction: 0.6 (Tech 3 land units)
+- TransportSpeedReduction: 1 (ACUs and SACUs)
+- TransportSpeedReduction: 1 (Tech 4 land units)
+
+*** Misc
+ Fixed Miasma Artillery Overshooting =2nd Fix= All legacy Standard Mods are now
+required to run QUIET to prevent crashing if you were not loading all the legacy
+Standard Mods by accident
+
+** 1.49
+
+*** Mavor & RFSAC
+
+*Included Additional Units That Had RackSalvoFiresAfterCharge Within QCE*
+
+*Mavor now has RackSalvoFiresAfterCharge set to true to provide it with accurate
+Rate of Fire*
+
+*** T2 Destroyers
+
+RackSalvoReloadTime: 3.5 Seconds
+
+*** T3 UEF Juggernaut
+
+Shield: 2250 -> 4400
+
+*** T3 Aeon Armillary
+
+Rate Of Fire: 30/10 -> 13/10
+
+** 1.48
+
+*** Global
+
+All Units Guard Radius are now all santized and standardized. This will heavily
+improve usage of Patrol & Attack Move.
+
+Units now no longer walk into enemy when on Attack Move and Engineer Attack
+Move when reclaiming will perform significantly better
+
+All Units now have significantly more accurate Overlays for different Weapon
+Ranges. Any Unit that was missing Weapon Ranges will now have them displayed
+properly and accurately.
+
+All Units now have accurate speeds that cooperate better with their collision
+box and collision sphere size. This will enable Gunships & Beam Weapons to hit
+significantly more often.
+
+All Units now have an AverageDensity based on HP which allows the Engine
+determine who pushes who in a collision event. This allows heavier units to move
+through lighter units with ease and heavily improves Pathfinding in certain
+situations.
+
+All Weapons [Units] now have a standardized and santized TargetCheckInterval
+based on their weapon type. Weapons also all have a standardized TrackingRadius
+and Variables included [AlwaysRecheckTarget] are now also standardized and will
+significantly improve Weapon Behavior
+
+Props now have a much larger visual display and should appear much easier and
+at a higher camera angle then previously
+
+*** Seraphim ACU
+*Lower Number is Buff*
+ACU Lambda Rate of Fire: 9 -> 7
+
+*** T3 Mobile Artillery
+Mass Cost: 500 -> 800
+
+*** Seraphim TMD
+Rate of Fire: 1.05 -> 1.3
+
+*** Misc
+Fix T4 Cybran Monkeylord Weapons being Broken Remove T3 UEF Walrus
+
+** 1.47
+
+Fixed 7.13 WeaponState Issue A Long Term Fix is being worked on for future
+releases
+
+** 1.46
+*** Physics Reworks
+
+*Physics Reworks allow them to be more microable and able to drop bombs more
+reliably*
+
+Penetrator Bombers T3 Gunships T3 (Including Penetrator Gunships)
+
+*** ACUs
+
+[Main-Gun] Damage: 120 -> 100
+
+*** T2 Destroyers
+[Torpedo-Defense] MuzzleSalvoDelay: 0 -> 0.2
+
+*** Misc
+All Units now have the DRAGBUILD Category
+
+Removed T4 UEF Ivan
+
+** 1.45
+
+*** Yaw Rate Increase
+
+Many units have received a 2 second~ Yaw Rate now and should be
+microable this applies to most units in the game currently
+
+*** T3 UEF Banisher
+
+ROF: 25/10 -> 18/10 AA Missile Denations at 10 Height Now
+
+*** T3 Aeon Armillary
+
+Damage: 75 -> 65
+
+*** T3 Cybran Hailfire
+
+FiringRandomnessWhileMoving: 0.7 -> 0.5
+
+*** T4 Aeon Pillar of Prominence
+
+ShieldRegenRate: 230 -> 520 (Allows it's shields on other units to be
+healed more quickly)
+
+*** T3 Cybran Dervish
+
+Dervish Rockets receive the same rework as Madbolo & Vulture
+
+*** T3 UEF Bull
+
+[Rockets] MuzzleChargeDelay: 0.6 -> 0.3 MaxRadius: 48 -> 44
+
+*** T3 Cybran Mastodon
+
+[Rockets] FiringRandomnessWhileMoving: 3.5 -> 1.5
+
+*** T1 Aeon Wavecrest
+
+MuzzleSalvoDelay: 0.3 -> 0.2
+
+** 1.44
+
+*** T1 Cybran Sky Slammer
+
+FiringTolerance 0.6 -> 3 YawTurretSpeed 36 -> 135
+
+*** T1 Aeon Artos
+Health 210 -> 140 (Missile) Range 32 -> 30
+
+*** T1 Scouts
+Stealth Removed
+
+*** T4 Aeon Eliash
+Mass Cost 21000 -> 26000
+
+*** T4 Cybran Vulture
+Please refer to PR #220 for the extensives changelog
+
+*** Misc
+
+Fixed Evenflow not applying to all units if one unit contained
+"IgnoreEvenflow" Value. Fixed T3 Cybran PD "Hades"
+
+** 1.43
+
+*** ACU
+
+TurretYawSpeed [Main Weapon] 48 -> 90 Main Weapon Damage 70 -> 120 Range
+Equalized to OverCharge Range of 30 Speed from 1.45 -> 1.7
+
+*** T1.5
+
+All T1.5 now are the first users of the ability to ignore Evenflow They
+now follow guidelines of a much heavier buildtime with some slight
+reductions in cost and some factional diversity increase (this is an
+ongoing effort) Please Review PR #219 for the stat changes
+
+*** Misc
+Fix Thau Battery Projectiles disappearing before hitting the ground
+
+** 1.42
+*** T4 Cybran Madbolo
+
+MassCost 21750 -> 30000
+EnergyCost 300000 -> 475000
+
+*** Misc
+
+Fix Thug being unbuildable (2nd try) Fix Scorpion having Stealth
+
+** 1.41
+Many Units have received YawTurretSpeed Buffs to allow them to be
+microable if you are interested in what units please check PR #209 for
+reference
+
+*** T2 Aeon Amphorak
+
+Damage is brought in line with other T2.5 (Around 120DPS)
+
+No longer cost energy to fire
+
+*** T2 Cybran Hoplite
+RoF = 10/40 Damage reduced from 75 -> 65
+
+*** Misc
+- Fixed AI not being able to Overcharge
+- Introduce Various new economic rebalances in our Submod called QCE Economy &
+  Flow, please refer to commit #707be96325bcbae0951caf29d76962611acad45a for
+  reference
+- Fixed Avernus Shoulder Cannon Projectile being extremely small
+- Fixed Eliash not actually having a visual shield on the unit
+- Fixed Thug PD not being buildable
+- Fixed Pegasus ShieldIsUp (AoE can not splash through the
+Pegasus Personal Shield)
+
+** 1.40
+*** T2 UEF Mongoose
+Grenade Launcher: Damage 62 -> 49
+RoF for Gatling Gun 1 Second -> 1.2 Second
+
+*** Overcharge
+
+Energy Ratio 6 -> 9 (TLDR It takes more energy to do more damage)
+
+*** T3 Barrage Artillery
+Nerfed FiringRandomness 1.25 -> 2.25 AoF nerfed from by a universal number of 1
+
+*** Misc
+- Fixed Dragonite Shield Not Actually Protecting It
+- Fixed Eliash Shield Not Actually Protecting It
+
+** 1.39
+*** T1, T2, T3 Aeon Artillery
+
+Fix Artillery Overshooting for Aeon
+
+** 1.38
+*** Torpedo Defenses
+
+All vanilla torpedo defenses have been 'altered' so that they are now targetable
+by surface weapons
+
+** 1.37
+
+*** T4 Aeon Avernus
+
+*Comparable To King Kraptor*
+
+Meant for dealing with Experimentals only, lacks almost any AOE so it's weak vs
+larger T3 Armies however deals massive precision DPS vs Experimentals. The
+bigger and heavier the Experimental, the better. (Except Avalanche lol)
+
+*** T4 Cybran Vulture
+Receives Rocket Barrage Rework Equal to Madbolo
+
+*** Misc
+
+Fix Hardlock on Naval Maps
+
+** 1.36
+
+*** T4 Aeon Eliash
+
+Transformed Personal Shield -> Bubble Shield
+
+*** T3 Aeon Mobile Artillery
+Removed +20% Shield Damage
+
+*** T4 Cybran Madbolo
+All Weapons Ranges Increases Rework Primary Weapon Rocket Barrage (High
+Muzzle Velocity, More Accuracy, More Rockets)
+
+*** T3 UEF Brimstone
+Yawspeed 27 -> 45 Fix Brimstone Overshooting
+
+*** T1 Mayor PD
+Yawspeed 45 -> 90
+
+** 1.35
+*** T2 MML
+Speed 3 -> 2.85
+*** T3 Mobile Artillery
+Fix the unpack rate that was making units stuck in place
+*** T3 Barrage Artillery (Accouts for Overspill now in balancing)
+DamageRadius reduced by 1 on all FiringRandomness 1.25 -> 2.25
+** 1.34
+*** No More Roaming
+Removed Roaming Behavior From All Experimentals
+*** Shields
+
+General Info on shields is that they will take longer to regenerate, many stats
+have been standardized then redistributed to give a bit more diversity to the
+shields.
+
+Integrated Shields received a bit of a hard bonking as their stats were not
+justified by the current cost. They were all given 20k+ E Cost and around
+500-1000 Mass Cost as well as given the regeneration nerfs and etc.
+
+Shields offset were standardized a bit to prevent some of the outrageous shield
+layering. (Anti Artillery Shield for UEF is untouched by any of these changes as
+well as Cybran Shields inbetween the final & first upgrade)
+
+All Square Shields have been removed and replaced by significantly buffed
+BrewLAN Experimental Shields that have been completely reworked to fit into the
+Experimental Phase of the game.
+
+*** T2 Cybran Hoplite
+Range 42 -> 37
+
+*** T2 UEF Mongoose
+Range 34 -> 32
+
+*** T3 Pervical | Brick | Harbinger
+TurretYawSpeed 35 -> 90
+
+*** T3 UEF Pervical
+Damage 900 -> 1450 RoF 0.5 -> 0.23
+
+*** T3 Aeon Harbinger
+No Longer Fires two shoots in one Salvo RoF increased to 2 (2 Shoots 2
+Salvos)
+
+*** T3 Seraphim Thau Battery
+
+-20% Reduction Against Shields Removed DamageRadius 2 -> 3.5
+
+*** T4 Cybran Megalith
+Energy Cost 450000 -> 785500
+
+*** Misc
+Removed Cybran T3 Sniper
+
+** 1.33
+*** Weapon States
+All Weapon States (Excluding WeaponFiringState) have been rewritten to a
+cleaner standard and to reduce the amount of unnessacry states many
+units were going through. This causes latency and delay as well as other
+strange bugs in units. This is a extremely deep and fundamental change
+to the game and I expect some units to be broken. (Please report them in
+our discord ASAP for hotfixes)
+
+*** Misc
+Fix T2 UEF Statue rockets
+
+Fix T2 UEF Pillar DPS
+
+Fix T3 Aeon Wraith Pathfinding
+
+Fix T3 Cybran Tripple Threat DPS & Firing States
+
+Fix T3 UEF Brimstone DPS & Firing States
+
+Fix T3 Aeon Mothra DPS & Firing States
+
+Fix T3 Cybran Neolith DPS & Firing States
+
+Fix Seraphim Commander not shooting the correct projectile
+
+** 1.32
+
+*** Wraith
+
+- Acceleration 1.5 -> 2
+- BackUpDistance = 10
+- TurnFacingRate 20 -> 55
+- TurnRate 22 -> 50
+- RotateOnSpot = True
+
+Fixed The Pathfinding & Improved the Micro on Wraith (This allows the guns to move more freely)
+
+*** Factories
+T2 Engineers can now build T2 Factories T3 Engineers can now build T3 Factories
+
+*** T2 Pillar Tank
+Health 1250 -> 1500
+
+*** Misc
+Removed Stun from Dalek, Thug, Anode, Hippo, Ambush Bot
+
+Removed Notha & Vesinee
+
+Fixed DPS & Damage on The T4 PD "Neolith"
+
+Reverted Damage nerf to the T4 PD "Mothra"
+
+** 1.31
+*** Shield Overspill
+
+- DISCLAIMER: This significantly nerfs shields and SIGNIFICANTLY &
+  FUNDAMENTALLY changes the entire flow of the game. It can not be
+  stressed enough that when playing 1.31 please take this into account.
+
+Shield Overspill is a brand new functionality for the QUIET Project (although
+FAF has had it for a long time). It introduces the ability for Weapons with AoE
+to spread the damage out through multiple shields. This effectively nerfs Mobile
+Shield Stacking, Static Shield Stacking & makes (T2, T3, T4) Artillery as well
+as any unit that wields a significant weapon with large AoE a massive threat to
+layered shielding.
+
+Currently AoE Damage is spread throughout shields by a 15% per Shield.
+
+*** T3 Seraphim Oteethka
+
+- Stun Duration 1 -> 0.15 (Seconds)
+- Stun Radius 1 -> 0.5
+- FiringRandomnessWhileMoving 0.5 -> 0.75
+
+*** T2 Cybran Hoptile
+Removed Stun from Rockets
+
+** 1.30
+*** T3 UEF Helltank
+Removed AMPHIBIOUS Removed SUBMERSIBLE
+BuildCostEnergy = 15500, -- was 17500
+BuildCostMass = 1425, -- was 1725
+**** Riot beams
+MaxRadius = 14, --was 28
+**** Rocket Salvo
+from 44 MaxRadius to 42 MaxRadius
+**** Railgun
+Damage = 875, -- was 750
+MaxRadius = 42, -- was 40
+RateOfFire = 0.225, -- was 0.3
+**** Ravager
+Damage = 35, -- was 50
+MaxRadius = 16, -- was 36
+Health = 2750, -- was 5150
+MaxHealth = 2750, -- was 5150
+
+*** T3 UEF Juggernant
+Health = 4200, -- was 3150
+MaxHealth = 4200, -- was 3150
+BuildCostEnergy = 36000, -- was 24000
+BuildCostMass = 3250, -- was 1950
+**** Gauss cannon
+MaxRadius = 32, -- was 39 --
+**** Gatling 2x
+MaxRadius = 28, -- was 30
+
+*** T2 Cybran Mobile Bomb
+
+It receives permanent cloak but has it's stealth removed It can not be manually
+attacked into the target and will also cause 1.1k dmg if killed (volatile
+ability)
+
+*** T4 Cybran Basilisk
+
+Basilisk receives a doubled veterancy level increase to account for its
+extremely powerful AA capability.
+
+*** ACU Overcharge Rework:
+
+ACU Overcharge rework applies to all Commanders are a standardized
+number system.
+
+- commandDamage = 400
+- energyMult = 0.9
+- maxDamage = 25000
+- minDamage = 1250
+- structureDamage = 800
+
+This is the number table for all Commanders, CommandDamage and
+StructureDamage are unique hard values for all (Commanders & Structures)
+Damage is calculated base off the Energy aviable in your storage and can
+use up to 90% of your energy storage.
+
+The maxDamage it can deliver is 25000 however this takes significant amount of
+storage (the calculated value would be somewhere around 70k e storage) The
+cooldown is rapid however takes around 3 seconds for a full recharge of the OC
+once used. -> EnergyDrainPerSecond = 1500, -> EnergyRequired = 4500,
+
+With around 20k e storage, your commander can now easily demolish his
+way through a T3.5 Army especially if he's a fully combat vetted and
+upgrade Commander. He will still struggle with Experimentals as the peak
+damage is VERY hard to reach.
+
+*** Removed Units
+
+T3 UEF Ironfist
+
+** 1.29
+
+*** T2 Seraphim Ilsavoh & T2.5 Ilsavoh
+
+YawSpeed increased from 30 -> 90 or 75 (t2.5)
+
+*** T2 UEF Rommel
+
+Rommel Tech 3 -> Tech 2 All Stats generally taken from the T2 Banshee
+
+*** T4 Mothra
+
+Damage 2950 -> 1475 DamageRadius 2.5 -> 2 Range 100 -> 88
+
+*** Unit Removal
+
+UEF: T2 Janus, T3 Warhammer, T4 Rampage, T2 Banshee Cybran: T2 Cosair
+All: Experimental Resource Storages
+
+UEF Pillar / Cybran Hoplite / UEF Mongoose TurretYawSpeed from 45 -> 90
+
+*** T2 Cybran Ambush Unit
+
+Removed Stealth Cloaking is always on now
+
+- Health 900 -> 1000
+- RegenRate 1 -> 7.5
+- Range increased to 30 from 28
+
+*** T2.5 UEF Land Unit
+
+FiringRandomness 0.3 -> 0 (Guass Weapons)
+FiringRandomnessWhenMoving 0.9 -> 0.35 (Guass Weapons)
+FiringRandomness 0.3 -> 0 (Gatling Weapons)
+MuzzleVelocity 29 -> 30
+TurretYawSpeed 45 -> 60 (Gatling Weapons)
+
+*** T1.5 Land Units
+
+All speed reduced from 3.1-3.4 to a generalized 2.65-2.7 MaxSpeed
+
+Acceleration reduced from 1.5 to 1.15 in most cases (this is also generalized)
+
+T1.5 Aeon Unit receives a rocket range reduction from 34 to 28
+
+T1.5 UEF Unit receives 1 DamageRadius & range standardized with other T1.5 units
+as it's speed is standardized now.
+
+*** Misc
+Athusil Hitbox is fixed so Laser Units don't miss
+
+Mongoose Snap Behavior and Gatling Gun sometimes locking up completely is now fixed
+
+Slink Cloak now fully works and does not require you to reenable it after it
+fires
+
+** 1.28
+*** T1 Shard AA Boat
+Shard receives a significant 20 -> 12.5 DPS Nerf as well as AoE
+Reduction from 2 -> 1.25 to stop it from dominating T2 Torpedo Bombers
+via spam.
+
+*** T2 Submarine Hunters
+Projectile Count Reduced from 3 -> 1
+Damage reduced by 50%
+SalvoDelay increase to 1 Second on all T2 Submarines
+Torpedo Defense on Submarine Hunters from 9 -> 23 RoF
+Torpedo Defense Range on Submarine Hunters from 3.2 -> 3.3
+
+*** T2 Destroyers
+T2 Destroyers receive another Torpedo Defense Buff to combat submarines
+
+*** Air Overhaul
+
+Air Overhaul introduces many fixes to physics of Bombers &
+Rebalancing of Fighters to make T2 Fighters relevant and T1 Fighters far
+less effective.
+
+T1 Air Fighters: 20 HP Reduction 5-10% DPS Reduction
+
+T2 Air Fighters: 50% Increase in Dps 3k E Cost Reduction 30 M Cost
+Reduction
+
+Health: 1300 - 1500 (Depending on Faction)
+
+Misc: All Bombers physics reworked to allow them to properly be micro'd and
+bombs dropped significantly better
+
+** 9/15/24
+*** T3 Seraphim Submarine
+Slight Nerf to Seraphim Submarine to prevent the meta where you would
+shift g 5-6 seraphim subs on top of each other and their torp defense
+would infinitely be able to defend a SIGNIFICANT amount of torps.
+
+*** T2 Destroyers
+All Torpedo Defense on Destroyers significantly buffed should be able to crush
+T1 Subs at a relative similar cost efficiency
+
+*** T2 Torpedo Bombers
+Torpedo Bombers nerfed to original 800-860 Health Values with a slight increase
+in E cost & M cost. Relative Cost increase was 2k more e and 50 more mass
+
+*** Bombers
+Fixed Bombers not dropping bombs properly also nerfs dodge micro against
+bombers as well, i.e means early bombers and such are much stronger and
+harder to dodge
+
+*** T2 Static Flak & T3 Static Flak
+Buff Flak against Gunships & Remove most of it's usefulness against fast flying
+strategic bombers and fighters (Making sams more useful) Comparable Values to
+the Static except higher rank and generally more damage (although of course more
+cost)
+
+*** T2 Cybran Immortal
+Cybran should NOT be receiving Stealth or Cloak on 99% of their units as they
+have powerful mobile stealth & cloaking fields in both T2 & T3 Removed Stealth
+
+*** Misc
+
+Fix Target Priorities for certain units. They will target Protector Bots
+properly again.
+
+Evenflow is now integrated into Economy & Flow.It is
+now strongly recommended to use this version as it goes hand and hand
+with QCE.
+
+Additional tweaks into Economy & Flow include Hydrocarbons put into line with T2
+Pgen & T3 Pgen cost and production of energy.
+
+Another Additional tweak includes reduction in buildtime on the Enhancements on
+T3 Factories Fixed T3 Seraphim SAM Missing ASF & Strategic Bombers Fixed Czar
+never catching up to a target when using an attack command
+
+** 9/14/2024
+
+*** Aeon T2 Sniper
+Reload Speed 6 -> 7 Seconds Removed Stealth MaxSpeed 3.8 -> 3.6
+
+*** T2 Mobile Flak
+Buff Flak against Gunships & Remove most of it's usefulness against
+fast flying strategic bombers and fighters (Making sams more useful)
+
+All Flak: Normalize Speed to Allow Micro'ing
+- DamageRadius: 1.5 -> 3
+- TurretYaw: 360 -> 180 TurretYawSpeed: (A: 45 | C: 30 | U: 60 | S: 40)
+- Muzzle Velocity: 48 -> 20
+- FiringRandomness: 0.5 -> 2.5
+- MaxRadius: 36 -> 40
+
+Significant Buff to TargetPriorities
+
+*** T3 Sniper
+Snipers are all now more nimble to allow micro & also to allow them
+to be relevant especially in QUIET where there is a lot more Indirect
+then Vanilla or FAF (Might still need more buffs)
+
+- Normalize Speed to Allow Micro'ing
+- Significant Buff to TargetPriorities
+- DamageType = 'ShieldMult1.2', (20% Shield Damage)
+- FiringTolerance: 0.1 -> 2
+**** Aeon:
+  - ReloadSpeed: 9 -> 6 Seconds
+  - TurretYaw: 360 -> 180
+  - TurretYawSpeed: 30 -> 90
+  - Removed Unpacking Animation
+**** Seraphim:
+  - SniperMode FiringTolerance: 0.1 -> 3
+  - ReloadSpeed: 19 -> 10 Seconds
+  - TurretYaw: 360 -> 180
+  - TurretYawSpeed: 30 -> 90
+
+** 9/12/2024
+*** UEF T4 Goliath
+
+Significant Buff to TargetPriorities Forced the Goliath to turn with
+it's weapons when not being moved commanded Reclassed to Breacher Class
+
+Added Effects to its Missile Barrage
+
+- Health 104000 -> 124000
+  
+**** Missile Barrage:
+   - Firing Randomness 3 -> 5
+   - Damage 600 -> 1000
+   - DamageRadius 3 -> 4
+   - ProjectileLifetimeUsesMultiplier = 1
+
+Missiles now ZigZag and create a random scatter barrage meaning the missiles no
+longer all hit the targetground perfectly. (This makes it extremely hard for TMD
+to intercept them)
+
+   - Missile Health 1 -> 2
+   - MaxSpeed 20 -> 10
+**** Flamethrower Arms:
+   - DPS: 480 DPS -> 880 DPS
+**** Death Nuke:
+   - Damage 14,700 -> 32,890
+   - InnerRadius 12 -> 18
+   - OuterRadius 24 -> 38
+
+** 9/10/2024
+
+Fixed Barrage Artillery not being correctly modified Added Submod called
+"Economy & Flow" will be added to modlist when you add the full LCE to
+your usermods folder. Economy & Flow affects factories cost, mass
+extractor income & cost and will eventually include a custom version of
+Evenflow. Removed AirSpawnWaves from all AIs in LOUD
+
+** 1.22
+- 9/8/2024
+*** Reclaim
+Reclaim that contains 90% of it's mass or higher is reduced to 75%
+however if the reclaim is lower then 75% on a unit's wreckage it is
+brought back up to 75%
+
+*** T1 & T2 Land
+T1 & T2 were overperforming especially T1 Land against both T2 & T3,
+similarly T2 was overperforming vs T3.
+
+The intended purpose of this change is to extend the gap between tiers.
+
+Removed 12% Speed & Health Buff given to T1 Land in Blueprints.lua
+
+Removed 6% Speed & Health Buff given to T2 Land in Blueprints.lua
+
+*** T3 Barrage Artillery
+
+Barrage Artillery is buffed to make it more cost efficient vs
+building additional T2 Artillery.
+
+Redid TargetPriorities for All T3 Barrage.
+
+**** Aeon:
+ - Damage 265 -> 530
+ - DamageRadius 2 -> 3
+**** UEF:
+ - Damage 1500 -> 3000
+ - DamageRadius 2 -> 3
+**** Cybran:
+ - Damage 1200 -> 2400
+ - DamageRadius 2.8 -> 3.8
+ - StunRadius 2 -> 3
+**** Seraphim:
+ - Damage 1300 -> 2600
+ - Damage Radius 2.4 -> 3.4
+ - DamageType Normal -> ShieldMult1.5 (50% More Damage to Shields)
+ - Muzzle Velocity 33 -> 66
+
+*** T4 Eliash Medium Rapid Assault Bot
+The Eliash receives a small buff to it's personal shield Shield
+ - 21000 -> 26000
+ -  ShieldRegenStartTime 1 -> 0.5
+**  1.02/1.021
+- 9/3/2024
+*** T3 Triseptitron
+Rocket Damage 125 -> 215
+
+Range 80 -> 90
+
+DamageRadius 2 -> 2.5
+
+FiringRandomness 1.4 -> 4
+
+Fixed issue where it was overshooting it's target always
+
+*** T4 Galactic Colossus (GC) / T4 Universal Colossus (UC)
+- Fixed GC/UC Tractor Claws (This makes them SIGNIFICANTLY more powerful)
+- GC/UC Tractor Claws now crush units over time that have a health over
+5000
+- UC Tractor Claws deal 9999 every 11 Ticks
+- GC Tractor Claws deal 4999 every 11 Ticks
+
+*** T4 Eliash Medium Rapid Assault Bot
+Mass Cost 26000 -> 21000
+
+Energy Cost 420000 -> 480000
+
+Health 66500 -> 18500
+
+Shield = 21000
+
+ShieldRegenRate = 240
+
+ShieldRechargeTime = 12
+
+**** Main Weapon
+Buffed Auto TargetPriorities
+
+10000 -> 5000 DPS
+
+EnergyDrainPerSecond = 650
+
+EnergyRequired = 3250
+AA Weapon 300 -> 400 Damage
+
+*** T2 Aeon Sniper
+TargetPriorities Readjusted to increase Micro Focus Remove Shield
+
+Ignoring from Projectile MaintenanceConsumptionPerSecondEnergy 20 -> 50
+
+** 1.0.1
+- 9/2/2024
+
+Hotfix for T2 Aeon Sniper not firing
+
+** 1.0.0
+-  9/2/2024
+*** Reclaim Changes
+
+Reclaim Changes were simple. The Single Goal in Mind was to encourage
+early aggression but punish late game mistakes i.e losing entire army
+without delivering significant damage.
+
+All Wrecks have been fixed to prevent permanent disappear of Wreckage/Reclaim
+Overkill Ratio on Wreckage disappearing has been changed from 10% to 30% meaning
+you have to overkill said unit by 30% to not receive the wreckage Naval Reclaim
+no longer gives 30% of the energy in the Wreckage
+
+*** T3 Penetration Bombers
+
+Pen Bombers are very strong, with the ability to easily punch through
+most AA & having cheap stealth. This change was needed to prevent early
+Pen Bomber Rushes specifically in Teamgames.Many changes are aimed at
+some of the first steps towards significantly diversifying units
+
+**** Aeon:
+Mass Cost 4300 -> 5300
+Energy Cost 165000 -> 195000
+Stealth Energy Cost Upkeep 50 -> 250
+MaxAirspeed 19 -> 17
+MinAirspeed 15 -> 14
+TurnSpeed 1.0 -> 1.1
+**** UEF:
+Mass Cost 4750 -> 5750
+Energy Cost 180000 -> 2100000
+Stealth Energy Cost Upkeep 50 -> 300
+Health 6800 -> 7200
+MaxAirspeed 19 -> 18
+TurnSpeed 1.0 -> 0.8
+Small Yield Nuclear Bomb Damage 1900k -> 1200
+Lancer Standoff ASM Barrage Damage 600 -> 1150
+Lancer Standoff ASM Barrage DamageRadius 2 -> 3.5
+**** Cybran:
+Mass Cost 4750 -> 5500
+Energy Cost 180000 -> 190000
+Stealth Energy Cost Upkeep 50 -> 300
+Health 4750 -> 4250
+RegenRate 10 -> 25
+MaxAirspeed 19 -> 20
+MinAirspeed 15 -> 16
+TurnSpeed 1.0 -> 1.1
+**** Seraphim:
+Mass Cost 4750 -> 5750
+Energy Cost 180000 -> 195000
+Stealth Energy Cost Upkeep 50 -> 250
+Health 6250 -> 5250
+MaxAirspeed 19 -> 18
+MinAirspeed 15 -> 14
+Bombs 3200 -> 4200
+*** T3 Static Artillery
+Revert to the FAF Cost of T3 Static Artillery
+
+*** T2 Aeon Sniper
+The Aeon Sniper was dominating T2, T3, and even early T4 Phase in
+some games, this called for a immediate nerf.
+
+Its main strength lies in its speed and with the reduction, it should allow
+players to catch them much easier. The cost will also make them less efficient
+and the EnergyRequired will make the Reload much longer as well by 3 more
+seconds.
+
+Mass Cost 320 -> 465
+
+Energy Cost 3850 -> 5050
+
+MaxSpeed 4.0 -> 3.8
+
+EnergyRequired (Recharge - Main Weapon) 880 -> 1320
+
+*** T3 Mobile Sensor Arrays
+Mobile Sensor Arrays Omni was too small combined with the small omni
+on static radar led to Stealth & Cloak being far too powerful & annoying
+for players.
+
+Energy Cost Upkeep 850 -> 1500 OmniRadius 56 -> 112
