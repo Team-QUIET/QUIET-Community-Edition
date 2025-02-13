@@ -80,7 +80,7 @@ UnitBlueprint {
             
             Label = 'PhasonBeam',
             
-            MaxRadius = 43,
+            MaxRadius = 96,
             
             RackBones = {
                 {
@@ -149,7 +149,7 @@ UnitBlueprint {
             
             LeadTarget = true,
             
-            MaxRadius = 40,
+            MaxRadius = 102,
             
             MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 2,
@@ -166,6 +166,8 @@ UnitBlueprint {
             },
 
             RangeCategory = 'UWRC_AntiAir',
+
+            PreferPrimaryWeaponTarget = true,
             
             RateOfFire = 4,   -- 720 DPS (90x2x4)
             

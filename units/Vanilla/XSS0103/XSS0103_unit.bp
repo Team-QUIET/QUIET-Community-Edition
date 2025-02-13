@@ -1,6 +1,24 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "xss0103",
+
+    Defense = {
+        AirThreatLevel = 1,
+        ArmorType = "Normal",
+        Health = 2000,
+        MaxHealth = 2000,
+        SurfaceThreatLevel = 6,
+    },
+
+    Intel = {
+		FreeIntel = true,
+
+        RadarRadius = 80,
+        SonarRadius = 44,
+
+        VisionRadius = 32,
+        WaterVisionRadius = 16,
+    },
 	
     Weapon = {
         {
