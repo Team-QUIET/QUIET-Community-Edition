@@ -1,6 +1,30 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "ues0103",
+
+    Defense = {
+        AirThreatLevel = 1,
+        ArmorType = "Normal",
+        Health = 2120,
+        MaxHealth = 2120,
+        SurfaceThreatLevel = 5,
+    },
+
+    Intel = {
+		FreeIntel = true,
+
+        JamRadius = {
+            Max = 75,
+            Min = 30,
+        },
+        JammerBlips = 8,
+
+        RadarRadius = 80,
+        SonarRadius = 44,
+
+        VisionRadius = 32,
+        WaterVisionRadius = 16,
+    },
 	
     Weapon = {
 	

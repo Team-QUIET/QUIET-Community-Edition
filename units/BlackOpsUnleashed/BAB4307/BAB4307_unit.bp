@@ -1,0 +1,233 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "bab4307",
+
+    AI = {
+        TargetBones = {'Turret_Barrel','B03','B02'},
+    },
+	
+    Audio = {
+        Destroyed       = Sound { Bank = 'UALDestroy', Cue = 'UAB_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff'},
+        DoneBeingBuilt  = Sound { Bank = 'UAB', Cue = 'UAB2304_Activate', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection     = Sound { Bank = 'Interface', Cue = 'Aeon_Select_Gun', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 2,
+            Level2 = 4,
+            Level3 = 6,
+            Level4 = 8,
+            Level5 = 10,
+        },
+    },
+	
+    BuildIconSortPriority = 145,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYTIER3COMMANDER',
+        'AEON',
+        'STRUCTURE',
+        'DEFENSE',
+        'TECH3',
+        'ANTIMISSILE',
+        'DRAGBUILD',
+        'SIZE4',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'OVERLAYDEFENSE',
+        'SORTSTRATEGIC',
+    },
+	
+    CollisionOffsetY = -0.25,
+	CollisionOffsetZ = -0.1,
+	
+    Defense = {
+
+        MissileTorpDestroy = { AttachBone = {'XAB4307'}, Radius = 4, RedirectRateOfFire = 10, ProjectileCategories = {'TACTICAL MISSILE','TORPEDO'} },
+
+        ArmorType = 'Structure',
+
+        Health = 3200,
+        MaxHealth = 3200,
+        RegenRate = 1,
+
+        EconomyThreatLevel = 65,
+        SurfaceThreatLevel = 10,
+    },
+	
+    Description = '<LOC bab4307_desc>Advanced Tactical Missile Defense',
+	
+    Display = {
+        Abilities = {
+            "<LOC ability_tacmissiledef>Tactical Missile Defense",
+            '<LOC ability_aquatic>Aquatic: can be built on water',
+            '<LOC ability_torpedodef>Personal Torpedo Defense',
+        },
+
+        Mesh = { IconFadeInZoom = 130, LODs = { { LODCutoff = 215, Scrolling = true, ShaderName = 'Aeon' } } },
+
+        UniformScale = 0.25,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 27000,
+        BuildCostMass = 1800,
+        BuildTime = 1800,
+
+        RebuildBonusIds = { 'bab4307' },
+    },
+	
+    Footprint = {
+        MinWaterDepth = 2,
+    },
+	
+    General = {
+		CapCost = 2,
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Aeon',
+        Icon = 'amph',
+        SelectionPriority = 5,
+
+        UnitName = '<LOC bab4307_name>Purger',
+    },
+	
+    Intel = {
+        VisionRadius = 32,
+    },
+	
+    Interface = {
+        HelpText = 'Advanced Tactical Missile Defense',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.35,
+    LifeBarSize = 1,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+        MaxSteerForce = 0,
+        MeshExtentsX = 1.15,
+        MeshExtentsY = 0.65,
+        MeshExtentsZ = 1.15,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+        SkirtSizeX = 2,
+        SkirtSizeZ = 2,
+        TurnRate = 0,
+    },
+	
+    SelectionSizeX = 0.65,
+    SelectionSizeZ = 0.65,
+    SelectionThickness = 0.6,
+	
+    SizeX = 0.6,
+    SizeY = 0.9,
+    SizeZ = 0.8,
+	
+    StrategicIconName = 'icon_structure3_antimissile',
+    StrategicIconSortPriority = 200,
+	
+    Veteran = {
+        Level1 = 12,
+        Level2 = 24,
+        Level3 = 36,
+        Level4 = 48,
+        Level5 = 60,
+    },
+	
+    Weapon = {
+        {
+            Audio = {
+                Fire = Sound { Bank = 'UASWeapon', Cue = 'UAS0202_SAM', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+
+            Damage = 2,
+            DamageType = 'Normal',
+
+            DisplayName = 'Ele-athrun Tactical Missile Defense',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Water = 'Air',
+            },
+            FiringTolerance = 2,
+
+            Label = 'AntiMissile',
+
+            MaxRadius = 44,
+
+            MuzzleVelocity = 70,
+
+            ProjectileId = '/projectiles/AAAFizz01/AAAFizz01_proj.bp',
+            ProjectileLifetime = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Muzzle01'},
+                    RackBone = 'Turret_Barrel',
+                },
+            },
+            
+            RackSalvoReloadTime = .3,
+
+            RackRecoilDistance = -0.5,
+
+            RangeCategory = 'UWRC_Countermeasure',
+
+            RateOfFire = 20/10,
+            TargetCheckInterval = 0.1,
+
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictOnlyAllow = 'TACTICAL MISSILE',
+            TargetType = 'RULEWTT_Projectile',
+            TrackingRadius = 1.4,
+
+            TurretBoneMuzzle = 'Muzzle01',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'XAB4307',
+
+            TurretPitch = 45,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 90,
+
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 240,
+
+            Turreted = true,
+
+            UseFiringSolutionInsteadOfAimBone = true,
+            WeaponRepackTimeout = 0.2,
+            WeaponUnpacks = true,
+        },
+    },
+	
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.5,
+        HealthMult = 0.9,
+        MassMult = 0.3,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}
