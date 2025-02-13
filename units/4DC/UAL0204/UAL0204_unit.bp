@@ -53,7 +53,7 @@ UnitBlueprint {
         RadarStealth = false,
         
         OmniRadius = 0,
-        VisionRadius = 18,
+        VisionRadius = 28,
     },
 
     Physics = {
@@ -61,8 +61,8 @@ UnitBlueprint {
         BankingSlope = 0,
         DragCoefficient = 0.2,
         MaxAcceleration = .75,
-        MaxBrake = 3.2,
-        MaxSpeed = 3.6,
+        MaxBrake = 1.5,
+        MaxSpeed = 3.7,
         MaxSpeedReverse = 2,
         MaxSteerForce = 10,
         MinSpeedPercent = 0,
@@ -96,9 +96,9 @@ UnitBlueprint {
             FiringTolerance = 0.8,
 
             MaxRadius = 42,
-            MinRadius = 6,
+            MinRadius = 5,
 
-            MuzzleVelocity = 50,
+            MuzzleVelocity = 60,
 
             ProjectileId = "/mods/QUIET-Community-Edition/projectiles/Sniper_NonPiercing/Sniper_NonPiercing_proj.bp",
             ProjectileLifetime = 1,

@@ -88,7 +88,7 @@ UnitBlueprint {
 			
             NotExclusive = true,
 			
-            MaxRadius = 102,
+            MaxRadius = 44,
 			
             RackBones = {
                 {
@@ -163,7 +163,7 @@ UnitBlueprint {
 			
             NotExclusive = true,
 			
-            MaxRadius = 102,
+            MaxRadius = 44,
             
             RackBones = {
                 {

@@ -95,7 +95,7 @@ UnitBlueprint {
             
             Label = 'AAGun',
             
-            MaxRadius = 93,
+            MaxRadius = 44,
             
             RackBones = {
                 { MuzzleBones = {'Muzzle_L'}, RackBone = 'Barrel_L' },
@@ -174,7 +174,7 @@ UnitBlueprint {
             
             Label = 'AAGun',
             
-            MaxRadius = 93,
+            MaxRadius = 44,
             
             RackBones = {
                 { MuzzleBones = {'Muzzle_R'}, RackBone = 'Barrel_R' },

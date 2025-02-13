@@ -1,22 +1,6 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "uas0103",
-
-    Defense = {
-        ArmorType = "Normal",
-        Health = 1850,
-        MaxHealth = 1850,
-        SurfaceThreatLevel = 6,
-    },
-
-    Intel = {
-		FreeIntel = true,
-
-        RadarRadius = 80,
-        SonarRadius = 48,
-        VisionRadius = 32,
-        WaterVisionRadius = 16,
-    },
 	
     Weapon = {
         {
@@ -31,7 +15,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
-            Damage = 50,
+            Damage = 45,
             DamageRadius = 0,
             DamageType = 'Normal',
 			
@@ -106,7 +90,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
-            Damage = 50,
+            Damage = 45,
             DamageRadius = 0,
             DamageType = 'Normal',
 			
