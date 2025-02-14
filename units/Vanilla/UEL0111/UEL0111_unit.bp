@@ -69,9 +69,12 @@ UnitBlueprint {
 			
             TargetCheckInterval = 2,
             TargetPriorities = {
-                'SPECIALHIGHPRI',
-                'STRUCTURE,-WALL',
-                'MOBILE',
+                "SPECIALHIGHPRI",
+                "STRUCTURE DEFENSE",
+                "SNIPER",
+                "SHIELD",
+                "STRUCTURE",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             TrackingRadius = 1.05,
