@@ -1,0 +1,276 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'xeb2306',
+
+    Audio = {
+        Destroyed   = Sound { Bank = 'UELDestroy', Cue = 'UEB_Destroy_Med_Land', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'UEF_Select_Gun', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 2,
+            Level2 = 4,
+            Level3 = 6,
+            Level4 = 8,
+            Level5 = 10,
+        },
+    },
+	
+    BuildIconSortPriority = 110,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYTIER3COMMANDER',
+        'UEF',
+        'STRUCTURE',
+        'DEFENSE',
+        'TECH3',
+        'DIRECTFIRE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'OVERLAYDIRECTFIRE',
+        'SORTDEFENSE',
+    },
+	
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 6000,
+        MaxHealth = 6000,
+        RegenRate = 2,
+        SurfaceThreatLevel = 58.1,
+    },
+	
+    Description = '<LOC xeb2306_desc>Heavy Point Defense',
+	
+    Display = {
+        Abilities = {
+			'High Damage',
+			'Rapid Rate of Fire',
+			'3 Second Reload',
+        },
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 100,
+                    ShaderName = 'Unit',
+                },
+                {
+                    AlbedoName = 'xeb2306_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    ShaderName = 'Unit',
+                    SpecularName = 'xeb2306_lod1_specteam.dds',
+                },
+            },
+        },
+
+        Tarmacs = {
+            {
+                Albedo = 'Tarmacs/Tar6x_01_albedo',
+                DeathLifetime = 300,
+                FadeOut = 150,
+                Length = 6.4,
+                Normal = 'Tarmacs/Tar6x_01_normals',
+                Orientations = { 0, 90, 180, 270 },
+                RemoveWhenDead = false,
+                Width = 6.4,
+            },
+        },
+
+        UniformScale = 0.40,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 16500,
+        BuildCostMass = 1815,
+        BuildTime = 1500,
+		
+        RebuildBonusIds = {'xeb2306'},
+    },
+	
+	Footprint = {
+		SizeX = 1,
+		SizeZ = 1,
+	},
+	
+    General = {
+		CapCost = 2,
+
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'UEF',
+        Icon = 'land',
+        SelectionPriority = 5,
+
+        UnitName = '<LOC xeb2306_name>Ravager',
+    },
+	
+    Intel = {
+        VisionRadius = 36,
+    },
+	
+    Interface = {
+        HelpText = 'Heavy Point Defense',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.7,
+    LifeBarSize = 0.9,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+        MaxSteerForce = 0,
+        MeshExtentsX = 1.1,
+        MeshExtentsY = 1.15,
+        MeshExtentsZ = 1.1,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+        SkirtSizeX = 2,
+        SkirtSizeZ = 2,
+        TurnRate = 0,
+    },
+	
+    SelectionSizeX = 0.85,
+    SelectionSizeZ = 0.85,
+    SelectionThickness = 0.48,
+	
+    SizeX = 1.3,
+    SizeY = 1.3,
+    SizeZ = 1.3,
+	
+    StrategicIconName = 'icon_structure3_directfire',
+    StrategicIconSortPriority = 205,
+	
+    Veteran = {
+        Level1 = 16,
+        Level2 = 32,
+        Level3 = 48,
+        Level4 = 64,
+        Level5 = 80,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = true,
+			AlwaysRecheckTarget = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'XEL_Weapons', Cue = 'XEB2306_Gatling_Gun', LodCutoff = 'Weapon_LodCutoff' },
+            },
+			
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 90,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Gatling Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0.2,
+            FiringTolerance = 2,
+			
+            Label = 'Gatling',
+			
+			LeadTarget = true,
+			
+            MaxRadius = 70,
+			
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 24,
+
+            MuzzleVelocity = 40,
+			
+            ProjectileId = '/projectiles/TDFHeavyPlasmaGatlingCannon01/TDFHeavyPlasmaGatlingCannon01_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 1.5,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Gun_Muzzle'},
+                    RackBone = 'Gun_Barrel',
+                },
+            },
+
+            RackSalvoChargeTime = 0.5,
+            RackSalvoReloadTime = 2.7,
+
+            RenderFireClock = true,
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/80,
+			
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+				"EXPERIMENTAL",
+                "STRUCTURE SHIELD",
+                "TECH3 DEFENSE DIRECTFIRE",
+                "SNIPER",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "COMMAND",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 30,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 70,
+			
+            Turreted = true,
+			
+            WeaponRepackTimeout = 3,
+            WeaponUnpacks = true,
+        },
+        {
+    		Damage = 500,
+    		DamageFriendly = true,
+    		DamageRadius = 3,
+    		DamageType = 'Normal',
+    		DummyWeapon = true,
+    		Label = 'DeathWeapon',
+    	}, 		
+    },
+	
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.4,
+        HealthMult = 0.9,
+        MassMult = 0.6,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}
