@@ -1,0 +1,89 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'xel0306',
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+			
+            AnimationReload = '/units/xel0306/xel0306_aload.sca',
+            AnimationReloadRate = 1.2,
+			
+            Audio = {
+                Fire = Sound { Bank = 'XEL_Weapons', Cue = 'XEL0306_Missile_Cruise', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+
+            Damage = 600,
+            DamageFriendly = true,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Cruise Missile',
+            
+            EnergyRequired = 1950,
+            EnergyDrainPerSecond = 325,     -- 6 seconds charge
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+            },
+			
+            FiringTolerance = 1,
+			
+            Label = 'MissileWeapon',
+			
+            MaxRadius = 88,
+            MinRadius = 15,
+			
+            MuzzleChargeDelay = 1.3,
+
+            MuzzleVelocity = 4.5,
+			
+            ProjectileId = '/projectiles/TIFMissileCruise05/TIFMissileCruise05_proj.bp',
+            ProjectileLifetime = 20,
+
+            RackBones = {
+                {
+                    HideMuzzle = true,
+                    MuzzleBones = {'Projectile_01','Projectile_02','Projectile_03'},
+                    RackBone = 'B05_Launcher',
+                },
+            },
+
+            RackSalvoChargeTime = 0.5,
+
+            RackSalvoFiresAfterCharge = true,
+            RenderFireClock = true,
+
+            RackSalvoReloadTime = 3.6,
+
+            RangeCategory = 'UWRC_IndirectFire',
+
+            RateOfFire = 0.167,                    -- charge, muzzle and reload delays handle all of it
+
+            SlavedToBody = true,
+			
+            TargetCheckInterval = 2,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'DEFENSE ANTIMISSILE',
+				'DEFENSE',
+                'STRUCTURE,-WALL',
+                'TECH3 MOBILE',
+                'TECH2 MOBILE',
+                'TECH1 MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.05,
+			
+            Turreted = false,
+
+            WeaponRepackTimeout = 1.5,
+            WeaponUnpackAnimation = '/units/xel0306/xel0306_aopen.sca',
+            WeaponUnpackAnimationRate = 1,
+        },
+    },
+}
