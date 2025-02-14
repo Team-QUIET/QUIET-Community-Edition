@@ -1,0 +1,233 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'uab2301',
+
+    Audio = {
+        Destroyed   = Sound { Bank = 'UALDestroy', Cue = 'UAB_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'Aeon_Select_Gun', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    Buffs = {},
+	
+    BuildIconSortPriority = 110,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3COMMANDER',
+        'AEON',
+        'STRUCTURE',
+        'DEFENSE',
+        'TECH2',
+        'DIRECTFIRE',
+        'DRAGBUILD',
+        'SIZE4',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SORTDEFENSE',
+    },
+	
+    CollisionOffsetY = -0.5,
+	
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 2025,
+        MaxHealth = 2025,
+        RegenRate = 1,
+        SurfaceThreatLevel = 22.4,
+    },
+	
+    Description = '<LOC uab2301_desc>Improved Point Defense',
+	
+    Display = {
+        AnimationPermOpen = '/units/UAB2301/UAB2301_Aopen.sca',
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 120,
+                    ShaderName = 'Aeon',
+                },
+                {
+                    AlbedoName = 'uab2301_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    ShaderName = 'Aeon',
+                    SpecularName = 'uab2301_lod1_specteam.dds',
+                },
+            },
+        },
+
+        UniformScale = 0.4,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 4250,
+        BuildCostMass = 450,
+        BuildTime = 550,
+
+        RebuildBonusIds = {'uab2301'},
+    },
+
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Aeon',
+        Icon = 'amph',
+        SelectionPriority = 5,
+        UnitName = '<LOC uab2301_name>Oblivion',
+    },
+	
+    Intel = {
+        VisionRadius = 32,
+    },
+	
+    Interface = {
+        HelpText = 'Improved Point Defense',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.6,
+    LifeBarSize = 1.25,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+        MaxSteerForce = 0,
+        MeshExtentsX = 1.75,
+        MeshExtentsY = 1,
+        MeshExtentsZ = 2,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+        SkirtSizeX = 2,
+        SkirtSizeZ = 2,
+        TurnRate = 0,
+    },
+
+    SelectionSizeX = 0.9,
+    SelectionSizeZ = 1.1,
+    SelectionThickness = 0.37,
+
+    SizeX = 0.85,
+    SizeY = 1.5,
+    SizeZ = 0.85,
+
+    StrategicIconName = 'icon_structure2_directfire',
+    StrategicIconSortPriority = 200,
+
+    Veteran = {
+        Level1 = 10,
+        Level2 = 20,
+        Level3 = 30,
+        Level4 = 40,
+        Level5 = 50,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire                = Sound { Bank = 'UALWeapon', Cue = 'UAB2301_Cannon_Oblivion_Fire', LodCutoff = 'Weapon_LodCutoff'},
+                MuzzleChargeStart   = Sound { Bank = 'UALWeapon', Cue = 'UAB2301_Cannon_Oblivion_Charge', LodCutoff = 'Weapon_LodCutoff'},
+            },
+
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 300,
+            DamageFriendly = false,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Oblivion Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0.15,
+            FiringTolerance = 0.5,
+			
+            Label = 'MainGun',
+			
+            LeadTarget = true,
+			
+            MaxRadius = 50,
+			
+            MuzzleChargeDelay = 1,
+
+            MuzzleVelocity = 38,
+			
+            ProjectileId = '/projectiles/ADFOblivionCannon03/ADFOblivionCannon03_proj.bp',
+            ProjectileLifetime = 1.4,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle'},
+                    RackBone = 'Turret_Barrel_Recoil',
+                },
+            },
+
+            RackRecoilDistance = -0.5,
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 0.5,
+			
+            TargetCheckInterval = 1,
+			
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "EXPERIMENTAL",
+                "(STRUCTURE * TECH2 * DEFENSE - ANTIMISSILE)",
+                "MOBILE TECH1 ARTILLERY",
+                "MOBILE TECH3",
+                "MOBILE TECH2",
+                "MOBILE TECH1",
+                "COMMAND",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			
+            TrackingRadius = 1.25,
+			
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 10,
+            TurretPitchRange = 55,
+            TurretPitchSpeed = 55,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 120,
+            Turreted = true,
+        },
+    },
+
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.5,
+        HealthMult = 0.9,
+        MassMult = 0.6,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}
