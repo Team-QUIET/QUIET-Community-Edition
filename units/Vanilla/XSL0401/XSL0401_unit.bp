@@ -291,11 +291,13 @@ UnitBlueprint {
 			
             TargetCheckInterval = 0.5,
             TargetPriorities = {
-                'SPECIALHIGHPRI',
-				'STRUCTURE -WALL',
-                'MOBILE',
-                'DEFENSE',
-                'ALLUNITS',
+                "SPECIALHIGHPRI",
+                "EXPERIMENTAL",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
 			
