@@ -63,12 +63,12 @@ UnitBlueprint {
             TargetCheckInterval = 0.5,
 			
             TargetPriorities = {
-                'SPECIALHIGHPRI',
-				'ANTIAIR -AIR',
-                'MOBILE',
-                'STRUCTURE -WALL',
-                'ENGINEER',
-                'ALLUNITS -WALL',
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = 'HIGHALTAIR, UNTARGETABLE',
 			
@@ -140,10 +140,12 @@ UnitBlueprint {
             TargetCheckInterval = 0.5,
 			
             TargetPriorities = {
-                'SPECIALHIGHPRI',
-				'ANTIAIR -AIR',
-                'MOBILE',
-                'ALLUNITS -WALL',
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = 'HIGHALTAIR,UNTARGETABLE,STRUCTURE' ,
             TrackingRadius = 1.05,
