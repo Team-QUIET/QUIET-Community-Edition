@@ -43,7 +43,10 @@ UnitBlueprint {
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water',
             },
-            FiringTolerance = 5,
+            FiringTolerance = 1,
+
+            HeadingArcCenter = 0,
+            HeadingArcRange = 60,
             
             LeadTarget = true,
 			

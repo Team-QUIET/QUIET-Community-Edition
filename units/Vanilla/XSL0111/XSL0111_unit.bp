@@ -44,7 +44,7 @@ UnitBlueprint {
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water',
             },
-            FiringTolerance = 0.5,
+            FiringTolerance = 1,
 
             HeadingArcCenter = 0,
             HeadingArcRange = 60,
@@ -54,7 +54,7 @@ UnitBlueprint {
             MaxRadius = 65,
             MinRadius = 10,
 
-	    MuzzleChargeDelay = 0.1,
+	        MuzzleChargeDelay = 0.1,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
 

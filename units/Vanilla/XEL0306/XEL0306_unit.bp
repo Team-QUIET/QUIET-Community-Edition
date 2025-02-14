@@ -31,6 +31,9 @@ UnitBlueprint {
             },
 			
             FiringTolerance = 1,
+
+            HeadingArcCenter = 0,
+            HeadingArcRange = 120,
 			
             Label = 'MissileWeapon',
 			
