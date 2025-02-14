@@ -27,7 +27,7 @@ UnitBlueprint {
             CollideFriendly = false,
 			
             Damage = 480,
-            DamageRadius = 1.5,
+            DamageRadius = 2,
             DamageType = 'Normal',
 			
             DisplayName = 'Plasma Cannon',
@@ -86,11 +86,11 @@ UnitBlueprint {
 
             TurretPitch = 0,
             TurretPitchRange = 55,
-            TurretPitchSpeed = 30,
+            TurretPitchSpeed = 55,
 			
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 45,
+            TurretYawSpeed = 120,
 			
             Turreted = true,
         },

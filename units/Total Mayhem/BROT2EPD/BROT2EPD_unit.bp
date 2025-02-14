@@ -16,14 +16,23 @@ UnitBlueprint {
                 },
             },
 
-        RateOfFire = 15/10,
+            MaxRadius = 52,
+            MinRadius = 5,
 
-        TurretYawSpeed = 45,
+            RateOfFire = 15/10,
+
+            TurretPitch = 0,
+            TurretPitchRange = 55,
+            TurretPitchSpeed = 55,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 120,
 
         },
         {
 
-        RateOfFire = 2/10,
+            RateOfFire = 2/10,
 
         },
         {

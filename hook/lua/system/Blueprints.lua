@@ -954,6 +954,8 @@ do
 			'sal0320',   -- Armillary
 			'wrl0309',   -- Python
 			'xel0308',   -- Hermes
+			'brmt2pd',   -- Slingshot
+			'brnt2pd2',  -- Angry Ace
 		};
 		for i, bp in pairs(unitPruningId) do
 			if all_blueprints.Unit[bp] then

@@ -31,7 +31,7 @@ UnitBlueprint {
 			
 			LeadTarget = true,
 			
-            MaxRadius = 50,
+            MaxRadius = 52,
 			
             MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 3,
@@ -55,10 +55,15 @@ UnitBlueprint {
             TargetCheckInterval = 0.3,
 			
             TargetPriorities = {
-                'SPECIALHIGHPRI',
-                'MOBILE SHIELD',
-				'MOBILE',
-                'ALLUNITS',
+                "SPECIALHIGHPRI",
+                "EXPERIMENTAL",
+                "(STRUCTURE * TECH2 * DEFENSE - ANTIMISSILE)",
+                "MOBILE TECH1 ARTILLERY",
+                "MOBILE TECH3",
+                "MOBILE TECH2",
+                "MOBILE TECH1",
+                "COMMAND",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
             TrackingRadius = 1.05,
@@ -74,7 +79,7 @@ UnitBlueprint {
 			
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 105,
+            TurretYawSpeed = 120,
 			
             Turreted = true,
         },

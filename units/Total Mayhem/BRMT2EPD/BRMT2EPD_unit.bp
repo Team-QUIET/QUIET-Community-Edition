@@ -2,6 +2,16 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "brmt2epd",
 
+    Economy = {
+        BuildCostEnergy = 16500,
+        BuildCostMass = 1800,
+        BuildTime = 1800,
+		
+		MaintenanceConsumptionPerSecondEnergy = 40,
+		
+        RebuildBonusIds = {'BRMT2EPD'},
+    },
+
     Weapon = {
         {
             Buffs = {
@@ -9,8 +19,8 @@ UnitBlueprint {
                     Add = { OnImpact = false },
                     AppliedToTarget = false,
                     BuffType = 'STUN',
-                    Duration = 0.6,
-                    Radius = 0.5,
+                    Duration = 0,
+                    Radius = 0,
                     TargetAllow = 'LAND TECH1,NAVAL TECH1,LAND TECH2,NAVAL TECH2',
                     TargetDisallow = 'WALL',
                 },
@@ -34,8 +44,8 @@ UnitBlueprint {
 			
 			LeadTarget = true,
 
-            MaxRadius = 48,
-            MinRadius = 3,
+            MaxRadius = 54,
+            MinRadius = 2,
 
             MuzzleVelocity = 80,
 			
@@ -58,7 +68,7 @@ UnitBlueprint {
             RackRecoilDistance = -0.5,
 			RackSalvoReloadTime = 0,
 			RackReloadTimeout = 0,
-			RackFireTogether = true,
+			RackFireTogether = false,
 
 			RackSalvoSize = 2,
 			
@@ -95,7 +105,7 @@ UnitBlueprint {
 			
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 105,
+            TurretYawSpeed = 120,
 			
             Turreted = true,
         },
