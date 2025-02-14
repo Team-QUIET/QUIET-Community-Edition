@@ -1,0 +1,13 @@
+name = "QUIET - Beta"
+author = "QUIET Team"
+version = 1.1
+description = "QUIET Beta is a collection of experimental changes to the game to help test new features and ideas."
+exclusive = false
+ui_only = false
+selectable = true
+enabled = true
+uid = "zzzzzzze-fffe-fffe-fffe-24ehxst8372t"
+requires = { }
+conflicts = { }
+before = { }
+after = { }
