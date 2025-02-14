@@ -4,6 +4,18 @@ UnitBlueprint {
 
     Weapon = {
         {
+            Buffs = {
+                {
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 0.9,
+                    Radius = 1.5,
+                    TargetAllow = 'LAND',
+                    TargetDisallow = 'EXPERIMENTAL,COMMAND,STRUCTURE,SUBCOMMANDER,AIR,TECH3,NAVAL',
+                },
+            },
+
             EnergyDrainPerSecond = 175,
             EnergyRequired = 700,
 
