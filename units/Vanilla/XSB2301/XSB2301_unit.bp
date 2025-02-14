@@ -1,0 +1,228 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'xsb2301',
+
+    Audio = {
+        Destroyed   = Sound { Bank = 'XSL_Destroy', Cue = 'XSB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff'},
+        Killed      = Sound { Bank = 'XSL_Destroy', Cue = 'XSB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_gun', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+
+    Buffs = {},
+
+    BuildIconSortPriority = 110,
+
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3COMMANDER',
+        'SERAPHIM',
+        'STRUCTURE',
+        'DEFENSE',
+        'TECH2',
+        'DIRECTFIRE',
+        'DRAGBUILD',
+        'SIZE4',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SORTDEFENSE',
+    },
+
+    CollisionOffsetY = -0.5,
+
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 2100,
+        MaxHealth = 2100,
+        RegenRate = 1,
+        SurfaceThreatLevel = 24.2,
+    },
+
+    Description = '<LOC xsb2301_desc>Improved Point Defense',
+
+    Display = {
+
+        Abilities = {
+            '<LOC ability_aquatic>Aquatic: can be built on water',
+        },
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 120,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    ShaderName = 'Seraphim',
+                },
+                {
+                    AlbedoName = 'xsb2301_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    ShaderName = 'Seraphim',
+                    SpecularName = 'xsb2301_lod1_specteam.dds',
+                },
+            },
+        },
+
+        UniformScale = 0.06,
+    },
+
+    Economy = {
+        BuildCostEnergy = 4500,
+        BuildCostMass = 500,
+        BuildTime = 550,
+
+        RebuildBonusIds = {'xsb2301'},
+    },
+
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Seraphim',
+        Icon = 'amph',
+        SelectionPriority = 5,
+
+        UnitName = '<LOC xsb2301_name>Uttaushala',
+    },
+
+    Intel = {
+        VisionRadius = 32,
+    },
+
+    Interface = {
+        HelpText = 'Improved Point Defense',
+    },
+
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.75,
+    LifeBarSize = 1.25,
+
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+        MaxSteerForce = 0,
+        MeshExtentsX = 1.75,
+        MeshExtentsY = 1,
+        MeshExtentsZ = 2,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+        SkirtSizeX = 2,
+        SkirtSizeZ = 2,
+        TurnRate = 0,
+    },
+    SelectionSizeX = 0.75,
+    SelectionSizeZ = 0.75,
+    SelectionThickness = 0.5,
+    SizeX = 0.9,
+    SizeY = 1.5,
+    SizeZ = 0.9,
+    StrategicIconName = 'icon_structure2_directfire',
+    StrategicIconSortPriority = 200,
+    Veteran = {
+        Level1 = 9,
+        Level2 = 18,
+        Level3 = 27,
+        Level4 = 36,
+        Level5 = 45,
+    },
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                BeamLoop    = Sound { Bank = 'XSB_Weapon', Cue = 'XSB2301_Ultrachromatic_Beam', LodCutoff = 'Weapon_LodCutoff'},
+                BeamStart   = Sound { Bank = 'XSB_Weapon', Cue = 'XSB2301_Ultrachromatic_Beam_Start', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStop    = Sound { Bank = 'XSB_Weapon', Cue = 'XSB2301_Ultrachromatic_Beam_Stop', LodCutoff = 'Weapon_LodCutoff'},
+            },
+            BallisticArc = 'RULEUBA_None',
+
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0.5,
+            CollideFriendly = false,
+
+            Damage = 66,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+
+            DisplayName = 'Ultrachromatic Beam Generator',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+
+            FiringRandomness = 0,
+            FiringTolerance = 0,
+
+            Label = 'MainGun',
+			
+			LeadTarget = false,
+
+            MaxRadius = 50,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle'},
+                    RackBone = 'Turret_Barrel',
+                },
+            },
+
+            RackRecoilDistance = -1,
+
+            RangeCategory = 'UWRC_DirectFire',
+
+            RateOfFire = 0.5,		---- 330 damage every 2 seconds = 165 DPS
+
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "EXPERIMENTAL",
+                "(STRUCTURE * TECH2 * DEFENSE - ANTIMISSILE)",
+                "MOBILE TECH1 ARTILLERY",
+                "MOBILE TECH3",
+                "MOBILE TECH2",
+                "MOBILE TECH1",
+                "COMMAND",
+                "ALLUNITS",
+            },
+
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TrackingRadius = 1.2,
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = false,
+
+            TurretPitch = 0,
+            TurretPitchRange = 40,
+            TurretPitchSpeed = 40,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 120,
+
+            Turreted = true,
+        },
+    },
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.5,
+        HealthMult = 0.9,
+        MassMult = 0.6,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

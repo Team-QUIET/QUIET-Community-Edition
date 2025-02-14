@@ -217,7 +217,11 @@ UnitBlueprint {
 			
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'AIR',
+                'TECH3 BOMBER',
+                'TECH3 GROUNDATTACK',
+                'TECH2 BOMBER',
+                'TECH2 GROUNDATTACK',
+                'TRANSPORTATION',
 				'ENGINEER',
                 'MOBILE',
 				'ANTIAIR',

@@ -1,0 +1,235 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'urb2301',
+
+    Audio = {
+        Destroyed   = Sound { Bank = 'URLDestroy', Cue = 'URB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'Cybran_Select_Gun', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 2,
+            Level2 = 4,
+            Level3 = 6,
+            Level4 = 8,
+            Level5 = 10,
+        },
+		VisionRadius = {
+            Level1 = 2,
+            Level2 = 3,
+            Level3 = 3,
+            Level4 = 4,
+            Level5 = 5,
+		},
+    },
+	
+    BuildIconSortPriority = 110,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3COMMANDER',
+        'CYBRAN',
+        'STRUCTURE',
+        'DEFENSE',
+        'TECH2',
+        'DIRECTFIRE',
+        'DRAGBUILD',
+        'SIZE4',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SORTDEFENSE',
+    },
+	
+    CollisionOffsetY = -0.5,
+	
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 2025,
+        MaxHealth = 2025,
+        RegenRate = 2,
+        SurfaceThreatLevel = 22.4,
+    },
+	
+    Description = '<LOC urb2301_desc>Improved Point Defense',
+	
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 120,
+                    ShaderName = 'Insect',
+                },
+                {
+                    AlbedoName = 'urb2301_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    ShaderName = 'Insect',
+                    SpecularName = 'urb2301_lod1_specteam.dds',
+                },
+            },
+        },
+        UniformScale = 0.06,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 4500,
+        BuildCostMass = 500,
+        BuildTime = 550,
+		
+        RebuildBonusIds = {'urb2301'},
+    },
+
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Cybran',
+        Icon = 'amph',
+        SelectionPriority = 5,
+        UnitName = '<LOC urb2301_name>Cerberus',
+    },
+	
+    Intel = {
+        VisionRadius = 32,
+    },
+	
+    Interface = {
+        HelpText = 'Improved Point Defense',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.45,
+    LifeBarSize = 1.1,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+        MaxSteerForce = 0,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+        SkirtSizeX = 2,
+        SkirtSizeZ = 2,
+        TurnRate = 0,
+    },
+	
+    SelectionSizeX = 0.75,
+    SelectionSizeZ = 0.75,
+    SelectionThickness = 0.5,
+	
+    SizeX = 0.5,
+    SizeY = 1.5,
+    SizeZ = 0.7,
+	
+    StrategicIconName = 'icon_structure2_directfire',
+    StrategicIconSortPriority = 200,
+	
+    Veteran = {
+        Level1 = 10,
+        Level2 = 20,
+        Level3 = 30,
+        Level4 = 40,
+        Level5 = 50,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'URLWeapon', Cue = 'URB2301_Cannon_Sgl', LodCutoff = 'Weapon_LodCutoff'},
+            },
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0.5,
+			
+            CollideFriendly = false,
+			
+            Damage = 10,
+            DamageFriendly = false,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Tri-Barrel Laser Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0,
+            FiringTolerance = 2,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 50,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 3,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle01','Turret_Muzzle02','Turret_Muzzle03'},
+                    RackBone = 'Turret_B02',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 1,		---- 3 muzzles causing 50 damage when fired = 150 DPS
+            ReTargetOnMiss = true,
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "EXPERIMENTAL",
+                "(STRUCTURE * TECH2 * DEFENSE - ANTIMISSILE)",
+                "MOBILE TECH1 ARTILLERY",
+                "MOBILE TECH3",
+                "MOBILE TECH2",
+                "MOBILE TECH1",
+                "COMMAND",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Turret_Muzzle01',
+            TurretBonePitch = 'Turret_B02',
+            TurretBoneYaw = 'Turret_B01',
+			
+            TurretPitch = 10,
+            TurretPitchRange = 55,
+            TurretPitchSpeed = 55,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 120,
+            Turreted = true,
+        },
+		
+    },
+	
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.5,
+        HealthMult = 0.9,
+        MassMult = 0.6,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

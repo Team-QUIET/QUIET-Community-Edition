@@ -40,7 +40,10 @@ UnitBlueprint {
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water',
             },
-            FiringTolerance = 5,
+            FiringTolerance = 1,
+
+            HeadingArcCenter = 0,
+            HeadingArcRange = 60,
             
             LeadTarget = true,
 			
@@ -69,9 +72,12 @@ UnitBlueprint {
 			
             TargetCheckInterval = 2,
             TargetPriorities = {
-                'SPECIALHIGHPRI',
-                'STRUCTURE,-WALL',
-                'MOBILE',
+                "SPECIALHIGHPRI",
+                "STRUCTURE DEFENSE",
+                "SNIPER",
+                "SHIELD",
+                "STRUCTURE",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             TrackingRadius = 1.05,
