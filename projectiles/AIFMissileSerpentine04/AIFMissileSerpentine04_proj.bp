@@ -48,7 +48,7 @@ ProjectileBlueprint {
         InitialSpeed = 4,
 		
         Lifetime = 60,
-        MaxSpeed = 30,
+        MaxSpeed = 25,
 		
 		OnLostTargetLifetime = 0.3,
 		
@@ -56,7 +56,7 @@ ProjectileBlueprint {
 
         TrackTarget = true,
         TrackTargetGround = true,
-        TrackTargetGroundFuzziness = 1.0,
+        TrackTargetGroundFuzziness = 5.0,
         TrackTargetGroundOffset = 2.5,
 		
         UseGravity = false,
