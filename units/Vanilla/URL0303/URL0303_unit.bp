@@ -1,0 +1,360 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "url0303",
+
+    AI = {
+		GuardReturnRadius = 35,
+        GuardScanRadius = 25,
+    },
+
+    Audio = {
+        Killed      = Sound { Bank = 'URLWeapon', Cue = 'URL0303_Death_EMP', LodCutoff = 'UnitMove_LodCutoff'},
+        StartMove   = Sound { Bank = 'URL', Cue = 'URL0303_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'Cybran_Select_Bot', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+
+    Buffs = {
+        Regen = {
+            Level1 = 3,
+            Level2 = 6,
+            Level3 = 9,
+            Level4 = 12,
+            Level5 = 15,
+        },
+
+        Stun = {
+            Add = { OnDeath = true, OnImpact = true },
+            AppliedToTarget = true,
+            BuffType = 'STUN',
+            Duration = 1.4,
+            Radius = 10,
+            TargetAllow = 'MOBILE',
+            TargetDisallow = 'EXPERIMENTAL, COMMAND'
+        },
+    },
+	
+    BuildIconSortPriority = 20,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'CYBRAN',
+        'MOBILE',
+        'LAND',
+        'TECH3',
+        'DIRECTFIRE',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+    },
+	
+    Defense = {
+        AntiMissile = { AttachBone = 'Turret_Muzzle', Radius = 6, RedirectRateOfFire = 1, ProjectileCategories = {'TACTICAL MISSILE'} },
+        
+        ArmorType = 'Normal',
+        Health = 3000,
+        MaxHealth = 3000,
+        RegenRate = 2.5,
+        SurfaceThreatLevel = 27.4,
+    },
+	
+    Description = '<LOC url0303_desc>Siege Assault Bot',
+	
+    Display = {
+        Abilities = {
+            '<LOC ability_amphibious>Amphibious',
+            "<LOC ability_tacticalmissledeflect>Tactical Missile Deflection",
+        },
+
+        AnimationDeath = {
+            {
+                Animation = '/units/URL0303/URL0303_Adeath01.sca',
+                AnimationRateMax = 1.25,
+                AnimationRateMin = 0.75,
+                Weight = 1,
+            },
+            {
+                Animation = '/units/URL0303/URL0303_Adeath02.sca',
+                AnimationRateMax = 1.25,
+                AnimationRateMin = 0.75,
+                Weight = 1,
+            },
+        },
+
+        AnimationWalk = '/units/url0303/url0303_awalk.sca',
+        AnimationWalkRate = 4.5,
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 100,
+                    ShaderName = 'Insect',
+                },
+                {
+                    AlbedoName = 'url0303_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    ShaderName = 'Insect',
+                    SpecularName = 'url0303_lod1_specteam.dds',
+                },
+            },
+        },
+
+        TransportAnimation = { { Animation = '/units/URL0303/URL0303_Afold01.sca', Weight = 100 } },
+
+        UniformScale = 0.15,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 6600,
+        BuildCostMass = 600,
+        BuildTime = 3000,
+    },
+	
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Cybran',
+        Icon = 'land',
+
+        UnitName = '<LOC url0303_name>Loyalist',
+    },
+
+    Intel = {
+        VisionRadius = 28,
+    },
+
+    Interface = {
+        HelpText = 'Siege Assault Bot',
+    },
+
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.55,
+    LifeBarSize = 1,
+
+    Physics = {
+		BackUpDistance = 4,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 3.8,
+        MaxBrake = 3.8,
+        MaxSpeed = 3.8,
+        MaxSpeedReverse = 3.8,
+        MaxSteerForce = 10,
+        MeshExtentsX = 1.0,
+        MeshExtentsY = 1.0,
+        MeshExtentsZ = 1.0,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        StandUpright = true,
+        TurnRadius = 5,
+        TurnRate = 100,
+    },
+    
+    SelectionCenterOffsetX = 0,
+    SelectionCenterOffsetZ = -0.15,
+    SelectionSizeX = 0.55,
+    SelectionSizeZ = 0.5,
+    SelectionThickness = 0.5,
+    
+    SizeX = 0.9,
+    SizeY = 1.0,
+    SizeZ = 0.9,
+    
+    StrategicIconName = 'icon_land3_directfire',
+    StrategicIconSortPriority = 115,
+    
+    Transport = {
+        TransportClass = 3,
+    },
+
+    Veteran = {
+        Level1 = 10,
+        Level2 = 20,
+        Level3 = 30,
+        Level4 = 40,
+        Level5 = 50,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'URLWeapon', Cue = 'URL0303_Disintegrator', LodCutoff = 'Weapon_LodCutoff' },
+                MuzzleChargeStart = Sound { Bank = 'URLWeapon', Cue = 'URL0303_Disintegrator_Charge', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 150,
+			DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Laser',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 2,
+			
+            Label = 'Disintigrator',
+			
+            LeadTarget = true,
+			
+            MaxRadius = 20,
+			
+            MuzzleChargeDelay = 0.1,
+
+            MuzzleSalvoDelay = 0.3,
+            MuzzleSalvoSize = 3,
+
+            MuzzleVelocity = 30,
+			
+            NotExclusive = true,
+			
+            ProjectileId = '/projectiles/CDFLaserDisintegrator02/CDFLaserDisintegrator02_proj.bp',
+            ProjectileLifetime = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Muzzle_Left'},
+                    RackBone = 'Barrel_L',
+                },
+            },
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 0.3,		---- 180 DPS
+            
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.15,
+            
+            TurretBoneMuzzle = 'Muzzle_Left',
+            TurretBonePitch = 'Barrel_L',
+            TurretBoneYaw = 'Torso',
+            
+            TurretPitch = 0,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 60,
+            
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 120,
+            
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+        },
+        {
+            AboveWaterTargetsOnly = true,
+            AlwaysRecheckTarget = true,
+            Audio = {
+                Fire = Sound { Bank = 'URLWeapon', Cue = 'URL0303_Bolter', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 15,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Heavy Electron Bolter',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 2,
+
+            Label = 'HeavyBolter',
+			
+            LeadTarget = true,
+			
+            MaxRadius = 20,
+
+            MuzzleVelocity = 40,
+			
+            NotExclusive = true,
+			
+            ProjectileId = '/projectiles/CDFBolter02/CDFBolter02_proj.bp',
+            ProjectileLifetime = 0.8,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Muzzle_Right'},
+                    RackBone = 'Barrel_R',
+                },
+            },
+
+            RateOfFire = 1.5,	---- 30 DPS
+			
+            TargetCheckInterval = 0.25,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.1,
+            
+            TurretBoneMuzzle = 'Muzzle_Right',
+            TurretBonePitch = 'Barrel_R',
+            TurretBoneYaw = 'Barrel_R',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 90,
+			
+            TurretYaw = 0,
+            TurretYawRange = 35,
+            TurretYawSpeed = 90,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+        },
+        {
+            Buffs = {
+                BuffType = 'STUN',
+                Duration = 2.5,
+                Radius = 10,
+                TargetAllow = 'MOBILE',
+                TargetDisallow = 'EXPERIMENTAL,COMMAND,AIR',
+            },
+			
+            Damage = 0,
+            DummyWeapon = true,
+
+            Label = 'DeathWeapon',
+            WeaponCategory = 'Death',
+        },
+    },
+    
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.3,
+        HealthMult = 0.9,
+        MassMult = 0.6,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

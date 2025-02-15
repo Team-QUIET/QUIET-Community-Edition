@@ -2,12 +2,42 @@ UnitBlueprint {
   Merge = true,
   BlueprintId = "uel0303",
 
-      Weapon = {
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 1300,
+        MaxHealth = 1300,
+        RegenRate = 1,
+
+        Shield = {
+            ImpactEffects = 'UEFShieldHit01',
+            OwnerShieldMesh = '/units/uel0303/UEL0303_PersonalShield_mesh',
+            PassOverkillDamage = true,            
+            PersonalShield = true,
+            RegenAssistMult = 60,
+            ShieldEnergyDrainRechargeTime = 5,
+            ShieldMaxHealth = 2400,
+            ShieldRechargeTime = 40,
+            ShieldRegenRate = 60,
+            ShieldRegenStartTime = 1,
+            ShieldSize = 2.5,
+            ShieldVerticalOffset = 0,
+            StartsOff = true,
+        },
+
+        SurfaceThreatLevel = 27.4,
+    },
+
+    Weapon = {
         {
+            Damage = 25,
+
+            MaxRadius = 24,
+
+            MuzzleVelocity = 35,
 
             RateOfFire = 30/10,
 
-            TurretYawSpeed = 75,
+            TurretYawSpeed = 130,
 
         },
     },
