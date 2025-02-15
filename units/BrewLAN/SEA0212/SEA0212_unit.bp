@@ -40,8 +40,8 @@ UnitBlueprint {
     },
 
     Defense = {
-        Health = 1500,
-        MaxHealth = 1500,
+        Health = 900,
+        MaxHealth = 900,
     },
 
     Economy = {
@@ -72,7 +72,7 @@ UnitBlueprint {
 
             FiringTolerance = 2,
 
-            MaxRadius = 32,
+            MaxRadius = 30,
 
             MuzzleSalvoDelay = 0.2,
 
@@ -85,7 +85,7 @@ UnitBlueprint {
             RateOfFire = 25/10,             -- 200 DPS Air
 
             SlavedToBody = true,
-            SlavedToBodyArcRange = 55,
+            SlavedToBodyArcRange = 40,
 
             TargetCheckInterval = 1,
             TargetPriorities = {

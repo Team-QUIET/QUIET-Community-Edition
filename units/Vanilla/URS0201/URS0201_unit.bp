@@ -11,6 +11,91 @@ UnitBlueprint {
         SubThreatLevel = 12,
         SurfaceThreatLevel = 22,
     },
+
+    Display = {
+        Abilities = {
+            "<LOC ability_amphibious>Amphibious - can walk on land",
+            '<LOC ability_aa>Anti-Air',
+            '<LOC ability_radar>Radar',
+            '<LOC ability_sonar>Sonar',
+            '<LOC ability_torpedo>Torpedoes',
+            '<LOC ability_torpedodef>Torpedo Defense',
+        },
+
+        AnimationDeath = {
+            {
+                Animation = '/units/urs0201/urs0201_asink03.sca',
+                AnimationRateMax = 1.5,
+                AnimationRateMin = 0.5,
+                Weight = 100,
+            },
+            {
+                Animation = '/units/urs0201/urs0201_asink02.sca',
+                AnimationRateMax = 1.5,
+                AnimationRateMin = 0.5,
+                Weight = 100,
+            },
+            {
+                Animation = '/units/urs0201/urs0201_asink.sca',
+                AnimationRateMax = 1.5,
+                AnimationRateMin = 0.5,
+                Weight = 100,
+            },
+        },
+
+        AnimationTransform = '/units/urs0201/urs0201_Atransform02.sca',
+        AnimationWalk = '/units/urs0201/urs0201_Awalk.sca',
+        AnimationWalkRate = 2.3,
+
+        LandAnimationDeath = { { Animation = '/units/urs0201/urs0201_adeath.sca', Weight = 100 } },
+
+        LayerChangeEffects = {
+            WaterLand = { Effects = { { Bones = {'URS0201'}, Type = 'Surface01' } } },
+        },
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 140,
+                    ShaderName = 'CybranNavy',
+                },
+                {
+                    AlbedoName = 'urs0201_lod1_albedo.dds',
+                    LODCutoff = 300,
+                    ShaderName = 'CybranNavy',
+                    SpecularName = 'urs0201_lod1_specteam.dds',
+                },
+            },
+        },
+
+        MovementEffects = {
+            Water = {
+                Effects = {
+                    { Bones = {'WakeFront_L'}, Type = 'LeftFrontWake' },
+                    { Bones = {'WakeFront_R'}, Type = 'RightFrontWake' },
+                    { Bones = {'WakeBack'}, Scale = 0.93, Type = 'BackWake' },
+                },
+            },
+        },
+
+        UniformScale = 0.37,
+		
+        WaterAnimationDeath = {
+            {
+                Animation = '/units/urs0201/urs0201_asink03.sca',
+                AnimationRateMax = 1.5,
+                AnimationRateMin = 0.5,
+                Weight = 100,
+            },
+            {
+                Animation = '/units/urs0201/urs0201_asink02.sca',
+                AnimationRateMax = 1.5,
+                AnimationRateMin = 0.5,
+                Weight = 100,
+            },
+        },
+    },
 	
     Economy = {
         BuildCostEnergy = 15000,

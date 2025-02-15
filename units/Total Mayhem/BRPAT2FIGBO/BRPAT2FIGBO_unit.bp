@@ -40,8 +40,8 @@ UnitBlueprint {
     
 
     Defense = {
-        Health = 1400,
-        MaxHealth = 1400,
+        Health = 800,
+        MaxHealth = 800,
     },
 	
     Economy = {

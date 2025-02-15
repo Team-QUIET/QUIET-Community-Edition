@@ -38,6 +38,14 @@ UnitBlueprint {
 
         Winged = true,
     },
+
+    Defense = {
+        AirThreatLevel = 18,
+        ArmorType = 'Light',
+        Health = 800,
+        MaxHealth = 800,
+        RegenRate = 1,
+    },
 	
     Economy = {
         BuildCostEnergy = 12000,
