@@ -27,4 +27,106 @@ UnitBlueprint {
         TurnSpeed = 1,
         Winged = true,
     },
+
+    Weapon = {
+        {
+            advancedTracking = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'UAAWeapon', Cue = 'UAA0204_Depth_Charge', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            AutoInitiateAttackCommand = true,
+
+            BallisticArc = 'RULEUBA_None',
+			
+            Buffs = {
+            	{
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 0.3,
+                    Radius = 2,
+                    TargetAllow = 'TECH1,TECH2',
+                    TargetDisallow = 'WALL,COMMAND,EXPERIMENTAL',
+                },
+            },
+	
+            CollideFriendly = false,
+			
+            Damage = 600,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Torpedo Cluster',
+            
+            EffectiveRadius = 26,
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Seabed|Sub|Water',
+                Land = 'Seabed|Sub|Water',
+            },
+			
+            FiringRandomness = 3,
+            FiringTolerance = 6,
+			
+            HeadingArcCenter = 0,
+            HeadingArcRange = 30,
+			
+            Label = 'ClusterTorpedo',
+			
+            MaxRadius = 26,
+            MinRadius = 4,
+			
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 5,
+            MuzzleVelocity = 0,
+            ProjectileId = '/projectiles/AANTorpedoCluster01/AANTorpedoCluster01_proj.bp',
+            ProjectileLifetime = 30,
+            ProjectilesPerOnFire = 4,
+            RackBones = {
+                {
+                    MuzzleBones = {'XAA0306'},
+                    RackBone = 'XAA0306',
+                },
+            },
+			RangeCategory = 'UWRC_AntiNavy',
+            RackFireTogether = false,
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 10,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 2,
+            RackSlavedToTurret = false,
+            RateOfFire = 10/100,
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                "CRUISER",
+                "(NAVAL * TECH2 * SHIELD)",
+                "(TECH3 * STRUCTURE * DEFENSE * ANTIAIR)",
+                "(TECH3 * NAVAL * CARRIER)",
+                "(SUBMERSIBLE - TECH1)",
+                "(NAVAL * TECH2)",
+                "(NAVAL * TECH3)",
+                "SUBMERSIBLE",
+                "MOBILE",
+                "(STRUCTURE * DEFENSE * ANTIAIR)",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER, WALL',
+        },
+		
+        {
+            AboveWaterTargetsOnly = true,
+            Damage = 150,
+            DamageFriendly = true,
+            DamageRadius = 1,
+            DamageType = 'Normal',
+            DisplayName = 'Air Crash',
+            DummyWeapon = true,
+            FiringTolerance = 2,
+            Label = 'DeathImpact',
+            WeaponCategory = 'Death',
+        },
+    },
 }
