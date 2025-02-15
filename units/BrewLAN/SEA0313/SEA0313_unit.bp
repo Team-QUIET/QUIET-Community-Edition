@@ -89,6 +89,8 @@ UnitBlueprint {
             NotExclusive = true,
             
             MaxRadius = 102,
+
+            ProjectileLifetimeUsesMultiplier = 2.00,
             
             RackBones = {
                 {
@@ -103,7 +105,9 @@ UnitBlueprint {
             
             ReTargetOnMiss = true,
             
-            TargetCheckInterval = 0.3,
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 60,
+            TargetCheckInterval = 0.4,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'MOBILE',
@@ -119,15 +123,16 @@ UnitBlueprint {
             TurretBoneYaw = 'Gun_001',
             
             TurretPitch = 0,
-            TurretPitchRange = 40,
-            TurretPitchSpeed = 60,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 360,
             
             TurretYaw = 0,
-            TurretYawRange = 40,
-            TurretYawSpeed = 60,
+            TurretYawRange = 60,
+            TurretYawSpeed = 360,
             
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Anti Air",
         },
         {
             Audio = {Fire = Sound {Bank = 'UELWeapon', Cue = 'UEL0101_MachineGun', LodCutoff = 'Weapon_LodCutoff'}},
@@ -165,6 +170,8 @@ UnitBlueprint {
             
             MaxRadius = 102,
 
+            ProjectileLifetimeUsesMultiplier = 2.00,
+
             RackBones = {
                 {
                     MuzzleBones = {'Gun_002'},
@@ -176,7 +183,9 @@ UnitBlueprint {
             
             ReTargetOnMiss = true,
 
-            TargetCheckInterval = 0.3,
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 60,
+            TargetCheckInterval = 0.4,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'MOBILE',
@@ -190,15 +199,16 @@ UnitBlueprint {
             TurretBoneYaw = 'Gun_002',
             
             TurretPitch = 0,
-            TurretPitchRange = 40,
-            TurretPitchSpeed = 60,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 360,
             
             TurretYaw = 0,
-            TurretYawRange = 40,
-            TurretYawSpeed = 60,
+            TurretYawRange = 60,
+            TurretYawSpeed = 360,
             
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Anti Air",
         },
         
         {
@@ -227,7 +237,9 @@ UnitBlueprint {
             
             Label = 'Missile',
             
-            MaxRadius = 60,
+            MaxRadius = 93,
+
+            ProjectileLifetimeUsesMultiplier = 2.00,
             
             MuzzleSalvoDelay = 0.2,
             MuzzleSalvoSize = 2,
@@ -245,7 +257,9 @@ UnitBlueprint {
 
             RateOfFire = 0.5,   -- another 200 DPS
             
-            TargetCheckInterval = 0.3,
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 60,
+            TargetCheckInterval = 0.4,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'MOBILE',
@@ -259,14 +273,16 @@ UnitBlueprint {
             TurretBoneYaw = 'Gun_003',
             
             TurretPitch = 25,
-            TurretPitchRange = 40,
-            TurretPitchSpeed = 60,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 360,
             
             TurretYaw = 0,
-            TurretYawRange = 32,
-            TurretYawSpeed = 60,
+            TurretYawRange = 60,
+            TurretYawSpeed = 360,
             
             Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Anti Air",
         },
         
         {

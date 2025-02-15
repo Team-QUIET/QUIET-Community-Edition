@@ -93,8 +93,9 @@ UnitBlueprint {
             
             RateOfFire = 0.33,     -- controlled by charge
 
-            TargetCheckInterval = 0.7,
-
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 60,
+            TargetCheckInterval = 0.4,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',
@@ -111,14 +112,16 @@ UnitBlueprint {
             TurretBoneYaw = 'Big_Ring',
             
             TurretPitch = 0,
-            TurretPitchRange = 42,
-            TurretPitchSpeed = 66,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 360,
             
             TurretYaw = 0,
-            TurretYawRange = 42,
-            TurretYawSpeed = 66,
+            TurretYawRange = 60,
+            TurretYawSpeed = 360,
             
             Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Anti Air",
         },
 
         {
@@ -156,7 +159,7 @@ UnitBlueprint {
             MuzzleVelocity = 100,
             
             ProjectileId = '/projectiles/SAALosaareAutoCannon01/SAALosaareAutoCannon01_proj.bp',
-            ProjectileLifetime = 0.5,
+            ProjectileLifetimeUsesMultiplier = 2.00,
 
             RackBones = {
                 {
@@ -172,9 +175,8 @@ UnitBlueprint {
             RateOfFire = 4,   -- 720 DPS (90x2x4)
             
             SlavedToBody = true,
-            SlavedToBodyArcRange = 42,
-            
-            TargetCheckInterval = 0.3,
+            SlavedToBodyArcRange = 60,
+            TargetCheckInterval = 0.4,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',
@@ -189,15 +191,16 @@ UnitBlueprint {
             TurretBoneYaw = 'Med_Ring',
             
             TurretPitch = 0,
-            TurretPitchRange = 42,
-            TurretPitchSpeed = 66,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 360,
             
             TurretYaw = 0,
-            TurretYawRange = 42,
-            TurretYawSpeed = 66,
+            TurretYawRange = 60,
+            TurretYawSpeed = 360,
             
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Anti Air",
         },
 
         {

@@ -105,8 +105,9 @@ UnitBlueprint {
 			
             ReTargetOnMiss = true,
 
-            TargetCheckInterval = 0.3,
-			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 60,
+            TargetCheckInterval = 0.4,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'MOBILE',
@@ -121,15 +122,16 @@ UnitBlueprint {
             TurretBoneYaw = 'Tip_002',
 			
             TurretPitch = 0,
-            TurretPitchRange = 40,
-            TurretPitchSpeed = 60,
-			
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 360,
+            
             TurretYaw = 0,
-            TurretYawRange = 40,
-            TurretYawSpeed = 60,
-			
+            TurretYawRange = 60,
+            TurretYawSpeed = 360,
+            
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Anti Air",
         },
         {
             Audio = {Fire = Sound {Bank = 'URLWeapon', Cue = 'URB2301_Cannon_Sgl', LodCutoff = 'Weapon_LodCutoff'}},
@@ -178,8 +180,9 @@ UnitBlueprint {
 			
             ReTargetOnMiss = true,
 
-            TargetCheckInterval = 0.2,
-			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 60,
+            TargetCheckInterval = 0.4,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'MOBILE',
@@ -193,15 +196,16 @@ UnitBlueprint {
             TurretBoneYaw = 'Tip_003',
 			
             TurretPitch = 0,
-            TurretPitchRange = 40,
-            TurretPitchSpeed = 60,
-			
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 360,
+            
             TurretYaw = 0,
-            TurretYawRange = 40,
-            TurretYawSpeed = 60,
-			
+            TurretYawRange = 60,
+            TurretYawSpeed = 360,
+            
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Anti Air",
         },
         {
             Audio = {Fire = Sound {Bank = 'URLWeapon', Cue = 'URB2301_Cannon_Sgl', LodCutoff = 'Weapon_LodCutoff'}},
@@ -248,7 +252,9 @@ UnitBlueprint {
 			
             ReTargetOnMiss = true,
 
-            TargetCheckInterval = 0.3,
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 60,
+            TargetCheckInterval = 0.4,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'MOBILE',
@@ -262,15 +268,16 @@ UnitBlueprint {
             TurretBoneYaw = 'Tip_007',
 			
             TurretPitch = 0,
-            TurretPitchRange = 40,
-            TurretPitchSpeed = 60,
-			
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 360,
+            
             TurretYaw = 0,
-            TurretYawRange = 40,
-            TurretYawSpeed = 60,
-			
+            TurretYawRange = 60,
+            TurretYawSpeed = 360,
+            
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Anti Air",
         },
         {
             Audio = {Fire = Sound {Bank = 'URLWeapon', Cue = 'URB2301_Cannon_Sgl', LodCutoff = 'Weapon_LodCutoff'}},
@@ -317,7 +324,9 @@ UnitBlueprint {
             
             ReTargetOnMiss = true,
 
-            TargetCheckInterval = 0.3,
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 60,
+            TargetCheckInterval = 0.4,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'MOBILE',
@@ -331,15 +340,16 @@ UnitBlueprint {
             TurretBoneYaw = 'Tip_008',
 			
             TurretPitch = 0,
-            TurretPitchRange = 40,
-            TurretPitchSpeed = 60,
-			
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 360,
+            
             TurretYaw = 0,
-            TurretYawRange = 40,
-            TurretYawSpeed = 60,
-			
+            TurretYawRange = 60,
+            TurretYawSpeed = 360,
+            
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Anti Air",
         },
 
         {
