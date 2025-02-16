@@ -87,9 +87,9 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
             -- and the rate of fire is 10/10 which is 1 
             -- and we are getting total time to fire muzzles is longer than the RoF allows
             -- if it is not fixed the weapon will trigger multiple OnFire() events without actually firing the weapon
-            local strg = '*ERROR: The total time to fire muzzles is longer than the RateOfFire allows, aborting weapon setup.  Weapon: '
-                .. bp.DisplayName .. ' on Unit: ' .. self.unit:GetUnitId()
-            error(strg, 2)
+            error('*ERROR: Total muzzle firing time (' .. totalMuzzleFiringTime ..
+            ') exceeds allowed value based on RateOfFire for weapon: ' ..
+            bp.DisplayName .. ' on Unit: ' .. unitId, 2)
             return false
         end
 
