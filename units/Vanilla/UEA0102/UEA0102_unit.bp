@@ -8,14 +8,18 @@ UnitBlueprint {
     },
 	
     Defense = {
-        Health = 295,
-        MaxHealth = 295,
+        Health = 215,
+        MaxHealth = 215,
     },
 	
     Economy = {
         BuildCostEnergy = 3500,
         BuildCostMass = 50,
         BuildTime = 1050,
+    },
+
+    Physics = {
+        FuelUseTime = 275,
     },
 	
     Weapon = {

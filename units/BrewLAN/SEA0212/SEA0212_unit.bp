@@ -49,6 +49,10 @@ UnitBlueprint {
         BuildCostMass = 265,
     },
 
+    Physics = {
+        FuelUseTime = 315,
+    },
+
     Weapon = {
         {
             AutoInitiateAttackCommand = true,

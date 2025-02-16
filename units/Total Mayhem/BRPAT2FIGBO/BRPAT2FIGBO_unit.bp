@@ -49,7 +49,10 @@ UnitBlueprint {
         BuildCostMass = 235,
     },
 
-	
+    Physics = {
+        FuelUseTime = 315,
+    },
+
     Weapon = {
         {
             AboveWaterTargetsOnly = true,

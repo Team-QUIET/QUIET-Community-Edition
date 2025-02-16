@@ -51,6 +51,10 @@ UnitBlueprint {
         BuildCostEnergy = 12000,
         BuildCostMass = 235,
     },
+
+    Physics = {
+        FuelUseTime = 315,
+    },
 	
     Weapon = {
         {
