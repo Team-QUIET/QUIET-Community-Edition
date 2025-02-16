@@ -267,7 +267,7 @@ UnitBlueprint {
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_Amphibious',
         RotateBodyWhileMoving = false,
-        RotateOnSpot = true,
+        RotateOnSpot = false,
         RotateOnSpotThreshold = 0.5,
         SkirtOffsetX = -1.5,
         SkirtOffsetZ = -1.5,

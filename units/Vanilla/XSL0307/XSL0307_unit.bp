@@ -1,0 +1,166 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'xsl0307',
+
+    AI = {
+		GuardReturnRadius = 35,
+        GuardScanRadius = 30,
+    },
+
+    Audio = {
+        Destroyed   = Sound { Bank = 'XSL_Destroy', Cue = 'XSL_Destroy_Land_Lrg', LodCutoff = 'UnitMove_LodCutoff'},
+        StartMove   = Sound { Bank = 'XSL', Cue = 'XSL0307_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_Vehicle', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    BuildIconSortPriority = 50,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'SERAPHIM',
+        'MOBILE',
+        'LAND',
+        'TECH3',
+        'SHIELD',
+        'HOVER',
+		'AMPHIBIOUS',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+    },
+	
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 600,
+        MaxHealth = 600,
+        RegenRate = 3,
+		
+        Shield = {
+            ImpactEffects = 'SeraphimShieldHit01',
+            ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
+            Mesh = '/effects/entities/SeraphimShield01/SeraphimShield01_mesh',
+            MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
+            RegenAssistMult = 60,
+            ShieldEnergyDrainRechargeTime = 7,
+            ShieldMaxHealth = 8000,
+            ShieldRechargeTime = 24,
+            ShieldRegenRate = 83,
+            ShieldRegenStartTime = 2,
+            ShieldSize = 20,
+            ShieldVerticalOffset = -3,
+        },
+
+        SurfaceThreatLevel = 93.7,
+    },
+	
+    Description = '<LOC xsl0307_desc>Hover Shield Generator',
+	
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 120,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    Scrolling = true,
+                    ShaderName = 'Seraphim',
+                },
+                {
+                    AlbedoName = 'xsl0307_lod1_albedo.dds',
+                    LODCutoff = 180,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    ShaderName = 'Seraphim',
+                    SpecularName = 'xsl0307_lod1_specteam.dds',
+                },
+            },
+        },
+
+        UniformScale = 0.045,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 6230,
+        BuildCostMass = 886,
+        BuildTime = 4430,
+		
+        MaintenanceConsumptionPerSecondEnergy = 287,
+    },
+	
+    General = {
+        CapCost = 3,
+        CommandCaps = {
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Seraphim',
+        Icon = 'amph',
+
+        OrderOverrides = {
+            RULEUTC_ShieldToggle = {bitmapId = 'shield-dome',helpText = 'toggle_shield_dome'},
+        },
+
+        ToggleCaps = {RULEUTC_ShieldToggle = true},
+
+        UnitName = '<LOC xsl0307_name>Athanah',
+    },
+    
+    Intel = {
+        VisionRadius = 20,
+    },
+    
+    Interface = {
+        HelpText = 'Shield Generator Hovertank',
+    },
+    
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.45,
+    LifeBarSize = 0.8,
+    
+    Physics = {
+        BankingSlope = 0.5,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        Elevation = 0.25,
+        
+        MaxAcceleration = 1.1,
+        MaxBrake = 1.1,
+        MaxSpeed = 3.3,
+        MaxSpeedReverse = 0,
+        
+        MaxSteerForce = 1000,
+        
+        MeshExtentsX = 1,
+        MeshExtentsY = 0.65,
+        MeshExtentsZ = 1,
+        
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Hover',
+        RotateBodyWhileMoving = true,
+        RotateOnSpot = false,
+        RotateOnSpotThreshold = 0.1,
+        
+        TurnFacingRate = 36,
+        TurnRadius = 0,
+        TurnRate = 36,
+    },
+    
+    SelectionSizeX = 0.5,
+    SelectionSizeZ = 0.7,
+    SelectionThickness = 0.58,
+    
+    SizeX = 0.8,
+    SizeY = 0.5,
+    SizeZ = 0.8,
+    
+    StrategicIconName = 'icon_surface3_shield',
+    StrategicIconSortPriority = 125,
+    
+    Transport = {
+        TransportClass = 3,
+    },
+}

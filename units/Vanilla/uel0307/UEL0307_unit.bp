@@ -1,0 +1,163 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'uel0307',
+
+    Audio = {
+        Destroyed   = Sound { Bank = 'UELDestroy', Cue = 'UEL_Destroy_Med_Land', LodCutoff = 'UnitMove_LodCutoff'},
+        StartMove   = Sound { Bank = 'UEL', Cue = 'UEL0307_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'UEF_Select_Vehicle', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    BuildIconSortPriority = 110,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER3FACTORY',
+        'UEF',
+        'MOBILE',
+        'LAND',
+        'TECH2',
+        'SHIELD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'OVERLAYDEFENSE',
+    },
+	
+    CollisionOffsetZ = 0.05,
+	
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 130,
+        MaxHealth = 130,
+        RegenRate = 1,
+		
+        Shield = {
+            ImpactEffects = 'UEFShieldHit01',
+            ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
+            Mesh = '/effects/entities/Shield01/Shield01_mesh',
+            MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
+            RegenAssistMult = 60,
+            ShieldEnergyDrainRechargeTime = 6.4,
+            ShieldMaxHealth = 3600,
+            ShieldRechargeTime = 23,
+            ShieldRegenRate = 39,
+            ShieldRegenStartTime = 2,
+            ShieldSize = 16,
+            ShieldVerticalOffset = -3,
+        },
+
+        SurfaceThreatLevel = 38.8,
+    },
+	
+    Description = '<LOC uel0307_desc>Mobile Shield Generator',
+	
+    Display = {
+        Abilities = {
+            '<LOC ability_shielddome>Shield Dome',
+        },
+
+        AnimationOpen = '/units/uel0307/uel0307_Aactivate.sca',
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 100,
+                    Scrolling = true,
+                    ShaderName = 'Unit',
+                },
+                {
+                    AlbedoName = 'uel0307_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    ShaderName = 'Unit',
+                    SpecularName = 'uel0307_lod1_specteam.dds',
+                },
+            },
+        },
+
+        UniformScale = 0.1,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 2040,
+        BuildCostMass = 207,
+        BuildTime = 1010,
+		
+        MaintenanceConsumptionPerSecondEnergy = 139,
+    },
+	
+    General = {
+        CapCost = 2,
+        CommandCaps = {
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'UEF',
+        Icon = 'land',
+
+        OrderOverrides = {
+            RULEUTC_ShieldToggle = { bitmapId = 'shield-dome', helpText = 'toggle_shield_dome'},
+        },
+
+        ToggleCaps = {RULEUTC_ShieldToggle = true},
+
+        UnitName = '<LOC uel0307_name>Parashield',
+    },
+	
+    Intel = {
+        VisionRadius = 20,
+    },
+	
+    Interface = {
+        HelpText = 'Mobile Shield Generator',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.3,
+    LifeBarSize = 0.7,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 1,
+        MaxBrake = 1,
+        MaxSpeed = 3,
+        MaxSpeedReverse = 2,
+        MaxSteerForce = 10,
+        MeshExtentsX = 0.75,
+        MeshExtentsY = 0.6,
+        MeshExtentsZ = 0.85,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        RotateBodyWhileMoving = true,
+        RotateOnSpot = false,
+        RotateOnSpotThreshold = 0.1,
+        TurnRadius = 0,
+        TurnRate = 36,
+    },
+	
+    SelectionCenterOffsetX = 0,
+    SelectionCenterOffsetZ = 0.025,
+	
+    SelectionSizeX = 0.5,
+    SelectionSizeZ = 0.5,
+    SelectionThickness = 0.85,
+	
+    SizeX = 0.6,
+    SizeY = 0.35,
+    SizeZ = 0.7,
+	
+    StrategicIconName = 'icon_land2_shield',
+    StrategicIconSortPriority = 125,
+	
+    Transport = {
+        TransportClass = 2,
+    },
+}
