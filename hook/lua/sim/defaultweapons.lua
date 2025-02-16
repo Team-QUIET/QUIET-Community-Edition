@@ -26,6 +26,7 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
     WeaponPackState = 'Packed',
 
     OnCreate = function(self)
+	
         WeaponOnCreate(self)
 
         self.HadTarget = false
@@ -35,86 +36,94 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
         self.CurrentRackNumber = 1
         
         local bp = self.bp
-        local unit = self.unit
-        local unitId = unit:GetUnitId()   -- Cache unit ID for later use
         local rof = self:GetWeaponRoF()
-        local rateOfFire = bp.RateOfFire  -- Cache base rate of fire
-        local baseCycle = 1 / rateOfFire   -- Pre-calculate reciprocal of base RoF
-        
         local rackBones = bp.RackBones
-        if not rackBones or table.getn(rackBones) == 0 then
-            error('*ERROR: No RackBones defined for weapon: ' .. bp.DisplayName, 2)
-            return false
-        end
-        
-        local muzzleSalvoSize  = bp.MuzzleSalvoSize
+        local muzzleSalvoSize = bp.MuzzleSalvoSize
         local muzzleSalvoDelay = bp.MuzzleSalvoDelay
-
+		
         if bp.RackRecoilDistance and bp.RackRecoilDistance ~= 0 then
-            if muzzleSalvoDelay ~= 0 then
-                error('*ERROR: You cannot have a RackRecoilDistance with a non-zero MuzzleSalvoDelay, aborting weapon setup.  Weapon: ' ..
-                    bp.DisplayName .. ' on Unit: ' .. self.unit.BlueprintID, 2)
-                return false
-            end
-
+		
+			if bp.MuzzleSalvoDelay ~= 0 then
+				local strg = '*ERROR: You can not have a RackRecoilDistance with a MuzzleSalvoDelay not equal to 0, aborting weapon setup.  Weapon: ' .. bp.DisplayName .. ' on Unit: ' .. self.unit.BlueprintID
+				error(strg, 2)
+				return false
+			end
+		
             self.RecoilManipulators = {}
-            local recoilDistance = bp.RackRecoilDistance
-            local firstRackBone = rackBones[1]
-            if firstRackBone and firstRackBone.TelescopeRecoilDistance then
-                local telescopeDistance = firstRackBone.TelescopeRecoilDistance or 0
-                if math.abs(telescopeDistance) > math.abs(recoilDistance) then
-                    recoilDistance = telescopeDistance
+			
+            local dist = bp.RackRecoilDistance or 1
+			
+            if bp.RackBones[1].TelescopeRecoilDistance then
+			
+                local tpDist = bp.RackBones[1].TelescopeRecoilDistance or 0
+
+                if LOUDABS(tpDist) > LOUDABS(dist) then
+				
+                    dist = tpDist
                 end
             end
-            local muzzleChargeDelay = bp.MuzzleChargeDelay or 0
-            self.RackRecoilReturnSpeed = bp.RackRecoilReturnSpeed or (math.abs(recoilDistance) / (baseCycle - muzzleChargeDelay)) * 1.25
+			
+            self.RackRecoilReturnSpeed = bp.RackRecoilReturnSpeed or LOUDABS( dist / (( 1 / bp.RateOfFire ) - (bp.MuzzleChargeDelay or 0))) * 1.25
         end
 
-        -- Calculate total muzzle information
+        -- Ensure firing cycle is compatible internally
         local numRackBones = table.getn(rackBones)
-        local totalMuzzles = 0
+        local numMuzzles = 0
 
         for _, rack in rackBones do
-            local muzzleBones = rack.MuzzleBones or {}
-            totalMuzzles = totalMuzzles + table.getn(muzzleBones)
+            local muzzleBones = rack.MuzzleBones
+            numMuzzles = numMuzzles + table.getn(muzzleBones)
         end
 
-        self.NumMuzzles = totalMuzzles / numRackBones
+        self.NumMuzzles = numMuzzles / numRackBones
         self.NumRackBones = numRackBones
-        
         local totalMuzzleFiringTime = (self.NumMuzzles - 1) * muzzleSalvoDelay
+
         if totalMuzzleFiringTime > (1 / rof) then
-            error('*ERROR: Total muzzle firing time (' .. totalMuzzleFiringTime ..
-                ') exceeds allowed value based on RateOfFire for weapon: ' ..
-                bp.DisplayName .. ' on Unit: ' .. unitId, 2)
+            -- This is the example of a bad fire rate
+            -- if we have MuzzleSalvoDelay = 0.4,
+            --             MuzzleSalvoSize = 4,
+            -- which is 0.4 x 4 
+            -- and the rate of fire is 10/10 which is 1 
+            -- and we are getting total time to fire muzzles is longer than the RoF allows
+            -- if it is not fixed the weapon will trigger multiple OnFire() events without actually firing the weapon
+            local strg = '*ERROR: The total time to fire muzzles is longer than the RateOfFire allows, aborting weapon setup.  Weapon: '
+                .. bp.DisplayName .. ' on Unit: ' .. self.unit:GetUnitId()
+            error(strg, 2)
             return false
         end
 
-        -- Set the first-shot flag based on EnergyChargeForFirstShot
-        self.FirstShot = (bp.EnergyChargeForFirstShot == false)
+
+        if bp.EnergyChargeForFirstShot == false then
+            self.FirstShot = true
+        end
 		
         if bp.RenderFireClock then
-            unit:SetWorkProgress(1)
+            self.unit:SetWorkProgress(1)
         end
 		
         if bp.FixBombTrajectory then
+            
+            local muzzleSalvoSize = bp.MuzzleSalvoSize
             local dropShort = bp.DropBombShort
+            local MathClamp = math.clamp
             if dropShort then
-                self.DropBombShortRatio = math.clamp(1 - dropShort, 0, 1)
+                self.DropBombShortRatio = MathClamp(1 - dropShort, 0, 1)
             end
             if muzzleSalvoSize > 1 then
-                -- Center the spread on the target.
-                self.SalvoSpreadStart = -0.5 - (0.5 * muzzleSalvoSize)
-                -- Adjusted delay between salvo shots.
-                self.AdjustedSalvoDelay = 5 * muzzleSalvoDelay
+                -- center the spread on the target
+                self.SalvoSpreadStart = -0.5 - 0.5 * muzzleSalvoSize
+                -- adjusted time between bombs, this is multiplied by 0.5 to get the bombs overlapping a bit
+                -- (also pre-convert velocity from per-ticks to per-seconds by multiplying by 10)
+                self.AdjustedSalvoDelay = 5 * bp.MuzzleSalvoDelay
             end
         end
 
         if not bp.EnabledByEnhancement then
             self:SetWeaponEnabled(true)
-            LOUDSTATE(self, self.IdleState)
+            LOUDSTATE( self, self.IdleState)
         end
-    end,
+	end,
 
     -- modded this so only retrieve bp if old or new is 'stopped'
     OnMotionHorzEventChange = function(self, new, old)
@@ -480,20 +489,27 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
 
     -- I think this is triggered whenever the state changes to anything but DeadState
     OnEnterState = function(self)
-        -- Ensure self.unit is valid and not destroyed before proceeding
-        if not (self.unit and not IsDestroyed(self.unit)) or self.Dead then
-            return
-        end
+    
+        if not self.Dead then
+    
+            if self.WeaponWantEnabled ~= self.WeaponIsEnabled then
 
-        if self.WeaponWantEnabled ~= self.WeaponIsEnabled then
-            self:SetWeaponEnabled(self.WeaponWantEnabled)
-        end
+                self:SetWeaponEnabled(self.WeaponWantEnabled)
 
-        if self.AimControl and not IsDestroyed(self.unit) then
-            if self.WeaponAimEnabled ~= self.WeaponAimWantEnabled then
-                self:AimManipulatorSetEnabled(self.WeaponAimWantEnabled)
             end
+
+            if self.AimControl then -- only turreted weapons have AimControl
+		
+                if self.WeaponAimEnabled ~= self.WeaponAimWantEnabled then
+
+                    self:AimManipulatorSetEnabled(self.WeaponAimWantEnabled)
+
+                end
+
+            end
+            
         end
+
     end,
 
     -- WEAPON STATES:
