@@ -1150,6 +1150,16 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
 
     },
 
+    DeadState = State {
+
+        StateName = 'DeadState',
+
+        OnEnterState = function(self)
+        end,
+
+        Main = function(self)
+        end,
+    },
 }
 
 BareBonesWeapon_QUIET = BareBonesWeapon
