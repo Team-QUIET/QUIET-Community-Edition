@@ -10,6 +10,8 @@ UnitBlueprint {
         FiringRandomness = 1,
 
         FiringRandomnessWhileMoving = 1.5,
+
+        MaxRadius = 42,
         
         MuzzleSalvoDelay = 0.1,
         MuzzleSalvoSize = 6,
@@ -22,11 +24,13 @@ UnitBlueprint {
         TurretYawSpeed = 90,
       },
       {
+        Damage = 300,
+
+        MaxRadius = 33,
+
         RateOfFire = 5/10,
 
         TurretYawSpeed = 90,
-
-        UseFiringSolutionInsteadOfAimBone = true,
       },
    },
 }
