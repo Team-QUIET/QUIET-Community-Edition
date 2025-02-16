@@ -7,13 +7,13 @@ UnitBlueprint {
             AboveWaterTargetsOnly = true,
             ArtilleryShieldBlocks = true,
             
-            BallisticArc = 'RULEUBA_HighArc',
+            BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
             Damage = 2600,
             DamageFriendly = true,
-            DamageRadius = 2.4,
-            DamageType = 'ShieldMult1.2',
+            DamageRadius = 3,
+            DamageType = 'Normal',
 			
             DisplayName = 'Zthuthaam Cannon',
 			
@@ -92,13 +92,13 @@ UnitBlueprint {
             AboveWaterTargetsOnly = true,
             ArtilleryShieldBlocks = true,
 
-            BallisticArc = 'RULEUBA_HighArc',
+            BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
             Damage = 2600,
             DamageFriendly = true,
-            DamageRadius = 2.4,
-            DamageType = 'ShieldMult1.2',
+            DamageRadius = 3,
+            DamageType = 'Normal',
 			
             DisplayName = 'Zthuthaam Artillery Cannon',
 			
@@ -175,13 +175,13 @@ UnitBlueprint {
             AboveWaterTargetsOnly = true,
             ArtilleryShieldBlocks = true,
 
-            BallisticArc = 'RULEUBA_HighArc',
+            BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
             Damage = 2600,
             DamageFriendly = true,
-            DamageRadius = 2.4,
-            DamageType = 'ShieldMult1.2',
+            DamageRadius = 3,
+            DamageType = 'Normal',
 			
             DisplayName = 'Zthuthaam Artillery Cannon',
 			
