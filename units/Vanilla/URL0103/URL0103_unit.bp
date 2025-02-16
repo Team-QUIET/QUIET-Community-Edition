@@ -1,0 +1,252 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "url0103",
+
+    AI = {
+		GuardReturnRadius = 44,
+        GuardScanRadius = 36,
+    },
+
+    Audio = {
+        Destroyed   = Sound { Bank = 'URLDestroy', Cue = 'URL_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff'},
+        StartMove   = Sound { Bank = 'URL', Cue = 'URL0103_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'Cybran_Select_Vehicle', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+
+    Buffs = {},
+	
+    BuildIconSortPriority = 60,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER3FACTORY',
+        'CYBRAN',
+        'MOBILE',
+        'LAND',
+        'TECH1',
+        'INDIRECTFIRE',
+        'ARTILLERY',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+    },
+	
+    CollisionOffsetY = 0,
+	
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 100,
+        MaxHealth = 100,
+        RegenRate = 1,
+        SurfaceThreatLevel = 2.7,
+    },
+	
+    Description = '<LOC url0103_desc>Mobile Light Artillery',
+	
+    Display = {
+        Abilities = {
+            'EMP Weapon',
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 100,
+                    Scrolling = true,
+                    ShaderName = 'Insect',
+                },
+                {
+                    AlbedoName = 'url0103_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    Scrolling = true,
+                    ShaderName = 'Insect',
+                    SpecularName = 'url0103_lod1_specteam.dds',
+                },
+            },
+        },
+        UniformScale = 0.1,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 480,
+        BuildCostMass = 40,
+        BuildTime = 200,
+    },
+	
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Cybran',
+        Icon = 'land',
+        UnitName = '<LOC url0103_name>Medusa',
+    },
+	
+    Intel = {
+        VisionRadius = 16,
+    },
+	
+    Interface = {
+        HelpText = 'Mobile Light Artillery',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.25,
+    LifeBarSize = 0.5,
+	
+    Physics = {
+        BackUpDistance = 4,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 1.4,
+        MaxBrake = 2.8,
+        MaxSpeed = 2.8,
+        MaxSpeedReverse = 2,
+        MaxSteerForce = 1000,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        RotateOnSpot = true,
+        RotateOnSpotThreshold = 0.1,
+        TurnRadius = 2,
+        TurnRate = 90,
+    },
+	
+    SelectionCenterOffsetX = 0,
+    SelectionCenterOffsetZ = -0.05,
+    SelectionSizeX = 0.35,
+    SelectionSizeZ = 0.45,
+    SelectionThickness = 0.83,
+	
+    SizeX = 0.55,
+    SizeY = 0.45,
+    SizeZ = 0.65,
+	
+    StrategicIconName = 'icon_land1_artillery',
+    StrategicIconSortPriority = 135,
+	
+    Transport = {
+        TransportClass = 1,
+    },
+	
+    Veteran = {
+        Level1 = 3,
+        Level2 = 6,
+        Level3 = 9,
+        Level4 = 12,
+        Level5 = 15,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'URLWeapon', Cue = 'URL0103_Grenade_EMP', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_HighArc',
+
+            Buffs = {
+                {
+                    Add = {OnImpact = true},
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 0.8,
+                    Radius = 1,
+                    TargetAllow = 'TECH1,TECH2',
+					TargetDisallow = 'WALL,AIR',
+                },
+            },
+            CollideFriendly = false,
+			
+            Damage = 150,
+            DamageFriendly = false,
+            DamageRadius = 1.5
+            DamageType = 'Normal',
+			
+            DisplayName = 'EMP Grenade Launcher',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0.7,
+            FiringTolerance = 2,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 36,
+            MinRadius = 5,
+
+            MuzzleVelocity = 14,
+            MuzzleVelocityReduceDistance = 28,
+			
+            ProjectileId = '/projectiles/CIFGrenade01/CIFGrenade01_proj.bp',
+			ProjectileLifetime = 10,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle'},
+                    RackBone = 'Turret_Barrel',
+                },
+            },
+
+            RackRecoilDistance = -1,
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 10/33,
+			
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+				"STRUCTURE EXPERIMENTAL",
+                "TECH3 ANTIMISSILE",
+                "NUKE STRUCTURE",
+                "TECH3 STRUCTURE ARTILLERY",
+                "TECH3 ENERGYPRODUCTION",
+                "TECH3 MASSFABRICATION",
+                "TECH3 RESEARCH",
+                "TECH3 MASSPRODUCTION",
+                "TECH3 RESEARCH",
+                "TECH2 ENERGYPRODUCTION",
+                "TECH2 MASSPRODUCTION",
+                "TECH2 RESEARCH",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "MOBILE EXPERIMENTAL",
+                "MOBILE TECH3",
+                "MOBILE TECH2",
+                "(MOBILE * TECH1 + COMMAND)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+
+            TrackingRadius = 1.1,
+
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 45,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 70,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 70,
+			
+            Turreted = true,
+        },
+    },
+}

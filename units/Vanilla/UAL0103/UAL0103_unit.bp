@@ -1,0 +1,234 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "ual0103",
+
+    AI = {
+		GuardReturnRadius = 50,
+        GuardScanRadius = 36,
+    },
+
+    Audio = {
+        Destroyed   = Sound { Bank = 'UALDestroy', Cue = 'UAL_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff'},
+        StartMove   = Sound { Bank = 'UAL', Cue = 'UAL0103_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'Aeon_Select_Vehicle', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+
+    Buffs = {},
+	
+    BuildIconSortPriority = 60,
+
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER3FACTORY',
+        'AEON',
+        'MOBILE',
+        'LAND',
+        'TECH1',
+        'INDIRECTFIRE',
+        'ARTILLERY',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+    },
+	
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 110,
+        MaxHealth = 110,
+        RegenRate = 0,
+        SurfaceThreatLevel = 2.9,
+    },
+	
+    Description = '<LOC ual0103_desc>Mobile Light Artillery',
+	
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 100,
+                    Scrolling = true,
+                    ShaderName = 'Aeon',
+                },
+                {
+                    AlbedoName = 'ual0103_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    ShaderName = 'Aeon',
+                    SpecularName = 'ual0103_lod1_specteam.dds',
+                },
+            },
+        },
+
+        UniformScale = 0.07,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 450,
+        BuildCostMass = 38,
+        BuildTime = 190,
+    },
+	
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Aeon',
+        Icon = 'land',
+        UnitName = '<LOC ual0103_name>Fervor',
+    },
+	
+    Intel = {
+        VisionRadius = 16,
+    },
+	
+    Interface = {
+        HelpText = 'Mobile Light Artillery',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.25,
+    LifeBarSize = 0.5,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 1.35,
+        MaxBrake = 2.7,
+        MaxSpeed = 2.7,
+        MaxSpeedReverse = 0,
+        MaxSteerForce = 10,
+        MeshExtentsX = 0.55,
+        MeshExtentsY = 0.35,
+        MeshExtentsZ = 0.65,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        RotateOnSpot = true,
+        RotateOnSpotThreshold = 0.1,
+        TurnRadius = 2,
+        TurnRate = 90,
+    },
+	
+    SelectionCenterOffsetZ = -0.075,
+    SelectionSizeX = 0.35,
+    SelectionSizeZ = 0.45,
+    SelectionThickness = 0.8,
+	
+    SizeX = 0.55,
+    SizeY = 0.25,
+    SizeZ = 0.6,
+	
+    StrategicIconName = 'icon_land1_artillery',
+    StrategicIconSortPriority = 135,
+	
+    Transport = {
+        TransportClass = 1,
+    },	
+	
+    Veteran = {
+        Level1 = 3,
+        Level2 = 6,
+        Level3 = 9,
+        Level4 = 12,
+        Level5 = 15,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+            Audio = {
+                Fire = Sound { Bank = 'UALWeapon', Cue = 'UAL0103_Mortar_Concussion', LodCutoff = 'Weapon_LodCutoff'},
+            },
+            BallisticArc = 'RULEUBA_HighArc',
+            CollideFriendly = false,
+			
+            Damage = 160,
+            DamageFriendly = false,
+            DamageRadius = 0.5,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Concussion Artillery',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+            },
+			
+            FiringRandomness = 0.7,
+            FiringTolerance = 2,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 36,
+            MinRadius = 5,
+			
+            MuzzleVelocity = 15,
+            MuzzleVelocityReduceDistance = 28,
+			
+            ProjectileId = '/projectiles/AIFMortar01/AIFMortar01_proj.bp',
+			ProjectileLifetime = 10,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle'},
+                    RackBone = 'Turret_Barrel',
+                },
+            },
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 10/33,
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 40,
+
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+				"STRUCTURE EXPERIMENTAL",
+                "TECH3 ANTIMISSILE",
+                "NUKE STRUCTURE",
+                "TECH3 STRUCTURE ARTILLERY",
+                "TECH3 ENERGYPRODUCTION",
+                "TECH3 MASSFABRICATION",
+                "TECH3 RESEARCH",
+                "TECH3 MASSPRODUCTION",
+                "TECH3 RESEARCH",
+                "TECH2 ENERGYPRODUCTION",
+                "TECH2 MASSPRODUCTION",
+                "TECH2 RESEARCH",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "MOBILE EXPERIMENTAL",
+                "MOBILE TECH3",
+                "MOBILE TECH2",
+                "(MOBILE * TECH1 + COMMAND)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret_Barrel',
+			
+            TurretPitch = 45,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 70,
+			
+            TurretYaw = 0,
+            TurretYawRange = 45,
+            TurretYawSpeed = 70,
+			
+            Turreted = true,
+        },
+    },
+}
