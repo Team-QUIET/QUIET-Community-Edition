@@ -18,7 +18,7 @@ UnitBlueprint {
 
             Damage = 600,
             DamageFriendly = true,
-            DamageRadius = 2,
+            DamageRadius = 1,
             DamageType = 'Normal',
 			
             DisplayName = 'Cruise Missile',
@@ -37,8 +37,8 @@ UnitBlueprint {
 			
             Label = 'MissileWeapon',
 			
-            MaxRadius = 88,
-            MinRadius = 15,
+            MaxRadius = 80,
+            MinRadius = 12,
 			
             MuzzleChargeDelay = 1.3,
 
@@ -68,7 +68,7 @@ UnitBlueprint {
 
             SlavedToBody = true,
 			
-            TargetCheckInterval = 2,
+            TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'DEFENSE ANTIMISSILE',
