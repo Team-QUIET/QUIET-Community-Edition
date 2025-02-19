@@ -20,8 +20,8 @@ UnitBlueprint {
         KTurn = 1.5,
         KTurnDamping = 2.3,
         LiftFactor = 7,
-        MaxAirspeed = 33,
-        MinAirspeed = 11,
+        MaxAirspeed = 22,
+        MinAirspeed = 8,
         StartTurnDistance = 5,
         TightTurnMultiplier = 1.02,
         TurnSpeed = 1.9,
@@ -40,8 +40,8 @@ UnitBlueprint {
     },
     
     Economy = {
-        BuildCostEnergy = 100000,
-        BuildCostMass = 1390,
+        BuildCostEnergy = 200000,
+        BuildCostMass = 2780,
         BuildTime = 6750,
         
         ResearchMultEnergy = 0.2,
@@ -88,6 +88,8 @@ UnitBlueprint {
                     RackBone = 'Big_Ring',
                 },
             },
+
+            RangeCategory = 'UWRC_AntiAir',
 
             RackSalvoFiresAfterCharge = true,
             
