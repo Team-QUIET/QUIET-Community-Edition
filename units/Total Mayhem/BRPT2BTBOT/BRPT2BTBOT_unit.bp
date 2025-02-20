@@ -10,10 +10,10 @@ UnitBlueprint {
             LAYER_Seabed = true,
         },
         DragCoefficient = 0.2,
-        MaxAcceleration = 1.0,
-        MaxBrake = 2.8,
-        MaxSpeed = 2.8,
-        MaxSpeedReverse = 0,
+        MaxAcceleration = 1.1,
+        MaxBrake = 2.2,
+        MaxSpeed = 2.2,
+        MaxSpeedReverse = 2.2,
         MaxSteerForce = 3,
         MeshExtentsX = 1,
         MeshExtentsY = 0.5,
@@ -46,7 +46,7 @@ UnitBlueprint {
 			
             Label = 'MainGun',
 			
-            MaxRadius = 32,
+            MaxRadius = 33,
 
             MuzzleSalvoDelay = 0.2,
             MuzzleSalvoSize = 2,
@@ -63,11 +63,12 @@ UnitBlueprint {
 			
             TargetCheckInterval = 0.5,
             TargetPriorities = {
-                'SPECIALHIGHPRI',
-				'MOBILE SHIELD',
-                'MOBILE,-AIR',
-                'DEFENSE',
-                'ALLUNITS,-WALL',
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
             },
 			
             TargetRestrictDisallow = 'UNTARGETABLE',

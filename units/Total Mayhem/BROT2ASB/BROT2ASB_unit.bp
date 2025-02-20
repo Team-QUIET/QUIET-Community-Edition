@@ -159,10 +159,10 @@ UnitBlueprint {
         
         LayerChangeOffsetHeight = -1.1,
         
-        MaxAcceleration = 6,
-        MaxBrake = 2.8,
-        MaxSpeed = 2.8,
-        MaxSpeedReverse = 2.8,
+        MaxAcceleration = 1.1,
+        MaxBrake = 2.2,
+        MaxSpeed = 2.2,
+        MaxSpeedReverse = 2.2,
         MaxSteerForce = 10,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_Amphibious',
@@ -221,7 +221,7 @@ UnitBlueprint {
 
             ContinuousBeam = false,
 			
-            Damage = 23,
+            Damage = 20,
             DamageFriendly = false,
             DamageType = 'Normal',
 			
@@ -253,10 +253,12 @@ UnitBlueprint {
             TargetCheckInterval = 0.3,
 			
             TargetPriorities = {
-                'SPECIALHIGHPRI',
-                'MOBILE -AIR',
-                'DEFENSE',
-                'ALLUNITS',
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             TrackingRadius = 1.05,
