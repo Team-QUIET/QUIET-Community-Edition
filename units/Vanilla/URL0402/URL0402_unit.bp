@@ -5,20 +5,6 @@ UnitBlueprint {
     Weapon = {
         {
 
-            RateOfFire = 15/10,
-
-            TurretYawSpeed = 90,
-
-        },
-        {
-
-            RateOfFire = 15/10,
-
-            TurretYawSpeed = 90,
-
-        },
-        {
-
             AutoInitiateAttackCommand = false,
 
             RateOfFire = 10/10,
@@ -26,6 +12,20 @@ UnitBlueprint {
             TurretYawSpeed = 75,
 
         },	
+        {
+
+            RateOfFire = 15/10,
+
+            TurretYawSpeed = 90,
+
+        },
+        {
+
+            RateOfFire = 15/10,
+
+            TurretYawSpeed = 90,
+
+        },
         {
 
             RateOfFire = 10/10,
