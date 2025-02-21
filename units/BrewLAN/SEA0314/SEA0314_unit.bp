@@ -1,6 +1,12 @@
 UnitBlueprint {
     Merge = true,
 	BlueprintId = "sea0314",
+    GuardScanRadiusAbide = true,
+
+    AI = {
+        GuardReturnRadius = 125,
+        GuardScanRadius = 100,
+    },
 
     Air = {
         AutoLandTime = 1,
@@ -126,9 +132,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 			
-            Damage = 1150,
+            Damage = 2500,
             DamageFriendly = true,
-            DamageRadius = 3.5,
+            DamageRadius = 4,
             DamageType = 'Normal',
 			
             DisplayName = 'Lancer Standoff ASM Barrage',
@@ -144,11 +150,11 @@ UnitBlueprint {
             NotExclusive = true,
 			
             MaxRadius = 150,
-            MinRadius = 50,
+            MinRadius = 25,
 			
-            MuzzleSalvoDelay = 0.2,
-            MuzzleSalvoSize = 2,
-            MuzzleVelocity = 20,
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 4,
+            MuzzleVelocity = 30,
 			
             PrefersPrimaryWeaponTarget = true,
 			

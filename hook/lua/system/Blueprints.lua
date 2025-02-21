@@ -450,47 +450,49 @@ do
 		
 			-- do not touch guard scan radius values of engineer-like units, as it is the reason we have
 			-- the factory-reclaim-bug that we're keen in keeping that at this point
-			if not isEngineer then
-				bp.AI = bp.AI or {}
-		
-				if isStructure or isDummy then
-					bp.AI.GuardScanRadius = 0
-				elseif isEngineer then -- engineers need their factory reclaim bug
-					bp.AI.GuardScanRadius = 26 -- allows for factory reclaim bug
-				else 
-					local primaryWeapon = bp.Weapon[1]
-					if primaryWeapon and not (
-						primaryWeapon.DummyWeapon or
-							primaryWeapon.WeaponCategory == 'Death' or
-							primaryWeapon.Label == 'DeathImpact' or
-							primaryWeapon.DisplayName == 'Air Crash'
-						) then
-						local isAntiAir = primaryWeapon.RangeCategory == 'UWRC_AntiAir'
-						local maxRadius = primaryWeapon.MaxRadius or 0
-	
-						-- land to air units should not get triggered too fast
-						if isLand and isAntiAir then
-							bp.AI.GuardScanRadius = 0.80 * maxRadius
-						else 
-							bp.AI.GuardScanRadius = 1.10 * maxRadius
-						end
-					else 
+			if not bp.GuardScanRadiusAbide then
+				if not isEngineer then
+					bp.AI = bp.AI or {}
+			
+					if isStructure or isDummy then
 						bp.AI.GuardScanRadius = 0
-					end
+					elseif isEngineer then -- engineers need their factory reclaim bug
+						bp.AI.GuardScanRadius = 26 -- allows for factory reclaim bug
+					else 
+						local primaryWeapon = bp.Weapon[1]
+						if primaryWeapon and not (
+							primaryWeapon.DummyWeapon or
+								primaryWeapon.WeaponCategory == 'Death' or
+								primaryWeapon.Label == 'DeathImpact' or
+								primaryWeapon.DisplayName == 'Air Crash'
+							) then
+							local isAntiAir = primaryWeapon.RangeCategory == 'UWRC_AntiAir'
+							local maxRadius = primaryWeapon.MaxRadius or 0
 		
-					-- cap it, so units don't have extreme values based on their attack radius
-					if isTech1 and bp.AI.GuardScanRadius > 40 then
-						bp.AI.GuardScanRadius = 40
-					elseif isTech2 and bp.AI.GuardScanRadius > 80 then
-						bp.AI.GuardScanRadius = 80
-					elseif isTech3 and bp.AI.GuardScanRadius > 120 then
-						bp.AI.GuardScanRadius = 120
-					elseif isExperimental and bp.AI.GuardScanRadius > 160 then
-						bp.AI.GuardScanRadius = 160
+							-- land to air units should not get triggered too fast
+							if isLand and isAntiAir then
+								bp.AI.GuardScanRadius = 0.80 * maxRadius
+							else 
+								bp.AI.GuardScanRadius = 1.10 * maxRadius
+							end
+						else 
+							bp.AI.GuardScanRadius = 0
+						end
+			
+						-- cap it, so units don't have extreme values based on their attack radius
+						if isTech1 and bp.AI.GuardScanRadius > 40 then
+							bp.AI.GuardScanRadius = 40
+						elseif isTech2 and bp.AI.GuardScanRadius > 80 then
+							bp.AI.GuardScanRadius = 80
+						elseif isTech3 and bp.AI.GuardScanRadius > 120 then
+							bp.AI.GuardScanRadius = 120
+						elseif isExperimental and bp.AI.GuardScanRadius > 160 then
+							bp.AI.GuardScanRadius = 160
+						end
+			
+						-- ROUND THAT SHIT HOMIE
+						bp.AI.GuardScanRadius = math.floor(bp.AI.GuardScanRadius)
 					end
-		
-					-- ROUND THAT SHIT HOMIE
-					bp.AI.GuardScanRadius = math.floor(bp.AI.GuardScanRadius)
 				end
 			end
 
