@@ -15,7 +15,7 @@ UnitBlueprint {
             DamageType = 'Normal',
 			
             FiringTolerance = 1,
-            FiringRandomness = 2,
+            FiringRandomness = 1.5,
 			FiringRandomnessWhileMoving = 2,
 			
             MaxRadius = 72,
