@@ -1,0 +1,285 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'ssb2306',
+
+    AI = {
+        TargetBones = {'XSB2301','Turret'},
+    },
+	
+    Audio = {
+        Destroyed       = Sound { Bank = 'XSL_Destroy', Cue = 'XSB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff'},
+        DoneBeingBuilt  = Sound { Bank = 'XSB', Cue = 'XSB2301_Activate', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection     = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_gun', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 3,
+            Level2 = 6,
+            Level3 = 9,
+            Level4 = 12,
+            Level5 = 15,
+        },
+		VisionRadius = {
+            Level1 = 2,
+            Level2 = 3,
+            Level3 = 3,
+            Level4 = 4,
+            Level5 = 5,
+		},			
+    },
+	
+    BuildIconSortPriority = 110,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYTIER3COMMANDER',
+        'SERAPHIM',
+        'STRUCTURE',
+        'DEFENSE',
+        'TECH3',
+        'DIRECTFIRE',
+        'DRAGBUILD',
+        'SIZE4',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'OVERLAYDIRECTFIRE',
+        'SORTDEFENSE',
+    },
+	
+    CollisionOffsetZ = 0.2,
+	
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 6250,
+        MaxHealth = 6250,
+        RegenRate = 3,
+        SurfaceThreatLevel = 69,
+    },
+	
+    Description = '<LOC xeb2306_desc>Heavy Point Defense',
+	
+    Display = {
+	
+        AnimationDeath = {
+            {
+                Animation = '/mods/BrewLAN_LOUD/units/ssb2306/ssb2306_adeath.sca',
+                AnimationRateMax = 1,
+                AnimationRateMin = 1,
+                Weight = 100,
+            },
+        },
+		
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 120,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    ShaderName = 'Seraphim',
+                    AlbedoName = '/units/xsb2301/xsb2301_albedo.dds',
+                    NormalsName = '/units/xsb2301/xsb2301_normalsts.dds',
+                    SpecularName = '/units/xsb2301/xsb2301_specteam.dds',
+                },
+                {
+                    LODCutoff = 215,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    ShaderName = 'Seraphim',
+                    AlbedoName = '/units/xsb2301/xsb2301_lod1_albedo.dds',
+                    NormalsName = '/units/xsb2301/xsb2301_lod1_normalsts.dds',
+                    SpecularName = '/units/xsb2301/xsb2301_lod1_specteam.dds',
+                },
+            },
+        },
+
+        Tarmacs = {
+            {
+                Albedo = 'Tarmacs/Tar6x_seraphim_01_albedo',
+                DeathLifetime = 300,
+                FadeOut = 500,
+                Length = 6.4,
+                Normal = 'Tarmacs/Tar6x_seraphim_01_normals',
+                Orientations = {0,90,180,270},
+                RemoveWhenDead = false,
+                Width = 6.4,
+            },
+        },
+
+        UniformScale = 0.06,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 17800,
+        BuildCostMass = 1700,
+        BuildTime = 1900,
+		
+        RebuildBonusIds = { 'ssb2306' },
+    },
+    
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
+    },
+
+    General = {
+		CapCost = 2,
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Seraphim',
+        Icon = 'land',
+        SelectionPriority = 5,
+
+        UnitName = '<LOC ssb2306_name>Othuushala',
+    },
+	
+    Intel = {
+        VisionRadius = 36,
+    },
+	
+    Interface = {
+        HelpText = '<LOC xeb2306_help>Heavy Point Defense',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.75,
+    LifeBarSize = 1.25,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+        MaxSteerForce = 0,
+        MeshExtentsX = 1.75,
+        MeshExtentsY = 1,
+        MeshExtentsZ = 2,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+        SkirtSizeX = 2,
+        SkirtSizeZ = 2,
+        TurnRate = 0,
+    },
+	
+    SelectionSizeX = 0.75,
+    SelectionSizeZ = 0.75,
+    SelectionThickness = 0.5,
+	
+    SizeX = 1,
+    SizeY = 1.25,
+    SizeZ = 1,
+	
+    StrategicIconName = 'icon_structure3_directfire',
+    StrategicIconSortPriority = 205,
+	
+    Veteran = {
+        Level1 = 15,
+        Level2 = 30,
+        Level3 = 45,
+        Level4 = 60,
+        Level5 = 75,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'XSL_Weapon', Cue = 'XSL0401_Gatling_Cannon', LodCutoff = 'Weapon_LodCutoff'},
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 120,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Gatling Plasma Cannon',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0.2,
+            FiringTolerance = 2,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 68,
+
+            MuzzleVelocity = 35,
+			MuzzleVelocityRandom = 3,
+			
+            NoPause = true,
+			
+            ProjectileId = '/projectiles/SDFAireauWeapon01/SDFAireauWeapon01_proj.bp',
+            ProjectileLifetime = 2,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle'},
+                    RackBone = 'Turret_Barrel',
+                },
+                {
+                    MuzzleBones = {'Turret_Muzzle2'},
+                    RackBone = 'Turret_Barrel2',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 3,
+			
+            TargetCheckInterval = 0.2,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+				"EXPERIMENTAL",
+                "STRUCTURE SHIELD",
+                "TECH3 DEFENSE DIRECTFIRE",
+                "SNIPER",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "COMMAND",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,WALL',
+			
+            TurretBoneDualMuzzle = 'Turret_Muzzle2',
+            TurretBoneDualPitch = 'Turret_Barrel2',
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = true,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 30,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 70,
+			
+            Turreted = true,
+        },
+    },
+
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.3,
+        HealthMult = 0.9,
+        MassMult = 0.3,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

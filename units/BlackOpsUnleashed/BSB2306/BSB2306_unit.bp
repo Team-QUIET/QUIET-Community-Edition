@@ -1,0 +1,254 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'bsb2306',
+
+    AI = {
+		TargetBones = {'Turret_Barrel'},
+    },
+	
+    Audio = {
+        Destroyed   = Sound { Bank = 'XSL_Destroy', Cue = 'XSB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff' },
+        Killed      = Sound { Bank = 'XSL_Destroy', Cue = 'XSB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_gun', LodCutoff = 'UnitMove_LodCutoff' },
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 2,
+            Level2 = 4,
+            Level3 = 6,
+            Level4 = 8,
+            Level5 = 10,
+        },
+    },
+	
+    BuildIconSortPriority = 110,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYTIER3COMMANDER',
+        'SERAPHIM',
+        'STRUCTURE',
+        'DEFENSE',
+        'TECH3',
+        'DIRECTFIRE',
+        'DRAGBUILD',
+        'SIZE4',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SORTDEFENSE',
+    },
+	
+    CollisionOffsetY = -0.25,
+    CollisionOffsetZ = 0.2,
+	
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 5800,
+        MaxHealth = 5800,
+        RegenRate = 3,
+        SurfaceThreatLevel = 57.4,
+    },
+	
+    Description = '<LOC bsb2306_desc>Heavy Point Defense',
+	
+    Display = {
+	
+		Abilities = {
+			'<LOC ability_aquatic>Aquatic',
+			'Damages up to 4 other units nearby',
+			'Requires Energy',
+		},
+		
+        Mesh = { IconFadeInZoom = 130, LODs = { { LODCutoff = 215, LookupName = '/textures/environment/Falloff_seraphim_lookup.dds', ShaderName = 'Seraphim' } } },
+        
+        UniformScale = 0.055,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 23000,
+        BuildCostMass = 2150,
+        BuildTime = 1590,
+		
+        RebuildBonusIds = {'bsb2306'},
+    },
+	
+	Footprint = {
+		SizeX = 1,
+		SizeZ = 1,
+	},
+	
+    General = {
+		CapCost = 2,
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Seraphim',
+        Icon = 'amph',
+        SelectionPriority = 5,
+        UnitName = '<LOC bsb2306_name>Uttauthuum',
+    },
+	
+    Intel = {
+        VisionRadius = 36,
+    },
+	
+    Interface = {
+        HelpText = 'Heavy Point Defense',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.75,
+    LifeBarSize = 1.7,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+        MaxSteerForce = 0,
+        MeshExtentsX = 1.5,
+        MeshExtentsY = 1,
+        MeshExtentsZ = 2,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+        SkirtSizeX = 2,
+        SkirtSizeZ = 2,
+        TurnRate = 0,
+    },
+	
+    SelectionSizeX = 0.85,
+    SelectionSizeZ = 1,
+    SelectionThickness = 0.42,
+	
+    SizeX = 1.1,
+    SizeY = 1.2,
+    SizeZ = 1.1,
+	
+    StrategicIconName = 'icon_structure3_directfire',
+    StrategicIconSortPriority = 200,
+	
+    Veteran = {
+        Level1 = 15,
+        Level2 = 30,
+        Level3 = 45,
+        Level4 = 60,
+        Level5 = 75,
+    },
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                BarrelLoop  = Sound { Bank = 'UAS', Cue = 'UAS_Turret_Lrg_Loop', LodCutoff = 'WeaponBig_LodCutoff' },
+                BarrelStart = Sound { Bank = 'UAS', Cue = 'UAS_Turret_Lrg_Start', LodCutoff = 'WeaponBig_LodCutoff' },
+                Fire        = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0302_Quarnon_Cannon', LodCutoff = 'WeaponBig_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 720,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            EnergyDrainPerSecond = 400,
+            EnergyRequired = 800,
+			
+            DisplayName = 'Heavy Quarnon Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+				Water = 'Land|Water|Seabed',
+            },
+			
+			FiringRandomness = 0.2,
+            FiringTolerance = 2,
+			
+            Label = 'Turret',
+			
+            MaxRadius = 72,
+			MinRadius = 6,
+
+            MuzzleVelocity = 45,
+
+            ProjectileId = '/mods/BlackOpsUnleashed/projectiles/SeraHeavyLightningCannon01/SeraHeavyLightningCannon01_proj.bp',
+			ProjectileLifetime = 2,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle'},
+                    RackBone = 'Turret_Barrel',
+                },
+            },
+
+            RackRecoilDistance = -1,
+
+            RackSalvoFiresAfterCharge = true,
+            RenderFireClock = true,
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10,		---- controlled by energy -- 2 seconds -- ok this weapon causes 600 direct damage and another 600 to upto 4 targets within 10
+
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+				"EXPERIMENTAL",
+                "STRUCTURE SHIELD",
+                "TECH3 DEFENSE DIRECTFIRE",
+                "SNIPER",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "COMMAND",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 70,
+			
+            Turreted = true,
+        },
+        {
+    		Damage = 500,
+    		DamageFriendly = true,
+    		DamageRadius = 3,
+    		DamageType = 'Normal',
+    		DummyWeapon = true,
+    		Label = 'DeathWeapon',
+    	}, 
+    },
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.5,
+        HealthMult = 0.9,
+        MassMult = 0.6,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+            Water = true,
+        },
+    },
+}

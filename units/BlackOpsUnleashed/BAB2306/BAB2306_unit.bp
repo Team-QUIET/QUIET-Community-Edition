@@ -1,0 +1,251 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'bab2306',
+
+    AI = {
+        TargetBones = {'Turret_Yaw','Turret_Pitch'},
+    },
+	
+    Audio = {
+        Destroyed   = Sound { Bank = 'UALDestroy', Cue = 'UAB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection = Sound { Bank = 'Interface', Cue = 'Aeon_Select_Gun', LodCutoff = 'UnitMove_LodCutoff' },
+    },
+
+    Buffs = {
+        Regen = {
+            Level1 = 2,
+            Level2 = 4,
+            Level3 = 6,
+            Level4 = 8,
+            Level5 = 10,
+        },
+    },
+	
+    BuildIconSortPriority = 140,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYTIER3COMMANDER',
+        'AEON',
+        'STRUCTURE',
+        'TECH3',
+        'DIRECTFIRE',
+        'DEFENSE',
+        'DRAGBUILD',
+        'SIZE4',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SORTDEFENSE',
+    },
+	
+    CollisionOffsetY = -0.0,
+	
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 5500,
+        MaxHealth = 5500,
+        RegenRate = 2,
+        SurfaceThreatLevel = 56.2,
+    },
+	
+    Description = '<LOC bab2306_desc>Heavy Point Defense',
+	
+    Display = {
+	
+		Abilities = {
+			'Beam Weapon',
+			'Requires Energy to fire',
+		},
+		
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                { LODCutoff = 215, Scrolling = true, ShaderName = 'Aeon' },
+            },
+        },
+
+        UniformScale = 0.095,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 16500,
+        BuildCostMass = 1650,
+        BuildTime = 1500,
+		
+        RebuildBonusIds = { 'bab2306' },
+    },
+	
+    General = {
+		CapCost = 2,
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Aeon',
+        Icon = 'land',
+        SelectionPriority = 5,
+        UnitName = '<LOC bab2306_name>Aria',
+    },
+	
+    Intel = {
+        VisionRadius = 36,
+    },
+	
+    Interface = {
+        HelpText = 'Heavy Point Defense',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.8,
+    LifeBarSize = 1.25,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+        MaxSteerForce = 0,
+        MeshExtentsX = 1.75,
+        MeshExtentsY = 2,
+        MeshExtentsZ = 3,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+        SkirtSizeX = 2,
+        SkirtSizeZ = 2,
+        TurnRate = 0,
+    },
+    SelectionSizeX = 0.85,
+    SelectionSizeZ = 1,
+    SelectionThickness = 0.42,
+	
+    SizeX = 1,
+    SizeY = 1.1,
+    SizeZ = 1,
+	
+    StrategicIconName = 'icon_structure3_directfire',
+    StrategicIconSortPriority = 180,
+
+    Veteran = {
+        Level1 = 16,
+        Level2 = 32,
+        Level3 = 48,
+        Level4 = 64,
+        Level5 = 80,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = true,
+			AlwaysRecheckTarget = true,
+            
+            Audio = {
+                BeamLoop    = Sound { Bank = 'UALWeapon', Cue = 'UAL0401_Phason_Laser_Loop', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStart   = Sound { Bank = 'UALWeapon', Cue = 'UAL0401_Phason_Laser_Fire', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStop    = Sound { Bank = 'UALWeapon', Cue = 'UAL0401_Phason_Laser_Stop', LodCutoff = 'Weapon_LodCutoff' },
+                Unpack      = Sound { Bank = 'UALWeapon', Cue = 'UAL0401_Phason_Laser_Charge', LodCutoff = 'Weapon_LodCutoff' },
+            },
+			
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0,
+            CollideFriendly = false,
+			
+            ContinuousBeam = true,
+			
+            Damage = 33,
+			DamageRadius = 0,
+            DamageFriendly = false,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Phason Beam',
+			
+			EnergyDrainPerSecond = 400,     -- 1 second charge
+			EnergyRequired = 400,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0,
+            FiringTolerance = 0,
+			
+            Label = 'MainGun',
+            
+            LeadTarget = false,
+			
+            MaxRadius = 68,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Muzzle01'},
+                    RackBone = 'Turret_Pitch',
+                },
+            },
+
+            RackSalvoFiresAfterCharge = true,
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 1, -- controlled by charge
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+				"EXPERIMENTAL",
+                "STRUCTURE SHIELD",
+                "TECH3 DEFENSE DIRECTFIRE",
+                "SNIPER",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "COMMAND",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Muzzle01',
+            TurretBonePitch = 'Turret_Pitch',
+            TurretBoneYaw = 'Turret_Yaw',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 70,
+			
+            Turreted = true,
+            WeaponUnpacks = true,
+        },
+        {
+    		Damage = 500,
+    		DamageFriendly = true,
+    		DamageRadius = 3,
+    		DamageType = 'Normal',
+    		DummyWeapon = true,
+    		Label = 'DeathWeapon',
+    	}, 		
+    },
+	
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.5,
+        HealthMult = 0.9,
+        MassMult = 0.3,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

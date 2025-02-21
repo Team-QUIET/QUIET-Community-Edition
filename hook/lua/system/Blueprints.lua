@@ -956,6 +956,10 @@ do
 			'xel0308',   -- Hermes
 			'brmt2pd',   -- Slingshot
 			'brnt2pd2',  -- Angry Ace
+			'brpt3pd',   -- Athaamia
+			'srb2306',   -- Hades
+			'urb2306',   -- Beholder
+			'sab2306',   -- Orbos
 		};
 		for i, bp in pairs(unitPruningId) do
 			if all_blueprints.Unit[bp] then

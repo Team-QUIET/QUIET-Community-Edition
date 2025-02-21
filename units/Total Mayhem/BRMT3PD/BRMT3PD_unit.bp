@@ -2,27 +2,57 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "brmt3pd",
 
+    Economy = {
+        BuildCostEnergy = 41500,
+        BuildCostMass = 2950,
+        BuildTime = 3400,
+		
+        RebuildBonusIds = {'BRMT3PD'},
+    },
+
     Weapon = {
         {
+            DamageRadius = 2.5,
 
             EnergyDrainPerSecond = 400,
             EnergyRequired = 400,
 
-			      MuzzleChargeDelay = 1,
+            FiringRandomness = 0.2,
+            FiringTolerance = 2,
 
-			      RackReloadTimeout = 0,
+            MaxRadius = 75,
 
-			      RackFireTogether = true,
+			MuzzleChargeDelay = 1,
+
+            MuzzleVelocity = 40,
+
+			RackReloadTimeout = 0,
+
+			RackFireTogether = true,
 
             RackSlavedToTurret = true,
 			
-			      NotExclusive = true,
+			NotExclusive = true,
 			
             RateOfFire = 10/10,	-- controlled by charge equals 1.31 seconds = 412 DPS
+
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+				"EXPERIMENTAL",
+                "STRUCTURE SHIELD",
+                "TECH3 DEFENSE DIRECTFIRE",
+                "SNIPER",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "COMMAND",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "ALLUNITS",
+            },
 			
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 45,
+            TurretYawSpeed = 70,
             
         },
     },
