@@ -36,10 +36,12 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
         self.CurrentRackNumber = 1
         
         local bp = self.bp
+        local unit = self.unit
         local rof = self:GetWeaponRoF()
         local rackBones = bp.RackBones
         local muzzleSalvoSize = bp.MuzzleSalvoSize
         local muzzleSalvoDelay = bp.MuzzleSalvoDelay
+        local unitId = unit:GetUnitId()
 		
         if bp.RackRecoilDistance and bp.RackRecoilDistance ~= 0 then
 		

@@ -39,6 +39,30 @@ UnitBlueprint {
         BuildCostMass = 515,
         BuildRate = 8,
         BuildTime = 3320,
+
+        MaintenanceConsumptionPerSecondEnergy = 20,
+    },
+
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+
+        FactionName = "Aeon",
+
+        OrderOverrides = {
+            RULEUTC_StealthToggle = { bitmapId = 'stealth-personal', helpText = 'toggle_stealth_personal' },
+        },
+
+        ToggleCaps = { RULEUTC_StealthToggle = false },
+
+        UnitName = "<LOC ual0204_name>Predator",
     },
 
     Defense = {
