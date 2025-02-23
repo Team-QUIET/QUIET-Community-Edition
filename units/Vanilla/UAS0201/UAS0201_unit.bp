@@ -149,7 +149,7 @@ UnitBlueprint {
             Label = "DepthCharge",
             MaxRadius = 35,
 
-            MuzzleSalvoDelay = 0,
+            MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 15,
             ProjectileId = "/projectiles/AANDepthCharge02/AANDepthCharge02_proj.bp",
@@ -190,25 +190,26 @@ UnitBlueprint {
             DisplayName = 'Chrono Torpedo',
 			
             FireTargetLayerCapsTable = {
-                Water = 'Seabed|Sub|Water',
+                Water = "Seabed|Sub|Water",
             },
 			
             FiringTolerance = 2,
 			
-            Label = 'Torpedo',
+            Label = "Torpedo",
 			
             MaxRadius = 40,
 			
             MuzzleSalvoDelay = 0.5,
             MuzzleSalvoSize = 4,
             MuzzleVelocity = 15,
-            ProjectileId = '/projectiles/AANTorpedo01/AANTorpedo01_proj.bp',
+            ProjectileId = "/projectiles/AANTorpedo01/AANTorpedo01_proj.bp",
             ProjectileLifetime = 5,
+            ProjectilesPerOnFire = 1,
 			
             RackBones = {
                 {
-                    MuzzleBones = {'Projectile01','Projectile03','Projectile02','Projectile04'},
-                    RackBone = 'Projectile01',
+                    MuzzleBones = {"Projectile01","Projectile03","Projectile02","Projectile04"},
+                    RackBone = "Projectile01",
                 },
             },
             
@@ -216,19 +217,19 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_AntiNavy',
 			
-            RateOfFire = 10/10,
+            RateOfFire = 10/20,
 			
-            TargetCheckInterval = 2,
+            TargetCheckInterval = 1,
 			
             TargetPriorities = {
-                'SPECIALHIGHPRI',
+                "SPECIALHIGHPRI",
                 "SUBMERSIBLE",
                 "MOBILE",
                 "(STRUCTURE * DEFENSE - ANTIMISSILE)",
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
-			TrackingRadius = 1.1,
+            TrackingRadius = 1.1,
             Turreted = false,
             WeaponCategory = "Anti Navy",
         },

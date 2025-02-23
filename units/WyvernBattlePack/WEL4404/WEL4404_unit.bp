@@ -2,7 +2,6 @@ UnitBlueprint{
 
     Source = '/mods/BattlePack/units/WEL4404/WEL4404_unit.bp',
 
-
     Description = "<LOC wel4404_desc>Experimental Medium Assault Mech",
 
     AI = {
