@@ -1,6 +1,9 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "uas0201",
+
+    ScriptClass = 'UAS0201',
+    ScriptModule = '/mods/QUIET-Community-Edition/units/Vanilla/UAS0201/UAS0201_Script.lua',
 	
     Defense = {
         ArmorType = 'Normal',
