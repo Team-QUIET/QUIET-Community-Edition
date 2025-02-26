@@ -100,9 +100,9 @@ BAL0401 = ClassUnit(AWalkingLandUnit) {
     
             local projectilePosition = { 0,0,0 }
 
-						local minRangeChange = 11
-						local dX = getRandomInRange(-minRangeChange, minRangeChange)
-						local dZ = getRandomInRange(-minRangeChange, minRangeChange)
+						local maxRangeChange = 11
+						local dX = getRandomInRange(-maxRangeChange, maxRangeChange)
+						local dZ = getRandomInRange(-maxRangeChange, maxRangeChange)
 				
 
 						-- define new positions
