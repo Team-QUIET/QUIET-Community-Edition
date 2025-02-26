@@ -63,9 +63,8 @@ UnitBlueprint {
     Display = {
         Abilities = {
            '<LOC ability_personalstealth>Personal Stealth',
-			'An unusual unit - designed for siege work',
-			'Weapon teleports its shells into orbit above target',
-            'Weapon is blocked/reflected back by Anti-Teleport emitters',
+						'An unusual unit - designed for siege work',
+						'Weapon teleports its shells into orbit above target',
             '<LOC ability_amphibious>Amphibious',
             '<LOC ability_deathaoe>Volatile',
         },
