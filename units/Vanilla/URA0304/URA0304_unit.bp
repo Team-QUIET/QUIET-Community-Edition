@@ -1,6 +1,7 @@
 UnitBlueprint {
     Merge = true,
 	BlueprintId = "ura0304",
+    IgnoreEvenflow = true,
 	
     Air = {
         AutoLandTime = 1,
@@ -36,6 +37,12 @@ UnitBlueprint {
         RadarRadius = 64,
         RadarStealth = true,
         VisionRadius = 32,
+    },
+
+    Economy = {
+        BuildCostEnergy = 190000,
+        BuildCostMass = 1900,
+        BuildTime = 9500,
     },
 	
     Weapon = {
