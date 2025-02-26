@@ -92,9 +92,9 @@ BAL0401 = ClassUnit(AWalkingLandUnit) {
           local LOUDWARP = Warp
           local WaitTicks = WaitTicks
                     
-					for i = 0, 24 do
+					for i = 0, 8 do
 
-						WaitTicks( 6 )
+						WaitTicks( 1 )
 						
 						local proj = CDFLaserHeavyWeapon.CreateProjectileForWeapon(self, bone)
     
