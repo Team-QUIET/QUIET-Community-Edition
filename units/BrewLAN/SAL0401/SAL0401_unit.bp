@@ -57,20 +57,20 @@ UnitBlueprint {
                 Water = 'Land|Water|Seabed',
             },
 			
-            FiringRandomness = 0.1,
-			FiringRandomnessWhileMoving = 0.3,
-            FiringTolerance = 1,
+            FiringRandomness = 0.25,
+			FiringRandomnessWhileMoving = 0.75,
+            FiringTolerance = 2,
 			
             Label = 'MainGun',
             
 			LeadTarget = true,
 			
-            MaxRadius = 112,
-			MinRadius = 18,
+            MaxRadius = 105,
+			MinRadius = 15,
 			
             MuzzleChargeDelay = 0.5,   
 
-            MuzzleVelocity = 40,
+            MuzzleVelocity = 30,
 			MuzzleVelocityRandom = 0,
             MuzzleVelocityReduceDistance = 100,
 			
