@@ -1,8 +1,14 @@
 UnitBlueprint {
-  Merge = true,
-  BlueprintId = "wra0401",
+    Merge = true,
+    BlueprintId = "wra0401",
 
-      Weapon = {
+    Economy = {
+        BuildCostEnergy = 812000,
+        BuildCostMass = 29000,
+        BuildTime = 9750,
+    },
+
+    Weapon = {
         {
             AboveWaterTargetsOnly = true,
             Audio = {

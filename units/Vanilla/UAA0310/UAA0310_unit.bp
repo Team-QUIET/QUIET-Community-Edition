@@ -1,6 +1,8 @@
 UnitBlueprint {
     Merge = true,
 	BlueprintId = "uaa0310",
+    GuardScanRadiusAbide = true,
+    IgnoreEvenflow = true,
 
     AI = {
         GuardReturnRadius = 45,
@@ -71,7 +73,22 @@ UnitBlueprint {
         TurnRadius = 40,
         TurnRate = 38,
     },
-	
+
+    Economy = {
+        BuildCostEnergy = 1050000,
+        BuildCostMass = 45000,
+        BuildRate = 360,
+        BuildTime = 126000,
+		
+        BuildableCategory = {
+            'BUILTBYTIER1FACTORY AEON MOBILE AIR',
+            'BUILTBYTIER2FACTORY AEON MOBILE AIR',
+            'BUILTBYTIER3FACTORY AEON MOBILE AIR',
+            'TRANSPORTBUILTBYTIER1FACTORY AEON MOBILE AIR',
+            'TRANSPORTBUILTBYTIER2FACTORY AEON MOBILE AIR',
+            'TRANSPORTBUILTBYTIER3FACTORY AEON MOBILE AIR',
+        },
+    },
 	
     Weapon = {
         {

@@ -1,0 +1,1226 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'bea0402',
+
+    AI = {
+		GuardRadius = 80,
+		GuardReturnRadius = 110,
+        GuardScanRadius = 80,
+
+        TargetBones = {'BEA0402','Railgun_Turret_2','Railgun_Turret_1','Flak_Turret_4','Flak_Turret_3'},		
+    },
+	
+    Air = {
+        BankFactor = 0,
+        BankForward = false,
+        CanFly = true,
+        
+        CirclingDirChangeFrequencySec = 12,
+        CirclingElevationChangeRatio = 0.65,
+        CirclingRadiusChangeMaxRatio = 0.99,
+        CirclingRadiusChangeMinRatio = 0.6,
+        CirclingRadiusVsAirMult = 0.46,
+        CirclingTurnMult = 3,
+        
+        HoverOverAttack = false,
+		
+        KLift = 2,
+        KLiftDamping = 3.5,
+		
+        KMove = 0.88,
+        KMoveDamping = 0.95,
+		
+        KTurn = 1,
+		
+        KTurnDamping = 10,
+		
+        LiftFactor = 7,
+		
+        MaxAirspeed = 6,
+        MinAirspeed = 0,
+		
+        StartTurnDistance = 40,
+    },
+
+    Audio = {
+    	AirUnitWaterImpact  = Sound { Bank = 'Explosions', Cue = 'Expl_Water_Lrg_01', LodCutoff = 'UnitMove_LodCutoff' },
+        Destroyed           = Sound { Bank = 'UELDestroy', Cue = 'UEL0401_Destroy', LodCutoff = 'UnitMove_LodCutoff' },
+        StartMove           = Sound { Bank = 'UEL', Cue = 'UEL0401_Move_Start', LodCutoff = 'UnitMove_LodCutoff' },
+        StopMove            = Sound { Bank = 'UEL', Cue = 'UEL0401_Move_Stop', LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection         = Sound { Bank = 'Interface', Cue = 'UEF_Select_Tank', LodCutoff = 'UnitMove_LodCutoff' },
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 10,
+            Level2 = 20,
+            Level3 = 30,
+            Level4 = 40,
+            Level5 = 50,
+        },
+    },
+	
+    BuildIconSortPriority = 225,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER4COMMANDER',
+        'UEF',
+        'MOBILE',
+        'AIR',
+        'ANTIAIR',
+        'EXPERIMENTAL',
+        'NEEDMOBILEBUILD',
+		'GROUNDATTACK',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'DRAGBUILD',
+        'OVERLAYRADAR',
+    },
+	
+    CollisionOffsetY = -1.5,
+    CollisionOffsetZ = 2.5,
+	
+    Defense = {
+        ArmorType = 'Light',
+
+        Health = 72500,
+        MaxHealth = 72500,
+        RegenRate = 20,	
+        
+        AirThreatLevel = 306,
+        SurfaceThreatLevel = 90,
+    },
+	
+    Description = '<LOC bea0402_desc>Citadel II Aerial Fortress (Defense)',
+	
+    Display = {
+        Abilities = {
+            '<LOC ability_radar>Radar',
+			'2x Ground-Attack Rail Guns',
+			'4x HV Anti-Air Missiles',
+            '4x Flak Cannons',
+			'2x Anti-Air Gatlings',
+        },
+        
+        Mesh = { IconFadeInZoom = 130, LODs = { { LODCutoff = 600, Scrolling = true, ShaderName = 'Unit' } } },
+
+        UniformScale = 0.21,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 920000,
+        BuildCostMass = 36500,
+        BuildTime = 22500,
+    },
+	
+	Footprint = {
+        SizeX = 8,
+        SizeZ = 10,
+    },
+	
+    General = {
+		CapCost = 10,
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'UEF',
+        Icon = 'air',
+        UnitName = '<LOC bea0402_name>Citadel II',
+    },
+	
+    Intel = {
+		FreeIntel = true,
+        
+		RadarRadius = 128,
+        VisionRadius = 44,
+		WaterVisionRadius = 28,
+    },
+	
+    Interface = {
+        HelpText = 'Air Fortress',
+	},
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 4.35,
+    LifeBarSize = 5,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        Elevation = 14,
+		
+        MaxAcceleration = 0.4,
+        MaxSpeed = 6,
+        MaxSteerForce = 1000,
+        MeshExtentsX = 1,
+        MeshExtentsY = 1,
+        MeshExtentsZ = 1,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Air',
+		
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+		
+        SkirtSizeX = 9,
+        SkirtSizeZ = 15,
+		
+        TurnRadius = 40,
+        TurnRate = 80,
+    },
+	
+    SelectionCenterOffsetZ = -0.3,
+    SelectionSizeX = 5.5,
+    SelectionSizeZ = 8.5,
+    SelectionThickness = 0.2,
+	
+    SizeX = 8.1,
+    SizeY = 3,
+    SizeZ = 12.4,
+	
+    StrategicIconName = 'icon_gunship4_antiair',
+    StrategicIconSortPriority = 45,
+
+    Veteran = {
+        Level1 = 75,
+        Level2 = 150,
+        Level3 = 225,
+        Level4 = 300,
+        Level5 = 375,
+    },
+	
+    Weapon = {
+		-- 2x Ground-Attack Rail Guns
+		-- Rail Gun --1
+		{
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                BarrelLoop          = Sound { Bank = 'URS', Cue = 'URS_Turret_Lrg_Loop', LodCutoff = 'WeaponBig_LodCutoff' },
+                BarrelStart         = Sound { Bank = 'URS', Cue = 'URS_Turret_Lrg_Start', LodCutoff = 'WeaponBig_LodCutoff' },
+                MuzzleChargeStart   = Sound { Bank = 'URLWeapon', Cue = 'URL0303_Disintegrator_Charge', LodCutoff = 'Weapon_LodCutoff' },
+                Fire                = Sound { Bank = 'URSWeapon', Cue = 'URS0302_Cannon', LodCutoff = 'WeaponBig_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+			
+            CollideFriendly = false,
+			
+            DamageType = 'Normal',
+            Damage = 900,
+            DamageRadius = 2,
+			
+            DisplayName = 'Gauss Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Land|Water|Seabed',
+            },
+			
+			FiringRandomness = 0.1,
+			FiringRandomnessWhileMoving = 0.4,
+			
+            FiringTolerance = 1,
+
+			HeadingArcCenter = 90,
+            HeadingArcRange = 110,
+
+            LeadTarget = true,
+			
+            Label = 'MainTurret',
+			
+            MaxRadius = 72,
+			
+			NotExclusive = true,
+
+            MuzzleChargeDelay = 1,
+
+            MuzzleVelocity = 40,
+			
+            NotExclusive = true,
+			
+            ProjectileId = '/mods/BlackOpsUnleashed/projectiles/RailGun01/RailGun01_proj.bp',
+			ProjectileLifetime = 2.2,
+			
+            RackBones = {
+                {
+                	HideMuzzle = true,
+                    MuzzleBones = {'Railgun_Muzzle_1'},
+                    RackBone = 'Railgun_Barrel_1',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 0.5,					-- 450 DPS Ground
+			
+            TargetCheckInterval = 1.0,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE,WALL',
+            TrackingRadius = 1.05,
+			
+            TurretBoneMuzzle = 'Railgun_Muzzle_1',
+            TurretBonePitch = 'Railgun_Barrel_1',
+            TurretBoneYaw = 'Railgun_Turret_1',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 110,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 110,
+            TurretYawSpeed = 45,
+			
+            Turreted = true,
+        },
+		-- Rail Gun --2
+		{
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                BarrelLoop          = Sound { Bank = 'URS', Cue = 'URS_Turret_Lrg_Loop', LodCutoff = 'WeaponBig_LodCutoff' },
+                BarrelStart         = Sound { Bank = 'URS', Cue = 'URS_Turret_Lrg_Start', LodCutoff = 'WeaponBig_LodCutoff' },
+                MuzzleChargeStart   = Sound { Bank = 'URLWeapon', Cue = 'URL0303_Disintegrator_Charge', LodCutoff = 'Weapon_LodCutoff' },
+                Fire                = Sound { Bank = 'URSWeapon', Cue = 'URS0302_Cannon', LodCutoff = 'WeaponBig_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            DamageType = 'Normal',
+            Damage = 900,
+            DamageRadius = 2,
+			
+            DisplayName = 'Gauss Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Land|Water|Seabed',
+            },
+			
+			FiringRandomness = 0.1,
+			FiringRandomnessWhileMoving = 0.5,
+			
+            FiringTolerance = 1,
+			
+			HeadingArcCenter = -90,
+            HeadingArcRange = 110,
+
+            LeadTarget = true,
+			
+            Label = 'MainTurret',
+			
+            MaxRadius = 72,
+
+            MuzzleChargeDelay = 1,
+
+            MuzzleVelocity = 40,
+			
+            NotExclusive = true,
+			
+            ProjectileId = '/mods/BlackOpsUnleashed/projectiles/RailGun01/RailGun01_proj.bp',
+			ProjectileLifetime = 2.5,
+			
+            RackBones = {
+                {
+                	HideMuzzle = true,
+                    MuzzleBones = {'Railgun_Muzzle_2'},
+                    RackBone = 'Railgun_Barrel_2',
+                },
+            },
+
+            RateOfFire = 0.5,					-- 450 DPS Ground
+			
+            TargetCheckInterval = 1.0,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE,WALL',
+            TrackingRadius = 1.05,
+			
+            TurretBoneMuzzle = 'Railgun_Muzzle_2',
+            TurretBonePitch = 'Railgun_Barrel_2',
+            TurretBoneYaw = 'Railgun_Turret_2',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 110,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 110,
+            TurretYawSpeed = 45,
+			
+            Turreted = true,
+        },
+		
+		-- 4 x HVAA Missile Launchers
+		-- HVAA Missile Launcher --1
+    	{
+			advancedTracking = true,
+            AlwaysRecheckTarget = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'XEA_Weapon', Cue = 'XEA0306_Flayer_Missile', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            
+            CollideFriendly = false,
+            CannotAttackGround = true,
+			
+            Damage = 320,
+			DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Hyper Velocity Missile Launcher',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land',
+            },
+			
+            FiringTolerance = 10,
+			
+            Label = 'HVMTurret',
+			
+            MaxRadius = 56,
+			
+            MuzzleSalvoDelay = 0.4,
+            MuzzleSalvoSize = 4,
+
+            MuzzleVelocity = 32,
+			
+			NotExclusive = true,
+
+            ProjectileId = '/projectiles/TAAMissileFlayer01/TAAMissileFlayer01_proj.bp',			
+			ProjectileLifetime = 3,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'HVM_Muzzle_A_1',
+						'HVM_Muzzle_B_1',
+						'HVM_Muzzle_C_1',
+						'HVM_Muzzle_D_1',
+                    },
+                    RackBone = 'HVM_Barrel_1',
+                },
+            },
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 0.4,					-- 1280 Damage = 512 DPS Air
+			
+            TargetCheckInterval = 1.0,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'EXPERIMENTAL',
+                'ANTIAIR',
+				'BOMBER',
+                'GROUNDATTACK',
+                'MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			TargetRestrictOnlyAllow = 'AIR',
+
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'HVM_Muzzle_A_1',
+            TurretBonePitch = 'HVM_Barrel_1',
+            TurretBoneYaw = 'HVM_Turret_1',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 50,
+			
+            Turreted = true,
+        },
+
+		{
+			advancedTracking = true,
+            AlwaysRecheckTarget = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'XEA_Weapon', Cue = 'XEA0306_Flayer_Missile', LodCutoff = 'Weapon_LodCutoff' },
+            },
+			
+            BallisticArc = 'RULEUBA_None',
+			
+            CollideFriendly = false,
+            CannotAttackGround = true,
+			
+            Damage = 320,
+			DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Hyper Velocity Missile Launcher',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land',
+            },
+			
+            FiringTolerance = 10,
+			
+            Label = 'HVMTurret',
+			
+            MaxRadius = 56,
+			
+            MuzzleSalvoDelay = 0.4,
+            MuzzleSalvoSize = 4,
+
+            MuzzleVelocity = 32,
+			
+			NotExclusive = true,
+			
+            ProjectileId = '/projectiles/TAAMissileFlayer01/TAAMissileFlayer01_proj.bp',
+			ProjectileLifetime = 3,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'HVM_Muzzle_A_2',
+						'HVM_Muzzle_B_2',
+						'HVM_Muzzle_C_2',
+						'HVM_Muzzle_D_2',
+                    },
+                    RackBone = 'HVM_Barrel_2',
+                },
+            },
+
+            RateOfFire = 0.4,					-- 512 DPS Air
+            TargetCheckInterval = 1.0,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'EXPERIMENTAL',
+				'ANTIAIR',
+                'BOMBER',
+                'GROUNDATTACK',
+                'MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			TargetRestrictOnlyAllow = 'AIR',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'HVM_Muzzle_A_2',
+            TurretBonePitch = 'HVM_Barrel_2',
+            TurretBoneYaw = 'HVM_Turret_2',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 50,
+			
+            Turreted = true,
+        },
+        
+		-- HVAA Missile Launcher --3
+		{
+			advancedTracking = true,
+            AlwaysRecheckTarget = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'XEA_Weapon', Cue = 'XEA0306_Flayer_Missile', LodCutoff = 'Weapon_LodCutoff' },
+            },
+			
+            BallisticArc = 'RULEUBA_None',
+			
+            CollideFriendly = false,
+            CannotAttackGround = true,
+			
+            Damage = 320,
+			DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Hyper Velocity Missile Launcher',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air',
+            },
+            FiringTolerance = 10,
+			
+            Label = 'HVMTurret',
+			
+            MaxRadius = 56,
+			
+            MuzzleSalvoDelay = 0.4,
+            MuzzleSalvoSize = 4,
+
+            MuzzleVelocity = 30,
+			
+			NotExclusive = true,
+			
+            ProjectileId = '/projectiles/TAAMissileFlayer01/TAAMissileFlayer01_proj.bp',
+			ProjectileLifetime = 3,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'HVM_Muzzle_A_3',
+						'HVM_Muzzle_B_3',
+						'HVM_Muzzle_C_3',
+						'HVM_Muzzle_D_3',
+                    },
+                    RackBone = 'HVM_Barrel_3',
+                },
+            },
+
+            RateOfFire = 0.4,					-- 512 DPS Air
+            TargetCheckInterval = 1.0,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'EXPERIMENTAL',
+                'BOMBER',
+                'GROUNDATTACK',
+                'MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			TargetRestrictOnlyAllow = 'AIR',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'HVM_Muzzle_A_3',
+            TurretBonePitch = 'HVM_Barrel_3',
+            TurretBoneYaw = 'HVM_Turret_3',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 50,
+			
+            Turreted = true,
+        },
+		-- HVAA Missile Launcher --4
+		{
+			advamcedTracking = true,
+
+            AlwaysRecheckTarget = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'XEA_Weapon', Cue = 'XEA0306_Flayer_Missile', LodCutoff = 'Weapon_LodCutoff' },
+            },
+			
+            BallisticArc = 'RULEUBA_None',
+			
+            CollideFriendly = false,
+            CannotAttackGround = true,
+			
+            Damage = 320,
+			DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Hyper Velocity Missile Launcher',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air',
+            },
+            FiringTolerance = 10,
+			
+            Label = 'HVMTurret',
+			
+            MaxRadius = 56,
+			
+            MuzzleSalvoDelay = 0.4,
+            MuzzleSalvoSize = 4,
+
+            MuzzleVelocity = 30,
+			
+			NotExclusive = true,
+			
+            ProjectileId = '/projectiles/TAAMissileFlayer01/TAAMissileFlayer01_proj.bp',
+			ProjectileLifetime = 3,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'HVM_Muzzle_A_4',
+						'HVM_Muzzle_B_4',
+						'HVM_Muzzle_C_4',
+						'HVM_Muzzle_D_4',
+                    },
+                    RackBone = 'HVM_Barrel_4',
+                },
+            },
+
+            RateOfFire = 0.4,						-- 576 DPS Air
+            TargetCheckInterval = 1.0,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'EXPERIMENTAL',
+                'BOMBER',
+                'GROUNDATTACK',
+                'MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			TargetRestrictOnlyAllow = 'AIR',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'HVM_Muzzle_A_4',
+            TurretBonePitch = 'HVM_Barrel_4',
+            TurretBoneYaw = 'HVM_Turret_4',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 50,
+			
+            Turreted = true,
+        },
+		-- 4x Flak Cannons
+		-- Flak --1
+        {
+            AlwaysRecheckTarget = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB2204_Artillery_Flak', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 72,
+            DamageFriendly = false,
+            DamageRadius = 2.5,
+            DamageType = 'Normal',
+			
+            DetonatesAtTargetHeight = true,
+			
+            DisplayName = 'Fragmentation Flak',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air',
+            },
+			
+            FiringRandomness = 0.4,
+            FiringTolerance = 0.5,
+			
+            Label = 'AAAFlak',
+			
+			LeadTarget = true,
+			
+            MaxRadius = 48,
+
+            MuzzleVelocity = 55,
+			
+			NotExclusive = true,
+
+            PrefersPrimaryWeaponTarget = false,
+
+            ProjectileId = '/projectiles/TAALightFragmentationShell01/TAALightFragmentationShell01_proj.bp',
+			ProjectileLifetime = 1.25,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Flak_Muzzle_A_1'},
+                    RackBone = 'Flak_Recoil_A_1',
+                },
+				{
+                    MuzzleBones = {'Flak_Muzzle_B_1'},
+                    RackBone = 'Flak_Recouil_B_1',
+                },
+            },
+
+            RackRecoilDistance = -1,
+
+            RateOfFire = 2,						-- 144 DPS Air
+			
+            TargetCheckInterval = 0.3,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			TargetRestrictOnlyAllow = 'AIR',
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'Flak_Barrel_1',
+            TurretBonePitch = 'Flak_Barrel_1',
+            TurretBoneYaw = 'Flak_Turret_1',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 60,
+			
+            Turreted = true,
+        },
+		-- Flak --2
+        {
+            AlwaysRecheckTarget = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB2204_Artillery_Flak', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 72,
+            DamageFriendly = false,
+            DamageRadius = 2.5,
+            DamageType = 'Normal',
+			
+            DetonatesAtTargetHeight = true,
+			
+            DisplayName = 'Fragmentation Flak',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air',
+            },
+			
+            FiringRandomness = 0.8,
+            FiringTolerance = 0.5,
+			
+            Label = 'AAAFlak',
+			LeadTarget = true,
+			
+            MaxRadius = 48,
+
+            MuzzleVelocity = 55,
+			
+			NotExclusive = true,
+
+            PrefersPrimaryWeaponTarget = false,
+
+            ProjectileId ='/projectiles/TAALightFragmentationShell01/TAALightFragmentationShell01_proj.bp',
+			ProjectileLifetime = 1.25,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Flak_Muzzle_A_2'},
+                    RackBone = 'Flak_Recoil_A_2',
+                },
+				{
+                    MuzzleBones = {'Flak_Muzzle_B_2'},
+                    RackBone = 'Flak_Recouil_B_2',
+                },
+            },
+
+            RackRecoilDistance = -1,
+
+            RateOfFire = 2,						-- 144 DPS Air
+			
+            TargetCheckInterval = 0.3,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			TargetRestrictOnlyAllow = 'AIR',			
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'Flak_Barrel_2',
+            TurretBonePitch = 'Flak_Barrel_2',
+            TurretBoneYaw = 'Flak_Turret_2',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 60,
+			
+            Turreted = true,
+        },
+		-- Flak --3
+        {
+            AlwaysRecheckTarget = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB2204_Artillery_Flak', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 72,
+            DamageFriendly = false,
+            DamageRadius = 2.5,
+            DamageType = 'Normal',
+			
+            DetonatesAtTargetHeight = true,
+			
+            DisplayName = 'Fragmentation Flak',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air',
+            },
+			
+            FiringRandomness = 0.4,
+            FiringTolerance = 0.5,
+			
+            Label = 'AAAFlak',
+
+			LeadTarget = true,
+			
+			NotExclusive = true,
+
+            PrefersPrimaryWeaponTarget = false,
+
+            MaxRadius = 48,
+
+            MuzzleVelocity = 55,
+			
+            ProjectileId = '/projectiles/TAALightFragmentationShell01/TAALightFragmentationShell01_proj.bp',
+			ProjectileLifetime = 1.25,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Flak_Muzzle_A_3'},
+                    RackBone = 'Flak_Recoil_A_3',
+                },
+				{
+                    MuzzleBones = {'Flak_Muzzle_B_3'},
+                    RackBone = 'Flak_Recouil_B_3',
+                },
+            },
+
+            RackRecoilDistance = -1,
+
+            RateOfFire = 2,							-- 144 DPS Air
+			
+            TargetCheckInterval = 0.3,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			TargetRestrictOnlyAllow = 'AIR',			
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'Flak_Barrel_3',
+            TurretBonePitch = 'Flak_Barrel_3',
+            TurretBoneYaw = 'Flak_Turret_3',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 60,
+			
+            Turreted = true,
+        },
+		-- Flak --4
+        {
+            AlwaysRecheckTarget = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB2204_Artillery_Flak', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 72,
+            DamageFriendly = false,
+            DamageRadius = 2.5,
+			
+            DamageType = 'Normal',
+			
+            DetonatesAtTargetHeight = true,
+			
+            DisplayName = 'Fragmentation Flak',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air',
+            },
+			
+            FiringRandomness = 0.4,
+            FiringTolerance = 0.5,
+			
+            Label = 'AAAFlak',
+			
+			LeadTarget = true,
+
+            MaxRadius = 48,
+
+            MuzzleVelocity = 55,
+			
+			NotExclusive = true,
+
+            PrefersPrimaryWeaponTarget = false,
+
+            ProjectileId = '/projectiles/TAALightFragmentationShell01/TAALightFragmentationShell01_proj.bp',
+			ProjectileLifetime = 1.25,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Flak_Muzzle_A_4'},
+                    RackBone = 'Flak_Recoil_A_4',
+                },
+				{
+                    MuzzleBones = {'Flak_Muzzle_B_4'},
+                    RackBone = 'Flak_Recouil_B_4',
+                },
+            },
+
+            RackRecoilDistance = -1,
+
+            RateOfFire = 2,						-- 144 DPS Air
+			
+            TargetCheckInterval = 0.3,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			TargetRestrictOnlyAllow = 'AIR',			
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'Flak_Barrel_4',
+            TurretBonePitch = 'Flak_Barrel_4',
+            TurretBoneYaw = 'Flak_Turret_4',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 60,
+			
+            Turreted = true,
+        },
+		
+		-- 2x Anti-Air Gatlings
+		-- Gatling --1
+		
+        {
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB4201_Phalanx_01', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 55,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Gatling Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land',
+            },
+			
+            FiringTolerance = 0.35,
+			
+            Label = 'GattlerTurret01',
+			LeadTarget = true,
+			
+            MaxRadius = 36,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 4,
+
+            MuzzleVelocity = 65,
+			
+			NotExclusive = true,
+
+            PrefersPrimaryWeaponTarget = false,
+
+            ProjectileId = '/projectiles/TDPhalanx01/TDPhalanx01_proj.bp',
+            ProjectileLifetime = 0.7,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Gat_Muzzle_1'},
+                    RackBone = 'Gat_Rotator_1',
+                },
+            },
+            RackSlavedToTurret = true,
+
+            RateOfFire = 1,	-- 220 DPS Air
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+				'ANTIAIR',
+                'BOMBER',
+                'MOBILE',
+            },
+			
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			TargetRestrictOnlyAllow = 'AIR',
+		
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'Gat_Muzzle_1',
+            TurretBonePitch = 'Gat_Barrel_1',
+            TurretBoneYaw = 'Gat_Turret_1',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 60,
+			
+            Turreted = true,
+			
+            UseFiringSolutionInsteadOfAimBone = true,
+			
+            WeaponRepackTimeout = 0.3,
+            WeaponUnpacks = true,
+        },
+		-- Gatling --2
+        {
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB4201_Phalanx_01', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 55,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Gatling Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land',
+            },
+			
+            FiringTolerance = 0.35,
+			
+            Label = 'GattlerTurret02',
+			LeadTarget = true,
+			
+            MaxRadius = 36,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 4,
+
+            MuzzleVelocity = 65,
+			
+			NotExclusive = true,
+
+            PrefersPrimaryWeaponTarget = false,
+
+            ProjectileId = '/projectiles/TDPhalanx01/TDPhalanx01_proj.bp',
+            ProjectileLifetime = 0.7,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Gat_Muzzle_2'},
+                    RackBone = 'Gat_Rotator_2',
+                },
+            },
+
+            RackSlavedToTurret = true,
+			
+            RateOfFire = 1,	-- 220 DPS Air
+			ReTargetOnMiss = true,
+			
+            TargetCheckInterval = 0.2,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+				'ANTIAIR',
+                'BOMBER',
+                'MOBILE',
+            },
+			
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			TargetRestrictOnlyAllow = 'AIR',
+			
+            TrackingRadius = 1.2,
+			
+            TurretBoneMuzzle = 'Gat_Muzzle_2',
+            TurretBonePitch = 'Gat_Barrel_2',
+            TurretBoneYaw = 'Gat_Turret_2',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 70,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 60,
+			
+            Turreted = true,
+			
+            UseFiringSolutionInsteadOfAimBone = true,
+			
+            WeaponRepackTimeout = 0.3,
+            WeaponUnpacks = true,
+        },
+		
+		{
+            AboveWaterTargetsOnly = true,
+            Damage = 7000,
+            DamageFriendly = true,
+            DamageRadius = 10,
+            DamageType = 'Normal',
+            DisplayName = 'Air Crash',
+            DummyWeapon = true,
+            Label = 'DeathImpact',
+            WeaponCategory = 'Death',
+        },
+		
+    },
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.3,
+        HealthMult = 0.3,
+        MassMult = 0.3,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+            Seabed = true,
+        },
+    },
+}

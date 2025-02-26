@@ -1,6 +1,6 @@
 UnitBlueprint {
 
-Source = '/mods/BlackOpsUnleashed/units/BEA0403/BEA0403_unit.bp',
+    Source = '/mods/BlackOpsUnleashed/units/BEA0403/BEA0403_unit.bp',
 
     AI = {
 		GuardRadius = 72,
@@ -107,8 +107,8 @@ Source = '/mods/BlackOpsUnleashed/units/BEA0403/BEA0403_unit.bp',
     },
 
     Economy = {
-        BuildCostEnergy = 845000,
-        BuildCostMass = 46960,
+        BuildCostEnergy = 820000,
+        BuildCostMass = 28500,
         BuildTime = 11750,
     },
 

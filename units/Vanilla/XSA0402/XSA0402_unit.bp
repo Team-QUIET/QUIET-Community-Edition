@@ -30,6 +30,11 @@ UnitBlueprint {
         Winged = true,
     },
 	
+    Economy = {
+        BuildCostEnergy = 1920000,
+        BuildCostMass = 48000,
+        BuildTime = 67500,
+    },
 	
     Weapon = {
         {

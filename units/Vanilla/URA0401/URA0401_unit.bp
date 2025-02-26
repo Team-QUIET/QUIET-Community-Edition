@@ -1,6 +1,12 @@
 UnitBlueprint {
 	Merge = true,
 	BlueprintId = "ura0401",
+
+    Economy = {
+        BuildCostEnergy = 812000,
+        BuildCostMass = 29000,
+        BuildTime = 9750,
+    },
 	
 	Weapon = {
 	
