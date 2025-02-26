@@ -1,8 +1,11 @@
 UnitBlueprint {
-     Merge = true,
-     BlueprintId = "bal0401",
+    Merge = true,
+    BlueprintId = "bal0401",
 
-     AI = {
+    ScriptClass = 'BAL0401',
+    ScriptModule = '/mods/QUIET-Community-Edition/units/BlackOpsUnleashed/BAL0401/BAL0401_Script.lua',
+
+    AI = {
         GuardScanRadius = 130,
         TargetBones = {'Spinner_1','Leg_A_1','Leg_B_1','Leg_B_1','Leg_D_1'},
         NeedUnpack = true,
