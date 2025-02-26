@@ -231,56 +231,16 @@ do
 				end
 
 				if cats.LAND and cats.MOBILE then
-					-- UniformScale universally to make t2 & t3 more mobile
-					-- Reset T1 & T2 Health & Speed back to normal
-					T1_Adjustment = 0.893
-					T2_Adjustment = 0.944
-					T3_Adjustment = 1.00
-
-					if cats.TECH1 then
-						bp.Defense.MaxHealth = bp.Defense.MaxHealth * T1_Adjustment
-
-						bp.Defense.Health = bp.Defense.MaxHealth
-
-						if bp.Physics.MaxSpeed then
-							bp.Physics.MaxSpeed = bp.Physics.MaxSpeed * T1_Adjustment
-						end
-					elseif cats.TECH2 then
-						bp.Defense.MaxHealth = bp.Defense.MaxHealth * T2_Adjustment
-
-						bp.Defense.Health = bp.Defense.MaxHealth
-
-						if bp.Physics.MaxSpeed then
-							bp.Physics.MaxSpeed = bp.Physics.MaxSpeed * T2_Adjustment
-						end
-
+					-- Uniform Scale universally to make t2 & t3 more mobile
+					if cats.TECH2 then
 						-- make them appear a little smaller
 						if bp.Display.UniformScale then
 							bp.Display.UniformScale = bp.Display.UniformScale * .95
 						end
 					elseif cats.TECH3 then
-						bp.Defense.MaxHealth = bp.Defense.MaxHealth * T3_Adjustment
-
-						bp.Defense.Health = bp.Defense.MaxHealth
-
 						-- make them appear a little smaller
 						if bp.Display.UniformScale then
 							bp.Display.UniformScale = bp.Display.UniformScale * .95
-						end
-					end
-				end
-
-				if cats.AIR and cats.BOMBER then
-					-- This fixes all bombers to be not so weak to dodge micro
-					-- This also fixes T2 & Ahwassa Bombers not dropping at all in many cases
-
-					if cats.TECH1 or cats.TECH2 or cats.TECH3 or cats.EXPERIMENTAL then
-						if bp.Weapon[1].BombDropThreshold then
-							bp.Weapon[1].BombDropThreshold = bp.Weapon[1].BombDropThreshold * 2
-						end
-
-						if bp.Weapon[1].FiringTolerance then
-							bp.Weapon[1].FiringTolerance = bp.Weapon[1].FiringTolerance * 2
 						end
 					end
 				end
