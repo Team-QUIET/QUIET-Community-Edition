@@ -2,6 +2,7 @@ UnitBlueprint {
     Merge = true,
 	BlueprintId = "saa0314", 
     GuardScanRadiusAbide = true,
+    IgnoreEvenflow = true,
 
     AI = {
         GuardReturnRadius = 125,
@@ -50,8 +51,8 @@ UnitBlueprint {
 
         ArmorType = 'Light',
 
-        Health = 6850,
-        MaxHealth = 6850,
+        Health = 6250,
+        MaxHealth = 6250,
         RegenRate = 10,
 
         SubThreatLevel = 16,
@@ -59,13 +60,13 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 195000,
-        BuildCostMass = 5300,
-        BuildTime = 5500,
+        BuildCostEnergy = 304500,
+        BuildCostMass = 2750,
+        BuildTime = 13000,
 		
         ResearchMultEnergy = 0.2,
 
-        MaintenanceConsumptionPerSecondEnergy = 250,
+        MaintenanceConsumptionPerSecondEnergy = 125,
     },
     Weapon = {
         {
