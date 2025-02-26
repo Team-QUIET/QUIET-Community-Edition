@@ -1,6 +1,7 @@
 UnitBlueprint {
     Merge = true,
 	BlueprintId = "ssa0305",
+    IgnoreEvenflow = true,
 
     Air = {
         AutoLandTime = 1,
@@ -24,6 +25,12 @@ UnitBlueprint {
         MinAirspeed = 3,
         StartTurnDistance = 5,
         Winged = false,
+    },
+
+    Economy = {
+        BuildCostEnergy = 65000,
+        BuildCostMass = 1500,
+        BuildTime = 5750,
     },
 	
     Weapon = {

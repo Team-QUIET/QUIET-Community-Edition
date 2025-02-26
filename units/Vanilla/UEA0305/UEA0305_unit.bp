@@ -1,7 +1,8 @@
 UnitBlueprint {
     Merge = true,
 	BlueprintId = "uea0305",
-	
+    IgnoreEvenflow = true,
+
     Air = {
         AAutoLandTime = 1,
         BankFactor = 0.1,
@@ -22,6 +23,12 @@ UnitBlueprint {
         MaxAirspeed = 10,
         MinAirspeed = 3,
         StartTurnDistance = 5,
+    },
+
+    Economy = {
+        BuildCostEnergy = 65000,
+        BuildCostMass = 1500,
+        BuildTime = 5750,
     },
 	
     Weapon = {
