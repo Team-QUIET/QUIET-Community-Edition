@@ -11,6 +11,11 @@ local BlackOpsEffectTemplate = import('/mods/BlackOpsUnleashed/lua/BlackOpsEffec
 
 local VectorCached = { 0, 0, 0 }
 
+-- Function to generate a random number within a given range
+function getRandomInRange(min, max)
+	return math.random() * (max - min) + min
+end
+
 BAL0401 = ClassUnit(AWalkingLandUnit) {
 
 	ChargeEffects01 = {
@@ -82,34 +87,40 @@ BAL0401 = ClassUnit(AWalkingLandUnit) {
 
 				local pos0 = self:GetCurrentTargetPos()
 				
-				-- blocked by antiteleport jammers causes unit to bombard self
-				-- if LoudUtils.TeleportLocationBlocked( self.unit, pos0 ) then
-				-- 	pos0 = self.unit:GetPosition()
-				-- end
-
-				local xadj = { [0] = 0, 0, 0, 7,-7, 7,-7,-7, 7}
-				local zadj = { [0] = 0,-7, 7, 0, 0,-7, 7,-7, 7}
-				
 				if pos0 then
        
-                    local shellpos
-       
-                    local LOUDWARP = Warp
-                    local WaitTicks = WaitTicks
+          local LOUDWARP = Warp
+          local WaitTicks = WaitTicks
                     
-					for i = 0, 8 do
+					for i = 0, 24 do
 
 						WaitTicks( 6 )
 						
 						local proj = CDFLaserHeavyWeapon.CreateProjectileForWeapon(self, bone)
     
-                        shellpos = VectorCached
+            local projectilePosition = { 0,0,0 }
+
+						local minRangeChange = 11
+						local dX = getRandomInRange(-minRangeChange, minRangeChange)
+						local dZ = getRandomInRange(-minRangeChange, minRangeChange)
+				
+
+						-- define new positions
+						local newX = pos0[1] + dX
+						local newZ = pos0[3] + dZ
 						
-						shellpos[2] = pos0[2] + 65 or 65
-						shellpos[1] = pos0[1] + xadj[i]
-						shellpos[3] = pos0[3] + zadj[i]
+						--- X position
+						projectilePosition[1] = newX
+						
+						--- Y Position (height) 20 is just a number pulled out of ass as thought 65 to high
+						--- Original implimentation used previous position height to "cascade" the pojectiles higher and higher for no reason.
+						projectilePosition[2] = pos0[2] + 20
+
+						--- Z Position
+						projectilePosition[3] = newZ
 					
-						LOUDWARP( proj, shellpos )
+						-- Set position for projectile
+						LOUDWARP( proj, projectilePosition )
 
 						self.unit:PlayUnitSound('WarpingProjectile')
 						
