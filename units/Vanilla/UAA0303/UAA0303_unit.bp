@@ -1,6 +1,7 @@
 UnitBlueprint {
     Merge = true,
 	BlueprintId = "uaa0303",
+    IgnoreEvenflow = true,
 
     Air = {
         AutoLandTime = 1,
@@ -34,6 +35,12 @@ UnitBlueprint {
         Health = 2250,
         MaxHealth = 2250,
         RegenRate = 6,
+    },
+
+    Economy = {
+        BuildCostEnergy = 43200,
+        BuildCostMass = 450,
+        BuildTime = 3240,
     },
 
     Weapon = {
