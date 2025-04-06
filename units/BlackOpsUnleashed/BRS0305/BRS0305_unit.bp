@@ -1,6 +1,9 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "brs0305",
+
+    ScriptClass = 'BRS0305',
+    ScriptModule = '/mods/QUIET-Community-Edition/units/BlackOpsUnleashed/BRS0305/BRS0305_Script.lua', 
 	
     Defense = {
         -- Next QUIET Update will actually remove this in the Blueprint for now we can just disable it
@@ -353,6 +356,84 @@ UnitBlueprint {
             Turreted = true,
             WeaponCategory = "Direct Fire Naval",
         },
-		
+        {
+            advancedTracking = true,
+            
+            BallisticArc = 'RULEUBA_None',
+
+			CannotAttackGround = true,
+            CollideFriendly = false,
+            
+            CountedProjectile = true,
+			
+            Damage = 2,
+			DamageFriendly = false,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Anti Torpedo',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Seabed|Sub|Water',
+            },
+			
+            FiringTolerance = 50,
+			
+            HeadingArcCenter = 0,
+            HeadingArcRange = 120,
+			
+            Label = 'AntiTorpedo',
+			
+            MaxRadius = 34,
+
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 10,
+			
+            ProjectileId = '/projectiles/AIMAntiTorpedo01/AIMAntiTorpedo01_proj.bp',
+            ProjectileLifetime = 3,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret02_Muzzle01','Turret02_Muzzle02'},
+                    RackBone = 'Turret02_Barrel01',
+                },
+            },
+
+            RangeCategory = 'UWRC_Countermeasure',
+			
+            RackSalvoReloadTime = 2.75,
+            RateOfFire = 10/10,  
+			
+            TargetCheckInterval = 1,
+			
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictOnlyAllow = 'TORPEDO',
+            TargetType = 'RULEWTT_Projectile',
+
+            TurretBoneMuzzle = 'Turret02_Muzzle01',
+            TurretBonePitch = 'Turret02_Barrel01',
+            TurretBoneYaw = 'Turret02',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 15,
+            TurretPitchSpeed = 30,
+			
+            TurretYaw = 0,
+            TurretYawRange = 120,
+            TurretYawSpeed = 360,
+			
+            Turreted = true,
+            TurretDualManipulators = false,
+            TurretPitch = 0,
+            TurretPitchRange = 0,
+            TurretPitchSpeed = 0,
+            TurretYaw = 0,
+            TurretYawRange = 0,
+            TurretYawSpeed = 0,
+            Turreted = false,
+            WeaponCategory = "Defense",
+            WeaponRepackTimeout = 0.2,
+            WeaponUnpacks = false,      
+        },
     },
 }
