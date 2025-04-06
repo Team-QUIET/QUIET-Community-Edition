@@ -333,8 +333,8 @@ UnitBlueprint {
         {
             Buffs = {
                 BuffType = 'STUN',
-                Duration = 2.5,
-                Radius = 10,
+                Duration = 1,
+                Radius = 5,
                 TargetAllow = 'MOBILE',
                 TargetDisallow = 'EXPERIMENTAL,COMMAND,AIR',
             },
