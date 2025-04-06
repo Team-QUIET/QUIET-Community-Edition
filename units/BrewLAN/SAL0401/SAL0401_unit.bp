@@ -11,6 +11,12 @@ UnitBlueprint {
         SurfaceThreatLevel = 383.3,
     },
 
+    Economy = {
+        BuildCostEnergy = 498000,
+        BuildCostMass = 42500,
+        BuildTime = 7400,
+    },
+
     Physics = {
         BackUpDistance = 20,
         BankingSlope = 0,
