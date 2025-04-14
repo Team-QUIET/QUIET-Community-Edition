@@ -4,9 +4,9 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Normal',
-        Health = 7500,
-        MaxHealth = 7500,
-        RegenRate = 4,
+        Health = 6850,
+        MaxHealth = 6850,
+        RegenRate = 2,
 
         SubThreatLevel = 30,
         SurfaceThreatLevel = 27,
@@ -70,7 +70,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 85,	
+            Damage = 70,	
             DamageRadius = 0,
             DamageType = 'Normal',
 			
@@ -155,7 +155,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 85,	
+            Damage = 70,	
             DamageRadius = 0,
             DamageType = 'Normal',
 			
