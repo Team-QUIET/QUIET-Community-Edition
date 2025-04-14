@@ -313,8 +313,19 @@ do
 					do
 						if cats.TECH1 then
 							bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.315
+							bp.Intel.RadarRadius = 64
+							bp.Intel.SonarRadius = 28
+							bp.Intel.VisionRadius = 42
 						elseif cats.TECH2 then
 							bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.5
+							bp.Intel.RadarRadius = 82
+							bp.Intel.SonarRadius = 46
+							bp.Intel.VisionRadius = 64
+						elseif cats.TECH3 then
+							bp.Intel.OmniRadius = 28
+							bp.Intel.RadarRadius = 96
+							bp.Intel.SonarRadius = 64
+							bp.Intel.VisionRadius = 76
 						end
 					end
 				end
