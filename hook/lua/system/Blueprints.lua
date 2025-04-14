@@ -322,10 +322,11 @@ do
 							bp.Intel.SonarRadius = 46
 							bp.Intel.VisionRadius = 64
 						elseif cats.TECH3 then
-							bp.Intel.OmniRadius = 28
+							bp.Intel.OmniRadius = 32
 							bp.Intel.RadarRadius = 96
 							bp.Intel.SonarRadius = 64
 							bp.Intel.VisionRadius = 76
+							bp.Intel.WaterVisionRadius = 42
 						end
 					end
 				end
