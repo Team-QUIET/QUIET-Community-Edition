@@ -230,7 +230,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 			
-            Damage = 250,
+            Damage = 175,
             DamageType = 'Normal',
 			
             DisplayName = 'Ana-it Torpedo Launcher',
