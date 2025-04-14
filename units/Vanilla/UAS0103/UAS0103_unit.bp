@@ -9,6 +9,12 @@ UnitBlueprint {
         SurfaceThreatLevel = 6,
     },
 
+    Economy = {
+        BuildCostEnergy = 2750,
+        BuildCostMass = 275,
+        BuildTime = 1800,
+    },
+
     Intel = {
 		FreeIntel = true,
 

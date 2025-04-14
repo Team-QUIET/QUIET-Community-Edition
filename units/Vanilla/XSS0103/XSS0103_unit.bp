@@ -19,6 +19,12 @@ UnitBlueprint {
         VisionRadius = 32,
         WaterVisionRadius = 16,
     },
+
+    Economy = {
+        BuildCostEnergy = 2700,
+        BuildCostMass = 270,
+        BuildTime = 1350,
+    },
 	
     Weapon = {
         {

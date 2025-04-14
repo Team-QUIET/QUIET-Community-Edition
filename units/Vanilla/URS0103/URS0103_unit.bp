@@ -20,6 +20,12 @@ UnitBlueprint {
         WaterVisionRadius = 16,
     },
 
+    Economy = {
+        BuildCostEnergy = 2500,
+        BuildCostMass = 250,
+        BuildTime = 1250,
+    },
+
     Weapon = {
         {
             AboveWaterTargetsOnly = true,
