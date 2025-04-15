@@ -127,10 +127,6 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
         end
 	end,
 
-    GetWeaponRoF = function(self)
-        return self.bp.RateOfFire / (self.AdjRoFMod or 1)
-    end,
-
     -- modded this so only retrieve bp if old or new is 'stopped'
     OnMotionHorzEventChange = function(self, new, old)
         Weapon.OnMotionHorzEventChange(self, new, old)
@@ -926,6 +922,7 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
 
             self.HaltFireOrdered = false
 
+            local rof = self:GetWeaponRoF()
             if bp.DisableWhileReloading then
                 unit.Trash:Add(ForkThread(self.DisabledWhileReloadingThread, self, 1 / rof))
             end
