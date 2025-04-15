@@ -248,7 +248,7 @@ UnitBlueprint {
 			
             Label = 'Torpedo',
 			
-            MaxRadius = 76,
+            MaxRadius = 92,
 			
             MuzzleSalvoDelay = 0.5,
             MuzzleSalvoSize = 4,
