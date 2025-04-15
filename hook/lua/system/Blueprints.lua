@@ -1,5 +1,8 @@
 -- WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * QUIET Hook for Blueprints.lua' ) 
 -- This warning allows us to see exactly where our Hook Line starts so we can debug the exact line thats causing an error easier
+
+-- General Shoutout to FAF for much of this code especially most of the Weapon Alterations & Unit Alterations that fixes much of the issues with the Blueprints
+-- or identifies issues with the Blueprints that need to be fixed
 do
 	local pairs = pairs
 	
@@ -15,8 +18,6 @@ do
 
 	local weaponTargetCheckUpperLimit = 6000
 
-	-- QCE clobbers the ModBlueprints to remove many nebulous changes in the Blueprints.lua that significantly affect Unit BPs Globally
-	-- QCE cleans the Blueprints.lua up and sections them into their own functions with exact action names to allow people to see what's going on more clearly
 	local OldModBlueprints = ModBlueprints
 
 	function ModBlueprints(all_blueprints)
@@ -643,7 +644,18 @@ do
 	--=======================================
 	function WeaponAlterations(unit, weapon, projectile)
 		--LOG("WeaponAlterations Start")
-		-- pre-compute flags   
+		-- pre-compute flags
+		local BlueprintIntelNameToOgrids = {
+			CloakFieldRadius = 4,
+			OmniRadius = 4,
+			RadarRadius = 4,
+			RadarStealthFieldRadius = 4,
+			SonarRadius = 4,
+			SonarStealthFieldRadius = 4,
+			WaterVisionRadius = 4,
+			VisionRadius = 2,
+		}
+
 		local isAir = false
 		local isStructure = false
 		local isBomber = false
@@ -778,6 +790,35 @@ do
 		weapon.TargetCheckInterval = 0.1 * math.floor(10 * weapon.TargetCheckInterval)
 		weapon.TrackingRadius = 0.1 * math.floor(10 * weapon.TrackingRadius)
 		--LOG("WeaponAlterations End")
+
+		---------------------------------------------------------------------------
+		--#region Sanity check for intel values
+
+		-- Intel is visualised as a circle but it works in squares/blocks. You can
+		-- view the intel that a unit produces via a console command 'dbg Radar'.
+		--
+		-- It appears the engine divides the radius by the grid size and floors the
+		-- result. Therefore not all intel values and/or changes are actually
+		-- meaningful. With this code we check all intel values and point out those
+		-- that are not accurate.
+
+		if unit.Intel then
+			for nameIntel, radius in pairs(unit.Intel) do
+				local ogrids = BlueprintIntelNameToOgrids[nameIntel]
+				if ogrids then
+					local radiusOnGrid = math.floor(radius / ogrids) * ogrids
+					if radiusOnGrid ~= radius then
+						WARN(
+							string.format(
+								"Intel radius of %s (= %d) for %s does not match intel grid (%d ogrids), should be either %d or %d"
+								,
+								tostring(unit.BlueprintId), radius, nameIntel, ogrids, radiusOnGrid, radiusOnGrid + ogrids
+							)
+						)
+					end
+				end
+			end
+		end
 	end
 
 	--=======================================
