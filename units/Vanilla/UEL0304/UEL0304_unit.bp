@@ -27,7 +27,7 @@ UnitBlueprint {
 			
             CollideFriendly = false,
 			
-            Damage = 750,
+            Damage = 850,
             DamageFriendly = true,
             DamageRadius = 5.5,
             DamageType = 'Normal',
@@ -43,7 +43,7 @@ UnitBlueprint {
                 Land = 'Land|Water',
             },
 			
-            FiringRandomness = 0.85,
+            FiringRandomness = 1.25,
             FiringTolerance = 2,
 			
             LeadTarget = true,

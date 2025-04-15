@@ -43,15 +43,15 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
 			
-            Damage = 100,
+            Damage = 95,
             DamageFriendly = true,
             DamageRadius = 3,
             DamageType = 'Normal', 
 			
             DisplayName = 'Sonance Artillery',
 			
-            DoTPulses = 10,     -- resulting in 1000 dmg 
-            DoTTime = 5,
+            DoTPulses = 15,
+            DoTTime = 4.2,
             
             EnergyChargeForFirstShot = false,
             
