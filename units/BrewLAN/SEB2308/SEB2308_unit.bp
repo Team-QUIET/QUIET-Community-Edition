@@ -1,6 +1,6 @@
 UnitBlueprint {
     Merge = true,
-    BlueprintId = 'seb308',
+    BlueprintId = 'seb2308',
 
     AI = {
         TargetBones = {'UEB2205','Object002'},
