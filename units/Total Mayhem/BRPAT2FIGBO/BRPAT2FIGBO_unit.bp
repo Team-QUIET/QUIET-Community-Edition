@@ -100,7 +100,10 @@ UnitBlueprint {
             TargetCheckInterval = 0.1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'MOBILE',
+                'AIR MOBILE',
+                'AIR MOBILE -INTELLIGENCE',
+                'SPECIALLOWPRI',
+                'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE,STRUCTURE',
 			TargetRestrictOnlyAllow = 'AIR',
@@ -113,7 +116,7 @@ UnitBlueprint {
 			TurretBoneDualPitch = 'muzzle02',
 			
             TurretBoneYaw = 'muzzle',
-            TurretDualManipulators = true,
+            TurretDualManipulators = false,
 			
             TurretPitch = 0,
             TurretPitchRange = 55,
