@@ -40,8 +40,8 @@ UnitBlueprint {
     },
     
     Economy = {
-        BuildCostEnergy = 200000,
-        BuildCostMass = 2780,
+        BuildCostEnergy = 225000,
+        BuildCostMass = 3075,
         BuildTime = 6750,
         
         ResearchMultEnergy = 0.2,
@@ -66,7 +66,7 @@ UnitBlueprint {
 
             CollideFriendly = false,
             
-            Damage = 135,       -- 500 damage
+            Damage = 101,
             DamageFriendly = false,
             DamageType = 'Normal',
             
@@ -136,7 +136,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
             
-            Damage = 135,
+            Damage = 101,
             DamageFriendly = false,
             DamageType = 'Normal',
             
@@ -174,7 +174,7 @@ UnitBlueprint {
 
             PreferPrimaryWeaponTarget = true,
             
-            RateOfFire = 4,   -- 720 DPS (90x2x4)
+            RateOfFire = 3,
             
             SlavedToBody = true,
             SlavedToBodyArcRange = 60,

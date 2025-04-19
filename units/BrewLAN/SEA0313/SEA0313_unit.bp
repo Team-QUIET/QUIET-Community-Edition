@@ -39,8 +39,8 @@ UnitBlueprint {
     },
     
     Economy = {
-        BuildCostEnergy = 250000,
-        BuildCostMass = 3475,
+        BuildCostEnergy = 215000,
+        BuildCostMass = 2950,
         BuildTime = 6750,
         
         ResearchMultEnergy = 0.2,
@@ -69,7 +69,7 @@ UnitBlueprint {
             
             CollideFriendly = false,
             
-            Damage = 132,
+            Damage = 99,
             DamageFriendly = false,
             DamageType = 'Normal',
             
@@ -88,7 +88,7 @@ UnitBlueprint {
             
             NotExclusive = true,
             
-            MaxRadius = 102,
+            MaxRadius = 93,
 
             ProjectileLifetimeUsesMultiplier = 2.00,
             
@@ -145,7 +145,7 @@ UnitBlueprint {
             
             CollideFriendly = false,
             
-            Damage = 132,
+            Damage = 99,
             DamageFriendly = false,
             DamageType = 'Normal',
             
@@ -168,7 +168,7 @@ UnitBlueprint {
             
             NotExclusive = true,
             
-            MaxRadius = 102,
+            MaxRadius = 93,
 
             ProjectileLifetimeUsesMultiplier = 2.00,
 
@@ -221,7 +221,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
             
-            Damage = 150,
+            Damage = 125,
             DamageRadius = 0,
             DamageType = 'Normal',
             
@@ -237,7 +237,7 @@ UnitBlueprint {
             
             Label = 'Missile',
             
-            MaxRadius = 93,
+            MaxRadius = 102,
 
             ProjectileLifetimeUsesMultiplier = 2.00,
             
