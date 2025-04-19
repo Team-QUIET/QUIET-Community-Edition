@@ -40,11 +40,86 @@ UnitBlueprint {
 
     Weapon = {
         {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0103_Shleo_AA', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_LowArc',
 
+            CollideFriendly = false,
+			
+            Damage = 25,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Tau Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+			
+			FiringRandomnessWhileMoving = 0.3,
+            FiringTolerance = 2,
+			
+            Label = 'TauCannon01',
+			
+            MaxRadius = 24,
+
+            MuzzleVelocity = 38,
+			
+            ProjectileId = '/projectiles/SAAShleoAAGatlingGun05/SAAShleoAAGatlingGun05_proj.bp',
+            ProjectileLifetime = 0.8,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle01a'},
+                    RackBone = 'Turret_Barreld',
+                },
+                {
+                    MuzzleBones = {'Turret_Muzzle02a'},
+                    RackBone = 'Turret_Barrel01',
+                },
+            },
+
+            RackRecoilDistance = 0.35,
+
+            RangeCategory = 'UWRC_DirectFire',
+			
             RateOfFire = 20/10,
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE -AIR',
+                'DEFENSE',
+                'STRUCTURE -WALL',
+                'ALLUNITS',
+            },
+			
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TrackingRadius = 1.1,
+			
+            TurretBoneDualMuzzle = 'Turret_Muzzle02a',
+            TurretBoneDualPitch = 'Turret_Barrel01',
 
+            TurretBoneMuzzle = 'Turret_Muzzle01a',
+            TurretBonePitch = 'Turret_Barreld',
+
+            TurretBoneYaw = 'Turreta',
+
+            TurretDualManipulators = true,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 70,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
             TurretYawSpeed = 90,
-
+			
+            Turreted = true,
         },
     },
 }

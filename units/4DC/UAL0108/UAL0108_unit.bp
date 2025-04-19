@@ -23,11 +23,11 @@ UnitBlueprint{
 
             FireTargetLayerCapsTable = { Land = "Land|Water" },
 
-            FiringRandomness = 0.5,
-            FiringRandomnessWhileMoving = 1.0,
+            FiringRandomness = 0,
+            FiringRandomnessWhileMoving = 0,
             FiringTolerance = 2,
 
-            MaxRadius = 18,
+            MaxRadius = 20,
 
             MuzzleSalvoDelay = 0.2,
             MuzzleSalvoSize = 4,
@@ -81,7 +81,7 @@ UnitBlueprint{
             FireTargetLayerCapsTable = { Land = "Land|Water" },
             FiringTolerance = 10,
 
-            MaxRadius = 30,
+            MaxRadius = 24,
             MinRadius = 2,
 
             MuzzleSalvoDelay = 0.5,
