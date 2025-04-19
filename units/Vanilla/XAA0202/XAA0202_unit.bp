@@ -65,7 +65,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 90,
+            Damage = 100,
             DamageFriendly = false,
             DamageRadius = 0,
             DamageType = 'Normal',
@@ -79,7 +79,7 @@ UnitBlueprint {
 			
             FiringTolerance = 2,
 
-            MaxRadius = 34,
+            MaxRadius = 35,
 
             MuzzleVelocity = 60,
 
@@ -90,14 +90,15 @@ UnitBlueprint {
             RateOfFire = 25/10,		---- 180 DPS Air
 			
             SlavedToBody = true,
-            SlavedToBodyArcRange = 45,
+            SlavedToBodyArcRange = 55,
 			
             TargetCheckInterval = 0.5,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'BOMBER',
-                'GROUNDATTACK',
-                'MOBILE',
+                'AIR MOBILE',
+                'AIR MOBILE -INTELLIGENCE',
+                'SPECIALLOWPRI',
+                'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,STRUCTURE,SATELLITE',
             TargetRestrictOnlyAllow = 'AIR',
@@ -108,11 +109,11 @@ UnitBlueprint {
             TurretBoneYaw = 'Muzzle',
 			
             TurretPitch = 0,
-            TurretPitchRange = 60,
-            TurretPitchSpeed = 60,
+            TurretPitchRange = 55,
+            TurretPitchSpeed = 360,
 			
             TurretYaw = 0,
-            TurretYawRange = 45,
+            TurretYawRange = 55,
             TurretYawSpeed = 360,
 			
             Turreted = true,
