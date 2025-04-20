@@ -36,6 +36,8 @@ Projectile = ClassProjectile(QCEProjectile) {
 
 		end
 
+        -- Probably should have == true here instead of just checking if it exists but we might want to affect all units that have this mentioned in their physics table
+        -- as generally 0.8 is a good default value and makes the projectile a bit more interesting.
         if bp.Physics.TrackTargetGround then
             ForkThread(self.OnTrackTargetGround, self)
         end
