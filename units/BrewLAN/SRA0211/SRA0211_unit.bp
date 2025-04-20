@@ -50,7 +50,7 @@ UnitBlueprint {
             
             BallisticArc = 'RULEUBA_None',
 			
-            BombDropThreshold = 1,
+            BombDropThreshold = 3,
 			
             CollideFriendly = false,
 			
