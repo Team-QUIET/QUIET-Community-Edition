@@ -1,5 +1,113 @@
 QCEProjectile = Projectile
 Projectile = ClassProjectile(QCEProjectile) {
+    OnCreate = function(self, InWater)
+
+		local bp = GetBlueprint(self)
+        
+        local AudioExist        = bp.Audio.ExistLoop or false
+        local TrackTargetGround = bp.Physics.TrackTargetGround or false
+        
+        self.Army = GetArmy(self)        
+        self.BlueprintID = bp.BlueprintId or false
+        self.Launcher = self:GetLauncher()
+		
+        SetMaxHealth( self, bp.Defense.MaxHealth or 1)
+        SetHealth( self, self, GetMaxHealth(self))
+
+        if AudioExist then
+            self:SetAmbientSound( AudioExist, nil)
+        end
+        
+        if TrackTargetGround then
+		
+            local pos = GetCurrentTargetPosition(self)
+			
+            pos[2] = GetSurfaceHeight( pos[1], pos[3] )
+            self:SetNewTargetGround(pos)
+        end
+
+		if ScenarioInfo.ProjectileDialog then
+
+            if self.BlueprintID then
+                LOG("*AI DEBUG Projectile OnCreate BlueprintID is "..repr(self.BlueprintID) )
+            else
+                LOG("*AI DEBUG Projectile OnCreate BlueprintID is FALSE "..repr(bp) )
+            end
+
+		end
+
+        if bp.Physics.TrackTargetGround then
+            ForkThread(self.OnTrackTargetGround, self)
+        end
+    end,
+
+    --- Credits to FAF
+    OnTrackTargetGround = function(self)
+        local target = self.OriginalTarget or self:GetTrackingTarget() or self.Launcher:GetTargetEntity()
+        if target and IsUnit(target) then
+
+            local unitBlueprint = target.bp
+
+            -- X-offset units often have displaced center bones, so they're not accounted for.
+            local cy, cz = unitBlueprint.CollisionOffsetY or 0, unitBlueprint.CollisionOffsetZ or 0
+            local sx, sy, sz = unitBlueprint.SizeX or 1, unitBlueprint.SizeY or 1, unitBlueprint.SizeZ or 1
+            local px, py, pz = target:GetPositionXYZ()
+
+            -- don't target the part of the hitbox below the surface
+            if cy < 0 then
+                sy = sy + cy
+                cy = 0
+            end
+
+            local physics = self.bp.Physics
+            local fuzziness = physics.TrackTargetGroundFuzziness or 0.8
+            local offset = physics.TrackTargetGroundOffset or 0
+            sx = sx + offset
+            sz = sz + offset
+
+            local dx = sx * (Random() - 0.5) * fuzziness
+            local dy = (sy + offset) * (Random() - 0.5) * fuzziness + sy/2 + cy
+            local dz = sz * (Random() - 0.5) * fuzziness + cz
+            local dw
+
+            -- Rotate a vector by a quaternion: q * v * conjugate(q)
+            -- Supreme Commander quaternions use y,z,x,w!
+            local ty, tz, tx, tw = unpack(target:GetOrientation())
+
+            -- compute the product in a single assignment to not have to use temporary, single-use variables.
+            dw, dx, dy, dz = 
+            -tx * dx - tz * dy - ty * dz,
+             tw * dx + tz * dz - ty * dy,
+             tw * dy + ty * dx - tx * dz,
+             tw * dz + tx * dy - tz * dx
+
+            tx, tz, ty = -tx, -tz, -ty
+            
+            -- compute the product in a single assignment to not have to use temporary, single-use variables.
+            dx, dy, dz = 
+            dw * tx + dx * tw + dy * ty - dz * tz,
+            dw * tz + dy * tw + dz * tx - dx * ty,
+            dw * ty + dz * tw + dx * tz - dy * tx
+
+            local pos = { px + dx, py + dy, pz + dz }
+            self:SetNewTargetGround(pos)
+        else
+            local pos = self:GetCurrentTargetPosition()
+
+            local physics = self.bp.Physics
+            local fuzziness = physics.TrackTargetGroundFuzziness or 0.8
+            local offset = physics.TrackTargetGroundOffset or 0
+            local dx = (Random() - 0.5) * fuzziness * (1 + offset)
+            local dz = (Random() - 0.5) * fuzziness * (1 + offset)
+
+            pos[1] = pos[1] + dx
+            pos[3] = pos[3] + dz
+
+            pos[2] = GetSurfaceHeight(pos[1], pos[3])
+            self:SetNewTargetGround(pos)
+        end
+    end,
+
     OnImpact = function(self, targetType, targetEntity)
         
         local ProjectileDialog = ScenarioInfo.ProjectileDialog

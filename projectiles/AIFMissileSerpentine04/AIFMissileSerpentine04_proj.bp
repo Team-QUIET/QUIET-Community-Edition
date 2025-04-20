@@ -43,29 +43,21 @@ ProjectileBlueprint {
     },
 	
     Physics = {
-        Acceleration = 4,
+        Acceleration = 2,
         DestroyOnWater = true,
-        InitialSpeed = 4,
-		
+        InitialSpeed = 15,
         Lifetime = 60,
-        MaxSpeed = 25,
-		
-		OnLostTargetLifetime = 0.3,
-		
-        TurnRate = 15,
-
+        MaxSpeed = 30,
+        MaxZigZag = 4,
+        RotationalVelocity = 0,
+        RotationalVelocityRange = 0,
         TrackTarget = true,
         TrackTargetGround = true,
-        TrackTargetGroundFuzziness = 5.0,
+        TrackTargetGroundFuzziness = 1.0,
         TrackTargetGroundOffset = 2.5,
-		
+        TurnRate = 15,
         UseGravity = false,
         VelocityAlign = true,
-		
-        MaxZigZag = 5,
-        RotationalVelocity = 0,
-        RotationalVelocityRange = 0,		
         ZigZagFrequency = 1.0,
-		
     },
 }
