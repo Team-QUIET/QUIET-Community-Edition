@@ -47,6 +47,7 @@ Projectile = ClassProjectile(QCEProjectile) {
     OnTrackTargetGround = function(self)
         local target = self.OriginalTarget or self:GetTrackingTarget() or self.Launcher:GetTargetEntity()
         if target and IsUnit(target) then
+            LOG("*AI DEBUG Projectile OnTrackTargetGround - Target found: "..repr(target.BlueprintID))
 
             local unitBlueprint = target.bp
 
@@ -54,27 +55,39 @@ Projectile = ClassProjectile(QCEProjectile) {
             local cy, cz = unitBlueprint.CollisionOffsetY or 0, unitBlueprint.CollisionOffsetZ or 0
             local sx, sy, sz = unitBlueprint.SizeX or 1, unitBlueprint.SizeY or 1, unitBlueprint.SizeZ or 1
             local px, py, pz = target:GetPositionXYZ()
+            
+            LOG("*AI DEBUG Projectile OnTrackTargetGround - Target position: "..repr({px, py, pz}))
+            LOG("*AI DEBUG Projectile OnTrackTargetGround - Collision offsets: "..repr({cy, cz}))
+            LOG("*AI DEBUG Projectile OnTrackTargetGround - Size: "..repr({sx, sy, sz}))
 
             -- don't target the part of the hitbox below the surface
             if cy < 0 then
                 sy = sy + cy
                 cy = 0
+                LOG("*AI DEBUG Projectile OnTrackTargetGround - Adjusted size Y due to negative offset: "..sy)
             end
 
-            local physics = self.bp.Physics
+            local bp = GetBlueprint(self)
+            local physics = bp.Physics
             local fuzziness = physics.TrackTargetGroundFuzziness or 0.8
             local offset = physics.TrackTargetGroundOffset or 0
             sx = sx + offset
             sz = sz + offset
+            
+            LOG("*AI DEBUG Projectile OnTrackTargetGround - Physics params - Fuzziness: "..fuzziness.." Offset: "..offset)
+            LOG("*AI DEBUG Projectile OnTrackTargetGround - Adjusted size X,Z: "..repr({sx, sz}))
 
             local dx = sx * (Random() - 0.5) * fuzziness
             local dy = (sy + offset) * (Random() - 0.5) * fuzziness + sy/2 + cy
             local dz = sz * (Random() - 0.5) * fuzziness + cz
             local dw
 
+            LOG("*AI DEBUG Projectile OnTrackTargetGround - Random offsets: "..repr({dx, dy, dz}))
+
             -- Rotate a vector by a quaternion: q * v * conjugate(q)
             -- Supreme Commander quaternions use y,z,x,w!
             local ty, tz, tx, tw = unpack(target:GetOrientation())
+            LOG("*AI DEBUG Projectile OnTrackTargetGround - Target orientation: "..repr({ty, tz, tx, tw}))
 
             -- compute the product in a single assignment to not have to use temporary, single-use variables.
             dw, dx, dy, dz = 
@@ -91,21 +104,31 @@ Projectile = ClassProjectile(QCEProjectile) {
             dw * tz + dy * tw + dz * tx - dx * ty,
             dw * ty + dz * tw + dx * tz - dy * tx
 
+            LOG("*AI DEBUG Projectile OnTrackTargetGround - Rotated offsets: "..repr({dx, dy, dz}))
+
             local pos = { px + dx, py + dy, pz + dz }
+            LOG("*AI DEBUG Projectile OnTrackTargetGround - Final target position: "..repr(pos))
             self:SetNewTargetGround(pos)
         else
+            LOG("*AI DEBUG Projectile OnTrackTargetGround - No valid target found")
             local pos = self:GetCurrentTargetPosition()
+            LOG("*AI DEBUG Projectile OnTrackTargetGround - Current target position: "..repr(pos))
 
-            local physics = self.bp.Physics
+            local bp = GetBlueprint(self)
+            local physics = bp.Physics
             local fuzziness = physics.TrackTargetGroundFuzziness or 0.8
             local offset = physics.TrackTargetGroundOffset or 0
             local dx = (Random() - 0.5) * fuzziness * (1 + offset)
             local dz = (Random() - 0.5) * fuzziness * (1 + offset)
 
+            LOG("*AI DEBUG Projectile OnTrackTargetGround - Ground target physics params - Fuzziness: "..fuzziness.." Offset: "..offset)
+            LOG("*AI DEBUG Projectile OnTrackTargetGround - Ground target random offsets: "..repr({dx, dz}))
+
             pos[1] = pos[1] + dx
             pos[3] = pos[3] + dz
 
             pos[2] = GetSurfaceHeight(pos[1], pos[3])
+            LOG("*AI DEBUG Projectile OnTrackTargetGround - Final ground target position: "..repr(pos))
             self:SetNewTargetGround(pos)
         end
     end,
