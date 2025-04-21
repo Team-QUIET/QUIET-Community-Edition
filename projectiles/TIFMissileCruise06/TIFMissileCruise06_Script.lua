@@ -39,8 +39,6 @@ TIFMissileCruise06 = ClassProjectile(TMissileCruiseProjectileCE1) {
 
         self.Distance = self:GetDistanceToTarget()
 
-        self:SetTurnRate(15)
-
         WaitSeconds(0.3)        
 
         while not self:BeenDestroyed() do
@@ -52,35 +50,6 @@ TIFMissileCruise06 = ClassProjectile(TMissileCruiseProjectileCE1) {
     SetTurnRateByDist = function(self)
 
         local dist = self:GetDistanceToTarget()
-
-        --[[if dist >= self.Distance then
-
-        	self:SetTurnRate(35)
-            
-            local var = math.random(2,15)
-            WaitTicks(var)
-
-        	WaitSeconds(1)
-
-        	self:SetTurnRate(8)
-
-        	self.Distance = self:GetDistanceToTarget()
-        end]]--
-
-        --[[if dist > 64 then        
-
-            WaitSeconds(1.2)
-            self:SetTurnRate(10)
-
-        elseif dist > 32 and dist <= 64 then
-
-			self:SetTurnRate(20)
-			WaitSeconds(0.8)
-
-        elseif dist > 12 and dist <= 32 then
-
-            self:SetTurnRate(35)
-            WaitSeconds(0.1)]]--
 
 		if dist > 0 and dist <= 32 then         
 
