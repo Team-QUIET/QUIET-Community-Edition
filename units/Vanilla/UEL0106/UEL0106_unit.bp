@@ -1,16 +1,20 @@
 UnitBlueprint {
-  Merge = true,
-  BlueprintId = "uel0106",
+    Merge = true,
+    BlueprintId = "uel0106",
 
-      Weapon = {
+    Economy = {
+        BuildCostEnergy = 165,
+        BuildCostMass = 42,
+        BuildTime = 160,
+    },
+
+    Weapon = {
         {
-
             RateOfFire = 20/10,
 
             TurretYaw = 0,
             TurretYawRange = 180,
             TurretYawSpeed = 135,
-
         },
     },
 }
