@@ -69,7 +69,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 74,				-- 120 dmg per shot
+            Damage = 111,			
             DamageFriendly = false,
             DamageType = 'Normal',
 			
@@ -144,7 +144,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 74,
+            Damage = 111,
             DamageFriendly = false,
             DamageType = 'Normal',
 			
@@ -218,7 +218,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 74,
+            Damage = 111,
             DamageFriendly = false,
             DamageType = 'Normal',
 			
@@ -290,7 +290,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 74,
+            Damage = 111,
             DamageFriendly = false,
             DamageType = 'Normal',
 			

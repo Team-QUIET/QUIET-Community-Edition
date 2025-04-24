@@ -69,7 +69,7 @@ UnitBlueprint {
             
             CollideFriendly = false,
             
-            Damage = 99,
+            Damage = 148,
             DamageFriendly = false,
             DamageType = 'Normal',
             
@@ -145,7 +145,7 @@ UnitBlueprint {
             
             CollideFriendly = false,
             
-            Damage = 99,
+            Damage = 148,
             DamageFriendly = false,
             DamageType = 'Normal',
             
@@ -221,7 +221,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
             
-            Damage = 125,
+            Damage = 187,
             DamageRadius = 0,
             DamageType = 'Normal',
             

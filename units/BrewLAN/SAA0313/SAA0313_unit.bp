@@ -77,7 +77,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
             
-            Damage = 192,
+            Damage = 288,
             DamageType = 'Normal',
             
             DisplayName = 'Focused Phason Laser',
@@ -159,7 +159,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
             
-            Damage = 192,
+            Damage = 288,
             DamageType = 'Normal',
             
             DisplayName = 'Focused Phason Laser',
