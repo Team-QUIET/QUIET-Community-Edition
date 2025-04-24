@@ -51,9 +51,9 @@ UnitBlueprint {
         AntiMissile = { AttachBone = 'Turret_Muzzle', Radius = 6, RedirectRateOfFire = 1, ProjectileCategories = {'TACTICAL MISSILE'} },
         
         ArmorType = 'Normal',
-        Health = 3000,
-        MaxHealth = 3000,
-        RegenRate = 2.5,
+        Health = 2900,
+        MaxHealth = 2900,
+        RegenRate = 2,
         SurfaceThreatLevel = 27.4,
     },
 	
@@ -139,7 +139,7 @@ UnitBlueprint {
     LifeBarSize = 1,
 
     Physics = {
-		BackUpDistance = 4,
+		BackUpDistance = 0,
         BankingSlope = 0,
         BuildOnLayerCaps = {
             LAYER_Land = true,
@@ -148,7 +148,7 @@ UnitBlueprint {
         MaxAcceleration = 3.8,
         MaxBrake = 3.8,
         MaxSpeed = 3.8,
-        MaxSpeedReverse = 3.8,
+        MaxSpeedReverse = 0,
         MaxSteerForce = 10,
         MeshExtentsX = 1.0,
         MeshExtentsY = 1.0,
@@ -157,7 +157,7 @@ UnitBlueprint {
         MotionType = 'RULEUMT_Land',
         StandUpright = true,
         TurnRadius = 5,
-        TurnRate = 100,
+        TurnRate = 120,
     },
     
     SelectionCenterOffsetX = 0,
@@ -195,7 +195,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
-            Damage = 150,
+            Damage = 75,
 			DamageRadius = 0,
             DamageType = 'Normal',
 			
@@ -271,7 +271,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
-            Damage = 15,
+            Damage = 10,
             DamageType = 'Normal',
 			
             DisplayName = 'Heavy Electron Bolter',
@@ -334,7 +334,7 @@ UnitBlueprint {
             Buffs = {
                 BuffType = 'STUN',
                 Duration = 1,
-                Radius = 5,
+                Radius = 10,
                 TargetAllow = 'MOBILE',
                 TargetDisallow = 'EXPERIMENTAL,COMMAND,AIR',
             },
