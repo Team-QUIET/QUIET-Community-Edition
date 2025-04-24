@@ -1404,7 +1404,7 @@ UnitBlueprint {
             
             FiringTolerance = 2,
 			
-            MaxRadius = 30,
+            MaxRadius = 24,
             MinRadius = 0,
 
             MuzzleVelocity = 40,
@@ -1467,7 +1467,7 @@ UnitBlueprint {
             FiringTolerance = 2,
 			Label = "OverCharge",
             ManualFire = true,
-            MaxRadius = 30,
+            MaxRadius = 24,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 25,			

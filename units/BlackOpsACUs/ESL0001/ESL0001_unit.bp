@@ -1420,7 +1420,7 @@ UnitBlueprint {
 			
             Label = 'ChronotronCannon',
 			
-            MaxRadius = 30,
+            MaxRadius = 24,
 
             MuzzleVelocity = 40,
 			
@@ -1498,7 +1498,7 @@ UnitBlueprint {
 
             ManualFire = true,
 
-            MaxRadius = 30,
+            MaxRadius = 24,
 
             MuzzleVelocity = 25,
 
