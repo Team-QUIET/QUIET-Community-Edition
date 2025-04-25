@@ -1,0 +1,251 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'xra0105',
+
+    AI = {
+        GuardReturnRadius = 48,
+		GuardScanRadius = 32,
+    },
+	
+    Air = {
+        AutoLandTime = 1,
+        BankFactor = 0.1,
+        BankForward = true,
+        CanFly = true,
+        CirclingDirChangeFrequencySec = 1,
+        CirclingElevationChangeRatio = 0.25,
+        CirclingRadiusChangeMaxRatio = 0.7,
+        CirclingRadiusChangeMinRatio = 0.5,
+        CirclingRadiusVsAirMult = 0.66,
+        CirclingTurnMult = 3,
+        KLift = 3,
+        KLiftDamping = 2.5,
+        KMove = 0.8,
+        KMoveDamping = 2,
+        KTurn = 0.8,
+        KTurnDamping = 1.5,
+        LiftFactor = 7,
+        MaxAirspeed = 10,
+        MinAirspeed = 3,
+        StartTurnDistance = 5,
+        Winged = false,
+    },
+	
+    Audio = {
+        Killed      = Sound { Bank = 'URADestroy', Cue = 'URA_Destroy_Air_Killed', LodCutoff = 'UnitMove_LodCutoff'},
+        StartMove   = Sound { Bank = 'XRA', Cue = 'XRA0105_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'Cybran_Select_Air', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 1,
+            Level2 = 2,
+            Level3 = 3,
+            Level4 = 4,
+            Level5 = 5,
+        },
+    },
+	
+    BuildIconSortPriority = 40,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER3FACTORY',
+        'CYBRAN',
+        'MOBILE',
+        'AIR',
+        'TECH1',
+        'GROUNDATTACK',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+    },
+	
+    CollisionOffsetY = 0.1,
+	
+    Defense = {
+        ArmorType = 'Light',
+        Health = 350,
+        MaxHealth = 350,
+        RegenRate = 2,
+        SurfaceThreatLevel = 3.9,
+    },
+	
+    Description = '<LOC xra0105_desc>Light Gunship',
+	
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 140,
+                    ShaderName = 'Insect',
+                },
+                {
+                    AlbedoName = 'XRA0105_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    ShaderName = 'Insect',
+                    SpecularName = 'XRA0105_lod1_specteam.dds',
+                },
+            },
+        },
+
+        UniformScale = 0.04,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 4830,
+        BuildCostMass = 145,
+        BuildTime = 290,
+    },
+	
+    Footprint = {
+        MaxSlope = 0.25,
+        SizeX = 1,
+        SizeZ = 1,
+    },
+	
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Dock = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Cybran',
+        Icon = 'air',
+
+        UnitName = '<LOC xra0105_name>Jester',
+    },
+	
+    Intel = {
+        VisionRadius = 28,
+    },
+	
+    Interface = {
+        HelpText = '<LOC xra0105_help>Light Gunship',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.45,
+    LifeBarSize = 1,
+	
+    Physics = {
+        BuildOnLayerCaps = { LAYER_Air = true },
+		
+        Elevation = 12,
+		
+        FuelRechargeRate = 8,
+        FuelUseTime = 265,
+		
+        GroundCollisionOffset = 1.6,
+        MaxSpeed = 0.5,
+        MotionType = 'RULEUMT_Air',
+    },
+	
+    SelectionSizeX = 0.6,
+    SelectionSizeZ = 0.9,
+    SelectionThickness = 0.46,
+	
+    SizeSphere = 1,
+	
+    SizeX = 1,
+    SizeY = 0.5,
+    SizeZ = 1,
+	
+    StrategicIconName = 'icon_gunship1_directfire',
+    StrategicIconSortPriority = 65,
+	
+    Transport = {
+        AirClass = true,
+        TransportClass = 1,
+    },
+	
+    Veteran = {
+        Level1 = 3,
+        Level2 = 6,
+        Level3 = 9,
+        Level4 = 12,
+        Level5 = 15,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'XRA_Weapon', Cue = 'XRA0105_Hvy_Laser_Autogun', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            AutoInitiateAttackCommand = true,
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 15,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Laser Autogun',
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land|Water|Seabed',
+                Land = 'Air|Land|Water|Seabed',
+            },
+            
+            FiringRandomness = 0,
+            FiringTolerance = 2,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 20,
+
+            MuzzleVelocity = 35,
+			
+            ProjectileId = '/projectiles/CDFLaserHeavy01/CDFLaserHeavy01_proj.bp',
+            ProjectileLifetime = 1.15
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Laser_Muzzle'},
+                    RackBone = 'Laser_Muzzle',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/5,
+			
+            TargetCheckInterval = 0.3,
+			
+            TargetPriorities = {
+                "ANTIAIR",
+                "GROUNDATTACK",
+                "ENGINEER",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'HIGHALTAIR, UNTARGETABLE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Laser_Muzzle',
+            TurretBonePitch = 'Laser_Muzzle',
+            TurretBoneYaw = 'Laser_Muzzle',
+			
+            TurretPitch = -20,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 360,
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+			
+            Turreted = true,
+            WeaponCategory = "Direct Fire",
+        },
+	
+    },
+
+}
