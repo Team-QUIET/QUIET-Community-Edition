@@ -76,7 +76,7 @@ UnitBlueprint {
 			
             Label = 'MainGun',
 			
-            MaxRadius = 72,
+            MaxRadius = 70,
 			
             MuzzleChargeDelay = 1,      -- 1 second delay
 
