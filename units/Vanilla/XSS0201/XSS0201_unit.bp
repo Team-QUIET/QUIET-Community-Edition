@@ -20,6 +20,7 @@ UnitBlueprint {
 	
     Intel = {
 		FreeIntel = true,
+        SonarStealth = false,
         RadarRadius = 38,
         SonarRadius = 46,
         VisionRadius = 46,
