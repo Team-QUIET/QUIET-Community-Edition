@@ -9,8 +9,8 @@ UnitBlueprint {
         -- Next QUIET Update will actually remove this in the Blueprint for now we can just disable it
         TorpRedirectField01 = { AttachBone = 'XRS0305', Radius = 0, RedirectRateOfFire = 0 },
         ArmorType = 'Normal',
-        Health = 50000000,
-        MaxHealth = 50000000,
+        Health = 5000,
+        MaxHealth = 5000,
         RegenRate = 12,
         SubThreatLevel = 42,
         SurfaceThreatLevel = 7,
