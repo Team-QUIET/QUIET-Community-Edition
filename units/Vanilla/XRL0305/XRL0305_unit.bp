@@ -1,6 +1,56 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "xrl0305",
+
+    Display = {
+        Abilities = {
+            '<LOC ability_amphibious>Amphibious',
+            '<LOC ability_torpedo>Torpedoes',
+            '<LOC ability_torpedodef>Torpedo Defense',
+        },
+
+        AnimationDeath = {
+            {
+                Animation = '/units/XRL0305/XRL0305_Adeath01.sca',
+                AnimationRateMax = 1.25,
+                AnimationRateMin = 0.75,
+                Weight = 1,
+            },
+            {
+                Animation = '/units/XRL0305/XRL0305_Adeath02.sca',
+                AnimationRateMax = 1.25,
+                AnimationRateMin = 0.75,
+                Weight = 1,
+            },
+            {
+                Animation = '/units/XRL0305/XRL0305_Adeath03.sca',
+                AnimationRateMax = 1.25,
+                AnimationRateMin = 0.75,
+                Weight = 1,
+            },
+        },
+
+        AnimationWalk = '/units/xrl0305/xrl0305_awalk.sca',
+        AnimationWalkRate = 2,
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 100,
+                    ShaderName = 'Insect',
+                },
+                {
+                    AlbedoName = 'xrl0305_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    ShaderName = 'Insect',
+                    SpecularName = 'xrl0305_lod1_specteam.dds',
+                },
+            },
+        },
+
+        UniformScale = 0.055,
+    },
 	
     Weapon = {
         {
