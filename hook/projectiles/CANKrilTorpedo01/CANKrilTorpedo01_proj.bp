@@ -1,0 +1,64 @@
+ProjectileBlueprint {
+
+    Audio = {
+        ImpactUnit      = Sound { Bank = 'Impacts', Cue = 'UEF_Expl_Med_Impact', LodCutoff = 'Weapon_LodCutoff' },
+        ExitWater       = Sound { Bank = 'Impacts', Cue = 'Impact_Water_Splash_UEF', LodCutoff = 'Weapon_LodCutoff' },        
+        EnterWater      = Sound { Bank = 'Impacts', Cue = 'Impact_Water_Splash_UEF', LodCutoff = 'Weapon_LodCutoff' },
+    },
+	
+    Categories = {
+        'PROJECTILE',
+        'TORPEDO',
+        'TACTICAL',
+    },
+    
+    DesiredShooterCap = 1,
+	
+    Display = {
+
+        ImpactEffects = { Type = 'Small01' },
+
+        Mesh = {
+            LODs = {
+                {
+                    AlbedoName = '/projectiles/TANAnglerTorpedo01/TANAnglerTorpedo01_albedo.dds',
+                    LODCutoff = 150,
+                    MeshName = '/projectiles/CANKrilTorpedo01/CANKrilTorpedo01_lod0.scm',
+                    ShaderName = 'TMeshNoLighting',
+                },
+            },
+        },
+
+        StrategicIconSize = 2,
+        UniformScale = 0.15,
+    },
+	
+    Interface = {
+        HelpText = 0,
+    },
+	
+    Physics = {
+
+        Acceleration = 3,
+		
+        DestroyOnWater = false,
+
+		Lifetime = 10,
+        MaxSpeed = 12,
+
+        MaxZigZag = 2,
+        
+        RotationalVelocity = 800,
+		
+        StayUnderwater = false,
+        StayUpright = false,
+		
+        TrackTarget = true,
+
+        TurnRate = 90,
+        UseGravity = true,
+        VelocityAlign = true,
+        
+        ZigZagFrequency = 1,        
+    },
+}

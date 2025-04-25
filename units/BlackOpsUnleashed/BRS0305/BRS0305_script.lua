@@ -6,12 +6,7 @@ local CANNaniteTorpedoWeapon        = WeaponsFile.CANNaniteTorpedoWeapon
 local CDFElectronBolterWeapon       = WeaponsFile.CDFElectronBolterWeapon
 local CKrilTorpedoLauncherWeapon    = WeaponsFile.CKrilTorpedoLauncherWeapon
 
-local AeonWeapons = import('/lua/aeonweapons.lua')
-local AIFQuasarAntiTorpedoWeapon = AeonWeapons.AIFQuasarAntiTorpedoWeapon
-
 WeaponsFile = nil
-
-local TorpRedirectField = import('/mods/BlackOpsUnleashed/lua/BlackOpsdefaultantiprojectile.lua').TorpRedirectField
 
 BRS0305 = ClassUnit(CSubUnit) {
     
@@ -19,7 +14,6 @@ BRS0305 = ClassUnit(CSubUnit) {
         DeckGun = ClassWeapon(CDFElectronBolterWeapon) {},
         Torpedo01 = ClassWeapon(CANNaniteTorpedoWeapon) {},
         Torpedo02 = ClassWeapon(CKrilTorpedoLauncherWeapon) {},
-        AntiTorpedo = ClassWeapon(AIFQuasarAntiTorpedoWeapon) {},
     },
 	
     OnStopBeingBuilt = function(self, builder, layer)
@@ -35,12 +29,6 @@ BRS0305 = ClassUnit(CSubUnit) {
             ChangeState( self, self.ClosedState )
 			
         end
-
-        local bp = self:GetBlueprint().Defense.TorpRedirectField01
-        
-        local TorpRedirectField01 = TorpRedirectField { Owner = self, Radius = bp.Radius, AttachBone = bp.AttachBone, RedirectRateOfFire = bp.RedirectRateOfFire }
-		
-        self.Trash:Add(TorpRedirectField01)
 
     end,
     

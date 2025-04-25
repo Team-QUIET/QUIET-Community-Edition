@@ -9,8 +9,8 @@ UnitBlueprint {
         -- Next QUIET Update will actually remove this in the Blueprint for now we can just disable it
         TorpRedirectField01 = { AttachBone = 'XRS0305', Radius = 0, RedirectRateOfFire = 0 },
         ArmorType = 'Normal',
-        Health = 5000,
-        MaxHealth = 5000,
+        Health = 50000000,
+        MaxHealth = 50000000,
         RegenRate = 12,
         SubThreatLevel = 42,
         SurfaceThreatLevel = 7,
@@ -71,9 +71,9 @@ UnitBlueprint {
                     Add = { OnImpact = true },
                     AppliedToTarget = true,
                     BuffType = 'STUN',
-                    Duration = 0.3,
+                    Duration = 0.5,
                     Radius = 2,
-                    TargetAllow = 'TECH1',
+                    TargetAllow = 'TECH1, TECH2',
                     TargetDisallow = 'WALL,COMMAND,EXPERIMENTAL',
                 },
             },
@@ -98,7 +98,7 @@ UnitBlueprint {
 			
             MuzzleSalvoDelay = 0.4,
             MuzzleSalvoSize = 4,
-            MuzzleVelocity = 5,
+            MuzzleVelocity = 10,
 			NotExclusive = true,
             ProjectileId = '/projectiles/CANTorpedoNanite02/CANTorpedoNanite02_proj.bp',
             ProjectileLifetimeUsesMultiplier = 1.5,
@@ -149,7 +149,7 @@ UnitBlueprint {
             CollideFriendly = false,
 			
             Damage = 100,
-            DamageRadius = 2,
+            DamageRadius = 4,
 			DamageType = 'Normal',
 			
             DisplayName = 'Kril Torpedo',
@@ -175,7 +175,7 @@ UnitBlueprint {
 			MuzzleVelocityRandom = 2,
 			NotExclusive = true,
             ProjectileId = '/projectiles/CANKrilTorpedo01/CANKrilTorpedo01_proj.bp',
-            ProjectileLifetimeUsesMultiplier = 1.5,
+            ProjectileLifetimeUsesMultiplier = 5,
 
             RackBones = {
                 {
@@ -191,7 +191,7 @@ UnitBlueprint {
             RateOfFire = 10/64,		
 			
             SlavedToBody = true,
-            SlavedToBodyArcRange = 10,
+            SlavedToBodyArcRange = 30,
 			
             TargetCheckInterval = 0.5,
 			
@@ -205,7 +205,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
-            TrackingRadius = 1.2,
+            TrackingRadius = 1.1,
             Turreted = false,
             WeaponCategory = "Anti Navy",
         },
@@ -355,85 +355,6 @@ UnitBlueprint {
 			
             Turreted = true,
             WeaponCategory = "Direct Fire Naval",
-        },
-        {
-            advancedTracking = true,
-            
-            BallisticArc = 'RULEUBA_None',
-
-			CannotAttackGround = true,
-            CollideFriendly = false,
-            
-            CountedProjectile = true,
-			
-            Damage = 2,
-			DamageFriendly = false,
-            DamageType = 'Normal',
-			
-            DisplayName = 'Anti Torpedo',
-			
-            FireTargetLayerCapsTable = {
-                Water = 'Seabed|Sub|Water',
-            },
-			
-            FiringTolerance = 50,
-			
-            HeadingArcCenter = 0,
-            HeadingArcRange = 120,
-			
-            Label = 'AntiTorpedo',
-			
-            MaxRadius = 34,
-
-            MuzzleSalvoDelay = 0.2,
-            MuzzleSalvoSize = 2,
-            MuzzleVelocity = 10,
-			
-            ProjectileId = '/projectiles/AIMAntiTorpedo01/AIMAntiTorpedo01_proj.bp',
-            ProjectileLifetime = 3,
-			
-            RackBones = {
-                {
-                    MuzzleBones = {'Turret02_Muzzle01','Turret02_Muzzle02'},
-                    RackBone = 'Turret02_Barrel01',
-                },
-            },
-
-            RangeCategory = 'UWRC_Countermeasure',
-			
-            RackSalvoReloadTime = 2.75,
-            RateOfFire = 10/10,  
-			
-            TargetCheckInterval = 1,
-			
-            TargetRestrictDisallow = 'UNTARGETABLE',
-            TargetRestrictOnlyAllow = 'TORPEDO',
-            TargetType = 'RULEWTT_Projectile',
-
-            TurretBoneMuzzle = 'Turret02_Muzzle01',
-            TurretBonePitch = 'Turret02_Barrel01',
-            TurretBoneYaw = 'Turret02',
-			
-            TurretPitch = 0,
-            TurretPitchRange = 15,
-            TurretPitchSpeed = 30,
-			
-            TurretYaw = 0,
-            TurretYawRange = 120,
-            TurretYawSpeed = 360,
-			
-            Turreted = true,
-            TurretDualManipulators = false,
-            TurretPitch = 0,
-            TurretPitchRange = 0,
-            TurretPitchSpeed = 0,
-            TurretYaw = 0,
-            TurretYawRange = 0,
-            TurretYawSpeed = 0,
-            Turreted = false,
-            WeaponCategory = "Defense",
-            WeaponRepackTimeout = 0.2,
-            WeaponUnpacks = false,      
         },
     },
 }
