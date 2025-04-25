@@ -68,7 +68,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 			
-            Damage = 1350,
+            Damage = 675,
             DamageType = 'Normal',
 
             DisplayName = 'Uall Cavitation Torpedo',
@@ -78,20 +78,20 @@ UnitBlueprint {
                 Water = 'Seabed|Sub|Water',
             },
 			
-			FiringRandomness = 22,
+			FiringRandomness = 0,
             FiringTolerance = 15,
 			
             Label = 'Torpedo',
 			
             MaxRadius = 70,
 			
-            MuzzleSalvoDelay = 0.2,
-            MuzzleSalvoSize = 2,
+            MuzzleSalvoDelay = 0.3,
+            MuzzleSalvoSize = 4,
             MuzzleVelocity = 45,
 			MuzzleVelocityRandom = 1,
             NotExclusive = true,
             ProjectileId = '/projectiles/SANUallCavitationTorpedo03/SANUallCavitationTorpedo03_proj.bp', -- fastest torpedo , highest damage
-            ProjectileLifetimeUsesMultiplier = 1.5,
+            ProjectileLifetimeUsesMultiplier = 3,
 			
             RackBones = {
                 {
@@ -141,7 +141,7 @@ UnitBlueprint {
             Label = "AntiTorpedoLeft",
             LeadTarget = false,
             MaxRadius = 32,
-            MinRadius = 10,
+            MinRadius = 5,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 80,

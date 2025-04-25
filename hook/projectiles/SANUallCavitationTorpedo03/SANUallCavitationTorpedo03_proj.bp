@@ -27,18 +27,20 @@ ProjectileBlueprint {
 
     Display = {
         ImpactEffects = { Type = 'Small01' },
-        StrategicIconSize = 1,
+        StrategicIconSize = 2,
     },
 
     Physics = {
-        Acceleration = 6,
+        Acceleration = 3,
         DestroyOnWater = false,
-        InitialSpeed = 9,
-        Lifetime = 7,
-        MaxSpeed = 26,
+        InitialSpeed = 6,
+        Lifetime = 20,
+        MaxSpeed = 18,
+        MaxZigZag = 4,
         StayUnderwater = true,
         TrackTarget = true,
         TurnRate = 360,
+        ZigZagFrequency = 1,
         VelocityAlign = true,
     },
 }
