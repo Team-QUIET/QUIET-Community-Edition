@@ -4,4 +4,308 @@ UnitBlueprint{
 
     ScriptClass = 'WEL0305',
     ScriptModule = '/mods/QUIET-Community-Edition/units/WyvernBattlePack/WEL0305/WEL0305_Script.lua',
+
+    Weapon = {
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'XEL_Weapons', Cue = 'XEL0305_Plasma_Cannon', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = "RULEUBA_None",
+            CollideFriendly = false,
+
+            Damage = 800,
+            DamageRadius = 0,
+            DamageType = "Normal",
+
+            DisplayName = "Plasma Cannon",
+
+            FireTargetLayerCapsTable = {
+                Land = "Land|Water|Seabed",
+                Seabed = "Land|Water|Seabed",
+            },
+
+            FiringTolerance = 2,
+
+            Label = "PlasmaCannon01",
+            LeadTarget = true,
+
+            MaxRadius = 37,
+
+            MuzzleVelocity = 35,
+
+            NoPause = true,
+            NotExclusive = true,
+
+            ProjectileId = "/projectiles/TDFIonizedPlasmaGatlingCannon01/TDFIonizedPlasmaGatlingCannon01_proj.bp",
+            ProjectileLifetime = 1.1,
+            RackBones = {
+                {
+                    MuzzleBones = { "TurretMuzzle" },
+                    RackBone = "TurretRack",
+                },
+            },
+
+            RangeCategory = "UWRC_DirectFire",
+
+            RateOfFire = 0.4,
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = "UNTARGETABLE",
+
+            TurretBoneMuzzle = "TurretMuzzle",
+            TurretBonePitch = "TurretRack",
+            TurretBoneYaw = "Turret",
+            TurretDualManipulators = false,
+
+            TurretPitch = 10,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 30,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 36,
+            Turreted = true,
+        },
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = false,
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEL0106_MachineGun', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = "RULEUBA_None",
+            CollideFriendly = false,
+            Damage = 20,
+            DamageType = "Normal",
+
+            DisplayName = "Gatling Cannon",
+
+            FireTargetLayerCapsTable = {
+                Land = "Air|Land|Water|Seabed",
+                Seabed = "Land|Water|Seabed",
+            },
+
+            FiringRandomness = 0.5,
+            FiringRandomnessWhileMoving = 0.9,
+            FiringTolerance = 0.5,
+
+            Label = "GatlingCannon",
+            LeadTarget = true,
+
+            MaxRadius = 32,
+
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 15,
+            MuzzleVelocity = 45,
+
+            NoPause = true,
+            NotExclusive = true,
+
+            ProjectileId = "/projectiles/TDFPlasma02/TDFPlasma02_proj.bp",
+            ProjectileLifetime = 1,
+            RackBones = {
+                {
+                    MuzzleBones = { "GatGunMuzzle01" },
+                    RackBone = "Gatgun2",
+                },
+            },
+            RackSalvoChargeTime = 1.5,
+            RackSalvoReloadTime = 1.5,
+            RackSlavedToTurret = true,
+
+            RateOfFire = 1,
+            TargetCheckInterval = 0.25,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "GROUNDATTACK",
+                "MOBILE -AIR",
+                "DEFENSE",
+                "ALLUNITS -WALL",
+            },
+            TargetRestrictDisallow = "UNTARGETABLE,HIGHALTAIR",
+            TrackingRadius = 1.2,
+            TurretBoneMuzzle = "GatGunMuzzle01",
+            TurretBonePitch = "Gatgun2",
+            TurretBoneYaw = "Gatgun2",
+            TurretDualManipulators = false,
+            TurretPitch = 20,
+            TurretPitchRange = 360,
+            TurretPitchSpeed = 40,
+            TurretYaw = 20,
+            TurretYawRange = 40,
+            TurretYawSpeed = 30,
+            Turreted = true,
+        },
+        {
+            AboveWaterFireOnly = true,
+            AlwaysRecheckTarget = true,
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEL0205_Artillery_Frag', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = "RULEUBA_None",
+            CannotAttackGround = true,
+            CollideFriendly = false,
+
+            Damage = 25,
+            DamageFriendly = false,
+            DamageRadius = 2.5,
+            DamageType = "Normal",
+
+            DetonatesAtTargetHeight = true,
+
+            DisplayName = "Fragmentation Flak",
+
+            FireTargetLayerCapsTable = {
+                Seabed = "Air",
+                Land = "Air",
+            },
+
+            FiringRandomness = 0.8,
+            FiringRandomnessWhileMoving = 1.2,
+            FiringTolerance = 2,
+
+            Label = "AA",
+
+            LeadTarget = true,
+
+            MaxRadius = 36,
+
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 35,
+
+            NotExclusive = true,
+
+            ProjectileId = "/projectiles/TAALightFragmentationShell01/TAALightFragmentationShell01_proj.bp",
+            ProjectileLifetimeUsesMultiplier = 1.5,
+
+            RackBones = {
+                {
+                    MuzzleBones = {"AATurret_Muzzle_01","AATurret_Muzzle_02"},
+                    RackBone = "AATurret_Barrel",
+                },
+            },
+
+            RangeCategory = "UWRC_AntiAir",
+            RateOfFire = 2,
+
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "HIGHPRIAIR",
+                "BOMBER",
+                "GROUNDATTACK",
+                "AIR MOBILE",
+            },
+            TargetRestrictDisallow = "UNTARGETABLE,SATELLITE",
+            TrackingRadius = 1.2,
+
+            TurretBoneMuzzle = "AATurret_Barrel",
+            TurretBonePitch = "AATurret",
+            TurretBoneYaw = "AATurret",
+            TurretDualManipulators = false,
+
+            TurretPitch = 35,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 65,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+
+            Turreted = true,
+        },
+        {
+            AboveWaterFireOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'XES_Weapons', Cue = 'XES0307_Phalanx_Gun', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = "RULEUBA_None",
+            CollideFriendly = false,
+
+            Damage = 1,
+            DamageType = "Normal",
+
+            DisplayName = "Phalanx Anti-Missile",
+
+            FireTargetLayerCapsTable = {
+                Land = "Air",
+                Seabed = "Air",
+            },
+            FiringRandomness = 0.2,
+            FiringTolerance = 0.2,
+
+            Label = "TML",
+
+            MaxRadius = 26,
+
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 3,
+            MuzzleVelocity = 65,
+
+            NotExclusive = true,
+
+            ProjectileId = "/projectiles/TDPhalanx01/TDPhalanx01_proj.bp",
+            ProjectileLifetimeUsesMultiplier = 0.5,
+
+            RackBones = {
+                {
+                    MuzzleBones = { "TMLMuzzle" },
+                    RackBone = "TMLMuzzle",
+                },
+            },
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 0,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RangeCategory = "UWRC_Countermeasure",
+            RateOfFire = 0.6,
+            TargetCheckInterval = 0.1,
+            TargetRestrictDisallow = "UNTARGETABLE,SATELLITE",
+            TargetRestrictOnlyAllow = "TACTICAL MISSILE",
+            TargetType = "RULEWTT_Projectile",
+            TrackingRadius = 1.5,
+            TurretBoneMuzzle = "TMLMuzzle",
+            TurretBonePitch = "TMLMuzzle",
+            TurretBoneYaw = "TMLMuzzle",
+            TurretDualManipulators = false,
+            TurretPitch = 0,
+            TurretPitchRange = 180,
+            TurretPitchSpeed = 100,
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 100,
+            Turreted = true,
+        },
+        {
+            Damage = 1450,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = "Normal",
+            DummyWeapon = true,
+            Label = "DeathWeapon",
+        },
+    },
+
+    Wreckage = {
+        Blueprint = "/props/DefaultWreckage/DefaultWreckage_prop.bp",
+        EnergyMult = 0.3,
+        HealthMult = 0.6,
+        MassMult = 0.5,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+            Seabed = true,
+        },
+    },
 }
