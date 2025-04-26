@@ -4,16 +4,17 @@ UnitBlueprint {
 
     Intel = {
         RadarStealth = false,
+        RadarRadius = 64,
+        VisionRadius = 42,
     },
 
     Weapon = {
         {
-
             RateOfFire = 10/10,		-- 10 DPS
 
             TurretYaw = 0,
             TurretYawRange = 180,
             TurretYawSpeed = 135,
         },
-    },
+    },  
 }
