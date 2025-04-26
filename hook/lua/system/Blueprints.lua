@@ -33,6 +33,10 @@ do
 		--
 		ProcessWeaponAlterations(all_blueprints, all_blueprints.Unit)
 		ProcessLODs(all_blueprints)
+
+		for _, unit in all_blueprints.Unit do
+			AddFormationData(unit)
+		end
 	end
 
 	--=======================================
@@ -205,6 +209,68 @@ do
 						end
 					end
 				end
+			end
+		end
+	end
+
+	function AddFormationData(unitBlueprint)
+		-- add formation sorting index
+		if not unitBlueprint.Formation then
+			unitBlueprint.Formation = { }
+	
+			if not unitBlueprint.Formation.Layer then
+                for _, pair in ipairs({
+                    {category = 'LAND', identifier = 'Land'},
+                    {category = 'AIR', identifier = 'Air'},
+                    {category = 'NAVAL', identifier = 'Naval'},
+                    {category = 'SUBMERSIBLE', identifier = 'Submersible'},
+                }) do
+                    if unitBlueprint.CategoriesHash[pair.category] then
+                        unitBlueprint.Formation.Layer = pair.identifier
+                        --LOG('Formation Layer: ' .. pair.identifier .. ' - ' .. unitBlueprint.BlueprintId)
+                        break
+                    end
+                end
+            end 
+	
+			if not unitBlueprint.Formation.SortingIndex then
+				local formationSortingIndex = 0
+	
+				if unitBlueprint.CategoriesHash["COMMAND"] then
+					formationSortingIndex = 0
+	
+				elseif unitBlueprint.CategoriesHash['TECH1'] then
+					formationSortingIndex = 1
+	
+					-- basic mod support for tech 1 experimentals
+					if unitBlueprint.CategoriesHash['EXPERIMENTAL'] then
+						formationSortingIndex = 1.5
+					end
+	
+				elseif unitBlueprint.CategoriesHash['TECH2'] then
+					formationSortingIndex = 2
+	
+					-- basic mod support for tech 2 experimentals
+					if unitBlueprint.CategoriesHash['EXPERIMENTAL'] then
+						formationSortingIndex = 2.5
+					end
+				elseif unitBlueprint.CategoriesHash['TECH3'] then
+					formationSortingIndex = 3
+	
+					-- basic mod support for tech 3 experimentals
+					if unitBlueprint.CategoriesHash['EXPERIMENTAL'] then
+						formationSortingIndex = 3.5
+					end
+				elseif unitBlueprint.CategoriesHash['EXPERIMENTAL'] then
+					formationSortingIndex = 4
+				end
+	
+				-- always put these at the back
+	
+				local sizeX = unitBlueprint.SizeX or 1
+				local sizeZ = unitBlueprint.SizeZ or 1
+				--LOG(unitBlueprint.BlueprintId .. ' : SizeX : ' .. sizeX .. ' SizeZ : ' .. sizeZ)
+				unitBlueprint.Formation.SortingIndex = formationSortingIndex + 0.1 * math.max(sizeX, sizeZ)
 			end
 		end
 	end
