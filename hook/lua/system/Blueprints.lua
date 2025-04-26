@@ -436,6 +436,57 @@ do
 						end
 					end
 				end
+
+				-- Handle T4 Experimental Units
+				if cats.EXPERIMENTAL and (cats.LAND or cats.AIR or cats.NAVAL) and bp.Economy.BuildCostMass then
+					-- Add IgnoreEvenflow
+					if not bp.IgnoreEvenflow then
+						bp.IgnoreEvenflow = true
+					end
+
+					local massCost = bp.Economy.BuildCostMass
+					
+					-- Tiered cost reduction system
+					-- Handles "Tiers" of experimental units (from Light to Ultra Heavy)
+					if massCost >= 10000 and massCost <= 16000 then
+						-- Scale down to base 10k with gradual increase
+						if massCost <= 10500 then
+							bp.Economy.BuildCostMass = 10000
+						elseif massCost <= 12500 then
+							bp.Economy.BuildCostMass = 11000
+						elseif massCost <= 15000 then
+							bp.Economy.BuildCostMass = 12000
+						else
+							bp.Economy.BuildCostMass = 13000
+						end
+						
+						-- Scale energy cost proportionally
+						if bp.Economy.BuildCostEnergy then
+							local energyRatio = bp.Economy.BuildCostMass / massCost
+							bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * energyRatio
+						end
+					elseif massCost >= 34500 then
+						-- 20% reduction for heavy experimentals
+						bp.Economy.BuildCostMass = massCost * 0.8
+						if bp.Economy.BuildCostEnergy then
+							bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.8
+						end
+					end
+
+					-- Scale build time based on mass cost
+					-- Base build time starts at 10k mass
+					-- Scales to 22k at 20k mass
+					-- Continues scaling from there
+					local baseMass = 10000
+					local baseBuildTime = 15000
+					
+					-- Calculate scaled build time
+					local massRatio = bp.Economy.BuildCostMass / baseMass
+					local scaledBuildTime = baseBuildTime * (massRatio * 0.8)
+					
+					-- Ensure minimum build time of 15000
+					bp.Economy.BuildTime = math.max(15000, scaledBuildTime)
+				end
 			end
 		end
 	end
