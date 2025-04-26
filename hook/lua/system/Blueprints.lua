@@ -219,13 +219,19 @@ do
 			unitBlueprint.Formation = { }
 	
 			if not unitBlueprint.Formation.Layer then
-				for category, identifier in {LAND = 'Land', AIR = 'Air', NAVAL = 'Naval', SUBMERSIBLE = 'Submersible'} do
-					if unitBlueprint.CategoriesHash[category] then
-						unitBlueprint.Formation.Layer = identifier
-						break
-					end
-				end
-			end
+                for _, pair in ipairs({
+                    {category = 'LAND', identifier = 'Land'},
+                    {category = 'AIR', identifier = 'Air'},
+                    {category = 'NAVAL', identifier = 'Naval'},
+                    {category = 'SUBMERSIBLE', identifier = 'Submersible'},
+                }) do
+                    if unitBlueprint.CategoriesHash[pair.category] then
+                        unitBlueprint.Formation.Layer = pair.identifier
+                        --LOG('Formation Layer: ' .. pair.identifier .. ' - ' .. unitBlueprint.BlueprintId)
+                        break
+                    end
+                end
+            end 
 	
 			if not unitBlueprint.Formation.SortingIndex then
 				local formationSortingIndex = 0
