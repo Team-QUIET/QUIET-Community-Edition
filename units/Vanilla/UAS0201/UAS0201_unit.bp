@@ -25,7 +25,7 @@ UnitBlueprint {
         RadarRadius = 40,
         SonarRadius = 36,
         VisionRadius = 32,
-        WaterVisionRadius = 32,
+        WaterVisionRadius = 44,
     },
 	
     Physics = {
@@ -195,44 +195,50 @@ UnitBlueprint {
             FireTargetLayerCapsTable = {
                 Water = "Seabed|Sub|Water",
             },
-			
+
+			FiringRandomness = 1,
             FiringTolerance = 2,
 			
             Label = "Torpedo",
 			
-            MaxRadius = 40,
+            MaxRadius = 45,
 			
-            MuzzleSalvoDelay = 0.5,
-            MuzzleSalvoSize = 4,
-            MuzzleVelocity = 15,
+            MuzzleSalvoDelay = 1,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 5,
             ProjectileId = "/projectiles/AANTorpedo01/AANTorpedo01_proj.bp",
-            ProjectileLifetime = 5,
+            ProjectileLifetime = 7,
             ProjectilesPerOnFire = 1,
 			
             RackBones = {
                 {
-                    MuzzleBones = {"Projectile01","Projectile03","Projectile02","Projectile04"},
+                    MuzzleBones = {
+                        "Projectile01",
+                        "Projectile03",
+                    },
                     RackBone = "Projectile01",
                 },
             },
             
-            RackSalvoReloadTime = 3,
+            RackFireTogether = false,
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 10,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
 
             RangeCategory = 'UWRC_AntiNavy',
-			
-            RateOfFire = 10/20,
-			
+            RateOfFire = 10/40,
             TargetCheckInterval = 1,
-			
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "SUBMERSIBLE",
                 "MOBILE",
-                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
                 "ALLUNITS",
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
-            TrackingRadius = 1.1,
+            TargetRestrictDisallow = "UNTARGETABLE, HOVER",
             Turreted = false,
             WeaponCategory = "Anti Navy",
         },
@@ -252,27 +258,27 @@ UnitBlueprint {
             Damage = 2,
 			DamageFriendly = false,
             DamageType = 'Normal',
+
+            DisableWhileReloading = true,
 			
             DisplayName = 'AntiTorpedo',
 
-            FireTargetLayerCapsTable = {
-                Water = 'Sub|Water|Seabed',
-            },
+            FireTargetLayerCapsTable = { Water = "Water" },
 			
-            FiringTolerance = 1,
+            FiringTolerance = 2,
 			
             HeadingArcCenter = -85,
             HeadingArcRange = 90,
 			
             Label = 'AntiTorpedo1',
 			
-            MaxRadius = 32,
+            MaxRadius = 45,
+            MinRadius = 10,
 			
             MuzzleSalvoDelay = 0.2,
-            MuzzleVelocity = 17,
-			
+            MuzzleVelocity = 80,
             ProjectileId = '/projectiles/AIMAntiTorpedo01/AIMAntiTorpedo01_proj.bp',
-            ProjectileLifetime = 3,
+            ProjectileLifetime = 4,
 			
             RackBones = {
                 {
@@ -287,7 +293,8 @@ UnitBlueprint {
             RateOfFire = 10/10,
 			
             TargetCheckInterval = 0.5,
-			
+            TargetResetWhenReady = true,
+
             TargetRestrictDisallow = 'UNTARGETABLE',
             TargetRestrictOnlyAllow = 'TORPEDO',
             TargetType = 'RULEWTT_Projectile',
@@ -321,26 +328,27 @@ UnitBlueprint {
             Damage = 2,
 			DamageFriendly = false,
             DamageType = 'Normal',
+
+            DisableWhileReloading = true,
 			
             DisplayName = 'AntiTorpedo',
 
-            FireTargetLayerCapsTable = {
-                Water = 'Sub|Water|Seabed',
-            },
+            FireTargetLayerCapsTable = { Water = "Water" },
 			
-            FiringTolerance = 1,
+            FiringTolerance = 2,
 			
             HeadingArcCenter = 85,
             HeadingArcRange = 90,
 			
             Label = 'AntiTorpedo2',
 			
-            MaxRadius = 32,
+            MaxRadius = 45,
+            MinRadius = 10,
 
             MuzzleSalvoDelay = 0.2,			
-            MuzzleVelocity = 17,
+            MuzzleVelocity = 80,
             ProjectileId = '/projectiles/AIMAntiTorpedo01/AIMAntiTorpedo01_proj.bp',
-            ProjectileLifetime = 3,
+            ProjectileLifetime = 4,
             
             RackBones = {
                 {
@@ -355,6 +363,7 @@ UnitBlueprint {
             RateOfFire = 10/10,
 			
             TargetCheckInterval = 0.5,
+            TargetResetWhenReady = true,
 			
             TargetRestrictDisallow = 'UNTARGETABLE',
             TargetRestrictOnlyAllow = 'TORPEDO',
@@ -389,26 +398,27 @@ UnitBlueprint {
             Damage = 2,
 			DamageFriendly = false,
             DamageType = 'Normal',
+
+            DisableWhileReloading = true,
 			
             DisplayName = 'AntiTorpedo',
 
-            FireTargetLayerCapsTable = {
-                Water = 'Sub|Water|Seabed',
-            },
+            FireTargetLayerCapsTable = { Water = "Water" },
 			
-            FiringTolerance = 1,
+            FiringTolerance = 2,
 			
             HeadingArcCenter = 180,
             HeadingArcRange = 90,
 			
             Label = 'AntiTorpedo3',
 			
-            MaxRadius = 32,
+            MaxRadius = 45,
+            MinRadius = 10,
 
             MuzzleSalvoDelay = 0.2,
-            MuzzleVelocity = 17,
+            MuzzleVelocity = 80,
             ProjectileId = '/projectiles/AIMAntiTorpedo01/AIMAntiTorpedo01_proj.bp',
-            ProjectileLifetime = 3,
+            ProjectileLifetime = 4,
 			
             RackBones = {
                 {
@@ -423,6 +433,7 @@ UnitBlueprint {
             RateOfFire = 10/10,
 			
             TargetCheckInterval = 0.5,
+            TargetResetWhenReady = true,
 			
             TargetRestrictDisallow = 'UNTARGETABLE',
             TargetRestrictOnlyAllow = 'TORPEDO',

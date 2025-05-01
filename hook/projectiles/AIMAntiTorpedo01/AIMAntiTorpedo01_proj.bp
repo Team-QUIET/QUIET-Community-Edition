@@ -18,26 +18,14 @@ ProjectileBlueprint {
     },
 	
     Physics = {
-	
-        Acceleration = 2.75,
-
-        DestroyOnImpact = true,
-        
+        Acceleration = 30,
         DestroyOnWater = false,
-
-        InitialSpeed = 4,
-        
-        MaxSpeed = 9.5,
-
+        InitialSpeed = 120,
+        MaxSpeed = 30,
         StayUnderwater = true,
-		
         TrackTarget = true,
-		
-        TurnRate = 360,
-		
+        TurnRate = 540,
         UseGravity = false,
-		
         VelocityAlign = true,
-		
     },
 }
