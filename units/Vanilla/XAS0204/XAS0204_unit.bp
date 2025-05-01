@@ -58,7 +58,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 			
-            Damage = 400,
+            Damage = 150,
             DamageType = 'Normal',
 			
             DisplayName = 'Chrono Torpedo',
@@ -96,7 +96,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_AntiNavy',
 			
-            RateOfFire = 10/24,	
+            RateOfFire = 10/25,	
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 10,
@@ -114,7 +114,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
-            TrackingRadius = 1.1,
+            TrackingRadius = 1.15,
             TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 0,

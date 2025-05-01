@@ -16,12 +16,12 @@ UnitBlueprint {
         BuildCostEnergy = 13750,
         BuildCostMass = 1200,
         BuildTime = 6000,
-        MaintenanceConsumptionPerSecondEnergy = 50,
+        MaintenanceConsumptionPerSecondEnergy = 250,
     },
 	
     Intel = {
-        RadarStealth = true,
         SonarRadius = 52,
+        RadarStealth = true,
         SonarStealth = true,
         VisionRadius = 32,
         WaterVisionRadius = 32,
@@ -72,10 +72,13 @@ UnitBlueprint {
 
             CollideFriendly = false,
 			
-            Damage = 300,
+            Damage = 30,
             DamageType = 'Normal',
 			
             DisplayName = 'Nanite Torpedo',
+
+            DoTPulses = 5,
+            DoTTime = 0.4,
 	
             FireTargetLayerCapsTable = {
                 Sub = 'Seabed|Sub|Water',
@@ -86,7 +89,7 @@ UnitBlueprint {
 			
             Label = 'Torpedo',
 			
-            MaxRadius = 48,
+            MaxRadius = 45,
 			
             MuzzleSalvoDelay = 0.4,
             MuzzleSalvoSize = 3,
@@ -102,11 +105,11 @@ UnitBlueprint {
                 },
             },
             
-            RackSalvoReloadTime = 3,
+            RackSalvoReloadTime = 4,
 
             RangeCategory = 'UWRC_AntiNavy',
 			
-            RateOfFire = 10/10,	
+            RateOfFire = 10/25,	
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 10,

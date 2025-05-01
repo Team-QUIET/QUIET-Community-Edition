@@ -54,7 +54,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             
-            Damage = 200, 
+            Damage = 120, 
             DamageType = 'Normal',
             
             DisplayName = 'Angler Torpedo',
@@ -68,10 +68,10 @@ UnitBlueprint {
             
             Label = 'Torpedo',
             
-            MaxRadius = 48,
+            MaxRadius = 45,
             
             MuzzleSalvoDelay = 0.6,
-            MuzzleSalvoSize = 2,
+            MuzzleSalvoSize = 3,
             MuzzleVelocity = 5,
             ProjectileId = '/projectiles/TANAnglerTorpedo01/TANAnglerTorpedo01_proj.bp',
             ProjectileLifetime = 7,
@@ -84,7 +84,7 @@ UnitBlueprint {
             
             RangeCategory = 'UWRC_AntiNavy',
             
-            RateOfFire = 10/10, 
+            RateOfFire = 10/25, 
             
             TargetCheckInterval = 0.5,
             
@@ -99,7 +99,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
-            TrackingRadius = 1.1,
+            TrackingRadius = 1.15,
             TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 0,
