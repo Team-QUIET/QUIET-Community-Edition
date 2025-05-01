@@ -2,6 +2,15 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "ues0103",
 
+    AI = {
+        GuardReturnRadius = 30,
+        TargetBones = {
+            "Front_Turret",
+            "Back_Turret",
+            "UES0103",
+        },
+    },
+
     Defense = {
         AirThreatLevel = 1,
         ArmorType = "Normal",

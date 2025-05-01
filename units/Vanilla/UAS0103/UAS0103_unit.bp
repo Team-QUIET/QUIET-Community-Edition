@@ -2,6 +2,19 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "uas0103",
 
+    AI = {
+        AttackAngle = 60,
+        GuardScanRadius = 40,
+        TargetBones = {
+            "Turret_Front",
+            "Turret_Back",
+            "Projectile01",
+            "Projectile02",
+            "Exhaust01",
+            "Exhaust02",
+        },
+    },
+
     Defense = {
         ArmorType = "Normal",
         Health = 1850,
