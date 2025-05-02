@@ -298,7 +298,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 			
-            Damage = 200,
+            Damage = 300,
             DamageType = 'Normal',
 			
             DisplayName = 'Nanite Torpedo',
@@ -307,13 +307,14 @@ UnitBlueprint {
                 Water = 'Seabed|Sub|Water',
             },
 			
-            FiringTolerance = 1,
+            FiringRandomness = 1,
+            FiringTolerance = 2,
 			
             Label = 'Torpedo',
 			
-            MaxRadius = 40,
+            MaxRadius = 45,
 			
-            MuzzleSalvoDelay = 0.6,
+            MuzzleSalvoDelay = 0.5,
             MuzzleSalvoSize = 2,
             MuzzleVelocity = 5,
             ProjectileId = "/projectiles/CANTorpedoNanite02/CANTorpedoNanite02_proj.bp",
@@ -327,16 +328,17 @@ UnitBlueprint {
                 },
             },
             
-            RackSalvoReloadTime = 3,
+            RackSalvoReloadTime = 2,
 
             RangeCategory = 'UWRC_AntiNavy',
 			
-            RateOfFire = 10/10,		
+            RateOfFire = 10/20,		
 			
-            SlavedToBody = true,
-            SlavedToBodyArcRange = 10,
+            SlavedToBody = false,
+            SlavedToBodyArcRange = 360,
 			
-            TargetCheckInterval = 1.5,
+            TargetCheckInterval = 1,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 "SUBMERSIBLE",
@@ -347,6 +349,8 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
             TrackingRadius = 1.1,
             WeaponCategory = "Anti Navy",
+            WeaponRepackTimeout = 0,
+            WeaponUnpacks = false,
         },
 
         {
@@ -362,28 +366,27 @@ UnitBlueprint {
             Damage = 2,
 			DamageFriendly = false,
             DamageType = 'Normal',
+
+            DisableWhileReloading = true,
 			
             DisplayName = 'Anti Torpedo',
 			
-            FireTargetLayerCapsTable = {
-                Water = 'Seabed|Sub|Water',
-            },
+            FireTargetLayerCapsTable = { Water = "Water" },
 			
-            FiringTolerance = 50,
+            FiringTolerance = 2,
 			
             HeadingArcCenter = 0,
-            HeadingArcRange = 120,
+            HeadingArcRange = 360,
 			
             Label = 'AntiTorpedo',
 			
-            MaxRadius = 34,
+            MaxRadius = 45,
+            MinRadius = 10,
 
             MuzzleSalvoDelay = 0.2,
-            MuzzleSalvoSize = 2,
-            MuzzleVelocity = 10,
-			
+            MuzzleVelocity = 80,
             ProjectileId = '/projectiles/AIMAntiTorpedo01/AIMAntiTorpedo01_proj.bp',
-            ProjectileLifetime = 3,
+            ProjectileLifetime = 4,
 			
             RackBones = {
                 {
@@ -392,12 +395,13 @@ UnitBlueprint {
                 },
             },
 
-            RangeCategory = 'UWRC_Countermeasure',
-			
             RackSalvoReloadTime = 3.5,
-            RateOfFire = 10/10,  
+
+            RangeCategory = 'UWRC_Countermeasure',
+            RateOfFire = 10/10,
 			
-            TargetCheckInterval = 1,
+            TargetCheckInterval = 0.5,
+            TargetResetWhenReady = true,
 			
             TargetRestrictDisallow = 'UNTARGETABLE',
             TargetRestrictOnlyAllow = 'TORPEDO',
@@ -409,9 +413,9 @@ UnitBlueprint {
             TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 15,
-            TurretPitchSpeed = 30,
+            TurretPitchSpeed = 60,
             TurretYaw = 0,
-            TurretYawRange = 120,
+            TurretYawRange = 180,
             TurretYawSpeed = 360,
             Turreted = true,
             WeaponCategory = "Defense",
@@ -432,7 +436,7 @@ UnitBlueprint {
             Flare = { Category = 'TORPEDO', Radius = 4.2, RadiusGrowth = .2, RadiusStart = 0.3 },
 			
             HeadingArcCenter = 180,
-            HeadingArcRange = 60,
+            HeadingArcRange = 90,
 			
             DisplayName = 'Torpedo Decoy Flare',
 			
@@ -444,13 +448,12 @@ UnitBlueprint {
 			
             Label = 'TorpedoDecoy',
 			
-            MaxRadius = 28,
+            MaxRadius = 30,
 
             MuzzleSalvoDelay = 0.6,
             MuzzleVelocity = 4.5,
-			
             ProjectileId = '/projectiles/TTorpedoDecoy/TTorpedoDecoy_proj.bp',
-            ProjectileLifetime = 2.4,
+            ProjectileLifetime = 4,
 			
             RackBones = {
                 {
@@ -459,7 +462,7 @@ UnitBlueprint {
                 },
             },
 			
-            RateOfFire = 10/38, 
+            RateOfFire = 10/35, 
 			
             TargetCheckInterval = 1,
 			

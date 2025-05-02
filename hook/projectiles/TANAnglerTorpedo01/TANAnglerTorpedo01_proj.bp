@@ -1,0 +1,39 @@
+ProjectileBlueprint {
+
+    Audio = {
+        EnterWater              = Sound { Bank = 'URAWeapon', Cue = 'URA0204_Torpedo_Water', LodCutoff = 'UnitMove_LodCutoff' },
+        ImpactUnit              = Sound { Bank = 'Impacts', Cue = 'UEF_Expl_Med_Impact', LodCutoff = 'Weapon_LodCutoff' },
+    },
+
+    Categories = {
+        'PROJECTILE',
+        'TORPEDO',
+    },
+    
+    Defense = {
+        Health = 1,
+    },
+
+    DesiredShooterCap = 1,
+
+    Display = {
+        Mesh = { LODs = { { ShaderName = 'TMeshGlow' } } },
+        StrategicIconSize = 1,
+        UniformScale = 0.14,
+    },
+
+    Physics = {
+        Acceleration = 5,
+        DestroyOnWater = false,
+        InitialSpeed = 3,
+        MaxZigZag = 3,
+        Lifetime = 10,
+        MaxSpeed = 15,
+        StayUnderwater = true,
+        TrackTarget = true,
+        TurnRate = 165,
+        UseGravity = true,
+        VelocityAlign = true,
+        ZigZagFrequency = 0.5,
+    },
+}

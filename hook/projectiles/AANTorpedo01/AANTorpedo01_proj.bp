@@ -1,0 +1,47 @@
+ProjectileBlueprint {
+
+    Audio = {
+        EnterWater              = Sound { Bank = 'URAWeapon', Cue = 'URA0204_Torpedo_Water', LodCutoff = 'UnitMove_LodCutoff' },
+        ImpactUnit              = Sound { Bank = 'Impacts', Cue = 'UEF_Expl_Med_Impact', LodCutoff = 'Weapon_LodCutoff' },
+        ImpactUnitUnderwater    = Sound { Bank = 'Impacts', Cue = 'UEF_Expl_Med_Impact', LodCutoff = 'Weapon_LodCutoff' },
+    },
+	
+    Categories = {
+        'PROJECTILE',
+        'TORPEDO',
+    },
+	
+    Defense = {
+        Health = 1,
+    },
+	
+    DesiredShooterCap = 1,
+	
+    Display = {
+        Mesh = {
+            LODs = {
+                {
+                    AlbedoName = '/projectiles/AANTorpedoChronoPack01/AANTorpedoChronoPack01_albedo.dds',
+                    MeshName = '/projectiles/AANTorpedoChronoPack01/AANTorpedoChronoPack01_lod0.scm',
+                    ShaderName = 'TMeshGlow',
+                },
+            },
+        },
+        StrategicIconSize = 1,
+        UniformScale = 0.06,
+    },
+	
+    Physics = {
+        Acceleration = 5,
+        DestroyOnWater = false,
+        InitialSpeed = 5,
+        Lifetime = 10,
+        MaxSpeed = 15,
+        MaxZigZag = 3,
+        StayUnderwater = true,
+        TrackTarget = true,
+        TurnRate = 190,
+        VelocityAlign = true,
+        ZigZagFrequency = 0.5,
+    },
+}

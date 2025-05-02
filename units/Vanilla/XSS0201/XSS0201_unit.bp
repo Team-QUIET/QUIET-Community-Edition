@@ -156,7 +156,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 70,	
+            Damage = 75,	
             DamageRadius = 0,
             DamageType = 'Normal',
 			
@@ -231,7 +231,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 			
-            Damage = 175,
+            Damage = 200,
             DamageType = 'Normal',
 			
             DisplayName = 'Ana-it Torpedo Launcher',
@@ -241,18 +241,19 @@ UnitBlueprint {
                 Water = 'Seabed|Sub|Water',
             },
             
+            FiringRandomness = 1,
             FiringTolerance = 2,
             
             Label = 'Torpedo',
             
-            MaxRadius = 44,
+            MaxRadius = 45,
             
-            MuzzleSalvoDelay = 0.6,
+            MuzzleSalvoDelay = 0.5,
             MuzzleSalvoSize = 2,
             MuzzleVelocity = 5,
-            NotExclusive = true,
             ProjectileId = "/projectiles/SANAnaitTorpedo01/SANAnaitTorpedo01_proj.bp",
             ProjectileLifetime = 7,
+            ProjectilesPerOnFire = 1,
 			
             RackBones = {
                 {
@@ -261,11 +262,11 @@ UnitBlueprint {
                 },
             },
             
-            RackSalvoReloadTime = 3,
+            RackSalvoReloadTime = 2,
 
             RangeCategory = 'UWRC_AntiNavy',
 			
-            RateOfFire = 10/10,	
+            RateOfFire = 10/20,	
 			
             TargetCheckInterval = 1,
 			
@@ -278,15 +279,19 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
-            Turreted = false,
+            TrackingRadius = 1.1,
             WeaponCategory = "Anti Navy",
+            WeaponRepackTimeout = 0,
+            WeaponUnpacks = false,
         },
 		
         {
+            advancedTracking = true,
+
             BallisticArc = 'RULEUBA_None',
+            BelowWaterTargetsOnly = true,
 
 			CannotAttackGround = true,
-
             CollideFriendly = false,
 
             CountedProjectile = true,
@@ -294,26 +299,24 @@ UnitBlueprint {
             Damage = 2,
 			DamageFriendly = false,
             DamageType = 'Normal',
+
+            DisableWhileReloading = true,
 			
             DisplayName = 'AntiTorpedo',
 
-            FireTargetLayerCapsTable = {
-                Sub = 'Seabed|Sub|Water',
-                Water = 'Seabed|Sub|Water',
-            },
+            FireTargetLayerCapsTable = { Water = "Water" },
 			
-            FiringTolerance = 1,
+            FiringTolerance = 2,
 			
             Label = 'AntiTorpedo',
 
-            MaxRadius = 36,
-            MinRadius = 0,
+            MaxRadius = 45,
+            MinRadius = 10,
 
             MuzzleSalvoDelay = 0.2,
-            MuzzleSalvoSize = 2,
-            MuzzleVelocity = 10,
+            MuzzleVelocity = 80,
             ProjectileId = '/projectiles/SANAjelluAntiTorpedo01/SANAjelluAntiTorpedo01_proj.bp',
-            ProjectileLifetime = 3,
+            ProjectileLifetime = 4,
 			
             RackBones = {
                 {
@@ -321,32 +324,31 @@ UnitBlueprint {
                     RackBone = 'Projectile02',
                 },
             },
-
-            RangeCategory = 'UWRC_Countermeasure',
 			
             RackSalvoReloadTime = 3.5,
+
+            RangeCategory = 'UWRC_Countermeasure',
             RateOfFire = 10/10,
 			
             TargetCheckInterval = 0.5,
+            TargetResetWhenReady = true,
 			
+            TargetRestrictDisallow = 'UNTARGETABLE',
             TargetRestrictOnlyAllow = 'TORPEDO',
             TargetType = 'RULEWTT_Projectile',
 			
-            TurretBoneMuzzle = 'Exhaust01',
-            TurretBonePitch = 'Exhaust01',
-            TurretBoneYaw = 'Exhaust01',
-			
+            TrackingRadius = 1.0,
+            TurretDualManipulators = false,
             TurretPitch = 0,
-            TurretPitchRange = 30,
-            TurretPitchSpeed = 60,
-			
+            TurretPitchRange = 0,
+            TurretPitchSpeed = 0,
             TurretYaw = 0,
             TurretYawRange = 180,
             TurretYawSpeed = 360,
-			
-            Turreted = true,
-            
+            Turreted = false,
+            WeaponCategory = "Defense",
             WeaponRepackTimeout = 0.2,
+            WeaponUnpacks = false,    
         },
     },
 }

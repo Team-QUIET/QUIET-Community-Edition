@@ -317,7 +317,7 @@ UnitBlueprint {
                 },
 
                 BallisticArc = 'RULEUBA_None',
-                BelowWaterTargetsOnly = true,
+                BelowWaterTargetsOnly = false,
                 CollideFriendly = false,
                 
                 Damage = 300,
@@ -329,13 +329,14 @@ UnitBlueprint {
                     Water = 'Seabed|Sub|Water',
                 },
                 
-                FiringTolerance = 1,
+                FiringRandomness = 1,
+                FiringTolerance = 2,
                 
                 Label = 'Torpedo',
                 
-                MaxRadius = 44,
+                MaxRadius = 45,
                 
-                MuzzleSalvoDelay = 0.8,
+                MuzzleSalvoDelay = 0.5,
                 MuzzleSalvoSize = 2,
                 MuzzleVelocity = 5,
                 ProjectileId = "/projectiles/TANAnglerTorpedo01/TANAnglerTorpedo01_proj.bp",
@@ -385,11 +386,11 @@ UnitBlueprint {
                         RackBone = "Left_Projectile06",
                     },
                 },
-                RackSalvoReloadTime = 3,
+                RackSalvoReloadTime = 2,
 
                 RangeCategory = 'UWRC_AntiNavy',
                 
-                RateOfFire = 10/10,
+                RateOfFire = 10/20,
                 
                 TargetCheckInterval = 1,
                 
@@ -411,6 +412,7 @@ UnitBlueprint {
                 advancedTracking = true,
                 
                 BallisticArc = 'RULEUBA_None',
+                BelowWaterTargetsOnly = true,
                 
                 CannotAttackGround = true,			
                 CollideFriendly = false,
@@ -418,13 +420,14 @@ UnitBlueprint {
                 CountedProjectile = true,
                 
                 Damage = 2,
+                DamageFriendly = false,
                 DamageType = 'Normal',
+
+                DisableWhileReloading = true,
 
                 DisplayName = 'AntiTorpedo',
                 
-                FireTargetLayerCapsTable = {
-                    Water = 'Sub|Water|Seabed',
-                },
+                FireTargetLayerCapsTable = { Water = "Water" },
                 
                 FiringTolerance = 2,
                 
@@ -433,13 +436,13 @@ UnitBlueprint {
                 
                 Label = 'AntiTorpedo',
                 
-                MaxRadius = 37,
+                MaxRadius = 45,
+                MinRadius = 10,
 
-                MuzzleSalvoDelay = 0.5,
-                MuzzleSalvoSize = 1,
-                MuzzleVelocity = 5,
+                MuzzleSalvoDelay = 0.2,
+                MuzzleVelocity = 80,
                 ProjectileId = "/projectiles/TIMAntiTorpedo01/TIMAntiTorpedo01_proj.bp",
-                ProjectileLifetime = 3,
+                ProjectileLifetime = 4,
         
                 RackBones = {
                     {
@@ -485,22 +488,27 @@ UnitBlueprint {
                         RackBone = "Left_Projectile06",
                     },
                 },
+
+                RackSalvoReloadTime = 3.5,
+
                 RangeCategory = 'UWRC_Countermeasure',
-                
-                RateOfFire = 10/10, 
+                RateOfFire = 10/10,
                 
                 TargetCheckInterval = 0.5,
+                TargetResetWhenReady = true,
 
                 TargetRestrictDisallow = 'UNTARGETABLE',
                 TargetRestrictOnlyAllow = 'TORPEDO',
                 TargetType = 'RULEWTT_Projectile',
+
+                TrackingRadius = 1.0,
                 TurretDualManipulators = false,
                 TurretPitch = 0,
                 TurretPitchRange = 0,
                 TurretPitchSpeed = 0,
                 TurretYaw = 0,
-                TurretYawRange = 0,
-                TurretYawSpeed = 0,
+                TurretYawRange = 360,
+                TurretYawSpeed = 360,
                 Turreted = false,
                 WeaponCategory = "Defense",
                 WeaponRepackTimeout = 0.2,

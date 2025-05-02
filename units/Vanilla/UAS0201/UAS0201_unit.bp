@@ -187,7 +187,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 			
-            Damage = 200,
+            Damage = 300,
             DamageType = 'Normal',
 			
             DisplayName = 'Chrono Torpedo',
@@ -203,7 +203,7 @@ UnitBlueprint {
 			
             MaxRadius = 45,
 			
-            MuzzleSalvoDelay = 1,
+            MuzzleSalvoDelay = 0.5,
             MuzzleSalvoSize = 2,
             MuzzleVelocity = 5,
             ProjectileId = "/projectiles/AANTorpedo01/AANTorpedo01_proj.bp",
@@ -212,35 +212,31 @@ UnitBlueprint {
 			
             RackBones = {
                 {
-                    MuzzleBones = {
-                        "Projectile01",
-                        "Projectile03",
-                    },
+                    MuzzleBones = {"Projectile01","Projectile03","Projectile02","Projectile04"},
                     RackBone = "Projectile01",
                 },
             },
             
-            RackFireTogether = false,
-            RackRecoilDistance = 0,
-            RackReloadTimeout = 10,
-            RackSalvoChargeTime = 0,
-            RackSalvoReloadTime = 0,
-            RackSalvoSize = 1,
-            RackSlavedToTurret = false,
+            RackSalvoReloadTime = 2,
 
             RangeCategory = 'UWRC_AntiNavy',
-            RateOfFire = 10/40,
+
+            RateOfFire = 10/20,
+            
             TargetCheckInterval = 1,
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "SUBMERSIBLE",
                 "MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
                 "ALLUNITS",
             },
             TargetRestrictDisallow = "UNTARGETABLE, HOVER",
-            Turreted = false,
+            TrackingRadius = 1.1,
             WeaponCategory = "Anti Navy",
+            WeaponRepackTimeout = 0,
+            WeaponUnpacks = false,
         },
 
         -- FLANK MOUNTED ANTITORP -- Right
