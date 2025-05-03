@@ -97,6 +97,9 @@ SANHeavyCavitationTorpedo01 = ClassProjectile(SHeavyCavitationTorpedo) {
 			zVec = vz + (LOUDCOS(angleInitial + (i*angle) + RandomFloat(-angleVariation, angleVariation))) * spreadMul 
 			
 			proj = self:CreateChildProjectile(ChildProjectileBP)
+
+			-- Pass the weapon reference to the child projectile
+			proj.CreatedByWeapon = self.CreatedByWeapon
 			
 			proj:SetVelocity(xVec, vy/3 , zVec)
 			

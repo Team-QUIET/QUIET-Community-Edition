@@ -20,6 +20,7 @@ CANTorpedoNanite03 = ClassProjectile(CTorpedoShipProjectile) {
         -- of a shallow pond, like in setons
         self:SetVelocity(0)
         self:SetAcceleration(0.5)
+        self.Trash:Add(ForkThread(self.MovementThread))
     end,
 
     --- Adjusted movement thread to gradually speed up the torpedo. It needs to slowly speed

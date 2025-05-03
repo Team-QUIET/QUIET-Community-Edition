@@ -31,16 +31,17 @@ ProjectileBlueprint {
     },
 
     Physics = {
-        Acceleration = 3,
+        Acceleration = 5,
         DestroyOnWater = false,
-        InitialSpeed = 6,
-        Lifetime = 20,
-        MaxSpeed = 18,
-        MaxZigZag = 4,
+        InitialSpeed = 5,
+        Lifetime = 30,
+        MaxSpeed = 20,
+        MaxZigZag = 3,
         StayUnderwater = true,
         TrackTarget = true,
         TurnRate = 360,
-        ZigZagFrequency = 1,
+        ZigZagFrequency = 0.5,
+        UseGravity = true,
         VelocityAlign = true,
     },
 }
