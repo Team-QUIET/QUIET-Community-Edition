@@ -39,4 +39,88 @@ UnitBlueprint {
         BuildCostMass = 315,
         BuildTime = 200,
     },
+
+    Weapon = {
+        {
+            advancedTracking = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'URAWeapon', Cue = 'URA0204_Torpedo_Nanite', LodCutoff = 'Weapon_LodCutoff' },
+            },
+			
+            AutoInitiateAttackCommand = true,
+			
+            BallisticArc = 'RULEUBA_LowArc',
+			
+            CollideFriendly = false,
+			
+            Damage = 50,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Nanite Torpedo',
+
+            DoTPulses = 8,
+            DoTTime = 1,
+            
+            EffectiveRadius = 40,
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Seabed|Sub|Water',
+                Land = 'Seabed|Sub|Water',
+            },
+			
+            FiringRandomness = 1.5,
+            FiringTolerance = 3,
+			
+            HeadingArcCenter = 0,
+            HeadingArcRange = 40,
+			
+            Label = 'Torpedo',
+			
+            MaxRadius = 32,
+            MinRadius = 8,
+			
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 2,
+
+            MuzzleVelocity = 8,
+			
+            ProjectileId = '/projectiles/CANTorpedoNanite03/CANTorpedoNanite03_proj.bp',
+            ProjectileLifetime = 30,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Muzzle_GunL','Muzzle_GunR'},
+                    RackBone = 'Muzzle_GunL',
+                },
+            },
+            
+            RackSalvoReloadTime = 4.6,  -- 5 second cycle = 600/5 = 120 DPS
+
+			RangeCategory = 'UWRC_AntiNavy',
+			
+            RateOfFire = 1,
+			
+            TargetCheckInterval = 4,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'CRUISER',
+                'SUBMARINE',
+                'MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,HOVER,WALL',
+            TrackingRadius = 1.1,
+        },
+        {
+            Damage = 150,
+            DamageFriendly = true,
+            DamageRadius = 1,
+            DamageType = 'Normal',
+            DisplayName = 'Air Crash',
+            DummyWeapon = true,
+            FiringTolerance = 2,
+            Label = 'DeathImpact',
+        },
+    },
 }
