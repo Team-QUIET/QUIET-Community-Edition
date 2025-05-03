@@ -326,13 +326,13 @@ do
 						bp.IgnoreEvenflow = true
 					end
 
-					bp.Economy.BuildTime = 2000
+					bp.Economy.BuildTime = 2300
 				elseif cats.BUILTBYTIER2FACTORY and cats.FACTORY and cats.STRUCTURE and cats.TECH3 then
 					if not bp.IgnoreEvenflow then
 						bp.IgnoreEvenflow = true
 					end
 
-					bp.Economy.BuildTime = 5000
+					bp.Economy.BuildTime = 6000
 				end
 
 				-- Adds DRAGBUILD to all Units
