@@ -55,6 +55,6 @@ ProjectileBlueprint{
         TurnRate = 230,
         UseGravity = true,
         VelocityAlign = true,
-        ZigZagFrequency = 0.4,
+        ZigZagFrequency = 0.5,
     },
 }

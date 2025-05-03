@@ -39,4 +39,85 @@ UnitBlueprint {
         BuildCostMass = 315,
         BuildTime = 200,
     },
+
+    Weapon = {
+        {
+            advancedTracking = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'UEAWeapon', Cue = 'UEA0204_Torpedo', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            AutoInitiateAttackCommand = true,
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 400,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Angler Torpedo',
+            
+            EffectiveRadius = 40,
+			
+            FireTargetLayerCapsTable = {
+                Air = 'Seabed|Sub|Water',
+                Land = 'Seabed|Sub|Water',
+            },
+			
+            FiringRandomness = 1.5,
+            FiringTolerance = 3,
+			
+            HeadingArcCenter = 0,
+            HeadingArcRange = 40,
+			
+            Label = 'Torpedo',
+			
+            MaxRadius = 32,
+            MinRadius = 8,
+			
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 2,
+
+            MuzzleVelocity = 8,
+			
+            ProjectileId = '/projectiles/TANAnglerTorpedo06/TANAnglerTorpedo06_proj.bp',
+            ProjectileLifetime = 30,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'UEA0204'},
+                    RackBone = 'Projectile',
+                },
+            },
+            
+            RackSalvoReloadTime = 4.4,
+
+			RangeCategory = 'UWRC_AntiNavy',
+			
+            RateOfFire = 1,
+			
+            TargetCheckInterval = 4,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'CRUISER',
+                'SUBMARINE',
+                'MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,HOVER,WALL',
+            TrackingRadius = 1.1,
+        },
+        {
+            AboveWaterTargetsOnly = true,
+            Damage = 150,
+            DamageFriendly = true,
+            DamageRadius = 1,
+            DamageType = 'Normal',
+            DisplayName = 'Air Crash',
+            DummyWeapon = true,
+            FiringTolerance = 2,
+            Label = 'DeathImpact',
+        },
+    },
 }

@@ -27,7 +27,7 @@ CANTorpedoNanite03 = ClassProjectile(CTorpedoShipProjectile) {
     ---@param self CANTorpedoNanite03
     MovementThread = function(self)
         WaitTicks(1)
-        for k = 1, 20 do
+        for k = 5, 20 do
             WaitTicks(1)
             if not IsDestroyed(self) then
                 self:SetAcceleration(k)

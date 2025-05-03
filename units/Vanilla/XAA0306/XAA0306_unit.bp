@@ -28,6 +28,18 @@ UnitBlueprint {
         Winged = true,
     },
 
+    Defense = {
+        ArmorType = 'Light',
+
+        Health = 4800,
+        MaxHealth = 4800,
+
+        RegenRate = 6,
+        
+        AirThreatLevel = 6,
+        SubThreatLevel = 40,
+    },
+
     Weapon = {
         {
             advancedTracking = true,
@@ -42,11 +54,11 @@ UnitBlueprint {
 			
             Buffs = {
             	{
-                    Add = { OnImpact = true },
-                    AppliedToTarget = true,
+                    Add = { OnImpact = false },
+                    AppliedToTarget = false,
                     BuffType = 'STUN',
-                    Duration = 0.3,
-                    Radius = 2,
+                    Duration = 0,
+                    Radius = 0,
                     TargetAllow = 'TECH1,TECH2',
                     TargetDisallow = 'WALL,COMMAND,EXPERIMENTAL',
                 },

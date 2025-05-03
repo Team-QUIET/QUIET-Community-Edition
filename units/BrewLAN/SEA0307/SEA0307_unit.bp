@@ -30,6 +30,18 @@ UnitBlueprint {
         Winged = true,
     },
 
+    Defense = {
+        ArmorType = 'Light',
+
+        Health = 4950,
+        MaxHealth = 4950,
+
+        RegenRate = 6,
+        
+        AirThreatLevel = 6,
+        SubThreatLevel = 40,
+    },
+
     Weapon = {
         {
             Audio = {

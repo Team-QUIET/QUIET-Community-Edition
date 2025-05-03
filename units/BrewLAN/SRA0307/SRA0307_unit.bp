@@ -28,6 +28,18 @@ UnitBlueprint {
         Winged = true,
     },
 
+    Defense = {
+        ArmorType = 'Light',
+
+        Health = 4650,
+        MaxHealth = 4650,
+
+        RegenRate = 6,
+        
+        AirThreatLevel = 6,
+        SubThreatLevel = 40,
+    },
+
     Weapon = {
         {
             Audio = {
@@ -36,7 +48,7 @@ UnitBlueprint {
             AutoInitiateAttackCommand = true,
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
-            Damage = 75,
+            Damage = 100,
             DamageRadius = 0,
             DamageType = 'Normal',
             DisplayName = 'Nanite Torpedo',
@@ -51,7 +63,7 @@ UnitBlueprint {
             HeadingArcCenter = 0,
             HeadingArcRange = 40,
             Label = 'Torpedo',
-            MaxRadius = 32,
+            MaxRadius = 26,
             MinRadius = 4,
             MuzzleSalvoDelay = 0.2,
             MuzzleSalvoSize = 5,

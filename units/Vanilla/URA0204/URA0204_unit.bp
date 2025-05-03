@@ -95,7 +95,7 @@ UnitBlueprint {
                 },
             },
             
-            RackSalvoReloadTime = 4.6,  -- 5 second cycle = 600/5 = 120 DPS
+            RackSalvoReloadTime = 4.4,
 
 			RangeCategory = 'UWRC_AntiNavy',
 			

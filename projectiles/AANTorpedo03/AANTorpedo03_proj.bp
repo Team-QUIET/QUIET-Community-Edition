@@ -1,0 +1,55 @@
+ProjectileBlueprint {
+    Categories = {
+        'AEON',
+        'PROJECTILE',
+        'ANTINAVY',
+        'TORPEDO',
+        'NOSPLASHDAMAGE',
+    },
+    Defense = {
+        Health = 1,
+    },
+    Display = {
+        Mesh = {
+            LODs = {
+                {
+                    AlbedoName = '/projectiles/AANTorpedoChronoPack01/AANTorpedoChronoPack01_albedo.dds',
+                    MeshName = '/projectiles/AANTorpedoChronoPack01/AANTorpedoChronoPack01_lod0.scm',
+                    ShaderName = 'TMeshGlow',
+                },
+            },
+        },
+        StrategicIconSize = 1,
+        UniformScale = 0.03,
+    },
+    General = {
+        Category = 'Anti Navy',
+        EntityCategory = {
+            'AEON',
+            'PROJECTILE',
+            'ANTINAVY',
+            'TORPEDO',
+            'NOSPLASHDAMAGE',
+        },
+        Faction = 'Aeon',
+        Weapon = 'Chrono Torpedo',
+    },
+    Interface = {
+        HelpText = 0,
+    },
+    Physics = {
+        Acceleration = 0,
+        DestroyOnWater = false,
+        InitialSpeed = 5,
+        Lifetime = 30,
+        MaxSpeed = 30,
+        MaxZigZag = 3,
+        RealisticOrdinance = true,
+        StayUnderwater = true,
+        TrackTarget = true,
+        TurnRate = 190,
+        VelocityAlign = true,
+        UseGravity = true,
+        ZigZagFrequency = 0.5,
+    },
+}
