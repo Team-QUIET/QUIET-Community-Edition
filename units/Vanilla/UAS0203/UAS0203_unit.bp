@@ -21,7 +21,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 			
-            Damage = 200,
+            Damage = 100,
             DamageType = 'Normal',
 			
             DisplayName = 'Chrono Torpedo',
