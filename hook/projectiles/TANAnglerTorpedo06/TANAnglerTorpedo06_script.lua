@@ -13,7 +13,7 @@ TANAnglerTorpedo06 = ClassProjectile(TTorpedoShipProjectile) {
         -- of a shallow pond, like in setons
         self:SetVelocity(0)
         self:SetAcceleration(0.5)
-        self.Trash:Add(ForkThread(self.MovementThread))
+        self.Trash:Add(ForkThread(self.MovementThread, self))
     end,
 
     --- Adjusted movement thread to gradually speed up the torpedo. It needs to slowly speed
@@ -21,7 +21,7 @@ TANAnglerTorpedo06 = ClassProjectile(TTorpedoShipProjectile) {
     ---@param self TANAnglerTorpedo06
     MovementThread = function(self)
         WaitTicks(1)
-        for k = 5, 30 do
+        for k = 1, 6 do
             WaitTicks(1)
             if not IsDestroyed(self) then
                 self:SetAcceleration(k)

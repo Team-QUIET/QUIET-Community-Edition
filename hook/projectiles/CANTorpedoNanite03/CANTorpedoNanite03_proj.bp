@@ -45,9 +45,9 @@ ProjectileBlueprint{
     Physics = {
         Acceleration = 0,
         DestroyOnWater = false,
-        InitialSpeed = 20,
+        InitialSpeed = 2,
         Lifetime = 30,
-        MaxSpeed = 20,
+        MaxSpeed = 8,
         MaxZigZag = 3,
         RealisticOrdinance = true,
         StayUnderwater = true,
