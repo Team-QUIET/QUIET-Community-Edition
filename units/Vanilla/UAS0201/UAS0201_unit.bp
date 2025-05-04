@@ -49,6 +49,12 @@ UnitBlueprint {
         TurnRadius = 15,
         TurnRate = 50,
     },
+
+    CollisionOffsetY = -0.4,
+
+    SizeX = 1.23,
+    SizeY = 1.0,
+    SizeZ = 3.6,
 	
     Weapon = {
         {
