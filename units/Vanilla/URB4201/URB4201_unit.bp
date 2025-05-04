@@ -1,4 +1,7 @@
 UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'urb4201',
+
     Audio = {
         Destroyed   = Sound { Bank = 'URLDestroy', Cue = 'URB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff'},
         UISelection = Sound { Bank = 'Interface', Cue = 'Cybran_Select_Gun', LodCutoff = 'UnitMove_LodCutoff'},
