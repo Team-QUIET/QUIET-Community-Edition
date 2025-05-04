@@ -1,106 +1,108 @@
 UnitBlueprint {
     Merge = true,
-    BlueprintId = 'xsb4201',
+    BlueprintId = 'ueb4201',
 
     Audio = {
-        Destroyed   = Sound { Bank = 'XSL_Destroy', Cue = 'XSB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff'},
-        Killed      = Sound { Bank = 'XSL_Destroy', Cue = 'XSB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff'},
-        UISelection = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_gun', LodCutoff = 'UnitMove_LodCutoff'},
+        Destroyed = Sound {
+            Bank = 'UELDestroy',
+            Cue = 'UEB_Destroy_Huge',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        UISelection = Sound {
+            Bank = 'Interface',
+            Cue = 'UEF_Select_Gun',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
     },
-
+	
     BuildIconSortPriority = 155,
-
+	
     Categories = {
         'SELECTABLE',
         'BUILTBYTIER2ENGINEER',
         'BUILTBYTIER3ENGINEER',
         'BUILTBYTIER2COMMANDER',
         'BUILTBYTIER3COMMANDER',
-        'SERAPHIM',
+        'UEF',
         'STRUCTURE',
         'DEFENSE',
-        'DRAGBUILD',
         'TECH2',
         'ANTIMISSILE',
+        'DRAGBUILD',
         'SIZE4',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SORTSTRATEGIC',
     },
-
+	
     CollisionOffsetY = -0.25,
-
+	
     Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 4,
-        Health = 975,
-        MaxHealth = 975,
+        Health = 1000,
+        MaxHealth = 1000,
         RegenRate = 0,
     },
-
-    Description = '<LOC xsb4201_desc>Tactical Missile Defense',
-
+	
+    Description = '<LOC ueb4201_desc>Tactical Missile Defense',
+	
     Display = {
         Abilities = {
-            '<LOC ability_aquatic>Aquatic: can be built on water',
+            '<LOC ability_aquatic>Aquatic',
         },
-
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
                     LODCutoff = 100,
-                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
-                    Scrolling = true,
-                    ShaderName = 'Seraphim',
+                    ShaderName = 'Unit',
                 },
                 {
-                    AlbedoName = 'xsb4201_lod1_albedo.dds',
+                    AlbedoName = 'ueb4201_lod1_albedo.dds',
                     LODCutoff = 215,
-                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
-                    ShaderName = 'Seraphim',
-                    SpecularName = 'xsb4201_lod1_specteam.dds',
+                    ShaderName = 'Unit',
+                    SpecularName = 'ueb4201_lod1_specteam.dds',
                 },
             },
         },
-
-        UniformScale = 0.05,
+        UniformScale = 0.15,
     },
-
+	
     Economy = {
         BuildCostEnergy = 3200,
         BuildCostMass = 280,
-        BuildTime = 400,
-
-        RebuildBonusIds = {'xsb4201'},
+        BuildTime = 320,
+		
+        RebuildBonusIds = {'ueb4201'},
     },
-
+	
     Footprint = {
         MinWaterDepth = 2,
     },
-
+	
     General = {
         CommandCaps = {
             RULEUCC_RetaliateToggle = true,
         },
-        FactionName = 'Seraphim',
+        FactionName = 'UEF',
         Icon = 'amph',
         SelectionPriority = 5,
-        UnitName = '<LOC xsb4201_name>Ythisatha',
+        UnitName = '<LOC ueb4201_name>Buzzkill',
     },
-
+	
     Intel = {
         VisionRadius = 28,
     },
-
+	
     Interface = {
         HelpText = 'Tactical Missile Defense',
     },
-
+	
     LifeBarHeight = 0.075,
-    LifeBarOffset = 0.5,
-    LifeBarSize = 0.75,
-
+    LifeBarOffset = 0.6,
+    LifeBarSize = 1.25,
+	
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
@@ -110,9 +112,9 @@ UnitBlueprint {
         DragCoefficient = 0.2,
         FlattenSkirt = true,
         MaxSteerForce = 0,
-        MeshExtentsX = 1,
-        MeshExtentsY = 0.75,
-        MeshExtentsZ = 1,
+        MeshExtentsX = 1.5,
+        MeshExtentsY = 1.5,
+        MeshExtentsZ = 1.5,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',
         SkirtOffsetX = -0.5,
@@ -121,97 +123,96 @@ UnitBlueprint {
         SkirtSizeZ = 2,
         TurnRate = 0,
     },
-
-    SelectionSizeX = 0.55,
-    SelectionSizeZ = 0.55,
-    SelectionThickness = 0.71,
-
-    SizeX = 0.65,
-    SizeY = 0.9,
+	
+    SelectionSizeX = 0.9,
+    SelectionSizeZ = 0.9,
+    SelectionThickness = 0.3,
+	
+    SizeX = 1,
+    SizeY = 1.5,
     SizeZ = 1,
-
+	
     StrategicIconName = 'icon_structure2_antimissile',
     StrategicIconSortPriority = 200,
-
+	
     Weapon = {
         {
+            AimsStraightOnDisable = true,
             Audio = {
-                Fire = Sound {
-                    Bank = 'XSB_Weapon',
-                    Cue = 'XSB4201_Eleathrun_TMD',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB4201_Phalanx_01', LodCutoff = 'Weapon_LodCutoff' },
             },
+			
             BallisticArc = 'RULEUBA_None',
+			
             CollideFriendly = false,
 			
             Damage = 2,
             DamageType = 'Normal',
-			DisableWhileReloading = true,
-            DisplayName = 'Ele-athrun Tactical Missile Defense',
+            DisableWhileReloading = true,
+			
+            DisplayName = 'Phalanx Anti Missile',
 			
             FireTargetLayerCapsTable = {
                 Land = 'Air',
                 Water = 'Air',
             },
 			
-            FiringTolerance = 1,
+            FiringTolerance = 0,
 			
-            Label = 'AntiMissile',
+            Label = 'Turret01',
 			
-            MaxRadius = 31,
-            MinRadius = 2,
+            MaxRadius = 30,
+            MinRadius = 1,
+			
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 35,
-            ProjectileId = '/projectiles/SIMAntiMissile01/SIMAntiMissile01_proj.bp',
-            ProjectileLifetime = 3,
+            MuzzleVelocity = 120,
+            ProjectileId = '/projectiles/TDPhalanx01/TDPhalanx01_proj.bp',
             ProjectileLifetimeUsesMultiplier = 2,
             ProjectilesPerOnFire = 1,
-
+			
             RackBones = {
                 {
                     MuzzleBones = {'Turret_Muzzle'},
                     RackBone = 'Turret_Barrel',
                 },
             },
-
-            RackRecoilDistance = -1,
-
+			
             RangeCategory = 'UWRC_Countermeasure',
-
-            RateOfFire = 10/18,
-
+			
+            RateOfFire = 10/20,
             TargetCheckInterval = 0.5,
+			
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
             TargetRestrictOnlyAllow = 'TACTICAL MISSILE',
             TargetType = 'RULEWTT_Projectile',
             TrackingRadius = 1.05,
-
+			
             TurretBoneMuzzle = 'Turret_Muzzle',
             TurretBonePitch = 'Turret_Barrel',
             TurretBoneYaw = 'Turret',
             TurretDualManipulators = false,
-
+			
             TurretPitch = 0,
             TurretPitchRange = 90,
             TurretPitchSpeed = 90,
-
+			
             TurretYaw = 0,
             TurretYawRange = 360,
             TurretYawSpeed = 180,
-
+			
             Turreted = true,
             WeaponCategory = "Defense",
             WeaponUnpacks = false,
         },
+		
     },
-
+	
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
-        EnergyMult = 0.3,
+        EnergyMult = 0.5,
         HealthMult = 0.9,
-        MassMult = 0.3,
+        MassMult = 0.5,
         ReclaimTimeMultiplier = 1,
         WreckageLayers = {
             Land = true,
