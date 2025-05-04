@@ -1,0 +1,252 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "xsl0103",
+
+    AI = {  
+        GuardScanRadius = 24,     
+		TargetBones = {'Turret'},		
+    }, 
+	
+    Audio = {
+        StartMove   = Sound { Bank = 'XSL', Cue = 'XSL0104_Move_Start',  LodCutoff = 'UnitMove_LodCutoff' },
+        StopMove    = Sound { Bank = 'XSL', Cue = 'XSL0104_Move_Stop',   LodCutoff = 'UnitMove_LodCutoff' },
+        Destroyed   = Sound { Bank = 'XSL_Destroy', Cue = 'XSL_Destroy_Land_Sml',    LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_Bot',  LodCutoff = 'UnitMove_LodCutoff' },
+    },
+	
+    Buffs = {},
+	
+    BuildIconSortPriority = 50,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER3FACTORY',
+        'SERAPHIM',
+        'MOBILE',
+        'LAND',
+        'TECH1',
+        'AMPHIBIOUS',
+        'HOVER',
+        'DIRECTFIRE',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+    },
+	
+	CollisionOffsetZ = 0.15,
+	
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 240,
+        MaxHealth = 240,
+        RegenRate = 1,
+        SurfaceThreatLevel = 2.5,
+    },
+	
+    Description = '<LOC brpt1ht_desc>Light Hovertank',
+	
+    Display = {
+        Abilities = {
+            '<LOC ability_amphibious>Amphibious',        
+            '<LOC ability_hover>Hover',
+        },
+        
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    AlbedoName = '/Units/xsl0103/xsl0103_Albedo.dds',
+					NormalsName = '/Units/xsl0103/xsl0103_NormalsTS.DDS',
+                    LODCutoff = 180,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',				
+                    ShaderName = 'Seraphim',
+					SpecularName = '/Units/xsl0103/xsl0103_SpecTeam.dds',
+                },
+            },
+        },
+		
+		MovementEffects = {
+            Land = {
+                Effects = {
+                    { Bones = {'BRPT1HT'}, Offset = {0.2,-0.15,-0.1}, Scale = 0.3, Type = 'SeraphimGroundFX01' },
+                },
+            },
+        },
+
+        UniformScale = 0.075,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 470,
+        BuildCostMass = 54,
+        BuildTime = 90,
+    },
+	
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Seraphim',
+        Icon = 'amph',
+        UnitName = '<LOC brpt1ht_name>Yenshavoh',
+    },
+	
+    Intel = {
+        VisionRadius = 20,
+        WaterVisionRadius = 8,
+    },
+	
+    Interface = {
+        HelpText = 'Light Hovertank',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.45,
+    LifeBarSize = 1,
+	
+    Physics = {
+        BackUpDistance = 6,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        Elevation = 0.12,
+        MaxAcceleration = 2.7,
+        MaxBrake = 2.7,
+        MaxSpeed = 2.7,
+        MaxSpeedReverse = 2.7,
+        MaxSteerForce = 10,
+		
+        MeshExtentsX = 0.55,
+        MeshExtentsY = 0.35,
+        MeshExtentsZ = 0.65,
+		
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Hover',
+		
+        RotateBodyWhileMoving = true,
+        RotateOnSpot = false,
+		
+        TurnFacingRate = 80,
+        TurnRadius = 2,
+        TurnRate = 60,
+    },
+	
+    SelectionSizeX = 0.35,
+    SelectionSizeZ = 0.5,
+    SelectionThickness = 0.35,
+	
+    SizeX = 0.6,
+    SizeY = 0.35,
+    SizeZ = 0.9,
+	
+    StrategicIconName = 'icon_surface1_directfire',
+    StrategicIconSortPriority = 135,
+	
+    Transport = {
+        TransportClass = 1,
+    },
+	
+    Veteran = {
+        Level1 = 3,
+        Level2 = 6,
+        Level3 = 9,
+        Level4 = 12,
+        Level5 = 15,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'XSA_Weapon', Cue = 'XSA0203_Phasic_Autogun_Hvy', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 52,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Tau Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+			FiringRandomness = 0.3,
+			FiringRandomnessWhileMoving = 0.8,
+			
+            FiringTolerance = 2,
+			
+            Label = 'TauCannon01',
+			
+            MaxRadius = 24,
+
+            MuzzleVelocity = 45,
+			
+            ProjectileId = '/projectiles/SDFHeavyPhasicAutogun02/SDFHeavyPhasicAutogun02_proj.bp',
+            ProjectileLifetime = 0.6,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle'},
+                    RackBone = 'Recoil',
+                },
+            },
+            
+            RackRecoilDistance = -1.75,
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 0.5,	-- 24 DPS
+			
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 35,
+			
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'MOBILE -AIR',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TrackingRadius = 1.05,
+			
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 40,
+            TurretPitchSpeed = 40,
+			
+            TurretYaw = 0,
+            TurretYawRange = 40,
+            TurretYawSpeed = 40,
+			
+            Turreted = true,
+        },
+    },
+    
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.35,
+        HealthMult = 0.9,
+        MassMult = 0.35,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

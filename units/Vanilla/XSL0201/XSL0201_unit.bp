@@ -1,14 +1,231 @@
+
 UnitBlueprint {
-  Merge = true,
-  BlueprintId = "xsl0201",
+    Merge = true,
+    BlueprintId = "xsl0201",
 
-      Weapon = {
+    AI = {
+		GuardReturnRadius = 35,
+        GuardScanRadius = 21,
+    },
+
+    Audio = {
+        Destroyed   = Sound { Bank = 'XSL_Destroy', Cue = 'XSL_Destroy_Land_Sml', LodCutoff = 'UnitMove_LodCutoff'},
+        StartMove   = Sound { Bank = 'XSL', Cue = 'XSL0201_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_Tank', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+
+    Buffs = {},
+	
+    BuildIconSortPriority = 20,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER3FACTORY',
+        'SERAPHIM',
+        'MOBILE',
+        'LAND',
+        'TECH1',
+		'TANK',
+        'DIRECTFIRE',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+    },
+
+    CollisionOffsetZ = 0.1,
+	
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 280,
+        MaxHealth = 280,
+        RegenRate = 0.5,
+        SurfaceThreatLevel = 2.8,
+    },
+	
+    Description = '<LOC xsl0201_desc>Medium Tank',
+	
+    Display = {
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 100,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    Scrolling = true,
+                    ShaderName = 'Seraphim',
+                },
+                {
+                    AlbedoName = 'xsl0201_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    ShaderName = 'Seraphim',
+                    SpecularName = 'xsl0201_lod1_specteam.dds',
+                },
+            },
+        },
+
+        UniformScale = 0.063,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 270,
+        BuildCostMass = 54,
+        BuildTime = 425,
+    },
+	
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Seraphim',
+        Icon = 'land',
+
+        UnitName = '<LOC xsl0201_name>Thaam',
+    },
+
+    Intel = {
+        VisionRadius = 24,
+    },
+
+    Interface = {
+        HelpText = 'Medium Tank',
+    },
+
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.55,
+    LifeBarSize = 0.75,
+
+    Physics = {
+        BackUpDistance = 6,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 3.6,
+        MaxBrake = 3.6,
+        MaxSpeed = 3.5,
+        MaxSpeedReverse = 3.5,
+        MaxSteerForce = 10,
+        MeshExtentsX = 1,
+        MeshExtentsY = 0.5,
+        MeshExtentsZ = 1,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        RotateOnSpot = false,
+        RotateOnSpotThreshold = 0.1,
+        TurnRadius = 0,
+        TurnRate = 90,
+    },
+
+    SelectionSizeX = 0.5,
+    SelectionSizeZ = 0.8,
+    SelectionThickness = 0.5,
+
+    SizeX = 0.7,
+    SizeY = 0.5,
+    SizeZ = 0.9,
+
+    StrategicIconName = 'icon_land1_directfire',
+    StrategicIconSortPriority = 125,
+
+    Transport = {
+        TransportClass = 1,
+    },
+
+    Veteran = {
+        Level1 = 2,
+        Level2 = 4,
+        Level3 = 6,
+        Level4 = 8,
+        Level5 = 10,
+    },
+
+    Weapon = {
         {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'XSL_Weapon', Cue = 'XSL0201_Cannon_Spectra', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 32,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Oh Spectra Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+            },
+			
+            FiringTolerance = 2,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 21,
+			
+            MuzzleVelocity = 25,
+			
+            ProjectileId = '/projectiles/SDFOhCannon01/SDFOhCannon01_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 1.15,
 
-            RateOfFire = 10/10,
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Barrel_Muzzle'},
+                    RackBone = 'Turret_Barrel',
+                },
+            },
 
-            TurretYawSpeed = 90,
+            RackRecoilDistance = -1,
 
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/13,
+			
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Turret_Barrel_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+
+            TurretPitch = 0,
+            TurretPitchRange = 30,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 100,
+			
+            Turreted = true,
+        },
+    },
+
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.3,
+        HealthMult = 0.9,
+        MassMult = 0.5,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
         },
     },
 }
