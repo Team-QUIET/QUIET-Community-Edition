@@ -1093,6 +1093,8 @@ do
 			'urb2306',   -- Beholder
 			'sab2306',   -- Orbos
 			'bal0110',   -- Requiem
+			'brot1mt',   -- Bonfire
+			'ual0108',   -- Artos
 		};
 		for i, bp in pairs(unitPruningId) do
 			if all_blueprints.Unit[bp] then
