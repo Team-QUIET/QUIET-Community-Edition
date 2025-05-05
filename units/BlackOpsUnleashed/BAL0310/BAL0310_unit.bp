@@ -11,12 +11,12 @@ UnitBlueprint {
         Elevation = 0.3,
         
         BackUpDistance = 10,
-        MaxAcceleration = 2,
-        MaxBrake = 2,
+        MaxAcceleration = 3,
+        MaxBrake = 15,
         MaxSpeed = 3,
         MaxSpeedReverse = 3,
         
-        MaxSteerForce = 100,
+        MaxSteerForce = 3,
         MeshExtentsX = 1.1,
         MeshExtentsY = 0.7,
         MeshExtentsZ = 2.0,
@@ -25,11 +25,13 @@ UnitBlueprint {
         MotionType = 'RULEUMT_Hover',
 
         RotateBodyWhileMoving = true,
-        RotateOnSpot = true,
+        RotateOnSpot = false,
         
-        TurnFacingRate = 55,
+        TurnFacingRate = 60,
         TurnRadius = 0,
-        TurnRate = 50,
+        TurnRate = 60,
+        WobbleFactor = 0.1,
+        WobbleSpeed = 0.01,
     },
     
     Weapon = {
