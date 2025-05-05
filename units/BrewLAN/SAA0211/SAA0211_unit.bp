@@ -39,7 +39,7 @@ UnitBlueprint {
 	
     Economy = {
         BuildCostEnergy = 17000,
-        BuildCostMass = 330,
+        BuildCostMass = 730,
     },
 	
     Weapon = {
