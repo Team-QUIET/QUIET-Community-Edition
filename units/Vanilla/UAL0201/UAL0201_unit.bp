@@ -1,0 +1,249 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "ual0201",
+
+    AI = {
+		GuardReturnRadius = 44,
+        GuardScanRadius = 22,
+    },
+
+    Audio = {
+        Destroyed = Sound { Bank = 'UALDestroy', Cue = 'UAL_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff'},
+        StartMove = Sound { Bank = 'UAL', Cue = 'UAL0201_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'Aeon_Select_Tank', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+
+    Buffs = {},
+	
+    BuildIconSortPriority = 40,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER3FACTORY',
+        'AEON',
+        'MOBILE',
+        'LAND',
+        'TECH1',
+        'DIRECTFIRE',
+        'HOVER',
+		'AMPHIBIOUS',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+    },
+	
+	CollisionOffsetZ = 0.1,
+	
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 155,
+        MaxHealth = 155,
+        RegenRate = 0,
+        SurfaceThreatLevel = 2.4,
+    },
+	
+    Description = '<LOC ual0201_desc>Light HoverTank',
+	
+    Display = {
+        Abilities = {
+            '<LOC ability_amphib>Amphbious',        
+            '<LOC ability_hover>Hover',
+        },
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 100,
+                    ShaderName = 'Aeon',
+                },
+                {
+                    AlbedoName = 'ual0201_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    ShaderName = 'Aeon',
+                    SpecularName = 'ual0201_lod1_specteam.dds',
+                },
+            },
+        },
+
+        UniformScale = 0.1,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 270,
+        BuildCostMass = 54,
+        BuildTime = 225,
+    },
+	
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Aeon',
+        Icon = 'amph',
+
+        UnitName = '<LOC ual0201_name>Aurora',
+    },
+	
+    Intel = {
+        VisionRadius = 20,
+        WaterVisionRadius = 8,
+    },
+	
+    Interface = {
+        HelpText = 'Light HoverTank',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.4,
+    LifeBarSize = 0.65,
+	
+    Physics = {
+		BackUpDistance = 6,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        Elevation = 0.25,
+        
+        MaxAcceleration = 3,
+        MaxBrake = 15,
+        MaxSpeed = 3,
+        MaxSpeedReverse = 3,
+        
+        MaxSteerForce = 3,
+        MeshExtentsX = 0.75,
+        MeshExtentsY = 0.5,
+        MeshExtentsZ = 0.8,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Hover',
+        RotateBodyWhileMoving = true,
+        RotateOnSpot = false,
+        TurnFacingRate = 120,
+        TurnRadius = 1.2,
+        TurnRate = 310,
+        WobbleFactor = 0.1,
+        WobbleSpeed = 0.01,
+    },
+    
+    SelectionSizeX = 0.5,
+    SelectionSizeZ = 0.7,
+    SelectionThickness = 0.58,
+    
+    SizeX = 0.7,
+    SizeY = 0.4,
+    SizeZ = 0.9,
+    
+    StrategicIconName = 'icon_surface1_directfire',
+    StrategicIconSortPriority = 135,
+    
+    Transport = {
+        TransportClass = 1,
+    },	
+    
+    Veteran = {
+        Level1 = 3,
+        Level2 = 6,
+        Level3 = 9,
+        Level4 = 12,
+        Level5 = 15,
+    },
+    
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                MuzzleChargeStart = Sound { Bank = 'UALWeapon', Cue = 'UAL0201_Cannon_Disruptor', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 40,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Light Disruptor',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+                Water = 'Land|Water',
+            },
+			
+            FiringRandomnessWhileMoving = 0.1,
+            FiringTolerance = 2,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 26,
+			
+            MuzzleChargeDelay = 0.1,
+
+            MuzzleVelocity = 25,
+			
+            ProjectileId = '/projectiles/ADFDisruptor01/ADFDisruptor01_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 1.15,
+            ProjectileLifetime = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Barrel'},
+                    RackBone = 'Turret_Barrel',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/17,	
+
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 10,
+			
+            TargetCheckInterval = 0.3,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH1 MOBILE",
+                "TECH2 MOBILE",
+                "TECH3 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Turret_Barrel',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 20,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 10,
+            TurretYawSpeed = 60,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Direct Fire",
+        },
+    },
+
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.35,
+        HealthMult = 0.9,
+        MassMult = 0.35,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

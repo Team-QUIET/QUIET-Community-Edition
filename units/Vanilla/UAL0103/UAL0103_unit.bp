@@ -34,8 +34,8 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Normal',
-        Health = 110,
-        MaxHealth = 110,
+        Health = 200,
+        MaxHealth = 200,
         RegenRate = 0,
         SurfaceThreatLevel = 2.9,
     },
@@ -64,8 +64,8 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 450,
-        BuildCostMass = 38,
+        BuildCostEnergy = 180,
+        BuildCostMass = 36,
         BuildTime = 190,
     },
 	
@@ -97,22 +97,23 @@ UnitBlueprint {
     LifeBarSize = 0.5,
 	
     Physics = {
+        BackUpDistance = 6,
         BankingSlope = 0,
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
         DragCoefficient = 0.2,
-        MaxAcceleration = 1.35,
+        MaxAcceleration = 2.7,
         MaxBrake = 2.7,
         MaxSpeed = 2.7,
-        MaxSpeedReverse = 0,
+        MaxSpeedReverse = 2.7,
         MaxSteerForce = 10,
         MeshExtentsX = 0.55,
         MeshExtentsY = 0.35,
         MeshExtentsZ = 0.65,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_Land',
-        RotateOnSpot = true,
+        RotateOnSpot = false,
         RotateOnSpotThreshold = 0.1,
         TurnRadius = 2,
         TurnRate = 90,
@@ -152,7 +153,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
 			
-            Damage = 160,
+            Damage = 200,
             DamageFriendly = false,
             DamageRadius = 0.5,
             DamageType = 'Normal',
@@ -163,20 +164,19 @@ UnitBlueprint {
                 Land = 'Land|Water',
             },
 			
-            FiringRandomness = 0.7,
-            FiringTolerance = 2,
+            FiringRandomness = 0.35,
+            FiringTolerance = 3,
 			
             Label = 'MainGun',
 			
-            MaxRadius = 36,
+            MaxRadius = 37,
             MinRadius = 5,
-			
+	
             MuzzleVelocity = 15,
             MuzzleVelocityReduceDistance = 28,
-			
             ProjectileId = '/projectiles/AIFMortar01/AIFMortar01_proj.bp',
-			ProjectileLifetime = 10,
-			
+			ProjectileLifetimeUsesMultiplier = 1.15,
+
             RackBones = {
                 {
                     MuzzleBones = {'Turret_Muzzle'},
@@ -186,12 +186,12 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 10/33,
+            RateOfFire = 10/20,
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 40,
 
-            TargetCheckInterval = 0.5,
+            TargetCheckInterval = 0.3,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
 				"STRUCTURE EXPERIMENTAL",
@@ -229,6 +229,7 @@ UnitBlueprint {
             TurretYawSpeed = 70,
 			
             Turreted = true,
+            WeaponCategory = "Artillery",
         },
     },
 }
