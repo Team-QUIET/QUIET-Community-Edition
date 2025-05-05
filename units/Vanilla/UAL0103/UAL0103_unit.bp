@@ -175,7 +175,7 @@ UnitBlueprint {
             MuzzleVelocity = 15,
             MuzzleVelocityReduceDistance = 28,
             ProjectileId = '/projectiles/AIFMortar01/AIFMortar01_proj.bp',
-			ProjectileLifetimeUsesMultiplier = 1.15,
+			ProjectileLifetimeUsesMultiplier = 3,
 
             RackBones = {
                 {
@@ -185,6 +185,8 @@ UnitBlueprint {
             },
 
             RangeCategory = 'UWRC_IndirectFire',
+
+            RenderFireClock = true,
 			
             RateOfFire = 10/20,
 			

@@ -178,7 +178,7 @@ UnitBlueprint {
             MuzzleVelocity = 14,
             MuzzleVelocityReduceDistance = 28,
 			ProjectileId = '/projectiles/TIFFragmentationSensorShell01/TIFFragmentationSensorShell01_proj.bp',
-			ProjectileLifetimeUsesMultiplier = 1.15,
+			ProjectileLifetimeUsesMultiplier = 3,
 			
             RackBones = {
                 {
@@ -190,6 +190,8 @@ UnitBlueprint {
             RackRecoilDistance = -3,
 
             RangeCategory = 'UWRC_IndirectFire',
+
+            RenderFireClock = true,
 			
             RateOfFire = 10/83,
 			

@@ -201,7 +201,7 @@ UnitBlueprint {
             MuzzleVelocity = 14,
             MuzzleVelocityReduceDistance = 28,
             ProjectileId = '/projectiles/CIFGrenade01/CIFGrenade01_proj.bp',
-            ProjectileLifetimeUsesMultiplier = 1.15,
+            ProjectileLifetimeUsesMultiplier = 3,
             ProjectilesPerOnFire = 1,
 			
             RackBones = {
@@ -214,6 +214,8 @@ UnitBlueprint {
             RackRecoilDistance = -1,
 
             RangeCategory = 'UWRC_IndirectFire',
+
+            RenderFireClock = true,
 			
             RateOfFire = 10/60,
 			

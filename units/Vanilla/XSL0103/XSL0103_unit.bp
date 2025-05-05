@@ -195,11 +195,8 @@ UnitBlueprint {
 
             MuzzleVelocity = 14,
             MuzzleVelocityReduceDistance = 28,
-			
-			-- this is a splitting projectile that will create 5 sub-munitions - so damage is divided by the number of projectiles
-            ProjectileId = '/projectiles/SIFThunthoArtilleryShell01/SIFThunthoArtilleryShell01_proj.bp',
-
-			ProjectileLifetime = 10,
+			ProjectileId = '/projectiles/SIFThunthoArtilleryShell01/SIFThunthoArtilleryShell01_proj.bp',
+			ProjectileLifetimeUsesMultiplier = 3,
 
             RackBones = {
                 {
