@@ -1,14 +1,224 @@
 UnitBlueprint {
-  Merge = true,
-  BlueprintId = "uel0201",
+    Merge = true,
+    BlueprintId = "uel0201",
 
-      Weapon = {
+    AI = {
+		GuardReturnRadius = 45,
+        GuardScanRadius = 20,
+    },
+	
+    Audio = {
+        Destroyed   = Sound { Bank = 'UELDestroy', Cue = 'UEL_Destroy_Med_Land', LodCutoff = 'UnitMove_LodCutoff' },
+        StartMove   = Sound { Bank = 'UEL', Cue = 'UEL0201_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'UEF_Select_Tank', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    Buffs = {},
+	
+    BuildIconSortPriority = 40,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER3FACTORY',
+        'UEF',
+        'MOBILE',
+        'LAND',
+        'TECH1',
+        'DIRECTFIRE',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+    },
+	
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 300,
+        MaxHealth = 300,
+        RegenRate = 0,
+        SurfaceThreatLevel = 2.5,
+    },
+	
+    Description = '<LOC uel0201_desc>Medium Tank',
+	
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 100,
+                    Scrolling = true,
+                    ShaderName = 'Unit',
+                },
+                {
+                    AlbedoName = 'uel0201_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    ShaderName = 'Unit',
+                    SpecularName = 'uel0201_lod1_specteam.dds',
+                },
+            },
+        },
+
+        UniformScale = 0.07,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 266,
+        BuildCostMass = 56,
+        BuildTime = 350,
+    },
+	
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'UEF',
+        Icon = 'land',
+        UnitName = '<LOC uel0201_name>Striker',
+    },
+	
+    Intel = {
+        VisionRadius = 20,
+    },
+	
+    Interface = {
+        HelpText = 'Light Tank',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.35,
+    LifeBarSize = 0.65,
+	
+    Physics = {
+        BackUpDistance = 6,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 3.4,
+        MaxBrake = 3.4,
+        MaxSpeed = 3.4,
+        MaxSpeedReverse = 3.4,
+        MaxSteerForce = 10,
+        MeshExtentsX = 0.65,
+        MeshExtentsY = 0.35,
+        MeshExtentsZ = 0.9,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        RotateOnSpot = false,
+        RotateOnSpotThreshold = 0.1,
+        TurnRadius = 0,
+        TurnRate = 90,
+    },
+	
+    SelectionSizeX = 0.45,
+    SelectionSizeZ = 0.6,
+    SelectionThickness = 0.7,
+	
+    SizeX = 0.6,
+    SizeY = 0.45,
+    SizeZ = 0.8,
+	
+    StrategicIconName = 'icon_land1_directfire',
+    StrategicIconSortPriority = 135,
+	
+    Transport = {
+        TransportClass = 1,
+    },
+	
+    Veteran = {
+        Level1 = 3,
+        Level2 = 6,
+        Level3 = 9,
+        Level4 = 12,
+        Level5 = 15,
+    },
+	
+    Weapon = {
         {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEL0201_Cannon_Sgl', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 25,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Gauss Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+            },
+			
+            FiringTolerance = 2,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 21,
+            MuzzleVelocity = 25,
+            ProjectileId = '/projectiles/TDFGauss01/TDFGauss01_proj.bp',
+			ProjectileLifetime = 1,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle'},
+                    RackBone = 'Turret_Barrel',
+                },
+            },
+            RackRecoilDistance = -2,
 
+            RangeCategory = 'UWRC_DirectFire',
+			
             RateOfFire = 10/10,
-
-            TurretYawSpeed = 90,
-
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                "TECH1 MOBILE",
+                "TECH2 MOBILE",
+                "TECH3 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.15,
+			
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 100,
+			
+            Turreted = true,
+            WeaponCategory = "Direct Fire",
+            WeaponRepackTimeout = 0,
+            WeaponUnpacks = false,
+        },
+    },
+	
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.3,
+        HealthMult = 0.9,
+        MassMult = 0.6,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
         },
     },
 }

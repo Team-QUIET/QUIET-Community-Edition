@@ -1,0 +1,299 @@
+UnitBlueprint{
+    Merge = true,
+    BlueprintId = "uel0107",
+
+    Description = "<LOC uel0107_desc>Mortar Hovercraft",
+    
+    AI = {
+        GuardScanRadius = 33,
+    },
+
+    Audio = {
+        Destroyed          = Sound { Bank = 'UELDestroy', Cue = 'UEL_Destroy_Med_Land', LodCutoff = 'UnitMove_LodCutoff' },
+        HoverKilledOnWater = Sound { Bank = 'Explosions', Cue = 'Expl_Water_Lrg_01',    LodCutoff = 'UnitMove_LodCutoff' },
+        StartMove          = Sound { Bank = 'UEL',        Cue = 'UEL0203_Move_Start',   LodCutoff = 'UnitMove_LodCutoff' },
+        StopMove           = Sound { Bank = 'UEL',        Cue = 'UEL0203_Move_Stop',    LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection        = Sound { Bank = 'Interface',  Cue = 'UEF_Select_Tank',      LodCutoff = 'UnitMove_LodCutoff' },
+    },
+
+    Buffs = {},
+
+    BuildIconSortPriority = 25,
+
+    Categories = {
+        "AMPHIBIOUS",
+        "BUILTBYTIER1FACTORY",
+        "BUILTBYTIER2FACTORY",
+        "BUILTBYTIER3FACTORY",
+        "DIRECTFIRE",
+        "HOVER",
+        "LAND",
+        "MOBILE",
+        "RECLAIMABLE",
+        "SELECTABLE",
+        "TECH1",
+        "UEF",
+        "VISIBLETORECON",
+    },
+
+    Defense = {
+        ArmorType = "Normal",
+        Health = 225,
+        MaxHealth = 225,
+        RegenRate = 0,
+        SubThreatLevel = 1.2,
+        SurfaceThreatLevel = 3,
+    },
+
+    Display = {
+        Abilities = {
+            "<LOC ability_hover>Hover",
+            "Rapid Fire Mortar",
+            '<LOC ability_depthcharge>Depth Charge',
+        },
+
+        Mesh = { IconFadeInZoom = 180, LODs = { { LODCutoff = 180, ShaderName = "Unit" } } },
+
+        MovementEffects = {
+            Water = {
+                Effects = {
+                    { Bones = { "Wake_Left" }, Scale = 0.2, Type = "LeftFrontWake" },
+                    { Bones = { "Wake_Right" }, Scale = 0.2, Type = "RightFrontWake" },
+                },
+            },
+        },
+
+        UniformScale = 0.08,
+    },
+
+    Economy = {
+        BuildCostEnergy = 470,
+        BuildCostMass = 54,
+        BuildTime = 81,
+    },
+
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = "UEF",
+        Icon = "amph",
+        UnitName = "<LOC uel0107_name>Caiman",
+    },
+
+    Intel = { 
+        VisionRadius = 22,
+        WaterVisionRadius = 8,
+    },
+
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.4,
+    LifeBarSize = 0.65,
+
+    Physics = {
+        BackUpDistance = 6,
+        BankingSlope = 0,
+        DragCoefficient = 0.2,
+        Elevation = 0.125,
+        MaxAcceleration = 2.9,
+        MaxBrake = 2.9,
+        MaxSpeed = 2.9,
+        MaxSpeedReverse = 2.9,
+        MaxSteerForce = 1000,
+        MeshExtentsX = 0.6,
+        MeshExtentsY = 0.44,
+        MeshExtentsZ = 0.64,
+        MinSpeedPercent = 0,
+        MotionType = "RULEUMT_Hover",
+        RotateBodyWhileMoving = true,
+        TurnFacingRate = 80,
+        TurnRadius = 2,
+        TurnRate = 60,
+        WobbleFactor = 0.003,
+        WobbleSpeed = 0.01,
+    },
+
+    SelectionSizeX = 0.4,
+    SelectionSizeZ = 0.5,
+    SelectionThickness = 0.5,
+
+    SizeX = 0.4,
+    SizeY = 0.25,
+    SizeZ = 0.7,
+
+    StrategicIconName = "icon_surface1_directfire",
+    StrategicIconSortPriority = 125,
+
+    Transport = {
+        CanFireFromTransport = false,
+        TransportClass = 1,
+    },
+
+    Veteran = {
+        Level1 = 3,
+        Level2 = 6,
+        Level3 = 9,
+        Level4 = 12,
+        Level5 = 15,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEL0103_Mortar', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = "RULEUBA_LowArc",
+
+            CollideFriendly = false,
+
+            Damage = 14,
+            DamageRadius = 1,
+            DamageType = "Normal",
+
+            DisplayName = "Grenade Launcher",
+
+            FireTargetLayerCapsTable = {
+                Land = "Land|Water|Seabed",
+                Water = "Land|Water|Seabed",
+            },
+            FiringRandomness = 0.5,
+            FiringRandomnessWhileMoving = 1,
+            FiringTolerance = 2,
+
+            Label = "Mortar",
+
+            MaxRadius = 28,
+            MinRadius = 5,
+
+            MuzzleSalvoDelay = 0.5,
+            MuzzleSalvoSize = 5,
+
+            MuzzleVelocity = 15,
+            MuzzleVelocityRandomness = 2.0,
+            MuzzleVelocityReduceDistance = 1,
+
+            ProjectileId = "/mods/4DC/projectiles/Mortar/Mortar_proj.bp",
+            ProjectileLifetimeUsesMultiplier = 3,
+
+            RackBones = {
+                {
+                    MuzzleBones = { "Muzzle" },
+                    RackBone = "Barrel_Outer",
+                },
+            },
+
+            RangeCategory = "UWRC_DirectFire",
+
+            RateOfFire = 0.5,
+
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = "UNTARGETABLE",
+            TrackingRadius = 1.15,
+
+            TurretBoneMuzzle = "Muzzle",
+            TurretBonePitch = "Barrel_Housing_Pitch",
+            TurretBoneYaw = "Turret_Yaw",
+            TurretDualManipulators = false,
+
+            TurretPitch = 0,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 90,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 100,
+
+            Turreted = true,
+        },
+		
+		--- Depth Charge ---
+        {
+            
+            Audio = {
+                Fire = Sound { Bank = 'UAAWeapon', Cue = 'UAA0204_Depth_Charge', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            BelowWaterTargetsOnly = true,
+            
+            CollideFriendly = false,
+			
+            Damage = 35,
+            DamageRadius = 7,
+            DamageType = 'Normal',
+            
+            DetonatesAtTargetHeight = true,
+			
+            DisplayName = 'Harmonic Depth Charge',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Seabed|Sub|Water',
+            },
+			
+            FiringRandomness = 5,
+            FiringTolerance = 20,
+			
+            Label = 'DepthCharge',
+			
+            MaxRadius = 13,
+
+            MuzzleSalvoDelay = 0.5,
+            MuzzleSalvoSize = 1,
+
+            MuzzleVelocity = 2,
+            
+            NotExclusive = true,
+			
+            ProjectileId = '/projectiles/AANDepthCharge01/AANDepthCharge01_proj.bp',
+			ProjectileLifetime = 4.8,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'uel0107'},
+                    RackBone = 'uel0107',
+                },
+            },
+
+            RackSalvoReloadTime = 5.5,
+            
+            RangeCategory = 'UWRC_AntiNavy',
+			
+            RateOfFire = 1,   -- controlled by MuzzleSalvoDelay and RackReload = 6 seconds = 20 DPS
+			
+            TargetCheckInterval = 2,
+            
+            TargetPriorities = {
+                'SUBMARINE',
+                'SUBMERSIBLE',
+                'MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,HOVER',
+        },		
+        
+    },
+
+    Wreckage = {
+        Blueprint = "/props/DefaultWreckage/DefaultWreckage_prop.bp",
+        EnergyMult = 0.35,
+        HealthMult = 0.9,
+        MassMult = 0.35,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = { Land = true },
+    },
+}

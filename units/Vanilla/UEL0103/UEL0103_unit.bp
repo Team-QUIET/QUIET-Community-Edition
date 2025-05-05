@@ -34,8 +34,8 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Normal',
-        Health = 120,
-        MaxHealth = 120,
+        Health = 205,
+        MaxHealth = 205,
         RegenRate = 0,
         SurfaceThreatLevel = 2.8,
     },
@@ -63,8 +63,8 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 480,
-        BuildCostMass = 40,
+        BuildCostEnergy = 180,
+        BuildCostMass = 36,
         BuildTime = 200,
     },
 	
@@ -84,7 +84,7 @@ UnitBlueprint {
     },
 	
     Intel = {
-        VisionRadius = 16,
+        VisionRadius = 18,
     },
 	
     Interface = {
@@ -96,13 +96,13 @@ UnitBlueprint {
     LifeBarSize = 0.5,
 	
     Physics = {
-        BackUpDistance = 2,
+        BackUpDistance = 6,
         BankingSlope = 0,
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
         DragCoefficient = 0.2,
-        MaxAcceleration = 1.4,
+        MaxAcceleration = 2.8,
         MaxBrake = 2.8,
         MaxSpeed = 2.8,
         MaxSpeedReverse = 2.8,
@@ -167,21 +167,18 @@ UnitBlueprint {
                 Land = 'Land|Water',
             },
 			
-            FiringRandomness = 0.7,
+            FiringRandomness = 0.5,
 			FiringTolerance = 2,
 			
             Label = 'MainGun',
 			
-            MaxRadius = 36,
+            MaxRadius = 37,
             MinRadius = 5,
 
             MuzzleVelocity = 14,
             MuzzleVelocityReduceDistance = 28,
-			
-			-- this projectile becomes 4 projectiles just over the target - splitting the damage 
-            ProjectileId = '/projectiles/TIFFragmentationSensorShell01/TIFFragmentationSensorShell01_proj.bp',
-			
-			ProjectileLifetime = 10,
+			ProjectileId = '/projectiles/TIFFragmentationSensorShell01/TIFFragmentationSensorShell01_proj.bp',
+			ProjectileLifetimeUsesMultiplier = 1.15,
 			
             RackBones = {
                 {
@@ -194,9 +191,9 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 10/33,
+            RateOfFire = 10/83,
 			
-            TargetCheckInterval = 0.5,
+            TargetCheckInterval = 1,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
 				"STRUCTURE EXPERIMENTAL",
@@ -234,6 +231,7 @@ UnitBlueprint {
             TurretYawSpeed = 70,
 			
             Turreted = true,
+            WeaponCategory = "Artillery",
         },
     },
 }
