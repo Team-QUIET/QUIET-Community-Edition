@@ -36,8 +36,8 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Normal',
-        Health = 100,
-        MaxHealth = 100,
+        Health = 190,
+        MaxHealth = 190,
         RegenRate = 1,
         SurfaceThreatLevel = 2.7,
     },
@@ -69,8 +69,8 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 480,
-        BuildCostMass = 40,
+        BuildCostEnergy = 180,
+        BuildCostMass = 36,
         BuildTime = 200,
     },
 	
@@ -90,7 +90,7 @@ UnitBlueprint {
     },
 	
     Intel = {
-        VisionRadius = 16,
+        VisionRadius = 18,
     },
 	
     Interface = {
@@ -102,20 +102,20 @@ UnitBlueprint {
     LifeBarSize = 0.5,
 	
     Physics = {
-        BackUpDistance = 4,
+        BackUpDistance = 6,
         BankingSlope = 0,
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
         DragCoefficient = 0.2,
-        MaxAcceleration = 1.4,
-        MaxBrake = 2.8,
-        MaxSpeed = 2.8,
-        MaxSpeedReverse = 2,
+        MaxAcceleration = 2.9,
+        MaxBrake = 2.9,
+        MaxSpeed = 2.9,
+        MaxSpeedReverse = 2.9,
         MaxSteerForce = 1000,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_Land',
-        RotateOnSpot = true,
+        RotateOnSpot = false,
         RotateOnSpotThreshold = 0.1,
         TurnRadius = 2,
         TurnRate = 90,
@@ -162,17 +162,26 @@ UnitBlueprint {
                     Add = {OnImpact = true},
                     AppliedToTarget = true,
                     BuffType = 'STUN',
-                    Duration = 0.8,
-                    Radius = 1,
-                    TargetAllow = 'TECH1,TECH2',
-					TargetDisallow = 'WALL,AIR',
+                    Duration = 3,
+                    Radius = 2,
+                    TargetAllow = 'TECH1',
+					TargetDisallow = "TECH2,WALL",
+                },
+                {
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = "STUN",
+                    Duration = 2,
+                    Radius = 2.55,
+                    TargetAllow = "TECH2",
+                    TargetDisallow = "WALL",
                 },
             },
             CollideFriendly = false,
 			
-            Damage = 150,
+            Damage = 230,
             DamageFriendly = false,
-            DamageRadius = 1.5,
+            DamageRadius = 2,
             DamageType = 'Normal',
 			
             DisplayName = 'EMP Grenade Launcher',
@@ -181,19 +190,19 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
             },
 			
-            FiringRandomness = 0.7,
-            FiringTolerance = 2,
+            FiringRandomness = 1.35,
+            FiringTolerance = 1,
 			
             Label = 'MainGun',
 			
-            MaxRadius = 36,
+            MaxRadius = 37,
             MinRadius = 5,
 
             MuzzleVelocity = 14,
             MuzzleVelocityReduceDistance = 28,
-			
             ProjectileId = '/projectiles/CIFGrenade01/CIFGrenade01_proj.bp',
-			ProjectileLifetime = 10,
+            ProjectileLifetimeUsesMultiplier = 1.15,
+            ProjectilesPerOnFire = 1,
 			
             RackBones = {
                 {
@@ -206,7 +215,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 10/33,
+            RateOfFire = 10/60,
 			
             TargetCheckInterval = 1,
             TargetPriorities = {
@@ -247,6 +256,7 @@ UnitBlueprint {
             TurretYawSpeed = 70,
 			
             Turreted = true,
+            WeaponCategory = "Artillery",
         },
     },
 }

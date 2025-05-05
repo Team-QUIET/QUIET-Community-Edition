@@ -1,13 +1,144 @@
 UnitBlueprint {
-  Merge = true,
-  BlueprintId = "brmt1bt",
+    Merge = true,
+    BlueprintId = "brmt1bt",
+
+    AI = { 
+        GuardScanRadius = 30, 
+		TargetBones = {'Turret'},
+    },
+	
+    Audio = {
+        Destroyed   = Sound { Bank = 'TM_EXPLOSIONS', Cue = 'BRMT1BTEXPLODE1', LodCutoff = 'Weapon_LodCutoff' },
+        StartMove   = Sound { Bank = 'URL', Cue = 'URL0103_Move_Start', LodCutoff = 'UnitMove_LodCutoff' },
+        StopMove    = Sound { Bank = 'URL', Cue = 'URL0103_Move_Stop', LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection = Sound { Bank = 'Interface', Cue = 'Cybran_Select_Vehicle', LodCutoff = 'UnitMove_LodCutoff' },
+    },
+	
+    Buffs = {},
+	
+    BuildIconSortPriority = 40,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER3FACTORY',
+        'CYBRAN',
+        'MOBILE',
+        'LAND',
+		'AMPHIBIOUS',
+		'SUBMERSIBLE',
+        'TECH1',
+        'DIRECTFIRE',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TANK',
+        'OVERLAYDIRECTFIRE',
+    },
 
     Defense = {
         ArmorType = 'Normal',
-        Health = 225,
-        MaxHealth = 225,
+        Health = 250,
+        MaxHealth = 250,
         RegenRate = 1,
         SurfaceThreatLevel = 2.9,
+    },
+
+    Description = '<LOC brmt1bt_desc>Amphibious Tank',
+	
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 140,
+            LODs = {
+                {LODCutoff = 180,Scrolling = true,ShaderName = 'Insect'},
+            },
+        },
+
+        UniformScale = 0.024,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 470,
+        BuildCostMass = 56,
+        BuildTime = 425,
+    },
+	
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Cybran',
+        Icon = 'amph',
+        UnitName = '<LOC brmt1bt_name>Mite',
+    },
+	
+    Intel = {
+        VisionRadius = 20,
+        WaterVisionRadius = 12,
+    },
+	
+    Interface = {
+        HelpText = 'Amphibious Tank',
+    },
+	
+    LifeBarHeight = 0.07,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 0.6,
+	
+    Physics = {
+        BackUpDistance = 6,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 2.7,
+        MaxBrake = 2.7,
+        MaxSpeed = 2.7,
+        MaxSpeedReverse = 2.7,
+        MaxSteerForce = 10,
+        MeshExtentsX = 0.65,
+        MeshExtentsY = 0.35,
+        MeshExtentsZ = 0.95,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Amphibious',
+
+        TurnRadius = 0,
+        TurnRate = 60,
+
+		WaterSpeedMultiplier = 1.1,
+    },
+	
+    SelectionCenterOffsetX = 0,
+    SelectionCenterOffsetZ = -0.15,
+    SelectionSizeX = 0.5,
+    SelectionSizeZ = 0.65,
+    SelectionThickness = 0.5,
+	
+    SizeX = 0.55,
+    SizeY = 0.22,
+    SizeZ = 0.85,
+	
+    StrategicIconName = 'icon_seabed1_directfire',
+    StrategicIconSortPriority = 135,
+	
+    Veteran = {
+        Level1 = 3,
+        Level2 = 6,
+        Level3 = 9,
+        Level4 = 12,
+        Level5 = 15,
+    },
+	
+    Transport = {
+        TransportClass = 1,
     },
 
     Weapon = {
@@ -20,7 +151,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 			
-            Damage = 28,
+            Damage = 26,
             DamageRadius = 0,
             DamageType = 'Normal',
 			
@@ -31,17 +162,15 @@ UnitBlueprint {
                 Water = 'Land|Water|Seabed',
             },
 			
-			FiringRandomnessWhileMoving = 1.2,
+			FiringRandomnessWhileMoving = 0,
             FiringTolerance = 2,
 			
             Label = 'MainGun',
 			
             MaxRadius = 21,
-
             MuzzleVelocity = 35,
-			
             ProjectileId = '/projectiles/CDFLaserHeavy01/CDFLaserHeavy01_proj.bp',			
-            ProjectileLifetime = 0.8,			
+            ProjectileLifetimeUsesMultiplier = 1.15,
 
             RackBones = {
                 {

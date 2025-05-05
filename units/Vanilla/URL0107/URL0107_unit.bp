@@ -1,14 +1,251 @@
 UnitBlueprint {
-  Merge = true,
-  BlueprintId = "url0107",
+    Merge = true,
+    BlueprintId = "url0107",
 
-      Weapon = {
+    AI = {
+		GuardReturnRadius = 35,
+        GuardScanRadius = 20,
+        TargetBones = {'Torso'},
+    },
+    
+    Audio = {
+        Construct   = Sound { Bank = 'URL', Cue = 'URL0208_Construct_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        Destroyed   = Sound { Bank = 'URLDestroy', Cue = 'URL_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff'},
+        StartMove   = Sound { Bank = 'URL', Cue = 'URL0107_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'Cybran_Select_Bot', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+    
+    Buffs = {},
+	
+    BuildIconSortPriority = 40,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER3FACTORY',
+        'CYBRAN',
+        'MOBILE',
+        'LAND',
+        'TECH1',
+        'REPAIR',
+        'DIRECTFIRE',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'BOT',
+    },
+	
+    CollisionOffsetY = 0.15,
+	
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 270,
+        MaxHealth = 270,
+        RegenRate = 1,
+        SurfaceThreatLevel = 2.2,
+    },
+	
+    Description = '<LOC url0107_desc>Assault Bot',
+	
+    Display = {
+        Abilities = {
+            'Repairs',
+        },
+        
+        AnimationWalk = '/units/url0107/URL0107_A001.sca',
+        AnimationWalkRate = 8,
+        
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 100,
+                    Scrolling = true,
+                    ShaderName = 'Insect',
+                },
+                {
+                    AlbedoName = 'url0107_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    ShaderName = 'Insect',
+                    SpecularName = 'url0107_lod1_specteam.dds',
+                },
+            },
+        },
+
+        TransportAnimation = { { Animation = '/units/URL0107/URL0107_Afold01.sca', Weight = 100 } },
+
+        UniformScale = 0.13,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 273,
+        BuildCostMass = 56,
+        BuildRate = 1,
+        BuildTime = 285,
+		
+        NeedToFaceTargetToBuild = true,
+    },
+	
+    General = {
+        BuildBones = {
+            BuildEffectBones = {'Turret_Muzzle_01','Turret_Muzzle_02'},
+            PitchBone = 'Turret_Muzzle_01',
+            YawBone = 'Torso',
+        },
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Repair = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Cybran',
+        Icon = 'land',
+        UnitName = '<LOC url0107_name>Mantis',
+    },
+	
+    Intel = {
+        VisionRadius = 20,
+    },
+	
+    Interface = {
+        HelpText = 'Assault Bot',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.4,
+    LifeBarSize = 0.75,
+	
+    Physics = {
+		BackUpDistance = 4,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 3.6,
+        MaxBrake = 3.6,
+        MaxSpeed = 3.7,
+        MaxSpeedReverse = 3.7,
+        MaxSteerForce = 10,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+		RotateOnSpot = true,
+		RotateOnSpotThreshold = 0.1,
+        TurnRadius = 2,
+        TurnRate = 80,
+    },
+    
+    SelectionCenterOffsetX = 0,
+    SelectionCenterOffsetZ = 0,
+    SelectionSizeX = 0.55,
+    SelectionSizeZ = 0.6,
+    SelectionThickness = 0.7,
+    
+    SizeX = 0.6,
+    SizeY = 0.45,
+    SizeZ = 0.72,
+    
+    StrategicIconName = 'icon_land1_directfire',
+    StrategicIconSortPriority = 135,
+    
+    Transport = {
+        TransportClass = 1,
+    },
+    
+    Veteran = {
+        Level1 = 3,
+        Level2 = 6,
+        Level3 = 9,
+        Level4 = 12,
+        Level5 = 15,
+    },
+    
+    Weapon = {
         {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'URLWeapon', Cue = 'URL0107_Laser_Auto', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 9,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Pulse Laser',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomnessWhileMoving = 0,
+            FiringTolerance = 2,
+			
+            Label = 'LaserArms',
+			
+            MaxRadius = 21,
+            MuzzleVelocity = 25,
+            ProjectileId = '/projectiles/CDFLaserHeavy01/CDFLaserHeavy01_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 1.15,
+            ProjectilesPerOnFire = 1,
 
-            RateOfFire = 10/10,
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle_01'},
+                    RackBone = 'Turret_Barrel',
+                },
+                {
+                    MuzzleBones = {'Turret_Muzzle_02'},
+                    RackBone = 'Turret_Barrel',
+                },
+            },
 
-            TurretYawSpeed = 90,
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/3,
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH1 MOBILE",
+                "TECH2 MOBILE",
+                "TECH3 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            
+            TurretBoneMuzzle = 'Turret_Muzzle_01',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Torso',
+            TurretDualManipulators = false,
 
+            TurretPitch = 0,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 100,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 100,
+            
+            Turreted = true,
+            WeaponCategory = "Direct Fire",
+        },
+    },
+    
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.6,
+        HealthMult = 0.9,
+        MassMult = 0.6,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
         },
     },
 }
