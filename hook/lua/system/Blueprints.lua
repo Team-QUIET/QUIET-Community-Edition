@@ -607,20 +607,6 @@ do
 				bp.CategoriesHash.OVERLAYMISC = true
 			end
 
-			-- local ura0001 = bp.CategoriesHash["ura0001"]
-			-- -- Check size of collision boxes
-			-- local function logUra0001()
-			-- 	if ura0001 then
-			-- 		LOG("ura0001 is not nil, so collision box size is not being checked")
-			-- 		LOG("bp.CategoriesHash: "..repr(bp.CategoriesHash["ura0001"]))
-			-- 	else
-			-- 		LOG("ura0001 is nil, so collision box size is being checked")
-			-- 		--LOG("bp.CategoriesHash: "..repr(bp.CategoriesHash["ura0001"]))
-			-- 	end
-			-- end
-
-			-- logUra0001()
-
 			if not(bp.CategoriesHash["ura0001"] or isDummy) then
 				-- find maximum speed
 				local speed = bp.Physics.MaxSpeed
