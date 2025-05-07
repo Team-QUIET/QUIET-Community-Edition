@@ -4,8 +4,16 @@ UnitBlueprint{
 
     IgnoreEvenflow = true,
 
+    Defense = {
+        ArmorType = "Normal",
+        Health = 365,
+        MaxHealth = 365,
+        RegenRate = 0,
+        SurfaceThreatLevel = 3.9,
+    },
+
     Economy = {
-        BuildCostEnergy = 950,
+        BuildCostEnergy = 1150,
         BuildCostMass = 110,
         BuildTime = 1200,
     },

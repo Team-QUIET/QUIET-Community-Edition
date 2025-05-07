@@ -4,6 +4,14 @@ UnitBlueprint {
 
     IgnoreEvenflow = true,
 
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 385,
+        MaxHealth = 385,
+        RegenRate = 1,
+        SurfaceThreatLevel = 6,
+    },
+
     Economy = {
         BuildCostEnergy = 1250,
         BuildCostMass = 160,
@@ -17,8 +25,8 @@ UnitBlueprint {
         },
         DragCoefficient = 0.2,
         MaxAcceleration = 1.05,
-        MaxBrake = 2.45,
-        MaxSpeed = 2.45,
+        MaxBrake = 2.50,
+        MaxSpeed = 2.50,
         MaxSpeedReverse = 0,
         MaxSteerForce = 10,
         MeshExtentsX = 1,
