@@ -2,13 +2,222 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "url0202",
 
+    AI = {
+		GuardReturnRadius = 35,
+        GuardScanRadius = 27,
+    },
+
+    Audio = {
+        Destroyed   = Sound { Bank = 'URLDestroy', Cue = 'URL_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff'},
+        StartMove   = Sound { Bank = 'URL', Cue = 'URL0202_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'Cybran_Select_Tank', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+
+    Buffs = {
+        Regen = {
+            Level1 = 2,
+            Level2 = 4,
+            Level3 = 6,
+            Level4 = 8,
+            Level5 = 10,
+        },
+    },
+
+    BuildIconSortPriority = 20,
+
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER3FACTORY',
+        'CYBRAN',
+        'MOBILE',
+        'LAND',
+        'TECH2',
+        'DIRECTFIRE',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+    },
+
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 1050,
+        MaxHealth = 1050,
+        RegenRate = 2,
+        SurfaceThreatLevel = 8.0,
+    },
+	
+    Description = '<LOC url0202_desc>Laser Tank',
+	
+    Display = {
+
+        Mesh = { IconFadeInZoom = 130, LODs = { { LODCutoff = 215, Scrolling = true, ShaderName = 'Insect', Silhouette = true } } },
+
+        UniformScale = 0.135,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 1500,
+        BuildCostMass = 265,
+        BuildTime = 1325,
+    },
+	
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Cybran',
+        Icon = 'land',
+
+        UnitName = '<LOC url0202_name>Rhino',
+    },
+	
+    Intel = {
+        VisionRadius = 24,
+    },
+	
+    Interface = {
+        HelpText = 'Laser Tank',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.3,
+    LifeBarSize = 1,
+
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 2.9,
+        MaxBrake = 2.9,
+        MaxSpeed = 2.9,
+        MaxSpeedReverse = 2.9,
+        MaxSteerForce = 5,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        RotateOnSpot = false,
+        RotateOnSpotThreshold = 0.1,
+        TurnRadius = 0,
+        TurnRate = 60,
+    },
+
+    SelectionCenterOffsetX = 0,
+    SelectionCenterOffsetZ = -0.075,
+    SelectionSizeX = 0.55,
+    SelectionSizeZ = 0.6,
+    SelectionThickness = 0.7,
+
+    SizeX = 0.8,
+    SizeY = 0.5,
+    SizeZ = 1.0,
+
+    StrategicIconName = 'icon_land2_directfire',
+    StrategicIconSortPriority = 125,
+
+    Transport = {
+        TransportClass = 2,
+    },
+
+    Veteran = {
+        Level1 = 5,
+        Level2 = 10,
+        Level3 = 15,
+        Level4 = 20,
+        Level5 = 25,
+    },
+
     Weapon = {
         {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'URLWeapon', Cue = 'URL0202_Cannon_Dbl', LodCutoff = 'Weapon_LodCutoff' },
+            },
 
-            RateOfFire = 20/10,
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0.2,
 
-            TurretYawSpeed = 75,
+            CollideFriendly = false,
+			
+            Damage = 7,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Laser Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 0,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 27,
 
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle01','Turret_Muzzle02'},
+                    RackBone = 'Barrel',
+                },
+            },
+
+            RackFireTogether = true,
+            RackRecoilDistance = -1,
+            RackSalvoReloadTime = 0,
+            
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/6,
+            ReTargetOnMiss = true,
+			
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneMuzzle = 'Turret_Muzzle01',
+            TurretBonePitch = 'Barrel',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 30,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+
+            Turreted = true,
+            WeaponCategory = "Direct Fire",
+        },
+    },
+
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.3,
+        HealthMult = 0.9,
+        MassMult = 0.6,
+        ReclaimTimeMultiplier = 1,
+
+        WreckageLayers = {
+            Land = true,
         },
     },
 }
