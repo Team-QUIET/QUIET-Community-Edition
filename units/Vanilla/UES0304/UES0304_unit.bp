@@ -1,0 +1,338 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'ues0304',
+
+    AI = {
+        InitialAutoMode = false,
+        GuardScanRadius = 200,
+    },
+	
+    Audio = {
+        Killed                  = Sound { Bank = 'UESDestroy', Cue = 'UES0304_Destroy', LodCutoff = 'UnitMove_LodCutoff'},
+        NuclearLaunchDetected   = Sound { Bank = 'XGG', Cue = 'Computer_Computer_MissileLaunch_01351'},
+        StartMove               = Sound { Bank = 'UES', Cue = 'UES0304_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        StartMoveSub            = Sound { Bank = 'UES', Cue = 'UES0304_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection             = Sound { Bank = 'Interface', Cue = 'UEF_Select_Sub', LodCutoff = 'UnitMove_LodCutoff'},
+	},
+	
+    Buffs = {
+        Regen = {
+            Level1 = 3,
+            Level2 = 6,
+            Level3 = 9,
+            Level4 = 12,
+            Level5 = 15,
+        },
+    },
+	
+    BuildIconSortPriority = 15,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'UEF',
+        'MOBILE',
+        'NAVAL',
+        'TECH3',
+        'SUBMERSIBLE',
+        'INDIRECTFIRE',
+        'NUKE',
+        'SILO',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SHOWATTACKRETICLE',
+        'OVERLAYSONAR',
+--        'NUKESUB',
+    },
+	
+    CollisionOffsetY = -0.375,
+	
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 4000,
+        MaxHealth = 4000,
+        RegenRate = 10,
+        SurfaceThreatLevel = 38,
+    },
+	
+    Description = '<LOC ues0304_desc>Strategic Missile Submarine',
+	
+    Display = {
+        Abilities = {
+            'Manual Launch',
+            '<LOC ability_personalstealth>Personal Sonar Stealth',
+            '<LOC ability_sonar>Sonar',
+        },
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 100,
+                    ShaderName = 'UEFNavy',
+                },
+                {
+                    AlbedoName = 'ues0304_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    ShaderName = 'UEFNavy',
+                    SpecularName = 'ues0304_lod1_specteam.dds',
+                },
+            },
+        },
+
+        MovementEffects = {
+            Sub = {
+                Effects = { { Bones = {'Back_Left_Exhaust','Back_Right_Exhaust'}, Type = 'BackWake' } },
+            },
+            Water = {
+                Effects = {
+                    { Bones = {'UES0304'}, Scale = 0.5, Type = 'LeftFrontWake' },
+                    { Bones = {'UES0304'}, Scale = 0.5, Type = 'RightFrontWake'},
+                    { Bones = {'UES0304'}, Scale = 0.4, Type = 'BackWake' },
+                },
+            },
+        },
+
+        UniformScale = 0.045,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 600000,
+        BuildCostMass = 18000,
+        BuildRate = 300,
+        BuildTime = 52632,
+    },
+
+    General = {
+		CapCost = 3,
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_Dive = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Nuke = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_SiloBuildNuke = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'UEF',
+        Icon = 'sea',
+        UnitName = '<LOC ues0304_name>Ace',
+    },
+	
+    Intel = {
+		FreeIntel = true,
+		RadarStealth = false,
+		SonarStealth = false,		
+        SonarRadius = 60,
+        VisionRadius = 16,
+        WaterVisionRadius = 36,
+    },
+	
+    Interface = {
+        HelpText = 'Strategic Missile Submarine',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 1.5,
+    LifeBarSize = 1.5,
+	
+    Physics = {
+        BackUpDistance = 5,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Sub = true,
+        },
+        CatchUpAcc = 10,
+        DragCoefficient = 0.2,
+        Elevation = -2.6,
+        MaxAcceleration = 2,
+        MaxBrake = 2,
+        MaxSpeed = 3.3,
+        MaxSpeedReverse = 3.3,
+        MaxSteerForce = 5,
+        MeshExtentsX = 1,
+        MeshExtentsY = 0.8,
+        MeshExtentsZ = 3.4,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_SurfacingSub',
+        TurnRadius = 15,
+        TurnRate = 50,
+    },
+	
+    SelectionSizeX = 0.6,
+    SelectionSizeZ = 2.2,
+    SelectionThickness = 0.32,
+	
+    SizeX = 0.65,
+    SizeY = 0.65,
+    SizeZ = 3.2,
+	
+    StrategicIconName = 'icon_sub3_nuke',
+    StrategicIconSortPriority = 145,
+	
+    Veteran = {
+        Level1 = 12,
+        Level2 = 24,
+        Level3 = 36,
+        Level4 = 48,
+        Level5 = 60,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'UESWeapon', Cue = 'UES0304_Missile_Tactical', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            CountedProjectile = false,
+			
+            Damage = 600,
+            DamageFriendly = true,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Long Range Cruise Missile',
+			
+            FireTargetLayerCapsTable = {
+                Sub = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 10,
+			
+            Label = 'CruiseMissiles',
+			
+            MaxRadius = 200,
+            MinRadius = 15,
+			
+            MuzzleSalvoDelay = 1,
+            MuzzleSalvoSize = 6,
+
+            MuzzleVelocity = 5,
+			
+            ProjectileId = '/projectiles/TIFMissileCruise02/TIFMissileCruise02_proj.bp',
+            ProjectileLifetime = 35,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Right_Projectile01'},
+                    RackBone = 'Right_Hatch01',
+                },
+                {
+                    MuzzleBones = {'Right_Projectile02'},
+                    RackBone = 'Right_Hatch02',
+                },
+                {
+                    MuzzleBones = {'Right_Projectile03'},
+                    RackBone = 'Right_Hatch03',
+                },
+                {
+                    MuzzleBones = {'Left_Projectile01'},
+                    RackBone = 'Left_Hatch01',
+                },
+                {
+                    MuzzleBones = {'Left_Projectile02'},
+                    RackBone = 'Left_Hatch02',
+                },
+                {
+                    MuzzleBones = {'Left_Projectile03'},
+                    RackBone = 'Left_Hatch03',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 0.1, 	---- 6 missiles = 3600 dmg every 10 seconds = 360 DPS
+			
+            TargetCheckInterval = 2.5,
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,WALL',
+            TrackingRadius = 1.15,
+        },
+        {
+            AboveWaterTargetsOnly = true,
+
+            AttackGroundTries = 1,
+
+            Audio = {
+                Fire = Sound {
+                    Bank = 'URLWeapon',
+                    Cue = 'URB2305_Missile_Cruise',
+                    LodCutoff = 'Weapon_LodCutoff',
+                },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CollideFriendly = false,
+            CountedProjectile = true,
+
+            Damage = 0,
+            DamageFriendly = true,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+
+            DisplayName = 'Nuclear Warhead',
+
+            FireTargetLayerCapsTable = {
+                Sub = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 2,
+
+            InitialProjectileStorage = 0,
+
+            Label = 'NukeMissiles',
+
+            ManualFire = 1,
+
+            MaxProjectileStorage = 3,
+
+            MaxRadius = 410,
+            MinRadius = 128,
+
+            MuzzleVelocity = 0,
+
+            NukeInnerRingDamage = 22000,
+            NukeInnerRingRadius = 30,
+            NukeInnerRingTicks = 24,
+            NukeInnerRingTotalTime = 0,
+            NukeOuterRingDamage = 3000,
+            NukeOuterRingRadius = 40,
+            NukeOuterRingTicks = 20,
+            NukeOuterRingTotalTime = 0,
+
+            NukeWeapon = true,
+
+            ProjectileId = '/projectiles/TIFMissileNuke01/TIFMissileNuke01_proj.bp',
+            RackBones = {
+                {
+                    MuzzleBones = {'Center_Projectile01'},
+                    RackBone = 'Center_Hatch01',
+                },
+                {
+                    MuzzleBones = {'Center_Projectile02'},
+                    RackBone = 'Center_Hatch02',
+                },
+            },
+            RackSalvoChargeTime = 1.5,
+            RackSalvoReloadTime = 2,
+
+            RangeCategory = 'UWRC_IndirectFire',
+
+            RateOfFire = 1,
+            TargetCheckInterval = 0.5,
+            TargetRestrictDisallow = 'UNTARGETABLE',
+        },
+    },
+}
