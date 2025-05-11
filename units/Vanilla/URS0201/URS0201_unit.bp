@@ -159,7 +159,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Seabed',
             },
 			
-            FiringRandomness = 0,
+            FiringRandomness = 0.3,
             FiringTolerance = 2,
 			
             Label = 'ParticleGun',
@@ -206,7 +206,7 @@ UnitBlueprint {
             TurretPitchSpeed = 45,
 			
             TurretYaw = 0,
-            TurretYawRange = 135,
+            TurretYawRange = 145,
             TurretYawSpeed = 90,
 			
             Turreted = true,
