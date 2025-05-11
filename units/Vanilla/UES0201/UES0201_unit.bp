@@ -61,21 +61,21 @@ UnitBlueprint {
                 CollideFriendly = false,
                 
                 Damage = 275,
-                DamageRadius = 0.5,
+                DamageRadius = 1,
                 DamageType = 'Normal',
                 
-                DisplayName = 'Dual Gauss Cannon',
+                DisplayName = 'Gauss Cannon',
                 
                 FireTargetLayerCapsTable = {
                     Water = 'Land|Water|Seabed',
                 },
                 
-                FiringRandomness = 0,
+                FiringRandomness = 0.35,
                 FiringTolerance = 2,
                 
                 Label = 'Turret',
                 
-                MaxRadius = 65,
+                MaxRadius = 60,
 
                 MuzzleSalvoDelay = 0,
                 MuzzleSalvoSize = 1,
@@ -113,7 +113,7 @@ UnitBlueprint {
                 },
                 TargetRestrictDisallow = 'UNTARGETABLE',
 
-                TrackingRadius = 1.1,
+                TrackingRadius = 1.15,
 
                 TurretBoneMuzzle = 'Front_Turret01_Muzzle01',
                 TurretBonePitch = 'Front_Turret01_Barrel01',
@@ -146,23 +146,25 @@ UnitBlueprint {
                 CollideFriendly = false,
                 
                 Damage = 275,
+                DamageRadius = 1,
                 DamageType = 'Normal',
                 
-                DisplayName = 'Dual Gauss Cannon',
+                DisplayName = 'Gauss Cannon',
                 
                 FireTargetLayerCapsTable = {
                     Water = 'Land|Water|Seabed',
                 },
-                FiringRandomness = 0,
+                FiringRandomness = 0.35,
                 FiringTolerance = 2,
                 
                 Label = 'Turret',
                 
-                MaxRadius = 65,
+                MaxRadius = 60,
 
                 MuzzleSalvoDelay = 0,
                 MuzzleSalvoSize = 1,
                 MuzzleVelocity = 30,
+                PrefersPrimaryWeaponTarget = true,
                 ProjectileId = '/projectiles/TDFGauss01/TDFGauss01_proj.bp',
                 ProjectileLifetimeUsesMultiplier = 1.25,
                 ProjectilesPerOnFire = 1,	
@@ -196,7 +198,7 @@ UnitBlueprint {
                 },
                 TargetRestrictDisallow = 'UNTARGETABLE',
 
-                TrackingRadius = 1.1,
+                TrackingRadius = 1.15,
                 
                 TurretBoneMuzzle = 'Back_Turret01_Muzzle01',
                 TurretBonePitch = 'Back_Turret01_Barrel01',
@@ -207,8 +209,8 @@ UnitBlueprint {
                 TurretPitchSpeed = 30,
                 
                 TurretYaw = 0,
-                TurretYawRange = 140,
-                TurretYawSpeed = 93,
+                TurretYawRange = 160,
+                TurretYawSpeed = 100,
                 
                 Turreted = true,
                 WeaponCategory = "Direct Fire Naval",

@@ -44,8 +44,8 @@ UnitBlueprint {
         MaxAcceleration = 2,
         MaxBrake = 2,
         MaxSpeed = 3.75,
-        MaxSpeedReverse = 3,
-        MaxSteerForce = 5,
+        MaxSpeedReverse = 3.75,
+        MaxSteerForce = 3.75,
         MeshExtentsX = 1.1,
         MeshExtentsY = 1.1,
         MeshExtentsZ = 3.6,
@@ -76,12 +76,12 @@ UnitBlueprint {
             CollideFriendly = false,
 			
             Damage = 50,	
-            DamageRadius = 0,
+            DamageRadius = 1,
             DamageType = 'Normal',
 			
-            DisplayName = 'Ultrachromatic Beam Generator',
+            DisplayName = 'Front Ultrachromatic Beam Generator',
 			
-            DoNotCollideList = {'TORPEDO','MISSILE'},
+            DoNotCollideList = {},
 			
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Seabed',
@@ -104,36 +104,36 @@ UnitBlueprint {
                 },
             },
             
-            RackSalvoReloadTime = 3,
+            RackSalvoReloadTime = 0,
 
             RangeCategory = 'UWRC_DirectFire',
 			
-            RateOfFire = 10/10,	
+            RateOfFire = 10/40,	
 			ReTargetOnMiss = true,
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 135,
 			
-            TargetCheckInterval = 0.5,
+            TargetCheckInterval = 0.2,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'NAVAL MOBILE',
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+            TrackingRadius = 1.15,
 			
             TurretBoneMuzzle = 'Front_Turret_Muzzle',
             TurretBonePitch = 'Front_Turret_Barrel',
             TurretBoneYaw = 'Front_Turret',
 			
             TurretPitch = 10,
-            TurretPitchRange = 35,
+            TurretPitchRange = 20,
             TurretPitchSpeed = 30,
 			
             TurretYaw = 0,
-            TurretYawRange = 140,
-            TurretYawSpeed = 93,
+            TurretYawRange = 120,
+            TurretYawSpeed = 60,
 			
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
@@ -151,7 +151,7 @@ UnitBlueprint {
                 BeamStart   = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0201_Ultrachromatic_Beam_Start', LodCutoff = 'Weapon_LodCutoff' },
                 BeamStop    = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0201_Ultrachromatic_Beam_Stop', LodCutoff = 'Weapon_LodCutoff' },
             },
-
+            AutoInitiateAttackCommand = false,
             BallisticArc = 'RULEUBA_None',
 			
             BeamCollisionDelay = 0,
@@ -160,11 +160,11 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 75,	
-            DamageRadius = 0,
+            Damage = 25,	
+            DamageRadius = 1,
             DamageType = 'Normal',
 			
-            DisplayName = 'Ultrachromatic Beam Generator',
+            DisplayName = 'Rear Ultrachromatic Beam Generator',
 			
             DoNotCollideList = {'TORPEDO','MISSILE'},
 			
@@ -190,15 +190,15 @@ UnitBlueprint {
                 },
             },
             
-            RackSalvoReloadTime = 3,
+            RackSalvoReloadTime = 0,
 			
-            RateOfFire = 10/10,		
+            RateOfFire = 10/40,		
 			ReTargetOnMiss = true,
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 135,
 			
-            TargetCheckInterval = 0.5,
+            TargetCheckInterval = 0.2,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'NAVAL MOBILE',
@@ -212,12 +212,12 @@ UnitBlueprint {
             TurretBoneYaw = 'Back_Turret',
 			
             TurretPitch = 10,
-            TurretPitchRange = 35,
+            TurretPitchRange = 20,
             TurretPitchSpeed = 30,
 			
             TurretYaw = 0,
             TurretYawRange = 140,
-            TurretYawSpeed = 93,
+            TurretYawSpeed = 60,
 			
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
