@@ -146,7 +146,7 @@ UnitBlueprint {
             BallisticArc = "RULEUBA_None",
             CollideFriendly = false,
 
-            Damage = 400,
+            Damage = 350,
             DamageType = "Normal",
 
             DisplayName = "Harmonic Depth Charge",
@@ -193,7 +193,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 			
-            Damage = 300,
+            Damage = 75,
             DamageType = 'Normal',
 			
             DisplayName = 'Chrono Torpedo',

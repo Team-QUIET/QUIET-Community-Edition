@@ -322,7 +322,7 @@ UnitBlueprint {
                 BelowWaterTargetsOnly = false,
                 CollideFriendly = false,
                 
-                Damage = 300,
+                Damage = 90,
                 DamageType = 'Normal',
                 
                 DisplayName = 'Angler Torpedo',
