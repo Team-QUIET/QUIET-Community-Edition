@@ -23,7 +23,7 @@ UnitBlueprint {
         RadarRadius = 40,
         SonarRadius = 36,
         VisionRadius = 32,
-        WaterVisionRadius = 32,
+        WaterVisionRadius = 44,
     },
     
     Physics = {
