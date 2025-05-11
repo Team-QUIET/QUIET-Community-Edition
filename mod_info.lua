@@ -1,6 +1,6 @@
 name = "QUIET"
 author = "QUIET Team"
-version = 2.16
+version = 2.17
 description = "QUIET is a massive collection of Bug Fixes, Game Rebalance, & Other Various Actions"
 exclusive = false
 ui_only = false

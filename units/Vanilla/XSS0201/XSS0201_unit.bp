@@ -67,6 +67,7 @@ UnitBlueprint {
                 BeamStop    = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0201_Ultrachromatic_Beam_Stop', LodCutoff = 'Weapon_LodCutoff' },
             },
 
+            AutoInitiateAttackCommand = false,
             BallisticArc = 'RULEUBA_None',
 			
             BeamCollisionDelay = 0,
