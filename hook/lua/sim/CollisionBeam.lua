@@ -258,28 +258,29 @@ CollisionBeam = Class(moho.CollisionBeamEntity) {
     ---@param self CollisionBeam
     ---@param target Unit
     ShowBeamSource = function(self, target)
-        self.unit.ignoreDetectionFrom[target.Army] = true
-        self.needIntelClear = not self.unit.reallyDetectedBy[target.Army]
-
-        self.exposingShooter = true
-
-        self:InitIntel(target.Army, 'Vision', 2)
-        self:EnableIntel('Vision')
+        -- Only show beam source if we haven't already shown it
+        if not self.exposingShooter then
+            self.unit.ignoreDetectionFrom[target.Army] = true
+            self.needIntelClear = not self.unit.reallyDetectedBy[target.Army]
+            self.exposingShooter = true
+            self:InitIntel(target.Army, 'Vision', 2)
+            self:EnableIntel('Vision')
+        end
     end,
 
     ---@param self CollisionBeam
     HideBeamSource = function(self)
-        self.unit.ignoreDetectionFrom = {}
+        -- Only hide beam source if we were actually showing it
+        if self.exposingShooter then
+            self.unit.ignoreDetectionFrom = {}
+            self:DisableIntel('Vision')
 
-        if not self.exposingShooter then
+            if self.needIntelClear then
+                ScenarioFramework.ClearIntel(self:GetPosition(), 2)
+                self.needIntelClear = nil
+            end
+            
             self.exposingShooter = nil
-            return
-        end
-        self:DisableIntel('Vision')
-
-        if self.needIntelClear then
-            ScenarioFramework.ClearIntel(self:GetPosition(), 2)
-            self.needIntelClear = nil
         end
     end,
 
