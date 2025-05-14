@@ -1,0 +1,107 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'brl0008',
+
+    Audio = {
+        EggOpen     = Sound { Bank = 'XRL_Stream', Cue = 'XRL_Crab_Egg_Open', LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection = Sound { Bank = 'Interface', Cue = 'Cybran_Select_Factory', LodCutoff = 'UnitMove_LodCutoff' },
+    },
+	
+    BuildIconSortPriority = 60,
+	
+    Categories = {
+        'SELECTABLE',
+        'CYBRAN',
+        'STRUCTURE',
+        'LAND',
+        'TECH2',
+        'CONSTRUCTION',
+        'RALLYPOINT',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SHOWQUEUE',
+		'INSIGNIFICANTUNIT',
+    },
+	
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 10,
+        MaxHealth = 10,
+        RegenRate = 0,
+    },
+	
+    Description = '<LOC brl0008_desc>Crab Egg (Deceiver)',
+	
+    Display = {
+        AnimationOpen = '/mods/BlackOpsUnleashed/units/BRL0008/BRL0008_aopen.sca',
+        BuildAttachBone = 'AttachPoint',
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {LODCutoff = 500,ShaderName = 'Insect'},
+            },
+        },
+
+        UniformScale = 0.05,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 800,
+        BuildCostMass = 80,
+        BuildTime = 400,
+		
+        BuildUnit = 'url0306',
+    },
+	
+    Footprint = {
+        SizeX = 2,
+        SizeZ = 2,
+    },
+	
+    General = {
+        CommandCaps = {
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Cybran',
+        Icon = 'land',
+    },
+
+    Intel = {
+        VisionRadius = 1,
+    },
+
+    Interface = {
+        HelpText = 'Crab Egg (Deceiver)',
+    },
+
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 1,
+
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        AlwaysAlignToTerrain = true,
+        MaxSteerForce = 0,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtSizeX = 1,
+        SkirtSizeZ = 1,
+        TurnRate = 0,
+    },
+
+    SelectionSizeX = 0.65,
+    SelectionSizeZ = 0.65,
+    SelectionThickness = 0.6,
+
+    SizeX = 1,
+    SizeY = 1,
+    SizeZ = 1,
+
+    StrategicIconName = 'icon_structure_generic',
+    StrategicIconSortPriority = 220,
+}

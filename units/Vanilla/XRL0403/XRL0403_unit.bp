@@ -49,6 +49,8 @@ UnitBlueprint {
         'OVERLAYSONAR',
         'OVERLAYMISC',
         'SUPREMACY',
+        'REPAIR',
+        'RECLAIM',
     },
     
     CollisionOffsetY = 2,
@@ -186,9 +188,8 @@ UnitBlueprint {
             'brl0010',
             'brl0011',
             'brlk005',
-			'drlk005',
         },
-        MaxBuildDistance = 3,
+        MaxBuildDistance = 7,
     },
 
     General = {
@@ -200,6 +201,9 @@ UnitBlueprint {
             RULEUCC_Patrol = true,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
+            RULEUCC_Reclaim = true,
+            RULEUCC_Repair = true,
+            RULEUCC_Pause = true,
         },
         FactionName = 'Cybran',
         Icon = 'amph',

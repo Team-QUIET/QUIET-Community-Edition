@@ -595,7 +595,7 @@ do
 			end
 
 			-- Build range overlay
-			if isEngineer and not (bp.CategoriesHash['INSIGNIFICANTUNIT'] or bp.CategoriesHash['AIRSTAGINGPLATFORM']) then
+			if isEngineer or bp.BlueprintId == 'xrl0403' and not (bp.CategoriesHash['INSIGNIFICANTUNIT'] or bp.CategoriesHash['AIRSTAGINGPLATFORM']) then
 				if not bp.AI then bp.AI = {} end
 
 				-- Engine allows building +2 range outside the max distance (or even more for large buildings)
