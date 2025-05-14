@@ -52,7 +52,7 @@ UnitBlueprint {
                 },
             },
 			
-            Damage = 65,
+            Damage = 60,
             DamageRadius = 2,
             DamageType = 'Normal',
 			
@@ -63,8 +63,8 @@ UnitBlueprint {
                 Water = 'Land|Water|Seabed',
             },
 			
-            FiringRandomness = 0.1,
-            FiringRandomnessWhileMoving = 0.45,
+            FiringRandomness = 0.2,
+            FiringRandomnessWhileMoving = 0.55,
 			
             FiringTolerance = 0.1,
 
@@ -86,7 +86,7 @@ UnitBlueprint {
 			
             RateOfFire = 10/40,
 
-            TargetCheckInterval = 2.0,
+            TargetCheckInterval = 1.0,
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -110,7 +110,7 @@ UnitBlueprint {
 			
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 90,
+            TurretYawSpeed = 130,
 			
             Turreted = true,
         },
