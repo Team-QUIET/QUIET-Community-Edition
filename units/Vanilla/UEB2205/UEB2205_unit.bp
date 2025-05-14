@@ -50,8 +50,8 @@ UnitBlueprint {
 
 	Defense = {
 		ArmorType = 'Structure',
-		Health = 6100,
-		MaxHealth = 6100,
+		Health = 6500,
+		MaxHealth = 6500,
 		RegenRate = 4,
 
 		SubThreatLevel = 30,
@@ -204,11 +204,11 @@ UnitBlueprint {
 				Water = 'Seabed|Sub|Water',
 			},
 
-			FiringTolerance = 20,
+			FiringTolerance = 60,
 
 			Label = 'TorpedoLauncher',
 
-			MaxRadius = 60,
+			MaxRadius = 64,
 
 			MuzzleSalvoDelay = 0.6,
 			MuzzleSalvoSize = 4,
@@ -232,10 +232,15 @@ UnitBlueprint {
 			TargetCheckInterval = 1,
 
 			TargetPriorities = {
-				'SPECIALHIGHPRI',
-				'SUBMERSIBLE',
-				'NAVAL',
-				'ALLUNITS',
+				"SPECIALHIGHPRI",
+				"SUBMERSIBLE",
+                "MOBILE DIRECTFIRE",
+                "MOBILE ANTINAVY",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE - ANTIAIR)",
+                "MOBILE TECH3",
+                "MOBILE TECH2",
+                "MOBILE TECH1",
+                "ALLUNITS",
 			},
 			TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
 			TrackingRadius = 1.1,
@@ -249,8 +254,8 @@ UnitBlueprint {
 			TurretPitchSpeed = 35,
 
 			TurretYaw = 0,
-			TurretYawRange = 360,
-			TurretYawSpeed = 26,
+			TurretYawRange = 180,
+			TurretYawSpeed = 30,
 			Turreted = true,
 		},
 	},
