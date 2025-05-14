@@ -1,6 +1,15 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "brpt2btbot",
+
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 2350,
+        MaxHealth = 2350,
+        RegenRate = 3,
+
+        SurfaceThreatLevel = 15.6,
+    },
 	
     Physics = {
 		BackUpDistance = 0,
@@ -41,6 +50,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Seabed',
             },
 			
+            FiringRandomness = 0,
 			FiringRandomnessWhileMoving = 0,
             FiringTolerance = 0.5,
 			
@@ -51,15 +61,26 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0.2,
             MuzzleSalvoSize = 2,
 
-            MuzzleVelocity = 35,
+            MuzzleVelocity = 50,
 
 			ProjectileLifetime = 1.2,			
 
-            RackFireTogether = true,
+            RackBones = {
+                {
+                    MuzzleBones = {'Right_Muzzle','Right_Muzzle01'},
+                    RackBone = 'Right_Arm',
+                },
+                {
+                    MuzzleBones = {'Left_Muzzle','Left_Muzzle01'},
+                    RackBone = 'Left_Arm',
+                },
+
+            },
+            RackFireTogether = false,
 			
             RangeCategory = 'UWRC_DirectFire',
 			
-            RateOfFire = 10/10,		-- 120 DPS
+            RateOfFire = 10/3,
 			
             TargetCheckInterval = 0.5,
             TargetPriorities = {
@@ -86,13 +107,15 @@ UnitBlueprint {
 			
             TurretPitch = 0,
             TurretPitchRange = 50,
-            TurretPitchSpeed = 30,
+            TurretPitchSpeed = 50,
 			
             TurretYaw = 0,
             TurretYawRange = 180,
             TurretYawSpeed = 90,
 			
             Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Direct Fire",
         },
     },
 }
