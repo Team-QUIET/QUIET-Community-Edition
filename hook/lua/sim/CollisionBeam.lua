@@ -276,7 +276,48 @@ CollisionBeam = Class(moho.CollisionBeamEntity) {
             self:DisableIntel('Vision')
 
             if self.needIntelClear then
-                ScenarioFramework.ClearIntel(self:GetPosition(), 2)
+                -- Get cached values
+                local unitPos = self:GetPosition()
+                local visionRadius = self.unit:GetBlueprint().Intel.VisionRadius
+                
+                -- Use GetUnitsInRect for initial broad phase check
+                local x1 = unitPos[1] - visionRadius
+                local z1 = unitPos[3] - visionRadius
+                local x2 = unitPos[1] + visionRadius
+                local z2 = unitPos[3] + visionRadius
+                local unitsInRect = GetUnitsInRect(x1, z1, x2, z2)
+                
+                -- Only do detailed check if we found units in the rectangle
+                if unitsInRect then
+                    local shouldClear = true
+                    local targetArmy = self.unit:GetArmy()
+                    
+                    -- Use local variables for frequently accessed values
+                    local vx, vy, vz = unitPos[1], unitPos[2], unitPos[3]
+                    local radiusSquared = visionRadius * visionRadius
+                    
+                    for _, unit in unitsInRect do
+                        if not unit.Dead and unit:GetArmy() == targetArmy then
+                            -- Fast distance check using squared distance
+                            local uPos = unit:GetPosition()
+                            local dx = uPos[1] - vx
+                            local dy = uPos[2] - vy
+                            local dz = uPos[3] - vz
+                            if (dx*dx + dy*dy + dz*dz) <= radiusSquared then
+                                shouldClear = false
+                                break
+                            end
+                        end
+                    end
+                    
+                    if shouldClear then
+                        ScenarioFramework.ClearIntel(unitPos, 2)
+                    end
+                else
+                    -- No units in rectangle, safe to clear intel
+                    ScenarioFramework.ClearIntel(unitPos, 2)
+                end
+                
                 self.needIntelClear = nil
             end
             
