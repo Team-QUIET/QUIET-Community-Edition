@@ -2,6 +2,36 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "brnt2mt",
 
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 3.45,
+        MaxBrake = 3.45,
+        MaxSpeed = 3.45,
+        MaxSpeedReverse = 3.45,
+        MaxSteerForce = 3.45,
+		
+        MeshExtentsX = 0.7,
+        MeshExtentsY = 0.3,
+        MeshExtentsZ = 1.2,
+		
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+		
+        RotateOnSpot = true,
+        RotateOnSpotThreshold = 0.1,
+		
+		SkirtSizeX = 0.7,
+		SkirtSizeY = 0.4,
+		SkirtSizeZ = 1.4,
+		
+        TurnRadius = 0,
+        TurnRate = 90,
+    },
+
     Weapon = {
         {
 
@@ -27,18 +57,18 @@ UnitBlueprint {
             Label = 'rocket',
 			
             MaxRadius = 24,
-		MinRadius = 6,
+		    MinRadius = 6,
 			
             MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 3,
             MuzzleVelocity = 12,
 			
-		PrefersPrimaryWeaponTarget = true,
+		    PrefersPrimaryWeaponTarget = true,
 			
             RateOfFire = 10/70,
-		RenderFireClock = true,
+		    RenderFireClock = true,
 			
-		RackFireTogether = true,
+		    RackFireTogether = true,
 			
             TargetRestrictDisallow = 'UNTARGETABLE',
             TrackingRadius = 1.05,
