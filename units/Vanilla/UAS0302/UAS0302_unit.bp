@@ -1,6 +1,48 @@
 UnitBlueprint {
-    Merge = true,
-    BlueprintId = "uas0302",
+
+    Source = '/units/UAS0302/UAS0302_unit.bp',
+
+    AI = {
+        AttackAngle = 60,
+        GuardReturnRadius = 125,
+        GuardScanRadius = 110,
+        TargetBones = {'UAS0302','Turret_Front','Turret_Middle','Turret_Back','Exhaust01','Exhaust02'},
+    },
+	
+    Audio = {
+        Killed = Sound { Bank = 'UASDestroy', Cue = 'UAS0302_Destroy', LodCutoff = 'UnitMove_LodCutoff'},
+        StartMove = Sound { Bank = 'UAS', Cue = 'UAS0302_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'Aeon_Select_Naval', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 9,
+            Level2 = 18,
+            Level3 = 27,
+            Level4 = 36,
+            Level5 = 45,
+        },
+    },
+	
+    BuildIconSortPriority = 18,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'AEON',
+        'MOBILE',
+        'NAVAL',
+        'TECH3',
+        'DIRECTFIRE',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'BATTLESHIP',
+        'BOMBARDMENT',
+        'OVERLAYRADAR',
+    },
+	
+    CollisionOffsetY = -1,
 	
     Defense = {
         ArmorType = 'Normal',
@@ -10,10 +52,80 @@ UnitBlueprint {
         SurfaceThreatLevel = 63,
     },
 	
+    Description = '<LOC uas0302_desc>Battleship',
+	
+    Display = {
+        Abilities = {
+            '<LOC ability_radar>Radar',
+            "<LOC ability_tacmissiledef>Tactical Missile Defense",
+        },
+
+        AnimationDeath = {
+            {
+                Animation = '/units/uas0302/uas0302_adeath01.sca',
+                Weight = 100,
+            },
+            {
+                Animation = '/units/uas0302/uas0302_adeath02.sca',
+                Weight = 100,
+            },
+            {
+                Animation = '/units/uas0302/uas0302_adeath03.sca',
+                Weight = 100,
+            },
+        },
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 200,
+                    ShaderName = 'AeonNavy',
+                },
+                {
+                    AlbedoName = 'uas0302_lod1_albedo.dds',
+                    LODCutoff = 600,
+                    ShaderName = 'AeonNavy',
+                    SpecularName = 'uas0302_lod1_specteam.dds',
+                },
+            },
+        },
+
+        MovementEffects = {
+            Water = {
+                Effects = {
+                    {
+                        Bones = {'UAS0302'},
+                        Scale = 1.2,
+                        Type = 'BackWake',
+                    },
+                },
+            },
+        },
+
+        UniformScale = 0.07,
+    },
+	
     Economy = {
         BuildCostEnergy = 54000,
         BuildCostMass = 9000,
         BuildTime = 42750,
+    },
+
+    General = {
+		CapCost = 3,
+
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Aeon',
+        Icon = 'sea',
+        UnitName = '<LOC uas0302_name>Omen Class',
     },
 	
     Intel = {
@@ -23,6 +135,14 @@ UnitBlueprint {
         VisionRadius = 50,
         WaterVisionRadius = 48,
     },
+	
+    Interface = {
+        HelpText = 'Battleship',
+    },
+    
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 4,
+    LifeBarSize = 4,
     
     Physics = {
         BackUpDistance = 10,
@@ -32,10 +152,10 @@ UnitBlueprint {
         },
         CatchUpAcc = 10,
         DragCoefficient = 0.2,
-        MaxAcceleration = 1.5,
-        MaxBrake = 1.1,
-        MaxSpeed = 3.3,
-        MaxSpeedReverse = 3.3,
+        MaxAcceleration = 3.7,
+        MaxBrake = 3.7,
+        MaxSpeed = 3.7,
+        MaxSpeedReverse = 3.7,
         MaxSteerForce = 5,
         MeshExtentsX = 2.2,
         MeshExtentsY = 2.25,
@@ -44,6 +164,25 @@ UnitBlueprint {
         MotionType = 'RULEUMT_Water',
         TurnRadius = 25,
         TurnRate = 40,
+    },
+    
+    SelectionSizeX = 1.8,
+    SelectionSizeZ = 5,
+    SelectionThickness = 0.15,
+    
+    SizeX = 1.9,
+    SizeY = 1.95,
+    SizeZ = 7.45,
+    
+    StrategicIconName = 'icon_ship3_directfire',
+    StrategicIconSortPriority = 145,
+    
+    Veteran = {
+        Level1 = 32,
+        Level2 = 64,
+        Level3 = 96,
+        Level4 = 128,
+        Level5 = 160,
     },
     
     Weapon = {
@@ -66,11 +205,11 @@ UnitBlueprint {
             Damage = 1050,
             DamageRadius = 2,
             DamageType = 'Normal',
-			
-            DisplayName = 'HV Oblivion Cannon',
-            
-            EnergyRequired = 750,
+
+            EnergyRequired = 900,
             EnergyDrainPerSecond = 150,
+			
+            DisplayName = 'High Velocity Oblivion Cannon',
 			
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Seabed',
@@ -88,10 +227,9 @@ UnitBlueprint {
             MinRadius = 10,
 			
             MuzzleChargeDelay = 0.1,
-            MuzzleVelocity = 50,
-            MuzzleVelocityRandom = 0,
-            MuzzleVelocityReduceDistance = 90,
-            NotExclusive = true,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 55,
             ProjectileId = '/projectiles/ADFOblivionCannon02/ADFOblivionCannon02_proj.bp',
             ProjectileLifetimeUsesMultiplier = 1.5,
 
@@ -104,6 +242,8 @@ UnitBlueprint {
             
             RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
+
+            RackRecoilDistance = -1,
             
             RangeCategory = 'UWRC_DirectFire',
 			
@@ -119,7 +259,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+            TrackingRadius = 1.15,
 			
             TurretBoneMuzzle = 'Turret_Front_Muzzle',
             TurretBonePitch = 'Turret_Front_Barrel01',
@@ -155,11 +295,11 @@ UnitBlueprint {
             Damage = 1050,
             DamageRadius = 2,
             DamageType = 'Normal',
-			
-            DisplayName = 'HV Oblivion Cannon',
-            
-            EnergyRequired = 750,
+
+            EnergyRequired = 900,
             EnergyDrainPerSecond = 150,
+			
+            DisplayName = 'High Velocity Oblivion Cannon',
 
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Seabed',
@@ -177,10 +317,10 @@ UnitBlueprint {
             MinRadius = 10,
 			
             MuzzleChargeDelay = 0.1,
-            MuzzleVelocity = 50,
-            MuzzleVelocityRandom = 0,
-            MuzzleVelocityReduceDistance = 90,
-            NotExclusive = true,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 55,
+            PrefersPrimaryWeaponTarget = true,
             ProjectileId = '/projectiles/ADFOblivionCannon02/ADFOblivionCannon02_proj.bp',
             ProjectileLifetimeUsesMultiplier = 1.5,
 			
@@ -193,6 +333,10 @@ UnitBlueprint {
 
             RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
+
+            RackRecoilDistance = -1,
+
+            RangeCategory = 'UWRC_DirectFire',
 
             RateOfFire = 10/60,		
             
@@ -207,15 +351,15 @@ UnitBlueprint {
             },
 			
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+            TrackingRadius = 1.15,
 			
             TurretBoneMuzzle = 'Turret_Middle_Muzzle',
             TurretBonePitch = 'Turret_Middle_Barrel01',
             TurretBoneYaw = 'Turret_Middle',
 			
             TurretPitch = 10,
-            TurretPitchRange = 30,
-            TurretPitchSpeed = 30,
+            TurretPitchRange = 35,
+            TurretPitchSpeed = 30,  
 			
             TurretYaw = 0,
             TurretYawRange = 160,
@@ -243,16 +387,16 @@ UnitBlueprint {
             Damage = 1050,
             DamageRadius = 2,
             DamageType = 'Normal',
+
+            EnergyRequired = 900,
+            EnergyDrainPerSecond = 150,
 			
-            DisplayName = 'HV Oblivion Cannon',
+            DisplayName = 'High Velocity Oblivion Cannon',
 			
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Seabed',
             },
             
-            EnergyRequired = 750,
-            EnergyDrainPerSecond = 150,
-
             FiringRandomness = 0.2,
             FiringTolerance = 2,
 			
@@ -265,10 +409,10 @@ UnitBlueprint {
             MinRadius = 10,
 			
             MuzzleChargeDelay = 0.1,
-            MuzzleVelocity = 50,
-            MuzzleVelocityRandom = 0,
-            MuzzleVelocityReduceDistance = 90,
-            NotExclusive = true,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 55,
+            PrefersPrimaryWeaponTarget = true,
             ProjectileId = '/projectiles/ADFOblivionCannon02/ADFOblivionCannon02_proj.bp',
             ProjectileLifetimeUsesMultiplier = 1.5,
             
@@ -281,6 +425,10 @@ UnitBlueprint {
 
             RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
+
+            RackRecoilDistance = -1,
+
+            RangeCategory = 'UWRC_DirectFire',
 
             RateOfFire = 10/60,		
 			
@@ -373,7 +521,7 @@ UnitBlueprint {
 			FiringRandomness = 20,
             FiringTolerance = 360,
 			
-            Flare = { Category = 'MISSILE', Radius = 22 },
+            Flare = { Category = 'MISSILE', Radius = 40 },
 			
             Label = 'AntiMissile2',
 			

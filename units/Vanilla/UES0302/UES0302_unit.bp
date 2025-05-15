@@ -33,8 +33,8 @@ UnitBlueprint {
         },
         CatchUpAcc = 10,
         DragCoefficient = 0.2,
-        MaxAcceleration = 1,
-        MaxBrake = 1,
+        MaxAcceleration = 2.75,
+        MaxBrake = 2.75,
         MaxSpeed = 2.75,
         MaxSpeedReverse = 2.75,
         MaxSteerForce = 7,
@@ -84,7 +84,7 @@ UnitBlueprint {
 
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 30,
+            MuzzleVelocity = 35,
             ProjectileId = "/projectiles/TDFGauss03/TDFGauss03_proj.bp",
             ProjectileLifetimeUsesMultiplier = 1.5,
             ProjectilesPerOnFire = 3,
@@ -189,7 +189,7 @@ UnitBlueprint {
             
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 30,
+            MuzzleVelocity = 35,
             ProjectileId = "/projectiles/TDFGauss03/TDFGauss03_proj.bp",
             ProjectileLifetimeUsesMultiplier = 1.5,
             ProjectilesPerOnFire = 3,
@@ -295,7 +295,7 @@ UnitBlueprint {
 
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 30,
+            MuzzleVelocity = 35,
             ProjectileId = "/projectiles/TDFGauss03/TDFGauss03_proj.bp",
             ProjectileLifetimeUsesMultiplier = 1.5,
             ProjectilesPerOnFire = 3,
