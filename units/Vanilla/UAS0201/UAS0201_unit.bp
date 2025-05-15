@@ -92,7 +92,7 @@ UnitBlueprint {
             MuzzleChargeDelay = 0.1,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 30,
+            MuzzleVelocity = 35,
             ProjectileId = '/projectiles/ADFOblivionCannon01/ADFOblivionCannon01_proj.bp',
 			ProjectileLifetimeUsesMultiplier = 1.5,
 			
