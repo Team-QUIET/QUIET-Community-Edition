@@ -24,7 +24,6 @@ do
 		OldModBlueprints(all_blueprints)
 		--
 		BalanceAlterations(all_blueprints)
-		EnergyChargeAlterations(all_blueprints)
 		UnitAlterations(all_blueprints)
 		ReclaimAlterations(all_blueprints)
 		NotificationAlterations(all_blueprints)
@@ -1100,76 +1099,4 @@ do
 			end
 		end
 	end
-
-	--=======================================
-	-- FUNCTION EnergyChargeAlterations(ALL_BLUEPRINTS)
-	-- Adds RenderFireClock to all EnergyCharge Units
-	-- Removes RackSalvoFiresAfterCharge Temporarily until all units are fixed 
-	--=======================================
-	local unitContinueId = {
-		'srb2402',
-		'ueb2306',
-		'ueb2401',
-		'wal0401',
-		'ual0401',
-		'xsb2204',
-		'url0401',
-		'ssb2404',
-		'xab2307',
-		'uab2302',
-		'ueb2302',
-		'urb2302',
-		'xsb2302',
-		'wra0401',
-		'brmt1expd',
-		'brmt1expdt2',
-		'brmt3pdro',
-		'brnt3pdro',
-		'brot1expd',
-		'brot3pdro',
-		'url0304',
-		'uel0304',
-		'xsl0304',
-		'xal0305',
-		'xsl0305',
-		'ual0204',
-		'brl0307',
-		'lab2320',
-		'leb2320',
-		'lrb2320',
-		'lsb2320',
-		'srl0311',
-		'uab2303',
-		'urb2303',
-		'xsb2303',
-		'ueb2303',
-	};
-	-- This is temperory until all units are fixed correctly within the Blueprint
-	-- Will be removed once all units are fixed
-	function EnergyChargeAlterations(all_blueprints)
-		for id, bp in pairs(all_blueprints.Unit) do
-			if TableFind(unitContinueId, id) then
-				continue
-			else
-				if bp.Weapon ~= nil then
-					for idW, bpW in pairs(bp.Weapon) do
-						if bpW.RackSalvoFiresAfterCharge ~= nil then
-							bpW.RackSalvoFiresAfterCharge = false
-						end
-					end
-				end
-			end
-
-			if bp.EnergyRequired ~= nil and bp.EnergyDrainPerSecond ~= nil then
-				if bp.Weapon ~= nil then
-					for idW, bpW in pairs(bp.Weapon) do
-						if bpW.RenderFireClock == nil then
-							bpW.RenderFireClock = true
-						end
-					end
-				end
-			end
-		end
-	end
-
 end -- do end
