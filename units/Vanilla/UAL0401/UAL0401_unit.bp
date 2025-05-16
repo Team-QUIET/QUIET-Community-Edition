@@ -419,8 +419,6 @@ UnitBlueprint {
         {
             -- sim-performance related values
 
-            AlwaysRecheckTarget = false,
-            TrackingRadius = 1.1,
 
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
@@ -483,7 +481,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,STRUCTURE,COMMAND,EXPERIMENTAL,NAVAL,SUBCOMMANDER',
-            TrackingRadius = 1.1,
+
             TractorDamage = 4999,
             TractorDamageInterval = 10,
             TurretBoneMuzzle = 'Right_Arm_Muzzle01',
@@ -504,9 +502,7 @@ UnitBlueprint {
         },
         {
             -- sim-performance related values
- 
-            AlwaysRecheckTarget = false, 
-            TrackingRadius = 1.1,
+
 
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
@@ -582,7 +578,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,STRUCTURE,COMMAND,EXPERIMENTAL,NAVAL,SUBCOMMANDER',
-            TrackingRadius = 1.1,
+
             TractorDamage = 4999,
             TractorDamageInterval = 10,
             TurretBoneMuzzle = 'Left_Arm_Muzzle01',

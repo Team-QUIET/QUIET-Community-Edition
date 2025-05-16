@@ -113,7 +113,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
-            TrackingRadius = 1.15,
+
             TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 0,

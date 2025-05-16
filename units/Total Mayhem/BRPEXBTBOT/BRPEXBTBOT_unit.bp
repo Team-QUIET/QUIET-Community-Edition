@@ -280,7 +280,7 @@ UnitBlueprint {
         },
         {
             AboveWaterFireOnly = true,
-            AlwaysRecheckTarget = true,
+
             
             Audio = {
                 Fire = Sound { Bank = 'XSL_Weapon', Cue = 'XSL0205_Olaris_AA_Artillery', LodCutoff = 'Weapon_LodCutoff' },
@@ -345,7 +345,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE, SATELLITE',
-            TrackingRadius = 1.2,
+
 			
             TurretBoneDualMuzzle = 'muzzle03',
             TurretBoneDualPitch = 'Object09',

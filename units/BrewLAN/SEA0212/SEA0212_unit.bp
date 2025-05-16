@@ -100,7 +100,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
             TargetRestrictOnlyAllow = 'AIR',
-            TrackingRadius = 1.2,
+
 
             TurretBoneMuzzle = 'Weapon_Front',
             TurretBonePitch = 'Weapon_Front',
@@ -119,7 +119,7 @@ UnitBlueprint {
             WeaponCategory = 'Anti Air',
         },
         {
-            AlwaysRecheckTarget = true,
+
             BallisticArc = 'RULEUBA_None',
             CannotAttackGround = true,
             CollideFriendly = false,
@@ -156,7 +156,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.2,
+
 
             TurretBoneMuzzle = 'Right_Missile',
             TurretBonePitch = 'Right_Missile',
@@ -174,7 +174,7 @@ UnitBlueprint {
             Turreted = true,
         },
         {
-            AlwaysRecheckTarget = true,
+
 
             BallisticArc = 'RULEUBA_None',
 
@@ -210,7 +210,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.2,
+
 
             TurretBoneMuzzle = 'Left_Missile',
             TurretBonePitch = 'Left_Missile',

@@ -243,7 +243,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'Turret_Front_Muzzle02',
             TurretBonePitch = 'Turret_Front_Barrel',
@@ -330,7 +330,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'Turret_Back_Muzzle02',
             TurretBonePitch = 'Turret_Back_Barrel',
@@ -399,7 +399,7 @@ UnitBlueprint {
 
             TargetRestrictOnlyAllow = 'TORPEDO',
             TargetType = 'RULEWTT_Projectile',
-            TrackingRadius = 1.2,
+
             
             WeaponRepackTimeout = 1.6,
         },
@@ -451,7 +451,7 @@ UnitBlueprint {
 
             TargetRestrictOnlyAllow = 'TORPEDO',
             TargetType = 'RULEWTT_Projectile',
-            TrackingRadius = 1,
+
             
             WeaponRepackTimeout = 1.4,
         },

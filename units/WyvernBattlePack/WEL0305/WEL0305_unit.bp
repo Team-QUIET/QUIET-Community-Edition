@@ -133,7 +133,7 @@ UnitBlueprint{
                 "ALLUNITS -WALL",
             },
             TargetRestrictDisallow = "UNTARGETABLE,HIGHALTAIR",
-            TrackingRadius = 1.2,
+
             TurretBoneMuzzle = "GatGunMuzzle01",
             TurretBonePitch = "Gatgun2",
             TurretBoneYaw = "Gatgun2",
@@ -148,7 +148,7 @@ UnitBlueprint{
         },
         {
             AboveWaterFireOnly = true,
-            AlwaysRecheckTarget = true,
+
             Audio = {
                 Fire = Sound { Bank = 'UELWeapon', Cue = 'UEL0205_Artillery_Frag', LodCutoff = 'Weapon_LodCutoff' },
             },
@@ -207,7 +207,7 @@ UnitBlueprint{
                 "AIR MOBILE",
             },
             TargetRestrictDisallow = "UNTARGETABLE,SATELLITE",
-            TrackingRadius = 1.2,
+
 
             TurretBoneMuzzle = "AATurret_Barrel",
             TurretBonePitch = "AATurret",
@@ -273,7 +273,7 @@ UnitBlueprint{
             TargetRestrictDisallow = "UNTARGETABLE,SATELLITE",
             TargetRestrictOnlyAllow = "TACTICAL MISSILE",
             TargetType = "RULEWTT_Projectile",
-            TrackingRadius = 1.5,
+
             TurretBoneMuzzle = "TMLMuzzle",
             TurretBonePitch = "TMLMuzzle",
             TurretBoneYaw = "TMLMuzzle",

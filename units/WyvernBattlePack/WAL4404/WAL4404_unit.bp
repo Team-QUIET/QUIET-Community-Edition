@@ -224,7 +224,7 @@ UnitBlueprint{
                 "ALLUNITS -WALL",
             },
             TargetRestrictDisallow = "UNTARGETABLE",
-            TrackingRadius = 1.05,
+
 
             TurretBoneMuzzle = "ChinGun_Muzzle",
             TurretBonePitch = "ChinGun",
@@ -310,7 +310,7 @@ UnitBlueprint{
                 "ALLUNITS",
             },
             TargetRestrictDisallow = "UNTARGETABLE",
-            TrackingRadius = 1.05,
+
 
             TurretBoneDualMuzzle = "Top_Right_CannonMuzzle",
             TurretBoneDualPitch = "Right_Gun",
@@ -393,7 +393,7 @@ UnitBlueprint{
                 "ALLUNITS",
             },
             TargetRestrictDisallow = "UNTARGETABLE",
-            TrackingRadius = 1.05,
+
 
             TurretBoneDualMuzzle = "Top_Left_CannonMuzzle",
             TurretBoneDualPitch = "Left_Gun",
@@ -466,7 +466,7 @@ UnitBlueprint{
                 "ALLUNITS -WALL",
             },
             TargetRestrictDisallow = "UNTARGETABLE",
-            TrackingRadius = 1.05,
+
 
             TurretBoneMuzzle = "TopGun_TopMuzzle001",
             TurretBonePitch = "TopGun",
@@ -483,7 +483,7 @@ UnitBlueprint{
             Turreted = true,
         },
         {
-            AlwaysRecheckTarget = true,
+
             Audio = {
                 Fire = Sound { Bank = 'UALWeapon', Cue = 'UAB2304_SAM', LodCutoff = 'Weapon_LodCutoff' },
             },
@@ -532,7 +532,6 @@ UnitBlueprint{
             },
             TargetRestrictDisallow = "UNTARGETABLE,SATELLITE",
 
-            TrackingRadius = 1.1,
 
             Turreted = false,
         },

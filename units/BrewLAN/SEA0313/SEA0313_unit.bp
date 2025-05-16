@@ -115,8 +115,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'STRUCTURE,UNTARGETABLE,SATELLITE',
             TargetRestrictOnlyAllow = 'AIR',
-            
-            TrackingRadius = 1.25,
+
             
             TurretBoneMuzzle = 'Gun_001',
             TurretBonePitch = 'Gun_001',
@@ -213,8 +212,7 @@ UnitBlueprint {
         
         {
             advancedTracking = true,
-            
-            AlwaysRecheckTarget = true,
+
             Audio = {Fire = Sound {Bank = 'UELWeapon', Cue = 'UEB2304_Missile_Flayer', LodCutoff = 'Weapon_LodCutoff'}},
             
             BallisticArc = 'RULEUBA_None',
@@ -266,7 +264,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.2,
+
             
             TurretBoneMuzzle = 'Gun_003',
             TurretBonePitch = 'Gun_003',

@@ -97,7 +97,7 @@ UnitBlueprint {
             },
 			
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.15,
+
             WeaponCategory = 'Bomb',
         },
     },

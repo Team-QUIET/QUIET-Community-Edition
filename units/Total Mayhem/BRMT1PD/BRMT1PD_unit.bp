@@ -58,7 +58,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'Muzzle',
             TurretBonePitch = 'Turret_Recoil',

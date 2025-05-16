@@ -107,7 +107,6 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
             TargetRestrictOnlyAllow = 'AIR',            
 
-            TrackingRadius = 1.25,
             
             TurretBoneMuzzle = 'Big_Ring',
             TurretBonePitch = 'Big_Ring',
@@ -127,7 +126,7 @@ UnitBlueprint {
         },
 
         {
-            AlwaysRecheckTarget = true,
+
             Audio = {Fire = Sound {Bank = 'XSA_Weapon', Cue = 'XSA0303_AA_AutoCanLosaare', LodCutoff = 'Weapon_LodCutoff'}},
             
             AutoInitiateAttackCommand = false,

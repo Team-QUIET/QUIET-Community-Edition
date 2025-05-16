@@ -54,7 +54,7 @@ UnitBlueprint {
 
             TargetPriorities = { "SPECIALHIGHPRI", "MOBILE", "ALLUNITS -WALL" },
             TargetRestrictDisallow = "UNTARGETABLE",
-            TrackingRadius = 1.05,
+
 
             TurretBoneMuzzle = "LeftMissileTurret_Muzzle001",
             TurretBonePitch = "LeftMissileTurret_Barrel001",
@@ -116,7 +116,7 @@ UnitBlueprint {
 
             TargetPriorities = {"SPECIALHIGHPRI","MOBILE","ALLUNITS -WALL"},
             TargetRestrictDisallow = "UNTARGETABLE",
-            TrackingRadius = 1.05,
+
 
             TurretBoneMuzzle = "RightMissileTurret_Muzzle001",
             TurretBonePitch = "RightMissileTurret_Barrel001",
@@ -197,7 +197,7 @@ UnitBlueprint {
 
             TargetPriorities = {"SPECIALHIGHPRI","GROUNDATTACK","ANTIAIR","MOBILE","ALLUNITS -WALL"},
             TargetRestrictDisallow = "UNTARGETABLE,HIGHALTAIR,SATELLITE,WALL",
-            TrackingRadius = 1.05,
+
 
             TurretBoneMuzzle = "Back_Turret001_Muzzle01",
             TurretBonePitch = "Back_Turret001_Barre",
@@ -274,7 +274,7 @@ UnitBlueprint {
 
             TargetPriorities = {"SPECIALHIGHPRI","GROUNDATTACK","ANTIAIR","MOBILE","ALLUNITS -WALL"},
             TargetRestrictDisallow = "UNTARGETABLE,HIGHALTAIR,SATELLITE,WALL",
-            TrackingRadius = 1.05,
+
 
             TurretBoneMuzzle = "Back_Turret001_Muzzle003",
             TurretBonePitch = "Back_Turret001_Barre001",
@@ -421,7 +421,7 @@ UnitBlueprint {
         },
         {
 			advancedTracking = true,
-            AlwaysRecheckTarget = true,
+
 
             Audio = {
                 Fire = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Missile_Nanite', LodCutoff = 'Weapon_LodCutoff' },
@@ -476,12 +476,11 @@ UnitBlueprint {
             TargetRestrictDisallow = "UNTARGETABLE,SATELLITE",
             TargetRestrictOnlyAllow = "AIR -SATELLITE",
 
-            TrackingRadius = 1.05,
             Turreted = false,
         },
         {
 			advancedTracking = true,
-            AlwaysRecheckTarget = true,
+
 
             Audio = {
                 Fire = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Missile_Nanite', LodCutoff = 'Weapon_LodCutoff' },
@@ -534,7 +533,6 @@ UnitBlueprint {
             TargetRestrictDisallow = "UNTARGETABLE,SATELLITE",
             TargetRestrictOnlyAllow = "AIR -SATELLITE",
 
-            TrackingRadius = 1.05,
             Turreted = false,
         },
         {

@@ -301,7 +301,7 @@ UnitBlueprint{
                 "ALLUNITS",
             },
             TargetRestrictDisallow = "UNTARGETABLE",
-            TrackingRadius = 1.1,
+
 
             TurretBoneMuzzle = "TMD_LaserMuzzle",
             TurretBonePitch = "TMD_LaserRack",
@@ -317,7 +317,7 @@ UnitBlueprint{
         },
         {
             AboveWaterFireOnly = true,
-            AlwaysRecheckTarget = true,
+
 
             Audio = {
                 Fire = Sound { Bank = 'XSB_Weapon', Cue = 'XSB2104_Shleo_AA_Autogun', LodCutoff = 'Weapon_LodCutoff' },
@@ -368,7 +368,7 @@ UnitBlueprint{
                 "AIR MOBILE",
             },
             TargetRestrictDisallow = "UNTARGETABLE,SATELLITE",
-            TrackingRadius = 1.2,
+
 
             TurretBoneMuzzle = "AATurret_Aiming_Bone",
             TurretBonePitch = "AATurret_Barrel",

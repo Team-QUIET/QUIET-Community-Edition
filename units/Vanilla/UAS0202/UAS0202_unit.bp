@@ -78,7 +78,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'Turret_Front_Barrel',
             TurretBonePitch = 'Turret_Front_Barrel',
@@ -97,7 +97,7 @@ UnitBlueprint {
         },
         {
             advancedTracking = true,
-            AlwaysRecheckTarget = true,
+
 
             Audio = {
                 Fire = Sound { Bank = 'UASWeapon', Cue = 'UAS0202_SAM', LodCutoff = 'Weapon_LodCutoff' },
@@ -152,7 +152,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.2,
+
             TurretBoneMuzzle = "Turret_Right_Barrel",
             TurretBonePitch = "Turret_Right",
             TurretBoneYaw = "Turret_Right",
@@ -168,7 +168,7 @@ UnitBlueprint {
         },
         {
             advancedTracking = true,
-            AlwaysRecheckTarget = true,
+
 
             Audio = {
                 Fire = Sound { Bank = 'UASWeapon', Cue = 'UAS0202_SAM', LodCutoff = 'Weapon_LodCutoff' },
@@ -222,7 +222,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.2,
+
             TurretBoneMuzzle = "Turret_Left_Barrel",
             TurretBonePitch = "Turret_Left",
             TurretBoneYaw = "Turret_Left",
@@ -283,7 +283,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
             TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',
             TargetType = 'RULEWTT_Projectile',
-            TrackingRadius = 1.2,
+
         },
     },
 }

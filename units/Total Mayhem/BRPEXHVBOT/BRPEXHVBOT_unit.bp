@@ -466,8 +466,7 @@ UnitBlueprint {
         {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
-
-            AlwaysRecheckTarget = true,			
+			
 
             Audio = {
                 BeamLoop    = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0201_Ultrachromatic_Beam', LodCutoff = 'Weapon_LodCutoff'},
@@ -523,7 +522,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE,HIGHALTAIR,SATELLITE',
-            TrackingRadius = 1.05,
+
 			
             TurretBoneMuzzle = 'muzzle',
             TurretBonePitch = 'Left_Arm03',
@@ -596,7 +595,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE,HIGHALTAIR,SATELLITE',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'muzzle01',
             TurretBonePitch = 'Right_Arm01',
@@ -616,7 +615,7 @@ UnitBlueprint {
         {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
-            AlwaysRecheckTarget = true,
+
 			
             Audio = {
                 Fire = Sound { Bank = 'XSL_Weapon', Cue = 'XSL0202_AireAuBolter', LodCutoff = 'Weapon_LodCutoff' },
@@ -678,7 +677,7 @@ UnitBlueprint {
                 'ALLUNITS,-WALL',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.05,
+
 			
             TurretBoneMuzzle = 'aa04',
             TurretBonePitch = 'Left_Leg_B07',

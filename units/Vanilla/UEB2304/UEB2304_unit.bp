@@ -21,7 +21,7 @@ UnitBlueprint {
     Weapon = {
         {
 			advancedTracking = true,
-            AlwaysRecheckTarget = true,
+
 
             Audio = {
                 Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB2304_Missile_Flayer', LodCutoff = 'Weapon_LodCutoff'},
@@ -99,7 +99,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
             TargetRestrictOnlyAllow = 'AIR',
-            TrackingRadius = 1.4,
+
 			
             TurretBoneMuzzle = 'Turret_Barrel',
             TurretBonePitch = 'Turret_Barrel',

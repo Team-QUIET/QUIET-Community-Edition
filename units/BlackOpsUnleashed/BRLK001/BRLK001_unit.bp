@@ -169,7 +169,7 @@ UnitBlueprint {
     Weapon = {
         {
             AimsStraightOnDisable = false,
-            AlwaysRecheckTarget = false,
+
             BallisticArc = 'RULEUBA_None',
             BeamCollisionDelay = 0.2,
             BeamLifetime = 0,
@@ -219,7 +219,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.2,
+
 
             TurretBoneMuzzle = 'Lazor',
             TurretBonePitch = 'Lazor',
@@ -239,7 +239,7 @@ UnitBlueprint {
 		{
             AimsStraightOnDisable = false,
 			advancedTracking = true,
-            AlwaysRecheckTarget = true,
+
             
             Audio = {
                 Fire = Sound { Bank = 'URSWeapon', Cue = 'URS0202_Nano_Dart', LodCutoff = 'Weapon_LodCutoff' },
@@ -311,8 +311,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
 			
 			ToggleWeapon = 'GroundGun',
-			
-            TrackingRadius = 1.2,
+
 
             TurretBoneMuzzle = 'Turret_Muzzle_01',
             TurretBonePitch = 'Turret_Barrel01',
@@ -329,7 +328,7 @@ UnitBlueprint {
             Turreted = true,
         },
 		{
-            AlwaysRecheckTarget = true,
+
             
             Audio = {
                 Fire = Sound { Bank = 'URSWeapon', Cue = 'URS0202_Nano_Dart', LodCutoff = 'Weapon_LodCutoff' },
@@ -395,8 +394,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
 			
 			ToggleWeapon = 'AAGun',
-			
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'Turret_Muzzle_01',
             TurretBonePitch = 'Turret_Barrel01',

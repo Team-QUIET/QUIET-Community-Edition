@@ -312,7 +312,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = "UNTARGETABLE,SATELLITE",
-            TrackingRadius = 1.1,
+
 
             TurretBoneMuzzle = "FrontMini_TurretMuzzle001",
             TurretBonePitch = "FrontMini_TurretBarrel001",
@@ -382,7 +382,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = "UNTARGETABLE,SATELLITE",
-            TrackingRadius = 1.1,
+
 
             TurretBoneMuzzle = "FrontMini_TurretMuzzle002",
             TurretBonePitch = "FrontMini_TurretBarrel002",

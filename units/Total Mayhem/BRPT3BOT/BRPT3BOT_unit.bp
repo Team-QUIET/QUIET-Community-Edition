@@ -286,7 +286,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+
 			
 			TurretBoneDualMuzzle = 'Arm0104',
 			TurretBoneDualPitch = 'Arm0103',
@@ -310,7 +310,7 @@ UnitBlueprint {
         },
         {
 			AboveWaterFireOnly = true,
-            AlwaysRecheckTarget = true,
+
 
             Audio = {
                 Fire = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0202_Olaris_Cannon', LodCutoff = 'Weapon_LodCutoff' },
@@ -365,8 +365,7 @@ UnitBlueprint {
                 'ALLUNITS,-WALL',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,HIGHALTAIR,SATELLITE',
-			
-            TrackingRadius = 1.2,
+
 			
             TurretBoneDualMuzzle = 'Arm0204',
             TurretBoneDualPitch = 'Arm0203',

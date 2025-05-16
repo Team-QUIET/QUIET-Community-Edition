@@ -119,7 +119,7 @@ UnitBlueprint {
             },
 			
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.15,
+
 			
             TurretBoneMuzzle = 'Front_Turret02_Muzzle01',
             TurretBonePitch = 'Front_Turret02_Barrel01',
@@ -205,7 +205,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.15,
+
 			
             TurretBoneMuzzle = 'Back_Turret_Muzzle01',
             TurretBonePitch = 'Back_Turret_Barrel',
@@ -292,7 +292,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
-            TrackingRadius = 1.1,
+
             WeaponCategory = "Anti Navy",
             WeaponRepackTimeout = 0,
             WeaponUnpacks = false,
@@ -344,7 +344,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
             TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',
             TargetType = 'RULEWTT_Projectile',
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Front_Turret01_Barrel01',
             TurretBonePitch = 'Front_Turret01_Barrel01',

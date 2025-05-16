@@ -365,7 +365,7 @@ UnitBlueprint{
                 "ALLUNITS -WALL",
             },
             TargetRestrictDisallow = "UNTARGETABLE",
-            TrackingRadius = 1.15,
+
 
             TurretBoneMuzzle = "Napalm_MissileRack",
             TurretBonePitch = "Napalm_MissileRack",
@@ -449,7 +449,7 @@ UnitBlueprint{
                 "ALLUNITS",
             },
             TargetRestrictDisallow = "UNTARGETABLE",
-            TrackingRadius = 1.1,
+
 
             TurretBoneMuzzle = "Right_Turret_Pitch001",
             TurretBonePitch = "Right_Turret_Pitch001",
@@ -533,7 +533,7 @@ UnitBlueprint{
                 "ALLUNITS",
             },
             TargetRestrictDisallow = "UNTARGETABLE",
-            TrackingRadius = 1.1,
+
 
             TurretBoneMuzzle = "Left_Turret_Pitch001",
             TurretBonePitch = "Left_Turret_Pitch001",
@@ -613,7 +613,7 @@ UnitBlueprint{
                 "ALLUNITS",
             },
             TargetRestrictDisallow = "UNTARGETABLE",
-            TrackingRadius = 1.1,
+
 
             TurretBoneMuzzle = "Center_Turret_Pitch003",
             TurretBonePitch = "Center_Turret_Pitch003",
@@ -674,7 +674,7 @@ UnitBlueprint{
             TargetRestrictDisallow = "UNTARGETABLE",
             TargetRestrictOnlyAllow = "TACTICAL MISSILE",
             TargetType = "RULEWTT_Projectile",
-            TrackingRadius = 1.2,
+
 
             TurretBoneMuzzle = "TMD_Muzzle001",
             TurretBonePitch = "TMD_Muzzle001",
@@ -734,7 +734,7 @@ UnitBlueprint{
             TargetRestrictDisallow = "UNTARGETABLE",
             TargetRestrictOnlyAllow = "TACTICAL MISSILE",
             TargetType = "RULEWTT_Projectile",
-            TrackingRadius = 1.2,
+
 
             TurretBoneMuzzle = "TMD_Muzzle002",
             TurretBonePitch = "TMD_Muzzle002",
@@ -754,7 +754,7 @@ UnitBlueprint{
         },
         {
             AboveWaterFireOnly = true,
-            AlwaysRecheckTarget = true,
+
             Audio = {
                 Fire = Sound { Bank = 'UELWeapon', Cue = 'UEL0205_Artillery_Frag', LodCutoff = 'Weapon_LodCutoff' },
             },
@@ -816,7 +816,7 @@ UnitBlueprint{
                 "ALLUNITS",
             },
             TargetRestrictDisallow = "UNTARGETABLE,SATELLITE",
-            TrackingRadius = 1.2,
+
 
             TurretBoneMuzzle = "LeftFlak_Barrel",
             TurretBonePitch = "LeftFlak_Barrel",
@@ -834,7 +834,7 @@ UnitBlueprint{
         },
         {
             AboveWaterFireOnly = true,
-            AlwaysRecheckTarget = true,
+
             Audio = {
                 Fire = Sound { Bank = 'UELWeapon', Cue = 'UEL0205_Artillery_Frag', LodCutoff = 'Weapon_LodCutoff' },
             },
@@ -893,7 +893,7 @@ UnitBlueprint{
                 "ALLUNITS",
             },
             TargetRestrictDisallow = "UNTARGETABLE,SATELLITE",
-            TrackingRadius = 1.4,
+
 
             TurretBoneMuzzle = "RightFlak_Barrel",
             TurretBonePitch = "RightFlak_Barrel",
@@ -960,7 +960,7 @@ UnitBlueprint{
                 "ALLUNITS -WALL",
             },
             TargetRestrictDisallow = "UNTARGETABLE",
-            TrackingRadius = 1.15,
+
 
             TurretBoneMuzzle = "Riot_Gun_Right_Barrel_Muzzle",
             TurretBonePitch = "Riot_Gun_Right_Barrel",
@@ -1027,7 +1027,7 @@ UnitBlueprint{
                 "ALLUNITS -WALL",
             },
             TargetRestrictDisallow = "UNTARGETABLE",
-            TrackingRadius = 1.15,
+
 
             TurretBoneMuzzle = "Riot_Gun_Left_Barrel_Muzzle",
             TurretBonePitch = "Riot_Gun_Left_Barrel",

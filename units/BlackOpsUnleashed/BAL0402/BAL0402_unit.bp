@@ -425,7 +425,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },			
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'Left_Turret_Muzzle',
             TurretBonePitch = 'Left_Barrel',
@@ -500,7 +500,7 @@ UnitBlueprint {
             },
 			
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'Right_Turret_Muzzle',
             TurretBonePitch = 'Right_Turret',
@@ -571,7 +571,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
             TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',
             TargetType = 'RULEWTT_Projectile',
-            TrackingRadius = 1.2,
+
         },
 
 		{

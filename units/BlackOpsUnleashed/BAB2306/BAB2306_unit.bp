@@ -143,7 +143,7 @@ UnitBlueprint {
         {
             AboveWaterTargetsOnly = true,
             AimsStraightOnDisable = true,
-			AlwaysRecheckTarget = true,
+
             
             Audio = {
                 BeamLoop    = Sound { Bank = 'UALWeapon', Cue = 'UAL0401_Phason_Laser_Loop', LodCutoff = 'Weapon_LodCutoff' },
@@ -210,7 +210,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'Muzzle01',
             TurretBonePitch = 'Turret_Pitch',

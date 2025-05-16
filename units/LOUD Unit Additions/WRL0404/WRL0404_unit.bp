@@ -337,7 +337,7 @@ UnitBlueprint {
                 'ALLUNITS -WALL',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'UCX0101_T01_B01_Muzzle01',
             TurretBonePitch = 'UCX0101_T01_Barrel01',
@@ -417,8 +417,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-			
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'UCX0101_Turret02',
             TurretBonePitch = 'UCX0101_Turret02',
@@ -494,7 +493,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+
             
             TurretBoneMuzzle = 'UCX0101_T03_Muzzle01',
             TurretBonePitch = 'UCX0101_Turret03',
@@ -514,7 +513,7 @@ UnitBlueprint {
         {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
-            AlwaysRecheckTarget = true,
+
 			Audio = {
 				Fire = Sound { Bank = 'URLWeapon', Cue = 'URB2204_Cannon_Cloud', LodCutoff = 'Weapon_LodCutoff'},
 			},
@@ -576,7 +575,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
             TargetRestrictOnlyAllow = 'AIR',
-            TrackingRadius = 1.2,
+
             
             TurretBoneMuzzle = 'UCX0101_T04_Muzzle01',
             TurretBonePitch = 'UCX0101_Turret04',
@@ -596,7 +595,7 @@ UnitBlueprint {
         {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
-            AlwaysRecheckTarget = true,
+
 			Audio = {
 				Fire = Sound { Bank = 'URLWeapon', Cue = 'URB2204_Cannon_Cloud', LodCutoff = 'Weapon_LodCutoff'},
 			},
@@ -654,7 +653,7 @@ UnitBlueprint {
                 'MOBILE',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.2,
+
             
             TurretBoneMuzzle = 'UCX0101_T05_Muzzle01',
             TurretBonePitch = 'UCX0101_Turret05',
@@ -674,7 +673,7 @@ UnitBlueprint {
         {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
-            AlwaysRecheckTarget = true,
+
 			Audio = {
 				Fire = Sound { Bank = 'URLWeapon', Cue = 'URB2204_Cannon_Cloud', LodCutoff = 'Weapon_LodCutoff'},
 			},
@@ -730,7 +729,7 @@ UnitBlueprint {
                 'MOBILE',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.4,
+
             
             TurretBoneMuzzle = 'UCX0101_T06_Muzzle01',
             TurretBonePitch = 'UCX0101_Turret06',
@@ -750,7 +749,7 @@ UnitBlueprint {
         {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
-            AlwaysRecheckTarget = true,
+
 			Audio = {
 				Fire = Sound { Bank = 'URLWeapon', Cue = 'URB2204_Cannon_Cloud', LodCutoff = 'Weapon_LodCutoff'},
 			},
@@ -803,7 +802,7 @@ UnitBlueprint {
                 'AIR MOBILE',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.2,
+
             
             TurretBoneMuzzle = 'UCX0101_T07_Muzzle01',
             TurretBonePitch = 'UCX0101_Turret07',

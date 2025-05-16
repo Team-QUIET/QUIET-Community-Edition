@@ -199,7 +199,7 @@ UnitBlueprint {
 		-- Battery --1
         {
             AboveWaterTargetsOnly = true,		
-            AlwaysRecheckTarget = true,
+
             
             Audio = {
                 Fire = Sound { Bank = 'UELWeapon', Cue = 'UEL0401_Cannon_Exp_Lrg', LodCutoff = 'Weapon_LodCutoff' },
@@ -260,7 +260,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.05,
+
 			
 			TurretDualManipulators = true,
 			
@@ -284,7 +284,7 @@ UnitBlueprint {
 		
         {
             AboveWaterTargetsOnly = true,		
-            AlwaysRecheckTarget = true,
+
 
             Audio = {
                 Fire = Sound { Bank = 'UELWeapon', Cue = 'UEL0401_Cannon_Exp_Lrg', LodCutoff = 'Weapon_LodCutoff' },
@@ -341,7 +341,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.05,
+
 			
 			TurretDualManipulators = true,
 			
@@ -365,7 +365,7 @@ UnitBlueprint {
 		
         {
             AboveWaterTargetsOnly = true,		
-            AlwaysRecheckTarget = true,
+
 
             Audio = {
                 Fire = Sound { Bank = 'UELWeapon', Cue = 'UEL0401_Cannon_Exp_Lrg', LodCutoff = 'Weapon_LodCutoff' },
@@ -423,7 +423,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.05,
+
 			
 			TurretDualManipulators = true,
 			
@@ -447,7 +447,7 @@ UnitBlueprint {
 		
         {
             AboveWaterTargetsOnly = true,		
-            AlwaysRecheckTarget = true,
+
 
             Audio = {
                 Fire = Sound { Bank = 'UELWeapon', Cue = 'UEL0401_Cannon_Exp_Lrg', LodCutoff = 'Weapon_LodCutoff' },
@@ -504,7 +504,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.05,
+
 			
 			TurretDualManipulators = true,
 			
@@ -528,7 +528,7 @@ UnitBlueprint {
 		-- Flak --1
 		
         {
-            AlwaysRecheckTarget = true,
+
             
             Audio = {
                 Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB2204_Artillery_Flak', LodCutoff = 'Weapon_LodCutoff' },
@@ -586,7 +586,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.05,
+
 
             TurretBoneMuzzle = 'Front_Left_Flak_Muzzle',
             TurretBonePitch = 'Front_Left_Flak_Barrel',
@@ -604,7 +604,7 @@ UnitBlueprint {
         },
 		-- Flak --2
         {
-            AlwaysRecheckTarget = true,
+
             
             Audio = {
                 Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB2204_Artillery_Flak', LodCutoff = 'Weapon_LodCutoff' },
@@ -658,7 +658,7 @@ UnitBlueprint {
                 'AIR MOBILE',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Front_Right_Flak_Muzzle',
             TurretBonePitch = 'Front_Right_Flak_Barrel',
@@ -676,7 +676,7 @@ UnitBlueprint {
         },
 		-- Flak --3
         {
-            AlwaysRecheckTarget = true,
+
             
             Audio = {
                 Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB2204_Artillery_Flak', LodCutoff = 'Weapon_LodCutoff' },
@@ -731,7 +731,7 @@ UnitBlueprint {
                 'AIR MOBILE',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.05,
+
 			
             TurretBoneMuzzle = 'Back_Left_Flak_Muzzle',
             TurretBonePitch = 'Back_Left_Flak_Barrel',
@@ -749,7 +749,7 @@ UnitBlueprint {
         },
 		-- Flak --4
         {
-            AlwaysRecheckTarget = true,
+
             
             Audio = {
                 Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB2204_Artillery_Flak', LodCutoff = 'Weapon_LodCutoff' },
@@ -803,7 +803,7 @@ UnitBlueprint {
                 'AIR MOBILE',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.05,
+
 			
             TurretBoneMuzzle = 'Back_Right_Flak_Muzzle',
             TurretBonePitch = 'Back_Right_Flak_Barrel',
@@ -873,7 +873,7 @@ UnitBlueprint {
                 'AIR MOBILE',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.05,
+
             
             TurretBoneMuzzle = 'Front_Left_AAC_Muzzle',
             TurretBonePitch = 'Front_Left_AAC_Barrel',
@@ -944,7 +944,7 @@ UnitBlueprint {
                 'AIR MOBILE',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.05,
+
             
             TurretBoneMuzzle = 'Front_Right_AAC_Muzzle',
             TurretBonePitch = 'Front_Right_AAC_Barrel',
@@ -1012,7 +1012,7 @@ UnitBlueprint {
                 'AIR MOBILE',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.05,
+
             
             TurretBoneMuzzle = 'Back_Left_AAC_Muzzle',
             TurretBonePitch = 'Back_Left_AAC_Barrel',
@@ -1083,7 +1083,7 @@ UnitBlueprint {
                 'AIR MOBILE',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.05,
+
             
             TurretBoneMuzzle = 'Back_Right_AAC_Muzzle',
             TurretBonePitch = 'Back_Right_AAC_Barrel',

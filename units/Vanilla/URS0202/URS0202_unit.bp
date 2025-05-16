@@ -72,7 +72,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'Front_Right_Muzzle',
             TurretBonePitch = 'front_barrel',
@@ -90,8 +90,7 @@ UnitBlueprint {
         },
         {
             advancedTracking = true,
-            
-            AlwaysRecheckTarget = true,
+
 
             Audio = {
                 Fire = Sound { Bank = 'URSWeapon', Cue = 'URS0202_Nano_Dart', LodCutoff = 'Weapon_LodCutoff' },
@@ -157,8 +156,7 @@ UnitBlueprint {
             TargetRestrictOnlyAllow = 'AIR -SATELLITE',
 			
             ToggleWeapon = 'GroundGun',
-			
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Right_Launcher_Muzzle01',
             TurretBonePitch = 'launcher_barrel',
@@ -180,7 +178,6 @@ UnitBlueprint {
 
             AboveWaterTargetsOnly = true,
 
-            AlwaysRecheckTarget = true,
 
             Audio = {
                 Fire = Sound { Bank = 'URSWeapon', Cue = 'URS0202_Nano_Dart', LodCutoff = 'Weapon_LodCutoff' },
@@ -240,8 +237,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
 			
             ToggleWeapon = 'AAGun',
-			
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Right_Launcher_Muzzle01',
             TurretBonePitch = 'launcher_barrel',
@@ -307,7 +303,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
             TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',
             TargetType = 'RULEWTT_Projectile',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'Zapper_Muzzle',
             TurretBonePitch = 'zapper',

@@ -122,7 +122,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.15,
+
             TurretDualManipulators = false,
             Turreted = false,
             WeaponCategory = 'Bomb',
@@ -179,7 +179,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, WALL',
-            TrackingRadius = 0.6,
+
 			
             TurretBoneMuzzle = 'Bomb_001',
             TurretBonePitch = 'Bomb_001',

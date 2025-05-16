@@ -128,8 +128,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-			
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'Front_Turret_Muzzle01',
             TurretBonePitch = 'Front_Turret_Barrel01',
@@ -218,7 +217,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'Front_Turret_Muzzle02',
             TurretBonePitch = 'Front_Turret_Barrel02',
@@ -308,7 +307,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'Back_Turret_Muzzle01',
             TurretBonePitch = 'Back_Turret_Barrel01',
@@ -377,7 +376,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
             TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',
             TargetType = 'RULEWTT_Projectile',
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Left_Turret_Muzzle01',
             TurretBonePitch = 'Left_Turret_Barrel01',
@@ -444,7 +443,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
             TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',
             TargetType = 'RULEWTT_Projectile',
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Right_Turret_Muzzle03',
             TurretBonePitch = 'Right_Turret_Barrel02',
@@ -462,7 +461,7 @@ UnitBlueprint {
         },
 		
         {
-            AlwaysRecheckTarget = true,
+
             
             Audio = {
                 Fire = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0302_Olaris_AA', LodCutoff = 'Weapon_LodCutoff' },
@@ -525,7 +524,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.15,
+
 			
             TurretBoneMuzzle = 'Left_Turret_Muzzle03',
             TurretBonePitch = 'Left_Turret_Barrel02',
@@ -544,7 +543,7 @@ UnitBlueprint {
         },
 		
         {
-            AlwaysRecheckTarget = true,
+
             
             Audio = {
                 Fire = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0302_Olaris_AA', LodCutoff = 'Weapon_LodCutoff' },
@@ -606,7 +605,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Right_Turret_Muzzle01',
             TurretBonePitch = 'Right_Turret_Barrel01',

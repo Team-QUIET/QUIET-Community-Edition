@@ -94,7 +94,7 @@ UnitBlueprint {
                 "(STRUCTURE * DEFENSE - ANTIMISSILE)",
                 "ALLUNITS",
             },            TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.2,
+
 
             TurretBoneMuzzle = 'Main_Turret_Muzzle',
             TurretBonePitch = 'Main_Turret_Barrel',
@@ -160,7 +160,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 0,
+
 			
             TurretBoneDualMuzzle = 'L_Turret_Muzzle',
             TurretBoneDualPitch = 'Left_Gun_Pivot',

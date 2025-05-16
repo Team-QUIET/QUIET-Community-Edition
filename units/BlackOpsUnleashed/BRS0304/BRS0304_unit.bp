@@ -84,7 +84,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'Front_Right_Muzzle',
             TurretBonePitch = 'front_middle_barrel01',
@@ -160,7 +160,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+
 
             TurretBoneMuzzle = 'Front_Right_Muzzle01',
             TurretBonePitch = 'front_barrel',
@@ -242,8 +242,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-			
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'right_barrel',
             TurretBonePitch = 'right_barrel',
@@ -316,7 +315,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'left_barrel',
             TurretBonePitch = 'left_barrel',
@@ -334,7 +333,7 @@ UnitBlueprint {
         },
 		
         {
-            AlwaysRecheckTarget = true,
+
             
             Audio = {
                 Fire = Sound { Bank = 'URSWeapon', Cue = 'URS0202_Nano_Dart', LodCutoff = 'Weapon_LodCutoff' },
@@ -398,7 +397,6 @@ UnitBlueprint {
 
             ToggleWeapon = 'GroundGun',
 
-            TrackingRadius = 1.1,
 			
             TurretBoneMuzzle = 'Right_Launcher_Muzzle01',
             TurretBonePitch = 'launcher_barrel',
@@ -417,7 +415,7 @@ UnitBlueprint {
 
         {
             AboveWaterTargetsOnly = true,
-            AlwaysRecheckTarget = true,
+
 
             Audio = {
                 Fire = Sound { Bank = 'URSWeapon', Cue = 'URS0202_Nano_Dart', LodCutoff = 'Weapon_LodCutoff' },
@@ -488,7 +486,6 @@ UnitBlueprint {
 
             ToggleWeapon = 'AAGun',
 
-            TrackingRadius = 1.1,
 
             TurretBoneMuzzle = 'Right_Launcher_Muzzle01',
             TurretBonePitch = 'launcher_barrel',
@@ -561,7 +558,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
-            TrackingRadius = 1.1,
+
         },
         
         -- torpedo defense --
@@ -664,7 +661,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
             TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',
             TargetType = 'RULEWTT_Projectile',
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Zapper_Muzzle',
             TurretBonePitch = 'zapper',

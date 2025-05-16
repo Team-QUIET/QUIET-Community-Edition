@@ -21,7 +21,7 @@ UnitBlueprint {
     Weapon = {
         {
 			advancedTracking = true,
-            AlwaysRecheckTarget = true,
+
 
             Audio = {
                 Fire = Sound { Bank = 'URLWeapon', Cue = 'URB2304_Missile_Nanite', LodCutoff = 'Weapon_LodCutoff'},
@@ -107,7 +107,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
             TargetRestrictOnlyAllow = 'AIR -SATELLITE',
-            TrackingRadius = 1.4,
+
 			
             TurretBoneMuzzle = 'Turret_Left_Muzzle01',
             TurretBonePitch = 'Turret_Barrel',

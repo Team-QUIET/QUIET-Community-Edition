@@ -352,7 +352,6 @@ UnitBlueprint{
             RackSlavedToTurret = false,
             RangeCategory = "UWRC_IndirectFire",
 
-            AlwaysRecheckTarget = false,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'TECH3 MOBILE',
@@ -361,7 +360,7 @@ UnitBlueprint{
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,STRUCTURE,COMMAND,EXPERIMENTAL,NAVAL,SUBCOMMANDER',
-            TrackingRadius = 1.1,
+
             TractorDamage = 9999,
             TractorDamageInterval = 10,
             TurretBoneMuzzle = "Right_Arm_Muzzle01",
@@ -428,7 +427,6 @@ UnitBlueprint{
             RackSlavedToTurret = false,
             RangeCategory = "UWRC_IndirectFire",
 
-            AlwaysRecheckTarget = false,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'TECH3 MOBILE',
@@ -437,7 +435,7 @@ UnitBlueprint{
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,STRUCTURE,COMMAND,EXPERIMENTAL,NAVAL,SUBCOMMANDER',
-            TrackingRadius = 1.1,
+
             TractorDamage = 9999,
             TractorDamageInterval = 10,
             TurretBoneMuzzle = "Left_Arm_Muzzle01",

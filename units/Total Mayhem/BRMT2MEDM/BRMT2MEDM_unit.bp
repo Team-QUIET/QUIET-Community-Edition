@@ -157,7 +157,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.0,
+
 			
             TurretBoneDualMuzzle = 'cannonmuz02',
             TurretBoneDualPitch = 'rocketlauncher01',

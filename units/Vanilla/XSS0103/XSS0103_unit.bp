@@ -38,7 +38,7 @@ UnitBlueprint {
     Weapon = {
         {
             AboveWaterTargetsOnly = true,
-			AlwaysReCheckTarget = true,
+
 			
             Audio = {
                 BarrelLoop  = Sound { Bank = 'UAS', Cue = 'UAS_Turret_Sml_Loop', LodCutoff = 'Weapon_LodCutoff'},
@@ -93,7 +93,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'Back_Turret_Muzzle03',
             TurretBonePitch = 'Back_Turret_Barrel',
@@ -112,7 +112,7 @@ UnitBlueprint {
 		
 		-- T1 level Sera AA Autogun --
         {
-            AlwaysRecheckTarget = true,
+
 
             Audio = {
                 Fire = Sound { Bank = 'XSB_Weapon', Cue = 'XSB2104_Shleo_AA_Autogun', LodCutoff = 'Weapon_LodCutoff' },
@@ -170,7 +170,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Front_Turret_Muzzle02',
             TurretBonePitch = 'Front_Turret_Barrel',

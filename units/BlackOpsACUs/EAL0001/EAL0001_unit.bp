@@ -1443,7 +1443,7 @@ UnitBlueprint {
         {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
-            AlwaysRecheckTarget = true,
+
 
             BallisticArc = 'RULEUBA_None',
             CanAttackGround = true,

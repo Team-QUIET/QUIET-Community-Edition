@@ -137,7 +137,7 @@ UnitBlueprint {
     Weapon = {
 
         {
-            AlwaysRecheckTarget = true,
+
 
             Audio = {
                 Fire = Sound { Bank = 'UALWeapon', Cue = 'UAB4201_Anti_Missile', LodCutoff = 'Weapon_LodCutoff' },
@@ -195,7 +195,6 @@ UnitBlueprint {
             TargetRestrictOnlyAllow = 'TACTICAL MISSILE',
             TargetType = 'RULEWTT_Projectile',
 
-            TrackingRadius = 1.5,
 			
             WeaponRepackTimeout = 0,           
             WeaponUnpackAnimation = '/units/uab4201/uab4201_Aopen.sca',

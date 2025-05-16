@@ -167,7 +167,7 @@ UnitBlueprint {
         {
             AboveWaterTargetsOnly = true,
             AimsStraightOnDisable = true,
-			AlwaysRecheckTarget = true,
+
 
             Audio = {
                 Fire = Sound { Bank = 'XEL_Weapons', Cue = 'XEB2306_Gatling_Gun', LodCutoff = 'Weapon_LodCutoff' },
@@ -232,8 +232,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-			
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'Muzzle',
             TurretBonePitch = 'Turret_Barrel',

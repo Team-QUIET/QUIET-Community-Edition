@@ -222,7 +222,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             DoNotCollideList = {'TORPEDO','MISSILE'},
-            TrackingRadius = 1.1,
+
             
             TurretBoneMuzzle = 'Muzzle01',
             TurretBonePitch = 'Barrel',

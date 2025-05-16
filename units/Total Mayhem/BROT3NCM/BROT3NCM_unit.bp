@@ -290,7 +290,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.05,
+
 			
             TurretBoneDualMuzzle = 'leftarm_muzzle01',
             TurretBoneDualPitch = 'gun02',
@@ -371,8 +371,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-			
-            TrackingRadius = 1.05,
+
 			
             TurretBoneDualMuzzle = 'rightarm_muzzle01',
             TurretBoneDualPitch = 'gun01',
@@ -454,7 +453,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.05,
+
 			
             TurretBoneDualMuzzle = 'rightarm_muzzle01',
             TurretBoneDualPitch = 'gun01',
@@ -535,7 +534,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.05,
+
 
             TurretBoneDualMuzzle = 'rightarm_muzzle01',
             TurretBoneDualPitch = 'gun01',
@@ -560,7 +559,7 @@ UnitBlueprint {
 
         {
             AboveWaterFireOnly = true,
-            AlwaysRecheckTarget = true,
+
             
             Audio = {
                 Fire = Sound { Bank = 'UALWeapon', Cue = 'UAB2304_SAM', LodCutoff = 'Weapon_LodCutoff' },
@@ -622,8 +621,7 @@ UnitBlueprint {
             },
 			
             TargetRestrictDisallow = 'UNTARGETABLE, SATELLITE',
-			
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'aa01',
             TurretBonePitch = 'aa01',
@@ -687,7 +685,7 @@ UnitBlueprint {
 
             TargetPriorities = {'ALLUNITS'},
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.05,
+
             
             TurretBoneMuzzle = 'AttachPoint',
             TurretBonePitch = 'AttachPoint',

@@ -95,7 +95,7 @@ UnitBlueprint {
             },
 			
             TargetRestrictDisallow = 'HIGHALTAIR,UNTARGETABLE,WALL',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneDualMuzzle = 'Left_Projectile',
             TurretBoneDualPitch = 'Left_Projectile',

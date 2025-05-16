@@ -483,7 +483,7 @@ UnitBlueprint {
 		
         {
             AboveWaterFireOnly = true,
-            AlwaysRecheckTarget = true,
+
             Audio = {
                 Fire = Sound { Bank = 'XSL_Weapon', Cue = 'XSL0401_Aire_Autocannon', LodCutoff = 'Weapon_LodCutoff' },
             },
@@ -542,7 +542,7 @@ UnitBlueprint {
                 'AIR MOBILE',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.2,
+
             
             TurretBoneMuzzle = 'Left_AA_Muzzle',
             TurretBonePitch = 'Left_AA_Turret03',
@@ -561,7 +561,7 @@ UnitBlueprint {
 		
         {
             AboveWaterFireOnly = true,
-            AlwaysRecheckTarget = true,
+
             Audio = {
                 Fire = Sound { Bank = 'XSL_Weapon', Cue = 'XSL0401_Aire_Autocannon', LodCutoff = 'Weapon_LodCutoff' },
             },
@@ -620,8 +620,7 @@ UnitBlueprint {
             },
 			
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-			
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Right_AA_Muzzle',
             TurretBonePitch = 'Right_AA_Turret02',

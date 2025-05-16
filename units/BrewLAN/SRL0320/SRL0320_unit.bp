@@ -196,7 +196,7 @@ UnitBlueprint {
 		{
 			AboveWaterFireOnly = true,
 			advancedTracking = true,
-			AlwaysRecheckTarget = true,
+
 			Audio = {
 				Fire = Sound {
 					Bank = 'URLWeapon',
@@ -254,7 +254,7 @@ UnitBlueprint {
 			},
 			TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
 			TargetRestrictOnlyAllow = 'AIR',
-			TrackingRadius = 1.2,
+
 
 			TurretBoneMuzzle = 'Muzzle1',
 			TurretBonePitch = 'Turret_body',

@@ -27,8 +27,7 @@ UnitBlueprint {
     Weapon = {
         {
             AboveWaterTargetsOnly = true,
-            
-            AlwaysRecheckTarget = true,
+
 
             AnimationReloadRate = 0.42,
             
@@ -84,7 +83,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.05,
+
         },
     },
 }

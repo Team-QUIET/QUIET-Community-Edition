@@ -189,7 +189,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE,STRUCTURE,SATELLITE',
             TargetRestrictOnlyAllow = 'AIR',
-            TrackingRadius = 1.2,
+
         },
 		
         {
@@ -236,7 +236,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE,STRUCTURE,SATELLITE',
             TargetRestrictOnlyAllow = 'AIR',
-            TrackingRadius = 1.2,
+
         },
         {
             BallisticArc = 'RULEUBA_None',
@@ -284,7 +284,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE,STRUCTURE,SATELLITE',
             TargetRestrictOnlyAllow = 'AIR',
-            TrackingRadius = 1.2,
+
         },
         {
             BallisticArc = 'RULEUBA_None',
@@ -330,7 +330,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE,STRUCTURE,SATELLITE',
             TargetRestrictOnlyAllow = 'AIR',
-            TrackingRadius = 1.2,
+
         },
 		
 		-- 2 x Fizz ? Is Flak ? --
@@ -387,8 +387,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE,STRUCTURE',
             TargetRestrictOnlyAllow = 'AIR',
-			
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Left_Turret02_WepFocus',
             TurretBonePitch = 'Left_Turret02_Barrel',
@@ -448,8 +447,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE,STRUCTURE',
             TargetRestrictOnlyAllow = 'AIR',
-			
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Right_Turret02_WepFocus',
             TurretBonePitch = 'Right_Turret02_Barrel',

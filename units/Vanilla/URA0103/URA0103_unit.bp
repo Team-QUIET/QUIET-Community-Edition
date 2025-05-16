@@ -246,7 +246,7 @@ UnitBlueprint {
                 'ALLUNITS -WALL',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.2,
+
         },
     },
 }

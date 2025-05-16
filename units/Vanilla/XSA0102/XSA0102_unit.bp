@@ -62,7 +62,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE,STRUCTURE,SATELLITE',
             TargetRestrictOnlyAllow = 'AIR',
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Muzzle',
             TurretBonePitch = 'Muzzle',

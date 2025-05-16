@@ -252,7 +252,7 @@ UnitBlueprint{
                 "ALLUNITS",
             },
             TargetRestrictDisallow = "UNTARGETABLE,HIGHALTAIR,SATELLITE",
-            TrackingRadius = 1.2,
+
 
             TurretBoneDualMuzzle = "Right_Arm_Barrel_Muzzle",
             TurretBoneDualPitch = "RightArmB01",

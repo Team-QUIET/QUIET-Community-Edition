@@ -70,7 +70,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
-            TrackingRadius = 1,
+
             Turreted = false,
             WeaponCategory = "Anti Navy",
         },
@@ -194,7 +194,7 @@ UnitBlueprint {
             },
 			
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+
 
             TurretBoneMuzzle = 'Turret_Aim_Bone',
             TurretBonePitch = 'Turret_Barrel',

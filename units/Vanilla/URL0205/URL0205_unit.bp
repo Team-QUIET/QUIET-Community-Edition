@@ -29,7 +29,7 @@ UnitBlueprint {
 	
     Weapon = {
         {
-            AlwaysRecheckTarget = true,
+
             BallisticArc = 'RULEUBA_None',
             CannotAttackGround = true,
             CollideFriendly = false,
@@ -78,7 +78,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'Right_Muzzle01',
             TurretBonePitch = 'Barrel',

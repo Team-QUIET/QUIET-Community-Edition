@@ -126,7 +126,7 @@ UnitBlueprint {
             },
             
             TargetRestrictDisallow = 'UNTARGETABLE,WALL',
-            TrackingRadius = 1.05,
+
 			
             TurretBoneMuzzle = 'Turret_Muzzle2',
             TurretBonePitch = 'Turret_Barrel',

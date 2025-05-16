@@ -411,7 +411,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.05,
+
 			
             TurretBoneMuzzle = 'Right_Turret_Muzzle',
             TurretBonePitch = 'Right_Turret_Barrel',
@@ -477,7 +477,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.05,
+
 			
             TurretBoneMuzzle = 'Left_Turret_Muzzle',
             TurretBonePitch = 'Left_Turret_Barrel',
@@ -501,7 +501,6 @@ UnitBlueprint {
 
             advancedTracking = true,
 
-            AlwaysRecheckTarget = true,
 
             Audio = {
                 Fire = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Missile_Nanite', LodCutoff = 'Weapon_LodCutoff' },
@@ -564,7 +563,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.15,
+
         },
 
         {
@@ -625,7 +624,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, HOVER, WALL',
-            TrackingRadius = 1.1,
+
         },
 		
         {

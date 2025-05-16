@@ -186,7 +186,7 @@ UnitBlueprint {
 				'ALLUNITS -AIR',
 			},
 			TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
-			TrackingRadius = 1.1,
+
 
 			TurretBoneMuzzle = 'Turret_Muzzle',
 			TurretBonePitch = 'Turret_Barrel',

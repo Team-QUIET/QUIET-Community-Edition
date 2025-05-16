@@ -244,7 +244,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.15,
+
             
             TurretBoneMuzzle = 'Muzzle_Left',
             TurretBonePitch = 'Barrel_L',
@@ -263,7 +263,7 @@ UnitBlueprint {
         },
         {
             AboveWaterTargetsOnly = true,
-            AlwaysRecheckTarget = true,
+
             Audio = {
                 Fire = Sound { Bank = 'URLWeapon', Cue = 'URL0303_Bolter', LodCutoff = 'Weapon_LodCutoff' },
             },
@@ -311,7 +311,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+
             
             TurretBoneMuzzle = 'Muzzle_Right',
             TurretBonePitch = 'Barrel_R',

@@ -198,7 +198,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             TargetRestrictOnlyAllow = 'TACTICAL MISSILE',
             TargetType = 'RULEWTT_Projectile',
-            TrackingRadius = 1.4,
+
 
             TurretBoneMuzzle = 'Muzzle01',
             TurretBonePitch = 'Turret_Barrel',

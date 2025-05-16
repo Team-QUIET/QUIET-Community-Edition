@@ -288,7 +288,7 @@ UnitBlueprint{
             },
             TargetRestrictDisallow = "UNTARGETABLE,SATELLITE",
             TargetRestrictOnlyAllow = "AIR",
-            TrackingRadius = 1.1,
+
             Turreted = false,
         },
         {
@@ -342,7 +342,7 @@ UnitBlueprint{
             },
             TargetRestrictDisallow = "UNTARGETABLE,SATELLITE",
             TargetRestrictOnlyAllow = "AIR",
-            TrackingRadius = 1.1,
+
         },
         {
             AboveWaterTargetsOnly = true,
@@ -400,7 +400,6 @@ UnitBlueprint{
             TargetRestrictDisallow = "UNTARGETABLE,SATELLITE",
             TargetRestrictOnlyAllow = "AIR",
 
-            TrackingRadius = 1.1,
 
             WeaponRepackTimeout = 3,
             WeaponUnpackAnimation = "/mods/4DC/units/ual0310/UAL0310_rearHatchOpen.sca",
@@ -459,7 +458,6 @@ UnitBlueprint{
             TargetRestrictOnlyAllow = "TACTICAL MISSILE",
             TargetType = "RULEWTT_Projectile",
 
-            TrackingRadius = 1.1,
 
             TurretBoneMuzzle = "topCannonMuzzle",
             TurretBonePitch = "topCannonPitch",

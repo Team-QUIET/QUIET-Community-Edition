@@ -145,7 +145,7 @@ UnitBlueprint {
 
     Weapon = {
         {
-            AlwaysRecheckTarget = true,
+
             Audio = {
                 Fire = Sound { Bank = 'XSB_Weapon', Cue = 'XSB2104_Shleo_AA_Autogun', LodCutoff = 'Weapon_LodCutoff' },
             },
@@ -201,7 +201,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.1,
+
 
             TurretBoneMuzzle = 'Turret_Aiming_Bone',
             TurretBonePitch = 'Turret_Barrel',

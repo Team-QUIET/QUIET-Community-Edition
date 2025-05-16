@@ -76,8 +76,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'HIGHALTAIR, UNTARGETABLE',
-			
-            TrackingRadius = 1.05,
+
 			
             TurretBoneMuzzle = 'RightFront_Turret_Muzzle',
             TurretBonePitch = 'RightFront_Turret_Barrel',
@@ -153,7 +152,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'HIGHALTAIR,UNTARGETABLE,STRUCTURE' ,
-            TrackingRadius = 1.05,
+
 			
             TurretBoneMuzzle = 'LeftFront_Turret_Muzzle',
             TurretBonePitch = 'LeftFront_Turret_Barrel',
@@ -225,7 +224,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
             TargetRestrictOnlyAllow = 'AIR',
-            TrackingRadius = 1.05,
+
 			
             TurretBoneMuzzle = 'LeftBack_Nanite_Turret_Muzzle',
             TurretBonePitch = 'LeftBack_Nanite_Turret_Barrel01',
@@ -292,7 +291,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
             TargetRestrictOnlyAllow = 'AIR',
-            TrackingRadius = 1.05,
+
 			
             TurretBoneMuzzle = 'RightBack_Nanite_Turret_Muzzle04',
             TurretBonePitch = 'RightBack_Nanite_Turret_Barrel01',
@@ -387,7 +386,7 @@ UnitBlueprint {
                 'STRUCTURE -WALL',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,HIGHALTAIR,SATELLITE,WALL',
-            TrackingRadius = 1.05,
+
 			
             TurretBoneMuzzle = 'Front_Turret_Muzzle01',
             TurretBonePitch = 'Front_Turret_Barrel',
@@ -476,7 +475,7 @@ UnitBlueprint {
                 'STRUCTURE -WALL',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,HIGHALTAIR,SATELLITE,WALL',
-            TrackingRadius = 1.05,
+
 			
             TurretBoneMuzzle = 'Back_Turret_Muzzle01',
             TurretBonePitch = 'Back_Turret_Barrel01',

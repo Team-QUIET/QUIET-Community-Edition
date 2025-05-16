@@ -20,7 +20,7 @@ UnitBlueprint {
 
     Weapon = {
         {
-            AlwaysRecheckTarget = true,
+
             CannotAttackGround = true,
             CollideFriendly = false,
 			
@@ -83,8 +83,7 @@ UnitBlueprint {
             },
 			
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-			
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'WepFocus',
             TurretBonePitch = 'Barrel_Right',

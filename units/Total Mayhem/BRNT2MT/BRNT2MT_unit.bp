@@ -71,7 +71,7 @@ UnitBlueprint {
 		    RackFireTogether = true,
 			
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.05,
+
 			
             TurretBoneMuzzle = 'rl01',
             TurretBonePitch = 'rl01',

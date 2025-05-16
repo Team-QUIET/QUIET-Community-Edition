@@ -89,7 +89,7 @@ UnitBlueprint {
             WeaponCategory = "Missile",
         },
         {
-            AlwaysRecheckTarget = true,
+
             Audio = {
                 Fire = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0202_Olaris_Cannon', LodCutoff = 'Weapon_LodCutoff' },
             },
@@ -159,7 +159,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Left_Turret01_Muzzle01',
             TurretBonePitch = 'Left_Turret01_Barrel',
@@ -177,7 +177,7 @@ UnitBlueprint {
             WeaponCategory = "Anti Air",
         },
         {
-            AlwaysRecheckTarget = true,
+
             Audio = {
                 Fire = Sound {Bank = 'XSS_Weapon',Cue = 'XSS0202_Olaris_Cannon',LodCutoff = 'Weapon_LodCutoff'},
             },
@@ -242,7 +242,7 @@ UnitBlueprint {
             },
 			
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Right_Turret01_Muzzle01',
             TurretBonePitch = 'Right_Turret01_Barrel01',
@@ -304,7 +304,7 @@ UnitBlueprint {
             TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',
 			
             TargetType = 'RULEWTT_Projectile',
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Front_Turret01_Muzzle',
             TurretBonePitch = 'Front_Turret01_Barrel',

@@ -132,7 +132,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.05,
+
             
             TurretBoneMuzzle = 'Front_Turret01_Muzzle02',
             TurretBonePitch = 'Front_Turret01_Barrel02',
@@ -236,7 +236,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.05,
+
             
             TurretBoneMuzzle = 'Front_Turret02_Muzzle02',
             TurretBonePitch = 'Front_Turret02_Barrel02',
@@ -340,7 +340,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.05,
+
             
             TurretBoneMuzzle = 'Back_Turret_Muzzle02',
             TurretBonePitch = 'Back_Turret_Barrel02',
@@ -363,7 +363,7 @@ UnitBlueprint {
         -- 4 x AA Flak weapons --
         
         {
-            AlwaysRecheckTarget = true,
+
             Audio = {
                 Fire = Sound {
                     Bank = 'UESWeapon',
@@ -428,7 +428,7 @@ UnitBlueprint {
                 'AIR MOBILE',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'Right_Turret01_Muzzle01',
             TurretBonePitch = 'Right_Turret01_Barrel01',
@@ -445,7 +445,7 @@ UnitBlueprint {
             Turreted = true,
         },
         {
-            AlwaysRecheckTarget = true,
+
             Audio = {
                 Fire = Sound {
                     Bank = 'UELWeapon',
@@ -508,7 +508,7 @@ UnitBlueprint {
                 'AIR MOBILE',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.1,
+
             
             TurretBoneMuzzle = 'Right_Turret03_Muzzle01',
             TurretBonePitch = 'Right_Turret03_Barrel01',
@@ -525,7 +525,7 @@ UnitBlueprint {
             Turreted = true,
         },
         {
-            AlwaysRecheckTarget = true,
+
             Audio = {
                 Fire = Sound {
                     Bank = 'UELWeapon',
@@ -590,7 +590,7 @@ UnitBlueprint {
                 'AIR MOBILE',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.1,
+
             
             TurretBoneMuzzle = 'Left_Turret01_Muzzle01',
             TurretBonePitch = 'Left_Turret01_Barrel01',
@@ -607,7 +607,7 @@ UnitBlueprint {
             Turreted = true,
         },
         {
-            AlwaysRecheckTarget = true,
+
             Audio = {
                 Fire = Sound {
                     Bank = 'UELWeapon',
@@ -669,7 +669,7 @@ UnitBlueprint {
                 'AIR MOBILE',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.1,
+
             
             TurretBoneMuzzle = 'Left_Turret03_Muzzle01',
             TurretBonePitch = 'Left_Turret03_Barrel01',
@@ -737,7 +737,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
             TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',
             TargetType = 'RULEWTT_Projectile',
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Right_Turret02_Muzzle',
             TurretBonePitch = 'Right_Turret02_Barrel',
@@ -801,7 +801,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
             TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',
             TargetType = 'RULEWTT_Projectile',
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Left_Turret02_Muzzle',
             TurretBonePitch = 'Left_Turret02_Barrel',
@@ -868,7 +868,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             TargetRestrictOnlyAllow = 'TORPEDO',
             TargetType = 'RULEWTT_Projectile',
-            TrackingRadius = 1.1,
+
             
             WeaponRepackTimeout = 0.2,
         },
@@ -921,7 +921,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             TargetRestrictOnlyAllow = 'TORPEDO',
             TargetType = 'RULEWTT_Projectile',
-            TrackingRadius = 1.1,
+
             
             WeaponRepackTimeout = 0.2,
         }, 
@@ -974,7 +974,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             TargetRestrictOnlyAllow = 'TORPEDO',
             TargetType = 'RULEWTT_Projectile',
-            TrackingRadius = 1.1,
+
             
             WeaponRepackTimeout = 0.2,
         },                

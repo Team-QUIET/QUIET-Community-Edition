@@ -270,7 +270,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE,WALL',
-            TrackingRadius = 1.05,
+
 			
             TurretBoneMuzzle = 'Railgun_Muzzle_1',
             TurretBonePitch = 'Railgun_Barrel_1',
@@ -353,7 +353,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE,WALL',
-            TrackingRadius = 1.05,
+
 			
             TurretBoneMuzzle = 'Railgun_Muzzle_2',
             TurretBonePitch = 'Railgun_Barrel_2',
@@ -374,7 +374,7 @@ UnitBlueprint {
 		-- HVAA Missile Launcher --1
     	{
 			advancedTracking = true,
-            AlwaysRecheckTarget = true,
+
             
             Audio = {
                 Fire = Sound { Bank = 'XEA_Weapon', Cue = 'XEA0306_Flayer_Missile', LodCutoff = 'Weapon_LodCutoff' },
@@ -438,7 +438,6 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
 			TargetRestrictOnlyAllow = 'AIR',
 
-            TrackingRadius = 1.1,
 			
             TurretBoneMuzzle = 'HVM_Muzzle_A_1',
             TurretBonePitch = 'HVM_Barrel_1',
@@ -457,7 +456,7 @@ UnitBlueprint {
 
 		{
 			advancedTracking = true,
-            AlwaysRecheckTarget = true,
+
             
             Audio = {
                 Fire = Sound { Bank = 'XEA_Weapon', Cue = 'XEA0306_Flayer_Missile', LodCutoff = 'Weapon_LodCutoff' },
@@ -519,7 +518,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
 			TargetRestrictOnlyAllow = 'AIR',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'HVM_Muzzle_A_2',
             TurretBonePitch = 'HVM_Barrel_2',
@@ -539,7 +538,7 @@ UnitBlueprint {
 		-- HVAA Missile Launcher --3
 		{
 			advancedTracking = true,
-            AlwaysRecheckTarget = true,
+
             
             Audio = {
                 Fire = Sound { Bank = 'XEA_Weapon', Cue = 'XEA0306_Flayer_Missile', LodCutoff = 'Weapon_LodCutoff' },
@@ -599,7 +598,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
 			TargetRestrictOnlyAllow = 'AIR',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'HVM_Muzzle_A_3',
             TurretBonePitch = 'HVM_Barrel_3',
@@ -619,7 +618,6 @@ UnitBlueprint {
 		{
 			advamcedTracking = true,
 
-            AlwaysRecheckTarget = true,
 
             Audio = {
                 Fire = Sound { Bank = 'XEA_Weapon', Cue = 'XEA0306_Flayer_Missile', LodCutoff = 'Weapon_LodCutoff' },
@@ -679,7 +677,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
 			TargetRestrictOnlyAllow = 'AIR',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'HVM_Muzzle_A_4',
             TurretBonePitch = 'HVM_Barrel_4',
@@ -698,7 +696,7 @@ UnitBlueprint {
 		-- 4x Flak Cannons
 		-- Flak --1
         {
-            AlwaysRecheckTarget = true,
+
             
             Audio = {
                 Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB2204_Artillery_Flak', LodCutoff = 'Weapon_LodCutoff' },
@@ -760,7 +758,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
 			TargetRestrictOnlyAllow = 'AIR',
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Flak_Barrel_1',
             TurretBonePitch = 'Flak_Barrel_1',
@@ -778,7 +776,7 @@ UnitBlueprint {
         },
 		-- Flak --2
         {
-            AlwaysRecheckTarget = true,
+
             
             Audio = {
                 Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB2204_Artillery_Flak', LodCutoff = 'Weapon_LodCutoff' },
@@ -841,7 +839,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
 			TargetRestrictOnlyAllow = 'AIR',			
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Flak_Barrel_2',
             TurretBonePitch = 'Flak_Barrel_2',
@@ -859,7 +857,7 @@ UnitBlueprint {
         },
 		-- Flak --3
         {
-            AlwaysRecheckTarget = true,
+
             
             Audio = {
                 Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB2204_Artillery_Flak', LodCutoff = 'Weapon_LodCutoff' },
@@ -923,7 +921,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
 			TargetRestrictOnlyAllow = 'AIR',			
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Flak_Barrel_3',
             TurretBonePitch = 'Flak_Barrel_3',
@@ -941,7 +939,7 @@ UnitBlueprint {
         },
 		-- Flak --4
         {
-            AlwaysRecheckTarget = true,
+
             
             Audio = {
                 Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB2204_Artillery_Flak', LodCutoff = 'Weapon_LodCutoff' },
@@ -1006,7 +1004,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
 			TargetRestrictOnlyAllow = 'AIR',			
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Flak_Barrel_4',
             TurretBonePitch = 'Flak_Barrel_4',
@@ -1084,8 +1082,7 @@ UnitBlueprint {
 			
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
 			TargetRestrictOnlyAllow = 'AIR',
-		
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Gat_Muzzle_1',
             TurretBonePitch = 'Gat_Barrel_1',
@@ -1167,8 +1164,7 @@ UnitBlueprint {
 			
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
 			TargetRestrictOnlyAllow = 'AIR',
-			
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Gat_Muzzle_2',
             TurretBonePitch = 'Gat_Barrel_2',

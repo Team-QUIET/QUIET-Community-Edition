@@ -57,7 +57,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneDualMuzzle = 'rl01',
             TurretBoneDualPitch = 'rocketlauncher',
@@ -130,7 +130,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE,HIGHALTAIR,WALL',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneDualMuzzle = 'minigunmuzzle',
             TurretBoneDualPitch = 'minigun',
@@ -202,7 +202,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,HIGHALTAIR,WALL',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneDualMuzzle = 'minigunmuzzle02',
             TurretBoneDualPitch = 'minigun02',

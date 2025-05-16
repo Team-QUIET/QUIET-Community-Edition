@@ -131,7 +131,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
-            TrackingRadius = 1.1,
+
 
             Turreted = false,
             WeaponCategory = "Anti Navy",
@@ -203,7 +203,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
-            TrackingRadius = 1.1,
+
             Turreted = false,
             WeaponCategory = "Anti Navy",
         },
@@ -264,7 +264,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'Turret01_Muzzle01',
             TurretBonePitch = 'Turret01_Barrel01',
@@ -335,7 +335,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'Turret02_Muzzle01',
             TurretBonePitch = 'Turret02_Barrel01',

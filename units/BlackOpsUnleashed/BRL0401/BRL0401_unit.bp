@@ -265,7 +265,7 @@ UnitBlueprint {
         -- AA Missile weapon system -- 
         {
             AboveWaterFireOnly = true,
-            AlwaysRecheckTarget = true,
+
             AboveWaterTargetsOnly = true,
             AimsStraightOnDisable = true,
 			

@@ -63,8 +63,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE,STRUCTURE,SATELLITE',
             TargetRestrictOnlyAllow = 'AIR',
-			
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Left_Muzzle01',
             TurretBonePitch = 'Left_Muzzle01',
@@ -82,7 +81,7 @@ UnitBlueprint {
             UseFiringSolutionInsteadOfAimBone = true,
         },
         {
-            AlwaysRecheckTarget = true,
+
 
             AutoInitiateAttackCommand = false,
 
@@ -127,7 +126,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE,STRUCTURE,SATELLITE',
             TargetRestrictOnlyAllow = 'AIR',
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'Right_Muzzle01',
             TurretBonePitch = 'Right_Muzzle01',

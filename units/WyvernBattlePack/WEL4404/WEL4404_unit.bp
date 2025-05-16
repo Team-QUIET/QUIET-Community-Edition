@@ -238,7 +238,7 @@ UnitBlueprint{
                 "ALLUNITS",
             },
             TargetRestrictDisallow = "UNTARGETABLE",
-            TrackingRadius = 1.1,
+
 
             TurretBoneDualMuzzle = "muzzle08",
             TurretBoneDualPitch = "topgun02",
@@ -317,7 +317,7 @@ UnitBlueprint{
                 "ALLUNITS",
             },
             TargetRestrictDisallow = "UNTARGETABLE",
-            TrackingRadius = 1.1,
+
 
             TurretBoneDualMuzzle = "muzzle01",
             TurretBoneDualPitch = "gun02",
@@ -394,7 +394,7 @@ UnitBlueprint{
                 "ALLUNITS",
             },
             TargetRestrictDisallow = "UNTARGETABLE",
-            TrackingRadius = 1.1,
+
 
             TurretBoneDualMuzzle = "muzzle04",
             TurretBoneDualPitch = "gun01",
@@ -456,7 +456,7 @@ UnitBlueprint{
                 "ALLUNITS -WALL",
             },
             TargetRestrictDisallow = "UNTARGETABLE",
-            TrackingRadius = 1.1,
+
 
             TurretBoneMuzzle = "FlameMuzzle",
             TurretBonePitch = "FlameMuzzle",

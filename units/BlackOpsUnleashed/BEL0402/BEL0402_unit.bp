@@ -132,7 +132,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, WALL',
-            TrackingRadius = 1.1,
+
 			
             Turreted = false,
 			
@@ -205,7 +205,7 @@ UnitBlueprint {
                 'ALLUNITS',
             }, 
 			TargetRestrictDisallow = 'HIGHALTAIR, UNTARGETABLE, WALL', 
-            TrackingRadius = 1.2,
+
 
             TurretBoneMuzzle = 'Beam_Muzzle',
             TurretBonePitch = 'Beam_Pitch',
@@ -404,7 +404,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             TargetRestrictOnlyAllow = 'TACTICAL MISSILE',
             TargetType = 'RULEWTT_Projectile',
-            TrackingRadius = 1.2,
+
 			
             TurretBoneMuzzle = 'TMD_Muzzle_Recoil',
             TurretBonePitch = 'TMD_Barrel',
@@ -426,7 +426,7 @@ UnitBlueprint {
 			AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,		
 			advancedTracking = true,
-            AlwaysRecheckTarget = true,
+
 
             BallisticArc = 'RULEUBA_None',
 			
@@ -471,7 +471,7 @@ UnitBlueprint {
             },			
 
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.1,
+
 			
             TurretBoneMuzzle = 'Head',
             TurretBonePitch = 'Head',

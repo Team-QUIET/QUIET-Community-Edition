@@ -153,7 +153,7 @@ UnitBlueprint {
 	
     Weapon = {
         {
-            AlwaysRecheckTarget = true,
+
             Audio = {
                 Fire = Sound { Bank = 'UALWeapon', Cue = 'UAB2104_Pulse_Battery', LodCutoff = 'Weapon_LodCutoff' },
             },
@@ -208,7 +208,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.4,
+
 			
             TurretBoneMuzzle = 'Turret_Muzzle',
             TurretBonePitch = 'Turret_Barrel',

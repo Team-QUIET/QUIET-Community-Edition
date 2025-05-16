@@ -101,7 +101,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE,HOVER,WALL',
-            TrackingRadius = 1.1,
+
         },
         {
             AboveWaterTargetsOnly = true,

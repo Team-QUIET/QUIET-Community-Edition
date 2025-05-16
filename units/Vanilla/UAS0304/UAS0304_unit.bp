@@ -281,7 +281,7 @@ UnitBlueprint {
             },
 
             TargetRestrictDisallow = 'UNTARGETABLE,WALL',
-			TrackingRadius = 1.1,
+
         },
 		
         {
