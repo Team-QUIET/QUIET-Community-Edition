@@ -207,7 +207,7 @@ UnitBlueprint {
 
             ReTargetOnMiss = true,
             
-            TargetCheckInterval = 100,
+            TargetCheckInterval = 5,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "AIR MOBILE EXPERIMENTAL",
