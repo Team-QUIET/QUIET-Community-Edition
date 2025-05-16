@@ -67,7 +67,6 @@ UnitBlueprint{
 
             RateOfFire = 10/15,
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "COMMAND",

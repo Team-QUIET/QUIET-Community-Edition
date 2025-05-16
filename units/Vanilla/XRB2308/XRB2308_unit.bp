@@ -237,7 +237,6 @@ UnitBlueprint {
 			
             RateOfFire = 10/24, --1,	-- controlled by delay and reload -- 8 torpedos doing 300 = 2400 every 5 seconds = 480 DPS
 
-            TargetCheckInterval = 0.5,
 			
             TargetPriorities = {
                 'SPECIALHIGHPRI',

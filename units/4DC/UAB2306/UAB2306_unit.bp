@@ -205,7 +205,6 @@ UnitBlueprint{
 
             RateOfFire = 0.2,    -- controlled by charge
 
-            TargetCheckInterval = 1,
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",

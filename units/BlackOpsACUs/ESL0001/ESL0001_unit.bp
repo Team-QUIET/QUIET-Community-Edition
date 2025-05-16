@@ -1366,8 +1366,7 @@ UnitBlueprint {
             },
 
             RateOfFire = 2,
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -1439,8 +1438,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_DirectFire',
 			
             RateOfFire = 10/10,
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
                 "MOBILE",
@@ -1532,7 +1530,6 @@ UnitBlueprint {
 
             RateOfFire = 10/33,     -- relies upon charge cycle -- 
 
-            TargetCheckInterval = 0.5,
             
             TargetRestrictDisallow = 'UNTARGETABLE',
 
@@ -1594,7 +1591,6 @@ UnitBlueprint {
 
             RateOfFire = 1,
 
-            TargetCheckInterval = 9999999,
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
         },
         
@@ -1643,7 +1639,6 @@ UnitBlueprint {
 
             RateOfFire = 1,         -- controlled by muzzle delay and reload time
 
-            TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'SUBMERSIBLE',
@@ -1697,7 +1692,6 @@ UnitBlueprint {
 
             RateOfFire = 1,     -- controlled by muzzle delay and reload time
 
-            TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'SUBMERSIBLE',
@@ -1751,7 +1745,6 @@ UnitBlueprint {
 
             RateOfFire = 1,     -- controlled by muzzle delay and reload time
 
-            TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'SUBMERSIBLE',
@@ -1823,7 +1816,6 @@ UnitBlueprint {
 
             RateOfFire = 1,     -- controlled by charge and muzzlechargedelay = 4 seconds
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -1909,7 +1901,6 @@ UnitBlueprint {
 
             RateOfFire = 1,     -- controlled by charges - 4 seconds
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'MOBILE',
@@ -1993,7 +1984,6 @@ UnitBlueprint {
 
             RateOfFire = 1,     -- controlled by charges -- 4 seconds
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -2067,7 +2057,6 @@ UnitBlueprint {
 
             RateOfFire = 3,		-- 225 DPS
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -2140,7 +2129,6 @@ UnitBlueprint {
 
             RateOfFire = 3,		-- 420 DPS
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -2214,7 +2202,6 @@ UnitBlueprint {
 
             RateOfFire = 2,		-- 550 DPS
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -2295,7 +2282,6 @@ UnitBlueprint {
 
             RateOfFire = 3,
 
-            TargetCheckInterval = 0.3,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',
@@ -2383,7 +2369,6 @@ UnitBlueprint {
 
             RateOfFire = 3,
 
-            TargetCheckInterval = 0.3,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'BOMBER',

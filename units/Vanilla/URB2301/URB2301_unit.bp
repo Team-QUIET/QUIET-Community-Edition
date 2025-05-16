@@ -189,8 +189,7 @@ UnitBlueprint {
 			
             RateOfFire = 1,		---- 3 muzzles causing 50 damage when fired = 150 DPS
             ReTargetOnMiss = true,
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
                 "SPECIALHIGHPRI",

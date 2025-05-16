@@ -47,7 +47,6 @@ UnitBlueprint {
 
             RateOfFire = 3,		-- 150 DPS Air
 
-            TargetCheckInterval = 0.3,
             TargetPriorities = {
                 "(AIR * MOBILE * EXPERIMENTAL - BOMBER)",
                 "AIR MOBILE GROUNDATTACK",

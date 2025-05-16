@@ -73,8 +73,7 @@ UnitBlueprint {
 
             SlavedToBody = true,
             SlavedToBodyArcRange = 4,
-            
-            TargetCheckInterval = 1,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'SHIELD',

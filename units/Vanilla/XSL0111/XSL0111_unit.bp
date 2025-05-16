@@ -74,8 +74,7 @@ UnitBlueprint {
             RateOfFire = 10/60,
 			
             SlavedToBody = true,
-			
-            TargetCheckInterval = 2,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "STRUCTURE DEFENSE",

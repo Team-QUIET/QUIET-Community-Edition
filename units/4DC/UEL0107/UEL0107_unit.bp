@@ -194,7 +194,6 @@ UnitBlueprint{
 
             RateOfFire = 0.5,
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -275,8 +274,7 @@ UnitBlueprint{
             RangeCategory = 'UWRC_AntiNavy',
 			
             RateOfFire = 1,   -- controlled by MuzzleSalvoDelay and RackReload = 6 seconds = 20 DPS
-			
-            TargetCheckInterval = 2,
+
             
             TargetPriorities = {
                 'SUBMARINE',

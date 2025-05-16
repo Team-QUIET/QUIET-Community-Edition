@@ -68,8 +68,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_DirectFire',
             
             RateOfFire = 10/20,	
-            
-            TargetCheckInterval = 1,
+
 
             SlavedToBody = true,
             SlavedToBodyArcRange = 135,
@@ -142,8 +141,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
 			
             RateOfFire = 10/20,
-			
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 "AIR MOBILE TECH3 BOMBER",
@@ -213,8 +211,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
 			
             RateOfFire = 10/20,		-- another 160 DPS Air
-			
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 "AIR MOBILE TECH3 BOMBER",
@@ -281,8 +278,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_Countermeasure',
 			
             RateOfFire = 10/10,
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
             TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',

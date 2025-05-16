@@ -75,7 +75,7 @@ UnitBlueprint {
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
             RateOfFire = 0.2,
-            TargetCheckInterval = 2.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'TECH3 STRUCTURE',
@@ -120,7 +120,7 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             RangeCategory = 'UWRC_AntiAir',
             RateOfFire = 1.5,
-            TargetCheckInterval = 0.16,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'AIR MOBILE',

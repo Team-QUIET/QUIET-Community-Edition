@@ -282,8 +282,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_DirectFire',
 			
             RateOfFire = 1.1,
-			
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 "EXPERIMENTAL",
                 "SPECIALHIGHPRI",

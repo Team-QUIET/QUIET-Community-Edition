@@ -217,7 +217,6 @@ UnitBlueprint {
 
 			RateOfFire = 1, -- controlled by salvo delay and salvo reload = 300 DPS Sub
 
-			TargetCheckInterval = 1,
 
 			TargetPriorities = {
 				"SPECIALHIGHPRI",

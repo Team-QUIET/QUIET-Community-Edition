@@ -303,7 +303,6 @@ UnitBlueprint {
             
             RateOfFire = 1, 
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "HIGHPRIAIR",
@@ -375,7 +374,6 @@ UnitBlueprint {
 
             RateOfFire = 1,
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "HIGHPRIAIR",

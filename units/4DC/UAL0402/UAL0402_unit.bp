@@ -289,7 +289,6 @@ UnitBlueprint{
 
             RateOfFire = 2.0,
 
-            TargetCheckInterval = 0.2,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -367,7 +366,7 @@ UnitBlueprint{
             RangeCategory = "UWRC_DirectFire",
 
             RateOfFire = 1,
-            TargetCheckInterval = 0.2,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -440,7 +439,6 @@ UnitBlueprint{
 
             RateOfFire = 1.0,
 
-            TargetCheckInterval = 0.2,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "MOBILE",
@@ -515,7 +513,7 @@ UnitBlueprint{
             RangeCategory = "UWRC_AntiAir",
 
             RateOfFire = 1.0,
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "BOMBER",
@@ -605,7 +603,6 @@ UnitBlueprint{
 
             RateOfFire = 0.2,
 
-            TargetCheckInterval = 5,
             TargetPriorities = { "ALLUNITS" },
             TargetRestrictDisallow = "UNTARGETABLE,WALLS,AIR",
         },

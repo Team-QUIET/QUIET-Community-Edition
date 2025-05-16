@@ -115,8 +115,7 @@ UnitBlueprint {
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 140,
-            
-            TargetCheckInterval = 2,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'NAVAL MOBILE',
@@ -206,8 +205,7 @@ UnitBlueprint {
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 140,
-            
-            TargetCheckInterval = 2,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'NAVAL MOBILE',
@@ -277,7 +275,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
 			
             RateOfFire = 10/10,		
-            TargetCheckInterval = 0.3,
+
 			
             TargetPriorities = {
                 'HIGHPRIAIR',
@@ -353,7 +351,6 @@ UnitBlueprint {
             
             RangeCategory = 'UWRC_AntiAir',
 
-            TargetCheckInterval = 0.3,
 			
             TargetPriorities = {
                 'HIGHPRIAIR',
@@ -431,8 +428,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiNavy',
 			
             RateOfFire = 10/20,
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -492,7 +488,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_Countermeasure',
 			
             RateOfFire = 10/10,
-            TargetCheckInterval = 0.4,
+
 			
             TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
             TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',
@@ -555,7 +551,7 @@ UnitBlueprint {
             },
 
             RateOfFire = 10/10,
-            TargetCheckInterval = 0.4,
+
 			
             TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
             TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',

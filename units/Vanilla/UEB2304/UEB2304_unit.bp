@@ -81,7 +81,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
 			
             RateOfFire = 10/20,	-- six missiles every two seconds
-            TargetCheckInterval = 0.3,
+
 			
             TargetPriorities = {
                 'SPECIALHIGHPRI',

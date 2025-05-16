@@ -67,8 +67,7 @@ UnitBlueprint {
             RateOfFire = 0.167,                    -- charge, muzzle and reload delays handle all of it
 
             SlavedToBody = true,
-			
-            TargetCheckInterval = 1,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'DEFENSE ANTIMISSILE',

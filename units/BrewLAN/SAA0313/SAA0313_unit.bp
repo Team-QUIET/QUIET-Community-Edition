@@ -112,7 +112,7 @@ UnitBlueprint {
             RateOfFire = 1,       -- 495 DPS based on charge
             SlavedToBody = true,
             SlavedToBodyArcRange = 60,
-            TargetCheckInterval = 0.4,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',
@@ -193,7 +193,7 @@ UnitBlueprint {
             RateOfFire = 1,       -- another 495 - based on charge
             SlavedToBody = true,
             SlavedToBodyArcRange = 60,
-            TargetCheckInterval = 0.4,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',

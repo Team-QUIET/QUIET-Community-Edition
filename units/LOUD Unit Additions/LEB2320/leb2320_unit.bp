@@ -47,8 +47,7 @@ UnitBlueprint {
 			RangeCategory = 'UWRC_IndirectFire',			
 			
             RateOfFire = 10/90,
-			
-            TargetCheckInterval = 1,
+
 			
             TargetPriorities = {
                 "EXPERIMENTAL MOBILE ARTILLERY",
@@ -129,8 +128,7 @@ UnitBlueprint {
             RackReloadTimeout = 10,
 
             RateOfFire = 10/90,
-            
-            TargetCheckInterval = 1,
+
             
             TargetPriorities = {
                 "EXPERIMENTAL MOBILE ARTILLERY",
@@ -211,8 +209,7 @@ UnitBlueprint {
             RackReloadTimeout = 10,
 
             RateOfFire = 10/90,
-            
-            TargetCheckInterval = 1,
+
             
             TargetPriorities = {
                 "EXPERIMENTAL MOBILE ARTILLERY",

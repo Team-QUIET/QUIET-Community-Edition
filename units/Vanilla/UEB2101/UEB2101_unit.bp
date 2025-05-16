@@ -170,7 +170,6 @@ UnitBlueprint {
             RateOfFire = 10/3,
             ReTargetOnMiss = true,
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 "MOBILE EXPERIMENTAL",
                 "MOBILE TECH3",

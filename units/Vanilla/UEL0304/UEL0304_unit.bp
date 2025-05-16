@@ -66,8 +66,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_IndirectFire',
 			
             RateOfFire = 10/65,     -- every 7 seconds - controlled by charge = 100 DPS
-			
-            TargetCheckInterval = 1,
+
 			
             TargetPriorities = {
                 "SPECIALHIGHPRI",

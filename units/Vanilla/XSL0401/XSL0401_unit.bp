@@ -288,8 +288,7 @@ UnitBlueprint {
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 40,
-			
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "EXPERIMENTAL",
@@ -369,8 +368,7 @@ UnitBlueprint {
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 60,
-			
-            TargetCheckInterval = 0.25,
+
 			
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -456,8 +454,7 @@ UnitBlueprint {
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 60,
-			
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -536,8 +533,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
 			
             RateOfFire = 3,	-- 225 DPS Air
-			
-            TargetCheckInterval = 0.2,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',
@@ -613,8 +609,7 @@ UnitBlueprint {
             },
 
             RateOfFire = 3,	-- 225 DPS Air
-			
-            TargetCheckInterval = 0.2,
+
 			
             TargetPriorities = {
                 'HIGHPRIAIR',

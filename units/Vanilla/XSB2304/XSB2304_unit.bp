@@ -53,7 +53,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
 			
             RateOfFire = 10/22,	
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
                 'HIGHPRIAIR',

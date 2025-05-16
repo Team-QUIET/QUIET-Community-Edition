@@ -52,7 +52,6 @@ UnitBlueprint {
 
             RateOfFire = 33/100,
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = { "SPECIALHIGHPRI", "MOBILE", "ALLUNITS -WALL" },
             TargetRestrictDisallow = "UNTARGETABLE",
             TrackingRadius = 1.05,
@@ -115,7 +114,6 @@ UnitBlueprint {
 
             RateOfFire = 33/100,
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {"SPECIALHIGHPRI","MOBILE","ALLUNITS -WALL"},
             TargetRestrictDisallow = "UNTARGETABLE",
             TrackingRadius = 1.05,
@@ -197,7 +195,6 @@ UnitBlueprint {
 
             RateOfFire = 20/10,
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {"SPECIALHIGHPRI","GROUNDATTACK","ANTIAIR","MOBILE","ALLUNITS -WALL"},
             TargetRestrictDisallow = "UNTARGETABLE,HIGHALTAIR,SATELLITE,WALL",
             TrackingRadius = 1.05,
@@ -275,7 +272,6 @@ UnitBlueprint {
 
             RateOfFire = 20/10,
 
-            TargetCheckInterval = 0.4,
             TargetPriorities = {"SPECIALHIGHPRI","GROUNDATTACK","ANTIAIR","MOBILE","ALLUNITS -WALL"},
             TargetRestrictDisallow = "UNTARGETABLE,HIGHALTAIR,SATELLITE,WALL",
             TrackingRadius = 1.05,
@@ -339,7 +335,6 @@ UnitBlueprint {
 
             RateOfFire = 10/10,
 
-            TargetCheckInterval = 0.5,
 
             TargetPriorities = { "SPECIALHIGHPRI", "MOBILE", "DEFENSE", "ALLUNITS -WALL" },
             TargetRestrictDisallow = "UNTARGETABLE, HIGHALTAIR, SATELLITE",
@@ -404,7 +399,6 @@ UnitBlueprint {
 
             RateOfFire = 10/10,
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {"SPECIALHIGHPRI","MOBILE","DEFENSE","ALLUNITS -WALL"},
             TargetRestrictDisallow = "UNTARGETABLE, HIGHALTAIR, SATELLITE",
 
@@ -476,7 +470,7 @@ UnitBlueprint {
             RangeCategory = "UWRC_AntiAir",
 
             RateOfFire = 33/100,
-            TargetCheckInterval = 0.3,
+
 
             TargetPriorities = { "AIR MOBILE" },
             TargetRestrictDisallow = "UNTARGETABLE,SATELLITE",
@@ -535,7 +529,6 @@ UnitBlueprint {
 
             RateOfFire = 33/100,
 
-            TargetCheckInterval = 0.3,
 
             TargetPriorities = { "AIR MOBILE" },
             TargetRestrictDisallow = "UNTARGETABLE,SATELLITE",

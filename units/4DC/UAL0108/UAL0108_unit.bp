@@ -39,7 +39,6 @@ UnitBlueprint{
 
             RateOfFire = 0.4,
 
-            TargetCheckInterval = 0.6,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "MOBILE",
@@ -96,7 +95,6 @@ UnitBlueprint{
 
             RateOfFire = 0.2,
 
-            TargetCheckInterval = 0.3,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "COMMAND",

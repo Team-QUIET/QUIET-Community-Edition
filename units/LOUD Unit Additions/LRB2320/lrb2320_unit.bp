@@ -61,7 +61,6 @@ UnitBlueprint {
 			
             RateOfFire = 10/90,	
 
-            TargetCheckInterval = 1,
 			
             TargetPriorities = {
                 "EXPERIMENTAL MOBILE ARTILLERY",
@@ -156,7 +155,6 @@ UnitBlueprint {
 
             RateOfFire = 10/90,	
 
-            TargetCheckInterval = 1,
 
             TargetPriorities = {
                 "EXPERIMENTAL MOBILE ARTILLERY",
@@ -252,7 +250,6 @@ UnitBlueprint {
 
             RateOfFire = 10/90,	
 
-            TargetCheckInterval = 1,
 
             TargetPriorities = {
                 "EXPERIMENTAL MOBILE ARTILLERY",

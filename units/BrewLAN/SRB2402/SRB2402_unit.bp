@@ -51,7 +51,6 @@ UnitBlueprint {
 			
             RateOfFire = 10/10,     -- 1650 DPS - controlled by energy -- 2 x 750 every second 
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'TECH3 MOBILE',

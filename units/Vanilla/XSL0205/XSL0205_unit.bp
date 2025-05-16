@@ -81,8 +81,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
 			
             RateOfFire = 20/10,		---- 144 Dps
-			
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 "(AIR * MOBILE * EXPERIMENTAL - BOMBER)",
                 "AIR MOBILE GROUNDATTACK",

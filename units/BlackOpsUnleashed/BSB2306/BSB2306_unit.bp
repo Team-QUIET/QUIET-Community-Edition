@@ -199,7 +199,6 @@ UnitBlueprint {
 			
             RateOfFire = 10,		---- controlled by energy -- 2 seconds -- ok this weapon causes 600 direct damage and another 600 to upto 4 targets within 10
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
 				"EXPERIMENTAL",

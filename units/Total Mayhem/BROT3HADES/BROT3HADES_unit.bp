@@ -332,7 +332,7 @@ UnitBlueprint {
             RateOfFire = 1.00,
             SlavedToBody = true,
             SlavedToBodyArcRange = 30,
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'TECH3 MOBILE',
@@ -448,7 +448,7 @@ UnitBlueprint {
             RateOfFire = 1.00,
             SlavedToBody = true,
             SlavedToBodyArcRange = 30,
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'TECH3 MOBILE',
@@ -519,7 +519,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_DirectFire',
             RateOfFire = 0.4,
             ReTargetOnMiss = true,
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'TECH3 MOBILE',
@@ -600,7 +600,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_DirectFire',
             RateOfFire = 0.4,
             ReTargetOnMiss = true,
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'TECH3 MOBILE',
@@ -685,7 +685,7 @@ UnitBlueprint {
             RackSlavedToTurret = true,
             RangeCategory = 'UWRC_AntiAir',
             RateOfFire = 0.27,
-            TargetCheckInterval = 0.3,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'AIR MOBILE HIGHPRIAIR',
@@ -770,7 +770,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_IndirectFire',
             RateOfFire = 1,
             RenderFireClock = true,
-            TargetCheckInterval = 0.1,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'TECH3 MOBILE',
@@ -839,7 +839,7 @@ UnitBlueprint {
             RackSlavedToTurret = true,
             RangeCategory = 'UWRC_AntiNavy',
             RateOfFire = 0.05,
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'MOBILE',
@@ -909,7 +909,7 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             RangeCategory = 'UWRC_AntiNavy',
             RateOfFire = 0.25,
-            TargetCheckInterval = 2,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'NAVAL MOBILE',
@@ -946,7 +946,7 @@ UnitBlueprint {
             },
             RackRecoilDistance = 0,
             RateOfFire = 1,
-            TargetCheckInterval = 9999999,
+
             TargetRestrictDisallow = 'UNTARGETABLE',
             Turreted = false,
             WeaponCategory = 'Death',

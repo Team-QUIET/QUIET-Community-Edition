@@ -97,7 +97,7 @@ UnitBlueprint {
 
             SlavedToBody = true,
             SlavedToBodyArcRange = 60,
-            TargetCheckInterval = 0.4,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',
@@ -178,7 +178,7 @@ UnitBlueprint {
             
             SlavedToBody = true,
             SlavedToBodyArcRange = 60,
-            TargetCheckInterval = 0.4,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',

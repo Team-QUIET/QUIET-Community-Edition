@@ -205,7 +205,7 @@ UnitBlueprint {
 			RangeCategory = 'UWRC_AntiNavy',
 
 			RateOfFire = 1, -- 600 dmg = 181 dps    -- controlled by salvodelay and reloadtime
-			TargetCheckInterval = 1,
+
 
 			TargetPriorities = {
 				'SPECIALHIGHPRI',

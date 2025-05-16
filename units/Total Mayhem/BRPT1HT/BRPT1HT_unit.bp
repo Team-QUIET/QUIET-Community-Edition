@@ -211,8 +211,7 @@ UnitBlueprint {
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 35,
-			
-            TargetCheckInterval = 1,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'MOBILE -AIR',

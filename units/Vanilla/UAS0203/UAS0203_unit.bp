@@ -60,7 +60,6 @@ UnitBlueprint {
             SlavedToBody = true,
             SlavedToBodyArcRange = 10,
 
-            TargetCheckInterval = 2,
 			
             TargetPriorities = {
                 'SPECIALHIGHPRI',

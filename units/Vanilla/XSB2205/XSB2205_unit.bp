@@ -240,7 +240,6 @@ UnitBlueprint {
 
 			RateOfFire = 1, -- 900 Damage every 3.1 secs = 290 DPS Sub
 
-			TargetCheckInterval = 1,
 
 			TargetPriorities = {
 				"SPECIALHIGHPRI",
@@ -310,7 +309,6 @@ UnitBlueprint {
 
 			RateOfFire = 1, -- controlled by RackSalvoReload
 
-			TargetCheckInterval = 0.5,
 
 			TargetRestrictOnlyAllow = 'TORPEDO',
 

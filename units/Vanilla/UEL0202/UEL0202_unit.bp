@@ -60,7 +60,6 @@ UnitBlueprint {
 
             RateOfFire = 10/12, --10/integer interval in ticks
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",

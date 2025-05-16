@@ -42,8 +42,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
 			
             RateOfFire = 2,		---- 3 times 12.5 damage = 37.5 damage twice per second = 75 DPS
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
                 'SPECIALHIGHPRI',

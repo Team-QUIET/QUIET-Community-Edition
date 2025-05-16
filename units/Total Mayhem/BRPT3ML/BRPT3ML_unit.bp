@@ -47,8 +47,7 @@ UnitBlueprint {
             RackSalvoFiresAfterCharge = true,
 			
             RateOfFire = 10/76,  
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
                 "SPECIALHIGHPRI",

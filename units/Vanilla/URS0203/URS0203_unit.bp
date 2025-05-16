@@ -57,8 +57,7 @@ UnitBlueprint {
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 10,
-			
-            TargetCheckInterval = 1,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 "SUBMERSIBLE",
@@ -112,8 +111,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_DirectFire',
 			
             RateOfFire = 10/20,	
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
                 'SPECIALHIGHPRI',

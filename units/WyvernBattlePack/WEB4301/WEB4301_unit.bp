@@ -43,7 +43,6 @@ UnitBlueprint{
 
             RateOfFire = 20/10,
 
-            TargetCheckInterval = 0.1,
 
             TargetRestrictDisallow = "UNTARGETABLE,SATELLITE",
             TargetRestrictOnlyAllow = "TACTICAL MISSILE",

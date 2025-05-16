@@ -91,7 +91,6 @@ UnitBlueprint {
             SlavedToBody = true,
             SlavedToBodyArcRange = 40,
 
-            TargetCheckInterval = 1,
             TargetPriorities = {
                 'HIGHPRIAIR',
                 'BOMBER',
@@ -150,7 +149,6 @@ UnitBlueprint {
 
             RateOfFire = 0.142,
 
-            TargetCheckInterval = 0.3,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',
@@ -205,7 +203,6 @@ UnitBlueprint {
 
             RateOfFire = 0.142,
 
-            TargetCheckInterval = 0.3,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',

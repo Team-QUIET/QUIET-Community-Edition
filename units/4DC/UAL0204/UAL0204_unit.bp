@@ -136,7 +136,6 @@ UnitBlueprint {
 
             RateOfFire = 10/55,     -- controlled by charge -- 7 seconds
 
-            TargetCheckInterval = 1,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "SNIPER",

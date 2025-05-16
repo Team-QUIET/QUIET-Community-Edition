@@ -198,7 +198,6 @@ UnitBlueprint {
 
 			RateOfFire = 0.5,
 
-			TargetCheckInterval = 0.5,
 			TargetPriorities = {
 				"SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -281,7 +280,7 @@ UnitBlueprint {
 			RangeCategory = "UWRC_IndirectFire",
 
 			RateOfFire = 1,
-			TargetCheckInterval = 0.5,
+
 			TargetPriorities = {
 				"SPECIALHIGHPRI",
                 "TECH3 MOBILE",

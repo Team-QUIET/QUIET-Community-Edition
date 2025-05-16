@@ -328,8 +328,7 @@ UnitBlueprint {
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 110,
-			
-            TargetCheckInterval = 0.3,
+
 			
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -408,8 +407,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_DirectFire',
 			
             RateOfFire = 2,
-			
-            TargetCheckInterval = 0.4,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -486,8 +484,7 @@ UnitBlueprint {
             },
 
             RateOfFire = 2,
-            
-            TargetCheckInterval = 0.2,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -565,8 +562,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
             
             RateOfFire = 2,
-            
-            TargetCheckInterval = 0.3,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'SPECIALHIGHPRI',
@@ -645,8 +641,7 @@ UnitBlueprint {
             },
 
             RateOfFire = 2,
-            
-            TargetCheckInterval = 0.3,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'SPECIALHIGHPRI',
@@ -722,8 +717,7 @@ UnitBlueprint {
             },
 
             RateOfFire = 2,
-            
-            TargetCheckInterval = 0.3,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'SPECIALHIGHPRI',
@@ -800,8 +794,7 @@ UnitBlueprint {
             },
 
             RateOfFire = 2,
-            
-            TargetCheckInterval = 0.3,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',

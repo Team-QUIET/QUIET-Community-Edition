@@ -89,8 +89,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_DirectFire',
 			
             RateOfFire = 20/10,
-			
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'MOBILE -AIR',

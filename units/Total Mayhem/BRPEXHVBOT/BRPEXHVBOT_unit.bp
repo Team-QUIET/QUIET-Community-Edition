@@ -331,8 +331,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_IndirectFire',
 			
             RateOfFire = 1,		-- 500 DPS Ground
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -436,8 +435,7 @@ UnitBlueprint {
             },
 
             RateOfFire = 1,		-- 500 DPS Ground
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -516,7 +514,6 @@ UnitBlueprint {
 			
 			RetargetOnMiss = true,
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -590,7 +587,6 @@ UnitBlueprint {
 			
 			RetargetOnMiss = true,
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -675,8 +671,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
 			
             RateOfFire = 3,		-- 360 DPS surface/air
-			
-            TargetCheckInterval = 0.66,
+
             TargetPriorities = {
                 'MOBILE AIR',
                 'MOBILE',

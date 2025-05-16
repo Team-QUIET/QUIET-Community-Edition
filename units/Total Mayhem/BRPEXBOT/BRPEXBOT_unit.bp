@@ -328,8 +328,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_IndirectFire',
 			
             RateOfFire = 1,		-- 1500 DPS
-			
-            TargetCheckInterval = 1,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -408,8 +407,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_DirectFire',
 			
             RateOfFire = 5,		-- 600 DPS
-			
-            TargetCheckInterval = 0.3,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",

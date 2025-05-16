@@ -82,7 +82,7 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             SlavedToBody = false,
             SlavedToBodyArcRange = 360,
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
 				"STRUCTURE",

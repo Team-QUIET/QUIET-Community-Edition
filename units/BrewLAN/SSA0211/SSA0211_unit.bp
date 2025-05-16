@@ -90,8 +90,7 @@ UnitBlueprint {
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
             RateOfFire = 0.2,   -- 170 DPS
-			
-            TargetCheckInterval = 2,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'DEFENSE',

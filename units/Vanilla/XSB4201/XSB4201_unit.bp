@@ -182,7 +182,6 @@ UnitBlueprint {
 
             RateOfFire = 10/18,
 
-            TargetCheckInterval = 0.5,
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
             TargetRestrictOnlyAllow = 'TACTICAL MISSILE',
             TargetType = 'RULEWTT_Projectile',

@@ -249,8 +249,7 @@ UnitBlueprint {
             RateOfFire = 10/10,			-- 138 dps RoF controlled by energy
 
             ReTargetOnMiss = true,
-			
-            TargetCheckInterval = 0.3,
+
 			
             TargetPriorities = {
                 "SPECIALHIGHPRI",

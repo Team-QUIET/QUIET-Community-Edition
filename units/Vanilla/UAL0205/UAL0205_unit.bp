@@ -83,8 +83,7 @@ UnitBlueprint {
             RateOfFire = 20/10,
 			
             SlavedToBody = true,
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
                 "(AIR * MOBILE * EXPERIMENTAL - BOMBER)",

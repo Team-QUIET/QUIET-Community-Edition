@@ -218,7 +218,6 @@ UnitBlueprint{
 
             RateOfFire = 2,
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "MOBILE",
@@ -302,7 +301,6 @@ UnitBlueprint{
 
             ReTargetOnMiss = true,
 
-            TargetCheckInterval = 1,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -386,7 +384,6 @@ UnitBlueprint{
             RateOfFire = 0.5,
             ReTargetOnMiss = true,
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -463,7 +460,6 @@ UnitBlueprint{
 
             RateOfFire = 4,
 
-            TargetCheckInterval = 0.6,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "MOBILE",
@@ -527,7 +523,6 @@ UnitBlueprint{
 
             RateOfFire = 1,
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "HIGHPRIAIR",

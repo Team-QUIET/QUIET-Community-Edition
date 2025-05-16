@@ -75,7 +75,6 @@ UnitBlueprint {
 			
             SlavedToBody = false,
 
-            TargetCheckInterval = 3,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "SNIPER",
@@ -149,8 +148,7 @@ UnitBlueprint {
             RateOfFire = 10/60,
 			
             SlavedToBody = false,
-			
-            TargetCheckInterval = 3,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "SNIPER",

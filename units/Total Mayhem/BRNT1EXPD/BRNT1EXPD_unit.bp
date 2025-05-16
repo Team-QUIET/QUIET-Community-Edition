@@ -18,8 +18,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
 			
 		RateOfFire = 20/10,
-			
-		TargetCheckInterval = 0.3,
+
 		
 		TurretPitch = 0,
             TurretPitchRange = 80,
@@ -44,8 +43,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
 			
             RateOfFire = 20/10,
-			
-		TargetCheckInterval = 0.3,
+
 		
 		TurretPitch = 0,
             TurretPitchRange = 80,

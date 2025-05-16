@@ -61,7 +61,6 @@ UnitBlueprint {
 			
             RateOfFire = 10/65,	        -- every 5 seconds by charge = 96 DPS
 
-            TargetCheckInterval = 2,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "ANTISHIELD",

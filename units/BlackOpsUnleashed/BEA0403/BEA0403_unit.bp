@@ -250,8 +250,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_DirectFire',
 			
             RateOfFire = 10/10,
-			
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -332,8 +331,7 @@ UnitBlueprint {
             RackRecoilDistance = -1,
 
             RateOfFire = 10/10,
-			
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -414,8 +412,7 @@ UnitBlueprint {
             RackRecoilDistance = -1,
 
             RateOfFire = 10/10,
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -497,8 +494,7 @@ UnitBlueprint {
             RackRecoilDistance = -1,
 
             RateOfFire = 10/10,
-			
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -583,7 +579,6 @@ UnitBlueprint {
 
             RateOfFire = 20/10,
 
-            TargetCheckInterval = 0.3,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',
@@ -657,7 +652,6 @@ UnitBlueprint {
 
             RateOfFire = 20/10,
 
-            TargetCheckInterval = 0.3,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',
@@ -731,7 +725,6 @@ UnitBlueprint {
 
             RateOfFire = 20/10,
 
-            TargetCheckInterval = 0.3,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',
@@ -804,7 +797,6 @@ UnitBlueprint {
 
             RateOfFire = 20/10,
 
-            TargetCheckInterval = 0.3,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',
@@ -875,7 +867,6 @@ UnitBlueprint {
 
             RateOfFire = 10/10,
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',
@@ -947,7 +938,6 @@ UnitBlueprint {
 
             RateOfFire = 10/10,
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',
@@ -1015,8 +1005,7 @@ UnitBlueprint {
             },
 
             RateOfFire = 10/10,
-            
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',
@@ -1086,8 +1075,7 @@ UnitBlueprint {
             },
 
             RateOfFire = 10/10,
-            
-            TargetCheckInterval = 0.5,
+
 
             TargetPriorities = {
                 'SPECIALHIGHPRI',

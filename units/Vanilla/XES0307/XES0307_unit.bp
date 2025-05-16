@@ -110,8 +110,7 @@ UnitBlueprint {
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 135,
-			
-            TargetCheckInterval = 0.2,
+
 			
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -198,8 +197,7 @@ UnitBlueprint {
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 135,
-			
-            TargetCheckInterval = 0.2,
+
 			
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -284,8 +282,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiNavy',
 			
             RateOfFire = 10/100,	           
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -342,7 +339,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_Countermeasure',
 			
             RateOfFire = 10/10,
-            TargetCheckInterval = 0.3,
+
 			
             TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
             TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',
@@ -408,8 +405,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_Countermeasure',
 			
             RateOfFire = 10/40,     -- controlled by MuzzleSalvoDelay and WeaponRepackTimeout - 1 every 1.5 seconds
-			
-            TargetCheckInterval = 0.5,
+
 
             TargetRestrictDisallow = 'UNTARGETABLE',
             TargetRestrictOnlyAllow = 'TORPEDO',
@@ -460,8 +456,7 @@ UnitBlueprint {
             },
 
             RateOfFire = 10/40,     -- controlled by MuzzleSalvoDelay and WeaponRepackTimeout - 1 every 1.5 seconds
-			
-            TargetCheckInterval = 0.5,
+
 
             TargetRestrictDisallow = 'UNTARGETABLE',
             TargetRestrictOnlyAllow = 'TORPEDO',

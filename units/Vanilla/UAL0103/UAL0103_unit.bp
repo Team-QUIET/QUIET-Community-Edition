@@ -193,7 +193,6 @@ UnitBlueprint {
             SlavedToBody = true,
             SlavedToBodyArcRange = 40,
 
-            TargetCheckInterval = 0.3,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
 				"STRUCTURE EXPERIMENTAL",

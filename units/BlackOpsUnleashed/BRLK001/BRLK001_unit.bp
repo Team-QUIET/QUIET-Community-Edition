@@ -1,9 +1,242 @@
 UnitBlueprint {
-    Merge = true,
-    BlueprintId = 'brlk001',
+
+    Source = '/mods/BlackOpsUnleashed/units/BRLK001/BRLK001_unit.bp',
+
+    AI = {
+        GuardScanRadius = 40,
+        TargetBones = {'Turret01'},
+    },
+	
+    Audio = {
+        Destroyed   = Sound { Bank = 'URLDestroy', Cue = 'URL_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff' },
+        StartMove   = Sound { Bank = 'URL', Cue = 'URL0107_Move_Start', LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection = Sound { Bank = 'Interface', Cue = 'Cybran_Select_Bot', LodCutoff = 'UnitMove_LodCutoff' },
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 3,
+            Level2 = 6,
+            Level3 = 9,
+            Level4 = 12,
+            Level5 = 15,
+        },
+    },
+	
+    BuildIconSortPriority = 25,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'CYBRAN',
+        'MOBILE',
+        'LAND',
+        'TECH3',
+        'ANTIAIR',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+    },
+	
+    Defense = {
+        AirThreatLevel = 30,
+        ArmorType = 'Normal',
+        Health = 1800,
+        MaxHealth = 1800,
+        RegenRate = 3,
+    },
+	
+    Description = '<LOC brlk001_desc>Mobile Missile Anti-Air',
+	
+    Display = {
+	
+	    Abilities = {
+            "<LOC ability_aa>Anti-Air",
+			'Can Toggle to fire at ground targets',
+        },
+		
+        AnimationDeath = {
+            {
+                Animation = '/mods/BlackOpsUnleashed/units/BRLK001/BRLK001_death01.sca',
+                AnimationRateMax = 4,
+                AnimationRateMin = 2.5,
+                Weight = 100,
+            },
+        },
+		
+        AnimationWalk = '/mods/BlackOpsUnleashed/units/BRLK001/BRLK001_walk.sca',
+        AnimationWalkRate = 5.5,
+        AttackReticuleSize = 3,
+		
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {LODCutoff = 500,Scrolling = true,ShaderName = 'Insect'},
+            },
+        },
+
+        TransportAnimation = {
+            { Animation = '/mods/BlackOpsUnleashed/units/BRLK001/BRLK001_fold.sca', Weight = 100 },
+        },
+		TransportDropAnimation = {
+            { Animation = '/mods/BlackOpsUnleashed/units/BRLK001/BRLK001_unfold.sca', Weight = 100 },
+        },
+        
+        UniformScale = 0.19,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 8000,
+        BuildCostMass = 800,
+        BuildTime = 3200,
+    },
+	
+    General = {
+		CapCost = 1,
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Cybran',
+        Icon = 'land',
+        
+		OrderOverrides = {
+            RULEUTC_WeaponToggle = { bitmapId = 'toggle-weapon-air' },
+        },
+        
+		ToggleCaps = { RULEUTC_WeaponToggle = true },
+        
+        UnitName = '<LOC brlk001_name>Bouncer',
+    },
+	
+    Intel = {
+        VisionRadius = 32,
+    },
+	
+    Interface = {
+        HelpText = 'Mobile Missile Anti-Air',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.55,
+    LifeBarSize = 1,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 3.5,
+        MaxBrake = 3.5,
+        MaxSpeed = 3.5,
+        MaxSpeedReverse = 3.5,
+        MaxSteerForce = 7,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        TurnRadius = 2,
+        TurnRate = 120,
+    },
+
+    SelectionSizeX = 0.79,
+    SelectionSizeZ = 0.9,
+    SelectionThickness = 0.62,
+	
+    SizeX = 1.2,
+    SizeY = 0.6,
+    SizeZ = 0.9,
+	
+    StrategicIconName = 'icon_land3_antiair',
+    StrategicIconSortPriority = 155,
+	
+    Transport = {
+        CanFireFromTransport = false,
+        TransportClass = 3,
+    },
+	
+    Veteran = {
+        Level1 = 10,
+        Level2 = 20,
+        Level3 = 30,
+        Level4 = 40,
+        Level5 = 50,
+    },
 	
     Weapon = {
+        {
+            AimsStraightOnDisable = false,
+            AlwaysRecheckTarget = false,
+            BallisticArc = 'RULEUBA_None',
+            BeamCollisionDelay = 0.2,
+            BeamLifetime = 0,
+			CannotAttackGround = true,
+			ContinuousBeam = true,
+
+            CollideFriendly = false,
+
+            Damage = 0.1,
+            DamageFriendly = false,
+            DamageType = 'Normal',
+
+            DisplayName = 'Targeting Laser',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+            },
+
+            FiringTolerance = 2,
+
+            Label = 'Lazor',
+
+            MaxRadius = 50,
+
+            ProjectileLifetimeUsesMultiplier = 1.15,
+
+            RackBones = {
+                {
+                    MuzzleBones = { 'Lazor' },
+                    RackBone = 'Lazor',
+                },
+            },
+
+            RateOfFire = 2,
+
+            ReTargetOnMiss = true,
+
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "AIR MOBILE EXPERIMENTAL",
+                "AIR MOBILE TECH3 BOMBER",
+                "AIR MOBILE BOMBER",
+                "AIR MOBILE GROUNDATTACK",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TrackingRadius = 1.2,
+
+            TurretBoneMuzzle = 'Lazor',
+            TurretBonePitch = 'Lazor',
+            TurretBoneYaw = 'Lazor',
+
+            TurretPitch = 0,
+            TurretPitchRange = 180,
+            TurretPitchSpeed = 180,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 180,
+
+            Turreted = true,
+			UseFiringSolutionInsteadOfAimBone = true,
+        },
 		{
+            AimsStraightOnDisable = false,
 			advancedTracking = true,
             AlwaysRecheckTarget = true,
             
@@ -29,8 +262,11 @@ UnitBlueprint {
             FiringTolerance = 10,
 			
             Label = 'AAGun',
+
+            LeadTarget = true,
 			
             MaxRadius = 48,
+            PreferPrimaryWeaponTarget = true,
 			
             MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 6,
@@ -57,15 +293,17 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
 			
             RateOfFire = 10/6,	-- 360 DPS Air
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
-                'SPECIALHIGHPRI',
-                'HIGHPRIAIR',
-                'BOMBER',
-                'GROUNDATTACK',
-                'MOBILE',
+                "SPECIALHIGHPRI",
+                "AIR MOBILE EXPERIMENTAL",
+                "AIR MOBILE TECH3 BOMBER",
+                "AIR MOBILE BOMBER",
+                "AIR MOBILE GROUNDATTACK",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE",
+                "ALLUNITS",
             },
 			
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
@@ -80,82 +318,13 @@ UnitBlueprint {
 			
             TurretPitch = 35,
             TurretPitchRange = 60,
-            TurretPitchSpeed = 80,
-			
-            TurretYaw = 0,
-            TurretYawRange = 180,
-            TurretYawSpeed = 80,
-			
-            Turreted = true,
-        },
-		{
-            AlwaysRecheckTarget = true,
-
-            BallisticArc = 'RULEUBA_None',
-
-            BeamCollisionDelay = 0.2,
-            BeamLifetime = 0,
-
-			CannotAttackGround = true,
-			ContinuousBeam = true,
-
-            CollideFriendly = false,
-
-            Damage = 0.1,
-            DamageFriendly = false,
-            DamageType = 'Normal',
-
-            DisplayName = 'Targeting Laser',
-
-            FireTargetLayerCapsTable = {
-                Land = 'Air',
-            },
-
-            FiringTolerance = 2,
-
-            Label = 'Lazor',
-
-            MaxRadius = 50,
-
-			PreferPrimaryWeaponTarget = true,
-            ProjectileLifetimeUsesMultiplier = 1.1,
-
-            RackBones = {
-                {
-                    MuzzleBones = { 'Lazor' },
-                    RackBone = 'Lazor',
-                },
-            },
-
-            RateOfFire = 2,
-
-            ReTargetOnMiss = true,
-
-            TargetCheckInterval = 0.5,
-            TargetPriorities = {
-                'SPECIALHIGHPRI',
-                'HIGHPRIAIR',
-                'BOMBER',
-                'GROUNDATTACK',
-                'MOBILE',
-            },
-            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.2,
-
-            TurretBoneMuzzle = 'Lazor',
-            TurretBonePitch = 'Lazor',
-            TurretBoneYaw = 'Lazor',
-
-            TurretPitch = 0,
-            TurretPitchRange = 180,
             TurretPitchSpeed = 180,
-
+			
             TurretYaw = 0,
             TurretYawRange = 180,
             TurretYawSpeed = 180,
-
+			
             Turreted = true,
-			UseFiringSolutionInsteadOfAimBone = true,
         },
 		{
             AlwaysRecheckTarget = true,
@@ -183,6 +352,7 @@ UnitBlueprint {
             Label = 'GroundGun',
 			
             MaxRadius = 30,
+            PreferPrimaryWeaponTarget = true,
 			
             MuzzleSalvoDelay = 0.5,
             MuzzleSalvoSize = 6,
@@ -211,8 +381,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_DirectFire',
 			
             RateOfFire = 10/30,	
-			
-            TargetCheckInterval = 1,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -239,6 +408,17 @@ UnitBlueprint {
             TurretYawRange = 180,
             TurretYawSpeed = 60,
             Turreted = true,
+        },
+    },
+
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.2,
+        HealthMult = 0.9,
+        MassMult = 0.6,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
         },
     },
 }

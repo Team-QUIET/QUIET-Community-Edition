@@ -172,8 +172,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_Countermeasure',
 			
             RateOfFire = 10/18,
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
             TargetRestrictOnlyAllow = 'TACTICAL MISSILE',

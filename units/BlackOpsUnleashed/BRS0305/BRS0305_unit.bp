@@ -118,8 +118,7 @@ UnitBlueprint {
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 30,
-			
-            TargetCheckInterval = 1,
+
 			
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -192,8 +191,7 @@ UnitBlueprint {
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 30,
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
                 "SUBMERSIBLE",
@@ -257,8 +255,7 @@ UnitBlueprint {
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 135,
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -330,8 +327,7 @@ UnitBlueprint {
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 135,
-			
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'NAVAL MOBILE',

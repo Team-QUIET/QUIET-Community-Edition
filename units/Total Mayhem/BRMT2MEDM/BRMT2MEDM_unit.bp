@@ -145,8 +145,7 @@ UnitBlueprint {
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 60,
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -232,8 +231,7 @@ UnitBlueprint {
             RateOfFire = 10/10,
 			
             ReTargetOnMiss = true,
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
                 "SPECIALHIGHPRI",

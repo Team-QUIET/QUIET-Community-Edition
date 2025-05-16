@@ -206,8 +206,7 @@ UnitBlueprint {
             RateOfFire = 10/90,
 		    RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
-			
-            TargetCheckInterval = 3,
+
 			
             TargetPriorities = {
                 "EXPERIMENTAL MOBILE UEF ARTILLERY",

@@ -125,8 +125,7 @@ UnitBlueprint {
             
             SlavedToBody = true,
             SlavedToBodyArcRange = 135,
-            
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'NAVAL MOBILE',
@@ -230,8 +229,7 @@ UnitBlueprint {
             
             SlavedToBody = true,
             SlavedToBodyArcRange = 135,
-            
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'NAVAL MOBILE',
@@ -334,8 +332,7 @@ UnitBlueprint {
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 135,
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -422,7 +419,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
 			
             RateOfFire = 10/10,	
-            TargetCheckInterval = 0.3,
+
 			
             TargetPriorities = {
                 'HIGHPRIAIR',
@@ -503,7 +500,6 @@ UnitBlueprint {
 
             RateOfFire = 10/10,		-- 60 DPS Air
 
-            TargetCheckInterval = 0.3,
 			
             TargetPriorities = {
                 'HIGHPRIAIR',
@@ -585,7 +581,7 @@ UnitBlueprint {
             RackSlavedToTurret = true,
 			
             RateOfFire = 10/10,		
-            TargetCheckInterval = 0.3,
+
 			
             TargetPriorities = {
                 'HIGHPRIAIR',
@@ -665,8 +661,7 @@ UnitBlueprint {
             },
 			
             RateOfFire = 10/10,		-- another 60 DPS Air
-            
-            TargetCheckInterval = 0.3,
+
             TargetPriorities = {
                 'HIGHPRIAIR',
                 'BOMBER',
@@ -737,7 +732,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_Countermeasure',
 			
             RateOfFire = 10/10,
-            TargetCheckInterval = 0.5,
+
 			
             TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
             TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',
@@ -802,7 +797,6 @@ UnitBlueprint {
 
             RateOfFire = 10/10,
 
-            TargetCheckInterval = 0.5,
 			
             TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
             TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',
@@ -870,8 +864,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiNavy',
 			
             RateOfFire = 10/50,     -- fires every 3 seconds controlled by salvodelay and repack
-			
-            TargetCheckInterval = 1.0,
+
             TargetRestrictDisallow = 'UNTARGETABLE',
             TargetRestrictOnlyAllow = 'TORPEDO',
             TargetType = 'RULEWTT_Projectile',
@@ -924,8 +917,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiNavy',
 			
             RateOfFire = 10/50,  
-			
-            TargetCheckInterval = 1.0,
+
             TargetRestrictDisallow = 'UNTARGETABLE',
             TargetRestrictOnlyAllow = 'TORPEDO',
             TargetType = 'RULEWTT_Projectile',
@@ -978,8 +970,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiNavy',
 			
             RateOfFire = 10/50,  
-			
-            TargetCheckInterval = 1.0,
+
             TargetRestrictDisallow = 'UNTARGETABLE',
             TargetRestrictOnlyAllow = 'TORPEDO',
             TargetType = 'RULEWTT_Projectile',

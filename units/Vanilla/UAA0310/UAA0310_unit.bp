@@ -128,8 +128,7 @@ UnitBlueprint {
 
             RackSlavedToTurret = false,
             RateOfFire = 1,		-- 8K DPS Ground
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -177,8 +176,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
 			
             RateOfFire = 1,		-- 600 DPS Air
-			
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',
@@ -225,8 +223,7 @@ UnitBlueprint {
             ProjectileLifetime = 4,
 
             RateOfFire = 1,		-- 600 DPS Air
-			
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',
@@ -274,8 +271,7 @@ UnitBlueprint {
             ProjectileLifetime = 4,
 
             RateOfFire = 1,		-- 600 DPS Air
-			
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',
@@ -321,8 +317,7 @@ UnitBlueprint {
             ProjectileLifetime = 4,
 
             RateOfFire = 1,		-- 600 DPS Air
-			
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',
@@ -379,8 +374,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
 			
             RateOfFire = 2,		-- 300 DPS Air
-			
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'HIGHPRIAIR',
@@ -447,8 +441,7 @@ UnitBlueprint {
 			ProjectileLifetime = 1,
 
             RateOfFire = 2,		-- 300 DPS Air
-			
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'AIR MOBILE',
@@ -509,8 +502,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiNavy',
 			
             RateOfFire = 0.5,   -- controlled by MuzzleSalvoDelay and RackReload = 6 seconds = 3600/6 = 600 DPS
-			
-            TargetCheckInterval = 2,
+
             
             TargetPriorities = {
                 'SUBMARINE',

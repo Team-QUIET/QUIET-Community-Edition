@@ -59,7 +59,6 @@ UnitBlueprint {
 			
             ReTargetOnMiss = true,
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",

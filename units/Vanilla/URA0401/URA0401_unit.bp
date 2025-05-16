@@ -65,8 +65,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_IndirectFire',
 			
             RateOfFire = 33/100,
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -143,7 +142,7 @@ UnitBlueprint {
             },
 
             RateOfFire = 33/100,
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -219,8 +218,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
 			
             RateOfFire = 10/10,
-			
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'AIR -INTELLIGENCE',
@@ -287,8 +285,7 @@ UnitBlueprint {
             },
 
             RateOfFire = 10/10,
-			
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'AIR -INTELLIGENCE',
@@ -382,8 +379,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_DirectFire',
 			
             RateOfFire = 10/10,
-			
-            TargetCheckInterval = 0.4,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
 				'ANTIAIR -AIR',
@@ -472,8 +468,7 @@ UnitBlueprint {
             },
 
             RateOfFire = 10/10,
-			
-            TargetCheckInterval = 0.4,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
 				'ANTIAIR -AIR',

@@ -233,8 +233,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_IndirectFire',
 			
             RateOfFire = 0.1,		-- 3000 damage every 10 seconds = 300 DPS
-			
-            TargetCheckInterval = 2,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 STRUCTURE",
@@ -321,8 +320,7 @@ UnitBlueprint {
             },
 			
             RateOfFire = 0.1,		-- another 300 DPS Surface
-			
-            TargetCheckInterval = 2,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 STRUCTURE",
@@ -397,8 +395,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_Countermeasure',
 			
             RateOfFire = 1,
-			
-            TargetCheckInterval = 0.5,
+
 
             TargetRestrictOnlyAllow = 'TORPEDO',
             TargetType = 'RULEWTT_Projectile',
@@ -451,8 +448,7 @@ UnitBlueprint {
             },
 			
             RateOfFire = 1,
-			
-            TargetCheckInterval = 0.5,
+
             TargetRestrictOnlyAllow = 'TORPEDO',
             TargetType = 'RULEWTT_Projectile',
             TrackingRadius = 1,

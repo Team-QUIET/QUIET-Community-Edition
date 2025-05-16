@@ -94,8 +94,7 @@ UnitBlueprint {
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 155,
-			
-            TargetCheckInterval = 1,
+
 			
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -182,8 +181,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
 			
             RateOfFire = 10/10,
-			
-            TargetCheckInterval = 0.6,
+
 			
             TargetPriorities = {
 				"AIR MOBILE TECH3 BOMBER",

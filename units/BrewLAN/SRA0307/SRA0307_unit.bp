@@ -86,7 +86,7 @@ UnitBlueprint {
             RackSalvoSize = 2,
             RackSlavedToTurret = false,
             RateOfFire = 10/100,
-            TargetCheckInterval = 1,
+
             TargetPriorities = {
                 "CRUISER",
                 "(NAVAL * TECH2 * SHIELD)",

@@ -103,8 +103,7 @@ UnitBlueprint {
                 
                 SlavedToBody = true,
                 SlavedToBodyArcRange = 135,
-                
-                TargetCheckInterval = 1,
+
                 
                 TargetPriorities = {
                     'SPECIALHIGHPRI',
@@ -188,8 +187,7 @@ UnitBlueprint {
                 
                 SlavedToBody = true,
                 SlavedToBodyArcRange = 135,
-                
-                TargetCheckInterval = 1,
+
                 
                 TargetPriorities = {
                     'SPECIALHIGHPRI',
@@ -280,7 +278,7 @@ UnitBlueprint {
                 RangeCategory = 'UWRC_AntiAir',
                 
                 RateOfFire = 10/10,		-- 60 DPS air
-                TargetCheckInterval = 0.5,
+
                 
                 TargetPriorities = {
                     'SPECIALHIGHPRI',
@@ -393,8 +391,7 @@ UnitBlueprint {
                 RangeCategory = 'UWRC_AntiNavy',
                 
                 RateOfFire = 10/20,
-                
-                TargetCheckInterval = 1,
+
                 
                 TargetPriorities = {
                     'SPECIALHIGHPRI',
@@ -495,8 +492,7 @@ UnitBlueprint {
 
                 RangeCategory = 'UWRC_Countermeasure',
                 RateOfFire = 10/10,
-                
-                TargetCheckInterval = 0.5,
+
                 TargetResetWhenReady = true,
 
                 TargetRestrictDisallow = 'UNTARGETABLE',

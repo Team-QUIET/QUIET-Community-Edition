@@ -90,8 +90,7 @@ UnitBlueprint {
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 145,
-			
-            TargetCheckInterval = 1,
+
 			
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -165,8 +164,7 @@ UnitBlueprint {
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 145,
-			
-            TargetCheckInterval = 1,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'NAVAL MOBILE',
@@ -234,8 +232,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_Countermeasure',
 			
             RateOfFire = 10/80,
-			
-            TargetCheckInterval = 1.0,
+
 			
             TargetRestrictDisallow = 'UNTARGETABLE',
             TargetRestrictOnlyAllow = 'TORPEDO',

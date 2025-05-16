@@ -89,7 +89,7 @@ UnitBlueprint {
             RackSalvoSize = 2,
             RackSlavedToTurret = false,
             RateOfFire = 10/100,
-            TargetCheckInterval = 1,
+
             TargetPriorities = {
                 "CRUISER",
                 "(NAVAL * TECH2 * SHIELD)",
@@ -154,7 +154,7 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             RangeCategory = 'UWRC_AntiAir',
             RateOfFire = 1.5,
-            TargetCheckInterval = 0.16,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'AIR',
@@ -222,7 +222,7 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             RangeCategory = 'UWRC_AntiAir',
             RateOfFire = 1.5,
-            TargetCheckInterval = 0.16,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'AIR MOBILE',

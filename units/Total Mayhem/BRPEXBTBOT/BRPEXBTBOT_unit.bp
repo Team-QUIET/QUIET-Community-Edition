@@ -247,7 +247,6 @@ UnitBlueprint {
 			
             RateOfFire = 3,
 
-            TargetCheckInterval = 0.5,
 			
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -335,8 +334,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
 			
             RateOfFire = 4,
-			
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 "AIR MOBILE TECH3 BOMBER",

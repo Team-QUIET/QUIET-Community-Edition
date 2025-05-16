@@ -85,8 +85,7 @@ UnitBlueprint {
 
             SlavedToBody = false,
             SlavedToBodyArcRange = 90,
-            
-            TargetCheckInterval = 2,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -151,8 +150,7 @@ UnitBlueprint {
             RateOfFire = 2, -- 240 dps
 
 	    SlavedToBody = true,
-			
-            TargetCheckInterval = 0.6,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",

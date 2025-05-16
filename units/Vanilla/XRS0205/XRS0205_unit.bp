@@ -208,8 +208,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_Countermeasure',
 			
             RateOfFire = 1,     -- rate of fire controlled by SalvoDelay and WeaponRepackTimeout - 2 every 3.2 seconds
-			
-            TargetCheckInterval = 1,
+
 			
             TargetRestrictDisallow = 'UNTARGETABLE',
             TargetRestrictOnlyAllow = 'TORPEDO',
@@ -257,8 +256,7 @@ UnitBlueprint {
             },
 			
             RateOfFire = 1,     -- RoF controlled by muzzlesalvo and weapon repack - 2 every 3.5 seconds
-			
-            TargetCheckInterval = 1,
+
 			
             TargetRestrictDisallow = 'UNTARGETABLE',
             TargetRestrictOnlyAllow = 'TORPEDO',

@@ -219,8 +219,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_DirectFire',
 			
             RateOfFire = 10/5,
-			
-            TargetCheckInterval = 0.3,
+
 			
             TargetPriorities = {
                 "ANTIAIR",

@@ -279,8 +279,7 @@ UnitBlueprint {
             RateOfFire = 1,	-- fire every 5 seconds - controlled by charge = 1800dps
 			
             ReTargetOnMiss = true,
-			
-            TargetCheckInterval = 1,
+
 
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -363,7 +362,6 @@ UnitBlueprint {
 			
             ReTargetOnMiss = true,
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'TECH3 MOBILE',
@@ -446,7 +444,7 @@ UnitBlueprint {
             RateOfFire = 2.5,	-- 375 dps
 			
             ReTargetOnMiss = true,
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'TECH3 MOBILE',
@@ -528,7 +526,6 @@ UnitBlueprint {
 			
             ReTargetOnMiss = true,
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'TECH3 MOBILE',
@@ -613,8 +610,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
 			
             RateOfFire = 0.5,
-			
-            TargetCheckInterval = 0.3,
+
 			
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -688,8 +684,7 @@ UnitBlueprint {
             RackRecoilDistance = -2,
 
             RateOfFire = 0.05,
-            
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {'ALLUNITS'},
             TargetRestrictDisallow = 'UNTARGETABLE',
             TrackingRadius = 1.05,

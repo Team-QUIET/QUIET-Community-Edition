@@ -56,7 +56,7 @@ UnitBlueprint {
             RateOfFire = 20/10,		-- 148 dps - controlled by charge
 			
             ReTargetOnMiss = true,
-            TargetCheckInterval = 0.3,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",

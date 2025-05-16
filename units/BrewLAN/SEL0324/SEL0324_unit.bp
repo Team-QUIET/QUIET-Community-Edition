@@ -83,8 +83,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
 			
             RateOfFire = 10/20,             -- controlled by salvo times = 6 x 200 = 1200/3.3 = 363 DPS Air
-			
-            TargetCheckInterval = 1,
+
             TargetPriorities = {
                 'HIGHPRIAIR',
                 'BOMBER',

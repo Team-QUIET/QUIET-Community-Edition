@@ -239,8 +239,7 @@ UnitBlueprint {
             },
 
             RateOfFire = 0.5,	-- 110 DPS
-			
-            TargetCheckInterval = 1,
+
 
             TargetPriorities = {
                 'SPECIALHIGHPRI',

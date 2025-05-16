@@ -69,8 +69,7 @@ UnitBlueprint {
             RenderFireClock = true,
 			
             SlavedToBody = true,
-			
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "STRUCTURE DEFENSE",

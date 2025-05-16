@@ -351,7 +351,7 @@ UnitBlueprint{
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
             RangeCategory = "UWRC_IndirectFire",
-            TargetCheckInterval = 0.2,
+
             AlwaysRecheckTarget = false,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -427,7 +427,7 @@ UnitBlueprint{
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
             RangeCategory = "UWRC_IndirectFire",
-            TargetCheckInterval = 0.2,
+
             AlwaysRecheckTarget = false,
             TargetPriorities = {
                 'SPECIALHIGHPRI',

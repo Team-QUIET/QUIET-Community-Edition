@@ -197,7 +197,6 @@ UnitBlueprint {
             RateOfFire = 10/25,
 			RenderFireClock = true,
 
-            TargetCheckInterval = 2,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'SHIELD',

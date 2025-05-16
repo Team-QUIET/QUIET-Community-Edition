@@ -236,8 +236,7 @@ UnitBlueprint {
             },
 
             RateOfFire = 0.5,		-- 120 DPS Surface
-			
-            TargetCheckInterval = 1.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'STRUCTURE -WALL',

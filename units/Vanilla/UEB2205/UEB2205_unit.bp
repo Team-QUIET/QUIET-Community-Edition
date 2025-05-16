@@ -229,7 +229,7 @@ UnitBlueprint {
 			RangeCategory = 'UWRC_AntiNavy',
 
 			RateOfFire = 1,       --	1200 damage every 4 seconds = 300 DPS
-			TargetCheckInterval = 1,
+
 
 			TargetPriorities = {
 				"SPECIALHIGHPRI",

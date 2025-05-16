@@ -418,7 +418,7 @@ UnitBlueprint {
         },
         {
             -- sim-performance related values
-            TargetCheckInterval = 0.2,
+
             AlwaysRecheckTarget = false,
             TrackingRadius = 1.1,
 
@@ -504,7 +504,7 @@ UnitBlueprint {
         },
         {
             -- sim-performance related values
-            TargetCheckInterval = 0.2, 
+ 
             AlwaysRecheckTarget = false, 
             TrackingRadius = 1.1,
 

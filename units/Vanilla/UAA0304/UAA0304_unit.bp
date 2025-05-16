@@ -86,7 +86,7 @@ UnitBlueprint {
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
             RateOfFire = 10/80, --10/integer interval in ticks
-            TargetCheckInterval = 2.5,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 "EXPERIMENTAL",

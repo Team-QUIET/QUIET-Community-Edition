@@ -42,8 +42,7 @@ UnitBlueprint {
             MuzzleVelocity = 44,
 			
             RateOfFire = 10/4,	
-			
-            TargetCheckInterval = 0.5,
+
 			
             TargetPriorities = {
                 'SPECIALHIGHPRI',

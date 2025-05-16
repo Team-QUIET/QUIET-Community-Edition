@@ -208,7 +208,6 @@ UnitBlueprint {
 			
             RateOfFire = 3,
 
-            TargetCheckInterval = 0.3,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",

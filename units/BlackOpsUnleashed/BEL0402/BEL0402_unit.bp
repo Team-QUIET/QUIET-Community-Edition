@@ -119,8 +119,7 @@ UnitBlueprint {
 			-- so true firing cycle is 10 seconds or 9600/10
 
             RateOfFire = 1.2,	---- 16 times 600 = 9600 Damage every 10 seconds = 960 DPS
-			
-            TargetCheckInterval = 1,
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'TECH3 STRUCTURE DEFENSE',
@@ -194,7 +193,6 @@ UnitBlueprint {
             SlavedToBody = true,
             SlavedToBodyArcRange = 60,
 
-            TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'EXPERIMENTAL',
@@ -268,8 +266,7 @@ UnitBlueprint {
             ProjectileLifetime = 2,
 
             RateOfFire = 3,		---- 900 DPS
-			
-            TargetCheckInterval = 0.3,
+
 
             SlavedToBody = true,
             SlavedToBodyArcRange = 50,
@@ -337,8 +334,7 @@ UnitBlueprint {
             ProjectileLifetime = 2,
 
             RateOfFire = 3,		---- 900 DPS
-			
-            TargetCheckInterval = 0.3,
+
 
             SlavedToBody = true,
             SlavedToBodyArcRange = 50,
@@ -403,7 +399,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_Countermeasure',
 			
             RateOfFire = 1.1,
-            TargetCheckInterval = 0.5,
+
 			
             TargetRestrictDisallow = 'UNTARGETABLE',
             TargetRestrictOnlyAllow = 'TACTICAL MISSILE',
@@ -461,8 +457,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
 			
             RateOfFire = 0.5,
-			
-            TargetCheckInterval = 0.5,
+
 
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -524,8 +519,7 @@ UnitBlueprint {
             NukeOuterRingTotalTime = 3,
 		
             RateOfFire = 1,
-			
-            TargetCheckInterval = 9999999,
+
             TargetRestrictDisallow = 'UNTARGETABLE',
             Turreted = false,
             WeaponCategory = 'Death',

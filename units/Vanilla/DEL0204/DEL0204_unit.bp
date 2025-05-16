@@ -71,7 +71,7 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             RangeCategory = 'UWRC_DirectFire',
             RateOfFire = 10/12,	
-            TargetCheckInterval = 0,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -140,7 +140,7 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             RangeCategory = 'UWRC_DirectFire',
             RateOfFire = 0.2,	
-            TargetCheckInterval = 0,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",

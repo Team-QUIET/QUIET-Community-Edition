@@ -276,7 +276,6 @@ UnitBlueprint{
 
             RateOfFire = 0.2,
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "STRUCTURE",
@@ -358,7 +357,7 @@ UnitBlueprint{
             RackReloadTimeout = 10,
 
             RateOfFire = 0.1,
-            TargetCheckInterval = 2,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "DEFENSE",
@@ -441,7 +440,6 @@ UnitBlueprint{
             RangeCategory = "UWRC_DirectFire",
             RateOfFire = 0.7,
 
-            TargetCheckInterval = 0.5,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -525,7 +523,7 @@ UnitBlueprint{
             RackReloadTimeout = 10,
 
             RateOfFire = 0.7,
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -605,7 +603,7 @@ UnitBlueprint{
             RackReloadTimeout = 10,
 
             RateOfFire = 0.7,
-            TargetCheckInterval = 0.5,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
@@ -673,7 +671,6 @@ UnitBlueprint{
 
             RateOfFire = 0.5,
 
-            TargetCheckInterval = 0.5,
             TargetRestrictDisallow = "UNTARGETABLE",
             TargetRestrictOnlyAllow = "TACTICAL MISSILE",
             TargetType = "RULEWTT_Projectile",
@@ -734,7 +731,6 @@ UnitBlueprint{
 
             RateOfFire = 0.5,
 
-            TargetCheckInterval = 0.5,
             TargetRestrictDisallow = "UNTARGETABLE",
             TargetRestrictOnlyAllow = "TACTICAL MISSILE",
             TargetType = "RULEWTT_Projectile",
@@ -812,7 +808,7 @@ UnitBlueprint{
 
             RangeCategory = "UWRC_AntiAir",
             RateOfFire = 2,
-            TargetCheckInterval = 0.3,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "BOMBER",
@@ -889,7 +885,7 @@ UnitBlueprint{
             RackRecoilDistance = -0.7,
 
             RateOfFire = 2,
-            TargetCheckInterval = 0.3,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "BOMBER",
@@ -957,7 +953,7 @@ UnitBlueprint{
             },
 
             RateOfFire = 3,
-            TargetCheckInterval = 0.16,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "MOBILE",
@@ -1024,7 +1020,7 @@ UnitBlueprint{
             },
 
             RateOfFire = 3,
-            TargetCheckInterval = 0.16,
+
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "MOBILE",
