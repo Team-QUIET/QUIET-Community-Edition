@@ -206,7 +206,8 @@ UnitBlueprint {
             RateOfFire = 2,
 
             ReTargetOnMiss = true,
-
+            
+            TargetCheckInterval = 100,
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "AIR MOBILE EXPERIMENTAL",
