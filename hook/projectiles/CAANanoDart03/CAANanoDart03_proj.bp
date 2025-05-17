@@ -1,0 +1,56 @@
+ProjectileBlueprint {
+
+    Audio = {
+        Impact = Sound {
+            Bank = 'Impacts',
+            Cue = 'CYB_Expl_Med_Impact',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactTerrain = Sound {
+            Bank = 'Impacts',
+            Cue = 'Impact_Land_Gen_CYBRAN',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactWater = Sound {
+            Bank = 'Impacts',
+            Cue = 'Impact_Water_Splash_CYBRAN',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+    },
+
+    Categories = {
+        'PROJECTILE',
+    },
+
+    Display = {
+        Mesh = {
+            LODs = {
+                {
+                    AlbedoName = '/projectiles/CAANanoDart01/CAANanoDart01_albedo.dds',
+                    LODCutoff = 150,
+                    MeshName = '/projectiles/CAANanoDart01/CAANanoDart01_lod0.scm',
+                    ShaderName = 'TMeshAlpha',
+                },
+            },
+        },
+        StrategicIconSize = 2,
+        UniformScale = 0.13,
+    },
+
+    Physics = {
+        Acceleration = 15,
+        DestroyOnWater = true,
+        InitialSpeed = 30,
+        LeadTarget = false,
+        Lifetime = 4.5,
+        MaxSpeed = 70,
+        MaxZigZag = 2,
+        OnLostTargetLifetime = 0.8,
+        RotationalVelocityRange = 200,
+        TrackTarget = true,
+        TurnRate = 180,
+        UseGravity = false,
+        VelocityAlign = true,
+        ZigZagFrequency = 0.2,
+    },
+}
