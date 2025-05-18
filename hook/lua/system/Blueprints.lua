@@ -1089,6 +1089,8 @@ do
 			'brot1mt',   -- Bonfire
 			'ual0108',   -- Artos
 			'bal0206',   -- Zealot
+			'bab2303',   -- Archangel
+			'beb2303',   -- Hellstorm
 		};
 		for i, bp in pairs(unitPruningId) do
 			if all_blueprints.Unit[bp] then
