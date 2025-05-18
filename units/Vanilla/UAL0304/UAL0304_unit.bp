@@ -55,8 +55,8 @@ UnitBlueprint {
             
             EnergyChargeForFirstShot = false,
             
-            EnergyRequired = 2500,
-            EnergyDrainPerSecond = 250,     -- 10 seconds to charge
+            EnergyRequired = 3600,
+            EnergyDrainPerSecond = 360,     -- 10 seconds to charge
 
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
@@ -79,8 +79,11 @@ UnitBlueprint {
             RackRecoilDistance = -0.3,
 
             RangeCategory = 'UWRC_IndirectFire',
+
+            RackSalvoFiresAfterCharge = true,
+            RenderFireClock = true,
 			
-            RateOfFire = 10/10,
+            RateOfFire = 10/100,
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
