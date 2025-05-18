@@ -14,6 +14,8 @@ UnitBlueprint {
 
             MuzzleVelocity = 20,
 
+            ProjectileLifetimeUsesMultiplier = 1.5,
+
             ProjectileLifetime = 4.5,
 
             TurretYawSpeed = 135,

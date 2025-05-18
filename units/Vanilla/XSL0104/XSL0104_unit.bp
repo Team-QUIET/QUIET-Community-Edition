@@ -11,6 +11,8 @@ UnitBlueprint {
     Weapon = {
         {
             MuzzleVelocity = 45,
+
+            ProjectileLifetimeUsesMultiplier = 1.5,
             
             RateOfFire = 30/10,
 
