@@ -387,6 +387,10 @@ AIFArtilleryMiasmaShellWeapon   = ClassWeapon(DefaultProjectileWeapon) {
     end,
 }
 
+AeonTargetPainter = ClassWeapon(DefaultBeamWeapon) { 
+    FxMuzzleFlash = {},
+}
+
 TMAnovacatbluelaserweapon = ClassWeapon(DefaultBeamWeapon) {
     BeamType = QCECollisionbeams.TMNovaCatBlueLaserBeam,
     FxMuzzleFlash = {},

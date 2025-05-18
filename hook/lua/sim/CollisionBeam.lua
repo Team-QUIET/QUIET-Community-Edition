@@ -172,14 +172,17 @@ CollisionBeam = Class(moho.CollisionBeamEntity) {
             AttachBeamToEntity(fxBeam, self, 0, self.Army)
 
             -- collide on start if it's a continuous beam
-            local weaponBlueprint = self.Weapon.Blueprint
+            local weaponBlueprint = self.Weapon.bp
             local bCollideOnStart = weaponBlueprint.BeamLifetime <= 0
             self:SetBeamFx(fxBeam, bCollideOnStart)
 
             table.insert(self.BeamEffectsBag, fxBeam)
             self.Trash:Add(fxBeam)
         else
-            LOG('*ERROR: THERE IS NO BEAM EMITTER DEFINED FOR THIS COLLISION BEAM ', repr(self.FxBeam))
+            -- Special case: skip error for TargetPainter and similar fake weapons
+            if self.Weapon.bp.Label ~= 'TargetPainter' then
+                LOG('*ERROR: THERE IS NO BEAM EMITTER DEFINED FOR THIS COLLISION BEAM ', repr(self.FxBeam))
+            end
         end
     end,
 

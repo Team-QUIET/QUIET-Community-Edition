@@ -1,0 +1,3 @@
+CybranTargetPainter = ClassWeapon(DefaultBeamWeapon) { 
+    FxMuzzleFlash = {},
+}

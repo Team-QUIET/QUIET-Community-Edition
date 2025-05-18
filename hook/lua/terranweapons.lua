@@ -1,0 +1,3 @@
+TerranTargetPainter = ClassWeapon(DefaultBeamWeapon) { 
+    FxMuzzleFlash = {},
+}

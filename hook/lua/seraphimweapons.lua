@@ -1,0 +1,3 @@
+SeraphimTargetPainter = ClassWeapon(DefaultBeamWeapon) { 
+    FxMuzzleFlash = {}, 
+}
