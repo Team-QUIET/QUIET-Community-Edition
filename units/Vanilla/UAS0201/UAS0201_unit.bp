@@ -290,7 +290,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_Countermeasure',
 			
             RackSalvoReloadTime = 3.5,
-            RateOfFire = 10/10,
+            RateOfFire = 10/25,
 
             TargetResetWhenReady = true,
 
@@ -358,7 +358,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 3.5,
 
             RangeCategory = 'UWRC_Countermeasure',
-            RateOfFire = 10/10,
+            RateOfFire = 10/25,
 
             TargetResetWhenReady = true,
 			
@@ -426,7 +426,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 3.5,
 
             RangeCategory = 'UWRC_Countermeasure',
-            RateOfFire = 10/10,
+            RateOfFire = 10/25,
 
             TargetResetWhenReady = true,
 			

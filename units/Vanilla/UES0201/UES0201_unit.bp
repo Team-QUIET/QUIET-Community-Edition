@@ -318,7 +318,7 @@ UnitBlueprint {
                 BelowWaterTargetsOnly = false,
                 CollideFriendly = false,
                 
-                Damage = 90,
+                Damage = 50,
                 DamageType = 'Normal',
                 
                 DisplayName = 'Angler Torpedo',
@@ -489,7 +489,7 @@ UnitBlueprint {
                 RackSalvoReloadTime = 3.5,
 
                 RangeCategory = 'UWRC_Countermeasure',
-                RateOfFire = 10/10,
+                RateOfFire = 10/25,
 
                 TargetResetWhenReady = true,
 
