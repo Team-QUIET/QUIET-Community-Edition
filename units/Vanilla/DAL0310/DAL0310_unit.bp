@@ -1,0 +1,242 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'dal0310',
+
+    IgnoreEvenFlow = true,
+    
+    Audio = {
+        Destroyed = Sound { Bank = 'UALDestroy', Cue = 'UAL_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff'},
+        StartMove = Sound { Bank = 'UAL', Cue = 'UAL0304_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'Aeon_Select_Tank', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 2,
+            Level2 = 3,
+            Level3 = 5,
+            Level4 = 6,
+            Level5 = 8,
+        },
+    },
+	
+    BuildIconSortPriority = 40,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'AEON',
+        'MOBILE',
+        'LAND',
+        'TECH3',
+        'ANTISHIELD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'HOVER',
+		'AMPHIBIOUS',
+    },
+	
+    CollisionOffsetZ = 0.1,
+	
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 800,
+        MaxHealth = 800,
+        RegenRate = 1,
+        SurfaceThreatLevel = 6,
+    },
+	
+    Description = '<LOC dal0310_desc>Shield Disruptor',
+	
+    Display = {
+        Abilities = {
+            '<LOC ability_hover>Hover',
+        },
+        
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {LODCutoff = 100,ShaderName = 'Aeon'},
+                {AlbedoName = 'dal0310_lod1_albedo.dds',LODCutoff = 215,ShaderName = 'Aeon',SpecularName = 'dal0310_lod1_specteam.dds'},
+            },
+        },
+
+        UniformScale = 0.06,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 14200,
+        BuildCostMass = 680,
+        BuildTime = 4260,
+    },
+	
+    General = {
+
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Aeon',
+        Icon = 'amph',
+        UnitName = '<LOC dal0310_name>Absolver',
+    },
+	
+    Intel = {
+        VisionRadius = 20,
+    },
+	
+    Interface = {
+        HelpText = 'Shield Disruptor',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.8,
+    LifeBarSize = 0.75,
+	
+    Physics = {
+		BackUpDistance = 4,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        Elevation = 0.25,
+        
+        MaxAcceleration = 3.5,
+        MaxBrake = 3.5,
+        MaxSpeed = 3.5,
+        MaxSpeedReverse = 3.5,
+        
+        MaxSteerForce = 50,
+        MeshExtentsX = 0.75,
+        MeshExtentsY = 0.5,
+        MeshExtentsZ = 0.8,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Hover',
+        RotateBodyWhileMoving = true,
+        RotateOnSpot = false,
+        
+        TurnFacingRate = 60,
+        TurnRadius = 0,
+        TurnRate = 60,
+    },
+	
+    SelectionSizeX = 0.6,
+    SelectionSizeZ = 1.05,
+    SelectionThickness = 0.37,
+	
+    SizeX = 0.8,
+    SizeY = 0.6,
+    SizeZ = 1.1,
+	
+    StrategicIconName = 'icon_surface3_antishield',
+    StrategicIconSortPriority = 135,
+	
+    Transport = {
+        TransportClass = 3,
+    },
+	
+    Veteran = {
+        Level1 = 9,
+        Level2 = 18,
+        Level3 = 27,
+        Level4 = 36,
+        Level5 = 45,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                MuzzleChargeStart = Sound { Bank = 'UALWeapon', Cue = 'UAL0201_Cannon_Disruptor', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+            
+            Damage = 5,
+            DamageRadius = 0,
+            DamageToShields = 1300,
+            DamageType = 'Normal',
+            
+            DisplayName = 'Shield Disruptor Cannon',
+            
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+            
+            FiringTolerance = 1,
+            
+            Label = 'MainGun',
+            
+            MaxRadius = 60,
+            
+            MuzzleChargeDelay = 0.5,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 30,
+            
+            ProjectileId = '/projectiles/ADFShieldDisruptor01/ADFShieldDisruptor01_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 2,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Barrel_Muzzle'},
+                    RackBone = 'Turret_Barrel_Muzzle',
+                },
+            },
+
+            RackReloadTimeout = 10,
+
+            RangeCategory = 'UWRC_DirectFire',
+            
+            RateOfFire = 10/20,
+            
+            SlavedToBody = true,
+            SlavedToBodyArcRange = 5,
+
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+				'SHIELD',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+
+
+            TurretBoneMuzzle = 'Turret_Barrel',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = false,
+            
+            TurretPitch = 0,
+            TurretPitchRange = 20,
+            TurretPitchSpeed = 60,
+            
+            TurretYaw = 0,
+            TurretYawRange = 10,
+            TurretYawSpeed = 60,
+            
+            Turreted = true,
+            WeaponCategory = "Direct Fire",
+        },
+    },
+
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.3,
+        HealthMult = 0.9,
+        MassMult = 0.35,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}
