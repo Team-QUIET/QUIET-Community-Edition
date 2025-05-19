@@ -1,6 +1,7 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "xal0305",
+    
     AI = {
 		GuardReturnRadius = 35,
         GuardScanRadius = 30,
@@ -20,28 +21,44 @@ UnitBlueprint {
 	
     Display = {
         Abilities = {
-            'Shield Damage Reduction -50%',
+            'Shield Damage Reduction -30%',
 			'High Range',
         },
     },
     
     Economy = {
-        BuildCostEnergy = 13750,
+        BuildCostEnergy = 25000,
         BuildCostMass = 775,
         BuildTime = 360,
+    },
 
-        MaintenanceConsumptionPerSecondEnergy = 250,
+    General = {
+        CapCost = 5,
+
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Aeon',
+        Icon = 'land',
+
+        UnitName = '<LOC xal0305_name>Sprite Striker',
     },
 
     Physics = {
-		BackUpDistance = 0,
+		BackUpDistance = 4,
         BankingSlope = 0,
         DragCoefficient = 0.2,
         MaxAcceleration = 2.4,
-        MaxBrake = 3.2,
-        MaxSpeed = 3.2,
-        MaxSpeedReverse = 0,
-        MaxSteerForce = 10,
+        MaxBrake = 2.5,
+        MaxSpeed = 2.5,
+        MaxSpeedReverse = 2.5,
+        MaxSteerForce = 2.5,
         MeshExtentsX = 1,
         MeshExtentsY = 1.25,
         MeshExtentsZ = 1,
@@ -49,7 +66,7 @@ UnitBlueprint {
         MotionType = 'RULEUMT_Land',
         StandUpright = true,
         TurnRadius = 5,
-        TurnRate = 110,
+        TurnRate = 90,
     },
     
     Weapon = {
@@ -59,7 +76,7 @@ UnitBlueprint {
             CollideFriendly = false,
 			
             Damage = 1200,
-            DamageType = 'ShieldMult0.5',     
+            DamageType = 'ShieldMult0.7',     
 			
             DisplayName = 'Heavy Disruptor Cannon',
             

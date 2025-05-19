@@ -1,6 +1,9 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "xsl0305",
+
+    ScriptClass = 'XSL0305',
+    ScriptModule = '/mods/QUIET-Community-Edition/units/Vanilla/XSL0305/XSL0305_Script.lua',
     
     AI = {
 		GuardReturnRadius = 50,
@@ -12,23 +15,52 @@ UnitBlueprint {
         MaxHealth = 425,
     },
 
+    Display = {
+        Abilities = {
+			'Snipe Mode - Shield Damage Reduction -60%',
+            'Regular Mode - Shield Damage Reduction -20%',
+            'High Range',
+        },
+    },
+
     Economy = {
         BuildCostEnergy = 27000,
         BuildCostMass = 800,
         BuildTime = 4000,
+    },
 
-        MaintenanceConsumptionPerSecondEnergy = 250,
+    General = {
+        CapCost = 5,
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Seraphim',
+        Icon = 'land',
+
+        OrderOverrides = {
+            RULEUTC_WeaponToggle = { bitmapId = 'toggle-weapon', helpText = 'toggle_sniper' },
+        },
+
+        ToggleCaps = {RULEUTC_WeaponToggle = true},
+
+        UnitName = '<LOC xsl0305_name>Usha-Ah',
     },
 	
     Physics = {
         CapCost = 3,
-		BackUpDistance = 0,
+		BackUpDistance = 4,
         BankingSlope = 0,
         DragCoefficient = 0.2,
-        MaxAcceleration = 2.5,
-        MaxBrake = 2.5,
-        MaxSpeed = 2.5,
-        MaxSpeedReverse = 0,
+        MaxAcceleration = 2.2,
+        MaxBrake = 2.3,
+        MaxSpeed = 2.3,
+        MaxSpeedReverse = 2.3,
         MaxSteerForce = 10,
         MeshExtentsX = 1,
         MeshExtentsY = 1.25,
@@ -47,7 +79,7 @@ UnitBlueprint {
             CollideFriendly = false,
 			
             Damage = 700,
-            DamageType = 'ShieldMult0.5',
+            DamageType = 'ShieldMult0.8',
 			
             DisplayName = 'Sih Energy Rifle',
 			
@@ -114,7 +146,7 @@ UnitBlueprint {
 			
             Damage = 2800,
             DamageRadius = 0,
-            DamageType = 'ShieldMult0.25',    
+            DamageType = 'ShieldMult0.40',    
 			
             DisplayName = 'Sih Energy Rifle',
             
