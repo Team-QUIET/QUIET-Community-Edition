@@ -92,7 +92,7 @@ UnitBlueprint {
 			
             IgnoreIfDisabled = true,
 			
-            MaxRadius = 36,
+            MaxRadius = 69,
 
             MuzzleVelocity = 100,
 			
