@@ -66,12 +66,18 @@ UnitBlueprint {
 
 			
             TargetPriorities = {
-                'EXPERIMENTAL',
-                'SHIELD',
-                'SPECIALHIGHPRI',
-                'MOBILE',
-                'DEFENSE',
-                'ALLUNITS',
+                "SPECIALHIGHPRI",
+				"EXPERIMENTAL",
+                "STRUCTURE SHIELD",
+                "TECH3 DEFENSE DIRECTFIRE",
+                "ARTILLERY",
+                "SNIPER",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "COMMAND",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
 
@@ -86,7 +92,7 @@ UnitBlueprint {
 
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 24,
+            TurretYawSpeed = 90,
 
             Turreted = true,
         },

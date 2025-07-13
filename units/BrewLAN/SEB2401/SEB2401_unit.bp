@@ -1,0 +1,300 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "seb2401",
+
+    AI = {
+        TargetBones = {'Turret'},
+    },
+
+    Audio = {
+        DeathExplosion  = Sound { Bank = 'UELDestroy', Cue = 'UEB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff'},
+        Destroyed       = Sound { Bank = 'UELDestroy', Cue = 'UEB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff'},
+        DoneBeingBuilt  = Sound { Bank = 'UEB', Cue = 'UEB2302_Activate', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection     = Sound { Bank = 'Interface', Cue = 'UEF_Select_Gun', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+
+    Buffs = {
+        Regen = {
+            Level1 = 12,
+            Level2 = 24,
+            Level3 = 36,
+            Level4 = 48,
+            Level5 = 60,
+        },
+		VisionRadius = {
+            Level1 = 2,
+            Level2 = 3,
+            Level3 = 3,
+            Level4 = 4,
+            Level5 = 5,
+		},
+    },
+
+    BuildIconSortPriority = 110,
+
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER4ENGINEER',
+        'BUILTBYTIER4COMMANDER',
+        'UEF',
+        'STRUCTURE',
+        'DEFENSE',
+        'EXPERIMENTAL',
+        'DIRECTFIRE',
+        'DRAGBUILD',
+        'SIZE16',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SHOWATTACKRETICLE',
+        'SORTDEFENSE',
+    },
+
+    Defense = {
+        ArmorType = 'Structure',
+
+        Health = 16500,
+        MaxHealth = 16500,
+        RegenRate = 15,
+
+        SurfaceThreatLevel = 314.8,
+    },
+
+    Description = '<LOC seb2401_desc>Experimental Point Defense',
+
+    Display = {
+
+        Abilities = {
+            '<LOC ability_deathaoe>Volatile',
+        },
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                { LODCutoff = 300, ShaderName = 'Unit' },
+                { LODCutoff = 500, ShaderName = 'Unit' },
+            },
+        },
+        
+        Tarmacs = {
+            {
+                Albedo = 'Tarmacs/Tar12x_01_albedo',
+                DeathLifetime = 300,
+                FadeOut = 150,
+                Length = 12.8,
+                Normal = 'Tarmacs/Tar12x_01_normals',
+                Orientations = {0,90,180,270},
+                RemoveWhenDead = false,
+                Width = 12.8,
+            },
+        },
+
+        UniformScale = 0.06,
+    },
+
+    Economy = {
+        BuildCostEnergy = 175000,
+        BuildCostMass = 14250,
+        BuildTime = 15000,
+
+        RebuildBonusIds = {'seb2401'},
+
+        StorageEnergy = 8000,
+    },
+
+    Footprint = {
+        SizeX = 3,
+        SizeZ = 3,
+    },
+
+    General = {
+		CapCost = 6,
+        
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'UEF',
+        Icon = 'land',
+        SelectionPriority = 5,
+
+        UnitName = '<LOC seb2401_name>Excalibur',
+    },
+
+    Intel = {
+        VisionRadius = 52,
+    },
+
+    Interface = {
+        HelpText = '<LOC seb2401_desc>Experimental Point Defense',
+    },
+
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 2.9,
+    LifeBarSize = 6.5,
+
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+
+        MaxSteerForce = 0,
+
+        MeshExtentsX = 3,
+        MeshExtentsY = 2,
+        MeshExtentsZ = 3,
+
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+
+        SkirtSizeX = 4,
+        SkirtSizeZ = 4,
+
+        TurnRate = 0,
+    },
+
+    SelectionSizeX = 2.25,
+    SelectionSizeZ = 2.25,
+    SelectionThickness = 0.24,
+
+    SizeX = 3.4,
+    SizeY = 1.1,
+    SizeZ = 3.4,
+
+    StrategicIconName = 'icon_structure4_directfire',
+    StrategicIconSortPriority = 175,
+
+    Veteran = {
+        Level1 = 30,
+        Level2 = 60,
+        Level3 = 90,
+        Level4 = 120,
+        Level5 = 150,
+    },
+
+    Weapon = {
+        {
+            AimsStraightOnDisable = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'XES_Weapons', Cue = 'XES0307_Plasma_Cannon', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_LowArc',
+
+            CameraShakeDuration = 0.1,
+            CameraShakeMax = 2.2,
+            CameraShakeMin = 0,
+            CameraShakeRadius = 1,
+
+            CollideFriendly = false,
+
+            Damage = 12500,
+            DamageRadius = 2,
+            DamageType = 'Railgun',     -- this is a unique DamageType
+
+            DisplayName = 'Maelstrom Cannon',
+
+            EnergyDrainPerSecond = 1500,        -- 8 second charge
+            EnergyRequired = 12000,
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+
+            FiringTolerance = 0,
+
+            Label = 'MainGun',
+
+            LeadTarget = true,
+
+            MaxRadius = 136,
+            MinRadius = 12,
+
+            MuzzleVelocity = 120,
+
+            NeedPrep = true,
+
+            ProjectileId = '/mods/BrewLAN_LOUD/projectiles/TDFRailGun/TDFRailGun_proj.bp',
+			ProjectileLifetime = 1.65,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle'},
+                    RackBone = 'Turret_Barrel',
+                },
+            },
+
+            RackRecoilDistance = -10,
+
+            RackSalvoFiresAfterCharge = true,
+
+            RangeCategory = 'UWRC_DirectFire',
+
+            RateOfFire = 0.125,	-- every 8 seconds by charge - 625
+
+            TargetCheckInterval = 0.5,
+
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+				"EXPERIMENTAL",
+                "STRUCTURE SHIELD",
+                "TECH3 DEFENSE DIRECTFIRE",
+                "ARTILLERY",
+                "SNIPER",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "COMMAND",
+                "MOBILE SHIELD",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.05,
+
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = false,
+
+            TurretPitch = 0,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 10,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+
+            Turreted = true,
+        },
+
+        {
+            Damage = 2400,
+            DamageFriendly = true,
+            DamageRadius = 8,
+            DamageType = 'Normal',
+            DisplayName = 'Death Weapon',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+            WeaponCategory = 'Death',
+        },
+    },
+
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.2,
+        HealthMult = 0.9,
+        MassMult = 0.2,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

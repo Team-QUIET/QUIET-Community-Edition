@@ -52,12 +52,18 @@ UnitBlueprint {
             RateOfFire = 10/10,     -- 1650 DPS - controlled by energy -- 2 x 750 every second 
 
             TargetPriorities = {
-                'SPECIALHIGHPRI',
-                'TECH3 MOBILE',
-                'TECH2 MOBILE',
-                'TECH1 MOBILE',
-                'SPECIALLOWPRI',
-                'ALLUNITS',
+                "SPECIALHIGHPRI",
+				"EXPERIMENTAL",
+                "STRUCTURE SHIELD",
+                "TECH3 DEFENSE DIRECTFIRE",
+                "ARTILLERY",
+                "SNIPER",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "COMMAND",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
 
@@ -69,11 +75,11 @@ UnitBlueprint {
 			
             TurretPitch = 0,
             TurretPitchRange = 75,
-            TurretPitchSpeed = 40,
+            TurretPitchSpeed = 75,
 			
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 31,
+            TurretYawSpeed = 90,
 			
             Turreted = true,
         },
