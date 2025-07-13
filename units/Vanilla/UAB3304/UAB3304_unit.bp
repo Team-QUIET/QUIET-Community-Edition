@@ -26,7 +26,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 160,
+            Damage = 190,
             DamageFriendly = false,
             DamageRadius = 4,
             DamageType = 'Normal',
@@ -45,13 +45,13 @@ UnitBlueprint {
 			
 			LeadTarget = true,
 			
-            MaxRadius = 55,
+            MaxRadius = 60,
 
             MuzzleVelocity = 45,
 			
 			ProjectileLifetimeUsesMultiplier = 1.25,
 			
-            RackSalvoChargeTime = 0, --drops DPS from 320 (advertised) to 270 if we use 0.1,
+            RackSalvoChargeTime = 0,
 
             RackSalvoReloadTime = 0.4,
 

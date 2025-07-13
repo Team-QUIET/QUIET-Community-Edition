@@ -26,7 +26,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 80,
+            Damage = 110,
 			
             DamageFriendly = false,
             DamageRadius = 5,
@@ -45,7 +45,7 @@ UnitBlueprint {
             FiringTolerance = 2,
 			
 			LeadTarget = true,
-            MaxRadius = 55,
+            MaxRadius = 60,
 
             MuzzleVelocity = 50,
 			
