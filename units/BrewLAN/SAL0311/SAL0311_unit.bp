@@ -1,14 +1,96 @@
 UnitBlueprint {
-  Merge = true,
-  BlueprintId = "sal0311",
+    Merge = true,
+    BlueprintId = "sal0311",
 
-      Weapon = {
+    Weapon = {
         {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                Fire                = Sound { Bank = 'UALWeapon', Cue = 'UAB2301_Cannon_Oblivion_Fire', LodCutoff = 'Weapon_LodCutoff' },
+                MuzzleChargeStart   = Sound { Bank = 'UALWeapon', Cue = 'UAB2301_Cannon_Oblivion_Charge', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 920,
+            DamageRadius = 1,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Oblivion Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+            },
+            
+			FiringRandomness = 0.2,
+			FiringRandomnessWhileMoving = 0.5,
+            FiringTolerance = 1,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 34,
+			
+            MuzzleChargeDelay = 0.4,
 
-            RateOfFire = 5/10,
+            MuzzleVelocity = 32,
+			MuzzleVelocityRandom = 2,
+			
+            ProjectileId = '/projectiles/ADFOblivionCannon03/ADFOblivionCannon03_proj.bp',
+            ProjectileLifetime = 1,
 
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_muzzle_1'},
+                    RackBone = 'Turret_recoil_1',
+                },
+                {
+                    MuzzleBones = {'Turret_muzzle_2'},
+                    RackBone = 'Turret_recoil_2',
+                },
+            },
+
+            RackRecoilDistance = -2.5,
+
+            RackSlavedToTurret = true,
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 3/10,
+			
+            TargetCheckInterval = 1.0,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.1,
+			
+            TurretBoneDualMuzzle = 'Turret_muzzle_2',
+            TurretBoneDualPitch = 'Turret',
+            TurretBoneMuzzle = 'Turret_muzzle_1',
+            TurretBonePitch = 'Turret',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = true,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 35,
+            TurretPitchSpeed = 45,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
             TurretYawSpeed = 75,
-
+			
+            Turreted = true,
+			
+            UseFiringSolutionInsteadOfAimBone = false,
         },
     },
 }
