@@ -56,7 +56,7 @@ UnitBlueprint {
 
             Label = 'AAMissileRack',
             
-            MaxRadius = 52,
+            MaxRadius = 60,
             
             MuzzleSalvoDelay = 0.2,
             MuzzleSalvoSize = 2,
