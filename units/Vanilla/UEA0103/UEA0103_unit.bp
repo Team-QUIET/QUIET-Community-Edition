@@ -64,8 +64,8 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Light',
-        Health = 300,
-        MaxHealth = 300,
+        Health = 215,
+        MaxHealth = 215,
         RegenRate = 1,
         SurfaceThreatLevel = 12,
     },
@@ -97,7 +97,7 @@ UnitBlueprint {
 	
     Economy = {
         BuildCostEnergy = 4250,
-        BuildCostMass = 75,
+        BuildCostMass = 90,
         BuildTime = 1275,
     },
 	
@@ -196,12 +196,12 @@ UnitBlueprint {
 			
             CollideFriendly = false,
 			
-            Damage = 30,
-            DoTPulses = 4,
+            Damage = 12,
+            DoTPulses = 10,
             DoTTime = 4,
 			
             DamageFriendly = true,
-            DamageRadius = 2.5,
+            DamageRadius = 3,
             DamageType = 'Normal',
 			
             DisplayName = 'Napalm Carpet Bomb',
@@ -219,8 +219,8 @@ UnitBlueprint {
 			
             MaxRadius = 40,
 			
-            MuzzleSalvoDelay = 0.2,
-            MuzzleSalvoSize = 2,
+            MuzzleSalvoDelay = 0.3,
+            MuzzleSalvoSize = 4,
             MuzzleVelocity = 0,
 
             NeedToComputeBombDrop = true,
@@ -235,7 +235,7 @@ UnitBlueprint {
                 },
             },
 
-            RateOfFire = 0.5,		-- 120 DPS Surface
+            RateOfFire = 10/50,
 
             TargetPriorities = {
                 'SPECIALHIGHPRI',

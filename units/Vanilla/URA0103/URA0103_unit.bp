@@ -65,8 +65,8 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Light',
-        Health = 285,
-        MaxHealth = 285,
+        Health = 200,
+        MaxHealth = 200,
         RegenRate = 2,
         SurfaceThreatLevel = 12,
     },
@@ -98,7 +98,7 @@ UnitBlueprint {
 	
     Economy = {
         BuildCostEnergy = 4250,
-        BuildCostMass = 75,
+        BuildCostMass = 90,
         BuildTime = 1275,
     },
 	
@@ -195,7 +195,7 @@ UnitBlueprint {
 			
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 2.5,
+            DamageRadius = 3,
             DamageType = 'Normal',
 			
             DisplayName = 'Neutron Cluster Bomb',
@@ -214,7 +214,7 @@ UnitBlueprint {
 			
             MaxRadius = 40,
 			
-            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoDelay = 0.2,
             MuzzleSalvoSize = 6,
 
             MuzzleVelocity = 0,
@@ -237,7 +237,7 @@ UnitBlueprint {
                 },
             },
 
-            RateOfFire = 0.4,	-- 120 DPS
+            RateOfFire = 10/50,
 
             TargetPriorities = {
                 'SPECIALHIGHPRI',

@@ -65,8 +65,8 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Light',
-        Health = 290,
-        MaxHealth = 290,
+        Health = 205,
+        MaxHealth = 205,
         RegenRate = 1,
         SurfaceThreatLevel = 10,
     },
@@ -92,7 +92,7 @@ UnitBlueprint {
 	
     Economy = {
         BuildCostEnergy = 4250,
-        BuildCostMass = 72,
+        BuildCostMass = 90,
         BuildTime = 1275,
     },
 	
@@ -238,8 +238,7 @@ UnitBlueprint {
                 },
             },
 
-            RateOfFire = 0.5,	-- 110 DPS
-
+            RateOfFire = 10/50,
 
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -247,7 +246,6 @@ UnitBlueprint {
                 'ALLUNITS -WALL',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-
         },
     },
 }

@@ -64,8 +64,8 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Light',
-        Health = 290,
-        MaxHealth = 290,
+        Health = 210,
+        MaxHealth = 210,
         RegenRate = 1,
         SurfaceThreatLevel = 12,
     },
@@ -101,7 +101,7 @@ UnitBlueprint {
 	
     Economy = {
         BuildCostEnergy = 4250,
-        BuildCostMass = 75,
+        BuildCostMass = 90,
         BuildTime = 1275,
 	},
 	
@@ -199,7 +199,7 @@ UnitBlueprint {
 
             CollideFriendly = false,
 			
-            Damage = 110,
+            Damage = 125,
             DamageFriendly = true,
             DamageRadius = 3,
             DamageType = 'Normal',
@@ -220,7 +220,7 @@ UnitBlueprint {
 			
             MaxRadius = 40,
 			
-            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoDelay = 0.6,
             MuzzleSalvoSize = 2,
             MuzzleVelocity = 0,
 			
@@ -235,7 +235,7 @@ UnitBlueprint {
                 },
             },
 
-            RateOfFire = 0.5,	-- 110 DPS
+            RateOfFire = 10/50,
 
             TargetPriorities = {
                 'SPECIALHIGHPRI',
