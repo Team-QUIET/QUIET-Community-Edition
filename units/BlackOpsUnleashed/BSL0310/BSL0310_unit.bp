@@ -1,8 +1,22 @@
 UnitBlueprint {
-  Merge = true,
-  BlueprintId = "bsl0310",
+    Merge = true,
+    BlueprintId = "bsl0310",
 
-      Weapon = {
+    Defense = {
+
+        LambdaDestroy01 = {AttachBone = 'L_Arm_Muzzle', Radius = 4.5, RedirectRateOfFire = 3 },
+    
+        ArmorType = 'Normal',
+
+        Health = 2050,
+        MaxHealth = 2050,
+
+        RegenRate = 2,
+
+        SurfaceThreatLevel = 49,
+    },
+
+    Weapon = {
         {
 
             RateOfFire = 20/10,
