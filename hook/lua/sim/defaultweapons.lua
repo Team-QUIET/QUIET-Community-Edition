@@ -210,7 +210,7 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
     -- Played when a muzzle is fired. Mostly used for muzzle flashes
     PlayFxMuzzleSequence = function(self, muzzle)
         if type(self.FxMuzzleFlash) ~= "table" then
-            WARN(self.unit:GetUnitId() .. " FxMuzzleFlash is not a table, it's a " .. type(self.FxMuzzleFlash))
+            --WARN(self.unit:GetUnitId() .. " FxMuzzleFlash is not a table, it's a " .. type(self.FxMuzzleFlash))
             return
         end
         local unit = self.unit
@@ -224,7 +224,7 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
     -- Played during the beginning of the MuzzleChargeDelay time when a muzzle in a rack is fired.
     PlayFxMuzzleChargeSequence = function(self, muzzle)
         if type(self.FxChargeMuzzleFlash) ~= "table" then
-            WARN(self.unit:GetUnitId() .. " FxChargeMuzzleFlash is not a table, it's a " .. type(self.FxChargeMuzzleFlash))
+            --WARN(self.unit:GetUnitId() .. " FxChargeMuzzleFlash is not a table, it's a " .. type(self.FxChargeMuzzleFlash))
             return
         end
         local unit = self.unit
@@ -239,7 +239,7 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
     -- Do not wait in here or the sequence in the blueprint will be messed up. Fork a thread instead
     PlayFxRackSalvoChargeSequence = function(self, blueprint)
         if type(self.FxRackChargeMuzzleFlash) ~= "table" then
-            WARN(self.unit:GetUnitId() .. " FxRackChargeMuzzleFlash is not a table, it's a " .. type(self.FxRackChargeMuzzleFlash))
+            --WARN(self.unit:GetUnitId() .. " FxRackChargeMuzzleFlash is not a table, it's a " .. type(self.FxRackChargeMuzzleFlash))
             return
         end
         local bp = blueprint or self.bp
