@@ -1,0 +1,624 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "ual0301",
+
+    AI = {
+        GuardScanRadius = 33,
+
+        TargetBones = {
+            'AttachPoint',  -- this point is intentionally missable
+            'Leg_Left_B01',
+            'Leg_Right_B01',
+            'Leg_Left_B02',
+            'Leg_Right_B02',
+            'Arm_Left_B01',
+            'Arm_Right_B01',
+        },
+    },
+	
+    Audio = {
+        Destroyed   = Sound { Bank = 'UALDestroy', Cue = 'UAL_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff'},
+        Killed      = Sound { Bank = 'Explosions', Cue = 'Aeon_Nuke_Impact', LodCutoff = 'UnitMove_LodCutoff'},
+        StartMove   = Sound { Bank = 'UAL', Cue = 'UAL0301_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'Aeon_Select_Commander', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 5,
+            Level2 = 10,
+            Level3 = 15,
+            Level4 = 20,
+            Level5 = 25,
+        },
+        VisionRadius = {
+            Level1 = 1,
+            Level2 = 1,
+            Level3 = 2,
+            Level4 = 2,
+            Level5 = 2,        
+        },
+        WaterVisionRadius = {
+            Level1 = 1,
+            Level2 = 1,
+            Level3 = 2,
+            Level4 = 2,
+            Level5 = 2,        
+        },        
+    },
+	
+    BuildIconSortPriority = 5,
+	
+    Categories = {
+        'SELECTABLE',
+        'AEON',
+        'MOBILE',
+        'LAND',
+        'TECH3',
+        'ENGINEER',
+        'CONSTRUCTION',
+        'REPAIR',
+        'RECLAIM',
+--        'REBUILDER',
+        'BUILTBYQUANTUMGATE',
+        'CAPTURE',
+        'VISIBLETORECON',
+        'SUBCOMMANDER',
+        'PATROLHELPER',
+        'SHOWQUEUE',
+        'OVERLAYOMNI',
+        'OVERLAYMISC',
+    },
+	
+    Defense = {
+        ArmorType = 'Normal',
+
+        EconomyThreatLevel = 180 + 432,		-- BuildRate * 3 + 2% of health
+
+        Health = 13000,
+        MaxHealth = 13000,
+
+		MaxTeleRange = 300,
+		NoTeleDistance = 35,
+
+        RegenRate = 23,
+
+        SurfaceThreatLevel = 35,
+    },
+	
+    Description = '<LOC ual0301_desc>Support Armored Command Unit',
+	
+    Display = {
+        Abilities = {
+            '<LOC ability_amphibious>Amphibious',
+            '<LOC ability_customizable>Customizable',
+            '<LOC ability_omni>Omni Sensor',
+        },
+
+        AnimationWalk = '/units/UAL0301/UAL0301_AWalk01.sca',
+        AnimationWalkRate = 3.5,
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 100,
+                    Scrolling = true,
+                    ShaderName = 'Aeon',
+                },
+                {
+                    AlbedoName = 'ual0301_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    ShaderName = 'Aeon',
+                    SpecularName = 'ual0301_lod1_specteam.dds',
+                },
+            },
+        },
+
+        TransportAnimation = {
+            {
+                Animation = '/units/UAL0301/UAL0301_afold.sca',
+                Weight = 100,
+            },
+        },
+        TransportDropAnimation = {
+            {
+                Animation = '/units/UAL0301/UAL0301_aunfold.sca',
+                Weight = 100,
+            },
+        },
+        UniformScale = 0.13, 
+    },
+	
+    Economy = {
+        BuildCostEnergy = 117000,
+        BuildCostMass = 8650,
+        BuildRate = 60,
+
+        BuildTime = 48000,
+		
+        BuildableCategory = {
+            'BUILTBYTIER4COMMANDER AEON',
+            'BUILTBYTIER3ENGINEER AEON',
+        },
+		
+		MaxBuildDistance = 10,
+		
+        NaturalProducer = true,
+		
+        ProductionPerSecondEnergy = 100,
+        ProductionPerSecondMass = 1,
+		
+        SacrificeEnergyMult = 0.9,
+        SacrificeMassMult = 0.9,
+		
+        StorageEnergy = 3000,
+        StorageMass = 300,
+		
+        -- for teleporter
+		TeleportBurstEnergyCost = 5000,
+    },
+    
+    Enhancements = {
+        
+        Slots = {
+            Back = { name = '<LOC _Back>', x = -13, y = -8 },
+            LCH = { name = '<LOC _LCH>', x = 60, y = 50 },
+            RCH = { name = '<LOC _RCH>', x = -16, y = 50 },
+			Command = {},
+        },
+
+        EngineeringFocusingModule = {
+            BuildCostEnergy = 75000,
+            BuildCostMass = 2100,
+            BuildTime = 9000,
+            Icon = 'efm',
+            Name = '<LOC enhancements_0022>Rapid Fabricator',
+            NewBuildRate = 90,
+            Slot = 'LCH',
+            UpgradeUnitAmbientBones = {
+                'UAL0301',
+            },
+        },
+        
+        EngineeringFocusingModuleRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            Icon = 'efm',
+            Name = '<LOC enhancements_0023>Remove Rapid Fabricator',
+            Prerequisite = 'EngineeringFocusingModule',
+            RemoveEnhancements = {
+                'EngineeringFocusingModule',
+                'EngineeringFocusingModuleRemove',
+            },
+            Slot = 'LCH',
+        },
+        
+        ResourceAllocation = {
+            BuildCostEnergy = 120000,
+            BuildCostMass = 5000,
+            BuildTime = 8900,
+            Icon = 'ras',
+            Name = 'Resource Allocation System',
+            ProductionPerSecondEnergy = 2000,
+            ProductionPerSecondMass = 12,
+            Slot = 'RCH',
+            UpgradeUnitAmbientBones = {
+                'UAL0301',
+            },
+        },
+        
+        ResourceAllocationRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            Icon = 'ras',
+            Name = '<LOC enhancements_0025>Remove Resource Allocation System',
+            Prerequisite = 'ResourceAllocation',
+            RemoveEnhancements = {
+                'ResourceAllocation',
+                'ResourceAllocationRemove',
+            },
+            Slot = 'RCH',
+        },
+        
+        Sacrifice = {
+            BuildCostEnergy = 2500,
+            BuildCostMass = 150,
+            BuildTime = 750,
+            Icon = 'sp',
+            Name = '<LOC enhancements_0026>Sacrificial System',
+            Slot = 'LCH',
+            UpgradeUnitAmbientBones = {
+                'UAL0301',
+            },
+        },
+        
+        SacrificeRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            Icon = 'sp',
+            Name = '<LOC enhancements_0027>Remove Sacrificial System',
+            Prerequisite = 'Sacrifice',
+            RemoveEnhancements = {
+                'Sacrifice',
+                'SacrificeRemove',
+            },
+            Slot = 'LCH',
+        },
+        
+        Shield = {
+            BuildCostEnergy = 93750,
+            BuildCostMass = 1500,
+            BuildTime = 7500,
+            Icon = 'tsg',
+            ImpactEffects = 'AeonShieldHit01',
+            MaintenanceConsumptionPerSecondEnergy = 300,
+            Name = '<LOC enhancements_0028>Personal Shield Generator',
+            OwnerShieldMesh = '/units/ual0301/ual0301_personalshield_mesh',
+            RegenAssistMult = 10,
+            ShieldEnergyDrainRechargeTime = 5,
+            ShieldMaxHealth = 20000,
+            ShieldRechargeTime = 190,
+            ShieldRegenRate = 105,
+            ShieldRegenStartTime = 1,
+            
+            ShowBones = {'Turbine'},
+            Slot = 'Back',
+            UpgradeEffectBones = {'Turbine'},
+            UpgradeUnitAmbientBones = {'UAL0301'},
+        },
+        
+        ShieldRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            HideBones = {
+                'Turbine',
+            },
+            Icon = 'tsg',
+            Name = '<LOC enhancements_0030>Remove Personal Shield',
+            Prerequisite = 'Shield',
+            RemoveEnhancements = {
+                'Shield',
+                'ShieldRemove',
+            },
+            Slot = 'Back',
+        },
+        
+        ShieldHeavy = {
+            BuildCostEnergy = 135000,
+            BuildCostMass = 2250,
+            BuildTime = 9000,
+            Icon = 'htsg',
+            ImpactEffects = 'AeonShieldHit01',
+            MaintenanceConsumptionPerSecondEnergy = 600,
+            Name = '<LOC enhancements_0029>Heavy Personal Shield Generator',
+            OwnerShieldMesh = '/units/ual0301/ual0301_personalshield_mesh',
+            Prerequisite = 'Shield',
+            ShieldEnergyDrainRechargeTime = 9,
+            ShieldMaxHealth = 32000,
+            ShieldRechargeTime = 200,
+            ShieldRegenRate = 160,
+            ShieldRegenStartTime = 1,
+            Slot = 'Back',
+            UpgradeEffectBones = {'Turbine'},
+            UpgradeUnitAmbientBones = {'UAL0301'},
+        },
+        
+        ShieldHeavyRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            HideBones = {
+                'Turbine',
+            },
+            Icon = 'htsg',
+            Name = 'Remove Shields',
+            Prerequisite = 'ShieldHeavy',
+            RemoveEnhancements = {
+                'Shield',
+                'ShieldHeavy',
+                'ShieldHeavyRemove',
+            },
+            Slot = 'Back',
+        },
+
+        StabilitySuppressant = {
+            BuildCostEnergy = 93750,
+            BuildCostMass = 1000,
+            BuildTime = 7500,
+            Icon = 'ss',
+            Name = '<LOC enhancements_0031>Reacton Refractor',
+            NewDamageRadiusMod = 4,
+            Slot = 'RCH',
+            UpgradeUnitAmbientBones = {
+                'UAL0301',
+            },
+        },
+        
+        StabilitySuppressantRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            Icon = 'ss',
+            Name = '<LOC enhancements_0032>Remove Reacton Refractor',
+            NewDamageRadiusMod = -4,
+            Prerequisite = 'StabilitySuppressant',
+            RemoveEnhancements = {
+                'StabilitySuppressant',
+                'StabilitySuppressantRemove',
+            },
+            Slot = 'RCH',
+        },
+        
+        SystemIntegrityCompensator = {
+            BuildCostEnergy = 90000,
+            BuildCostMass = 1800,
+            BuildTime = 9000,
+            Icon = 'sic',
+            Name = '<LOC enhancements_0033>Nano-Repair System',
+            NewRegenRate = 300,
+            ShowBones = {
+                'Turbine',
+            },
+            Slot = 'Back',
+            UpgradeEffectBones = {
+                'Turbine',
+            },
+            UpgradeUnitAmbientBones = {
+                'UAL0301',
+            },
+        },
+        
+        SystemIntegrityCompensatorRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            HideBones = {
+                'Turbine',
+            },
+            Icon = 'sic',
+            Name = '<LOC enhancements_0034>Remove Nano-Repair System',
+            Prerequisite = 'SystemIntegrityCompensator',
+            RemoveEnhancements = {
+                'SystemIntegrityCompensator',
+                'SystemIntegrityCompensatorRemove',
+            },
+            Slot = 'Back',
+        },
+        
+        Teleporter = {
+
+            BuildCostEnergy = 150000,
+            BuildCostMass = 10000,
+            BuildTime = 11500,
+
+            Icon = 'pqt',
+
+            --MaintenanceConsumptionPerSecondEnergy = 300,
+
+            Name = '<LOC enhancements_0035>Personal Teleporter',
+
+            ShowBones = {'Turbine'},
+
+            Slot = 'Back',
+
+            UpgradeEffectBones = {'Turbine'},
+            UpgradeUnitAmbientBones = {'UAL0301'},
+        },
+        
+        TeleporterRemove = {
+
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+
+            HideBones = {'Turbine'},
+
+            Icon = 'pqt',
+
+            Name = '<LOC enhancements_0036>Remove Personal Teleporter',
+
+            Prerequisite = 'Teleporter',
+
+            RemoveEnhancements = {'Teleporter','TeleporterRemove'},
+
+            Slot = 'Back',
+        },
+    },
+    
+    General = {
+        BuildBones = {
+            AimBone = 'Arm_Right_Build',
+            BuildEffectBones = {'Arm_Right_Build'},
+            PitchBone = 'Arm_Right_B03',
+            YawBone = 'Torso',
+        },
+
+		CapCost = -3,
+
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Capture = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_Reclaim = true,
+            RULEUCC_Repair = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+
+        ConstructionBar = true,
+        FactionName = 'Aeon',
+        Icon = 'amph',
+
+        OrderOverrides = {
+            RULEUTC_ShieldToggle = { bitmapId = 'shield-personal', helpText = 'toggle_shield_personal' },
+        },
+
+        SelectionPriority = 3,
+    },
+    
+    Intel = {
+        FreeIntel = true,
+
+        OmniRadius = 12,
+        VisionRadius = 32,
+        WaterVisionRadius = 20,
+    },
+    
+    Interface = {
+        HelpText = 'Support Armored Command Unit',
+    },
+    
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.4,
+    LifeBarSize = 0.9,
+    
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        LayerChangeOffsetHeight = -0.85,
+        MaxAcceleration = 1.1,
+        MaxBrake = 2.2,
+        MaxSpeed = 2.2,
+        MaxSpeedReverse = 0,
+        MaxSteerForce = 12,
+        MeshExtentsX = 0.9,
+        MeshExtentsY = 1.4,
+        MeshExtentsZ = 0.6,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Amphibious',
+        StandUpright = true,
+        TurnRadius = 10,
+        TurnRate = 70,
+    },
+    
+    SelectionCenterOffsetZ = -0.1,
+    SelectionSizeX = 0.55,
+    SelectionSizeZ = 0.5,
+    SelectionThickness = 0.7,
+    
+    SizeX = 0.95,
+    SizeY = 1.6,
+    SizeZ = 0.5,
+    
+    StrategicIconName = 'icon_subcommander_generic',
+    StrategicIconSortPriority = 1,
+    
+    Transport = {
+        CanFireFromTransport = false,
+        TransportClass = 2,
+    },
+    
+    Veteran = {
+        Level1 = 30,
+        Level2 = 60,
+        Level3 = 90,
+        Level4 = 120,
+        Level5 = 150,
+    },
+    
+    Weapon = {
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'UALWeapon', Cue = 'UAL0301_BG_Gun', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+            
+            Damage = 67,
+            DamageType = 'Normal',
+            
+            DisplayName = 'Reacton Cannon',
+            
+            FireTargetLayerCapsTable = {
+                Land = 'Air|Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 2,
+            
+            Label = 'RightReactonCannon',
+            
+            MaxRadius = 33,
+            MinRadius = 1,
+            
+            MuzzleSalvoDelay = 0.3,
+            MuzzleSalvoSize = 3,
+            MuzzleVelocity = 33,
+            
+            ProjectileId = '/projectiles/ADFReactonCannon01/ADFReactonCannon01_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 1.2,
+
+            RackBones = {
+                { MuzzleBones = {'Arm_Left_Muzzle'}, RackBone = 'Arm_Left_B03' },
+            },
+            
+            RangeCategory = 'UWRC_DirectFire',
+            
+            RateOfFire = 1,
+            
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            
+            TurretBoneMuzzle = 'Arm_Left_Muzzle',
+            TurretBonePitch = 'Arm_Left_B03',
+            TurretBoneYaw = 'Torso',
+            
+            TurretPitch = 0,
+            TurretPitchRange = 160,
+            TurretPitchSpeed = 90,
+            
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 60,
+            
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+        },
+        {
+            Damage = 4500,
+            DamageFriendly = true,
+            DamageRadius = 6,
+            DamageType = 'Normal',
+            DisplayName = 'Death Weapon',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+            WeaponCategory = 'Death',
+        },
+    },
+
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.3,
+        HealthMult = 0.3,
+        MassMult = 0.3,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+            Seabed = true,
+        },
+    },
+}

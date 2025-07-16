@@ -1,0 +1,606 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "url0301",
+
+    AI = {
+    
+        GuardScanRadius = 33,
+        
+        TargetBones = {
+            'Head',         -- intentionally missable
+            'Right_Arm01',
+            'Left_Arm01',
+            'Left_Thigh',
+            'Right_Thigh',
+            'Left_Leg',
+            'Right_Leg',            
+        },
+    },
+    
+    Audio = {
+        Destroyed   = Sound { Bank = 'URLDestroy', Cue = 'URL_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff'},
+        Killed      = Sound { Bank = 'Explosions', Cue = 'Cybran_Nuke_Impact', LodCutoff = 'UnitMove_LodCutoff'},
+        StartMove   = Sound { Bank = 'URL', Cue = 'URL0301_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'Cybran_Select_Commander', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+    
+    Buffs = {
+        Regen = {
+            Level1 = 7,
+            Level2 = 12,
+            Level3 = 18,
+            Level4 = 25,
+            Level5 = 33,
+        },
+        VisionRadius = {
+            Level1 = 1,
+            Level2 = 1,
+            Level3 = 2,
+            Level4 = 2,
+            Level5 = 2,        
+        },
+        WaterVisionRadius = {
+            Level1 = 1,
+            Level2 = 1,
+            Level3 = 2,
+            Level4 = 2,
+            Level5 = 2,        
+        },        
+    },
+    
+    BuildIconSortPriority = 10,
+    
+    Categories = {
+        'SELECTABLE',
+        'CYBRAN',
+        'MOBILE',
+        'LAND',
+        'TECH3',
+        'ENGINEER',
+        'CONSTRUCTION',
+        'REPAIR',
+        'RECLAIM',
+--        'REBUILDER',
+        'BUILTBYQUANTUMGATE',
+        'CAPTURE',
+        'VISIBLETORECON',
+        'SUBCOMMANDER',
+        'PATROLHELPER',
+        'SHOWQUEUE',
+        'OVERLAYOMNI',
+        'OVERLAYMISC',
+    },
+    
+    Defense = {
+        ArmorType = 'Normal',
+
+        EconomyThreatLevel = 180 + 432,		-- BuildRate * 3 + 2% of health
+
+        Health = 12500,
+        MaxHealth = 12500,
+
+		MaxTeleRange = 300,
+		NoTeleDistance = 35,    -- if equipped with antiteleport
+
+        RegenRate = 25,
+
+        SurfaceThreatLevel = 35,
+    },
+	
+    Description = '<LOC url0301_desc>Support Armored Command Unit',
+	
+    Display = {
+        Abilities = {
+            '<LOC ability_amphibious>Amphibious',
+            '<LOC ability_customizable>Customizable',
+            '<LOC ability_omni>Omni Sensor',
+        },
+
+        AnimationWalk = '/units/url0301/url0301_awalk01.sca',
+        AnimationWalkRate = 3.2,
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 100,
+                    ShaderName = 'Insect',
+                },
+                {
+                    AlbedoName = 'url0301_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    ShaderName = 'Insect',
+                    SpecularName = 'url0301_lod1_specteam.dds',
+                },
+            },
+        },
+
+        TransportAnimation = { { Animation = '/units/URL0301/URL0301_afold01.sca', Weight = 100 } },
+
+        UniformScale = 0.13,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 123000,
+        BuildCostMass = 9600,
+        BuildRate = 60,
+
+        BuildTime = 48000,
+		
+        BuildableCategory = {
+            'BUILTBYTIER4COMMANDER CYBRAN',
+            'BUILTBYTIER3ENGINEER CYBRAN',
+        },
+		
+        MaxBuildDistance = 10,
+		
+        NaturalProducer = true,
+		
+        ProductionPerSecondEnergy = 100,
+        ProductionPerSecondMass = 1,
+		
+        StorageEnergy = 3000,
+        StorageMass = 300,
+		
+        -- for teleporter
+		TeleportBurstEnergyCost = 5000,
+    },
+    
+    Enhancements = {
+    
+        Slots = {
+            Back    = { name = '<LOC _Back>', x = 9, y = -2 },
+            LCH     = { name = '<LOC _LCH>', x = 48, y = 10 },
+            RCH     = { name = '<LOC _RCH>', x = -10, y = 10 },
+			Command = {},
+        },    
+        
+        CloakingGenerator = {
+            BuildCostEnergy = 1200000,
+            BuildCostMass = 9000,
+            BuildTime = 18000,
+            Icon = 'cfs',
+            MaintenanceConsumptionPerSecondEnergy = 6000,
+            Name = '<LOC enhancements_0089>Personal Cloaking Generator',
+            NewHealth = 15000,
+            Prerequisite = 'StealthGenerator',
+            Slot = 'Back',
+            UpgradeUnitAmbientBones = {'URL0301'},
+        },
+        
+        CloakingGeneratorRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            Icon = 'cfs',
+            Name = '<LOC enhancements_0090>Remove Personal Cloaking Generator',
+            Prerequisite = 'CloakingGenerator',
+            RemoveEnhancements = {'StealthGenerator','CloakingGenerator','CloakingGeneratorRemove'},
+            Slot = 'Back',
+        },
+        
+        EMPCharge = {
+            BuildCostEnergy = 90000,
+            BuildCostMass = 2250,
+            BuildTime = 9000,
+            Icon = 'emp',
+            Name = '<LOC enhancements_0091>EMP Burst',
+            Slot = 'LCH',
+            UpgradeUnitAmbientBones = {'URL0301'},
+        },
+        
+        EMPChargeRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            Icon = 'emp',
+            Name = '<LOC enhancements_0092>Remove EMP Burst',
+            Prerequisite = 'EMPCharge',
+            RemoveEnhancements = {'EMPCharge','EMPChargeRemove'},
+            Slot = 'LCH',
+        },
+        
+        FocusConvertor = {
+            BuildCostEnergy = 45000,
+            BuildCostMass = 1000,
+            BuildTime = 5000,
+            Icon = 'fc',
+            Name = '<LOC enhancements_0093>Disintegrator Amplifier',
+            NewDamageMod = 250,
+            Slot = 'RCH',
+            UpgradeUnitAmbientBones = {'URL0301'},
+        },
+        
+        FocusConvertorRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            Icon = 'fc',
+            Name = '<LOC enhancements_0094>Remove Disintegrator Amplifier',
+            Prerequisite = 'FocusConvertor',
+            RemoveEnhancements = {'FocusConvertor','FocusConvertorRemove'},
+            Slot = 'RCH',
+        },
+        
+        NaniteMissileSystem = {
+            BuildCostEnergy = 30000,
+            BuildCostMass = 1000,
+            BuildTime = 7500,
+            Icon = 'nms',
+            Name = '<LOC enhancements_0095>Nanite Missile System',
+            Slot = 'Back',
+            UpgradeUnitAmbientBones = {'URL0301'},
+        },
+        
+        NaniteMissileSystemRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            Icon = 'nms',
+            Name = '<LOC enhancements_0096>Remove Nanite Missile System',
+            Prerequisite = 'NaniteMissileSystem',
+            RemoveEnhancements = {'NaniteMissileSystem','NaniteMissileSystemRemove'},
+            Slot = 'Back',
+        },
+        
+        ResourceAllocation = {
+            BuildCostEnergy = 120000,
+            BuildCostMass = 5000,
+            BuildTime = 8900,
+            Icon = 'ras',
+            Name = 'Resource Allocation System',
+            ProductionPerSecondEnergy = 2000,
+            ProductionPerSecondMass = 12,
+            Slot = 'RCH',
+            UpgradeUnitAmbientBones = {'URL0301'},
+        },
+        
+        ResourceAllocationRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            Icon = 'ras',
+            Name = '<LOC enhancements_0098>Remove Resource Allocation System',
+            Prerequisite = 'ResourceAllocation',
+            RemoveEnhancements = {'ResourceAllocation','ResourceAllocationRemove'},
+            Slot = 'RCH',
+        },
+        
+        SelfRepairSystem = {
+            BuildCostEnergy = 112500,
+            BuildCostMass = 2250,
+            BuildTime = 9000,
+            Icon = 'srs',
+            Name = '<LOC enhancements_0099>Nano-Repair System',
+            NewRegenRate = 200,
+            Slot = 'Back',
+            UpgradeUnitAmbientBones = {'URL0301'},
+        },
+        
+        SelfRepairSystemRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            Icon = 'srs',
+            Name = '<LOC enhancements_0100>Remove Nano-Repair System',
+            Prerequisite = 'SelfRepairSystem',
+            RemoveEnhancements = {'SelfRepairSystem','SelfRepairSystemRemove'},
+            Slot = 'Back',
+        },
+
+        StealthGenerator = {
+            BuildCostEnergy = 112500,
+            BuildCostMass = 3000,
+            BuildTime = 9000,
+            Icon = 'sfs',
+            MaintenanceConsumptionPerSecondEnergy = 250,
+            Name = '<LOC enhancements_0101>Personal Stealth Generator',
+            Slot = 'Back',
+            UpgradeUnitAmbientBones = {'URL0301'},
+        },
+        
+        StealthGeneratorRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            Icon = 'sfs',
+            Name = '<LOC enhancements_0102>Remove Personal Stealth Generator',
+            Prerequisite = 'StealthGenerator',
+            RemoveEnhancements = {'StealthGenerator','StealthGeneratorRemove'},
+            Slot = 'Back',
+        },
+        
+        Switchback = {
+            BuildCostEnergy = 75000,
+            BuildCostMass = 2100,
+            BuildTime = 9000,
+            Icon = 'ses',
+            Name = '<LOC enhancements_0109>Rapid Fabricator',
+            NewBuildRate = 90,
+            Slot = 'LCH',
+            UpgradeUnitAmbientBones = {'URL0301'},
+        },
+        
+        SwitchbackRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            Icon = 'ses',
+            Name = '<LOC enhancements_0110>Remove Rapid Fabricator',
+            Prerequisite = 'Switchback',
+            RemoveEnhancements = {'Switchback','SwitchbackRemove'},
+            Slot = 'LCH',
+        },
+    },
+    
+    General = {
+        BuildBones = { AimBone = 0, BuildEffectBones = {'Build'}, PitchBone = 'Engineering_Arm', YawBone = 'Torso' },
+
+		CapCost = -3,
+
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Capture = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_Reclaim = true,
+            RULEUCC_Repair = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        ConstructionBar = true,
+        FactionName = 'Cybran',
+        Icon = 'amph',
+        SelectionPriority = 3,
+    },
+    
+    Intel = {
+
+        FreeIntel = false,
+
+        Cloak = true,
+        RadarStealth = true,
+        SonarStealth = true,
+
+        OmniRadius = 12,
+        VisionRadius = 32,
+        WaterVisionRadius = 20,
+
+        ReactivateTime = 2,
+    },
+    
+    Interface = {
+        HelpText = 'Support Armored Command Unit',
+    },
+    
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.4,
+    LifeBarSize = 0.9,
+    
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        LayerChangeOffsetHeight = -0.9,
+        MaxAcceleration = 1.1,
+        MaxBrake = 2.2,
+        MaxSpeed = 2.2,
+        MaxSpeedReverse = 0,
+        MaxSteerForce = 12,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Amphibious',
+        StandUpright = true,
+        TurnRadius = 10,
+        TurnRate = 70,
+    },
+    
+    SelectionCenterOffsetX = 0,
+    SelectionCenterOffsetZ = -0.1,
+    SelectionSizeX = 0.55,
+    SelectionSizeZ = 0.5,
+    SelectionThickness = 0.7,
+    SelectionYOffset = 0,
+    
+    SizeX = 0.75,
+    SizeY = 1.5,
+    SizeZ = 0.45,
+
+    StrategicIconName = 'icon_subcommander_generic',
+    StrategicIconSortPriority = 1,
+    
+    Transport = {
+        CanFireFromTransport = false,
+        TransportClass = 2,
+    },
+    
+    Veteran = {
+        Level1 = 30,
+        Level2 = 60,
+        Level3 = 90,
+        Level4 = 120,
+        Level5 = 150,
+    },
+    
+    Weapon = {
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound {Bank = 'URLWeapon', Cue = 'URL0301_BG_Gun', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_LowArc',
+
+            Buffs = {
+                {
+                    Add = { OnImpact = false },
+                    AppliedToTarget = false,
+                    BuffType = 'STUN',
+                    Duration = 0,
+                    Radius = 0,
+                    TargetAllow = 'LAND,NAVAL',
+                    TargetDisallow = 'EXPERIMENTAL,COMMAND,AIR',
+                },
+            },
+
+            CollideFriendly = false,
+            
+            Damage = 200,
+            DamageType = 'Normal',
+            
+            DisplayName = 'Disintegrator Pulse Laser',
+            
+            FireTargetLayerCapsTable = {
+                Land = 'Air|Land|Water',
+                Seabed = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 2,
+            
+            Label = 'RightDisintegrator',
+            
+            MaxRadius = 33,
+            MinRadius = 1,
+            
+            MuzzleVelocity = 28,
+            
+            ProjectileId = '/projectiles/CDFLaserDisintegrator03/CDFLaserDisintegrator03_proj.bp',
+            ProjectileLifetime = 1,
+
+            RackBones = {
+                { MuzzleBones = {'Laser'}, RackBone = 'Pulse_Laser' },
+            },
+
+            RackRecoilDistance = -0.1,
+            
+            RangeCategory = 'UWRC_DirectFire',
+            
+            RateOfFire = 1,
+            
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            
+            TurretBoneMuzzle = 'Laser',
+            TurretBonePitch = 'Pulse_Laser',
+            TurretBoneYaw = 'Torso',
+            
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 90,
+            
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 60,
+            
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+        },
+        {
+            AboveWaterFireOnly = true,
+            AlwaysRecheckTarget = true,
+
+            Audio = {
+                Fire = Sound {Bank = 'URLWeapon', Cue = 'URL0301_Missile_Nanite_BC', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+            
+            Damage = 440,
+            DamageType = 'Normal',
+            
+            DisplayName = 'Nanite Missile System',
+            
+            EffectiveRadius = 0,
+            
+            EnabledByEnhancement = 'NaniteMissileSystem',
+            EnergyDrainPerSecond = 0,
+            EnergyRequired = 0,
+            
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Seabed = 'Air',
+            },
+            FiringTolerance = 2,
+            
+            Label = 'NMissile',
+            
+            MaxRadius = 60,
+            
+            MuzzleSalvoDelay = 0.4,
+            MuzzleSalvoSize = 3,
+            MuzzleVelocity = 30,
+            
+            ProjectileId = '/projectiles/CAAMissileNanite02/CAAMissileNanite02_proj.bp',
+            ProjectileLifetime = 3.2,
+
+            RackBones = {
+                { MuzzleBones = {'Muzzle02'}, RackBone = 'Barrel01'},
+            },
+            
+            RangeCategory = 'UWRC_AntiAir',
+            
+            RateOfFire = 0.5,
+            
+            TargetCheckInterval = 0.3,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'HIGHPRIAIR',
+                'BOMBER',
+                'GROUNDATTACK',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE','SATELLITE',
+            
+            TrackingRadius = 1.3,
+            TurretBoneMuzzle = 'Muzzle01',
+            TurretBonePitch = 'Barrel01',
+            TurretBoneYaw = 'Barrel01',
+            
+            TurretPitch = 25,
+            TurretPitchRange = 40,
+            TurretPitchSpeed = 180,
+            
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 60,
+            
+            Turreted = true,
+        },
+        {
+            Damage = 4500,
+            DamageFriendly = true,
+            DamageRadius = 6,
+            DamageType = 'Normal',
+            DisplayName = 'Death Weapon',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+            WeaponCategory = 'Death',
+        },
+    },
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.3,
+        HealthMult = 0.3,
+        MassMult = 0.3,
+        ReclaimTimeMultiplier = 0.4,
+        WreckageLayers = {
+            Land = true,
+            Seabed = true,
+        },
+    },
+}

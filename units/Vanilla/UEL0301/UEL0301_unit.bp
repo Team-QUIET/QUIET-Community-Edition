@@ -1,0 +1,658 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "uel0301",
+
+    AI = {
+        GuardScanRadius = 33,
+        
+        TargetBones = {
+            'Head',             -- intentionally missable
+            'Left_Left_B02',
+            'Left_Right_B02',
+            'Left_Left_B01',
+            'Left_Right_B01',            
+            'Arm_Left_B01',
+            'Arm_Right_B01',
+        },
+    },
+	
+    Audio = {
+        Destroyed   = Sound { Bank = 'UELDestroy', Cue = 'UEL_Destroy_Med_Land', LodCutoff = 'UnitMove_LodCutoff'},
+        Killed      = Sound { Bank = 'Explosions', Cue = 'UEF_Nuke_Impact', LodCutoff = 'UnitMove_LodCutoff'},
+        StartMove   = Sound { Bank = 'UEL', Cue = 'UEL0301_Move_Start', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'UEF_Select_Commander', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 5,
+            Level2 = 10,
+            Level3 = 15,
+            Level4 = 20,
+            Level5 = 25,
+        },
+        VisionRadius = {
+            Level1 = 1,
+            Level2 = 1,
+            Level3 = 2,
+            Level4 = 2,
+            Level5 = 2,        
+        },
+        WaterVisionRadius = {
+            Level1 = 1,
+            Level2 = 1,
+            Level3 = 2,
+            Level4 = 2,
+            Level5 = 2,        
+        },        
+    },
+	
+    BuildIconSortPriority = 5,
+	
+    Categories = {
+        'SELECTABLE',
+        'UEF',
+        'MOBILE',
+        'LAND',
+        'TECH3',
+        'CONSTRUCTION',
+        'REPAIR',
+        'RECLAIM',
+--        'REBUILDER',
+        'BUILTBYQUANTUMGATE',
+        'PODSTAGINGPLATFORM',
+        'ENGINEER',
+        'CAPTURE',
+        'VISIBLETORECON',
+        'SUBCOMMANDER',
+        'PATROLHELPER',
+        'SHOWQUEUE',
+        'OVERLAYOMNI',
+        'OVERLAYMISC',
+    },
+	
+    CollisionOffsetZ = -0.25,
+	
+    Defense = {
+        ArmorType = 'Normal',
+
+        EconomyThreatLevel = 180 + 480,		-- BuildRate * 3 + 2% of health
+
+        Health = 14000,
+        MaxHealth = 14000,
+
+		MaxTeleRange = 300,
+		NoTeleDistance = 35,    -- if equipped with antiteleport
+
+        RegenRate = 22,
+
+        SurfaceThreatLevel = 35,
+    },
+	
+    Description = '<LOC uel0301_desc>Support Armored Command Unit',
+	
+    Display = {
+        Abilities = {
+            '<LOC ability_amphibious>Amphibious',
+            '<LOC ability_customizable>Customizable',
+            '<LOC ability_omni>Omni Sensor',
+        },
+
+        AnimationWalk = '/units/uel0301/uel0301_awalk01.sca',
+        AnimationWalkRate = 3.2,
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 100,
+                    ShaderName = 'Unit',
+                },
+                {
+                    AlbedoName = 'uel0301_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    ShaderName = 'Unit',
+                    SpecularName = 'uel0301_lod1_specteam.dds',
+                },
+            },
+        },
+
+        TransportAnimation = {
+            {
+                Animation = '/units/UEL0301/UEL0301_afold.sca',
+                Weight = 100,
+            },
+        },
+
+        UniformScale = 0.17,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 123000,
+        BuildCostMass = 9600,
+        BuildRate = 60,
+
+        BuildTime = 48000,
+		
+        BuildableCategory = {
+            'BUILTBYTIER4COMMANDER UEF',
+            'BUILTBYTIER3ENGINEER UEF',
+        },
+		
+		MaxBuildDistance = 10,
+		
+        NaturalProducer = true,
+		
+        ProductionPerSecondEnergy = 100,
+        ProductionPerSecondMass = 1,
+		
+        StorageEnergy = 3000,
+        StorageMass = 300,
+		
+        -- for teleporter
+		TeleportBurstEnergyCost = 5000,
+    },
+	
+    Enhancements = {
+
+        Slots = {
+            Back = { name = '<LOC _Back>', x = 5, y = -10 },
+            LCH = { name = '<LOC _LCH>', x = 44, y = 30 },
+            RCH = { name = '<LOC _RCH>', x = -16, y = 50 },
+			Command = {},
+        },
+        
+        AdvancedCoolingUpgrade = {
+            BuildCostEnergy = 45000,
+            BuildCostMass = 1000,
+            BuildTime = 5000,
+            Icon = 'acu',
+            Name = '<LOC enhancements_0061>Energy Accelerator',
+            NewRateOfFire = 2.5,
+            Slot = 'LCH',
+            UpgradeUnitAmbientBones = {
+                'UEL0301',
+            },
+        },
+        
+        AdvancedCoolingUpgradeRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            HideBones = {
+                'SAM',
+            },
+            Icon = 'acu',
+            Name = '<LOC enhancements_0062>Remove Energy Accelerator',
+            Prerequisite = 'AdvancedCoolingUpgrade',
+            RemoveEnhancements = {
+                'AdvancedCoolingUpgrade',
+                'AdvancedCoolingUpgradeRemove',
+            },
+            Slot = 'LCH',
+        },
+        
+        HighExplosiveOrdnance = {
+            BuildCostEnergy = 60000,
+            BuildCostMass = 1500,
+            BuildTime = 6000,
+            Icon = 'heo',
+            Name = '<LOC enhancements_0063>Heavy Plasma Refractor',
+            NewDamageRadius = 2.5,
+            ShowBones = {
+                'SAM',
+            },
+            Slot = 'RCH',
+            UpgradeEffectBones = {
+                'SAM',
+                'Cannon_Muzzle',
+            },
+            UpgradeUnitAmbientBones = {
+                'UEL0301',
+            },
+        },
+        
+        HighExplosiveOrdnanceRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            HideBones = {
+                'SAM',
+            },
+            Icon = 'heo',
+            Name = '<LOC enhancements_0064>Remove Heavy Plasma Refractor',
+            NewDamageRadius = -4,
+            Prerequisite = 'HighExplosiveOrdnance',
+            RemoveEnhancements = {
+                'HighExplosiveOrdnance',
+                'HighExplosiveOrdnanceRemove',
+            },
+            Slot = 'RCH',
+        },
+        
+        Pod = {
+            BuildCostEnergy = 2400,
+            BuildCostMass = 120,
+            BuildTime = 2400,
+            Icon = 'ed',
+            Name = '<LOC enhancements_0065>C-D2 Engineering Drone',
+            Slot = 'Back',
+            UpgradeEffectBones = {
+                'AttachSpecial01',
+            },
+            UpgradeUnitAmbientBones = {
+                'UEL0301',
+            },
+        },
+        
+        PodRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            Icon = 'ed',
+            Name = '<LOC enhancements_0066>C-D2 Remove Engineering Drone',
+            Prerequisite = 'Pod',
+            RemoveEnhancements = {
+                'Pod',
+                'PodRemove',
+            },
+            Slot = 'Back',
+        },
+        
+        RadarJammer = {
+            BuildCostEnergy = 31250,
+            BuildCostMass = 1000,
+            BuildTime = 7500,
+            Icon = 'rj',
+            MaintenanceConsumptionPerSecondEnergy = 100,
+            Name = '<LOC enhancements_0067>Radar Jammer',
+            NewJammerRadius = 26,
+            ShowBones = {
+                'Jetpack',
+            },
+            Slot = 'Back',
+            UpgradeEffectBones = {
+                'Jetpack',
+            },
+            UpgradeUnitAmbientBones = {
+                'UEL0301',
+            },
+        },
+        
+        RadarJammerRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            HideBones = {
+                'Jetpack',
+            },
+            Icon = 'rj',
+            Name = '<LOC enhancements_0068>Remove Radar Jammer',
+            Prerequisite = 'RadarJammer',
+            RemoveEnhancements = {
+                'RadarJammer',
+                'RadarJammerRemove',
+            },
+            Slot = 'Back',
+        },
+        
+        ResourceAllocation = {
+            BuildCostEnergy = 120000,
+            BuildCostMass = 5000,
+            BuildTime = 8900,
+            Icon = 'isb',
+            Name = '<LOC enhancements_0069>Resource Allocation System',
+            ProductionPerSecondEnergy = 2000,
+            ProductionPerSecondMass = 12,
+            ShowBones = {
+                'SAM',
+            },
+            Slot = 'RCH',
+            UpgradeEffectBones = {
+                'SAM',
+            },
+            UpgradeUnitAmbientBones = {
+                'UEL0301',
+            },
+        },
+        
+        ResourceAllocationRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            HideBones = {
+                'SAM',
+            },
+            Icon = 'isb',
+            Name = '<LOC enhancements_0070>Remove Resource Allocation System',
+            Prerequisite = 'ResourceAllocation',
+            RemoveEnhancements = {
+                'ResourceAllocation',
+                'ResourceAllocationRemove',
+            },
+            Slot = 'RCH',
+        },
+        
+        SensorRangeEnhancer = {
+            BuildCostEnergy = 20000,
+            BuildCostMass = 1000,
+            BuildTime = 5000,
+            Icon = 'sre',
+            Name = '<LOC enhancements_0071>Enhanced Sensor System',
+            NewOmniRadius = 72,
+            NewVisionRadius = 40,
+            ShowBones = {
+                'SAM',
+            },
+            Slot = 'LCH',
+            UpgradeEffectBones = {
+                'SAM',
+            },
+            UpgradeUnitAmbientBones = {
+                'UEL0301',
+            },
+        },
+        
+        SensorRangeEnhancerRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            HideBones = {
+                'SAM',
+            },
+            Icon = 'sre',
+            Name = '<LOC enhancements_0072>Remove Enhanced Sensor System',
+            Prerequisite = 'SensorRangeEnhancer',
+            RemoveEnhancements = {
+                'SensorRangeEnhancer',
+                'SensorRangeEnhancerRemove',
+            },
+            Slot = 'LCH',
+        },
+        
+        Shield = {
+            BuildCostEnergy = 93750,
+            BuildCostMass = 2000,
+            BuildTime = 7500,
+            Icon = 'psg',
+            ShowBones = {
+                'Jetpack',
+            },
+            ImpactEffects = 'UEFShieldHit01',
+            MaintenanceConsumptionPerSecondEnergy = 350,
+            Name = '<LOC enhancements_0073>Personal Shield Generator',
+            OwnerShieldMesh = '/units/uel0301/UEL0301_PersonalShield_mesh',
+            PersonalShield = true,
+            RegenAssistMult = 10,
+            ShieldEnergyDrainRechargeTime = 5,
+            ShieldMaxHealth = 24000,
+            ShieldRechargeTime = 170,
+            ShieldRegenRate = 50,
+            ShieldRegenStartTime = 1,
+            ShieldSize = 3,
+            ShieldVerticalOffset = 0,
+            Slot = 'Back',
+            UpgradeUnitAmbientBones = {
+                'UEL0301',
+            },
+            UpgradeEffectBones = {
+                'Arm_Right_B01',
+                'Head',
+                'Arm_Left_B01',
+            },
+        },
+        
+        ShieldRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            HideBones = {
+                'Jetpack',
+            },
+            Icon = 'psg',
+            Name = '<LOC enhancements_0076>Remove Personal Shield Generator',
+            Prerequisite = 'Shield',
+            RemoveEnhancements = {
+                'Shield',
+                'ShieldRemove',
+            },
+            Slot = 'Back',
+        },
+        
+        ShieldGeneratorField = {
+            BuildCostEnergy = 210000,
+            BuildCostMass = 3000,
+            BuildTime = 9000,
+            Icon = 'sgf',
+            HideBones = {
+                'Jetpack',
+            },
+            ImpactEffects = 'UEFShieldHit01',
+            ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
+            MaintenanceConsumptionPerSecondEnergy = 500,
+            Mesh = '/effects/entities/Shield01/Shield01_mesh',
+            MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
+            Name = '<LOC enhancements_0074>Shield Generator Field',
+            Prerequisite = 'Shield',
+            ShieldEnergyDrainRechargeTime = 5,
+            ShieldMaxHealth = 32000,
+            ShieldRechargeTime = 175,
+            ShieldRegenRate = 150,
+            ShieldRegenStartTime = 1,
+            ShieldSize = 18,
+            ShieldVerticalOffset = -3,
+            Slot = 'Back',
+            UpgradeUnitAmbientBones = {
+                'UEL0301',
+            },
+        },
+        
+        ShieldGeneratorFieldRemove = {
+            BuildCostEnergy = 1,
+            BuildCostMass = 1,
+            BuildTime = 0.1,
+            HideBones = {
+                'Jetpack',
+            },
+            Icon = 'sgf',
+            Name = '<LOC enhancements_0075>Remove Shields',
+            Prerequisite = 'ShieldGeneratorField',
+            RemoveEnhancements = {
+                'Shield',
+                'ShieldGeneratorField',
+                'ShieldGeneratorFieldRemove',
+            },
+            Slot = 'Back',
+        },
+    },
+	
+    General = {
+        BuildBones = {
+            AimBone = 'Arm_Right_Build',
+            BuildEffectBones = {'Arm_Right_Build'},
+            PitchBone = 'Arm_Right_B03',
+            YawBone = 'Torso',
+        },
+		CapCost = -3,
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Capture = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_Reclaim = true,
+            RULEUCC_Repair = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        ConstructionBar = true,
+        FactionName = 'UEF',
+        Icon = 'amph',
+        SelectionPriority = 3,
+    },
+	
+    Intel = {
+
+        FreeIntel = true,
+
+        JamRadius = { Max = 26, Min = 26 },
+        JammerBlips = 10,
+
+        OmniRadius = 12,
+        VisionRadius = 32,
+        WaterVisionRadius = 20,
+    },
+	
+    Interface = {
+        HelpText = 'Support Armored Command Unit',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 0.9,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        LayerChangeOffsetHeight = -0.85,
+        MaxAcceleration = 1.05,
+        MaxBrake = 2.1,
+        MaxSpeed = 2.1,
+        MaxSpeedReverse = 0,
+        MaxSteerForce = 12,
+        MeshExtentsX = 0.95,
+        MeshExtentsY = 1.4,
+        MeshExtentsZ = 0.8,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Amphibious',
+        StandUpright = true,
+        TurnRadius = 10,
+        TurnRate = 70,
+    },
+	
+    SelectionCenterOffsetZ = -0.2,
+    SelectionSizeX = 0.55,
+    SelectionSizeZ = 0.5,
+    SelectionThickness = 0.7,
+
+    SizeX = 0.9,
+    SizeY = 1.4,
+    SizeZ = 0.6,
+	
+    StrategicIconName = 'icon_subcommander_generic',
+    StrategicIconSortPriority = 1,
+	
+    Transport = {
+        CanFireFromTransport = false,
+        ClassSAttachSize = 0,
+        TransportClass = 2,
+    },
+	
+    Veteran = {
+        Level1 = 30,
+        Level2 = 60,
+        Level3 = 90,
+        Level4 = 120,
+        Level5 = 150,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEL0301_BG_Gun', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+            
+            Damage = 100,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+            
+            DisplayName = 'Heavy Plasma Cannon',
+            
+            FireTargetLayerCapsTable = {
+                Land = 'Air|Land|Water',
+                Seabed = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 2,
+            
+            Label = 'RightHeavyPlasmaCannon',
+            
+            MaxRadius = 33,
+            MinRadius = 1,
+
+            MuzzleVelocity = 28,
+            
+            ProjectileId = '/projectiles/TDFPlasmaHeavy03/TDFPlasmaHeavy03_proj.bp',
+            ProjectileLifetime = 1.4,
+
+            RackBones = {
+                { MuzzleBones = {'Arm_Left_Muzzle'}, RackBone = 'Arm_Left_Barrel02' },
+            },
+
+            RackRecoilDistance = -0.7,
+            
+            RangeCategory = 'UWRC_DirectFire',
+            
+            RateOfFire = 2,
+            
+            TargetCheckInterval = 0.5,
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            
+            TurretBoneMuzzle = 'Arm_Left_Muzzle',
+            TurretBonePitch = 'Arm_Left_Barrel01',
+            TurretBoneYaw = 'Torso',
+            
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 90,
+            
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 60,
+            
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+        },
+        {
+            Damage = 4500,
+            DamageFriendly = true,
+            DamageRadius = 6,
+            DamageType = 'Normal',
+            DisplayName = 'Death Weapon',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+            WeaponCategory = 'Death',
+        },
+    },
+
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.3,
+        HealthMult = 0.3,
+        MassMult = 0.3,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+            Seabed = true,
+        },
+    },
+}
