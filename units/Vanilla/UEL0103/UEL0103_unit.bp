@@ -174,7 +174,8 @@ UnitBlueprint {
 			
             MaxRadius = 37,
             MinRadius = 5,
-
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
             MuzzleVelocity = 14,
             MuzzleVelocityReduceDistance = 28,
 			ProjectileId = '/projectiles/TIFFragmentationSensorShell01/TIFFragmentationSensorShell01_proj.bp',
@@ -188,12 +189,17 @@ UnitBlueprint {
             },
 
             RackRecoilDistance = -3,
+            RackReloadTimeout = 10,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
 
             RangeCategory = 'UWRC_IndirectFire',
 
             RenderFireClock = true,
 			
-            RateOfFire = 10/83,
+            RateOfFire = 10/40,
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
