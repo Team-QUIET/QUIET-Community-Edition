@@ -1493,6 +1493,12 @@ DefaultBeamWeapon = ClassWeapon(DefaultProjectileWeapon) {
         end
 
         self.BeamStarted = true
+        
+        -- Start continuous energy drain for beam weapons that need it
+        local bp = self.bp
+        if bp.BeamLifetime == 0 and bp.EnergyDrainPerSecond then
+            self:StartContinuousBeamDrain()
+        end
     end,
 
     ---@param self DefaultBeamWeapon
@@ -1549,6 +1555,12 @@ DefaultBeamWeapon = ClassWeapon(DefaultProjectileWeapon) {
     ---@param self DefaultBeamWeapon
     ---@param beam any
     PlayFxBeamEnd = function(self, beam)
+        -- Stop continuous energy drain for beam weapons that need it
+        local bp = self.bp
+        if bp.BeamLifetime == 0 and bp.EnergyDrainPerSecond then
+            self:StopContinuousBeamDrain()
+        end
+        
         if not self.unit.Dead then
             local audio = self.bp.Audio
             local beamStop = audio.BeamStop
@@ -1578,14 +1590,49 @@ DefaultBeamWeapon = ClassWeapon(DefaultProjectileWeapon) {
 
     ---@param self DefaultBeamWeapon
     StartEconomyDrain = function(self)
-        if not self.EconDrain and
-            self.EnergyRequired and
-            self.EnergyDrainPerSecond and
-            not self:EconomySupportsBeam()
-        then
+        local bp = self.bp
+        if bp.BeamLifetime == 0 and bp.EnergyDrainPerSecond then
+            -- No CreateEconomyEvent for continuous beams
             return
         end
+        
+        LOG('*DEBUG: StartEconomyDrain proceeding with economy drain')
         DefaultProjectileWeapon.StartEconomyDrain(self)
+    end,
+
+    ---@param self DefaultBeamWeapon
+    StartContinuousBeamDrain = function(self)
+        if self.ContinuousDrainThread then
+            KillThread(self.ContinuousDrainThread)
+        end
+        self.ContinuousDrainThread = self:ForkThread(self.ContinuousBeamDrainThread, self)
+    end,
+
+    ---@param self DefaultBeamWeapon
+    ContinuousBeamDrainThread = function(self)
+        local bp = self.bp
+        local nrgDrainPerSecond = self:GetWeaponEnergyDrain(bp)
+        local aiBrain = self.Brain
+        while self.BeamStarted do
+            local drain = nrgDrainPerSecond / 10  -- Drain per tick (10 ticks per second)
+            if aiBrain:GetEconomyStored('ENERGY') < drain then
+                -- Energy depleted, properly reset weapon state
+                self:OnHaltFire()  -- Stop any ongoing fire
+                ChangeState(self, self.IdleState)  -- Return to idle state
+                return
+            else
+                aiBrain:TakeResource('ENERGY', drain)
+            end
+            WaitTicks(1)
+        end
+    end,
+
+    ---@param self DefaultBeamWeapon
+    StopContinuousBeamDrain = function(self)
+        if self.ContinuousDrainThread then
+            KillThread(self.ContinuousDrainThread)
+            self.ContinuousDrainThread = nil
+        end
     end,
 
     ---@param self DefaultBeamWeapon
@@ -1647,8 +1694,20 @@ DefaultBeamWeapon = ClassWeapon(DefaultProjectileWeapon) {
         local energyReq = self:GetWeaponEnergyRequired()
         local energyDrain = self:GetWeaponEnergyDrain()
 
-        if energyStored < energyReq and energyIncome < energyDrain then
-            return false
+        -- For continuous beams, require enough energy to start AND sustain firing
+        if self.bp.ContinuousBeam and self.bp.EnergyDrainPerSecond then
+            local energyToStart = energyReq
+            local energyToSustain = energyDrain * 5  -- Need at least 5 seconds of sustain energy
+            local totalEnergyNeeded = energyToStart + energyToSustain
+            
+            if energyStored < totalEnergyNeeded then
+                return false
+            end
+        else
+            -- For non-continuous weapons, use the original logic
+            if energyStored < energyReq and energyIncome < energyDrain then
+                return false
+            end
         end
         return true
     end,
