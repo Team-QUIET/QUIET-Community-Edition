@@ -47,8 +47,8 @@ UnitBlueprint {
 			
             ShieldEnergyDrainRechargeTime = 5,
             ShieldMaxHealth = 140000,
-            ShieldRechargeTime = 90,
-            ShieldRegenRate = 280,
+            ShieldRechargeTime = 96,
+            ShieldRegenRate = 102,
             ShieldRegenStartTime = 3,
             ShieldSize = 80,
             ShieldVerticalOffset = -20,
@@ -109,11 +109,11 @@ UnitBlueprint {
 	},
 	
     Economy = {
-        BuildCostEnergy = 200000,
-        BuildCostMass = 33000,
-        BuildTime = 2600,
+        BuildCostEnergy = 300000,
+        BuildCostMass = 46000,
+        BuildTime = 8000,
 		
-        MaintenanceConsumptionPerSecondEnergy = 3500,
+        MaintenanceConsumptionPerSecondEnergy = 13500,
 		
         RebuildBonusIds = {'srb4401'},	
     },
