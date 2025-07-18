@@ -1,0 +1,232 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'brot1hpd',
+
+    AI = {  
+		TargetBones = {'Turret_Barrel'},
+    }, 
+
+    Audio = {
+        Destroyed       = Sound { Bank = 'UELDestroy', Cue = 'UEB_Destroy_Med_Land', LodCutoff = 'UnitMove_LodCutoff' },
+        DoneBeingBuilt  = Sound { Bank = 'UEB', Cue = 'UEB2301_Activate', LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection     = Sound { Bank = 'Interface', Cue = 'UEF_Select_Gun', LodCutoff = 'UnitMove_LodCutoff' },
+    },
+
+    Buffs = {
+        Regen = {
+            Level1 = 1,
+            Level2 = 2,
+            Level3 = 3,
+            Level4 = 4,
+            Level5 = 5,
+        },
+    },
+
+    BuildIconSortPriority = 111,
+
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYCOMMANDER',
+        'AEON',
+        'STRUCTURE',
+        'DEFENSE',
+        'TECH1',
+        'DIRECTFIRE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'OVERLAYDIRECTFIRE',
+        'SORTDEFENSE',
+    },
+
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 1800,
+        MaxHealth = 1800,
+        RegenRate = 1,
+        SurfaceThreatLevel = 17.1,
+    },
+
+    Description = '<LOC brot1hpd_desc>Enhanced Point Defense',
+
+    Display = {
+    
+        Mesh = { IconFadeInZoom = 130, LODs = { {LODCutoff = 200,ShaderName = 'Unit'} } },
+
+        UniformScale = 0.22,
+    },
+
+    Economy = {
+        BuildCostEnergy = 4650,
+        BuildCostMass = 450,
+        BuildTime = 500,
+
+        RebuildBonusIds = {'BROT1HPD'},
+    },
+
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Aeon',
+        Icon = 'land',
+        SelectionPriority = 5,
+        UnitName = '<LOC brot1hpd_name>Zpyker',
+    },
+
+    Intel = {
+        VisionRadius = 24,
+    },
+
+    Interface = {
+        HelpText = 'Enhanced Point Defense',
+    },
+
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.25,
+    LifeBarSize = 0.75,
+
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+        MaxSteerForce = 0,
+        MeshExtentsX = 0.8,
+        MeshExtentsY = 0.8,
+        MeshExtentsZ = 0.8,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = -0,
+        SkirtOffsetZ = -0,
+        SkirtSizeX = 1,
+        SkirtSizeZ = 1,
+        TurnRate = 0,
+    },
+    
+    SelectionSizeX = 0.5,
+    SelectionSizeZ = 0.5,
+    SelectionThickness = 0.5,
+	
+    SizeX = 0.5,
+    SizeY = 0.45,
+    SizeZ = 0.75,
+	
+    StrategicIconName = 'icon_structure1_directfire',
+    StrategicIconSortPriority = 200,
+
+    Veteran = {
+        Level1 = 6,
+        Level2 = 12,
+        Level3 = 18,
+        Level4 = 24,
+        Level5 = 30,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                BarrelLoop  = Sound { Bank = 'UES', Cue = 'UES0302_Cannon_Loop', LodCutoff = 'WeaponBig_LodCutoff' },
+                BarrelStart = Sound { Bank = 'UES', Cue = 'UES0302_Cannon_Start', LodCutoff = 'WeaponBig_LodCutoff' },
+                BarrelStop  = Sound { Bank = 'UES', Cue = 'UES0302_Cannon_Stop', LodCutoff = 'WeaponBig_LodCutoff' },
+                Fire        = Sound { Bank = 'TM_AEONWEAPONS', Cue = 'AEONGUN7', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_LowArc',
+			
+            CollideFriendly = false,
+			
+            Damage = 100,
+            DamageRadius = 1,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Gauss Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 2,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 33,
+
+            MuzzleVelocity = 36,
+			
+            ProjectileId = '/projectiles/ADFDisruptor01/ADFDisruptor01_proj.bp',
+            ProjectileLifetime = 1.1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle01'},
+                    RackBone = 'Turret_Recoil',
+                },
+                {
+                    MuzzleBones = {'Turret_Muzzle02'},
+                    RackBone = 'Turret_Recoil01',
+                },
+            },
+            
+            RackRecoilDistance = -1,
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 1.5,
+			
+            TargetCheckInterval = 0.5,
+			
+            TargetPriorities = {
+                "EXPERIMENTAL",
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TrackingRadius = 1.05,
+			
+            TurretBoneDualMuzzle = 'Turret_Muzzle01',
+            TurretBoneDualPitch = 'Turret_Recoil',
+
+            TurretBoneMuzzle = 'Turret_Muzzle02',
+            TurretBonePitch = 'Turret_Recoil01',
+
+            TurretBoneYaw = 'Turret',
+
+            TurretDualManipulators = true,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 42,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 35,
+
+            Turreted = true,
+ 	   },
+    },
+    
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.5,
+        HealthMult = 0.9,
+        MassMult = 0.6,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

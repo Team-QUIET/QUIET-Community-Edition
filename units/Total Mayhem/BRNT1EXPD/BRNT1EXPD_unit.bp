@@ -2,57 +2,58 @@ UnitBlueprint {
 	Merge = true,
 	BlueprintId = "brnt1expd",
 	
-    Weapon = {
-		{
-		
-		FiringRandomness = 0.3,
-				
-		MuzzleSalvoDelay = 0.05,
-            MuzzleSalvoSize = 10,
+      Weapon = {
+            {
+                  Damage = 5,
 
-            MuzzleVelocity = 54,
+                  FiringRandomness = 0.3,
+                              
+                  MuzzleSalvoDelay = 0.05,
+                  MuzzleSalvoSize = 10,
 
-		ProjectileLifetime = 1,
-			
-            RackSalvoChargeTime = 0,
-            RackSalvoReloadTime = 0,
-			
-		RateOfFire = 20/10,
+                  MuzzleVelocity = 54,
 
-		
-		TurretPitch = 0,
-            TurretPitchRange = 80,
-            TurretPitchSpeed = 80,
-			
-            TurretYaw = 0,
-            TurretYawRange = 180,
-            TurretYawSpeed = 105,
-        },
-		{
-		
-		FiringRandomness = 0.3,
-		
-		MuzzleSalvoDelay = 0.05,
-            MuzzleSalvoSize = 10,
+                  ProjectileLifetime = 1,
+                        
+                  RackSalvoChargeTime = 0,
+                  RackSalvoReloadTime = 0,
+                        
+                  RateOfFire = 20/10,
 
-            MuzzleVelocity = 54,
+                  
+                  TurretPitch = 0,
+                  TurretPitchRange = 80,
+                  TurretPitchSpeed = 80,
+                        
+                  TurretYaw = 0,
+                  TurretYawRange = 180,
+                  TurretYawSpeed = 105,
+            },
+            {
+                  Damage = 5,
 
-		ProjectileLifetime = 1,
-			
-            RackSalvoChargeTime = 0,
-            RackSalvoReloadTime = 0,
-			
-            RateOfFire = 20/10,
+                  FiringRandomness = 0.3,
+                  
+                  MuzzleSalvoDelay = 0.05,
+                  MuzzleSalvoSize = 10,
 
-		
-		TurretPitch = 0,
-            TurretPitchRange = 80,
-            TurretPitchSpeed = 80,
-			
-            TurretYaw = 0,
-            TurretYawRange = 3,
-            TurretYawSpeed = 105,
+                  MuzzleVelocity = 54,
 
-        },        
-    },
+                  ProjectileLifetime = 1,
+                        
+                  RackSalvoChargeTime = 0,
+                  RackSalvoReloadTime = 0,
+                        
+                  RateOfFire = 20/10,
+
+                  
+                  TurretPitch = 0,
+                  TurretPitchRange = 80,
+                  TurretPitchSpeed = 80,
+                        
+                  TurretYaw = 0,
+                  TurretYawRange = 3,
+                  TurretYawSpeed = 105,
+            },        
+      },
 }
