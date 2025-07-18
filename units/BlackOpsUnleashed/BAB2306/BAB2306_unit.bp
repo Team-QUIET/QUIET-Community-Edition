@@ -1,6 +1,6 @@
 UnitBlueprint {
-    Merge = true,
-    BlueprintId = 'bab2306',
+
+    Source = "/mods/BlackOpsUnleashed/units/BAB2306/BAB2306_unit.bp", 
 
     AI = {
         TargetBones = {'Turret_Yaw','Turret_Pitch'},
@@ -190,7 +190,7 @@ UnitBlueprint {
                 },
             },
 
-            RackSalvoFiresAfterCharge = true,
+            RackSalvoFiresAfterCharge = false,
 
             RangeCategory = 'UWRC_DirectFire',
 			

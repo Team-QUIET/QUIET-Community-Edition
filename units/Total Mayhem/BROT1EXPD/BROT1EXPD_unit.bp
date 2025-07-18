@@ -39,7 +39,7 @@ UnitBlueprint {
 			
             Label = 'laserblue',
 			
-            MaxRadius = 34,
+            MaxRadius = 32,
 			
             RackBones = {
                 {
@@ -50,10 +50,12 @@ UnitBlueprint {
 
             RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
+
+            RackRecoilDistance = -0.3,
 			
             RangeCategory = 'UWRC_DirectFire',
 			
-            RateOfFire = 20/10,		-- 148 dps - controlled by charge
+            RateOfFire = 20/10,
 			
             ReTargetOnMiss = true,
 
