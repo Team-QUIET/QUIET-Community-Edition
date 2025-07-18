@@ -302,7 +302,7 @@ UnitBlueprint {
             BuildTime = 8900,
             Icon = 'isb',
             Name = '<LOC enhancements_0069>Resource Allocation System',
-            ProductionPerSecondEnergy = 2000,
+            ProductionPerSecondEnergy = 500,
             ProductionPerSecondMass = 12,
             ShowBones = {
                 'SAM',
