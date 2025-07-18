@@ -171,9 +171,9 @@ CollisionBeam = Class(moho.CollisionBeamEntity) {
             local fxBeam = CreateBeamEmitter(table.random(self.FxBeam), self.Army)
             AttachBeamToEntity(fxBeam, self, 0, self.Army)
 
-            -- collide on start if it's a continuous beam
+            -- collide on start if it's a continuous beam (non-continuous beams don't need to detect collisions immediately)
             local weaponBlueprint = self.Weapon.bp
-            local bCollideOnStart = weaponBlueprint.BeamLifetime <= 0
+            local bCollideOnStart = weaponBlueprint.BeamLifetime > 0
             self:SetBeamFx(fxBeam, bCollideOnStart)
 
             table.insert(self.BeamEffectsBag, fxBeam)
