@@ -202,7 +202,7 @@ UnitBlueprint {
             Icon = 'ras',
             Name = 'Resource Allocation System',
             ProductionPerSecondEnergy = 500,
-            ProductionPerSecondMass = 12,
+            ProductionPerSecondMass = 10,
             Slot = 'RCH',
             UpgradeUnitAmbientBones = {
                 'UAL0301',
