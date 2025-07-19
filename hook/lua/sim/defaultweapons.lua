@@ -1596,7 +1596,7 @@ DefaultBeamWeapon = ClassWeapon(DefaultProjectileWeapon) {
             return
         end
         
-        LOG('*DEBUG: StartEconomyDrain proceeding with economy drain')
+        --LOG('*DEBUG: StartEconomyDrain proceeding with economy drain')
         DefaultProjectileWeapon.StartEconomyDrain(self)
     end,
 
