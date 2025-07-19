@@ -56,6 +56,7 @@ UnitBlueprint {
     
     Weapon = {
         {
+            AboveWaterTargetsOnly = true,
             Audio = {Fire = Sound {Bank = 'XSL_Weapon', Cue = 'XSL0402_Attack_Zap', LodCutoff = 'Weapon_LodCutoff'}},
 
             AutoInitiateAttackCommand = true,            
@@ -64,6 +65,7 @@ UnitBlueprint {
             BeamCollisionDelay = 0,
             BeamLifetime = 0.5,
 
+            CannotAttackGround = true,
             CollideFriendly = false,
             
             Damage = 151,
@@ -72,11 +74,15 @@ UnitBlueprint {
             
             DisplayName = 'Phason Laser',
             
-            EnergyDrainPerSecond = 100, -- every 3 seconds = 166 DPS
-            EnergyRequired = 300,
+            EnergyDrainPerSecond = 100,
+            EnergyRequired = 50,        -- every half second
             
-            FireTargetLayerCapsTable = {Air = 'Air'},
-            FiringTolerance = 0,
+            FireTargetLayerCapsTable = {
+                Air = 'Air|Land|water',
+            },
+
+            FiringRandomness = 0,
+            FiringTolerance = 2,
             
             Label = 'PhasonBeam',
             
@@ -93,7 +99,7 @@ UnitBlueprint {
 
             RackSalvoFiresAfterCharge = true,
             
-            RateOfFire = 0.33,     -- controlled by charge
+            RateOfFire = 10/20,     -- controlled by charge
 
             SlavedToBody = true,
             SlavedToBodyArcRange = 60,
