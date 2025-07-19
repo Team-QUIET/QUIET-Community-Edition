@@ -13,6 +13,21 @@ UnitBlueprint {
             RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
             RateOfFire = 10/65,
+
+            TargetPriorities = {
+                "EXPERIMENTAL MASSFABRICATION",
+                "EXPERIMENTAL STRATEGIC ARTILLERY",
+                "TECH3 ANTIMISSILE",
+                "NUKE STRUCTURE",
+                "TECH3 STRUCTURE ARTILLERY",
+                "ORBITALSYSTEM",
+                "TECH3 ENERGYPRODUCTION",
+                "EXPERIMENTAL MOBILE",
+                "TECH3 STRUCTURE",
+                "TECH3 MOBILE",
+                "STRUCTURE",
+                "ALLUNITS",
+            },
         },
     },
 }

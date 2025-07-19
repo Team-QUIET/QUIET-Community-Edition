@@ -239,9 +239,18 @@ UnitBlueprint {
             TargetCheckInterval = 2,
             
             TargetPriorities = {
-                'SPECIALHIGHPRI',
-                'DEFENSE',
-                'ALLUNITS',
+                "EXPERIMENTAL MASSFABRICATION",
+                "EXPERIMENTAL STRATEGIC ARTILLERY",
+                "TECH3 ANTIMISSILE",
+                "NUKE STRUCTURE",
+                "TECH3 STRUCTURE ARTILLERY",
+                "ORBITALSYSTEM",
+                "TECH3 ENERGYPRODUCTION",
+                "EXPERIMENTAL MOBILE",
+                "TECH3 STRUCTURE",
+                "TECH3 MOBILE",
+                "STRUCTURE",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE,WALL',
 
