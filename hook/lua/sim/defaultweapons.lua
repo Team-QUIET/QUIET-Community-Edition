@@ -1292,7 +1292,7 @@ OverchargeWeapon = ClassWeapon(DefaultProjectileWeapon) {
         if unit.BuildArmManipulator then
             unit.BuildArmManipulator:SetPrecedence(0)
         end
-        aimControl:SetHeadingPitch( self.unit:GetWeaponManipulatorByLabel(weaponLabel):GetHeadingPitch() )
+        aimControl:SetHeadingPitch( unit:GetWeaponManipulatorByLabel(weaponLabel):GetHeadingPitch() )
         self.enabled = true
     end,
     
@@ -1311,7 +1311,14 @@ OverchargeWeapon = ClassWeapon(DefaultProjectileWeapon) {
         if unit.BuildArmManipulator then
             unit.BuildArmManipulator:SetPrecedence(0)
         end
-        unit:GetWeaponManipulatorByLabel(weaponLabel):SetHeadingPitch(aimControl:GetHeadingPitch())
+
+        -- Fix for overcharge targeting bug: Reset main weapon to neutral position
+        -- Don't transfer overcharge aiming angles as they can cause ground-aiming issues
+        local mainWeaponManipulator = unit:GetWeaponManipulatorByLabel(weaponLabel)
+        if mainWeaponManipulator then
+            -- Reset to neutral position to clear any targeting corruption
+            mainWeaponManipulator:SetHeadingPitch(0, 0)
+        end
         self.enabled = false
     end,
 
