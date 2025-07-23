@@ -28,8 +28,8 @@ BAL0401 = ClassUnit(AWalkingLandUnit) {
     },
 	
     ChargeEffects03 = {
-        '/mods/BlackOpsUnleashed/effects/emitters/g_laser_flash_01_emit.bp',  #glow
-        '/mods/BlackOpsUnleashed/effects/emitters/g_laser_muzzle_01_emit.bp',  # sparks
+        '/mods/BlackOpsUnleashed/effects/emitters/g_laser_flash_01_emit.bp',  --glow
+        '/mods/BlackOpsUnleashed/effects/emitters/g_laser_muzzle_01_emit.bp', --sparks
     },
 	
     Weapons = {
@@ -89,8 +89,8 @@ BAL0401 = ClassUnit(AWalkingLandUnit) {
 				
 				if pos0 then
        
-          local LOUDWARP = Warp
-          local WaitTicks = WaitTicks
+                local LOUDWARP = Warp
+                local WaitTicks = WaitTicks
                     
 					for i = 0, 8 do
 
@@ -98,7 +98,7 @@ BAL0401 = ClassUnit(AWalkingLandUnit) {
 						
 						local proj = CDFLaserHeavyWeapon.CreateProjectileForWeapon(self, bone)
     
-            local projectilePosition = { 0,0,0 }
+                        local projectilePosition = { 0,0,0 }
 
 						local maxRangeChange = 11
 						local dX = getRandomInRange(-maxRangeChange, maxRangeChange)
@@ -219,7 +219,7 @@ BAL0401 = ClassUnit(AWalkingLandUnit) {
                 self.CreateUnitDestructionDebris( self, true, true, false )
             elseif overkillRatio <= 3 then
                 self.CreateUnitDestructionDebris( self, true, true, true )
-            else #VAPORIZED
+            else --VAPORIZED
                 self.CreateUnitDestructionDebris( self, true, true, true )
             end
         end

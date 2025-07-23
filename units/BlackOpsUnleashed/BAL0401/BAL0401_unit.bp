@@ -18,7 +18,7 @@ UnitBlueprint {
         StopMove                = Sound { Bank = 'URL', Cue = 'URL0402_Move_Stop', LodCutoff = 'UnitMove_LodCutoff' },
         Destroyed               = Sound { Bank = 'UALDestroy', Cue = 'UAL0401_Destroy', LodCutoff = 'UnitMove_LodCutoff' },
         UISelection             = Sound { Bank = 'Interface', Cue = 'Aeon_Select_Gun', LodCutoff = 'UnitMove_LodCutoff' },
-	WarpingProjectile       = Sound { Bank = 'UALWeapon', Cue = 'UAB2302_Artillery_Sonance', LodCutoff = 'Weapon_LodCutoff' },
+	    WarpingProjectile       = Sound { Bank = 'UALWeapon', Cue = 'UAB2302_Artillery_Sonance', LodCutoff = 'Weapon_LodCutoff' },
     },
 	
     Buffs = {
@@ -39,8 +39,8 @@ UnitBlueprint {
         'AEON',
         'MOBILE',
         'LAND',
-	'AMPHIBIOUS',
-	'INDIRECTFIRE',
+	    'AMPHIBIOUS',
+	    'INDIRECTFIRE',
         'EXPERIMENTAL',
         'NEEDMOBILEBUILD',
         'VISIBLETORECON',
@@ -52,9 +52,9 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Experimental',
-        Health = 36500,
-        MaxHealth = 36500,
-        RegenRate = 10,
+        Health = 16500,
+        MaxHealth = 16500,
+        RegenRate = 5,
         SurfaceThreatLevel = 552.1,
     },
 	
@@ -62,9 +62,9 @@ UnitBlueprint {
 	
     Display = {
         Abilities = {
-           '<LOC ability_personalstealth>Personal Stealth',
-						'An unusual unit - designed for siege work',
-						'Weapon teleports its shells into orbit above target',
+            'N/A',
+			'An unusual unit - designed for siege work',
+			'Weapon teleports its shells into orbit above target',
             '<LOC ability_amphibious>Amphibious',
             '<LOC ability_deathaoe>Volatile',
         },
@@ -141,8 +141,8 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 420000,
-        BuildCostMass = 24500,
+        BuildCostEnergy = 727000,
+        BuildCostMass = 46700,
         BuildTime = 8000,
     },
 
@@ -166,7 +166,7 @@ UnitBlueprint {
         VisionRadius = 44,
         WaterVisionRadius = 20,
         
-	RadarStealth = false,
+	    RadarStealth = false,
         SonarStealth = false,
     },
 	
@@ -194,7 +194,7 @@ UnitBlueprint {
         MaxSpeed = 2.6,
         MaxSpeedReverse = 2.6,
 		
-	MaxSteerForce = 10,
+	    MaxSteerForce = 10,
 		
         MeshExtentsX = 2.75,
         MeshExtentsY = 6.75,
@@ -203,7 +203,7 @@ UnitBlueprint {
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_Amphibious',
 		
-	StandUpright = true,
+	    StandUpright = true,
 		
         SkirtOffsetX = -0.50,
         SkirtOffsetZ = -0.50,
@@ -236,12 +236,178 @@ UnitBlueprint {
   
   
     Weapon = {
-      {
-        AutoInitiateAttackCommand = false,
-      },
-      {
+        ---- This weapon is just for show - real details are in the script - fires 9 rounds that drop from above
+		---- Each causes about 2000 Damage on a direct hit - and about 600 if just in radius - cant seem to find
+		---- where these values are controlled
+		---- FOUND it - \BlackOpsUnleashed\effects\Entities\GoldLaserBombEffectController01\GoldLaserBombEffectController01_script.lua
+        ---- very similar to a nuke - 2000 inner ring damage >> 650 at maximum radius of 7
+		{
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = true,
+            ArtilleryShieldBlocks = true,
+            
+            AutoInitiateAttackCommand = false,
+            
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 0,
+			DamageFriendly = true,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Head weapon',
+			
+			DoNotCollideList = { 'MISSILE' },
+            
+            EnergyRequired = 166400,         -- based on 9 projectiles doing 2000 dmg over median radius of 3.5 - this is VERY low - think of the rest as a gift for now
+            EnergyDrainPerSecond = 10400,    -- recharge weapon in 16 seconds
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+				Seabed = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0,
+            FiringTolerance = 5,
+			
+            Label = 'BoomWeapon',
+			
+            LeadTarget = false,
+			
+            MaxRadius = 128,
 
-      },
-   },
+            MuzzleVelocity = 6,
+			
+            NotExclusive = true,
+			
+            ProjectilesCreated = 9,
+            ProjectileIntervalTicks = 6,        -- makes firing take 5.4 seconds
+            
+            ProjectileId = '/mods/BlackOpsUnleashed/projectiles/GLaserShot01/GLaserShot01_proj.bp',
+			ProjectileLifetime = 15,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Bombard'},
+                    RackBone = 'Bombard',
+                },
+            },
+
+            RackSalvoFiresAfterCharge = true,
+			
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 0.0625,		----  18000 Damage every 16 = 1125 DPS - controlled by energy drain
+
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'SHIELD',
+                'ARTILLERY',
+                'MOBILE',
+                'STRUCTURE -WALL',
+                'ALLUNITS -WALL',
+            },
+			
+			TargetRestrictDisallow = 'UNTARGETABLE',
+
+            Turreted = false,
+			
+            WeaponRepackTimeout = 2.8,
+            WeaponUnpackAnimation = '/mods/BlackOpsUnleashed/units/BAL0401/BAL0401_ADeploy01.sca',
+            WeaponUnpackAnimationRate = 1.2,
+            WeaponUnpackLocksMotion = true,
+            WeaponUnpacks = true,
+        },
+		{
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = true,
+            
+            Audio = {
+                BeamLoop            = Sound { Bank = 'UALWeapon', Cue = 'UAL0401_Phason_Laser_Loop', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStart           = Sound { Bank = 'UALWeapon', Cue = 'UAL0401_Phason_Laser_Fire', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStop            = Sound { Bank = 'UALWeapon', Cue = 'UAL0401_Phason_Laser_Stop', LodCutoff = 'Weapon_LodCutoff' },
+                RackSalvoCharge     = Sound { Bank = 'UALWeapon', Cue = 'UAL0401_Phason_Laser_Charge', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0,
+            BeamLifetime = 2,
+			
+            CollideFriendly = false,
+            ContinuousBeam = false,
+			
+            Damage = 150,	-- over 2 seconds  = 3000dmg
+            DamageType = 'Normal',
+			
+            DisplayName = 'Heavy Microwave Laser',
+			
+			DoNotCollideList = {'MISSILE'},
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 2,
+			
+            Label = 'DefenseGun01',
+			
+            LeadTarget = false,
+			
+            MaxRadius = 36,
+
+            NotExclusive = true,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Muzzle01'},
+                    RackBone = 'Muzzle01',
+                },
+            },
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 0.25,		-- 750 DPS
+
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+				'MOBILE',
+                'STRUCTURE',
+                'ALLUNITS,-WALL',
+            },
+			
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TurretBoneMuzzle = 'Muzzle01',
+            TurretBonePitch = 'Muzzle01',
+            TurretBoneYaw = 'Muzzle01',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 360,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 40,
+			
+            Turreted = true,
+        },
+		
+        {
+            AboveWaterTargetsOnly = true,
+            Damage = 8800,
+            DamageFriendly = true,
+            DamageRadius = 18,
+            DamageType = 'Normal',
+            DisplayName = 'Collossus Death',
+            DummyWeapon = true,
+            Label = 'CollossusDeath',
+            WeaponCategory = 'Death',
+        },
+    },
 }
         
