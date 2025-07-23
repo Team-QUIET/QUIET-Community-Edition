@@ -366,26 +366,26 @@ UnitBlueprint {
    
             CollideFriendly = false,
 			
-            Damage = 1200,
-            DamageRadius = 3,
+            Damage = 925,
+            DamageRadius = 6,
             DamageType = 'Normal',
 			
             DisplayName = 'Ionized Plasma Cannon',
 
-            EnergyDrainPerSecond = 2640,
-            EnergyRequired = 6600,
+            EnergyRequired = 3300,
+            EnergyDrainPerSecond = 6600, -- 2 second charge 
 			
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
             },
 			
             FiringTolerance = 2,
-            FiringRandomness = 0.35,
+            FiringRandomness = 0.75,
 			
             Label = 'GaussCannon',
 			
-            MaxRadius = 126,
-            MinRadius = 12,
+            MaxRadius = 93,
+            MinRadius = 6,
 
             MuzzleVelocity = 42,
 			MuzzleVelocityRandom = 2,
@@ -420,13 +420,14 @@ UnitBlueprint {
 			
             RackRecoilDistance = -17,
 
+            RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
 
             RackSlavedToTurret = true,
 			
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 2,
+            RateOfFire = 10/30,
             TargetCheckInterval = 2,
 			
             TargetPriorities = {

@@ -92,8 +92,8 @@ UnitBlueprint {
     },
 
     Economy = {
-        BuildCostEnergy = 175000,
-        BuildCostMass = 14250,
+        BuildCostEnergy = 246000,
+        BuildCostMass = 22250,
         BuildTime = 15000,
 
         RebuildBonusIds = {'seb2401'},
@@ -214,8 +214,8 @@ UnitBlueprint {
 
             LeadTarget = true,
 
-            MaxRadius = 136,
-            MinRadius = 12,
+            MaxRadius = 91,
+            MinRadius = 6,
 
             MuzzleVelocity = 120,
 

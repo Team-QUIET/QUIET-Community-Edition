@@ -1,6 +1,17 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "srb2402",
+
+    Economy = {
+        BuildCostEnergy = 90000,
+        BuildCostMass = 10000,
+		
+		BuildRate = 15,	-- for enhancements
+		
+        BuildTime = 10500,
+		
+        RebuildBonusIds = {'srb2402'},
+    },
 	
     Weapon = {
         {
@@ -27,7 +38,7 @@ UnitBlueprint {
             FiringRandomness = 0.3,
             FiringTolerance = 2,
 			
-            MaxRadius = 92,
+            MaxRadius = 91,
             MinRadius = 7,
 
             MuzzleSalvoDelay = 0,
