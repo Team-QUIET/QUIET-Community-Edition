@@ -2,6 +2,8 @@ UnitBlueprint {
     Merge = true,
     Name = 'xsl0401',
 
+    Source = '/units/XSL0401/XSL0401_unit.bp',
+
     AI = {
 		GuardScanRadius = 45,
 		GuardReturnRadius = 55,
@@ -55,7 +57,7 @@ UnitBlueprint {
         ArmorType = 'Experimental',
         Health = 67000,
         MaxHealth = 67000,
-        RegenRate = 10,
+        RegenRate = 20,
         SurfaceThreatLevel = 618.9,
     },
 	
@@ -150,8 +152,8 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 460000,
-        BuildCostMass = 22500,
+        BuildCostEnergy = 330000,
+        BuildCostMass = 26500,
         BuildTime = 46000,
     },
 	
@@ -193,10 +195,10 @@ UnitBlueprint {
         
         LayerChangeOffsetHeight = -7.25,
 
-        MaxAcceleration = 1.2,
-        MaxBrake = 2.4,
-        MaxSpeed = 2.4,
-        MaxSpeedReverse = 2.4,
+        MaxAcceleration = 2.5,
+        MaxBrake = 2.5,
+        MaxSpeed = 2.5,
+        MaxSpeedReverse = 0,
         MaxSteerForce = 10,
         MeshExtentsX = 2.75,
         MeshExtentsY = 6.75,
@@ -209,7 +211,7 @@ UnitBlueprint {
         SkirtSizeZ = 5,
         StandUpright = true,
         TurnRadius = 3,
-        TurnRate = 48,
+        TurnRate = 60,
     },
 	
     SelectionSizeX = 2.2,
@@ -249,7 +251,7 @@ UnitBlueprint {
             CollideFriendly = false,
 			
             Damage = 8000,
-            DamageRadius = 3,
+            DamageRadius = 4,
             DamageType = 'Normal',
 			
             DisplayName = 'Experimental Phason Beam Generator',
@@ -259,11 +261,11 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
 			
-            FiringTolerance = 0.5,
+            FiringTolerance = 2,
 			
             Label = 'EyeWeapon',
 			
-            MaxRadius = 46,
+            MaxRadius = 47,
             MinRadius = 4,
 			
             MuzzleChargeDelay = 2.5,
@@ -284,10 +286,10 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_DirectFire',
 			
-            RateOfFire = 0.2,		---- 1600 DPS
+            RateOfFire = 10/50,		---- 1600 DPS
 			
             SlavedToBody = true,
-            SlavedToBodyArcRange = 40,
+            SlavedToBodyArcRange = 32,
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -303,16 +305,18 @@ UnitBlueprint {
             TurretBoneMuzzle = 'Head',
             TurretBonePitch = 'Head',
             TurretBoneYaw = 'Head',
+            TurretDualManipulators = false,
 
             TurretPitch = -20,
-            TurretPitchRange = 50,
-            TurretPitchSpeed = 28,
+            TurretPitchRange = 135,
+            TurretPitchSpeed = 70,
 			
             TurretYaw = 0,
-            TurretYawRange = 40,
-            TurretYawSpeed = 40,
+            TurretYawRange = 135,
+            TurretYawSpeed = 70,
 
             Turreted = true,
+            WeaponCategory = "Direct Fire Experimental",
         },
         {
             AboveWaterFireOnly = true,
@@ -325,7 +329,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 			
-            Damage = 550,
+            Damage = 610,
             DamageType = 'Normal',
 			
             DisplayName = 'Gatling Plasma Cannon',
@@ -335,19 +339,19 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
 			
-            FiringRandomness = 0.3,
-			FiringRandomnessWhileMoving = 0.6,
+            FiringRandomness = 0.1,
+			FiringRandomnessWhileMoving = 0.1,
 			
             FiringTolerance = 0.1,
 			
-            HeadingArcCenter = 10,
-            HeadingArcRange = 60,
+            HeadingArcCenter = 45,
+            HeadingArcRange = 90,
 			
             Label = 'LeftArm',
 			
-            MaxRadius = 46,
+            MaxRadius = 47,
 
-            MuzzleVelocity = 40,
+            MuzzleVelocity = 35,
 			
             NoPause = true,
 
@@ -364,14 +368,15 @@ UnitBlueprint {
                 },
             },
 
-            RateOfFire = 3,			---- 1650 DPS
+            RateOfFire = 10/3,
 			
             SlavedToBody = true,
-            SlavedToBodyArcRange = 60,
-
+            SlavedToBodyArcRange = 90,
 			
             TargetPriorities = {
                 "SPECIALHIGHPRI",
+                "EXPERIMENTAL",
+                "SUBCOMMANDER",
                 "TECH3 MOBILE",
                 "TECH2 MOBILE",
                 "TECH1 MOBILE",
@@ -383,17 +388,19 @@ UnitBlueprint {
             TurretBoneMuzzle = 'LeftHand_Muzzle',
             TurretBonePitch = 'Left_Arm_B07',
             TurretBoneYaw = 'Left_Arm_B10',
+            TurretDualManipulators = false,
 			
             TurretPitch = 0,
             TurretPitchRange = 90,
-            TurretPitchSpeed = 50,
+            TurretPitchSpeed = 90,
 			
-            TurretYaw = 0,
-            TurretYawRange = 60,
-            TurretYawSpeed = 39,
+            TurretYaw = 45,
+            TurretYawRange = 90,
+            TurretYawSpeed = 90,
 			
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Direct Fire Experimental",
         },
         {
             AboveWaterFireOnly = true,
@@ -407,8 +414,8 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 			
-            Damage = 1200,
-            DamageRadius = 5,
+            Damage = 1850,
+            DamageRadius = 6,
 			
             DamageType = 'Normal',
 			
@@ -419,13 +426,10 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
 			
-			FiringRandomness = 0.4,
-			FiringRandomnessWhileMoving = 0.9,
-			
             FiringTolerance = 0.5,
 			
-            HeadingArcCenter = -10,
-            HeadingArcRange = 60,
+            HeadingArcCenter = -45,
+            HeadingArcRange = 90,
 			
             Label = 'RightArm',
 			
@@ -437,7 +441,7 @@ UnitBlueprint {
             MuzzleVelocity = 40,
 			
             NotExclusive = true,
-			
+			PrefersPrimaryWeaponTarget = false,
             ProjectileId = '/projectiles/SDFSinnuntheWeapon01/SDFSinnuntheWeapon01_proj.bp',
 			ProjectileLifetime = 1.5,
 			
@@ -450,13 +454,15 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 0.3,			---- 360 DPS
+            RateOfFire = 10/33,			---- 360 DPS
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 60,
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
+                "EXPERIMENTAL",
+                "SUBCOMMANDER",
                 "TECH3 MOBILE",
                 "TECH2 MOBILE",
                 "TECH1 MOBILE",
@@ -471,14 +477,15 @@ UnitBlueprint {
 			
             TurretPitch = 0,
             TurretPitchRange = 90,
-            TurretPitchSpeed = 50,
+            TurretPitchSpeed = 90,
 			
-            TurretYaw = 0,
-            TurretYawRange = 60,
-            TurretYawSpeed = 35,
+            TurretYaw = -45,
+            TurretYawRange = 90,
+            TurretYawSpeed = 90,
 			
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Direct Fire Experimental",
         },
 		
         {
@@ -491,9 +498,9 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 75,
+            Damage = 25,
             DamageFriendly = false,
-            DamageRadius = 2.5,
+            DamageRadius = 4,
             DamageType = 'Normal',
 			
             DetonatesAtTargetHeight = true,
@@ -505,23 +512,25 @@ UnitBlueprint {
                 Seabed = 'Air',
             },
 			
-            FiringRandomness = 0.1,
-            FiringTolerance = 0.2,
+            FiringRandomness = 3.5,
+            FiringTolerance = 0.5,
 			
             HeadingArcCenter = 90,
-            HeadingArcRange = 90,
+            HeadingArcRange = 105,
 			
             Label = 'AA',
 			LeadTarget = true,
 			
-            MaxRadius = 40,
-
-            MuzzleVelocity = 60,
+            MaxRadius = 47,
+            MuzzleSalvoDelay = 0.4,
+            MuzzleSalvoSize = 3,
+            MuzzleVelocity = 20,
 
             NotExclusive = true,
 			
             ProjectileId = '/projectiles/SAAOlarisAAArtillery03/SAAOlarisAAArtillery03_proj.bp',
-			ProjectileLifetime = 1,
+			ProjectileLifetimeUsesMultiplier = 1.25,
+            ProjectilesPerOnFire = 3,
 
             RackBones = {
                 {
@@ -532,31 +541,38 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_AntiAir',
 			
-            RateOfFire = 3,	-- 225 DPS Air
+            RateOfFire = 10/3,	-- 225 DPS Air
 
             TargetPriorities = {
-                'SPECIALHIGHPRI',
-                'HIGHPRIAIR',
-                'BOMBER',
-                'GROUNDATTACK',
-                'AIR MOBILE',
+                "SPECIALHIGHPRI",
+                "(AIR * MOBILE * EXPERIMENTAL - BOMBER)",
+                "AIR MOBILE GROUNDATTACK",
+                "AIR MOBILE TECH2 BOMBER",
+                "AIR MOBILE TECH1 BOMBER",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE BOMBER",
+                "AIR MOBILE",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
 
             
             TurretBoneMuzzle = 'Left_AA_Muzzle',
             TurretBonePitch = 'Left_AA_Turret03',
-            TurretBoneYaw = 'Left_AA_Turret03',
+            TurretBoneYaw = 'Left_AA_Turret03', 
+            TurretDualManipulators = false,
 			
             TurretPitch = 0,
-            TurretPitchRange = 85,
+            TurretPitchRange = 90,
             TurretPitchSpeed = 180,
 			
             TurretYaw = 0,
-            TurretYawRange = 90,
-            TurretYawSpeed = 100,
+            TurretYawRange = 105,
+            TurretYawSpeed = 180,
 			
             Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Anti Air",
         },
 		
         {
@@ -569,9 +585,9 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 75,
+            Damage = 25,
             DamageFriendly = false,
-            DamageRadius = 2.5,
+            DamageRadius = 4,
             DamageType = 'Normal',
 			
             DetonatesAtTargetHeight = true,
@@ -583,23 +599,25 @@ UnitBlueprint {
                 Seabed = 'Air',
             },
 			
-            FiringRandomness = 0.1,
-            FiringTolerance = 0.2,
+            FiringRandomness = 3.5,
+            FiringTolerance = 0.5,
 			
             HeadingArcCenter = -90,
-            HeadingArcRange = 90,
+            HeadingArcRange = 105,
 			
             Label = 'AA',
 			
 			LeadTarget = true,
-            MaxRadius = 40,
-
-            MuzzleVelocity = 60,
+            MaxRadius = 47,
+            MuzzleSalvoDelay = 0.4,
+            MuzzleSalvoSize = 3,
+            MuzzleVelocity = 20,
 
             NotExclusive = true,
-
+            PrefersPrimaryWeaponTarget = true,
             ProjectileId = '/projectiles/SAAOlarisAAArtillery03/SAAOlarisAAArtillery03_proj.bp',
-			ProjectileLifetime = 1,
+			ProjectileLifetimeUsesMultiplier = 1.25,
+            ProjectilesPerOnFire = 3,
 
             RackBones = {
                 {
@@ -612,11 +630,15 @@ UnitBlueprint {
 
 			
             TargetPriorities = {
-                'HIGHPRIAIR',
-                'BOMBER',
-                'GROUNDATTACK',
-                'MOBILE',
-                'ALLUNITS',
+                "SPECIALHIGHPRI",
+                "(AIR * MOBILE * EXPERIMENTAL - BOMBER)",
+                "AIR MOBILE GROUNDATTACK",
+                "AIR MOBILE TECH2 BOMBER",
+                "AIR MOBILE TECH1 BOMBER",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE BOMBER",
+                "AIR MOBILE",
+                "ALLUNITS",
             },
 			
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
@@ -625,27 +647,31 @@ UnitBlueprint {
             TurretBoneMuzzle = 'Right_AA_Muzzle',
             TurretBonePitch = 'Right_AA_Turret02',
             TurretBoneYaw = 'Right_AA_Turret02',
+            TurretDualManipulators = false,
 			
             TurretPitch = 0,
-            TurretPitchRange = 85,
+            TurretPitchRange = 90,
             TurretPitchSpeed = 180,
 			
             TurretYaw = 0,
-            TurretYawRange = 90,
-            TurretYawSpeed = 100,
+            TurretYawRange = 105,
+            TurretYawSpeed = 180,
 			
             Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
+            WeaponCategory = "Anti Air",
         },
 		
         {
             AboveWaterTargetsOnly = true,
-            Damage = 6500,
+            Damage = 7000,
             DamageFriendly = true,
             DamageRadius = 8,
             DamageType = 'Normal',
             DisplayName = 'Collossus Death',
             DummyWeapon = true,
             Label = 'CollossusDeath',
+            WeaponCategory = "Death",
         },
 		
     },
