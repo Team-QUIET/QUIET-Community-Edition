@@ -76,8 +76,8 @@ UnitBlueprint {
 	},
 
 	Economy = {
-		BuildCostEnergy = 3860,
-		BuildCostMass = 670,
+		BuildCostEnergy = 4060,
+		BuildCostMass = 700,
 		BuildTime = 450,
 	},
 
@@ -97,7 +97,7 @@ UnitBlueprint {
 	},
 
 	Intel = {
-		VisionRadius = 32,
+		VisionRadius = 28,
 		WaterVisionRadius = 20,
 	},
 

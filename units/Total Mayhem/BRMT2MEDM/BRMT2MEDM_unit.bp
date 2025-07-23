@@ -95,7 +95,7 @@ UnitBlueprint {
 			
 			LeadTarget = true,
 			
-			MinRadius = 8,
+			MinRadius = 2,
             MaxRadius = 34,
 			
             MuzzleSalvoDelay = 0.2,
