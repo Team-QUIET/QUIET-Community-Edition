@@ -52,8 +52,8 @@ UnitBlueprint {
     
         ArmorType = 'Experimental',
 
-        Health = 117500,
-        MaxHealth = 117500,
+        Health = 95750,
+        MaxHealth = 95750,
         RegenRate = 15,
 
 		AirThreatLevel = 88,
@@ -128,8 +128,8 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 1250000,
-        BuildCostMass = 46000,
+        BuildCostEnergy = 1450000,
+        BuildCostMass = 67000,
         BuildTime = 125000,
     },
 	
@@ -435,7 +435,7 @@ UnitBlueprint {
             CollideFriendly = false,
 			
             Damage = 800,
-            DamageRadius = 1.2,
+            DamageRadius = 2,
             DamageType = 'Normal',
 			
             DisplayName = 'Gauss Cannon',
@@ -450,8 +450,8 @@ UnitBlueprint {
 
             Label = 'handweapon',
 			
-            MaxRadius = 65,
-			MinRadius = 10,
+            MaxRadius = 54,
+			MinRadius = 6,
 
             MuzzleVelocity = 54,
             MuzzleVelocityRandom = 1,
@@ -716,7 +716,7 @@ UnitBlueprint {
             CannotAttackGround = true, 
             CollideFriendly = false,
 			
-            Damage = 220,
+            Damage = 25,
             DamageType = 'Normal',
 			
             DisplayName = 'SAM Launcher',
@@ -730,7 +730,7 @@ UnitBlueprint {
 			
             Label = 'SAM',
 			
-            MaxRadius = 55,
+            MaxRadius = 53,
 			
             MuzzleSalvoDelay = 0.2, 
             MuzzleSalvoSize = 2, 
@@ -750,7 +750,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_AntiAir',
 			
-            RateOfFire = 2,			----- 880 DPS Air
+            RateOfFire = 1,
 
             TargetPriorities = {
                 'SPECIALHIGHPRI', 

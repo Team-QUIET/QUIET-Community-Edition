@@ -1,6 +1,7 @@
 UnitBlueprint {
     Merge = true,
 	BlueprintId = "bel0402", 	
+    
 	Economy = {
         BuildCostEnergy = 1700000,
         BuildCostMass = 81500,
@@ -9,9 +10,9 @@ UnitBlueprint {
 
     Defense = {
         ArmorType = 'Experimental',
-        Health = 124000,
-        MaxHealth = 124000,
-        RegenRate = 20,
+        Health = 117000,
+        MaxHealth = 117000,
+        RegenRate = 2,
     },
 
     General = {
@@ -43,9 +44,9 @@ UnitBlueprint {
 		
         LayerChangeOffsetHeight = -4.3,
 		
-        MaxAcceleration = 1.6,
-        MaxBrake = 2.8,
-        MaxSpeed = 2.8,
+        MaxAcceleration = 1.1,
+        MaxBrake = 2.35,
+        MaxSpeed = 2.35,
         MaxSpeedReverse = 0,
         MaxSteerForce = 15,
 		
@@ -63,8 +64,8 @@ UnitBlueprint {
         SkirtSizeX = 4,
         SkirtSizeZ = 4,
 		
-        TurnRadius = 5,
-        TurnRate = 32,
+        TurnRadius = 10,
+        TurnRate = 30,
     },
 	
     Weapon = {
@@ -78,7 +79,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 			
-            Damage = 1000,
+            Damage = 750,
             DamageFriendly = true,
             DamageRadius = 4,
             DamageType = 'Normal',
@@ -93,8 +94,8 @@ UnitBlueprint {
 			FiringRandomness = 5,
             FiringTolerance = 180,
 			
-            MaxRadius = 158,
-	        MinRadius = 20,
+            MaxRadius = 124,
+	        MinRadius = 12,
 			
             MuzzleChargeDelay = 0.5,
 
@@ -109,7 +110,7 @@ UnitBlueprint {
 
             RackSalvoChargeTime = 2,
 
-            RackSalvoReloadTime = 1,
+            RackSalvoReloadTime = 6,
 
             RangeCategory = 'UWRC_IndirectFire',
 			
@@ -118,7 +119,9 @@ UnitBlueprint {
 			-- and the rack salvo charge time - 1 seconds
 			-- so true firing cycle is 10 seconds or 9600/10
 
-            RateOfFire = 1.2,	---- 16 times 600 = 9600 Damage every 10 seconds = 960 DPS
+            RenderFireClock = true,
+
+            RateOfFire = 10/250,	---- 16 times 600 = 9600 Damage every 10 seconds = 960 DPS
 
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -432,7 +435,7 @@ UnitBlueprint {
 			
             CollideFriendly = false,
 			
-            Damage = 320,
+            Damage = 160,
             DamageType = 'Normal',
 			
             DisplayName = 'SAM Launcher',
