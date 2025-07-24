@@ -50,8 +50,8 @@ UnitBlueprint {
         AntiMissile = { AttachBone = "MainTurret_Yaw", Radius = 6, RedirectRateOfFire = 9, ProjectileCategories = { "TACTICAL MISSILE" } },
 
         ArmorType = "Experimental",
-        Health = 74500,
-        MaxHealth = 74500,
+        Health = 64500,
+        MaxHealth = 64500,
         RegenRate = 33,
 
         AirThreatLevel = 48,
@@ -201,10 +201,10 @@ UnitBlueprint {
         BankingSlope = 0,
         DragCoefficient = 0.2,
         LayerChangeOffsetHeight = -3,
-        MaxAcceleration = 0.7,
-        MaxBrake = 2.8,
-        MaxSpeed = 2.8,
-        MaxSpeedReverse = 2.8,
+        MaxAcceleration = 1,
+        MaxBrake = 2.1,
+        MaxSpeed = 2.1,
+        MaxSpeedReverse = 2.1,
         MaxSteerForce = 0,
         MinSpeedPercent = 0,
         MotionType = "RULEUMT_Amphibious",
@@ -243,8 +243,96 @@ UnitBlueprint {
     
     Weapon = {
         {
-            AutoInitiateAttackCommand = false,
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
 
+            Audio = {
+                Fire = Sound { Bank = 'BattlePackSB', Cue = 'Cybran_Heavy_QuantumCannon', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            AutoInitiateAttackCommand = true,
+
+            BallisticArc = "RULEUBA_None",
+            Buffs = {
+                {
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = "STUN",
+                    Duration = 0.25,
+                    Radius = 2,
+                    TargetAllow = "ALLUNITS",
+                    TargetDisallow = "COMMAND,EXPERIMENTAL,STRUCTURE",
+                },
+            },
+            CollideFriendly = false,
+
+            Damage = 2000,
+            DamageFriendly = true,
+            DamageRadius = 2,
+            DamageType = "Normal",
+
+            DisplayName = "Killer Cannon",
+
+            FireTargetLayerCapsTable = {
+                Land = "Land|Water|Seabed",
+                Seabed = "Land|Water|Seabed",
+            },
+
+            FiringRandomness = 0.35,
+            FiringRandomnessWhileMoving = 0.5,
+            FiringTolerance = 0.5,
+
+            Label = "KillerCannon",
+
+            MaxRadius = 68,
+            MinRadius = 4,
+
+            MuzzleVelocity = 40,
+
+            NotExclusive = true,
+
+            ProjectileId = "/mods/BattlePack/projectiles/WBPShadowCannon/WBPShadowCannon_proj.bp",
+            ProjectileLifetime = 2.1,
+
+            RackBones = {
+                {
+                    MuzzleBones = { "Killa_CannonMuzzle" },
+                    RackBone = "Killa_CannonBarrel",
+                },
+            },
+            RackRecoilDistance = -1,
+            RackReloadTimeout = 10,
+            
+            RackSalvoReloadTime = 1.7,
+
+            RangeCategory = "UWRC_DirectFire",
+
+            RateOfFire = 1,
+
+
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "EXPERIMENTAL",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "ALLUNITS -WALL",
+            },
+            TargetRestrictDisallow = "UNTARGETABLE",
+
+
+            TurretBoneMuzzle = "Killa_CannonMuzzle",
+            TurretBonePitch = "Killa_Cannon",
+            TurretBoneYaw = "MainTurret_Yaw",
+
+            TurretPitch = 0,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 80,
+            
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 90,
+            Turreted = true,
         },
         {
 
@@ -399,7 +487,15 @@ UnitBlueprint {
             Turreted = true,
         },
         {
-
+            AboveWaterTargetsOnly = true,
+            Damage = 7200,
+            DamageFriendly = true,
+            DamageRadius = 6,
+            DamageType = "Normal",
+            DisplayName = "Megalith Death",
+            DummyWeapon = true,
+            Label = "MegalithDeath",
+            WeaponCategory = "Death",
         },
     },
 }
