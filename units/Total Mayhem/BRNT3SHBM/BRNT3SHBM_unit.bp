@@ -178,10 +178,10 @@ UnitBlueprint {
 		
 		LayerChangeOffsetHeight = -3.9,
 		
-        MaxAcceleration = 0.85,
-        MaxBrake = 2.5,
-        MaxSpeed = 2.5,
-        MaxSpeedReverse = 2.5,
+        MaxAcceleration = 1,
+        MaxBrake = 2,
+        MaxSpeed = 2,
+        MaxSpeedReverse = 2,
         MaxSteerForce = 15,
 		
         MinSpeedPercent = 0,
@@ -195,9 +195,9 @@ UnitBlueprint {
 		StandUpright = true,
 		
         TurnRadius = 5,
-        TurnRate = 33,
+        TurnRate = 30,
 		
-		WaterSpeedMultiplier = 1.2,
+		WaterSpeedMultiplier = 1,
     },
 
     SelectionSizeX = 3,

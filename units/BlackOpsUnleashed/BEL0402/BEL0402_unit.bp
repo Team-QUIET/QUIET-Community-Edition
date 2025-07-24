@@ -1,7 +1,7 @@
 UnitBlueprint {
     Merge = true,
 	BlueprintId = "bel0402", 	
-    
+
 	Economy = {
         BuildCostEnergy = 1700000,
         BuildCostMass = 81500,
@@ -45,8 +45,8 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -4.3,
 		
         MaxAcceleration = 1.1,
-        MaxBrake = 2.35,
-        MaxSpeed = 2.35,
+        MaxBrake = 2.25,
+        MaxSpeed = 2.25,
         MaxSpeedReverse = 0,
         MaxSteerForce = 15,
 		
