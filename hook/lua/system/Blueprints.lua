@@ -445,7 +445,7 @@ do
 				end
 
 				-- Handle T4 Experimental Units
-				if cats.EXPERIMENTAL and (cats.LAND or cats.AIR or cats.NAVAL) and bp.Economy.BuildCostMass then
+				if cats.EXPERIMENTAL and (cats.LAND or cats.AIR or cats.NAVAL) and bp.Economy.BuildCostMass and not bp.IgnoreExperimentalMods then
 					-- Add IgnoreEvenflow
 					if not bp.IgnoreEvenflow then
 						bp.IgnoreEvenflow = true
