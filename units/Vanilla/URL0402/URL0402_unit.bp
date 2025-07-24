@@ -54,7 +54,7 @@ UnitBlueprint {
         Health = 46500,
         MaxHealth = 46500,
 		
-        RegenRate = 25,
+        RegenRate = 10,
         
         AirThreatLevel = 20,		
         SubThreatLevel = 20,

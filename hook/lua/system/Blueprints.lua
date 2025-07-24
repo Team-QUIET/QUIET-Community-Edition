@@ -488,11 +488,13 @@ do
 					local baseBuildTime = 15000
 					
 					-- Calculate scaled build time
-					local massRatio = bp.Economy.BuildCostMass / baseMass
-					local scaledBuildTime = baseBuildTime * (massRatio * 0.8)
+					if not bp.IgnoreExperimentalModsBT then	
+						local massRatio = bp.Economy.BuildCostMass / baseMass
+						local scaledBuildTime = baseBuildTime * (massRatio * 0.8)
 					
-					-- Ensure minimum build time of 15000
-					bp.Economy.BuildTime = math.max(15000, scaledBuildTime)
+						-- Ensure minimum build time of 15000
+						bp.Economy.BuildTime = math.max(15000, scaledBuildTime)
+					end
 				end
 			end
 		end
