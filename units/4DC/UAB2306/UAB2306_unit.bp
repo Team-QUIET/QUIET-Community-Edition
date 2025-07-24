@@ -163,9 +163,9 @@ UnitBlueprint{
 
             CollideFriendly = false,
 
-            Damage = 2600,
+            Damage = 4200,
             DamageFriendly = false,
-            DamageRadius = 3,
+            DamageRadius = 4,
             DamageType = "Normal",
 
             EnergyDrainPerSecond = 400,     -- 5.5 second charge

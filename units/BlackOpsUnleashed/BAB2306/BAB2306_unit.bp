@@ -160,7 +160,7 @@ UnitBlueprint {
 			
             ContinuousBeam = true,
 			
-            Damage = 33,
+            Damage = 50,
 			DamageRadius = 0,
             DamageFriendly = false,
             DamageType = 'Normal',
