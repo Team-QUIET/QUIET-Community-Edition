@@ -1,13 +1,110 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "url0401",
+
+    ScriptModule = '/mods/QUIET-Community-Edition/units/Vanilla/URL0401/URL0401_Script.lua',
+    ScriptClass = 'URL0401',
 	
     Weapon = {
         {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+			
+            Audio = {
+                Fire = Sound { Bank = 'URLWeapon', Cue = 'URL0401_Artillery_Proton', LodCutoff = 'Weapon_LodCutoff'},
+            },
+
+            BallisticArc = 'RULEUBA_HighArc',
+            CollideFriendly = false,
+			
+            Damage = 2000,
+            DamageFriendly = true,
+            DamageRadius = 5,
+			
+            DamageType = 'Normal',
+			
+            DisplayName = 'Proton Artillery',
+			
+            EnergyDrainPerSecond = 7000,       -- 1 second charge --
+            EnergyRequired = 3500,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+
+            FiringRandomness = 0.3825,
+            FiringTolerance = 0.1,
+			
+            Label = 'Gun01',
+			
+            LeadTarget = true,
+			
+            MaxRadius = 2500,
+            MinRadius = 150,
+
+            MuzzleVelocity = 200,
+            MuzzleVelocityReduceDistance = 5000,
+			
+            ProjectileId = '/projectiles/CIFArtilleryProton01/CIFArtilleryProton01_proj.bp',
+            ProjectileLifetime = 100,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Aim_Barrel_Muzzle'},
+                    RackBone = 'Turret_Aim_Barrel',
+                },
+            },
+
+            RackRecoilDistance = -20,
+
             RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
+
+            RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 10/20,		-- controlled by charge -- 2000 DPS
+            RateOfFire = 10/10,
+
+            TargetCheckInterval = 2,
+
+            TargetPriorities = {
+                "EXPERIMENTAL MASSFABRICATION",
+                "EXPERIMENTAL STRATEGIC ARTILLERY",
+                "TECH3 ANTIMISSILE",
+                "NUKE STRUCTURE",
+                "TECH3 STRUCTURE ARTILLERY",
+                "ORBITALSYSTEM",
+                "TECH3 ENERGYPRODUCTION",
+                "EXPERIMENTAL MOBILE",
+                "TECH3 STRUCTURE",
+                "TECH3 MOBILE",
+                "STRUCTURE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TurretBoneMuzzle = 'Turret_Aim_Barrel_Muzzle',
+            TurretBonePitch = 'Turret_Aim_Barrel',
+            TurretBoneYaw = 'Turret_Aim',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 30,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+			
+            Turreted = true,
+			
+            UseFiringSolutionInsteadOfAimBone = true,
+
+            WeaponRepackTimeout = 17,
+            WeaponUnpackAnimation = '/units/URL0401/URL0401_aopen.sca',
+            WeaponUnpackAnimationRate = 1,
+            WeaponUnpackAnimatorPrecedence = 0,
+            WeaponUnpackLocksMotion = true,
+            WeaponUnpackTimeout = 17,
+            WeaponUnpacks = true,
         },
     },
 }
