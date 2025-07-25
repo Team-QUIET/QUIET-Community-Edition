@@ -97,7 +97,7 @@ UnitBlueprint {
                 },
             },
 
-            RackSalvoFiresAfterCharge = true,
+            RackSalvoFiresAfterCharge = false,
 
             RangeCategory = 'UWRC_AntiAir',
 			
@@ -174,7 +174,7 @@ UnitBlueprint {
                 },
             },
 
-            RackSalvoFiresAfterCharge = true,
+            RackSalvoFiresAfterCharge = false,
 
             RateOfFire = 2,
 			
@@ -246,7 +246,7 @@ UnitBlueprint {
                 },
             },
 
-            RackSalvoFiresAfterCharge = true,
+            RackSalvoFiresAfterCharge = false,
 
             RateOfFire = 2,
 			
@@ -318,7 +318,7 @@ UnitBlueprint {
                 },
             },
 
-            RackSalvoFiresAfterCharge = true,
+            RackSalvoFiresAfterCharge = false,
 
             RateOfFire = 2,
             
