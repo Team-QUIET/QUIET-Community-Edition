@@ -1,0 +1,344 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "bsb0405",
+
+    AI = {
+		TargetBones = {'TargetBone01','TargetBone02','TargetBone03'},
+    },
+	
+    Audio = {
+        DeathExplosion  = Sound { Bank = 'XSL_Destroy', Cue = 'XSB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff' },
+        Destroyed       = Sound { Bank = 'XSL_Destroy', Cue = 'XSB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff'},
+        Killed          = Sound { Bank = 'XSL_Destroy', Cue = 'XSB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection     = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_Resource', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    Buffs = {
+        Regen = {
+            Level1 = 5,
+            Level2 = 10,
+            Level3 = 15,
+            Level4 = 20,
+            Level5 = 25,
+        },
+		VisionRadius = {
+            Level1 = 3,
+            Level2 = 3,
+            Level3 = 4,
+            Level4 = 5,
+            Level5 = 6,
+		},		
+    },
+	
+    BuildIconSortPriority = 70,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER4COMMANDER',
+        'SERAPHIM',
+        'STRUCTURE',
+        'DEFENSE',
+        'EXPERIMENTAL',
+		'DIRECTFIRE',
+        'SIZE16',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SORTDEFENSE',
+    },
+
+    Defense = {
+
+        -- Enhanced Lambda Field configurations with dynamic energy systems
+        LambdaRedirect01 = {
+            AttachBone = 'Light04',
+            Radius = 25,
+            RedirectRateOfFire = 8,
+            MaxEnergy = 2000,
+            EnergyRegenRate = 25,
+            BaseEnergyCost = 40,
+            MaxOverloadTime = 150
+        },
+        LambdaRedirect02 = {
+            AttachBone = 'Light05',
+            Radius = 19,
+            RedirectRateOfFire = 6,
+            MaxEnergy = 1500,
+            EnergyRegenRate = 20,
+            BaseEnergyCost = 45,
+            MaxOverloadTime = 120
+        },
+        LambdaRedirect03 = {
+            AttachBone = 'Light06',
+            Radius = 15,
+            RedirectRateOfFire = 5,
+            MaxEnergy = 1200,
+            EnergyRegenRate = 18,
+            BaseEnergyCost = 50,
+            MaxOverloadTime = 100
+        },
+
+        LambdaDestroy01 = {
+            AttachBone = 'TargetBone03',
+            Radius = 12,
+            RedirectRateOfFire = 7,
+            MaxEnergy = 1800,
+            EnergyRegenRate = 22,
+            BaseEnergyCost = 35,
+            MaxOverloadTime = 100
+        },
+        LambdaDestroy02 = {
+            AttachBone = 'TargetBone02',
+            Radius = 8,
+            RedirectRateOfFire = 6,
+            MaxEnergy = 1000,
+            EnergyRegenRate = 15,
+            BaseEnergyCost = 40,
+            MaxOverloadTime = 80
+        },
+
+        ArmorType = 'Structure',
+
+        EconomyThreatLevel = 750,
+
+        Health = 16500,
+        MaxHealth = 16500,
+
+        RegenRate = 15,
+
+        SurfaceThreatLevel = 317.3,
+    },
+	
+    Description = '<LOC bsb0405_desc>Lambda Generator Advanced Point Defense',
+	
+    Display = {
+
+        Abilities = {
+            '3 x Dynamic Lambda Deflection Fields',
+            '2 x Dynamic Lambda Destruction Fields',
+            'Energy-Based Defense System',
+            'Adaptive Threat Response',
+            'Overload Protection',
+            'Fires Unstable Phasons',
+            '<LOC ability_deathaoe>Volatile',
+        },
+
+        AnimationDeath = {
+            {
+                Animation = '/mods/BlackOpsUnleashed/units/BSB0405/BSB0405_ADeath.sca',
+                AnimationRateMax = 1,
+                AnimationRateMin = 1,
+                Weight = 100,
+            },
+        },
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 700,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    ShaderName = 'Seraphim',
+                },
+            },
+        },
+
+        UniformScale = 0.05,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 375000,
+        BuildCostMass = 27600,
+        BuildTime = 6250,
+		
+        MaintenanceConsumptionPerSecondEnergy = 2500,
+    },
+	
+    General = {
+		CapCost = 8,
+
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+
+        FactionName = 'Seraphim',
+
+        Icon = 'land',
+		
+        ToggleCaps = { RULEUTC_SpecialToggle = true },
+		
+        OrderOverrides = {
+            RULEUTC_SpecialToggle = { bitmapId = 'shield-personal', helpText = 'Toggle Lambda Fields' },
+        },
+
+        SelectionPriority = 5,
+
+        UnitName = '<LOC bsb0405_name>Uttaus-Athellu',
+    },
+	
+    Intel = {
+        VisionRadius = 44,
+    },
+	
+    Interface = {
+        HelpText = 'Lambda Field Generator/Advanced Point Defense',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 1,
+    LifeBarSize = 3,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+        MaxSteerForce = 0,
+        MeshExtentsX = 3.5,
+        MeshExtentsY = 5.5,
+        MeshExtentsZ = 3.5,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+		
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+		
+        SkirtSizeX = 4,
+        SkirtSizeZ = 4,
+		
+        TurnRate = 0,
+    },
+	
+    SelectionSizeX = 2.75,
+    SelectionSizeZ = 2.75,
+    SelectionThickness = 0.35,
+	
+    SizeX = 3,
+    SizeY = 6.2,
+    SizeZ = 3,
+	
+    StrategicIconName = 'icon_structure4_directfire',
+    StrategicIconSortPriority = 240,
+    
+    Veteran = {
+        Level1 = 48,
+        Level2 = 96,
+        Level3 = 144,
+        Level4 = 192,
+        Level5 = 240,
+    },
+    	
+    Weapon = {
+        {   
+            AboveWaterTargetsOnly = true,
+            AimsStraightOnDisable = true,
+			
+            Audio = {
+                Fire                = Sound { Bank = 'XSL_Weapon',Cue = 'XSL0401_Exp_Phason_Fire',LodCutoff = 'Weapon_LodCutoff'},
+                MuzzleChargeStart   = Sound { Bank = 'XSL_Weapon',Cue = 'XSL0401_Exp_Phason_Charge',LodCutoff = 'Weapon_LodCutoff'},
+            },
+
+            BallisticArc = 'RULEUBA_HighArc',
+			
+            Buffs = {
+                {
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 1.5,
+                    Radius = 2.5,
+                    TargetAllow = 'LAND,NAVAL',
+                    TargetDisallow = 'COMMAND,EXPERIMENTAL,WALL',
+                },
+            },
+			
+            CollideFriendly = false,
+			
+            Damage = 1350,
+            DoTTime = 5,
+            DoTPulses = 5,
+			
+			DamageFriendly = false,
+            DamageRadius = 4.2,
+            DamageType = 'Normal',
+			
+            EnergyDrainPerSecond = 8375,    -- 4 second charge
+            EnergyRequired = 33500,
+			
+            DisplayName = 'Phason Ball',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 2,
+			
+            Label = 'Eye',
+			
+            MaxRadius = 90,
+            MinRadius = 12,
+			
+            MuzzleChargeDelay = 1,
+
+            MuzzleVelocity = 18,
+			
+            NotExclusive = true,
+			
+            ProjectileId = '/mods/BlackOpsUnleashed/projectiles/EyeBlast01/EyeBlast01_proj.bp',
+			ProjectileLifetime = 6,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Eye01'},
+                    RackBone = 'Eye01',
+                },
+            },
+
+            RackSalvoFiresAfterCharge = true,
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 0.2,	-- by energy -- 6750K every 5 seconds = 1350 DPS
+
+
+            TargetPriorities = {
+                "EXPERIMENTAL",
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+
+            TargetRestrictDisallow = 'UNTARGETABLE, TECH1',
+			
+            TurretBoneMuzzle = 'Eye01',
+            TurretBonePitch = 'Eye01',
+            TurretBoneYaw = 'Eye01',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 50,
+            TurretPitchSpeed = 24,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 24,
+			
+            Turreted = true,
+        },
+        {
+            Damage = 4800,
+            DamageFriendly = true,
+            DamageRadius = 10,
+            DamageType = 'Normal',
+            DisplayName = 'Death Weapon',
+            DummyWeapon = true,
+            Label = 'CollossusDeath',
+            WeaponCategory = 'Death',
+        },
+    },
+}
