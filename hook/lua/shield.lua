@@ -1,12 +1,11 @@
--- WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * QUIET Hook for Shield.lua' ) 
+-- WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * QUIET Hook for Shield.lua' )
 -- This warning allows us to see exactly where our Hook Line starts so we can debug the exact line thats causing an error easier
--- Begins at Line 998 
+-- Begins at Line 998
 -- to get the exact line number, you can substract the line number of the line where the error occurs by the line 998 in this file
 
 --  /lua/shield.lua
 
 do -- encasing the code in do .... end means that you dont have to worry about using unique variables
-
 
 local Entity = import('/lua/sim/Entity.lua').Entity
 local EffectTemplate = import('/lua/EffectTemplates.lua')
@@ -32,26 +31,23 @@ local IsEnemy = IsEnemy
 local Random = Random
 local GetGameTick = GetGameTick
 local ForkThread = ForkThread
+local ForkTo = ForkThread
 local ChangeState = ChangeState
 local ArmyGetHandicap = ArmyGetHandicap
 local CoroutineYield = coroutine.yield
 local CreateEmitterAtBone = CreateEmitterAtBone
 local _c_CreateShield = _c_CreateShield
+local KillThread = KillThread
+local WaitTicks = coroutine.yield
+
+-- cache moho functions
+local GetResourceConsumed = moho.unit_methods.GetResourceConsumed
+local GetEconomyStored = moho.aibrain_methods.GetEconomyStored
 
 -- cache trashbag functions
 local TrashBag = TrashBag
 local TrashAdd = TrashBag.Add
 local TrashDestroy = TrashBag.Destroy
-local WaitTicks     = coroutine.yield
-local Warp          = Warp
-
-local ForkThread = ForkThread
-local ForkTo = ForkThread
-
-local IsEnemy = IsEnemy
-local KillThread = KillThread
-
-local CreateEmitterAtBone = CreateEmitterAtBone
 
 local VectorCached = Vector(0, 0, 0)
 	
@@ -147,37 +143,38 @@ Shield = ClassShield(QCEShield) {
 
     OnCreate = function( self, spec )
 
-        --LOG("We've entered LCE Version of Shield.lua - OnCreate Function")
-
         -- cache information that is used frequently
+        local owner = spec.Owner
         self.Army = EntityGetArmy(self)
         self.EntityId = EntityGetEntityId(self)
-        self.Brain = spec.Owner:GetAIBrain()
+        self.Brain = owner:GetAIBrain()
+        self.Owner = owner
 
 		self.Dead = false
-        
-        if spec.ImpactEffects ~= '' then
-			self.ImpactEffects = EffectTemplate[spec.ImpactEffects]
+
+        -- cache impact effects and mesh
+        local impactEffects = spec.ImpactEffects
+        if impactEffects and impactEffects ~= '' then
+			self.ImpactEffects = EffectTemplate[impactEffects]
 		else
 			self.ImpactEffects = false
 		end
-        
-        if spec.ImpactMesh ~= '' then
-            self.ImpactMeshBp = spec.ImpactMesh
+
+        local impactMesh = spec.ImpactMesh
+        if impactMesh and impactMesh ~= '' then
+            self.ImpactMeshBp = impactMesh
         else
             self.ImpactMeshBp = false
         end
 
         -- manage impact entities
         self.LiveImpactEntities = 0
-        self.ImpactEntitySpecs = { Owner = spec.Owner }
-        
+        self.ImpactEntitySpecs = { Owner = owner }
 
 		self.OffHealth = -1
 
-        -- copy over information from specifiaction
+        -- copy over information from specification
         self.Size = spec.Size
-        self.Owner = spec.Owner
         self.MeshBp = spec.Mesh
         self.MeshZBp = spec.MeshZ
         self.SpillOverDmgMod = spec.ShieldSpillOverDamageMod or 0.15
@@ -334,7 +331,7 @@ Shield = ClassShield(QCEShield) {
 
     --- Retrieves allied shields that overlap with this shield, caches the results per tick
     -- @param self A shield that we're computing the overlapping shields for
-    -- @param tick Optional parameter, represents the game tick. Used to determine if we need to refresh the cash
+    -- @param tick Optional parameter, represents the game tick. Used to determine if we need to refresh the cache
     GetOverlappingShields = function(self, tick)
 
         -- allow the game tick to be send to us, saves cycles
@@ -344,71 +341,80 @@ Shield = ClassShield(QCEShield) {
         if tick ~= self.OverlappingShieldsTick then
             self.OverlappingShieldsTick = tick
 
+            -- cache frequently used values
             local brain = self.Brain
-            local position = EntityGetPosition(self.Owner)
+            local owner = self.Owner
+            local ownerEntityId = owner.EntityId
+            local position = EntityGetPosition(owner)
+            local selfSize = self.Size
+            local radius = 0.5 * selfSize
 
             -- diameter where other shields overlap with us or are contained by us
-            local diameter = LargestShieldDiameter + self.Size
+            local diameter = LargestShieldDiameter + selfSize
 
             -- retrieve candidate units
             local units = brain:GetUnitsAroundPoint(CategoriesOverspill, position, 0.5 * diameter, 'Ally')
 
             if units then
-                --LOG("We found overlapping shields "..repr(units))
-                -- allocate locals once
-                local shieldOther
-                local radiusOther
-                local distanceToOverlap
-                local osx, osy, osz
-                local d, dx, dy, dz
+                -- pre-allocate locals for better performance
+                local shieldOther, radiusOther, distanceToOverlap
+                local osx, osy, osz, d, dx, dy, dz
+                local shieldSize, shieldType
 
-                -- compute our information only once
+                -- compute our position only once
                 local psx, psy, psz = EntityGetPositionXYZ(self)
-                local radius = 0.5 * self.Size
 
                 local head = 1
-                for k, other in units do
+                local overlappingShields = self.OverlappingShields
 
+                -- clear previous results efficiently
+                for i = 1, self.OverlappingShieldsCount do
+                    overlappingShields[i] = nil
+                end
+
+                for k, other in units do
                     -- store reference to reduce table lookups
                     shieldOther = other.MyShield
 
                     -- check if it is a different unit and that it has an active shield with a radius
                     -- larger than 0, as engine defaults shield table to 0
-                    if shieldOther
-                        and shieldOther.MyShieldType ~= "Personal"
-                        and shieldOther:IsUp()
-                        and shieldOther.Size
-                        and shieldOther.Size > 0
-                        and self.Owner.EntityId ~= other.EntityId
-                    then
+                    if shieldOther then
+                        shieldType = shieldOther.MyShieldType
+                        shieldSize = shieldOther.Size
 
-                        -- compute radius of shield
-                        radiusOther = 0.5 * shieldOther.Size
+                        if shieldType ~= "Personal"
+                            and shieldOther:IsUp()
+                            and shieldSize
+                            and shieldSize > 0
+                            and ownerEntityId ~= other.EntityId
+                        then
+                            -- compute radius of shield
+                            radiusOther = 0.5 * shieldSize
 
-                        -- compute total distance to overlap and square it to prevent a square root
-                        distanceToOverlap = radius + radiusOther
-                        distanceToOverlap = distanceToOverlap * distanceToOverlap
+                            -- compute total distance to overlap and square it to prevent a square root
+                            distanceToOverlap = radius + radiusOther
+                            distanceToOverlap = distanceToOverlap * distanceToOverlap
 
-                        -- retrieve position of other shield
-                        osx, osy, osz = EntityGetPositionXYZ(shieldOther)
+                            -- retrieve position of other shield
+                            osx, osy, osz = EntityGetPositionXYZ(shieldOther)
 
-                        -- compute vector from self to other
-                        dx = osx - psx
-                        dy = osy - psy
-                        dz = osz - psz
+                            -- compute vector from self to other
+                            dx = osx - psx
+                            dy = osy - psy
+                            dz = osz - psz
 
-                        -- compute squared distance and check it
-                        d = dx * dx + dy * dy + dz * dz
-                        if d < distanceToOverlap then
-                            self.OverlappingShields[head] = shieldOther
-                            head = head + 1
+                            -- compute squared distance and check it
+                            d = dx * dx + dy * dy + dz * dz
+                            if d < distanceToOverlap then
+                                overlappingShields[head] = shieldOther
+                                head = head + 1
+                            end
                         end
                     end
                 end
                 -- keep track of the number of adjacent shields
                 self.OverlappingShieldsCount = head - 1
             else
-                --LOG("We didnt find any overlapping shields")
                 -- no units found
                 self.OverlappingShieldsCount = 0
             end
@@ -462,171 +468,158 @@ Shield = ClassShield(QCEShield) {
     -- Moved to QUIET Base Repo -- 12/31/2024 -- Azraeelian Angel
 
     ApplyDamage = function(self, instigator, amount, vector, dmgType, doOverspill)
-
-        -- cache information used throughout the function
-
-        --LOG("We are entering LCE Version of Shield.lua - ApplyDamage Function")
-
+        -- cache frequently used values
         local tick = GetGameTick()
+        local owner = self.Owner
+        local myShieldType = self.MyShieldType
 
         -- damage correction for overcharge
         -- These preset damages deal `2 * dmg * absorbMult or armorMult`, currently absorption multiplier is 1x so we need to divide by 2
         if dmgType == 'Overcharge' then
             local wep = instigator:GetWeaponByLabel('OverCharge')
+            local overchargeBp = wep:GetBlueprint().Overcharge
             if self.StaticShield then -- fixed damage for static shields
-                amount = wep:GetBlueprint().Overcharge.structureDamage / 2
+                amount = overchargeBp.structureDamage * 0.5  -- multiply is faster than divide
             elseif self.CommandShield then -- fixed damage for UEF bubble shield
-                amount = wep:GetBlueprint().Overcharge.commandDamage / 2
+                amount = overchargeBp.commandDamage * 0.5
             end
         end
 
         -- damage correction for overspill, do not apply to personal shields
-
-        -- LOG("The MyShieldType is "..repr(self.MyShieldType))
-
-        if self.MyShieldType ~= "Personal" then
-
-            local instigatorId = (instigator and instigator.EntityId) or false
+        if myShieldType ~= "Personal" then
+            local instigatorId = instigator and instigator.EntityId
             if instigatorId then
+                local damagedTick = self.DamagedTick
+                local damagedRegular = self.DamagedRegular
+                local damagedOverspill = self.DamagedOverspill
 
                 -- reset our status quo for this instigator
-                if self.DamagedTick[instigatorId] ~= tick then
-                    self.DamagedTick[instigatorId] = tick
-                    self.DamagedRegular[instigatorId] = false
-                    self.DamagedOverspill[instigatorId] = 0
+                if damagedTick[instigatorId] ~= tick then
+                    damagedTick[instigatorId] = tick
+                    damagedRegular[instigatorId] = false
+                    damagedOverspill[instigatorId] = 0
                 end
 
                 -- anything but shield spill damage is regular damage, remove any previous overspill damage from the same instigator during the same tick
                 if dmgType ~= "ShieldSpill" then
-                    --LOG("The dmgType is (it should be Shieldspill)"..repr(dmgType))
-                    self.DamagedRegular[instigatorId] = tick
-                    amount = amount - self.DamagedOverspill[instigatorId]
-                    self.DamagedOverspill[instigatorId] = 0
+                    damagedRegular[instigatorId] = tick
+                    amount = amount - damagedOverspill[instigatorId]
+                    damagedOverspill[instigatorId] = 0
                 else
-                    --LOG("It definite is "..repr(dmgType))
                     -- if we have already received regular damage from this instigator at this tick, skip the overspill damage
-                    if self.DamagedRegular[instigatorId] == tick then
+                    if damagedRegular[instigatorId] == tick then
                         return
                     end
 
                     -- keep track of overspill damage if we have not received any actual damage yet
-                    self.DamagedOverspill[instigatorId] = self.DamagedOverspill[instigatorId] + amount
+                    damagedOverspill[instigatorId] = damagedOverspill[instigatorId] + amount
                 end
             end
         end
 
         -- do damage logic for shield
-
-        if self.Owner ~= instigator then
-            --LOG("Calling OnGetDamageAbsorption")
+        if owner ~= instigator then
             local absorbed = self:OnGetDamageAbsorption(instigator, amount, dmgType)
 
             -- take some damage
             EntityAdjustHealth(self, instigator, -absorbed)
 
             -- check to spawn impact effect
-            local r = Random(1, self.Size)
-            if dmgType ~= "ShieldSpill"
-                and not (self.LiveImpactEntities > 10
-                    and (r >= 0.2 * self.Size and r < self.LiveImpactEntities))
-            then
-                ForkThread(self.CreateImpactEffect, self, vector)
+            if dmgType ~= "ShieldSpill" then
+                local liveImpacts = self.LiveImpactEntities
+                if liveImpacts <= 10 then
+                    ForkTo(self.CreateImpactEffect, self, vector)
+                else
+                    local r = Random(1, self.Size)
+                    local sizeThreshold = 0.2 * self.Size
+                    if not (r >= sizeThreshold and r < liveImpacts) then
+                        ForkTo(self.CreateImpactEffect, self, vector)
+                    end
+                end
             end
 
-            if self.RegenThread then
-                KillThread(self.RegenThread)
+            -- kill existing regen thread if present
+            local regenThread = self.RegenThread
+            if regenThread then
+                KillThread(regenThread)
                 self.RegenThread = nil
             end
-             
-            if GetHealth(self) <= 0 then
+
+            local currentHealth = EntityGetHealth(self)
+            if currentHealth <= 0 then
                 ChangeState(self, self.DamageRechargeState)
             else
                 if self.OffHealth < 0 then
-                 
-                    ForkTo(self.CreateImpactEffect, self, vector)
-                     
                     if self.RegenRate > 0 then
-                     
                         self.RegenThread = self:ForkThread(self.RegenStartThread)
-     
                     end
                 else
-                    self:UpdateShieldRatio(0) 
+                    self:UpdateShieldRatio(0)
                 end
             end
         end
 
         -- overspill damage checks
-
-        --LOG("doOverspill is "..repr(doOverspill))
-
-        if -- prevent recursively applying overspill
-        doOverspill
-            -- personal shields do not have overspill damage
-            and self.MyShieldType ~= "Personal"
-            -- we consider damage without an instigator irrelevant, typically force events
+        if doOverspill
+            and myShieldType ~= "Personal"
             and IsEntity(instigator)
-            -- we consider damage that is 1 or lower irrelevant, typically force events
             and amount > 1
-            -- do not recursively apply overspill damage
             and dmgType ~= "ShieldSpill"
         then
             local spillAmount = self.SpillOverDmgMod * amount
 
-            --LOG("The spillAmount is "..repr(spillAmount))
-
             -- retrieve shields that overlap with us
             local others, count = self:GetOverlappingShields(tick)
 
-            --LOG("Are we reaching here")
-
             -- apply overspill damage to neighbour shields
-            for k = 1, count do
-                --LOG("Applying Overspill Damage to other shields nearby")
-                others[k]:ApplyDamage(
-                    instigator, -- instigator
-                    spillAmount, -- amount
-                    nil, -- vector
-                    "ShieldSpill", -- type
-                    false-- do overspill
-                )
+            if count > 0 then
+                for k = 1, count do
+                    others[k]:ApplyDamage(
+                        instigator,
+                        spillAmount,
+                        nil,
+                        "ShieldSpill",
+                        false
+                    )
+                end
             end
         end
     end,
 
     RegenStartThread = function(self)
-		local AdjustHealth = AdjustHealth
-		local GetHealth = GetHealth
-		local GetMaxHealth = GetMaxHealth
-		local SetShieldRatio = SetShieldRatio
-        
-		local WaitTicks = WaitTicks
-		
+		-- cache frequently used values
+		local owner = self.Owner
+		local regenRate = self.RegenRate
+		local dead = self.Dead
+
 		if ScenarioInfo.ShieldDialog then
-			LOG("*AI DEBUG Shield Starts Regen Thread on "..repr(self.Owner.BlueprintID).." "..repr(__blueprints[self.Owner.BlueprintID].Description).." - start delay is "..repr(self.RegenStartTime) )
-			
-			if not self.Owner.BlueprintID then
+			LOG("*AI DEBUG Shield Starts Regen Thread on "..repr(owner.BlueprintID).." "..repr(__blueprints[owner.BlueprintID].Description).." - start delay is "..repr(self.RegenStartTime) )
+
+			if not owner.BlueprintID then
 				LOG("*AI DEBUG "..repr(self))
 			end
 		end
-		
+
 		-- shield takes a delay before regen starts
         WaitTicks( 10 + (self.RegenStartTime * 10) )
-        
-        while not self.Dead and GetHealth(self) < GetMaxHealth(self) do
 
+        -- cache max health once
+        local maxHealth = EntityGetMaxHealth(self)
+
+        while not dead and EntityGetHealth(self) < maxHealth do
 			-- regen the shield
-			if not self.Dead then
-			
-				AdjustHealth( self, self.Owner, self.RegenRate )
-				
-				SetShieldRatio( self.Owner, GetHealth(self)/GetMaxHealth(self) )
-		
+			if not dead then
+				EntityAdjustHealth(self, owner, regenRate)
+
+				SetShieldRatio(owner, EntityGetHealth(self) / maxHealth)
+
 				-- wait one second
 				WaitTicks(11)
+
+				-- update dead status
+				dead = self.Dead
 			end
         end
-		
     end,
 
     CreateImpactEffect = function(self, vector)
@@ -637,16 +630,26 @@ Shield = ClassShield(QCEShield) {
         -- keep track of this entity
         self.LiveImpactEntities = self.LiveImpactEntities + 1
 
-        -- cache values
-        local effect
+        -- cache frequently used values
         local army = self.Army
         local vc = VectorCached
+        local impactEffects = self.ImpactEffects
+        local impactMeshBp = self.ImpactMeshBp
 
-        -- compute distance to offset effect
-        local x = vector[1] or 0 -- 0 safe check for now
-        local y = vector[2] or 0 -- 0 safe check for now
-        local z = vector[3] or 0 -- 0 safe check for now
-        local d = LOUDSQRT(x * x + y * y + z * z)
+        -- early exit if no effects to show
+        if not impactEffects and impactMeshBp == '' then
+            self.LiveImpactEntities = self.LiveImpactEntities - 1
+            return
+        end
+
+        -- compute distance to offset effect only if needed
+        local d = 0
+        if vector and impactEffects then
+            local x = vector[1] or 0
+            local y = vector[2] or 0
+            local z = vector[3] or 0
+            d = LOUDSQRT(x * x + y * y + z * z)
+        end
 
         -- allocate an entity
         local entity = Entity(self.ImpactEntitySpecs)
@@ -655,18 +658,24 @@ Shield = ClassShield(QCEShield) {
         Warp(entity, vc)
 
         -- set the impact mesh and scale it accordingly
-        if self.ImpactMeshBp ~= '' then
-            EntitySetMesh(entity, self.ImpactMeshBp)
+        if impactMeshBp ~= '' then
+            EntitySetMesh(entity, impactMeshBp)
             EntitySetDrawScale(entity, self.Size)
 
-            vc[1], vc[2], vc[3] = -x, -y, -z
-            EntitySetOrientation(entity, OrientFromDir(vc), true)
+            if vector then
+                vc[1], vc[2], vc[3] = -vector[1], -vector[2], -vector[3]
+                EntitySetOrientation(entity, OrientFromDir(vc), true)
+            end
         end
 
         -- spawn additional effects
-        for _, v in self.ImpactEffects do
-            effect = CreateEmitterAtBone(entity, -1, army, v)
-            IEffectOffsetEmitter(effect, 0, 0, d)
+        if impactEffects then
+            for _, v in impactEffects do
+                local effect = CreateEmitterAtBone(entity, -1, army, v)
+                if d > 0 then
+                    IEffectOffsetEmitter(effect, 0, 0, d)
+                end
+            end
         end
 
         -- hold up a bit
@@ -807,78 +816,66 @@ Shield = ClassShield(QCEShield) {
     -- Basically run a timer, but with a visual bar
 	-- The time value is in seconds but the charging up period can be slowed if resources are not available
     ChargingUp = function(self, curProgress, time)
-	
-        self.Owner:OnShieldIsCharging()
-    
-		local GetResourceConsumed = moho.unit_methods.GetResourceConsumed
-		local SetShieldRatio = SetShieldRatio
-		local WaitTicks = WaitTicks
-        
+        local owner = self.Owner
+        owner:OnShieldIsCharging()
+
+        -- cache the time divisor to avoid repeated division
+        local timeInverse = 1.0 / time
+
         while not self.Dead and curProgress < time do
-			
-            curProgress = curProgress + GetResourceConsumed( self.Owner )
-			
-			SetShieldRatio( self.Owner, curProgress/time )
-			
+            curProgress = curProgress + GetResourceConsumed(owner)
+			SetShieldRatio(owner, curProgress * timeInverse)
             WaitTicks(11)
-        end    
+        end
     end,
 
     OnState = State {
-	
-        Main = function(self)
-			local GetHealth = GetHealth
-			local GetMaxHealth = GetMaxHealth
-			local GetResourceConsumed = moho.unit_methods.GetResourceConsumed
-            local GetEconomyStored = moho.aibrain_methods.GetEconomyStored
-			local SetShieldRatio = SetShieldRatio
-			local WaitTicks = WaitTicks
-			
-			local aiBrain = self.Owner:GetAIBrain()
-            self.Enabled = true
-            --LOG("We are in the OnState Function and self.Enabled is" .. repr(self.Enabled) .. " for unit "..__blueprints[self.Owner.BlueprintID].Description)
-			
-            -- If the shield was turned off; use the recharge time before turning back on
-            if self.OffHealth >= 0 then
-			
-                self.Owner:SetMaintenanceConsumptionActive()
-                
-                self:ChargingUp( 0, self.ShieldEnergyDrainRechargeTime )
-                
-                -- If the shield has less than full health, allow the shield to begin regening
-                if GetHealth(self) < GetMaxHealth(self) and self.RegenRate > 0 then
-                
-                    self.RegenThread = self:ForkThread(self.RegenStartThread)
 
+        Main = function(self)
+			-- cache frequently used values and functions
+			local owner = self.Owner
+			local aiBrain = owner:GetAIBrain()
+			local offHealth = self.OffHealth
+			local regenRate = self.RegenRate
+
+            self.Enabled = true
+
+            -- If the shield was turned off; use the recharge time before turning back on
+            if offHealth >= 0 then
+                owner:SetMaintenanceConsumptionActive()
+
+                self:ChargingUp(0, self.ShieldEnergyDrainRechargeTime)
+
+                -- If the shield has less than full health, allow the shield to begin regening
+                local currentHealth = EntityGetHealth(self)
+                local maxHealth = EntityGetMaxHealth(self)
+                if currentHealth < maxHealth and regenRate > 0 then
+                    self.RegenThread = self:ForkThread(self.RegenStartThread)
                 end
-            
             end
-            
+
             -- We are no longer turned off
             self.OffHealth = -1
-			
-            SetShieldRatio( self.Owner, GetHealth(self)/GetMaxHealth(self) )
-			
-            self.Owner:OnShieldEnabled()
+
+            -- cache max health for ratio calculations
+            local maxHealth = EntityGetMaxHealth(self)
+            SetShieldRatio(owner, EntityGetHealth(self) / maxHealth)
+
+            owner:OnShieldEnabled()
 			self:CreateShieldMesh()
 
             WaitTicks(10)
-			
+
             -- Test in here if we have run out of power
             while true do
-			
 				WaitTicks(5)
-				
-				SetShieldRatio( self.Owner, GetHealth(self)/GetMaxHealth(self) )
-				
-                if GetResourceConsumed( self.Owner ) != 1 and GetEconomyStored(aiBrain, 'ENERGY') < 1 then
-					
+
+				SetShieldRatio(owner, EntityGetHealth(self) / maxHealth)
+
+                if GetResourceConsumed(owner) ~= 1 and GetEconomyStored(aiBrain, 'ENERGY') < 1 then
 					break
 				end
             end
-            
-            -- Record the amount of health on the shield here so when the unit tries to turn its shield
-            -- back on and off it has the amount of health from before.
 
             ChangeState(self, self.EnergyDrainRechargeState)
         end,
