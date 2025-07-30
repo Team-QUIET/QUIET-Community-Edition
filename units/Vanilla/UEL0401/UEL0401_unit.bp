@@ -81,10 +81,10 @@ UnitBlueprint {
 		
         ArmorType = 'Experimental',
 
-        Health = 22500,
-        MaxHealth = 22500,
+        Health = 12500,
+        MaxHealth = 12500,
 		
-        RegenRate = 15,
+        RegenRate = 20,
 		
         Shield = {
             ImpactEffects = 'UEFShieldHit01',
@@ -93,11 +93,11 @@ UnitBlueprint {
             MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
             RegenAssistMult = 60,
             ShieldEnergyDrainRechargeTime = 5,
-            ShieldMaxHealth = 30000,
-            ShieldRechargeTime = 26,
-            ShieldRegenRate = 288,
+            ShieldMaxHealth = 20000,
+            ShieldRechargeTime = 75,
+            ShieldRegenRate = 200,
             ShieldRegenStartTime = 1,
-            ShieldSize = 20,
+            ShieldSize = 24,
             ShieldVerticalOffset = -3,
         },
 
@@ -183,7 +183,7 @@ UnitBlueprint {
 	
     Economy = {
         BuildCostEnergy = 600000,
-        BuildCostMass = 25550,
+        BuildCostMass = 28000,
         BuildRate = 160,
         BuildTime = 10000,
 		

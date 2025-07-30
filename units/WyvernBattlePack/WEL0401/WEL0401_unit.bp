@@ -49,9 +49,9 @@ UnitBlueprint{
     Defense = {
         AirThreatLevel = 29,
         ArmorType = "Experimental",
-        Health = 22000,
-        MaxHealth = 22000,
-        RegenRate = 10,
+        Health = 17500,
+        MaxHealth = 17500,
+        RegenRate = 20,
 
         Shield = {
             ImpactEffects = "UEFShieldHit01",
@@ -60,11 +60,11 @@ UnitBlueprint{
             MeshZ = "/effects/entities/Shield01/Shield01z_mesh",
             RegenAssistMult = 60,
             ShieldEnergyDrainRechargeTime = 5,
-            ShieldMaxHealth = 27500,
-            ShieldRechargeTime = 26,
-            ShieldRegenRate = 288,
+            ShieldMaxHealth = 17500,
+            ShieldRechargeTime = 75,
+            ShieldRegenRate = 200,
             ShieldRegenStartTime = 1,
-            ShieldSize = 16,
+            ShieldSize = 20,
             ShieldVerticalOffset = -3,
         },
 
@@ -227,9 +227,9 @@ UnitBlueprint{
             BallisticArc = "RULEUBA_HighArc",
             CollideFriendly = false,
 
-            Damage = 2000,
+            Damage = 3000,
             DamageFriendly = true,
-            DamageRadius = 2.8,
+            DamageRadius = 4,
             DamageType = "Normal",
 
             DisplayName = "APDS Artillery",
@@ -241,7 +241,7 @@ UnitBlueprint{
                 Land = "Land|Water|Seabed",
                 Seabed = "Land|Water|Seabed",
             },
-            FiringRandomness = 0.9,
+            FiringRandomness = 0.85,
             FiringTolerance = 2,
 
             Label = "MainGun",
@@ -307,21 +307,21 @@ UnitBlueprint{
             BallisticArc = "RULEUBA_HighArc",
             CollideFriendly = true,
 
-            Damage = 40,
+            Damage = 80,
             DamageFriendly = true,
-            DamageRadius = 2.5,
+            DamageRadius = 4,
             DamageType = "fire",
 
             DisplayName = "Napalm Missiles",
 
-            DoTPulses = 5,
-            DoTTime = 4,
+            DoTPulses = 8,
+            DoTTime = 5,
 
             FireTargetLayerCapsTable = {
                 Land = "Land|Water|Seabed",
                 Seabed = "Land|Water|Seabed",
             },
-            FiringRandomness = 1.8,
+            FiringRandomness = 1.5,
             FiringTolerance = 2,
 
             Label = "Rockets",
@@ -360,9 +360,11 @@ UnitBlueprint{
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
-                "DEFENSE",
-                "MOBILE",
-                "ALLUNITS -WALL",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
             },
             TargetRestrictDisallow = "UNTARGETABLE",
 
@@ -377,7 +379,7 @@ UnitBlueprint{
 
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 22,
+            TurretYawSpeed = 90,
 
             Turreted = true,
         },
