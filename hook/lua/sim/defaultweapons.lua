@@ -184,7 +184,6 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
         if self.FirstShot then return end
         if self.unit:GetFractionComplete() ~= 1 then return end
 
-        -- Use cached energy requirement check
         if not self.EconDrain and self.HasEnergyRequirement then
             local bp = self.bp
             local nrgReq = self:GetWeaponEnergyRequired(bp)
@@ -957,7 +956,7 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
                 unit.Trash:Add(ForkThread(self.DisabledWhileReloadingThread, self, self.CachedRoFReciprocal))
             end
 
-            -- Optimized state transition logic using cached values
+            -- State transition logic
             if self.CurrentRackNumber > rackBoneCount then
                 self.CurrentRackNumber = 1
                 if bp.RackSalvoReloadTime > 0 or (self.EconDrain and not bp.WeaponUnpackLocksMotion) then
@@ -1100,7 +1099,6 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
             end
             self:PlayFxWeaponUnpackSequence()
 
-            -- Use cached state transition
             LOUDSTATE(self, self.NextStateAfterUnpack)
         end,
 
