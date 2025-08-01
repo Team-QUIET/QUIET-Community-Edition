@@ -203,8 +203,16 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
 
     ---@param self DefaultProjectileWeapon
     EconomyDrainThread = function(self)
-        WaitFor(self.EconDrain)
-        RemoveEconomyEvent(self.unit, self.EconDrain)
+        local econDrain = self.EconDrain
+        if not econDrain then return end
+
+        WaitFor(econDrain)
+
+        -- Cache references for performance
+        local unit = self.unit
+        if not(self:BeenDestroyed() or unit.Dead) then
+            RemoveEconomyEvent(unit, econDrain)
+        end
         self.EconDrain = nil
     end,
 
