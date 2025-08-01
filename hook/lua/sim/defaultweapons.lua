@@ -49,11 +49,24 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
         self.CachedMuzzleSalvoSize = muzzleSalvoSize
         self.CachedMuzzleSalvoDelay = muzzleSalvoDelay
         self.CachedMuzzleChargeDelay = bp.MuzzleChargeDelay or 0
-        self.CachedMuzzleChargeAudio = bp.Audio and bp.Audio.MuzzleChargeStart
         self.CachedCountedProjectile = bp.CountedProjectile
         self.CachedMaxProjectileStorage = bp.MaxProjectileStorage or 0
         self.CachedNukeWeapon = bp.NukeWeapon
         self.CachedNotExclusive = bp.NotExclusive
+        self.CachedRackSalvoChargeTime = bp.RackSalvoChargeTime
+        self.CachedRackFireTogether = bp.RackFireTogether
+        self.CachedRenderFireClock = bp.RenderFireClock
+        self.CachedFixedSpreadRadius = bp.FixedSpreadRadius
+
+        -- Cache audio references for performance
+        local audio = bp.Audio or {}
+        self.CachedMuzzleChargeAudio = audio.MuzzleChargeStart
+        self.CachedChargeStartSound = audio.ChargeStart
+        self.CachedFireSound = audio.Fire
+        self.CachedFireUnderWaterSound = audio.FireUnderWater
+        self.CachedBeamStartSound = audio.BeamStart
+        self.CachedBeamStopSound = audio.BeamStop
+        self.CachedBeamLoopSound = audio.BeamLoop
 
         -- Cache effect properties
         self.HasMuzzleFlash = type(self.FxMuzzleFlash) == "table"
@@ -62,20 +75,33 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
 
         -- Cache charge behavior flags
         self.HasMuzzleCharge = self.CachedMuzzleChargeDelay > 0
-        self.HasRackSalvoCharge = (bp.RackSalvoChargeTime or 0) > 0
+        self.HasRackSalvoCharge = (self.CachedRackSalvoChargeTime or 0) > 0
         self.HasEnergyRequirement = bp.EnergyRequired and bp.EnergyDrainPerSecond
 
-        -- Pre-determine next state after unpacking
+        -- Cache projectile behavior flags
+        self.HasTargetHeightDetonation = bp.DetonatesAtTargetHeight == true
+        self.HasFlare = bp.Flare ~= nil
+        self.CachedFlare = bp.Flare
+        self.HasFixBombTrajectory = bp.FixBombTrajectory
+
+        -- Pre-determine state transitions
         if self.HasRackSalvoCharge then
             self.NextStateAfterUnpack = self.RackSalvoChargeState
         else
             self.NextStateAfterUnpack = self.RackSalvoFireReadyState
         end
 
+        self.StateAfterCharge = bp.RackSalvoFiresAfterCharge and self.RackSalvoFiringState or self.RackSalvoFireReadyState
+
+        -- Pre-allocate reusable table for nuke launch data
+        if self.CachedNukeWeapon then
+            self.LaunchDataTemplate = { army = 0, location = nil }
+        end
+
         if bp.RackRecoilDistance and bp.RackRecoilDistance ~= 0 then
 
 			if muzzleSalvoDelay ~= 0 then
-				local strg = '*ERROR: You can not have a RackRecoilDistance with a MuzzleSalvoDelay not equal to 0, aborting weapon setup.  Weapon: ' .. bp.DisplayName .. ' on Unit: ' .. self.unit.BlueprintID
+				local strg = string.format('*ERROR: You can not have a RackRecoilDistance with a MuzzleSalvoDelay not equal to 0, aborting weapon setup. Weapon: %s on Unit: %s', bp.DisplayName, self.unit.BlueprintID)
 				error(strg, 2)
 				return false
 			end
@@ -118,9 +144,8 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
             -- and the rate of fire is 10/10 which is 1
             -- and we are getting total time to fire muzzles is longer than the RoF allows
             -- if it is not fixed the weapon will trigger multiple OnFire() events without actually firing the weapon
-            error('*ERROR: Total muzzle firing time (' .. totalMuzzleFiringTime ..
-            ') exceeds allowed value based on RateOfFire for weapon: ' ..
-            bp.DisplayName .. ' on Unit: ' .. unitId, 2)
+            error(string.format('*ERROR: Total muzzle firing time (%s) exceeds allowed value based on RateOfFire for weapon: %s on Unit: %s',
+                totalMuzzleFiringTime, bp.DisplayName, unitId), 2)
             return false
         end
 
@@ -133,7 +158,7 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
             self.unit:SetWorkProgress(1)
         end
 
-        if bp.FixBombTrajectory then
+        if self.HasFixBombTrajectory then
 
             local dropShort = bp.DropBombShort
             local MathClamp = math.clamp
@@ -283,9 +308,8 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
                 CreateAttachedEmitter(unit, muzzle, army, effect):ScaleEmitter(scale)
             end
         end
-        local chargeStart = bp.Audio.ChargeStart
-        if chargeStart then
-            self:PlaySound(chargeStart)
+        if self.CachedChargeStartSound then
+            self:PlaySound(self.CachedChargeStartSound)
         end
         local animationCharge = bp.AnimationCharge
         if animationCharge and self.Animator then
@@ -638,8 +662,7 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
 
         Main = function(self)
             local unit = self.unit
-            local bp = self.bp
-            local notExclusive = bp.NotExclusive
+            local notExclusive = self.CachedNotExclusive
             unit:SetBusy(true)
             self:PlayFxRackSalvoChargeSequence()
 
@@ -647,19 +670,15 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
                 unit:SetBusy(false)
             end
 
-            if bp.RackSalvoChargeTime then
-                WaitSeconds(bp.RackSalvoChargeTime)
+            if self.CachedRackSalvoChargeTime then
+                WaitSeconds(self.CachedRackSalvoChargeTime)
             end
 
             if notExclusive then
                 unit:SetBusy(true)
             end
 
-            if bp.RackSalvoFiresAfterCharge == true then
-                LOUDSTATE(self, self.RackSalvoFiringState)
-            else
-                LOUDSTATE(self, self.RackSalvoFireReadyState)
-            end
+            LOUDSTATE(self, self.StateAfterCharge)
         end,
 
         OnFire = function(self)
@@ -756,10 +775,11 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
             local unit = self.unit
             local clockTime = math.round(10 * rateOfFire)
             local totalTime = clockTime
+            local totalTimeReciprocal = 1 / totalTime  -- Pre-calculate reciprocal for performance
             while clockTime >= 0 and
                 not self:BeenDestroyed() and
                 not unit.Dead do
-                unit:SetWorkProgress(1 - clockTime / totalTime)
+                unit:SetWorkProgress(1 - clockTime * totalTimeReciprocal)
                 clockTime = clockTime - 1
                 WaitSeconds(0.1)
             end
@@ -816,19 +836,23 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
             --LOG("RackSalvoFiringState: Started")
 
             --This is done to make sure that when racks should fire together, they do
-            if bp.RackFireTogether then
+            if self.CachedRackFireTogether then
                 numRackFiring = rackBoneCount
             end
 
             -- this used to be placed AFTER the firing events
             if not self:BeenDestroyed() and
                 not unit.Dead then
-                if bp.RenderFireClock and bp.RateOfFire > 0 then
+                if self.CachedRenderFireClock and bp.RateOfFire > 0 then
                     self:ForkThread(self.RenderClockThread, self.CachedRoFReciprocal)
                 end
             end
 
-            local WaitSeconds       = WaitSeconds
+            -- Cache function references for performance
+            local WaitSeconds = WaitSeconds
+            local ShowBone = unit.ShowBone
+            local HideBone = unit.HideBone
+            local SetBusy = unit.SetBusy
 
             -- Most of the time this will only run once per rack, the only time it doesn't is when racks fire together.
             while self.CurrentRackNumber <= numRackFiring and not self.HaltFireOrdered do
@@ -842,13 +866,13 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
                     NumMuzzlesFiring = muzzleBoneCount
                 end
 
-                if bp.FixedSpreadRadius then
+                if self.CachedFixedSpreadRadius then
                     local weaponPos = unit:GetPosition()
                     local targetPos = self:GetCurrentTargetPos()
                     local distance = VDist2(weaponPos[1], weaponPos[3], targetPos[1], targetPos[3])
 
                     -- This formula was obtained empirically and somehow it works :)
-                    local randomness = 12 * bp.FixedSpreadRadius / distance
+                    local randomness = 12 * self.CachedFixedSpreadRadius / distance
 
                     self:SetFiringRandomness(randomness)
                 end
@@ -877,7 +901,7 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
                     self.CurrentSalvoNumber = i
                     local muzzle = muzzleBones[muzzleIndex]
                     if rackHideMuzzle then
-                        unit:ShowBone(muzzle, true)
+                        ShowBone(unit, muzzle, true)
                     end
                     -- Deal with Muzzle charging sequence
                     if hasChargeDelay then
@@ -886,17 +910,17 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
                         end
                         self:PlayFxMuzzleChargeSequence(muzzle)
                         if notExclusive then
-                            unit:SetBusy(false)
+                            SetBusy(unit, false)
                         end
                         WaitSeconds(MuzzleChargeDelay)
 
                         if notExclusive then
-                            unit:SetBusy(true)
+                            SetBusy(unit, true)
                         end
                     end
                     self:PlayFxMuzzleSequence(muzzle)
                     if rackHideMuzzle then
-                        unit:HideBone(muzzle, true)
+                        HideBone(unit, muzzle, true)
                     end
                     if self.HaltFireOrdered then
                         break
@@ -910,12 +934,11 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
                         if isNukeWeapon then
                             unit:NukeCreatedAtUnit()
                             unit:RemoveNukeSiloAmmo(1)
-                            -- Generate UI notification for automatic nuke ping
-                            local launchData = {
-                                army = unit:GetAIBrain():GetArmyIndex() - 1,
-                                location = (GetFocusArmy() == -1 or IsAlly(unit:GetAIBrain():GetArmyIndex(), GetFocusArmy())) and
-                                    self:GetCurrentTargetPos() or nil
-                            }
+                            -- Generate UI notification for automatic nuke ping using pre-allocated template
+                            local launchData = self.LaunchDataTemplate
+                            launchData.army = unit:GetAIBrain():GetArmyIndex() - 1
+                            launchData.location = (GetFocusArmy() == -1 or IsAlly(unit:GetAIBrain():GetArmyIndex(), GetFocusArmy())) and
+                                self:GetCurrentTargetPos() or nil
                             if not Sync.NukeLaunchData then
                                 Sync.NukeLaunchData = {}
                             end
@@ -931,12 +954,12 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
                     end
                     if MuzzleSalvoDelay > 0 then
                         if notExclusive then
-                            unit:SetBusy(false)
+                            SetBusy(unit, false)
                         end
                         WaitSeconds(MuzzleSalvoDelay)
 
                         if notExclusive then
-                            unit:SetBusy(true)
+                            SetBusy(unit, true)
                         end
                     end
                 end
@@ -1417,7 +1440,8 @@ DefaultBeamWeapon = ClassWeapon(DefaultProjectileWeapon) {
             return
         end
 
-        -- Create the beam
+        -- Create the beam and muzzle-to-beam lookup table for performance
+        self.MuzzleToBeamMap = {}
         for _, rack in bp.RackBones do
             for _, muzzle in rack.MuzzleBones do
                 ---@type CollisionBeam
@@ -1429,6 +1453,7 @@ DefaultBeamWeapon = ClassWeapon(DefaultProjectileWeapon) {
                 }
                 local beamTable = { Beam = beam, Muzzle = muzzle, Destroyables = {} }
                 table.insert(self.Beams, beamTable)
+                self.MuzzleToBeamMap[muzzle] = beamTable  -- Create lookup table
                 self.Trash:Add(beam)
                 beam:SetParentWeapon(self)
                 beam:Disable()
@@ -1447,22 +1472,18 @@ DefaultBeamWeapon = ClassWeapon(DefaultProjectileWeapon) {
     ---@param self DefaultBeamWeapon
     ---@param muzzle string
     CreateProjectileAtMuzzle = function(self, muzzle)
-        local enabled = false
-        for _, beam in self.Beams do
-            if beam.Muzzle == muzzle and beam.Beam:IsEnabled() then
-                enabled = true
-                break
-            end
-        end
+        -- Use lookup table for better performance
+        local beamInfo = self.MuzzleToBeamMap[muzzle]
+        local enabled = beamInfo and beamInfo.Beam:IsEnabled()
+
         if not enabled then
             self:PlayFxBeamStart(muzzle)
         end
 
-        local audio = self.bp.Audio
-        if self.unit.Layer == 'Water' and audio.FireUnderWater then
-            self:PlaySound(audio.FireUnderWater)
-        elseif audio.Fire then
-            self:PlaySound(audio.Fire)
+        -- Use cached audio references
+        local soundToPlay = (self.unit.Layer == 'Water' and self.CachedFireUnderWaterSound) or self.CachedFireSound
+        if soundToPlay then
+            self:PlaySound(soundToPlay)
         end
     end,
 
@@ -1472,19 +1493,13 @@ DefaultBeamWeapon = ClassWeapon(DefaultProjectileWeapon) {
     PlayFxBeamStart = function(self, muzzle)
         local bp = self.bp
 
-        -- find beam that matches the muzzle
-        local beam
-        for _, v in self.Beams do
-            if v.Muzzle == muzzle then
-                beam = v.Beam
-                break
-            end
-        end
+        -- Use lookup table for better performance
+        local beamInfo = self.MuzzleToBeamMap[muzzle]
+        local beam = beamInfo and beamInfo.Beam
 
         -- edge case: no beam that matches the muzzle
         if not beam then
-            error('*ERROR: We have a beam created that does not coincide with a muzzle bone.  Internal Error, aborting beam weapon.'
-                , 2)
+            error(string.format('*ERROR: We have a beam created that does not coincide with a muzzle bone. Internal Error, aborting beam weapon. Muzzle: %s', muzzle), 2)
             return
         end
 
@@ -1507,19 +1522,16 @@ DefaultBeamWeapon = ClassWeapon(DefaultProjectileWeapon) {
             self.HoldFireThread = self:ForkThread(self.WatchForHoldFire, beam)
         end
 
-        -- manage audio of the beam
-        local audio = bp.Audio
-        local beamStart = audio.BeamStart
-        if beamStart then
-            self:PlaySound(beamStart)
+        -- manage audio of the beam using cached references
+        if self.CachedBeamStartSound then
+            self:PlaySound(self.CachedBeamStartSound)
         end
 
-        local beamLoop = audio.BeamLoop
-        if beamLoop then
+        if self.CachedBeamLoopSound then
             -- should be `beam.Beam` but `PlayFxBeamEnd` wouldn't get enough muzzle info to stop the sound
             local b = self.Beams[1].Beam
             if b then
-                b:SetAmbientSound(beamLoop, nil)
+                b:SetAmbientSound(self.CachedBeamLoopSound, nil)
             end
         end
 
@@ -1593,14 +1605,12 @@ DefaultBeamWeapon = ClassWeapon(DefaultProjectileWeapon) {
         end
         
         if not self.unit.Dead then
-            local audio = self.bp.Audio
-            local beamStop = audio.BeamStop
-            if beamStop and self.BeamStarted then
-                self:PlaySound(beamStop)
+            if self.CachedBeamStopSound and self.BeamStarted then
+                self:PlaySound(self.CachedBeamStopSound)
             end
             -- see starting comments
             local firstBeam = self.Beams[1].Beam
-            if audio.BeamLoop and firstBeam then
+            if self.CachedBeamLoopSound and firstBeam then
                 firstBeam:SetAmbientSound(nil, nil)
             end
             if beam then
