@@ -85,8 +85,8 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 8000,
-        BuildCostMass = 800,
+        BuildCostEnergy = 7500,
+        BuildCostMass = 600,
         BuildTime = 3200,
     },
 	
@@ -114,7 +114,7 @@ UnitBlueprint {
     },
 	
     Intel = {
-        VisionRadius = 32,
+        VisionRadius = 26,
     },
 	
     Interface = {
@@ -131,7 +131,7 @@ UnitBlueprint {
             LAYER_Land = true,
         },
         DragCoefficient = 0.2,
-        MaxAcceleration = 3.5,
+        MaxAcceleration = 1.75,
         MaxBrake = 3.5,
         MaxSpeed = 3.5,
         MaxSpeedReverse = 3.5,
@@ -192,7 +192,7 @@ UnitBlueprint {
 
             Label = 'Lazor',
 
-            MaxRadius = 50,
+            MaxRadius = 64,
 
             ProjectileLifetimeUsesMultiplier = 1.15,
 
@@ -252,6 +252,7 @@ UnitBlueprint {
             CollideFriendly = false,
 			
             Damage = 300,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
 			
             DisplayName = 'Nanodart Launcher AA',
@@ -266,7 +267,7 @@ UnitBlueprint {
 
             LeadTarget = true,
 			
-            MaxRadius = 48,
+            MaxRadius = 62,
             PreferPrimaryWeaponTarget = true,
 			
             MuzzleSalvoDelay = 0.1,
@@ -338,6 +339,7 @@ UnitBlueprint {
             CollideFriendly = false,
 			
             Damage = 30,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
 			
             DisplayName = 'Nanodart Ground Launcher',
@@ -351,7 +353,7 @@ UnitBlueprint {
 			
             Label = 'GroundGun',
 			
-            MaxRadius = 30,
+            MaxRadius = 50,
             PreferPrimaryWeaponTarget = true,
 			
             MuzzleSalvoDelay = 0.5,

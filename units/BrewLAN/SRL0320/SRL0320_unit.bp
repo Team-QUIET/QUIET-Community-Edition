@@ -135,7 +135,7 @@ UnitBlueprint {
 
 	Intel = {
 		Cloak = true,
-		VisionRadius = 32,
+		VisionRadius = 26,
 		WaterVisionRadius = 8,
 	},
 
@@ -208,7 +208,7 @@ UnitBlueprint {
 			CollideFriendly = false,
 
 			Damage = 180,
-			DamageRadius = 0,
+			DamageRadius = 1.5,
 			DamageType = 'Normal',
 
 			DisplayName = 'Nanite Missile System',
@@ -221,7 +221,7 @@ UnitBlueprint {
 
 			Label = 'MainGun',
 
-			MaxRadius = 50,
+			MaxRadius = 64,
 
 			MuzzleSalvoDelay = 0.1,
 			MuzzleSalvoSize = 5,
@@ -248,9 +248,14 @@ UnitBlueprint {
 			RateOfFire = 0.6,
 
 			TargetPriorities = {
-				'SPECIALHIGHPRI',
-				'HIGHPRIAIR',
-				'AIR',
+				"SPECIALHIGHPRI",
+				"AIR MOBILE EXPERIMENTAL",
+                "AIR MOBILE TECH3 BOMBER",
+                "AIR MOBILE BOMBER",
+                "AIR MOBILE GROUNDATTACK",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE",
+                "ALLUNITS",
 			},
 			TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
 			TargetRestrictOnlyAllow = 'AIR',
@@ -262,12 +267,12 @@ UnitBlueprint {
 			TurretDualManipulators = false,
 
 			TurretPitch = 40,
-			TurretPitchRange = 25,
-			TurretPitchSpeed = 60,
+			TurretPitchRange = 40,
+			TurretPitchSpeed = 80,
 
 			TurretYaw = 0,
 			TurretYawRange = 180,
-			TurretYawSpeed = 60,
+			TurretYawSpeed = 90,
 
 			Turreted = true,
 		},
