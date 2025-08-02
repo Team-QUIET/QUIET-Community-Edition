@@ -44,8 +44,6 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
         local unitId = unit:GetUnitId()
 
         -- Cache frequently accessed blueprint properties for performance
-        self.CachedRoFReciprocal = 1 / rof
-        self.CachedArmy = self.Army
         self.CachedMuzzleSalvoSize = muzzleSalvoSize
         self.CachedMuzzleSalvoDelay = muzzleSalvoDelay
         self.CachedMuzzleChargeDelay = bp.MuzzleChargeDelay or 0
@@ -120,7 +118,7 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
                 end
             end
 
-            self.RackRecoilReturnSpeed = bp.RackRecoilReturnSpeed or LOUDABS( dist / (self.CachedRoFReciprocal - self.CachedMuzzleChargeDelay)) * 1.25
+            self.RackRecoilReturnSpeed = bp.RackRecoilReturnSpeed or LOUDABS( dist / ((1 / bp.RateOfFire) - self.CachedMuzzleChargeDelay)) * 1.25
         end
 
         -- Ensure firing cycle is compatible internally
@@ -136,7 +134,7 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
         self.NumRackBones = numRackBones
         local totalMuzzleFiringTime = (self.NumMuzzles - 1) * muzzleSalvoDelay
 
-        if totalMuzzleFiringTime > self.CachedRoFReciprocal then
+        if totalMuzzleFiringTime > (1 / rof) then
             -- This is the example of a bad fire rate
             -- if we have MuzzleSalvoDelay = 0.4,
             --             MuzzleSalvoSize = 4,
@@ -272,7 +270,7 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
             return
         end
         local unit = self.unit
-        local army = self.CachedArmy
+        local army = self.Army
         local scale = self.FxMuzzleFlashScale
         for _, effect in self.FxMuzzleFlash do
             CreateAttachedEmitter(unit, muzzle, army, effect):ScaleEmitter(scale)
@@ -285,7 +283,7 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
             return
         end
         local unit = self.unit
-        local army = self.CachedArmy
+        local army = self.Army
         local scale = self.FxChargeMuzzleFlashScale
         for _, effect in self.FxChargeMuzzleFlash do
             CreateAttachedEmitter(unit, muzzle, army, effect):ScaleEmitter(scale)
@@ -301,7 +299,7 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
         local bp = blueprint or self.bp
         local muzzleBones = bp.RackBones[self.CurrentRackNumber].MuzzleBones
         local unit = self.unit
-        local army = self.CachedArmy
+        local army = self.Army
         local scale = self.FxRackChargeMuzzleFlashScale
         for _, effect in self.FxRackChargeMuzzleFlash do
             for _, muzzle in muzzleBones do
@@ -746,7 +744,7 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
                     -- therefore the thread of this state is not destroyed
 
                     -- wait reload time + 3 seconds, then force the weapon to recheck its target
-                    WaitSeconds(self.CachedRoFReciprocal + 3)
+                    WaitSeconds((1 / bp.RateOfFire) + 3)
                     self:ResetTarget()
                 end
             end
@@ -844,7 +842,7 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
             if not self:BeenDestroyed() and
                 not unit.Dead then
                 if self.CachedRenderFireClock and bp.RateOfFire > 0 then
-                    self:ForkThread(self.RenderClockThread, self.CachedRoFReciprocal)
+                    self:ForkThread(self.RenderClockThread, 1 / bp.RateOfFire)
                 end
             end
 
@@ -984,7 +982,7 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
 
             local rof = self:GetWeaponRoF()
             if bp.DisableWhileReloading then
-                unit.Trash:Add(ForkThread(self.DisabledWhileReloadingThread, self, self.CachedRoFReciprocal))
+                unit.Trash:Add(ForkThread(self.DisabledWhileReloadingThread, self, 1 / rof))
             end
 
             -- State transition logic
