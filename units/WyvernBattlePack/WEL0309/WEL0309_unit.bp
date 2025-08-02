@@ -6,7 +6,9 @@ UnitBlueprint{
         {
             ProjectileId = "/mods/QUIET-Community-Edition/projectiles/WBPSmallAAMissile03/WBPSmallAAMissile03_proj.bp",
 
-            RateOfFire = 18/10,
+            RateOfFire = 20/10,
+
+            MaxRadius = 60,
 
             TargetRestrictDisallow = "UNTARGETABLE,SATELLITE,HIGHALTAIR",
         },

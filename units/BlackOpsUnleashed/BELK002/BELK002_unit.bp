@@ -1,18 +1,269 @@
 UnitBlueprint {
-  Merge = true,
-  BlueprintId = "belk002",
+    Merge = true,
+    BlueprintId = 'belk002',
 
-      Weapon = {
+    AI = {
+        GuardScanRadius = 44,
+        TargetBones = { 'Turret' },
+    },
+	
+    Audio = {
+        StartMove   = Sound { Bank = 'UEL', Cue = 'UEL0202_Move_Start', LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection = Sound { Bank = 'Interface', Cue = 'UEF_Select_Vehicle', LodCutoff = 'UnitMove_LodCutoff' },
+    },
+	
+	Buffs = {
+		Regen = {
+			Level1 = 1,
+            Level2 = 2,
+            Level3 = 3,
+            Level4 = 4,
+            Level5 = 5,
+        },
+    },
+	
+    BuildIconSortPriority = 45,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'UEF',
+        'MOBILE',
+        'LAND',
+        'TECH3',
+		'ANTIAIR',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+    },
+
+    Defense = {
+        AirThreatLevel = 31,
+        ArmorType = 'Normal',
+        Health = 1900,
+        MaxHealth = 1900,
+        RegenRate = 0,
+    },
+	
+    Description = '<LOC belk002_desc>Mobile Rapid-fire AA Cannon',
+	
+    Display = {
+        Abilities = {
+            "<LOC ability_aa>Anti-Air",
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                { LODCutoff = 500, Scrolling = true, ShaderName = 'Unit' },
+            },
+        },
+
+		TransportAnimation = {
+            {
+                Animation = '/mods/BlackOpsUnleashed/units/BELK002/BELK002_fold.sca',
+                Weight = 100,
+            },
+        },
+		TransportDropAnimation = {
+            {
+                Animation = '/mods/BlackOpsUnleashed/units/BELK002/BELK002_unfold.sca',
+                Weight = 100,
+            },
+        },
+        
+        UniformScale = 0.11,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 7500,
+        BuildCostMass = 600,
+        BuildTime = 3200,
+    },
+	
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'UEF',
+        Icon = 'land',
+        UnitName = '<LOC belk002_name>Cougar',
+    },
+	
+    Intel = {
+        VisionRadius = 32,
+    },
+	
+    Interface = {
+        HelpText = 'Mobile AA Cannon',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.35,
+    LifeBarSize = 1,
+	
+    Physics = {
+        BackUpDistance = 4,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 1.75,
+        MaxBrake = 3.3,
+        MaxSpeed = 3.3,
+        MaxSpeedReverse = 3.3,
+        MaxSteerForce = 10,
+        MeshExtentsX = 1,
+        MeshExtentsY = 2.6,
+        MeshExtentsZ = 1.15,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+		RotateOnSpot = true,
+        RotateOnSpotThreshold = 0.1,
+        TurnRadius = 0,
+        TurnRate = 100,
+    },
+	
+    SelectionCenterOffsetX = 0,
+    SelectionCenterOffsetZ = 0,
+    SelectionSizeX = 0.6,
+    SelectionSizeZ = 0.7,
+    SelectionThickness = 0.64,
+	
+    SizeX = 1.0,
+    SizeY = 0.55,
+    SizeZ = 1.1,
+	
+    StrategicIconName = 'icon_land3_antiair',
+    StrategicIconSortPriority = 85,
+	
+    Transport = {
+        TransportClass = 3,
+    },
+	
+	Veteran = {
+        Level1 = 10,
+        Level2 = 20,
+        Level3 = 30,
+        Level4 = 40,
+        Level5 = 50,
+    },
+	
+    Weapon = {
         {
-            RackSalvoReloadTime = 0, --base has RSRLT, drops dps to 295 from advertised 320  
-            RateOfFire = 10/10,
 
+            
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB4201_Phalanx_01', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            
+			CannotAttackGround = false,
+            
+            CollideFriendly = false,
+			
+            Damage = 45,
+			DamageRadius = 1.5,
+            DamageType = 'Normal',
+            
+            DetonatesAtTargetHeight = true,
+			
+            DisplayName = 'Gatling Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Water = 'Air',
+            },
+			
+            FiringTolerance = 1,
+			
+            Label = 'GatlingCannon',
+			LeadTarget = true,
+			
+            MaxRadius = 62,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 8,
+
+            MuzzleVelocity = 100,
+			
+            NoPause = true,
+			
+            ProjectileId = '/projectiles/TDPhalanx01/TDPhalanx01_proj.bp',
+            ProjectileLifetime = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Left_Muzzle','Right_Muzzle'},
+                    RackBone = 'Turret',
+                },
+			},
+
+            RackSalvoReloadTime = 0.2,
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 10/10,		-- 320 DPS Air
+			
+			ReTargetOnMiss = true,
+
+			
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+				"AIR MOBILE EXPERIMENTAL",
+                "AIR MOBILE TECH3 BOMBER",
+                "AIR MOBILE BOMBER",
+                "AIR MOBILE GROUNDATTACK",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE",
+                "ALLUNITS",
+            },
+			
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+			
+            TurretBoneDualMuzzle = 'Right_Muzzle',
+            TurretBoneDualPitch = 'Right_Gun',
+			
+            TurretBoneMuzzle = 'Left_Muzzle',
+            TurretBonePitch = 'Left_Gun',
+			
+            TurretBoneYaw = 'Turret',
+
+            TurretDualManipulators = true,
+			
+            TurretPitch = 0,
             TurretPitchRange = 60,
-            TurretPitchSpeed = 90,
-
+            TurretPitchSpeed = 80,
+			
+            TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 115,
-
-	  },
-  },
+            TurretYawSpeed = 100,
+			
+            Turreted = true,
+			
+            UseFiringSolutionInsteadOfAimBone = true,
+			
+            WeaponRepackTimeout = 0.5,
+            WeaponUnpacks = true,
+        },
+	},
+	
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.2,
+        HealthMult = 0.9,
+        MassMult = 0.3,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
 }

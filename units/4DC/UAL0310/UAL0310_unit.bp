@@ -273,7 +273,7 @@ UnitBlueprint{
 
             RangeCategory = "UWRC_AntiAir",
 
-            RateOfFire = 1.0,
+            RateOfFire = 10/10,
 
 
             TargetPriorities = {
@@ -327,7 +327,7 @@ UnitBlueprint{
                 },
             },
 
-            RateOfFire = 1.0,
+            RateOfFire = 10/10,
 
 
             TargetPriorities = {
@@ -385,7 +385,7 @@ UnitBlueprint{
             },
             RackRecoilDistance = -10,
 
-            RateOfFire = 0.2,
+            RateOfFire = 10/50,
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -452,7 +452,7 @@ UnitBlueprint{
 
             RangeCategory = "UWRC_Countermeasure",
 
-            RateOfFire = 1,
+            RateOfFire = 10/10,
 
             TargetRestrictDisallow = "UNTARGETABLE",
             TargetRestrictOnlyAllow = "TACTICAL MISSILE",
