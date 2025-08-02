@@ -50,14 +50,14 @@ UnitBlueprint {
             FireTargetLayerCapsTable = {
                 Land = 'Air',
             },
-            FiringRandomness = 2.5,
+            FiringRandomness = 5,
             FiringTolerance = 2,
 			
 			LeadTarget = true,
 			
             MaxRadius = 40,
 
-            MuzzleVelocity = 20,
+            MuzzleVelocity = 30,
 			
             ProjectileLifetimeUsesMultiplier = 1.25,
             ProjectilesPerOnFire = 2,

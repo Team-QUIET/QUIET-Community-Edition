@@ -63,7 +63,7 @@ UnitBlueprint {
                 Land = 'Air',
                 Water = 'Air',
             },
-            FiringRandomness = 2.5,
+            FiringRandomness = 5,
             FiringTolerance = 2,
 			
 			LeadTarget = true,
@@ -72,11 +72,11 @@ UnitBlueprint {
 
             MuzzleChargeDelay = 0.1,			
 
-            MuzzleVelocity = 20,
+            MuzzleVelocity = 30,
 			
             ProjectileLifetimeUsesMultiplier = 1.25,
 
-            RackSalvoChargeTime = 0, -- bad xfer, 0 in faf. 0.1 causes 1/2 ROF
+            RackSalvoChargeTime = 0,
 
             RangeCategory = 'UWRC_AntiAir',
 			
