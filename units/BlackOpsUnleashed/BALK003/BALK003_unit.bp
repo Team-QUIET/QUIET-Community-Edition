@@ -1,0 +1,247 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "balk003",
+
+	AI = {
+        GuardScanRadius = 55,
+        TargetBones = {'Turret'},
+    },
+
+    Audio = {
+        StartMove   = Sound { Bank = 'UAL',      Cue = 'UAL0303_Move_Start', LodCutoff = 'UnitMove_LodCutoff' },
+        StopMove    = Sound { Bank = 'UAL',      Cue = 'UAL0303_Move_Stop',  LodCutoff = 'UnitMove_LodCutoff' },
+        Destroyed   = Sound { Bank = 'UALDestroy', Cue = 'UAL_Destroy_Land', LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection = Sound { Bank = 'Interface', Cue = 'Aeon_Select_Bot',   LodCutoff = 'UnitMove_LodCutoff' },
+    },
+
+    Buffs = {
+        Regen = {
+            Level1 = 2,
+            Level2 = 4,
+            Level3 = 6,
+            Level4 = 8,
+            Level5 = 10,
+        },
+    },
+	
+    BuildIconSortPriority = 25,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'AEON',
+        'MOBILE',
+        'LAND',
+        'TECH3',
+		'ANTIAIR',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+    },
+
+    Defense = {
+        AirThreatLevel = 27,
+        ArmorType = 'Normal',
+        Health = 1700,
+        MaxHealth = 1700,
+        RegenRate = 0,
+    },
+	
+    Description = '<LOC balk003_desc>Mobile Missile Anti-Air',
+	
+    Display = {
+        Abilities = {
+            "<LOC ability_aa>Anti-Air",
+        },
+        AnimationDeath = {
+            {
+                Animation = '/mods/BlackOpsUnleashed/units/BALK003/BALK003_death01.sca',
+                AnimationRateMax = 6,
+                AnimationRateMin = 5,
+                Weight = 1,
+            },
+			{
+                Animation = '/mods/BlackOpsUnleashed/units/BALK003/BALK003_death02.sca',
+                AnimationRateMax = 2.5,
+                AnimationRateMin = 1.5,
+                Weight = 1,
+            },
+        },		
+        AnimationWalk = '/mods/BlackOpsUnleashed/units/BALK003/BALK003_walk.sca',
+        AnimationWalkRate = 6,
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                { LODCutoff = 500, Scrolling = true, ShaderName = 'Aeon' },
+            },
+        },
+
+        TransportAnimation = {
+            { Animation = '/mods/BlackOpsUnleashed/units/BALK003/BALK003_fold.sca', Weight = 100 },
+        },
+        
+		TransportDropAnimation = {
+            { Animation = '/mods/BlackOpsUnleashed/units/BALK003/BALK003_unfold.sca', Weight = 100 },
+        },
+        
+        UniformScale = 0.048,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 7500,
+        BuildCostMass = 600,
+        BuildTime = 3200,
+    },
+	
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Aeon',
+        Icon = 'land',
+        UnitName = '<LOC balk003_name>Redeemer',
+    },
+	
+    Intel = {
+        VisionRadius = 26,
+    },
+
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.35,
+    LifeBarSize = 1,
+
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 1.75,
+        MaxBrake = 3.5,
+        MaxSpeed = 3.5,
+        MaxSpeedReverse = 3,
+        MaxSteerForce = 10,
+        MeshExtentsX = 1,
+        MeshExtentsY = 1.25,
+        MeshExtentsZ = 1,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        StandUpright = true,
+        TurnRadius = 5,
+        TurnRate = 120,
+    },
+    SelectionSizeX = 0.65,
+    SelectionSizeZ = 0.85,
+    SelectionThickness = 0.5,
+	
+    SizeX = 0.6,
+    SizeY = 0.85,
+    SizeZ = 0.8,
+	
+    StrategicIconName = 'icon_land3_antiair',
+    StrategicIconSortPriority = 115,
+    
+    Transport = {
+        CanFireFromTransport = false,
+        TransportClass = 3,
+    },
+
+    Veteran = {
+        Level1 = 10,
+        Level2 = 20,
+        Level3 = 30,
+        Level4 = 40,
+        Level5 = 50,
+    },
+
+    Weapon = {
+		{
+			advancedTracking = true,
+
+
+            Audio = {
+                Fire = Sound { Bank = 'UALWeapon', Cue = 'UAL0111_Missile_Serpent', LodCutoff = 'Weapon_LodCutoff' },
+				Open = Sound { Bank = 'UAB', Cue = 'UAB2304_Activate', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CannotAttackGround = true,
+
+            CollideFriendly = false,
+			
+            Damage = 400,
+			DamageRadius = 1.5,
+            DamageType = 'Normal',
+			
+            DisplayName = 'AA Serpentine',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+            },
+			
+            FiringTolerance = 100,
+
+            Label = 'AAMissile',
+			
+            MaxRadius = 64,
+
+			MuzzleSalvoDelay = 0.3,
+            MuzzleSalvoSize = 3,
+
+            MuzzleVelocity = 35,
+			
+            ProjectileId = '/projectiles/AAAZealotMissile02/AAAZealotMissile02_proj.bp',
+            ProjectileLifetime = 3,
+
+            RackBones = {
+                {
+                    HideMuzzle = true,
+                    MuzzleBones = { 'Missile' },
+                    RackBone = 'Missile',
+                },
+            },
+            
+            RackSalvoReloadTime = 1.1,
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 1,
+
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+				"AIR MOBILE EXPERIMENTAL",
+                "AIR MOBILE TECH3 BOMBER",
+                "AIR MOBILE BOMBER",
+                "AIR MOBILE GROUNDATTACK",
+                "AIR MOBILE TRANSPORTATION",
+                "AIR MOBILE",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+			
+			WeaponRepackTimeout = 5,
+            WeaponUnpackAnimation = '/mods/BlackOpsUnleashed/units/BALK003/BALK003_unpack.sca',
+            WeaponUnpackAnimationRate = 4,  -- at rate of 4 - animation is 9 ticks long
+            WeaponUnpackLocksMotion = false,
+            WeaponUnpacks = true,
+        },
+    },
+
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.3,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

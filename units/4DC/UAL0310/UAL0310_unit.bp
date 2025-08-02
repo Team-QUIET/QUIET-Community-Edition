@@ -258,7 +258,7 @@ UnitBlueprint{
 
             Label = "MissileSideLeft",
 
-            MaxRadius = 52,
+            MaxRadius = 64,
 
             MuzzleVelocity = 10,
 
@@ -314,7 +314,7 @@ UnitBlueprint{
 
             Label = "MissileSideRight",
 
-            MaxRadius = 52,
+            MaxRadius = 64,
 
             MuzzleVelocity = 10,
 
@@ -369,7 +369,7 @@ UnitBlueprint{
 
             Label = "HatchMissile",
 
-            MaxRadius = 48,
+            MaxRadius = 68,
 
             MuzzleVelocity = 12,
 
@@ -452,7 +452,7 @@ UnitBlueprint{
 
             RangeCategory = "UWRC_Countermeasure",
 
-            RateOfFire = 2.0,
+            RateOfFire = 1,
 
             TargetRestrictDisallow = "UNTARGETABLE",
             TargetRestrictOnlyAllow = "TACTICAL MISSILE",
