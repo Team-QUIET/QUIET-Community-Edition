@@ -41,12 +41,13 @@ UnitBlueprint {
             Mesh = '/effects/entities/SeraphimShield01/SeraphimShield01_mesh',
             MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
             RegenAssistMult = 60,
-            ShieldEnergyDrainRechargeTime = 7,
-            ShieldMaxHealth = 8000,
-            ShieldRechargeTime = 24,
-            ShieldRegenRate = 83,
-            ShieldRegenStartTime = 2,
-            ShieldSize = 20,
+            ShieldEnergyDrainRechargeTime = 8.5,
+            ShieldMaxHealth = 8250,
+            ShieldRechargeTime = 39,
+            ShieldRegenRate = 76,
+            ShieldRegenStartTime = 3,
+            ShieldSize = 22,
+            ShieldSpillOverDamageMod = 0.4,
             ShieldVerticalOffset = -3,
         },
 
@@ -83,7 +84,7 @@ UnitBlueprint {
         BuildCostMass = 886,
         BuildTime = 4430,
 		
-        MaintenanceConsumptionPerSecondEnergy = 287,
+        MaintenanceConsumptionPerSecondEnergy = 237,
     },
 	
     General = {
