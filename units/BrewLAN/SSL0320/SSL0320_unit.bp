@@ -172,7 +172,7 @@ UnitBlueprint {
         RotateBodyWhileMoving = true,
         RotateOnSpot = false,
         TurnFacingRate = 180,
-        TurnRadius = 0.1,
+        TurnRadius = 0,
         TurnRate = 120,
 		
         WobbleFactor = 0.003,
