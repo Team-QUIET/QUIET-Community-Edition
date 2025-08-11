@@ -5,7 +5,7 @@ UnitBlueprint {
 	AI = {
         GuardScanRadius = 44,
         TargetBones = {'Attachpoint'},
-      },
+    },
 
     Audio = {
       Destroyed   = Sound { Bank = 'XSL_Destroy', Cue = 'XSL_Destroy_Land_Lrg', LodCutoff = 'UnitMove_LodCutoff'},
@@ -135,8 +135,8 @@ UnitBlueprint {
       MeshExtentsZ = 1.15,
       MinSpeedPercent = 0,
       MotionType = 'RULEUMT_Land',
-	RotateOnSpot = false,
-	StandUpright = true,
+	  RotateOnSpot = false,
+	  StandUpright = true,
       TurnRadius = 0.5,
       TurnRate = 120,
     },
@@ -165,7 +165,7 @@ UnitBlueprint {
     },
 	
     Weapon = {
-      {
+        {
 
             AboveWaterTargetsOnly = true,
             
@@ -177,9 +177,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
 			
             BeamCollisionDelay = 0,
-            BeamLifetime = 0.5,
+            BeamLifetime = 0.6,
 			
-		CannotAttackGround = true,
+		    CannotAttackGround = true,
 			
             CollideFriendly = false,
             ContinuousBeam = false,
@@ -196,11 +196,11 @@ UnitBlueprint {
                 Land = 'Air',
             },
 			
-		FiringRandomness = 0,
-            FiringTolerance = 1,
+		    FiringRandomness = 0,
+            FiringTolerance = 0,
 			
             Label = 'PhasonBeam',
-		LeadTarget = false,
+		    LeadTarget = false,
 			
             MaxRadius = 62,
 			
@@ -214,7 +214,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
 			
             RateOfFire = 10/10,
-		ReTargetOnMiss = true,
+		    ReTargetOnMiss = true,
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -243,14 +243,14 @@ UnitBlueprint {
 			
             Turreted = true,
 			
-		WeaponRepackTimeout = 2,
-		WeaponUnpackAnimation = '/mods/BlackOpsUnleashed/units/BSLK004/BSLK004_updummy.sca',
+		    WeaponRepackTimeout = 2,
+		    WeaponUnpackAnimation = '/mods/BlackOpsUnleashed/units/BSLK004/BSLK004_updummy.sca',
             WeaponUnpackAnimationRate = 3.8,
             WeaponUnpackLocksMotion = false,
 			
             WeaponUnpacks = true,
-      },
-	{
+        },
+	    {
             AboveWaterTargetsOnly = true,
             
             Audio = {
@@ -282,7 +282,7 @@ UnitBlueprint {
 	
 			LeadTarget = false,
 			
-            MaxRadius = 60,
+            MaxRadius = 28,
 			
             RackBones = {
                 {
@@ -321,8 +321,8 @@ UnitBlueprint {
             TurretYawSpeed = 360,
 			
             Turreted = true,
-      },
-	{
+        },
+	    {
             AboveWaterTargetsOnly = true,
             BallisticArc = 'RULEUBA_None',
             BeamCollisionDelay = 0.1,
@@ -343,7 +343,7 @@ UnitBlueprint {
             FiringTolerance = 0,
 			
             Label = 'Dummy',
-		LeadTarget = false,
+		    LeadTarget = false,
 			
             MaxRadius = 1,
 			
@@ -364,11 +364,11 @@ UnitBlueprint {
             Turreted = false,
 
             WeaponRepackTimeout = 4,
-		WeaponUnpackAnimation = '/mods/BlackOpsUnleashed/units/BSLK004/BSLK004_unpack.sca',
+		    WeaponUnpackAnimation = '/mods/BlackOpsUnleashed/units/BSLK004/BSLK004_unpack.sca',
             WeaponUnpackAnimationRate = 6.0,
             WeaponUnpackLocksMotion = false,
             WeaponUnpacks = true,
-      },
+        },
     },
 
     Wreckage = {
