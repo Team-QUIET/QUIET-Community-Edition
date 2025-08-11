@@ -1,6 +1,14 @@
 UnitBlueprint {
     Merge = true,
 	BlueprintId = "brot3pdro",
+
+    Economy = {
+        BuildCostEnergy = 85000,
+        BuildCostMass = 6200,
+        BuildTime = 2700,
+        
+        RebuildBonusIds = {'BROT3PDRO'},
+    },
     
     Weapon = {
         {
@@ -32,8 +40,8 @@ UnitBlueprint {
 			
             Label = 'MainGun',
 			
-            MaxRadius = 102,
-            MinRadius = 24,
+            MaxRadius = 96,
+            MinRadius = 12,
 			
             MuzzleSalvoDelay = 0.5,
             MuzzleSalvoSize = 3,

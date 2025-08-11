@@ -52,9 +52,9 @@ UnitBlueprint {
         AirThreatLevel = 50,
         ArmorType = 'Structure',
         EconomyThreatLevel = 120,
-        Health = 9500,
-        MaxHealth = 9500,
-        RegenRate = 6,
+        Health = 3600,
+        MaxHealth = 3600,
+        RegenRate = 2,
         SurfaceThreatLevel = 131.1,
     },
 	
@@ -80,8 +80,8 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 48500,
-        BuildCostMass = 3250,
+        BuildCostEnergy = 111550,
+        BuildCostMass = 7475,
         BuildTime = 3900,
 		
         RebuildBonusIds = { 'ssb2311' },
@@ -107,7 +107,7 @@ UnitBlueprint {
     },
 	
     Intel = {
-        VisionRadius = 32,
+        VisionRadius = 26,
     },
 	
     Interface = {
@@ -193,7 +193,7 @@ UnitBlueprint {
 			
             Label = 'RightArm',
 			
-            MaxRadius = 103,
+            MaxRadius = 104,
             MinRadius = 6,
 			
             MuzzleChargeDelay = 1.0,

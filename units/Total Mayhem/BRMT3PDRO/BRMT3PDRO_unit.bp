@@ -1,8 +1,16 @@
 UnitBlueprint {
 	Merge = true,
 	BlueprintId = "brmt3pdro",
+
+    Economy = {
+        BuildCostEnergy = 96000,
+        BuildCostMass = 6500,
+        BuildTime = 2700,
+		
+        RebuildBonusIds = {'BRMT3PDRO'},
+    },
 	
-	    Weapon = {
+	Weapon = {
         {
             AboveWaterTargetsOnly = true,
             ArtilleryShieldBlocks = true,
@@ -67,8 +75,8 @@ UnitBlueprint {
 			
             Label = 'RocketPod',
 
-            MaxRadius = 107,
-            MinRadius = 24,
+            MaxRadius = 98,
+            MinRadius = 12,
 			
             MuzzleChargeDelay = 0.1,
             MuzzleSalvoDelay = 0.2,
