@@ -183,7 +183,7 @@ UnitBlueprint{
             CollideFriendly = false,
 
             Damage = 2000,
-            DamageRadius = 3,
+            DamageRadius = 4,
             DamageType = "Normal",
 
             DisplayName = "Plasma PPC",
@@ -193,15 +193,15 @@ UnitBlueprint{
                 Seabed = "Land|Water|Seabed",
             },
 
-            FiringRandomness = 0.5,
+            FiringRandomness = 0.05,
             FiringTolerance = 2,
 
             Label = "PlasmaPPC",
 
-            MaxRadius = 50,
+            MaxRadius = 53,
 
             MuzzleChargeDelay = 0.5,
-            MuzzleVelocity = 42,
+            MuzzleVelocity = 75,
 
             NotExclusive = true,
 
@@ -231,6 +231,7 @@ UnitBlueprint{
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
+                "EXPERIMENTAL",
                 "TECH3 MOBILE",
                 "TECH2 MOBILE",
                 "TECH1 MOBILE",
@@ -248,12 +249,12 @@ UnitBlueprint{
             TurretDualManipulators = true,
 
             TurretPitch = 0,
-            TurretPitchRange = 45,
-            TurretPitchSpeed = 35,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 45,
 
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 32,
+            TurretYawSpeed = 180,
             Turreted = true,
 			
 			UseFiringSolutionInsteadOfAimBone = true,
@@ -265,7 +266,7 @@ UnitBlueprint{
                 Fire = Sound { Bank = 'BattlePackSB', Cue = 'StarAdderLaser', LodCutoff = 'Weapon_LodCutoff' },
             },
             BallisticArc = "RULEUBA_None",
-            BeamCollisionDelay = 0.1,
+            BeamCollisionDelay = 0,
             BeamLifetime = 0.1,
             CollideFriendly = false,
 
@@ -279,19 +280,15 @@ UnitBlueprint{
                 Seabed = "Land|Water|Seabed",
             },
 
-            FiringTolerance = 0.2,
+            FiringTolerance = 0,
 
             Label = "BeamCannon",
 
-            MaxRadius = 48,
-
-            MuzzleSalvoDelay = 0.1,
-			MuzzleSalvoSize = 4,
+            MaxRadius = 50,
 
             NotExclusive = true,
 
             PrefersPrimaryWeaponTarget = true,
-            ProjectileLifetimeUsesMultiplier = 5,
 
             RackBones = {
                 {
@@ -306,10 +303,11 @@ UnitBlueprint{
 
             RangeCategory = "UWRC_DirectFire",
 
-            RateOfFire = 66/100,
+            RateOfFire = 10/10,
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
+                "EXPERIMENTAL",
                 "TECH3 MOBILE",
                 "TECH2 MOBILE",
                 "TECH1 MOBILE",
@@ -327,12 +325,12 @@ UnitBlueprint{
             TurretDualManipulators = true,
 
             TurretPitch = 0,
-            TurretPitchRange = 55,
-            TurretPitchSpeed = 35,
+            TurretPitchRange = 75,
+            TurretPitchSpeed = 45,
 
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 70,
+            TurretYawSpeed = 100,
             Turreted = true,
 		},
 		{
@@ -342,7 +340,7 @@ UnitBlueprint{
                 Fire = Sound { Bank = 'BattlePackSB', Cue = 'StarAdderLaser', LodCutoff = 'Weapon_LodCutoff' },
             },
             BallisticArc = "RULEUBA_None",
-            BeamCollisionDelay = 0.1,
+            BeamCollisionDelay = 0,
             BeamLifetime = 0.1,
             CollideFriendly = false,
 
@@ -356,19 +354,16 @@ UnitBlueprint{
                 Seabed = "Land|Water|Seabed",
             },
 
-            FiringTolerance = 0.2,
+            FiringTolerance = 0,
 
             Label = "BeamCannon",
 
-            MaxRadius = 48,
+            MaxRadius = 50,
 
-            MuzzleSalvoDelay = 0.1,
-			MuzzleSalvoSize = 4,
 
             NotExclusive = true,
 
             PrefersPrimaryWeaponTarget = true,
-            ProjectileLifetimeUsesMultiplier = 5,
 
 			RackBones = {
                 {
@@ -383,10 +378,11 @@ UnitBlueprint{
 
             RangeCategory = "UWRC_DirectFire",
 
-            RateOfFire = 66/100,
+            RateOfFire = 10/10,
 
             TargetPriorities = {
-                "SPECIALHIGHPRI",
+                "SPECIALHIGHPRI",|
+                "EXPERIMENTAL",
                 "TECH3 MOBILE",
                 "TECH2 MOBILE",
                 "TECH1 MOBILE",
@@ -404,12 +400,12 @@ UnitBlueprint{
             TurretDualManipulators = true,
 
             TurretPitch = 0,
-            TurretPitchRange = 55,
-            TurretPitchSpeed = 35,
+            TurretPitchRange = 75,
+            TurretPitchSpeed = 45,
 
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 70,
+            TurretYawSpeed = 100,
             Turreted = true,
         },
         {
