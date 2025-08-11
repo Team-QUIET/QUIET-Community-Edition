@@ -4,7 +4,7 @@ UnitBlueprint {
 
     AI = {
         GuardScanRadius = 40,
-		TargetBones = {'AvantGauche01'},	
+		TargetBones = {'AvantGauche02','AvantGauche01','Torso01','Left_Leg_B03','Left_Leg_B04'},	
     },
  
     Audio = { 
@@ -155,8 +155,8 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 420000,
-        BuildCostMass = 19000,
+        BuildCostEnergy = 450000,
+        BuildCostMass = 23750,
         BuildTime = 42000,
     },
     
@@ -232,9 +232,9 @@ UnitBlueprint {
     SelectionSizeZ = 1.3,
     SelectionThickness = 0.37,
 	
-    SizeX = 2.5,
-    SizeY = 2.8,
-    SizeZ = 2.2,
+    SizeX = 2.7,
+    SizeY = 3.0,
+    SizeZ = 2.4,
 	
     StrategicIconName = 'icon_seabed4_directfire',
     StrategicIconSortPriority = 115,
