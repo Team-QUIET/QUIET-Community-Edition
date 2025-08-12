@@ -188,7 +188,7 @@ UnitBlueprint{
 
             MuzzleVelocity = 32,
 
-            ProjectileId = "/mods/4DC/projectiles/BFG_Shell/BFG_Shell_proj.bp",
+            ProjectileId = '/mods/QUIET-Community-Edition/projectiles/BFG_Shell/BFG_Shell_proj.bp',
             ProjectileLifetime = 6,
 
             RackBones = {
