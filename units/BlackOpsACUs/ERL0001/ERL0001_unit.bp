@@ -581,7 +581,7 @@ UnitBlueprint {
         EXTorpedoRapidLoader = {
 
             BuildCostEnergy = 70000,
-            BuildCostMass = 3150,
+            BuildCostMass = 2150,
             BuildTime = 7000,
 
             Icon = 'exrtorp2',
@@ -620,7 +620,7 @@ UnitBlueprint {
         EXTorpedoClusterLauncher = {
 
             BuildCostEnergy = 140000,
-            BuildCostMass = 9450,
+            BuildCostMass = 3450,
             BuildTime = 14000,
 
             Icon = 'exrtorp3',
@@ -659,7 +659,7 @@ UnitBlueprint {
         EXEMPArray = {
 
             BuildCostEnergy = 59000,
-            BuildCostMass = 2900,
+            BuildCostMass = 1900,
             BuildTime = 1650,
 
             Icon = 'exramc1',
@@ -696,7 +696,7 @@ UnitBlueprint {
         EXImprovedCapacitors = {
 
             BuildCostEnergy = 142500,
-            BuildCostMass = 5100,
+            BuildCostMass = 2100,
             BuildTime = 2975,
 
             Icon = 'exramc2',
@@ -735,7 +735,7 @@ UnitBlueprint {
         EXPowerBooster = {
 
             BuildCostEnergy = 216500,
-            BuildCostMass = 8375,
+            BuildCostMass = 3375,
             BuildTime = 9550,
 
             Icon = 'exramc3',
@@ -774,7 +774,7 @@ UnitBlueprint {
         EXMasor = {
 
             BuildCostEnergy = 76000,
-            BuildCostMass = 3200,
+            BuildCostMass = 2200,
             BuildTime = 1950,
 
             Icon = 'exrgec1',
@@ -815,7 +815,7 @@ UnitBlueprint {
         EXImprovedCoolingSystem = {
 
             BuildCostEnergy = 172500,
-            BuildCostMass = 6250,
+            BuildCostMass = 3250,
             BuildTime = 3475,
 
             Icon = 'exrgec2',
@@ -858,7 +858,7 @@ UnitBlueprint {
         EXAdvancedEmitterArray = {
 
             BuildCostEnergy = 256500,
-            BuildCostMass = 9875,
+            BuildCostMass = 6875,
             BuildTime = 11350,
 
             Icon = 'exrgec3',
@@ -1047,7 +1047,7 @@ UnitBlueprint {
         EXAgilityPackage = {
 
             BuildCostEnergy = 31910,
-            BuildCostMass = 2035,
+            BuildCostMass = 1035,
             BuildTime = 1545,
 
             Icon = 'exbagile',
@@ -1084,7 +1084,7 @@ UnitBlueprint {
         EXArmorPlating = {
 
             BuildCostEnergy = 65000,
-            BuildCostMass = 4135,
+            BuildCostMass = 2135,
             BuildTime = 3900,
 
             Icon = 'exbarmor',
@@ -1123,7 +1123,7 @@ UnitBlueprint {
         EXRegenPackage = {
 
             BuildCostEnergy = 147000,
-            BuildCostMass = 7800,
+            BuildCostMass = 4800,
             BuildTime = 7950,
 
             Icon = 'exbregen',
