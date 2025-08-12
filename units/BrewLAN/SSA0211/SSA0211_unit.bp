@@ -31,7 +31,7 @@ UnitBlueprint {
     },
 
     Intel = {
-		FreeIntel =true,
+		FreeIntel = true,
 
         RadarRadius = 65,
         VisionRadius = 32,
@@ -71,6 +71,7 @@ UnitBlueprint {
             },
             FiringRandomness = 0,
             FiringTolerance = 3,
+            FixBombTrajectory = true,
 			
             Label = 'Bomb',
 			

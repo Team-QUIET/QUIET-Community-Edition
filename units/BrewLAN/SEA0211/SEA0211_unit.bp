@@ -61,6 +61,7 @@ UnitBlueprint {
             },
             FiringRandomness = 0,
             FiringTolerance = 3,
+            FixBombTrajectory = true,
             MaxRadius = 90,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
