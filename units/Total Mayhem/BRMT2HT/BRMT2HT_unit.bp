@@ -4,17 +4,41 @@ UnitBlueprint {
 
     Defense = {
         ArmorType = 'Normal',
-        Health = 900,
-        MaxHealth = 900,
-        RegenRate = 2,
+        Health = 2150,
+        MaxHealth = 2150,
+        RegenRate = 4,
         SurfaceThreatLevel = 11.7,
+    },
+
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 1.7,
+        MaxBrake = 2.6,
+        MaxSpeed = 2.6,
+        MaxSpeedReverse = 2,
+        MaxSteerForce = 10,
+        MeshExtentsX = 0.75,
+        MeshExtentsY = 0.45,
+        MeshExtentsZ = 1.1,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        RotateOnSpot = false,
+        RotateOnSpotThreshold = 0.1,
+        TurnRadius = 45,
+        TurnRate = 30,
     },
 
     Weapon = {
        	{
+            Damage = 150,
+
 		    FiringRandomnessWhileMoving = 0.1,
 
-		    RateOfFire = 15/10,
+		    RateOfFire = 20/10,
 
 		    TurretYaw = 0,
 		    TurretYawRange = 180,
@@ -34,8 +58,10 @@ UnitBlueprint {
                 },
             },
 
-            Damage = 20,
-            DamageRadius = 1,
+            Damage = 10,
+            DamageRadius = 1.5,
+
+            MaxRadius = 35,
         },
     },
 }
