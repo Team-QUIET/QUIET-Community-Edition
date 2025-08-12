@@ -2,6 +2,19 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "brmt3bm2",
 
+    Defense = {
+    
+        AntiMissile = { AttachBone = 'rocketaim', Radius = 4.5, RedirectRateOfFire = 0.8, ProjectileCategories = { 'TACTICAL MISSILE'} },
+        
+        ArmorType = 'Normal',
+
+        Health = 9750,
+        MaxHealth = 9750,
+        RegenRate = 6,
+        
+        SurfaceThreatLevel = 84.3,
+    },
+
     Economy = {
         BuildCostEnergy = 36000,
         BuildCostMass = 3250,

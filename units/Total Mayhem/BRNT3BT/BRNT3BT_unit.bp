@@ -1,13 +1,21 @@
 UnitBlueprint {
-  Merge = true,
-  BlueprintId = "brnt3bt",
+    Merge = true,
+    BlueprintId = "brnt3bt",
 
-      Weapon = {
-	
+    Defense = {
+        ArmorType = 'Normal',
+
+        Health = 3150,
+        MaxHealth = 3150,
+        RegenRate = 3,
+
+        SurfaceThreatLevel = 28.8,
+    },
+
+    Weapon = {
 		-- rocket pods --
 		
-		    {
-
+		{
             MaxRadius = 44,
 
             MuzzleChargeDelay = 0.3,
@@ -15,26 +23,22 @@ UnitBlueprint {
             RateOfFire = 1/10,
 
             TurretYawSpeed = 75,
-
         },
 		
 		-- Main Gun --
 	
         {
-
-	Audio = {
+	        Audio = {
                 Fire = Sound { Bank = 'UELWeapon', Cue = 'UEL0202_Cannon_Dbl', LodCutoff = 'Weapon_LodCutoff' },
             },
 
-
             FiringTolerance = 0.3,
 
-			      MuzzleVelocityRandom = 0,
+			MuzzleVelocityRandom = 0,
 
             RateOfFire = 4/10,
 
             TurretYawSpeed = 75,
-
-		    },
+		},
     },
 }

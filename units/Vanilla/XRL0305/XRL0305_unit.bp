@@ -2,6 +2,19 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "xrl0305",
 
+    Defense = {
+
+        MissileTorpDestroy = { AttachBone = {'XRL0305'}, Radius = 3.2, RedirectRateOfFire = 10, ProjectileCategories = {'TORPEDO'} },
+    
+        ArmorType = 'Normal',
+        Health = 7500,
+        MaxHealth = 7500,
+        RegenRate = 4,
+        
+        SubThreatLevel = 10,
+        SurfaceThreatLevel = 56.8,
+    },
+
     Display = {
         Abilities = {
             '<LOC ability_amphibious>Amphibious',
