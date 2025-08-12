@@ -63,7 +63,7 @@ SRL0320 = ClassUnit(CLandUnit) {
 		if self.IntelEffects and not self.IntelFxOn and self.IntelOn then
 			self:PlaySound(self:GetBlueprint().Audio.Cloak)
 			self.IntelEffectsBag = {}
-			self.CreateTerrainTypeEffects(self, self.IntelEffects, 'FXIdle', self:GetCurrentLayer(), nil, self.IntelEffectsBag)
+			self.CreateTerrainTypeEffects(self, self.IntelEffects, 'FXIdle', self:GetCurrentLayer(), nil, 'IntelEffectsBag')
 			self.IntelFxOn = true
 		end
 	end,
