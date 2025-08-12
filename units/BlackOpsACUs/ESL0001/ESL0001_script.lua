@@ -1460,7 +1460,7 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
 			    self.CloakEffectsBag = {}
             end
 
-		    self.CreateTerrainTypeEffects(self, self.IntelEffects.Cloak,'FXIdle',self:GetCurrentLayer(),nil,self.CloakEffectsBag )
+		    self.CreateTerrainTypeEffects(self, self.IntelEffects.Cloak,'FXIdle',self:GetCurrentLayer(),nil, 'CloakEffectsBag' )
         end
 
         if self.StealthPackage and intel == 'RadarStealthField' then
@@ -1469,7 +1469,7 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
 	            self.StealthEffectsBag = {}
             end
 
-	        self.CreateTerrainTypeEffects(self, self.IntelEffects.Field,'FXIdle',self:GetCurrentLayer(),nil,self.StealthEffectsBag )
+	        self.CreateTerrainTypeEffects(self, self.IntelEffects.Field,'FXIdle',self:GetCurrentLayer(),nil, 'StealthEffectsBag' )
         end	
 		
     end,
