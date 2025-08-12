@@ -37,6 +37,6 @@
 - `Battleships:` Battleships have been directly been buffed in both HP, Damage, and Range. They are the backbone of the Navy supported by their Destroyers, Submarines, and Cruisers. They are the most expensive unit in the Naval Area. They will be used for the frontline and will be the most difficult to kill.　　 　 　
 # Black Ops ACU Balance
 
-- The current gameplay dynamics of Black Ops ACUs can lead to high-risk scenarios due to their strength, resulting in all-in snipefests. This contrasts with base game ACU upgrades, which are naturally limited by PD/units at T2/T3 levels.
+- The past gameplay dynamics of Black Ops ACUs could lead to high-risk scenarios due to their strength, resulting in all-in snipefests. This contrasts with base game ACU upgrades, which are naturally limited by PD/units at T2/T3 levels.
 - To improve balance, Black Ops ACUs should not be primary combat units. Instead, they could serve a secondary combat unit or support unit, such as a research tree. This would allow the ACU to have initial prototypes (weaker versions) of upgrades that are gained by units.
 - Using the upgrades on units is way less risky to the game state and gives space for interesting upgrade-specific matchups and decisions that matter on the entire field, which is something I've noticed other RTS have but supcom doesn't (in general supcom is macro focused in eco mechanical complexity and unit simplicity).

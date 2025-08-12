@@ -1,8 +1,78 @@
 UnitBlueprint {
-  Merge = true,
-  BlueprintId = "xsl0303",
+    Merge = true,
+    BlueprintId = "xsl0303",
 
-      Weapon = {
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 4700,
+        MaxHealth = 4700,
+        RegenRate = 2,
+
+		SubThreatLevel = 10.5,
+        SurfaceThreatLevel = 402.5,
+    },
+
+    Display = {
+        Abilities = {
+			'<LOC ability_amphibious>Amphibious',
+            "<LOC ability_torpedo>Torpedoes",
+		},
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 100,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    Scrolling = true,
+                    ShaderName = 'Seraphim',
+                },
+                {
+                    AlbedoName = 'xsl0303_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    ShaderName = 'Seraphim',
+                    SpecularName = 'xsl0303_lod1_specteam.dds',
+                },
+            },
+        },
+
+        MovementEffects = {
+            Land = {
+                Treads = {
+                    ScrollTreads = true,
+                },
+            },
+        },
+        
+        UniformScale = 0.06,
+    },
+
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 3.55,
+        MaxBrake = 3.55,
+        MaxSpeed = 2.85,
+        MaxSpeedReverse = 2.85,
+        MaxSteerForce = 10,
+        MeshExtentsX = 1,
+        MeshExtentsY = 1.25,
+        MeshExtentsZ = 1,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Amphibious',
+
+        StandUpright = false,
+        TurnRadius = 0,
+        TurnRate = 90,
+		WaterSpeedMultiplier = 1.2,
+    },
+
+    Weapon = {
         {
 
             RateOfFire = 5/10,
