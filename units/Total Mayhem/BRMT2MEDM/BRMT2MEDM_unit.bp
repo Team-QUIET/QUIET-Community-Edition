@@ -21,6 +21,14 @@ UnitBlueprint {
 		
         UniformScale = 0.055,
     },
+
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 2625,
+        MaxHealth = 2625,
+        RegenRate = 2,
+        SurfaceThreatLevel = 15.9,
+    },
 	
     Intel = {
         RadarStealth = false,
