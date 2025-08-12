@@ -2,6 +2,14 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "bal0310",
 
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 6000,
+        MaxHealth = 6000,
+        RegenRate = 2,
+        SurfaceThreatLevel = 70.8,
+    },
+
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {

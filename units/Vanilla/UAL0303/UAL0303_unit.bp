@@ -2,13 +2,59 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "ual0303",
 
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 3600,
+        MaxHealth = 3600,
+        RegenRate = 2,
+
+        Shield = {
+            ImpactEffects = 'AeonShieldHit01',
+            ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
+            Mesh = '/effects/entities/AeonShield01/AeonShield01_mesh',
+            MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
+            RegenAssistMult = 60,
+            ShieldEnergyDrainRechargeTime = 5,
+            ShieldMaxHealth = 1000,
+            ShieldRechargeTime = 30,
+            ShieldRegenRate = 30,
+            ShieldRegenStartTime = 2,
+            ShieldSize = 2.5,
+            ShieldVerticalOffset = 0,
+        },
+
+        SurfaceThreatLevel = 40.7,
+    },
+
+    Physics = {
+		BackUpDistance = 4,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 3.3,
+        MaxBrake = 2.95,
+        MaxSpeed = 2.95,
+        MaxSpeedReverse = 2.95,
+        MaxSteerForce = 10,
+        MeshExtentsX = 1,
+        MeshExtentsY = 1.25,
+        MeshExtentsZ = 1,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        StandUpright = true,
+        TurnRadius = 5,
+        TurnRate = 130,
+    },
+
     Weapon = {
         {
             AboveWaterTargetsOnly = true,
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
-            Damage = 170,
+            Damage = 160,
             DamageType = 'Normal',
 			
             DisplayName = 'Laser',
@@ -21,7 +67,7 @@ UnitBlueprint {
 			
             Label = 'FrontTurret01',
 			
-            MaxRadius = 28,
+            MaxRadius = 27,
 			
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
@@ -34,10 +80,11 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_DirectFire',
 			
-            RateOfFire = 2,		-- 340 DPS
+            RateOfFire = 10/5,		-- 340 DPS
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
+                "EXPERIMENTAL",
                 "TECH3 MOBILE",
                 "TECH2 MOBILE",
                 "TECH1 MOBILE",
@@ -53,11 +100,11 @@ UnitBlueprint {
 			
             TurretPitch = 10,
             TurretPitchRange = 50,
-            TurretPitchSpeed = 25,
+            TurretPitchSpeed = 30,
 			
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 90,
+            TurretYawSpeed = 180,
 			
             Turreted = true,
         },
