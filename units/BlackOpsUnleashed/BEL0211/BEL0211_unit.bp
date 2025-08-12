@@ -1,0 +1,317 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "bel0211",
+
+    AI = {
+        GuardScanRadius = 20,
+        TargetBones = {'Left_Turret','Right_Turret'},
+    },
+	
+    Audio = {
+        Destroyed   = Sound { Bank = 'UELDestroy', Cue = 'UEL_Destroy_Med_Land', LodCutoff = 'UnitMove_LodCutoff' },
+        StartMove   = Sound { Bank = 'UEL', Cue = 'UEL0202_Move_Start', LodCutoff = 'UnitMove_LodCutoff' },
+        StopMove    = Sound { Bank = 'UEL', Cue = 'UEL0202_Move_Stop', LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection = Sound { Bank = 'Interface', Cue = 'UEF_Select_Tank', LodCutoff = 'UnitMove_LodCutoff' },
+    },
+    Buffs = {},
+	
+    BuildIconSortPriority = 35,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER3FACTORY',
+        'UEF',
+        'MOBILE',
+        'LAND',
+        'TECH2',
+        'DIRECTFIRE',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+    },
+	
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 1920,
+        MaxHealth = 1920,
+        RegenRate = 2,
+        SurfaceThreatLevel = 10.9,
+    },
+	
+    Description = '<LOC bel0211_desc>Flamethrower Tank',
+	
+    Display = {
+        Abilities = {
+			'Short Range',
+            '<LOC ability_deathaoe>Volatile',
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                { LODCutoff = 215, Scrolling = true, ShaderName = 'Unit' },
+            },
+        },
+        
+        MovementEffects = {
+            Land = {
+                Effects = {
+                    { Bones = {'Left_Exhaust','Right_Exhaust'}, Type = 'GroundKickup02', Scale = 0.2 },
+                },
+            },
+        },
+
+        UniformScale = 0.11,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 1450,
+        BuildCostMass = 290,
+        BuildTime = 1160,
+    },
+	
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'UEF',
+        Icon = 'land',
+        UnitName = '<LOC bel0211_name>Inferno',
+    },
+	
+    Intel = {
+        VisionRadius = 20,
+    },
+	
+    Interface = {
+        HelpText = 'Flamethrower Tank',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 0.95,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 1.6,
+        MaxBrake = 3.2,
+        MaxSpeed = 3.2,
+        MaxSpeedReverse = 3.2,
+        MaxSteerForce = 3,
+        MeshExtentsX = 0.75,
+        MeshExtentsY = 0.45,
+        MeshExtentsZ = 1.25,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        RotateOnSpot = false,
+        RotateOnSpotThreshold = 0.1,
+        TurnRadius = 0,
+        TurnRate = 90,
+    },
+	
+    SelectionCenterOffsetX = 0,
+    SelectionCenterOffsetZ = 0.01,
+    SelectionSizeX = 0.45,
+    SelectionSizeZ = 0.9,
+    SelectionThickness = 0.47,
+	
+    SizeX = 0.9,
+    SizeY = 0.4,
+    SizeZ = 1.2,
+	
+    StrategicIconName = 'icon_land2_directfire',
+    StrategicIconSortPriority = 45,
+	
+    Transport = {
+        TransportClass = 2,
+    },
+	
+    Veteran = {
+        Level1 = 4,
+        Level2 = 8,
+        Level3 = 12,
+        Level4 = 16,
+        Level5 = 20,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB2104_Railgun', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 3,
+            DamageRadius = 3.5,
+			
+            DoTPulses = 6,
+            DoTTime = 2.5,
+			
+			DamageFriendly = true,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Right Flamer',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+			
+			FiringRandomness = 1.5,
+            FiringTolerance = 10,
+			
+            Label = 'Flamer',
+			
+            HeadingArcCenter = -75,
+            HeadingArcRange = 125,
+
+            MaxRadius = 20,
+			MinRadius = 3,
+
+            MuzzleVelocity = 15,
+
+			NotExclusive = true,
+            NoPause = true,
+			
+            ProjectileId = '/mods/BlackOpsUnleashed/projectiles/NapalmProjectile02/Napalm02_proj.bp',
+            ProjectileLifetime = 2.0,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Right_Turret_Muzzle'},
+                    RackBone = 'Right_Turret_Muzzle',
+                },
+            },
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 3,		-- 54 dps
+
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+
+			
+            TurretBoneMuzzle = 'Right_Turret_Muzzle',
+            TurretBonePitch = 'Right_Turret',
+            TurretBoneYaw = 'Right_Turret',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 70,
+            TurretPitchSpeed = 40,
+			
+            TurretYaw = -75,
+            TurretYawRange = 125,
+            TurretYawSpeed = 60,
+            Turreted = true,
+        },
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB2104_Railgun', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 3,
+            DamageRadius = 3.5,
+			
+            DoTPulses = 6,
+            DoTTime = 2.5,
+			
+			DamageFriendly = true,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Left Flamer',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+			
+			FiringRandomness = 1.5,
+            FiringTolerance = 10,
+			
+            Label = 'Flamer',
+			
+            HeadingArcCenter = 75,
+            HeadingArcRange = 125,
+
+            MaxRadius = 20,
+			MinRadius = 3,
+
+            MuzzleVelocity = 15,
+
+			NotExclusive = true,
+            NoPause = true,
+			
+            ProjectileId = '/mods/BlackOpsUnleashed/projectiles/NapalmProjectile02/Napalm02_proj.bp',
+            ProjectileLifetime = 2.0,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Left_Turret_Muzzle'},
+                    RackBone = 'Left_Turret_Muzzle',
+                },
+            },
+
+            RateOfFire = 3,		-- 54 dps
+
+			
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+
+			
+            TurretBoneMuzzle = 'Left_Turret_Muzzle',
+            TurretBonePitch = 'Left_Turret',
+            TurretBoneYaw = 'Left_Turret',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 70,
+            TurretPitchSpeed = 40,
+			
+            TurretYaw = 75,
+            TurretYawRange = 125,
+            TurretYawSpeed = 60,
+            Turreted = true,
+        },
+        {
+            Damage = 300,
+            DamageFriendly = true,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+            DisplayName = 'Death Weapon',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+            WeaponCategory = 'Death',
+        },
+    },
+}
