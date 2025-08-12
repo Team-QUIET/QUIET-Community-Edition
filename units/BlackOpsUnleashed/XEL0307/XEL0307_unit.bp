@@ -3,23 +3,21 @@ UnitBlueprint {
 	BlueprintId = "xel0307",
 
 	Defense = {
-		Health = 4200,  -- was 3150
-		MaxHealth = 4200, -- was 3150
+		Health = 6200,
+		MaxHealth = 6200,
 
 		Shield = {
             ImpactEffects = 'UEFShieldHit01',
             OwnerShieldMesh = '/mods/BlackOpsUnleashed/units/XEL0307/XEL0307_PersonalShield_mesh',
-            PassOverkillDamage = true,            
             PersonalShield = true,
             RegenAssistMult = 60,
             ShieldEnergyDrainRechargeTime = 12,
-            ShieldMaxHealth = 4400,
-            ShieldRechargeTime = 20,
-            ShieldRegenRate = 110,
-            ShieldRegenStartTime = 1,
+            ShieldMaxHealth = 2800,
+            ShieldRechargeTime = 75,
+            ShieldRegenRate = 50,
+            ShieldRegenStartTime = 3,
             ShieldSize = 2,
             ShieldVerticalOffset = 0,
-            StartsOff = true,
         },
 	},
 

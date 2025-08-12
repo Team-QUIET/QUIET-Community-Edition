@@ -5,6 +5,28 @@ UnitBlueprint{
     ScriptClass = 'WEL0305',
     ScriptModule = '/mods/QUIET-Community-Edition/units/WyvernBattlePack/WEL0305/WEL0305_Script.lua',
 
+    Defense = {
+        ArmorType = "Normal",
+        Health = 2600,
+        MaxHealth = 2600,
+        RegenRate = 0,
+
+        Shield = {
+            ImpactEffects = "UEFShieldHit01",
+            OwnerShieldMesh = "/mods/BattlePack/units/WEL0305/WEL0305_PersonalShield_mesh",
+            RegenAssistMult = 60,
+            ShieldEnergyDrainRechargeTime = 5,
+            ShieldMaxHealth = 4200,
+            ShieldRechargeTime = 50,
+            ShieldRegenRate = 15,
+            ShieldRegenStartTime = 3,
+            ShieldSize = 2.5,
+            ShieldVerticalOffset = 0,
+        },
+
+        SurfaceThreatLevel = 64.6,
+    },
+
     Weapon = {
         {
             AboveWaterFireOnly = true,
@@ -15,7 +37,7 @@ UnitBlueprint{
             BallisticArc = "RULEUBA_None",
             CollideFriendly = false,
 
-            Damage = 800,
+            Damage = 700,
             DamageRadius = 0,
             DamageType = "Normal",
 
@@ -31,7 +53,7 @@ UnitBlueprint{
             Label = "PlasmaCannon01",
             LeadTarget = true,
 
-            MaxRadius = 37,
+            MaxRadius = 35,
 
             MuzzleVelocity = 35,
 

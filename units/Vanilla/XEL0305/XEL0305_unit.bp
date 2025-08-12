@@ -2,6 +2,20 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "xel0305",
 
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 7200,
+        MaxHealth = 7200,
+        RegenRate = 2,
+        SurfaceThreatLevel = 49.3,
+    },
+
+    Economy = {
+        BuildCostEnergy = 14000,
+        BuildCostMass = 1280,
+        BuildTime = 7000,
+    },
+
     Weapon = {
         {
             AboveWaterFireOnly = true,
