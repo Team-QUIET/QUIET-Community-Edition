@@ -45,9 +45,9 @@ UnitBlueprint {
     Defense = {
         ArmorType = 'Normal',
 
-        Health = 850,
-        MaxHealth = 850,
-        RegenRate = 1,
+        Health = 1250,
+        MaxHealth = 1250,
+        RegenRate = 0,
 
         Shield = {
             ImpactEffects = 'AeonShieldHit01',
@@ -55,8 +55,8 @@ UnitBlueprint {
             PersonalShield = true,
             RegenAssistMult = 60,
             ShieldEnergyDrainRechargeTime = 5,
-            ShieldMaxHealth = 1050,
-            ShieldRechargeTime = 20,
+            ShieldMaxHealth = 1500,
+            ShieldRechargeTime = 75,
             ShieldRegenRate = 50,
             ShieldRegenStartTime = 1,
             ShieldSize = 3,
@@ -96,7 +96,7 @@ UnitBlueprint {
 	
     Economy = {
         BuildCostEnergy = 3800,
-        BuildCostMass = 465,
+        BuildCostMass = 380,
         BuildTime = 1778,
 		
         MaintenanceConsumptionPerSecondEnergy = 10,
@@ -145,10 +145,10 @@ UnitBlueprint {
             LAYER_Land = true,
         },
         DragCoefficient = 0.2,
-        MaxAcceleration = 2.8,
-        MaxBrake = 2.8,
-        MaxSpeed = 2.8,
-        MaxSpeedReverse = 2.8,
+        MaxAcceleration = 2.7,
+        MaxBrake = 2.7,
+        MaxSpeed = 2.7,
+        MaxSpeedReverse = 2.7,
         MaxSteerForce = 3,
         MeshExtentsX = 1,
         MeshExtentsY = 0.5,
@@ -235,6 +235,7 @@ UnitBlueprint {
 			
             TargetPriorities = {
                 "SPECIALHIGHPRI",
+                "EXPERIMENTAL",
                 "TECH3 MOBILE",
                 "TECH2 MOBILE",
                 "TECH1 MOBILE",
