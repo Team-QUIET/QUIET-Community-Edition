@@ -2,11 +2,19 @@ UnitBlueprint {
 	Merge = true,
 	BlueprintId = "brmt2ht",
 
- Weapon = {
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 900,
+        MaxHealth = 900,
+        RegenRate = 2,
+        SurfaceThreatLevel = 11.7,
+    },
+
+    Weapon = {
        	{
 		    FiringRandomnessWhileMoving = 0.1,
 
-		    RateOfFire = 10/10,
+		    RateOfFire = 15/10,
 
 		    TurretYaw = 0,
 		    TurretYawRange = 180,
@@ -19,15 +27,15 @@ UnitBlueprint {
                     Add = { OnImpact = false },
                     AppliedToTarget = false,
                     BuffType = 'STUN',
-                    Duration = 0.4,
-                    Radius = 1,
+                    Duration = 0,
+                    Radius = 0,
                     TargetAllow = 'LAND TECH1,NAVAL TECH1,LAND TECH2,NAVAL TECH2',
                     TargetDisallow = 'WALL',
                 },
             },
 
             Damage = 20,
-            DamageRadius = 1.25,
+            DamageRadius = 1,
         },
     },
 }
