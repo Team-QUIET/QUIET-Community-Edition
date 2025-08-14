@@ -38,7 +38,7 @@ UnitBlueprint {
 
 		    FiringRandomnessWhileMoving = 0.1,
 
-		    RateOfFire = 20/10,
+		    RateOfFire = 10/20,
 
 		    TurretYaw = 0,
 		    TurretYawRange = 180,
