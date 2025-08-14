@@ -201,7 +201,7 @@ UnitBlueprint {
             BuildTime = 8900,
             Icon = 'ras',
             Name = 'Resource Allocation System',
-            ProductionPerSecondEnergy = 1250,
+            ProductionPerSecondEnergy = 600,
             ProductionPerSecondMass = 11,
             Slot = 'RCH',
             UpgradeUnitAmbientBones = {
