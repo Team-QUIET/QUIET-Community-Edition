@@ -55,8 +55,8 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 440,
-        BuildCostMass = 62,
+        BuildCostEnergy = 456,
+        BuildCostMass = 71,
         BuildTime = 82,
     },
 	
@@ -97,11 +97,11 @@ UnitBlueprint {
         DragCoefficient = 0.2,
         Elevation = 0.25,
         
-        MaxAcceleration = 2.9,
+        MaxAcceleration = 2.55,
         MaxBrake = 15,
-        MaxSpeed = 2.9,
-        MaxSpeedReverse = 2.9,
-        MaxSteerForce = 3,
+        MaxSpeed = 2.55,
+        MaxSpeedReverse = 2.55,
+        MaxSteerForce = 2.55,
         
         MeshExtentsX = 0.75,
         MeshExtentsY = 0.5,
@@ -113,9 +113,9 @@ UnitBlueprint {
         RotateBodyWhileMoving = true,
         RotateOnSpot = false,
         
-        TurnFacingRate = 80,
-        TurnRadius = 2,
-        TurnRate = 180,
+        TurnFacingRate = 90,
+        TurnRadius = 3,
+        TurnRate = 90,
         WobbleFactor = 0.1,
         WobbleSpeed = 0.01,
     },
