@@ -2,6 +2,9 @@ UnitBlueprint {
     Merge = true,
 	BlueprintId = "eal0001",
 
+    ScriptClass = 'EAL0001',
+    ScriptModule = '/mods/QUIET-Community-Edition/units/BlackopsACUs/EAL0001/EAL0001_Script.lua',
+
     Abilities = {
         TargetLocation = {bitmapId = 'skry-target', helpText = 'Scry_target', preferredSlot = 11, script = 'TargetLocation'},
     },

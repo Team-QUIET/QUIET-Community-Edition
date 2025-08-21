@@ -2,6 +2,9 @@ UnitBlueprint {
     Merge = true,
 	BlueprintId = "erl0001",
 
+    ScriptClass = 'ERL0001',
+    ScriptModule = '/mods/QUIET-Community-Edition/units/BlackopsACUs/ERL0001/ERL0001_Script.lua',
+
     AI = {
         GuardRadius = 10,
         TargetBones = {'Head','Torso','Right_Arm_B01','Left_Arm_B01','Back_Upgrade','Left_Leg_B01','Right_Leg_B01'},

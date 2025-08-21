@@ -2,6 +2,9 @@ UnitBlueprint {
     Merge = true,
 	BlueprintId = "eel0001",
 
+    ScriptClass = 'EEL0001',
+    ScriptModule = '/mods/QUIET-Community-Edition/units/BlackopsACUs/EEL0001/EEL0001_Script.lua',
+
     AI = {
         GuardRadius = 10,
 		InitialAutoMode = false,
