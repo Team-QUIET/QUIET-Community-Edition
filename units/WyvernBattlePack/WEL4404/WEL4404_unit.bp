@@ -381,7 +381,7 @@ UnitBlueprint{
             RateOfFire = 10/10,
 
             TargetPriorities = {
-                "SPECIALHIGHPRI",|
+                "SPECIALHIGHPRI",
                 "EXPERIMENTAL",
                 "TECH3 MOBILE",
                 "TECH2 MOBILE",
