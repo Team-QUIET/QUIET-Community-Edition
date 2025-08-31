@@ -91,7 +91,7 @@ UnitBlueprint{
     Economy = {
         BuildCostEnergy = 4800,
         BuildCostMass = 580,
-        BuildRate = 40,
+        BuildRate = 70,
         BuildTime = 1200,
         BuildableCategory = {
             "BUILTBYTIER2FACTORY CYBRAN MOBILE CONSTRUCTION",

@@ -92,7 +92,7 @@ UnitBlueprint{
     Economy = {
         BuildCostEnergy = 11600,
         BuildCostMass = 1440,
-        BuildRate = 90,
+        BuildRate = 100,
         BuildTime = 3200,
         BuildableCategory = {
             "BUILTBYTIER3FACTORY AEON MOBILE CONSTRUCTION",
