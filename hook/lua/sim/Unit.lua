@@ -108,4 +108,92 @@ Unit = ClassUnit(QCEUnit) {
 
     -- Called by the weapon class, these are expensive!
     OnLostTarget = function(self, Weapon) end,
+
+    -- Hook OnStopBeingBuilt to track HQ factory completion
+    OnStopBeingBuilt = function(self, builder, layer)
+        -- Check if this is an HQ factory that just finished building using categories
+        local brain = self:GetAIBrain()
+        local blueprint = self:GetBlueprint()
+        local cats = blueprint.Categories
+
+        -- Check if this is an HQ factory using category search
+        -- T2 HQ factories have: BUILTBYTIER1FACTORY + FACTORY + STRUCTURE + TECH2 + RESEARCH + LAND/AIR/NAVAL
+        -- T3 HQ factories have: BUILTBYTIER2FACTORY + FACTORY + STRUCTURE + TECH3 + RESEARCH + LAND/AIR/NAVAL
+        local isHQFactory = false
+        local factoryType = nil
+        local techLevel = nil
+
+        if cats then
+            local hasFactory = false
+            local hasStructure = false
+            local hasBuiltByT1 = false
+            local hasBuiltByT2 = false
+            local hasResearch = false
+            local hasTech2 = false
+            local hasTech3 = false
+            local hasLand = false
+            local hasAir = false
+            local hasNaval = false
+
+            -- Check all categories
+            for _, category in cats do
+                if category == 'FACTORY' then
+                    hasFactory = true
+                elseif category == 'STRUCTURE' then
+                    hasStructure = true
+                elseif category == 'BUILTBYTIER1FACTORY' then
+                    hasBuiltByT1 = true
+                elseif category == 'BUILTBYTIER2FACTORY' then
+                    hasBuiltByT2 = true
+                elseif category == 'RESEARCH' then
+                    hasResearch = true
+                elseif category == 'TECH2' then
+                    hasTech2 = true
+                elseif category == 'TECH3' then
+                    hasTech3 = true
+                elseif category == 'LAND' then
+                    hasLand = true
+                elseif category == 'AIR' then
+                    hasAir = true
+                elseif category == 'NAVAL' then
+                    hasNaval = true
+                end
+            end
+
+            -- Determine if this is an HQ factory
+            -- T2 HQ: BUILTBYTIER1FACTORY + FACTORY + STRUCTURE + TECH2 + RESEARCH + layer
+            -- T3 HQ: BUILTBYTIER2FACTORY + FACTORY + STRUCTURE + TECH3 + RESEARCH + layer
+            local isT2HQ = hasFactory and hasStructure and hasBuiltByT1 and hasResearch and hasTech2
+            local isT3HQ = hasFactory and hasStructure and hasBuiltByT2 and hasResearch and hasTech3
+
+            isHQFactory = isT2HQ or isT3HQ
+
+            -- Determine factory type
+            if hasLand then
+                factoryType = "LAND"
+            elseif hasAir then
+                factoryType = "AIR"
+            elseif hasNaval then
+                factoryType = "NAVAL"
+            end
+
+            -- Determine tech level
+            if hasTech2 then
+                techLevel = 2
+            elseif hasTech3 then
+                techLevel = 3
+            end
+        end
+
+        if isHQFactory and factoryType and techLevel and brain then
+            -- Add HQ factory to brain tracking
+            brain:AddHQFactory(factoryType, "TECH" .. techLevel)
+
+            --LOG("*QUIET* First " .. factoryType .. " T" .. techLevel ..
+            --    " HQ factory completed - Support Factories unlocked for player " .. brain:GetArmyIndex())
+        end
+
+        -- Call the original OnStopBeingBuilt method
+        return QCEUnit.OnStopBeingBuilt(self, builder, layer)
+    end,
 }

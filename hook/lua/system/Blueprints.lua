@@ -320,25 +320,25 @@ do
 
 				-- Buff Buildtime on T2 or T3 Factories
 				-- Probably will have to buff Air Factories BT if Air gets too oppressive, but we'll see
-				if cats.BUILTBYTIER1FACTORY and cats.FACTORY and cats.STRUCTURE and cats.TECH2 then
-					if not bp.IgnoreEvenflow then
-						bp.IgnoreEvenflow = true
-					end
-
+				if cats.BUILTBYTIER1FACTORY and cats.FACTORY and cats.STRUCTURE and cats.TECH2 and cats.RESEARCH then
 					if cats.AIR or cats.LAND then
-						bp.Economy.BuildTime = 2300
+						bp.Economy.BuildTime = 4600
+						bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * 1.3
+						bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 1.85
 					elseif cats.NAVAL then
-						bp.Economy.BuildTime = 3200
+						bp.Economy.BuildTime = 6400
+						bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * 1.3
+						bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 1.85
 					end
-				elseif cats.BUILTBYTIER2FACTORY and cats.FACTORY and cats.STRUCTURE and cats.TECH3 then
-					if not bp.IgnoreEvenflow then
-						bp.IgnoreEvenflow = true
-					end
-
+				elseif cats.BUILTBYTIER2FACTORY and cats.FACTORY and cats.STRUCTURE and cats.TECH3 and cats.RESEARCH then
 					if cats.AIR or cats.LAND then
-						bp.Economy.BuildTime = 11000
+						bp.Economy.BuildTime = 16000
+						bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * 1.3
+						bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 1.85
 					elseif cats.NAVAL then
-						bp.Economy.BuildTime = 18000
+						bp.Economy.BuildTime = 24000
+						bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * 1.3
+						bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 1.85
 					end
 				end
 
@@ -349,36 +349,6 @@ do
 				for i, cat in CatsMisc do
 					if not cats[cat] then
 						table.insert(bp.Categories, cat)
-					end
-				end
-
-				-- Allow T2, T3, & T4 Engineers to Build T2 Factories
-				local CatsT2 = {
-					'BUILTBYTIER2ENGINEER',
-					'BUILTBYTIER3ENGINEER',
-					'BUILTBYTIER4ENGINEER',
-					'BUILTBYTIER2COMMANDER',
-					'BUILTBYTIER3COMMANDER',
-					'BUILTBYTIER4COMMANDER',
-				}
-				if cats.BUILTBYTIER1FACTORY and cats.FACTORY and cats.STRUCTURE and cats.TECH2 then
-					for i, cat in CatsT2 do
-						if not cats[cat] then
-							table.insert(bp.Categories, cat)
-						end
-					end
-				end
-
-				-- Allow T3 Engineers to Build T3 Factories
-				local CatsT3 = {
-					'BUILTBYTIER3ENGINEER',
-					'BUILTBYTIER3COMMANDER',
-				}
-				if cats.BUILTBYTIER2FACTORY and cats.FACTORY and cats.STRUCTURE and cats.TECH3 then
-					for i, cat in CatsT3 do
-						if not cats[cat] then
-							table.insert(bp.Categories, cat)
-						end
 					end
 				end
 
