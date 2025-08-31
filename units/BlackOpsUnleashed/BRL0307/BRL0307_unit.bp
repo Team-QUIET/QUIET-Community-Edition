@@ -6,11 +6,11 @@ UnitBlueprint {
         {
             Buffs = {
                 {
-                    Add = { OnImpact = true },
-                    AppliedToTarget = true,
+                    Add = { OnImpact = false },
+                    AppliedToTarget = false,
                     BuffType = 'STUN',
-                    Duration = 0.9,
-                    Radius = 1.5,
+                    Duration = 0,
+                    Radius = 0,
                     TargetAllow = 'LAND',
                     TargetDisallow = 'EXPERIMENTAL,COMMAND,STRUCTURE,SUBCOMMANDER,AIR,TECH3,NAVAL',
                 },
