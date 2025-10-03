@@ -19,10 +19,10 @@ UnitBlueprint {
             LAYER_Land = true,
         },
         DragCoefficient = 0.2,
-        MaxAcceleration = 1.6,
+        MaxAcceleration = 2.2,
         MaxBrake = 2.2,
         MaxSpeed = 2.2,
-        MaxSpeedReverse = 1.2,
+        MaxSpeedReverse = 2.2,
         MaxSteerForce = 10,
         MeshExtentsX = 1.5,
         MeshExtentsY = 0.75,
@@ -32,7 +32,7 @@ UnitBlueprint {
         RotateOnSpot = false,
         RotateOnSpotThreshold = 0.1,
         TurnRadius = 0,
-        TurnRate = 45,
+        TurnRate = 75,
     },
     
     Weapon = {
