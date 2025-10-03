@@ -2,6 +2,8 @@ UnitBlueprint {
     Merge = true,
 	BlueprintId = "srl0311", 
 
+    IgnoreEvenflow = true,
+
     Categories = {
         'SELECTABLE',
         'BUILTBYTIER3FACTORY',
@@ -14,6 +16,43 @@ UnitBlueprint {
         'SILO',
         'VISIBLETORECON',
         'RECLAIMABLE',
+    },
+
+    Economy = {
+        BuildCostEnergy = 10000,
+        BuildCostMass = 800,
+        
+        BuildTime = 4500,
+        
+        TeleportEnergyMod = 0.15,
+        TeleportMassMod = 1,
+        TeleportTimeMod = 0.01,
+    },
+
+    Defense = {
+
+        ArmorType = 'Normal',
+
+        Health = 915,
+        MaxHealth = 915,
+        
+        RegenRate = 2,
+        SurfaceThreatLevel = 12,
+    },
+
+    Physics = {
+    
+        MaxAcceleration = 2.35,
+        MaxBrake = 2.35,
+        MaxSpeed = 2.35,
+        MaxSpeedReverse = -1,
+        MaxSteerForce = 5,--10,
+
+        MotionType = 'RULEUMT_Land',
+        RotateOnSpot = false,
+        RotateOnSpotThreshold = 0.1,
+
+        TurnRate = 75,
     },
     
     Weapon = {

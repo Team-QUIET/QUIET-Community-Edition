@@ -1,6 +1,47 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "brpt3ml",
+
+    IgnoreEvenflow = true,
+
+    Economy = {
+        BuildCostEnergy = 10000,
+        BuildCostMass = 800,
+        BuildTime = 4500,
+    },
+
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 1000,
+        MaxHealth = 1000,
+        RegenRate = 1,
+
+        SurfaceThreatLevel = 25.4,
+    },
+
+    Physics = {
+        BackUpDistance = 5,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 2.35,
+        MaxBrake = 2.35,
+        MaxSpeed = 2.35,
+        MaxSpeedReverse = 2.35,
+        MaxSteerForce = 10,
+		
+        MeshExtentsX = 1.75,
+        MeshExtentsY = 0.55,
+        MeshExtentsZ = 2.75,
+		
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+
+        TurnRadius = 3,
+        TurnRate = 75,
+    },
     
     Weapon = {
         {

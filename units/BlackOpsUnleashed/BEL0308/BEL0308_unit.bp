@@ -2,6 +2,8 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "bel0308",
 
+    IgnoreEvenflow = true,
+
     AI = {
         GuardScanRadius = 66,
         TargetBones = {'Cannon_Turret'},
@@ -35,8 +37,8 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Normal',
-        Health = 1800,
-        MaxHealth = 1800,
+        Health = 1400,
+        MaxHealth = 1400,
         RegenRate = 1,
         SurfaceThreatLevel = 33.9,
     },
@@ -77,9 +79,9 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 6250,
-        BuildCostMass = 600,
-        BuildTime = 315,
+        BuildCostEnergy = 7500,
+        BuildCostMass = 725,
+        BuildTime = 3715,
     },
 	
     General = {

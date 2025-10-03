@@ -2,6 +2,8 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "url0304",
 
+    IgnoreEvenflow = true,
+
     AI = {
 		--GuardReturnRadius = 0,
         GuardScanRadius = 120,
@@ -11,7 +13,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 8000,
         BuildCostMass = 800,
-        BuildTime = 2500,
+        BuildTime = 5000,
     },
 
     Physics = {

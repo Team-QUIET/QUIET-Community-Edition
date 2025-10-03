@@ -2,6 +2,35 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = 'xel0306',
 
+    IgnoreEvenflow = true,
+
+    Economy = {
+        BuildCostEnergy = 9000,
+        BuildCostMass = 800,
+        BuildTime = 3950,
+    },
+
+    Physics = {
+        BackUpDistance = 10,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 2.4,
+        MaxBrake = 2.4,
+        MaxSpeed = 2.4,
+        MaxSpeedReverse = 2.4,
+        MaxSteerForce = 5,
+        MeshExtentsX = 0.75,
+        MeshExtentsY = 0.6,
+        MeshExtentsZ = 1.5,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Land',
+        TurnRadius = 0,
+        TurnRate = 75,
+    },
+
     Weapon = {
         {
             AboveWaterTargetsOnly = true,
