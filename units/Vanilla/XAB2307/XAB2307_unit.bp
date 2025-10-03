@@ -4,10 +4,81 @@ UnitBlueprint {
 
     Weapon = {
         {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
+			
+            Audio = {
+                BarrelLoop = Sound {
+                    Bank = 'UAB',
+                    Cue = 'UAB2302_Turret_Loop',
+                    LodCutoff = 'WeaponBig_LodCutoff',
+                },
+                BarrelStart = Sound {
+                    Bank = 'XAL_Weapon',
+                    Cue = 'XAB2307_Turret',
+                    LodCutoff = 'WeaponBig_LodCutoff',
+                },
+                Fire = Sound {
+                    Bank = 'XAL_Weapon',
+                    Cue = 'XAB2307_Rapid_Artillery',
+                    LodCutoff = 'WeaponBig_LodCutoff',
+                },
+            },
+			
+            BallisticArc = 'RULEUBA_HighArc',
+            CollideFriendly = false,
+			
+            Damage = 220,		---- this is neat - fires one shell - which splits into 6 - and those 6 split into 6 - making 36 projectiles
+            
+            DamageFriendly = true,            
+            DamageRadius = 2,	---- even more interesting - if it impacts with shield does not do the last split so only 6 projectiles
+			
+            DamageType = 'Normal',
+            
+            DisplayName = 'Rapid-Fire Artillery Cannon',
+
+            EnergyChargeForFirstShot = false,
+			
+            EnergyDrainPerSecond = 1760,
+            EnergyRequired = 8800,		---- 5 second charge
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringRandomness = 0.25,
+            FiringTolerance = 0.01,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 2500, ---- original was just over 1000
+            MinRadius = 150,
+			
+            MuzzleChargeDelay = 0.5,    -- .5 second muzzle delay
+
+            MuzzleVelocity = 150,
+            MuzzleVelocityReduceDistance = 4000,
+			
+            ProjectileId = '/projectiles/AIFFragmentationSensorShell01/AIFFragmentationSensorShell01_proj.bp',
+            ProjectileLifetime = 150,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle'},
+                    RackBone = 'Turret_Barrel',
+                },
+            },
+
+            RackRecoilDistance = -1,
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
             RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
-            RateOfFire = 10/50,
+            RateOfFire = 10/27,
 
+			
             TargetPriorities = {
                 "EXPERIMENTAL MASSFABRICATION",
                 "EXPERIMENTAL STRATEGIC ARTILLERY",
@@ -22,6 +93,22 @@ UnitBlueprint {
                 "STRUCTURE",
                 "ALLUNITS",
             },
+			
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 6,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 6,
+			
+            Turreted = true,
         },
     },
 }
