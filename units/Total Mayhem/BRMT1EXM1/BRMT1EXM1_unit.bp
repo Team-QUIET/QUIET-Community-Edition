@@ -17,7 +17,9 @@ UnitBlueprint {
         BuildCostMass = 190,
         BuildTime = 1335,
     },
-
+    Intel = {
+        VisionRadius = 19.7,
+    },
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
