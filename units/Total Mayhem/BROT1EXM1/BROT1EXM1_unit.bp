@@ -19,7 +19,7 @@ UnitBlueprint {
     },
 
     Intel = {
-        VisionRadius = 19.7,
+        VisionRadius = 20,
     },
 	
     Physics = {
