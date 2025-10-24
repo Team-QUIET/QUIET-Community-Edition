@@ -1,0 +1,38 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "uel0203",
+	
+    Intel = {
+        VisionRadius = 20, ---- unit vision was higher than directfire radius with no clear reasons
+        WaterVisionRadius = 8,
+    },
+
+    Physics = {
+        BackUpDistance = 3,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+        },
+        DragCoefficient = 0.2,
+        Elevation = 0.125,
+		
+        MaxAcceleration = 1.2,
+        MaxBrake = 1.2,
+		
+        MaxSpeed = 3.68, ---- 74m/s
+        MaxSpeedReverse = 3.2,
+		
+        MaxSteerForce = 10,
+        MeshExtentsX = 1,
+        MeshExtentsY = 0.6,
+        MeshExtentsZ = 1.3,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Hover',
+        RotateBodyWhileMoving = true,
+        TurnFacingRate = 48,
+        TurnRadius = 5,
+        TurnRate = 75, ---- increased turn rate
+    },
+
+}
