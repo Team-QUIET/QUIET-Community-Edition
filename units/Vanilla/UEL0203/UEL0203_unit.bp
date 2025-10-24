@@ -3,7 +3,7 @@ UnitBlueprint {
     BlueprintId = "uel0203",
 	
     Intel = {
-        VisionRadius = 20, ---- unit vision was higher than directfire radius with no clear reasons
+        VisionRadius = 18, ---- unit vision was higher than directfire radius with no clear reasons
         WaterVisionRadius = 8,
     },
 
@@ -36,3 +36,4 @@ UnitBlueprint {
     },
 
 }
+
