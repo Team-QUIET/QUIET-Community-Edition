@@ -242,7 +242,7 @@ UnitBlueprint {
                 "TECH1 MOBILE",
                 "ALLUNITS",
             },
-            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE,SCOUT',
 			
             TurretBoneMuzzle = 'Turret_Muzzle',
             TurretBonePitch = 'Turret_Recoil',
