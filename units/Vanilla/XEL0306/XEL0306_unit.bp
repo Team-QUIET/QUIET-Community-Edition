@@ -107,7 +107,7 @@ UnitBlueprint {
                 'TECH1 MOBILE',
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictDisallow = 'UNTARGETABLE,SCOUT',
 
 			
             Turreted = false,
