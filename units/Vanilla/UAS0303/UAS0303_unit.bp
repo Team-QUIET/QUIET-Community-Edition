@@ -40,11 +40,11 @@ UnitBlueprint {
 
         MissileTorpDestroy = { AttachBone = {'Turret_Left','Turret_Right'}, Radius = 3.8, RedirectRateOfFire = 10, ProjectileCategories = {'TORPEDO','MISSILE'} },
     
-        AirThreatLevel = 20,
+        AirThreatLevel = 40,
 
         ArmorType = 'Normal',
-        Health = 24000,
-        MaxHealth = 24000,
+        Health = 72000,
+        MaxHealth = 72000,
         RegenRate = 12,
     },
 	
@@ -58,14 +58,13 @@ UnitBlueprint {
             '<LOC ability_factory>Factory',
             '<LOC ability_radar>Radar',
             '<LOC ability_sonar>Sonar',
-            '<LOC ability_torpedodef>Torpedo Defense',
         },
 
     Economy = {
-        BuildCostEnergy = 40000,
-        BuildCostMass = 6000,
-        BuildRate = 110,
-        BuildTime = 30000,
+        BuildCostEnergy = 320000,
+        BuildCostMass = 12000,
+        BuildRate = 330,
+        BuildTime = 90000,
 		
         BuildableCategory = {
             'BUILTBYTIER3FACTORY AEON MOBILE AIR ANTINAVY',
@@ -75,7 +74,7 @@ UnitBlueprint {
     },
 	
     General = {
-		CapCost = 3,
+		CapCost = 30,
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_Guard = true,
@@ -101,10 +100,10 @@ UnitBlueprint {
         ShowIntelOnSelect = true,    
 		FreeIntel = true,
         
-        RadarRadius = 128,
-        SonarRadius = 60,
-        VisionRadius = 40,
-        WaterVisionRadius = 28,
+        RadarRadius = 196,
+        SonarRadius = 128,
+        VisionRadius = 56,
+        WaterVisionRadius = 96,
     },
 
     Physics = {
@@ -115,10 +114,10 @@ UnitBlueprint {
         },
         CatchUpAcc = 9,
         DragCoefficient = 0.2,
-        MaxAcceleration = 1.4,
-        MaxBrake = 2,
-        MaxSpeed = 4,
-        MaxSpeedReverse = 4,
+        MaxAcceleration = 1.6,
+        MaxBrake = 1.6,
+        MaxSpeed = 1.6,
+        MaxSpeedReverse = 1.6,
         MaxSteerForce = 5,
         MeshExtentsX = 4,
         MeshExtentsY = 2.8,
@@ -141,7 +140,7 @@ UnitBlueprint {
 	
     Transport = {
         ClassGenericUpTo = 3,
-        StorageSlots = 50,
+        StorageSlots = 120,
         TransportClass = 10,
     },
 	
@@ -181,12 +180,12 @@ UnitBlueprint {
 			
             Label = 'AAMissiles',
 			
-            MaxRadius = 56,
+            MaxRadius = 112,
 
             MuzzleVelocity = 40,
 			
             ProjectileId = '/projectiles/AAAZealotMissile01/AAAZealotMissile01_proj.bp',
-            ProjectileLifetime = 5,
+            ProjectileLifetime = 10,
 			
             RackBones = {
                 {
@@ -257,12 +256,12 @@ UnitBlueprint {
 			
             Label = 'AAMissiles',
 			
-            MaxRadius = 56,
+            MaxRadius = 112,
 			
             MuzzleVelocity = 40,
 			
             ProjectileId = '/projectiles/AAAZealotMissile01/AAAZealotMissile01_proj.bp',
-            ProjectileLifetime = 5,
+            ProjectileLifetime = 10,
 			
             RackBones = {
                 {
@@ -306,3 +305,4 @@ UnitBlueprint {
     },
 	
 }
+
