@@ -52,14 +52,12 @@ UnitBlueprint {
 	
     Display = {
         Abilities = {
-            '<LOC ability_aa>Anti-Air',
             '<LOC ability_airstaging>Air Staging',
             '<LOC ability_carrier>Carrier',
-            '<LOC ability_factory>Factory',
             '<LOC ability_radar>Radar',
             '<LOC ability_sonar>Sonar',
         },
-
+    },
     Economy = {
         BuildCostEnergy = 320000,
         BuildCostMass = 12000,
@@ -115,9 +113,9 @@ UnitBlueprint {
         CatchUpAcc = 9,
         DragCoefficient = 0.2,
         MaxAcceleration = 1.6,
-        MaxBrake = 1.6,
-        MaxSpeed = 1.6,
-        MaxSpeedReverse = 1.6,
+        MaxBrake = 2.1,
+        MaxSpeed = 2.1,
+        MaxSpeedReverse = 2.1,
         MaxSteerForce = 5,
         MeshExtentsX = 4,
         MeshExtentsY = 2.8,
@@ -125,7 +123,7 @@ UnitBlueprint {
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_Water',
         TurnRadius = 25,
-        TurnRate = 35,
+        TurnRate = 25,
     },
     SelectionSizeX = 2,
     SelectionSizeZ = 6,
@@ -140,7 +138,7 @@ UnitBlueprint {
 	
     Transport = {
         ClassGenericUpTo = 3,
-        StorageSlots = 120,
+        StorageSlots = 150,
         TransportClass = 10,
     },
 	
@@ -305,4 +303,3 @@ UnitBlueprint {
     },
 	
 }
-
