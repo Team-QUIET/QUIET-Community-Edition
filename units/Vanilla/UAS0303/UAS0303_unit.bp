@@ -1,0 +1,308 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "uas0303",
+    AI = {
+        GuardScanRadius = 60,
+        GuardReturnRadius = 80,
+
+        RefuelingMultiplier = 75,
+        RefuelingRepairAmount = 500,
+        RepairConsumeEnergy = 5,
+        RepairConsumeMass = 0.5,
+        StagingPlatformScanRadius = 400,
+
+        TargetBones = {'UAS0303','Exhaust01','Exhaust02'},
+    },
+
+    BuildIconSortPriority = 30,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'AEON',
+        'MOBILE',
+        'NAVAL',
+        'TECH3',
+        'AIRSTAGINGPLATFORM',
+        'CARRIER',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'FACTORY',
+        'NAVALCARRIER',
+        'OVERLAYRADAR',
+        'SHOWQUEUE',
+        'OVERLAYRADAR',
+    },
+	
+    CollisionOffsetY = -0.5,
+	
+    Defense = {
+
+        MissileTorpDestroy = { AttachBone = {'Turret_Left','Turret_Right'}, Radius = 3.8, RedirectRateOfFire = 10, ProjectileCategories = {'TORPEDO','MISSILE'} },
+    
+        AirThreatLevel = 20,
+
+        ArmorType = 'Normal',
+        Health = 24000,
+        MaxHealth = 24000,
+        RegenRate = 12,
+    },
+	
+    Description = '<LOC uas0303_desc>Aircraft Carrier',
+	
+    Display = {
+        Abilities = {
+            '<LOC ability_aa>Anti-Air',
+            '<LOC ability_airstaging>Air Staging',
+            '<LOC ability_carrier>Carrier',
+            '<LOC ability_factory>Factory',
+            '<LOC ability_radar>Radar',
+            '<LOC ability_sonar>Sonar',
+            '<LOC ability_torpedodef>Torpedo Defense',
+        },
+
+    Economy = {
+        BuildCostEnergy = 40000,
+        BuildCostMass = 6000,
+        BuildRate = 110,
+        BuildTime = 30000,
+		
+        BuildableCategory = {
+            'BUILTBYTIER3FACTORY AEON MOBILE AIR ANTINAVY',
+            'BUILTBYTIER3FACTORY AEON MOBILE AIR INTELLIGENCE',
+            'BUILTBYTIER3FACTORY AEON MOBILE AIR ANTIAIR',
+        },
+    },
+	
+    General = {
+		CapCost = 3,
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+            RULEUCC_Transport = true,
+        },
+        ConstructionBar = true,
+        FactionName = 'Aeon',
+        Icon = 'sea',
+
+        OrderOverrides = {
+            RULEUCC_Transport = { bitmapId = 'deploy', helpText = 'deploy' },
+        },
+
+        UnitName = '<LOC uas0303_name>Keefer Class',
+    },
+	
+    Intel = {
+        ShowIntelOnSelect = true,    
+		FreeIntel = true,
+        
+        RadarRadius = 128,
+        SonarRadius = 60,
+        VisionRadius = 40,
+        WaterVisionRadius = 28,
+    },
+
+    Physics = {
+        BackUpDistance = 10,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Water = true,
+        },
+        CatchUpAcc = 9,
+        DragCoefficient = 0.2,
+        MaxAcceleration = 1.4,
+        MaxBrake = 2,
+        MaxSpeed = 4,
+        MaxSpeedReverse = 4,
+        MaxSteerForce = 5,
+        MeshExtentsX = 4,
+        MeshExtentsY = 2.8,
+        MeshExtentsZ = 10.5,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Water',
+        TurnRadius = 25,
+        TurnRate = 35,
+    },
+    SelectionSizeX = 2,
+    SelectionSizeZ = 6,
+    SelectionThickness = 0.18,
+	
+    SizeX = 4,
+    SizeY = 2.1,
+    SizeZ = 10,
+	
+    StrategicIconName = 'icon_ship3_air',
+    StrategicIconSortPriority = 145,
+	
+    Transport = {
+        ClassGenericUpTo = 3,
+        StorageSlots = 50,
+        TransportClass = 10,
+    },
+	
+    Veteran = {
+        Level1 = 20,
+        Level2 = 40,
+        Level3 = 60,
+        Level4 = 80,
+        Level5 = 100,
+    },
+	
+    Weapon = {
+        {
+            advancedTracking = true,
+
+
+            Audio = {
+                Fire = Sound { Bank = 'UASWeapon', Cue = 'UAS0202_SAM', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 400,
+			DamageFriendly = false,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Zealot AA Missile',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+			
+            FiringTolerance = 30,
+			
+            Label = 'AAMissiles',
+			
+            MaxRadius = 56,
+
+            MuzzleVelocity = 40,
+			
+            ProjectileId = '/projectiles/AAAZealotMissile01/AAAZealotMissile01_proj.bp',
+            ProjectileLifetime = 5,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Muzzle_Right'},
+                    RackBone = 'Turret_Right_Barrel',
+                },
+            },
+            
+            RackSalvoReloadTime = 1,    -- one second firing cycle --
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 2,		-- 400 DPS Air controlled by RackSalvoReloadTime
+
+			
+            TargetPriorities = {
+                'HIGHPRIAIR',
+                'BOMBER',
+                'ANTINAVY',
+                'GROUNDATTACK',
+                'AIR MOBILE',
+                'ALLUNITS',
+            },
+
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR',            
+
+			
+            TurretBoneMuzzle = 'Muzzle_Right',
+            TurretBonePitch = 'Turret_Right_Barrel',
+            TurretBoneYaw = 'Turret_Right',
+			
+            TurretPitch = 30,
+            TurretPitchRange = 120,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 180,
+			
+            Turreted = true,
+        },
+		
+        {
+            advancedTracking = true,
+
+
+            Audio = {
+                Fire = Sound { Bank = 'UASWeapon', Cue = 'UAS0202_SAM', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+			
+            CannotAttackGround = true,
+			
+            CollideFriendly = false,
+			
+            Damage = 400,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Zealot AA Missile',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+			
+            FiringTolerance = 30,
+			
+            Label = 'AAMissiles',
+			
+            MaxRadius = 56,
+			
+            MuzzleVelocity = 40,
+			
+            ProjectileId = '/projectiles/AAAZealotMissile01/AAAZealotMissile01_proj.bp',
+            ProjectileLifetime = 5,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Muzzle_Left'},
+                    RackBone = 'Turret_Left_Barrel',
+                },
+            },
+
+            RackSalvoReloadTime = 1,    -- one second cycle
+			
+            RateOfFire = 2,		-- 400 DPS Air - controlled by RackSalvoReloadTime
+
+			
+            TargetPriorities = {
+                'HIGHPRIAIR',
+                'BOMBER',
+                'ANTINAVY',
+                'GROUNDATTACK',
+                'AIR MOBILE',
+            },
+
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR',
+
+			
+            TurretBoneMuzzle = 'Muzzle_Left',
+            TurretBonePitch = 'Turret_Left_Barrel',
+            TurretBoneYaw = 'Turret_Left',
+			
+            TurretPitch = 30,
+            TurretPitchRange = 120,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 180,
+			
+            Turreted = true,
+        },
+		
+    },
+	
+}
