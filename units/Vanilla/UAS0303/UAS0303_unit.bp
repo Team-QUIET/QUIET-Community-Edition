@@ -58,6 +58,7 @@ UnitBlueprint {
             '<LOC ability_sonar>Sonar',
         },
     },
+
     Economy = {
         BuildCostEnergy = 320000,
         BuildCostMass = 12000,
@@ -303,3 +304,4 @@ UnitBlueprint {
     },
 	
 }
+
