@@ -1,0 +1,373 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintID = "xss0303",
+    AI = {
+        GuardScanRadius = 175,
+        
+        RefuelingMultiplier = 75,
+        RefuelingRepairAmount = 500,
+        RepairConsumeEnergy = 5,
+        RepairConsumeMass = 0.5,
+        StagingPlatformScanRadius = 400,
+    },
+	
+
+    BuildIconSortPriority = 30,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'SERAPHIM',
+        'MOBILE',
+        'NAVAL',
+        'TECH3',
+        'AIRSTAGINGPLATFORM',
+        'CARRIER',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'FACTORY',
+        'NAVALCARRIER',
+        'SHOWATTACKRETICLE',
+        'SHOWQUEUE',
+        'OVERLAYRADAR',
+        'OVERLAYSONAR',
+    },
+	
+    CollisionOffsetY = -0.5,
+	
+    Defense = {
+        ArmorType = 'Normal',
+
+        Health = 24000,
+        MaxHealth = 24000,
+        RegenRate = 12,
+
+        AirThreatLevel = 96,
+        SurfaceThreatLevel = 37,
+    },
+	
+    Description = '<LOC xss0303_desc>Aircraft Carrier',
+	
+    Display = {
+        Abilities = {
+            '<LOC ability_aa>Anti-Air',
+            '<LOC ability_airstaging>Air Staging',
+            '<LOC ability_carrier>Carrier',
+            '<LOC ability_factory>Factory',
+            '<LOC ability_radar>Radar',
+            '<LOC ability_sonar>Sonar',
+        },
+    },
+	
+    Economy = {
+        BuildCostEnergy = 40000,
+        BuildCostMass = 6000,
+        BuildRate = 120,
+        BuildTime = 30000,
+		
+        BuildableCategory = {
+            'BUILTBYTIER3FACTORY SERAPHIM MOBILE AIR ANTINAVY',
+            'BUILTBYTIER3FACTORY SERAPHIM MOBILE AIR INTELLIGENCE',
+            'BUILTBYTIER3FACTORY SERAPHIM MOBILE AIR ANTIAIR',
+        },
+    },
+	
+    General = {
+		CapCost = 3,
+
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+            RULEUCC_Transport = true,
+        },
+
+        ConstructionBar = true,
+        FactionName = 'Seraphim',
+        Icon = 'sea',
+
+        OrderOverrides = {
+            RULEUCC_Transport = { bitmapId = 'deploy', helpText = 'deploy' },
+        },
+
+        UnitName = '<LOC xss0303_name>Iavish',
+    },
+	
+    Intel = {
+        ShowIntelOnSelect = true,    
+		FreeIntel = true,
+
+        RadarRadius = 128,
+		SonarRadius = 60,
+
+        VisionRadius = 44,
+        WaterVisionRadius = 32,
+    },
+	
+    Interface = {
+        HelpText = 'Aircraft Carrier',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 8.4,
+    LifeBarSize = 5,
+	
+    Physics = {
+        BackUpDistance = 10,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Water = true,
+        },
+        CatchUpAcc = 10,
+        DragCoefficient = 0.2,
+        MaxAcceleration = 2,
+        MaxBrake = 2,
+        MaxSpeed = 4,
+        MaxSpeedReverse = 3,
+        MaxSteerForce = 5,
+        MeshExtentsX = 4,
+        MeshExtentsY = 2.5,
+        MeshExtentsZ = 15,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Water',
+        TurnRadius = 25,
+        TurnRate = 30,
+    },
+	
+    SelectionSizeX = 2,
+    SelectionSizeZ = 6,
+    SelectionThickness = 0.18,
+	
+    SizeX = 2.6,
+    SizeY = 1.5,
+    SizeZ = 10,
+	
+    StrategicIconName = 'icon_ship3_air',
+    StrategicIconSortPriority = 145,
+	
+    Transport = {
+        ClassGenericUpTo = 3,
+        StorageSlots = 60,
+        TransportClass = 10,
+    },
+	
+    Veteran = {
+        Level1 = 32,
+        Level2 = 64,
+        Level3 = 96,
+        Level4 = 128,
+        Level5 = 160,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0303_Laanse', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+			
+            CollideFriendly = false,
+			
+            CountedProjectile = false,
+			
+            Damage = 750,
+            DamageFriendly = true,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Laanse Tactical Missile Launcher',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 2,
+			
+            Label = 'CruiseMissiles',
+			
+			MinRadius = 15,
+            MaxRadius = 176,
+
+            MuzzleVelocity = 10,
+
+            NotExclusive = true,
+			
+            ProjectileId = '/projectiles/SIFLaanseTacticalMissile03/SIFLaanseTacticalMissile03_proj.bp',
+            ProjectileLifetime = 30,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Projectile'},
+                    RackBone = 'Projectile',
+                },
+            },
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 0.5,	-- 750 dmg / 2 = 375 DPS Surface
+
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+        },
+        {
+
+            
+            Audio = {
+                Fire = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0303_Losaare_Cannon', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 100,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Losaare AA Autocannon',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+			
+			FiringRandomness = 0.2,
+            FiringTolerance = 0,
+			
+            Label = 'AAGun',
+			
+			LeadTarget = true,
+            MaxRadius = 52,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 90,
+
+            NotExclusive = true,
+			
+            ProjectileId = '/projectiles/SAALosaareAutoCannon03/SAALosaareAutoCannon03_proj.bp',
+            ProjectileLifetime = 0.8,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'Right_Turret_Muzzle01',
+                        'Right_Turret_Muzzle02',
+                    },
+                    RackBone = 'Right_Turret_Barrel',
+                },
+            },
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 2,	---- 400 DPS Air
+
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'AIR MOBILE HIGHPRIAIR',
+                'AIR MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+			
+            TurretBoneMuzzle = 'Right_Turret_Muzzle01',
+            TurretBonePitch = 'Right_Turret_Barrel',
+            TurretBoneYaw = 'Right_Turret',
+
+            TurretPitch = 25,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 88,
+			
+            Turreted = true,
+        },
+        {
+
+            
+            Audio = {
+                Fire = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0303_Losaare_Cannon', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 100,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Losaare AA Autocannon',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+			
+			FiringRandomness = 0.2,
+            FiringTolerance = 0,
+			
+            Label = 'AAGun',
+			
+			LeadTarget = true,
+			
+            MaxRadius = 52,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 90,
+
+            NotExclusive = true,
+			
+            ProjectileId = '/projectiles/SAALosaareAutoCannon03/SAALosaareAutoCannon03_proj.bp',
+            ProjectileLifetime = 0.8,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'Left_Turret_Muzzle01',
+                        'Left_Turret_Muzzle02',
+                    },
+                    RackBone = 'Left_Turret_Barrel',
+                },
+            },
+			
+            RateOfFire = 2.0,		---- 400 DPS air
+
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'AIR MOBILE HIGHPRIAIR',
+                'AIR MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+			
+            TurretBoneMuzzle = 'Left_Turret_Muzzle01',
+            TurretBonePitch = 'Left_Turret_Barrel',
+            TurretBoneYaw = 'Left_Turret',
+
+            TurretPitch = 30,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 60,
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 88,
+			
+            Turreted = true,
+        },
+    },
+}
