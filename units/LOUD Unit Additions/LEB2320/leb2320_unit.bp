@@ -150,7 +150,7 @@ UnitBlueprint {
                 "ALLUNITS",
             },
 
-            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictDisallow = 'UNTARGETABLE,SCOUT',
             TurretBoneMuzzle = 'Turret_Muzzle01',
             TurretBonePitch = 'Turret_Barrel01',
             TurretBoneYaw = 'Turret_Barrel01',
