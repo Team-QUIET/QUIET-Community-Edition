@@ -122,7 +122,7 @@ UnitBlueprint {
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictDisallow = 'UNTARGETABLE,SCOUT',
             
             TurretBoneMuzzle = 'Missile_001',
             TurretBonePitch = 'Racks_Pitch',
