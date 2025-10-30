@@ -98,7 +98,7 @@ UnitBlueprint {
                 "(STRUCTURE * DEFENSE - ANTIMISSILE)",
                 "ALLUNITS",
             },			
-            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictDisallow = 'UNTARGETABLE,SCOUT',
 
 			
             TurretBoneMuzzle = 'muzzle01',
