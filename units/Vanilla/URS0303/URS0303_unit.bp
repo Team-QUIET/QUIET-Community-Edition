@@ -1,0 +1,511 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "urs0303",
+    AI = {
+        GuardScanRadius = 60,
+        RefuelingMultiplier = 75,
+        RefuelingRepairAmount = 500,
+        RepairConsumeEnergy = 5,
+        RepairConsumeMass = 0.5,
+        StagingPlatformScanRadius = 400,
+        TargetBones = {'URS0303','Back_Wake','Launchpoint'},
+    },
+	
+    BuildIconSortPriority = 40,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'CYBRAN',
+        'MOBILE',
+        'NAVAL',
+        'TECH3',
+        'AIRSTAGINGPLATFORM',
+        'FACTORY',
+        'REPAIR',
+        'CARRIER',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'NAVALCARRIER',
+        'SHOWQUEUE',
+        'OVERLAYRADAR',
+    },
+	
+    CollisionOffsetY = -0.375,
+	
+    Defense = {
+        AirThreatLevel = 48,
+
+        ArmorType = 'Normal',
+        Health = 24000,
+        MaxHealth = 24000,
+        RegenRate = 10,
+    },
+	
+    Display = {
+        Abilities = {
+            '<LOC ability_aa>Anti-Air x4',
+            '<LOC ability_airstaging>Air Staging',
+            '<LOC ability_carrier>Carrier',
+            '<LOC ability_factory>Factory',
+            '<LOC ability_radar>Radar',
+            '<LOC ability_tacmissiledef>Tactical Missile Defense',
+        },
+    },
+
+    Economy = {
+        BuildCostEnergy = 40000,
+        BuildCostMass = 6000,
+        BuildRate = 110,
+        BuildTime = 30000,
+		
+        BuildableCategory = {
+            'BUILTBYTIER3FACTORY CYBRAN MOBILE AIR ANTINAVY',
+            'BUILTBYTIER3FACTORY CYBRAN MOBILE AIR INTELLIGENCE',
+            'BUILTBYTIER3FACTORY CYBRAN MOBILE AIR ANTIAIR',
+        },
+    },
+	
+    General = {
+		CapCost = 3,
+
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+            RULEUCC_Transport = true,
+        },
+        FactionName = 'Cybran',
+        Icon = 'sea',
+
+        OrderOverrides = {
+            RULEUCC_Transport = { bitmapId = 'deploy', helpText = 'deploy' },
+        },
+
+        UnitName = '<LOC urs0303_name>Command Class',
+    },
+	
+    Intel = {
+        ShowIntelOnSelect = true,
+
+		FreeIntel = true,
+
+        RadarRadius = 128,
+        VisionRadius = 40,
+        WaterVisionRadius = 28,
+    },
+	
+    Physics = {
+        BackUpDistance = 8,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Water = true,
+        },
+        CatchUpAcc = 9,
+        DragCoefficient = 0.2,
+        MaxAcceleration = 2.4,
+        MaxBrake = 3.6,
+        MaxSpeed = 4.8,
+        MaxSpeedReverse = 4.8,
+        MaxSteerForce = 5,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Water',
+        TurnRadius = 25,
+        TurnRate = 35,
+    },
+	
+    SelectionSizeX = 2,
+    SelectionSizeZ = 6,
+    SelectionThickness = 0.18,
+	
+    SizeX = 2.7,
+    SizeY = 1.4,
+    SizeZ = 11,
+	
+    StrategicIconName = 'icon_ship3_air',
+    StrategicIconSortPriority = 145,
+	
+    Transport = {
+        ClassGenericUpTo = 3,
+        StorageSlots = 50,
+        TransportClass = 10,
+    },
+	
+    Veteran = {
+        Level1 = 25,
+        Level2 = 50,
+        Level3 = 75,
+        Level4 = 100,
+        Level5 = 125,
+    },
+	
+    Weapon = {
+        {
+            Audio = {
+                Fire = Sound { Bank = 'URSWeapon', Cue = 'URS0303_Cannon_Electron', LodCutoff = 'Weapon_LodCutoff'},
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 15,
+			DamageRadius = 2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Quad Electron Autocannon',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+			
+			FiringRandomness = 0,
+            FiringTolerance = 0.1,
+			
+            HeadingArcCenter = -90,
+            HeadingArcRange = 120,
+			
+            Label = 'AAGun',
+			
+            LeadTarget = true,
+			
+            MaxRadius = 44,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 4,
+            MuzzleVelocity = 90,
+			
+            ProjectileId = '/projectiles/CAAAutocannon01/CAAAutocannon01_proj.bp',
+            ProjectileLifetime = 0.6,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Front_Right_AA_Muzzle_01','Front_Right_AA_Muzzle_02','Front_Right_AA_Muzzle_03','Front_Right_AA_Muzzle_04'},
+                    RackBone = 'Front_Right_AA_Turret_Barrel',
+                },
+            },
+
+            RackSlavedToTurret = true,
+			
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 2,		--	120 DPS Air
+
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'HIGHPRIAIR',
+                'BOMBER',
+                'TORPEDOBOMBER',
+                'GROUNDATTACK',
+                'AIR MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+			
+            TurretBoneMuzzle = 'Front_Right_AA_Turret_Barrel',
+            TurretBonePitch = 'Front_Right_AA_Turret_Barrel',
+            TurretBoneYaw = 'Front_Right_AA_Turret',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 45,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 130,
+            TurretYawSpeed = 65,
+			
+            Turreted = true,
+        },
+        {
+
+            Audio = {
+                Fire = Sound { Bank = 'URSWeapon', Cue = 'URS0303_Cannon_Electron', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 15,
+			DamageRadius = 2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Quad Electron Autocannon',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+			
+			FiringRandomness = 0,
+            FiringTolerance = 0.1,
+			
+            HeadingArcCenter = -90,
+            HeadingArcRange = 120,
+			
+            Label = 'AAGun',
+			
+            LeadTarget = true,
+			
+            MaxRadius = 44,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 4,
+            MuzzleVelocity = 90,
+			
+            ProjectileId = '/projectiles/CAAAutocannon01/CAAAutocannon01_proj.bp',
+            ProjectileLifetime = 0.6,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Back_Right_AA_Muzzle_01','Back_Right_AA_Muzzle_02','Back_Right_AA_Muzzle_03','Back_Right_AA_Muzzle_04'},
+                    RackBone = 'Back_Right_AA_Turret_Barrel',
+                },
+            },
+
+            RackSlavedToTurret = true,
+			
+            RateOfFire = 2.0,	-- 120 DPS Air
+
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'HIGHPRIAIR',
+                'BOMBER',
+                'TORPEDOBOMBER',
+                'GROUNDATTACK',
+                'AIR MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+
+            TurretBoneMuzzle = 'Back_Right_AA_Turret_Barrel',
+            TurretBonePitch = 'Back_Right_AA_Turret_Barrel',
+            TurretBoneYaw = 'Back_Right_AA_Turret',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 45,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 130,
+            TurretYawSpeed = 65,
+			
+            Turreted = true,
+        },
+        {
+
+            Audio = {
+                Fire = Sound { Bank = 'URSWeapon', Cue = 'URS0303_Cannon_Electron', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 15,
+			DamageRadius = 2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Quad Electron Autocannon',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+			
+            FiringTolerance = 0.1,
+			
+            HeadingArcCenter = 90,
+            HeadingArcRange = 120,
+			
+            Label = 'AAGun',
+            LeadTarget = true,
+			
+            MaxRadius = 44,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 4,
+            MuzzleVelocity = 90,
+			
+            ProjectileId = '/projectiles/CAAAutocannon01/CAAAutocannon01_proj.bp',
+            ProjectileLifetime = 0.6,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Back_Left_AA_Muzzle_01','Back_Left_AA_Muzzle_02','Back_Left_AA_Muzzle_03','Back_Left_AA_Muzzle_04'},
+                    RackBone = 'Back_Left_AA_Turret_Barrel',
+                },
+            },
+
+            RackSlavedToTurret = true,
+			
+            RateOfFire = 2,
+
+			
+            TargetPriorities = {
+                'HIGHPRIAIR',
+                'BOMBER',
+                'TORPEDOBOMBER',
+                'GROUNDATTACK',
+                'AIR MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+
+            TurretBoneMuzzle = 'Back_Left_AA_Turret_Barrel',
+            TurretBonePitch = 'Back_Left_AA_Turret_Barrel',
+            TurretBoneYaw = 'Back_Left_AA_Turret',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 45,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 130,
+            TurretYawSpeed = 65,
+			
+            Turreted = true,
+        },
+        {
+
+            Audio = {
+                Fire = Sound { Bank = 'URSWeapon', Cue = 'URS0303_Cannon_Electron', LodCutoff = 'Weapon_LodCutoff'},
+            },
+            BallisticArc = 'RULEUBA_None',
+			
+            CannotAttackGround = true,
+			
+            CollideFriendly = false,
+			
+            Damage = 15,
+			DamageRadius = 2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Quad Electron Autocannon',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+			
+            FiringTolerance = 0.1,
+			
+            HeadingArcCenter = 90,
+            HeadingArcRange = 120,
+			
+            Label = 'AAGun',
+            LeadTarget = true,
+			
+            MaxRadius = 44,
+			
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 4,
+            MuzzleVelocity = 90,
+			
+            ProjectileId = '/projectiles/CAAAutocannon01/CAAAutocannon01_proj.bp',
+            ProjectileLifetime = 0.6,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Front_Left_AA_Muzzle_01','Front_Left_AA_Muzzle_02','Front_Left_AA_Muzzle_03','Front_Left_AA_Muzzle_04'},
+                    RackBone = 'Front_Left_AA_Turret_Barrel',
+                },
+            },
+
+            RackSlavedToTurret = true,
+			
+            RateOfFire = 2,		-- another 160 DPS Air
+
+			
+            TargetPriorities = {
+                'HIGHPRIAIR',
+                'BOMBER',
+                'TORPEDOBOMBER',
+                'GROUNDATTACK',
+                'AIR MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+			
+            TurretBoneMuzzle = 'Front_Left_AA_Turret_Barrel',
+            TurretBonePitch = 'Front_Left_AA_Turret_Barrel',
+            TurretBoneYaw = 'Front_Left_AA_Turret',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 45,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 130,
+            TurretYawSpeed = 65,
+			
+            Turreted = true,
+        },
+        {
+            Audio = {
+                Fire = Sound { Bank = 'URSWeapon', Cue = 'URS0303_Anti_Missile', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0.1,
+            BeamLifetime = 0.1,
+			
+            CollideFriendly = false,
+			
+            Damage = 2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Zapper Anti Missile',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+			
+            FiringTolerance = 3,
+			
+            Label = 'Zapper',
+			
+            MaxRadius = 28,
+			
+            NeedPrep = true,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Zapper_Muzzle'},
+                    RackBone = 'Zapper_Turret',
+                },
+            },
+
+            RangeCategory = 'UWRC_Countermeasure',
+			
+            RateOfFire = 0.9,
+
+			
+            TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
+            TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',
+            TargetType = 'RULEWTT_Projectile',
+
+			
+            TurretBoneMuzzle = 'Zapper_Turret',
+            TurretBonePitch = 'Zapper_Muzzle',
+            TurretBoneYaw = 'Zapper_Turret',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 720,
+			
+            Turreted = true,
+        },
+    },
+}
