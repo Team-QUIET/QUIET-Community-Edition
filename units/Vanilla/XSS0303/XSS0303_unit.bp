@@ -149,7 +149,7 @@ UnitBlueprint {
 	
     Transport = {
         ClassGenericUpTo = 3,
-        StorageSlots = 60,
+        StorageSlots = 120,
         TransportClass = 10,
     },
 	
@@ -374,4 +374,5 @@ UnitBlueprint {
         },
     },
 }
+
 
