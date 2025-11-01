@@ -37,27 +37,25 @@ UnitBlueprint {
         AirThreatLevel = 48,
 
         ArmorType = 'Normal',
-        Health = 24000,
-        MaxHealth = 24000,
+        Health = 68000,
+        MaxHealth = 68000,
         RegenRate = 10,
     },
 	
     Display = {
         Abilities = {
-            '<LOC ability_aa>Anti-Air x4',
             '<LOC ability_airstaging>Air Staging',
             '<LOC ability_carrier>Carrier',
-            '<LOC ability_factory>Factory',
             '<LOC ability_radar>Radar',
             '<LOC ability_tacmissiledef>Tactical Missile Defense',
         },
     },
 
     Economy = {
-        BuildCostEnergy = 40000,
-        BuildCostMass = 6000,
-        BuildRate = 110,
-        BuildTime = 30000,
+        BuildCostEnergy = 310000,
+        BuildCostMass = 11000,
+        BuildRate = 315,
+        BuildTime = 84500,
 		
         BuildableCategory = {
             'BUILTBYTIER3FACTORY CYBRAN MOBILE AIR ANTINAVY',
@@ -67,7 +65,7 @@ UnitBlueprint {
     },
 	
     General = {
-		CapCost = 3,
+		CapCost = 30,
 
         CommandCaps = {
             RULEUCC_Attack = true,
@@ -94,9 +92,9 @@ UnitBlueprint {
 
 		FreeIntel = true,
 
-        RadarRadius = 128,
-        VisionRadius = 40,
-        WaterVisionRadius = 28,
+        RadarRadius = 186,
+        VisionRadius = 58,
+        WaterVisionRadius = 86,
     },
 	
     Physics = {
@@ -107,15 +105,15 @@ UnitBlueprint {
         },
         CatchUpAcc = 9,
         DragCoefficient = 0.2,
-        MaxAcceleration = 2.4,
-        MaxBrake = 3.6,
-        MaxSpeed = 4.8,
+        MaxAcceleration = 1.8,
+        MaxBrake = 2.2,
+        MaxSpeed = 2.2,
         MaxSpeedReverse = 4.8,
         MaxSteerForce = 5,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_Water',
         TurnRadius = 25,
-        TurnRate = 35,
+        TurnRate = 25,
     },
 	
     SelectionSizeX = 2,
@@ -131,7 +129,7 @@ UnitBlueprint {
 	
     Transport = {
         ClassGenericUpTo = 3,
-        StorageSlots = 50,
+        StorageSlots = 110,
         TransportClass = 10,
     },
 	
@@ -173,7 +171,7 @@ UnitBlueprint {
 			
             LeadTarget = true,
 			
-            MaxRadius = 44,
+            MaxRadius = 88,
 			
             MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 4,
@@ -251,7 +249,7 @@ UnitBlueprint {
 			
             LeadTarget = true,
 			
-            MaxRadius = 44,
+            MaxRadius = 88,
 			
             MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 4,
@@ -325,7 +323,7 @@ UnitBlueprint {
             Label = 'AAGun',
             LeadTarget = true,
 			
-            MaxRadius = 44,
+            MaxRadius = 88,
 			
             MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 4,
@@ -400,7 +398,7 @@ UnitBlueprint {
             Label = 'AAGun',
             LeadTarget = true,
 			
-            MaxRadius = 44,
+            MaxRadius = 88,
 			
             MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 4,
@@ -471,7 +469,7 @@ UnitBlueprint {
 			
             Label = 'Zapper',
 			
-            MaxRadius = 28,
+            MaxRadius = 32,
 			
             NeedPrep = true,
 			
@@ -509,3 +507,4 @@ UnitBlueprint {
         },
     },
 }
+
