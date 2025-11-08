@@ -61,7 +61,7 @@ UnitBlueprint {
             MaxRadius = 62,
             MinRadius = 15,
 			
-            MuzzleChargeDelay = 0.5,
+            MuzzleChargeDelay = 2,
             MuzzleVelocity = 3,
             ProjectileLifetime = 25,
 
