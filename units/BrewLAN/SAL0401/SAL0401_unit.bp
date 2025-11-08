@@ -75,11 +75,11 @@ UnitBlueprint {
 			
             Buffs = {
                 {
-                    Add = { OnImpact = true },
-                    AppliedToTarget = true,
+                    Add = { OnImpact = false },
+                    AppliedToTarget = false,
                     BuffType = 'STUN',
-                    Duration = 1.5,
-                    Radius = 2.5,
+                    Duration = 0,
+                    Radius = 0,
                     TargetAllow = 'ALLUNITS',
                     TargetDisallow = 'EXPERIMENTAL,COMMAND,SUBCOMMANDER,AIR,MISSILE,WALL',
                 },
@@ -87,11 +87,11 @@ UnitBlueprint {
 
             CollideFriendly = false,
 			
-            Damage = 6000,
+            Damage = 4500,
             DamageFriendly = true,
-            DamageRadius = 6,
+            DamageRadius = 3.5,
             
-            DamageType = 'ShieldMult1.5',  
+            DamageType = 'Normal',  
 			
             DisplayName = 'Oblivion Cannon',
             
@@ -103,8 +103,8 @@ UnitBlueprint {
                 Water = 'Land|Water|Seabed',
             },
 			
-            FiringRandomness = 0.25,
-			FiringRandomnessWhileMoving = 1.25,
+            FiringRandomness = 0.5,
+			FiringRandomnessWhileMoving = 1.75,
             FiringTolerance = 2,
 			
             Label = 'MainGun',
@@ -114,9 +114,9 @@ UnitBlueprint {
             MaxRadius = 105,
 			MinRadius = 15,
 			
-            MuzzleChargeDelay = 0.5,   
+            MuzzleChargeDelay = 0.5,
 
-            MuzzleVelocity = 30,
+            MuzzleVelocity = 25,
 			MuzzleVelocityRandom = 0,
             MuzzleVelocityReduceDistance = 100,
 			
