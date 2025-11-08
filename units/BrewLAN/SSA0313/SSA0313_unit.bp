@@ -9,22 +9,22 @@ UnitBlueprint {
         BreakOffDistance = 15,
         BreakOffTrigger = 20,
         CanFly = true,
-        CombatTurnSpeed = 1.9,
+        CombatTurnSpeed = 1.6,
         EngageDistance = 50,
         KLift = 3,
         KLiftDamping = 2.5,
-        KMove = 1.5,
+        KMove = 1.15,
         KMoveDamping = 1,
-        KRoll = 1.5,
+        KRoll = 0.7,
         KRollDamping = 1,
-        KTurn = 1.5,
-        KTurnDamping = 2.3,
+        KTurn = 0.9,
+        KTurnDamping = 1,
         LiftFactor = 7,
-        MaxAirspeed = 22,
+        MaxAirspeed = 20,
         MinAirspeed = 8,
         StartTurnDistance = 5,
-        TightTurnMultiplier = 1.02,
-        TurnSpeed = 1.9,
+        TightTurnMultiplier = 1.01,
+        TurnSpeed = 1.35,
         Winged = true,
     },
 
@@ -34,13 +34,13 @@ UnitBlueprint {
         AirThreatLevel = 96,
         ArmorType = 'Light',
         
-        Health = 4950,
-        MaxHealth = 4950,
+        Health = 1950,
+        MaxHealth = 1950,
         RegenRate = 10,
     },
     
     Economy = {
-        BuildCostEnergy = 225000,
+        BuildCostEnergy = 325000,
         BuildCostMass = 3075,
         BuildTime = 6750,
         
@@ -63,12 +63,12 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             
             BeamCollisionDelay = 0,
-            BeamLifetime = 0.6,
+            BeamLifetime = 0.3,
 
             CannotAttackGround = true,
             CollideFriendly = false,
             
-            Damage = 151,
+            Damage = 102,
             DamageFriendly = false,
             DamageType = 'Normal',
             
@@ -141,7 +141,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
             
-            Damage = 151,
+            Damage = 102,
             DamageFriendly = false,
             DamageType = 'Normal',
             
@@ -179,7 +179,7 @@ UnitBlueprint {
 
             PreferPrimaryWeaponTarget = true,
             
-            RateOfFire = 3,
+            RateOfFire = 10/3,
             
             SlavedToBody = true,
             SlavedToBodyArcRange = 60,
