@@ -201,7 +201,7 @@ UnitBlueprint {
             BeamLifetime = 0.3,		-- hits 3x per fire
 			
             CollideFriendly = false,
-            Damage = 15,
+            Damage = 7,
             DamageType = 'Normal',
 			
             FireTargetLayerCapsTable = {
