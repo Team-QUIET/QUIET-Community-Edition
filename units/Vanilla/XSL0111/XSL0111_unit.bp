@@ -1,6 +1,8 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "xsl0111",
+
+    IgnoreEvenflow = true,
 	
     Physics = {
         BackUpDistance = 8,
@@ -23,19 +25,23 @@ UnitBlueprint {
         TurnRadius = 0.5,
         TurnRate = 90,
     },
+
+    Economy = {
+        BuildCostEnergy = 1600,
+        BuildCostMass = 180,
+        BuildTime = 1800,
+    },
 	
     Weapon = {
         {
             AboveWaterTargetsOnly = true,
-
-
             AnimationReloadRate = 0.42,
             
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 
             Damage = 405,
-            DamageRadius = 0.5,
+            DamageRadius = 1,
             DamageType = 'Normal',
 			
             DisplayName = 'Laanse Tactical Missile Launcher',
@@ -48,29 +54,19 @@ UnitBlueprint {
             HeadingArcCenter = 0,
             HeadingArcRange = 60,
             
-            LeadTarget = true,
+            LeadTarget = false,
  			
-            MaxRadius = 65,
-            MinRadius = 10,
+            MaxRadius = 62,
+            MinRadius = 15,
 
-	        MuzzleChargeDelay = 0.1,
-            MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
-
-            MuzzleVelocity = 4,
-			
+	        MuzzleChargeDelay = 2,
+            MuzzleVelocity = 3,
             ProjectileLifetime = 25,
-            ProjectilesPerOnFire = 1,
-
-            RackRecoilDistance = -1,
-            RackReloadTimeout = 10,
-            RackSalvoChargeTime = 0,
-            RackSalvoReloadTime = 0,
-            RackSalvoSize = 1,
 
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 10/60,
+            RateOfFire = 10/100,
+            RenderFireClock = true,
 			
             SlavedToBody = true,
 
