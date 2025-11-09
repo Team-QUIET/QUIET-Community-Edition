@@ -24,6 +24,12 @@ UnitBlueprint {
         TurnRate = 80,
     },
 
+    Economy = {
+        BuildCostEnergy = 1675,
+        BuildCostMass = 255,
+        BuildTime = 1000,
+    },
+
     Defense = {
         ArmorType = 'Normal',
         Health = 515,
@@ -72,10 +78,10 @@ UnitBlueprint {
 			
             MaxRadius = 36,
 			
-            MuzzleSalvoDelay = 0.65,
+            MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 3,
             
-            MuzzleVelocity = 25,
+            MuzzleVelocity = 20,
             MuzzleVelocityRandom = 0.5,
 			
             ProjectileLifetime = 4,
