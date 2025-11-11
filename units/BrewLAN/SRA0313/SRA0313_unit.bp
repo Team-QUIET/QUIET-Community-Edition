@@ -27,7 +27,7 @@ UnitBlueprint {
         BreakOffDistance = 15,
         BreakOffTrigger = 20,
         CanFly = true,
-        CombatTurnSpeed = 1.6,
+        CombatTurnSpeed = 1.9,
         EngageDistance = 50,
         KLift = 3,
         KLiftDamping = 2.5,
@@ -38,11 +38,11 @@ UnitBlueprint {
         KTurn = 0.9,
         KTurnDamping = 1,
         LiftFactor = 7,
-        MaxAirspeed = 20,
+        MaxAirspeed = 22,
         MinAirspeed = 8,
         StartTurnDistance = 5,
         TightTurnMultiplier = 1.01,
-        TurnSpeed = 1.35,
+        TurnSpeed = 1.9,
         Winged = true,
     },
 
@@ -84,12 +84,12 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
 			
             BeamCollisionDelay = 0,
-            BeamLifetime = 0.2,
+            BeamLifetime = 0.3,
 			
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 86,			
+            Damage = 92,			
             DamageFriendly = false,
             DamageType = 'Normal',
 			
@@ -164,7 +164,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 86,
+            Damage = 92,
             DamageFriendly = false,
             DamageType = 'Normal',
 			
@@ -233,12 +233,12 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
 			
             BeamCollisionDelay = 0,
-            BeamLifetime = 0.4,
+            BeamLifetime = 0.3,
 			
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 86,
+            Damage = 92,
             DamageFriendly = false,
             DamageType = 'Normal',
 			
@@ -257,7 +257,7 @@ UnitBlueprint {
             
 			NotExclusive = true,
 			
-            MaxRadius = 44,
+            MaxRadius = 62,
 
             RackBones = {
                 {
@@ -305,12 +305,12 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
 			
             BeamCollisionDelay = 0,
-            BeamLifetime = 0.1,
+            BeamLifetime = 0.3,
 			
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 86,
+            Damage = 92,
             DamageFriendly = false,
             DamageType = 'Normal',
 			
@@ -329,7 +329,7 @@ UnitBlueprint {
 			
             NotExclusive = true,
 			
-            MaxRadius = 44,
+            MaxRadius = 62,
 
             RackBones = {
                 {
