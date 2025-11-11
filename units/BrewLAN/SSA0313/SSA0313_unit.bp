@@ -26,7 +26,7 @@ UnitBlueprint {
         BreakOffDistance = 15,
         BreakOffTrigger = 20,
         CanFly = true,
-        CombatTurnSpeed = 1.6,
+        CombatTurnSpeed = 1.9,
         EngageDistance = 50,
         KLift = 3,
         KLiftDamping = 2.5,
@@ -37,11 +37,11 @@ UnitBlueprint {
         KTurn = 0.9,
         KTurnDamping = 1,
         LiftFactor = 7,
-        MaxAirspeed = 20,
+        MaxAirspeed = 22,
         MinAirspeed = 8,
         StartTurnDistance = 5,
         TightTurnMultiplier = 1.01,
-        TurnSpeed = 1.35,
+        TurnSpeed = 1.9,
         Winged = true,
     },
 
@@ -87,7 +87,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
             
-            Damage = 102,
+            Damage = 116,
             DamageFriendly = false,
             DamageType = 'Normal',
             
@@ -160,7 +160,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
             
-            Damage = 102,
+            Damage = 204,
             DamageFriendly = false,
             DamageType = 'Normal',
             
@@ -180,7 +180,7 @@ UnitBlueprint {
             
             MaxRadius = 102,
             
-            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoDelay = 0.2,
             MuzzleSalvoSize = 2,
             MuzzleVelocity = 100,
             
@@ -198,7 +198,7 @@ UnitBlueprint {
 
             PreferPrimaryWeaponTarget = true,
             
-            RateOfFire = 10/3,
+            RateOfFire = 10/6,
             
             SlavedToBody = true,
             SlavedToBodyArcRange = 60,
