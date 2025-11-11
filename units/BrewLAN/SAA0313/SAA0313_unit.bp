@@ -1,6 +1,22 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "saa0313",
+
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'AEON',
+        'MOBILE',
+        'AIR',
+        'HIGHALTAIR',
+        'INTERDICTIONAIR',
+        'SPECIALHIGHPRI',
+        'TECH3',
+        'ANTIAIR',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'RESEARCHLOCKED',
+    },
     
     Air = {
         AutoLandTime = 1,
@@ -38,6 +54,8 @@ UnitBlueprint {
 
         RegenRate = 10,
     },
+
+    Description = '<LOC saa0313_desc>Interdiction Fighter',
     
     Economy = {
         BuildCostEnergy = 335000,

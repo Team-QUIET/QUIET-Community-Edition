@@ -1,6 +1,24 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "sra0313",
+
+    Categories = {
+        'PRODUCTBREWLANRND',
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'CYBRAN',
+        'MOBILE',
+        'AIR',
+        'HIGHALTAIR',
+        'INTERDICTIONAIR',
+        'SPECIALHIGHPRI',
+        'TECH3',
+        'ANTIAIR',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'OVERLAYRADAR',
+        'RESEARCHLOCKED',
+    },
 	
     Air = {
         AutoLandTime = 1,
@@ -36,6 +54,8 @@ UnitBlueprint {
         MaxHealth = 1775,
         RegenRate = 16,
     },
+
+    Description = '<LOC sra0313_desc>Interdiction Fighter',
 	
     Economy = {
         BuildCostEnergy = 300000,

@@ -1,6 +1,23 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "ssa0313",
+
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'SERAPHIM',
+        'MOBILE',
+        'AIR',
+        'HIGHALTAIR',
+        'INTERDICTIONAIR',
+        'SPECIALHIGHPRI',
+        'TECH3',
+        'ANTIAIR',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'OVERLAYANTIAIR',
+        'RESEARCHLOCKED',
+    },
 	
     Air = {
         AutoLandTime = 1,
@@ -38,6 +55,8 @@ UnitBlueprint {
         MaxHealth = 1950,
         RegenRate = 10,
     },
+
+    Description = '<LOC ssa0313_desc>Interdiction Fighter',
     
     Economy = {
         BuildCostEnergy = 325000,
