@@ -1,6 +1,24 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "sea0313",
+
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'UEF',
+        'MOBILE',
+        'AIR',
+        'HIGHALTAIR',
+        'INTERDICTIONAIR',
+        'SPECIALHIGHPRI',
+        'TECH3',
+        'ANTIAIR',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'OVERLAYANTIAIR',
+        'OVERLAYRADAR',
+        'RESEARCHLOCKED',
+    },
 	
     Air = {
         AutoLandTime = 1,
@@ -9,7 +27,7 @@ UnitBlueprint {
         BreakOffDistance = 15,
         BreakOffTrigger = 20,
         CanFly = true,
-        CombatTurnSpeed = 1.6,
+        CombatTurnSpeed = 1.9,
         EngageDistance = 50,
         KLift = 3,
         KLiftDamping = 2.5,
@@ -20,11 +38,11 @@ UnitBlueprint {
         KTurn = 0.9,
         KTurnDamping = 1,
         LiftFactor = 7,
-        MaxAirspeed = 20,
+        MaxAirspeed = 22,
         MinAirspeed = 8,
         StartTurnDistance = 5,
         TightTurnMultiplier = 1.01,
-        TurnSpeed = 1.35,
+        TurnSpeed = 1.9,
         Winged = true,
     },
 
@@ -37,6 +55,8 @@ UnitBlueprint {
         MaxHealth = 2050,
         RegenRate = 10,
     },
+
+    Description = '<LOC sea0313_desc>Interdiction Fighter',
     
     Economy = {
         BuildCostEnergy = 315000,
@@ -63,7 +83,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             
             BeamCollisionDelay = 0,
-            BeamLifetime = 0.4,
+            BeamLifetime = 0.3,
             
             CannotAttackGround = true,
             
@@ -138,7 +158,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             
             BeamCollisionDelay = 0,
-            BeamLifetime = 0.4,
+            BeamLifetime = 0.3,
             
             CannotAttackGround = false,
             
@@ -219,7 +239,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
             
-            Damage = 162,
+            Damage = 187,
             DamageRadius = 0,
             DamageType = 'Normal',
             

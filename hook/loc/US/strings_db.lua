@@ -1,18 +1,29 @@
+-- Total Mayhem -- Experimentals
 brot3ncm_desc="Experimental Medium Rapid Assault Mech"
 brot3ncm_help="Experimental Medium Rapid Assault Mech"
 brot3ncm_name="Eliash"
+wel4404_desc="Experimental Medium Assault Mech"
+wel4404_help="Experimental Medium Assault Mech"
+wel4404_name="Star Adder"
 ual0401_desc="Experimental Heavy Assault Bot"
-ual0401_help="Experimental Heavy Assault Bot"
+ual0401_help="Experimental Heavy Assault Bot""
+-- Vanilla -- Experimentals
 ual0401_name="Galactic Colossus"
 wal0401_desc="Experimental Ultra Heavy Assault Bot"
 wal0401_help="Experimental Ultra Heavy Assault Bot"
 wal0401_name="Universal Colossus"
+-- Black Ops -- Experimentals
 bel0402_desc="Experimental Ultra Heavy Breacher Bot"
 bel0402_help="Experimental Ultra Heavy Breacher Bot"
 bel0402_name="Goliath"
-wel4404_desc="Experimental Medium Assault Mech"
-wel4404_help="Experimental Medium Assault Mech"
-wel4404_name="Star Adder"
+
+-- BrewLAN -- Tech 3
+saa0313_desc="Interdiction Fighter"
+sea0313_desc="Interdiction Fighter"
+sra0313_desc="Interdiction Fighter"
+ssa0313_desc="Interdiction Fighter"
+
+-- All -- Factories HQ
 urb0201_desc="Land Factory HQ"
 urb0201_help="Land Factory HQ"
 urb0202_desc="Air Factory HQ"

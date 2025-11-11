@@ -1,6 +1,22 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "saa0313",
+
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'AEON',
+        'MOBILE',
+        'AIR',
+        'HIGHALTAIR',
+        'INTERDICTIONAIR',
+        'SPECIALHIGHPRI',
+        'TECH3',
+        'ANTIAIR',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'RESEARCHLOCKED',
+    },
     
     Air = {
         AutoLandTime = 1,
@@ -9,7 +25,7 @@ UnitBlueprint {
         BreakOffDistance = 15,
         BreakOffTrigger = 20,
         CanFly = true,
-        CombatTurnSpeed = 1.6,
+        CombatTurnSpeed = 1.9,
         EngageDistance = 50,
         KLift = 3,
         KLiftDamping = 2.5,
@@ -20,11 +36,11 @@ UnitBlueprint {
         KTurn = 0.9,
         KTurnDamping = 1,
         LiftFactor = 7,
-        MaxAirspeed = 20,
+        MaxAirspeed = 22,
         MinAirspeed = 8,
         StartTurnDistance = 5,
         TightTurnMultiplier = 1.01,
-        TurnSpeed = 1.35,
+        TurnSpeed = 1.9,
         Winged = true,
     },
     
@@ -38,6 +54,8 @@ UnitBlueprint {
 
         RegenRate = 10,
     },
+
+    Description = '<LOC saa0313_desc>Interdiction Fighter',
     
     Economy = {
         BuildCostEnergy = 335000,
@@ -72,7 +90,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             
             BeamCollisionDelay = 0,
-            BeamLifetime = 0.2,
+            BeamLifetime = 0.3,
             
             CannotAttackGround = true,
             CollideFriendly = false,
@@ -154,7 +172,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             
             BeamCollisionDelay = 0,
-            BeamLifetime = 0.2,
+            BeamLifetime = 0.3,
             
             CannotAttackGround = true,
             CollideFriendly = false,
