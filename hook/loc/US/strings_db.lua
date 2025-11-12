@@ -6,7 +6,7 @@ wel4404_desc="Experimental Medium Assault Mech"
 wel4404_help="Experimental Medium Assault Mech"
 wel4404_name="Star Adder"
 ual0401_desc="Experimental Heavy Assault Bot"
-ual0401_help="Experimental Heavy Assault Bot""
+ual0401_help="Experimental Heavy Assault Bot"
 -- Vanilla -- Experimentals
 ual0401_name="Galactic Colossus"
 wal0401_desc="Experimental Ultra Heavy Assault Bot"
