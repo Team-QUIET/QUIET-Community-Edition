@@ -114,9 +114,9 @@ UnitBlueprint{
 		
 		--	+30% over original done with buff 
         ImprovedProduction = {    
-            BuildCostEnergy = 38500,
-            BuildCostMass = 2200,
-            BuildTime = 18000,
+            BuildCostEnergy = 12000,
+            BuildCostMass = 520,
+            BuildTime = 1000,
 
             Icon = 'Prod_Imp',
             Name = 'Improved Production',
@@ -145,9 +145,9 @@ UnitBlueprint{
 		
 		--	+60% over original done with buff over original
         AdvancedProduction = {
-            BuildCostEnergy = 70000,
-            BuildCostMass = 4000,
-            BuildTime = 32000,
+            BuildCostEnergy = 12000,
+            BuildCostMass = 520,
+            BuildTime = 1000,
 
             Icon = 'Prod_Adv',
             Name = 'Advanced Production',
@@ -179,9 +179,9 @@ UnitBlueprint{
 		
 		-- 10% Materiels efficiency
         ImprovedMateriels = {    
-            BuildCostEnergy = 38500,
-            BuildCostMass = 2200,
-            BuildTime = 18000,
+            BuildCostEnergy = 4500,
+            BuildCostMass = 200,
+            BuildTime = 800,
 
             Icon = 'Materiel_Imp',
             Name = 'Improved Materiels',
@@ -208,9 +208,9 @@ UnitBlueprint{
 		
 		--	+20% materiels efficiency
         AdvancedMateriels = {
-            BuildCostEnergy = 70000,
-            BuildCostMass = 4000,
-            BuildTime = 32000,
+            BuildCostEnergy = 9000,
+            BuildCostMass = 400,
+            BuildTime = 1400,
 
             Icon = 'Materiel_Adv',
             Name = 'Advanced Materiels',
