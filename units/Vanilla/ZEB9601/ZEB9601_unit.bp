@@ -1,5 +1,5 @@
 UnitBlueprint{
-    Description = "<LOC zeb9601_desc>Suport Land Factory",
+    Description = "<LOC zeb9601_desc>Land Factory",
     AI = {
         TargetBones = {
             "Foot_Right",
@@ -115,9 +115,9 @@ UnitBlueprint{
 		
 		--	+30% over original done with buff 
         ImprovedProduction = {    
-            BuildCostEnergy = 38500,
-            BuildCostMass = 2200,
-            BuildTime = 18000,
+            BuildCostEnergy = 3900,
+            BuildCostMass = 500,
+            BuildTime = 1000,
 
             Icon = 'Prod_Imp',
             Name = 'Improved Production',
@@ -146,9 +146,9 @@ UnitBlueprint{
 		
 		--	+60% over original done with buff over original
         AdvancedProduction = {
-            BuildCostEnergy = 70000,
-            BuildCostMass = 4000,
-            BuildTime = 32000,
+            BuildCostEnergy = 4050,
+            BuildCostMass = 525,
+            BuildTime = 1000,
 
             Icon = 'Prod_Adv',
             Name = 'Advanced Production',
@@ -180,9 +180,9 @@ UnitBlueprint{
 		
 		-- 10% Materiels efficiency
         ImprovedMateriels = {    
-            BuildCostEnergy = 38500,
-            BuildCostMass = 2200,
-            BuildTime = 18000,
+            BuildCostEnergy = 8000,
+            BuildCostMass = 400,
+            BuildTime = 1000,
 
             Icon = 'Materiel_Imp',
             Name = 'Improved Materiels',
@@ -209,9 +209,9 @@ UnitBlueprint{
 		
 		--	+20% materiels efficiency
         AdvancedMateriels = {
-            BuildCostEnergy = 70000,
-            BuildCostMass = 4000,
-            BuildTime = 32000,
+            BuildCostEnergy = 15000,
+            BuildCostMass = 750,
+            BuildTime = 1800,
 
             Icon = 'Materiel_Adv',
             Name = 'Advanced Materiels',

@@ -99,7 +99,6 @@ UnitBlueprint{
             "BUILTBYTIER2SUPPORTFACTORY UEF STRUCTURE AIR",
             "BUILTBYTIER2FACTORY UEF MOBILE AIR",
             "TRANSPORTBUILTBYTIER2FACTORY UEF MOBILE AIR",
-            "BUILTBYAIRTIER2FACTORY UEF MOBILE CONSTRUCTION",
         },
         DifferentialUpgradeCostCalculation = true,
         RebuildBonusIds = { "zeb9502" },

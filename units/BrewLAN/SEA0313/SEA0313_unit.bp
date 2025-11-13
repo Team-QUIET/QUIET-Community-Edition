@@ -1,6 +1,24 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "sea0313",
+
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'UEF',
+        'MOBILE',
+        'AIR',
+        'HIGHALTAIR',
+        'INTERDICTIONAIR',
+        'SPECIALHIGHPRI',
+        'TECH3',
+        'ANTIAIR',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'OVERLAYANTIAIR',
+        'OVERLAYRADAR',
+        'RESEARCHLOCKED',
+    },
 	
     Air = {
         AutoLandTime = 1,
@@ -13,17 +31,17 @@ UnitBlueprint {
         EngageDistance = 50,
         KLift = 3,
         KLiftDamping = 2.5,
-        KMove = 1.5,
+        KMove = 1.15,
         KMoveDamping = 1,
-        KRoll = 1.5,
+        KRoll = 0.7,
         KRollDamping = 1,
-        KTurn = 1.5,
-        KTurnDamping = 2.3,
+        KTurn = 0.9,
+        KTurnDamping = 1,
         LiftFactor = 7,
         MaxAirspeed = 22,
         MinAirspeed = 8,
         StartTurnDistance = 5,
-        TightTurnMultiplier = 1.03,
+        TightTurnMultiplier = 1.01,
         TurnSpeed = 1.9,
         Winged = true,
     },
@@ -33,13 +51,15 @@ UnitBlueprint {
         
         AirThreatLevel = 95,
         ArmorType = 'Light',
-        Health = 5050,
-        MaxHealth = 5050,
+        Health = 2050,
+        MaxHealth = 2050,
         RegenRate = 10,
     },
+
+    Description = '<LOC sea0313_desc>Interdiction Fighter',
     
     Economy = {
-        BuildCostEnergy = 215000,
+        BuildCostEnergy = 315000,
         BuildCostMass = 2950,
         BuildTime = 6750,
         
@@ -63,7 +83,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             
             BeamCollisionDelay = 0,
-            BeamLifetime = 0.4,
+            BeamLifetime = 0.3,
             
             CannotAttackGround = true,
             
@@ -138,7 +158,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             
             BeamCollisionDelay = 0,
-            BeamLifetime = 0.4,
+            BeamLifetime = 0.3,
             
             CannotAttackGround = false,
             

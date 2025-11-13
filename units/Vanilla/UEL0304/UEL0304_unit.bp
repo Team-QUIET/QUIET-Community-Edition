@@ -53,7 +53,7 @@ UnitBlueprint {
 			
             Damage = 850,
             DamageFriendly = true,
-            DamageRadius = 5.5,
+            DamageRadius = 3.5,
             DamageType = 'Normal',
 			
             DisplayName = 'Anti Matter Artillery',
@@ -68,12 +68,12 @@ UnitBlueprint {
             },
 			
             FiringRandomness = 1.25,
-            FiringTolerance = 2,
+            FiringTolerance = 1,
 			
             LeadTarget = true,
 			
             MaxRadius = 92,
-            MinRadius = 5,
+            MinRadius = 12,
 
             MuzzleVelocity = 24,
             MuzzleVelocityReduceDistance = 92,

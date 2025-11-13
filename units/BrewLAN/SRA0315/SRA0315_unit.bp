@@ -1,6 +1,24 @@
 UnitBlueprint {
     Merge = true,
 	BlueprintId = "sra0315",
+
+    Categories = {
+        'PRODUCTBREWAIR',
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'CYBRAN',
+        'MOBILE',
+        'AIR',
+        'TECH3',
+        'GROUNDATTACK',
+        'INTERDICTIONAIR',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'OVERLAYANTIAIR',
+        'OVERLAYCOUNTERINTEL',
+        'OVERLAYDIRECTFIRE',
+        'RESEARCHLOCKED'
+    },
     
     Air = {
         AutoLandTime = 1,

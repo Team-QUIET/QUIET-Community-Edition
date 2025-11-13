@@ -1,6 +1,8 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "ual0111",
+
+    IgnoreEvenflow = true,
 	
     Physics = {
         BackUpDistance = 8,
@@ -23,6 +25,12 @@ UnitBlueprint {
         RotateOnSpotThreshold = 0.1,
         TurnRadius = 0,
         TurnRate = 90,
+    },
+
+    Economy = {
+        BuildCostEnergy = 1600,
+        BuildCostMass = 180,
+        BuildTime = 1800,
     },
 	
     Weapon = {
@@ -48,15 +56,13 @@ UnitBlueprint {
             HeadingArcCenter = 0,
             HeadingArcRange = 60,
             
-            LeadTarget = true,
+            LeadTarget = false,
 			
-            MaxRadius = 65,
+            MaxRadius = 62,
             MinRadius = 15,
 			
-            MuzzleChargeDelay = 0.5,
-
+            MuzzleChargeDelay = 2,
             MuzzleVelocity = 3,
-
             ProjectileLifetime = 25,
 
             RangeCategory = 'UWRC_IndirectFire',

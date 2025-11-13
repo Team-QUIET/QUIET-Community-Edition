@@ -47,7 +47,7 @@ UnitBlueprint {
 			
             Damage = 95,
             DamageFriendly = true,
-            DamageRadius = 3,
+            DamageRadius = 2.5,
             DamageType = 'Normal', 
 			
             DisplayName = 'Sonance Artillery',
@@ -64,14 +64,14 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
             },
             
-            FiringRandomness = 1,
-            FiringTolerance = 2,
+            FiringRandomness = 1.25,
+            FiringTolerance = 1,
 			
             Label = 'MainGun',
             LeadTarget = true,
 			
             MaxRadius = 92,
-            MinRadius = 8,
+            MinRadius = 12,
 			
             MuzzleVelocity = 24,
             MuzzleVelocityReduceDistance = 95,

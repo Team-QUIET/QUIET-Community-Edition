@@ -48,7 +48,7 @@ UnitBlueprint {
 			
             Damage = 850,
             DamageFriendly = true,
-            DamageRadius = 5,
+            DamageRadius = 3.5,
             DamageType = 'Normal',      
 			
             DisplayName = 'Suthanus Artillery',
@@ -62,13 +62,13 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
             },
 			
-            FiringRandomness = 1.35,
-            FiringTolerance = 2,
+            FiringRandomness = 1.55,
+            FiringTolerance = 1,
 			
             LeadTarget = true,
 			
             MaxRadius = 92,
-            MinRadius = 8,
+            MinRadius = 12,
 			
             MuzzleChargeDelay = 0.2,        -- .2 second delay
 

@@ -1,6 +1,22 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "saa0313",
+
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'AEON',
+        'MOBILE',
+        'AIR',
+        'HIGHALTAIR',
+        'INTERDICTIONAIR',
+        'SPECIALHIGHPRI',
+        'TECH3',
+        'ANTIAIR',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'RESEARCHLOCKED',
+    },
     
     Air = {
         AutoLandTime = 1,
@@ -13,17 +29,17 @@ UnitBlueprint {
         EngageDistance = 50,
         KLift = 3,
         KLiftDamping = 2.5,
-        KMove = 1.5,
+        KMove = 1.15,
         KMoveDamping = 1,
-        KRoll = 1.5,
+        KRoll = 0.7,
         KRollDamping = 1,
-        KTurn = 1.5,
-        KTurnDamping = 2.3,
+        KTurn = 0.9,
+        KTurnDamping = 1,
         LiftFactor = 7,
         MaxAirspeed = 22,
         MinAirspeed = 8,
         StartTurnDistance = 5,
-        TightTurnMultiplier = 1.02,
+        TightTurnMultiplier = 1.01,
         TurnSpeed = 1.9,
         Winged = true,
     },
@@ -33,15 +49,17 @@ UnitBlueprint {
         
         AirThreatLevel = 95,
         ArmorType = 'Light',
-        Health = 4855,
-        MaxHealth = 4855,
+        Health = 1855,
+        MaxHealth = 1855,
 
         RegenRate = 10,
     },
+
+    Description = '<LOC saa0313_desc>Interdiction Fighter',
     
     Economy = {
-        BuildCostEnergy = 200000,
-        BuildCostMass = 2780,
+        BuildCostEnergy = 335000,
+        BuildCostMass = 3075,
         BuildTime = 6750,
         
         ResearchMultEnergy = 0.2,
@@ -72,12 +90,12 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             
             BeamCollisionDelay = 0,
-            BeamLifetime = 0.5,
+            BeamLifetime = 0.3,
             
             CannotAttackGround = true,
             CollideFriendly = false,
             
-            Damage = 288,
+            Damage = 232,
             DamageType = 'Normal',
             
             DisplayName = 'Focused Phason Laser',
@@ -109,7 +127,7 @@ UnitBlueprint {
             
             RangeCategory = 'UWRC_AntiAir',
             
-            RateOfFire = 1,       -- 495 DPS based on charge
+            RateOfFire = 10/10,
             SlavedToBody = true,
             SlavedToBodyArcRange = 60,
 
@@ -154,12 +172,12 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             
             BeamCollisionDelay = 0,
-            BeamLifetime = 0.5,
+            BeamLifetime = 0.3,
             
             CannotAttackGround = true,
             CollideFriendly = false,
             
-            Damage = 288,
+            Damage = 232,
             DamageType = 'Normal',
             
             DisplayName = 'Focused Phason Laser',
@@ -190,7 +208,7 @@ UnitBlueprint {
 
             RackSalvoFiresAfterCharge = true,
             
-            RateOfFire = 1,       -- another 495 - based on charge
+            RateOfFire = 10/10,
             SlavedToBody = true,
             SlavedToBodyArcRange = 60,
 

@@ -177,8 +177,8 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 48000,
-        BuildCostMass = 320000,	-- this shield is only 2931 but total accounts for all
+        BuildCostEnergy = 320000,
+        BuildCostMass = 48000,
         BuildTime = 20000,
 		
         MaintenanceConsumptionPerSecondEnergy = 1738 + 4266 + 4716,	-- as above - counts for all

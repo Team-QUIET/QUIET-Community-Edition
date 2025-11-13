@@ -44,9 +44,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
 			
-            Damage = 725,
+            Damage = 525,
             DamageFriendly = true,
-            DamageRadius = 6,
+            DamageRadius = 5.5,
             DamageType = 'Normal',
 			
             DisplayName = 'Proton Artillery',
@@ -60,13 +60,13 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
             },
             
-            FiringRandomness = 2,
-            FiringTolerance = 0,
+            FiringRandomness = 2.25,
+            FiringTolerance = 1,
 			
             LeadTarget = true,
 			
             MaxRadius = 92,
-            MinRadius = 10,
+            MinRadius = 12,
 
             MuzzleVelocity = 24,
             MuzzleVelocityReduceDistance = 92,

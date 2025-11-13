@@ -1,6 +1,23 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "ssa0313",
+
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3FACTORY',
+        'SERAPHIM',
+        'MOBILE',
+        'AIR',
+        'HIGHALTAIR',
+        'INTERDICTIONAIR',
+        'SPECIALHIGHPRI',
+        'TECH3',
+        'ANTIAIR',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'OVERLAYANTIAIR',
+        'RESEARCHLOCKED',
+    },
 	
     Air = {
         AutoLandTime = 1,
@@ -13,17 +30,17 @@ UnitBlueprint {
         EngageDistance = 50,
         KLift = 3,
         KLiftDamping = 2.5,
-        KMove = 1.5,
+        KMove = 1.15,
         KMoveDamping = 1,
-        KRoll = 1.5,
+        KRoll = 0.7,
         KRollDamping = 1,
-        KTurn = 1.5,
-        KTurnDamping = 2.3,
+        KTurn = 0.9,
+        KTurnDamping = 1,
         LiftFactor = 7,
         MaxAirspeed = 22,
         MinAirspeed = 8,
         StartTurnDistance = 5,
-        TightTurnMultiplier = 1.02,
+        TightTurnMultiplier = 1.01,
         TurnSpeed = 1.9,
         Winged = true,
     },
@@ -34,13 +51,15 @@ UnitBlueprint {
         AirThreatLevel = 96,
         ArmorType = 'Light',
         
-        Health = 4950,
-        MaxHealth = 4950,
+        Health = 1950,
+        MaxHealth = 1950,
         RegenRate = 10,
     },
+
+    Description = '<LOC ssa0313_desc>Interdiction Fighter',
     
     Economy = {
-        BuildCostEnergy = 225000,
+        BuildCostEnergy = 325000,
         BuildCostMass = 3075,
         BuildTime = 6750,
         
@@ -63,12 +82,12 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             
             BeamCollisionDelay = 0,
-            BeamLifetime = 0.6,
+            BeamLifetime = 0.3,
 
             CannotAttackGround = true,
             CollideFriendly = false,
             
-            Damage = 151,
+            Damage = 116,
             DamageFriendly = false,
             DamageType = 'Normal',
             
@@ -141,7 +160,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
             
-            Damage = 151,
+            Damage = 204,
             DamageFriendly = false,
             DamageType = 'Normal',
             
@@ -161,7 +180,7 @@ UnitBlueprint {
             
             MaxRadius = 102,
             
-            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoDelay = 0.2,
             MuzzleSalvoSize = 2,
             MuzzleVelocity = 100,
             
@@ -179,7 +198,7 @@ UnitBlueprint {
 
             PreferPrimaryWeaponTarget = true,
             
-            RateOfFire = 3,
+            RateOfFire = 10/6,
             
             SlavedToBody = true,
             SlavedToBodyArcRange = 60,

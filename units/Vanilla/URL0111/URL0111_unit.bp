@@ -1,6 +1,8 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "url0111",
+
+    IgnoreEvenflow = true,
 	
     Physics = {
         BackUpDistance = 8,
@@ -21,6 +23,12 @@ UnitBlueprint {
         TurnRadius = 2,
         TurnRate = 90,
     },
+
+    Economy = {
+        BuildCostEnergy = 1850,
+        BuildCostMass = 200,
+        BuildTime = 1800,
+    },
 	
     Weapon = {
         {
@@ -40,18 +48,18 @@ UnitBlueprint {
                 Water = 'Land|Water|Seabed',
             },
 			
-            FiringTolerance = 0.25,
+            FiringTolerance = 1,
 
             HeadingArcCenter = 0,
-            HeadingArcRange = 45,
+            HeadingArcRange = 60,
 			
-	        LeadTarget = true,
+	        LeadTarget = false,
 			
-            MaxRadius = 65,
-            MinRadius = 7,
+            MaxRadius = 62,
+            MinRadius = 15,
 			
             MuzzleChargeDelay = 0.5,
-	        MuzzleSalvoDelay = 0,
+	        MuzzleSalvoDelay = 1.5,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 5,
 			
@@ -65,7 +73,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
 			
-            RateOfFire = 10/50,
+            RateOfFire = 10/100,
             RenderFireClock = true,
 			
             SlavedToBody = true,
