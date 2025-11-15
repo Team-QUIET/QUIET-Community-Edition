@@ -173,7 +173,7 @@ UnitBlueprint {
 
 			Label = "AssaultCannon",
 
-			MaxRadius = 32,
+			MaxRadius = 33,
 
 			MuzzleVelocity = 40,
 
