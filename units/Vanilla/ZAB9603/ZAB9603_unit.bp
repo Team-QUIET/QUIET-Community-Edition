@@ -232,9 +232,9 @@ UnitBlueprint{
         },
 		
         ExperimentalMateriels = {
-            BuildCostEnergy = 20000,
-            BuildCostMass = 2600,
-            BuildTime = 12870,
+            BuildCostEnergy = 26000,
+            BuildCostMass = 4000,
+            BuildTime = 17160,
 
             Icon = 'Materiel_Exp',
             Name = 'Experimental Materiels',
