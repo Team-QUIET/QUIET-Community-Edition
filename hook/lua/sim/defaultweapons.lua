@@ -241,7 +241,7 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
 
     -- Determine how much Energy is required to fire
     ---@param self DefaultProjectileWeapon
-    ---@return integer
+    ---@return number
     GetWeaponEnergyRequired = function(self, bp)
         local weapNRG = (self.bp.EnergyRequired or 0) * (self.AdjEnergyMod or 1)
         if weapNRG < 0 then
@@ -252,9 +252,9 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
 
     -- Determine how much Energy should be drained per second
     ---@param self DefaultProjectileWeapon
-    ---@return integer
+    ---@return number
     GetWeaponEnergyDrain = function(self, bp)
-        local weapNRG = (self.bp.EnergyDrainPerSecond or 0) * (self.AdjEnergyMod or 1)
+        local weapNRG = (self.EnergyDrainPerSecond or 0) / (self.AdjRoFMod or 1) * (self.AdjEnergyMod or 1)
         return weapNRG
     end,
 
