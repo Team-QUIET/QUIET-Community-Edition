@@ -312,9 +312,12 @@ do
 				end
 
 				-- Remove the FUELRATIO buff if it exists
-				if cats.ALLUNITS then
-					if bp.Weapon[1].Buffs and bp.Weapon[1].Buffs.BuffType == 'FUELRATIO' then
-						bp.Weapon[1].Buffs = nil
+				if cats.ALLUNITS and bp.Weapon then
+					for _, weapon in pairs(bp.Weapon) do
+						if weapon.Buffs and weapon.Buffs.BuffType == 'FUELRATIO' then
+							LOG('Removed FUELRATIO buff from ' .. bp.BlueprintId)
+							weapon.Buffs = nil
+						end
 					end
 				end
 
