@@ -254,7 +254,7 @@ DefaultProjectileWeapon = ClassWeapon(DefaultWeapons_QUIET) {
     ---@param self DefaultProjectileWeapon
     ---@return number
     GetWeaponEnergyDrain = function(self, bp)
-        local weapNRG = (self.EnergyDrainPerSecond or 0) / (self.AdjRoFMod or 1) * (self.AdjEnergyMod or 1)
+        local weapNRG = (self.bp.EnergyDrainPerSecond or 0) / (self.AdjRoFMod or 1) * (self.AdjEnergyMod or 1)
         return weapNRG
     end,
 
