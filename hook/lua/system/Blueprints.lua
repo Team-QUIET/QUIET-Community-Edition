@@ -319,26 +319,27 @@ do
 				end
 
 				-- HQ Factory Adjustments
-				local SBuildTime = 2
+				local SBuildTimeHQ = 2
+				local SBuildTimeSupport = 2.25
 				local SBuildCostMass = 1.25
 				local SBuildCostEnergy = 1.25
 				if cats.BUILTBYTIER1FACTORY and cats.FACTORY and cats.STRUCTURE and cats.TECH2 and cats.RESEARCH then
 					if cats.AIR or cats.LAND then
-						bp.Economy.BuildTime = bp.Economy.BuildTime * SBuildTime
+						bp.Economy.BuildTime = bp.Economy.BuildTime * SBuildTimeHQ
 						bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * SBuildCostMass
 						bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * SBuildCostEnergy
 					elseif cats.NAVAL then
-						bp.Economy.BuildTime = bp.Economy.BuildTime * SBuildTime 
+						bp.Economy.BuildTime = bp.Economy.BuildTime * SBuildTimeHQ 
 						bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * SBuildCostMass
 						bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * SBuildCostEnergy
 					end
 				elseif cats.BUILTBYTIER2FACTORY and cats.FACTORY and cats.STRUCTURE and cats.TECH3 and cats.RESEARCH then
 					if cats.AIR or cats.LAND then
-						bp.Economy.BuildTime = bp.Economy.BuildTime * SBuildTime
+						bp.Economy.BuildTime = bp.Economy.BuildTime * SBuildTimeHQ
 						bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * SBuildCostMass
 						bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * SBuildCostEnergy
 					elseif cats.NAVAL then
-						bp.Economy.BuildTime = bp.Economy.BuildTime * SBuildTime
+						bp.Economy.BuildTime = bp.Economy.BuildTime * SBuildTimeHQ
 						bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * SBuildCostMass
 						bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * SBuildCostEnergy
 					end
@@ -347,15 +348,15 @@ do
 				-- Support Factory Adjustments
 				if cats.BUILTBYTIER1FACTORY and cats.FACTORY and cats.STRUCTURE and cats.TECH2 and cats.SUPPORTFACTORY then
 					if cats.AIR or cats.LAND then
-						bp.Economy.BuildTime = bp.Economy.BuildTime * SBuildTime
+						bp.Economy.BuildTime = bp.Economy.BuildTime * SBuildTimeSupport
 					elseif cats.NAVAL then
-						bp.Economy.BuildTime = bp.Economy.BuildTime	* SBuildTime
+						bp.Economy.BuildTime = bp.Economy.BuildTime	* SBuildTimeSupport
 					end
 				elseif cats.BUILTBYTIER2FACTORY and cats.FACTORY and cats.STRUCTURE and cats.TECH3 and cats.SUPPORTFACTORY then
 					if cats.AIR or cats.LAND then
-						bp.Economy.BuildTime = bp.Economy.BuildTime * SBuildTime
+						bp.Economy.BuildTime = bp.Economy.BuildTime * SBuildTimeSupport
 					elseif cats.NAVAL then
-						bp.Economy.BuildTime = bp.Economy.BuildTime * SBuildTime
+						bp.Economy.BuildTime = bp.Economy.BuildTime * SBuildTimeSupport
 					end
 				end
 
