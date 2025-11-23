@@ -176,7 +176,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
-            Damage = 1300,
+            Damage = 2400,
             DamageFriendly = true,
             DamageRadius = 3,
             DamageType = 'Normal',
@@ -191,18 +191,18 @@ UnitBlueprint {
                 Water = 'Land|Water|Seabed',
             },
 			
-            FiringRandomness = 1.5,
+            FiringRandomness = 2.0,
             FiringTolerance = 1,
 			
             Label = 'MainGun',
 			
-            MaxRadius = 125,
-            MinRadius = 5,
+            MaxRadius = 115,
+            MinRadius = 50,
 			
             MuzzleChargeDelay = 1,
 
-            MuzzleVelocity = 26.13,
-			MuzzleVelocityReduceDistance = 100,
+            MuzzleVelocity = 27.8,
+            MuzzleVelocityReduceDistance = 115,
 			
             ProjectileId = '/projectiles/SIFZthuthaamArtilleryShell02/SIFZthuthaamArtilleryShell02_proj.bp',
 			ProjectileLifetime = 10,
@@ -215,10 +215,11 @@ UnitBlueprint {
             },
 
             RackRecoilDistance = -2,
+            RackReloadTimeout = 10,
 
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 10/90,
+            RateOfFire = 10/200,
 			RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
 
@@ -249,12 +250,12 @@ UnitBlueprint {
             TurretBoneYaw = 'Turret',
 			
             TurretPitch = 0,
-            TurretPitchRange = 80,
-            TurretPitchSpeed = 14,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 6,
 			
             TurretYaw = 0,
-            TurretYawRange = 360,
-            TurretYawSpeed = 12,
+            TurretYawRange = 180,
+            TurretYawSpeed = 6,
 
             Turreted = true,
         },
