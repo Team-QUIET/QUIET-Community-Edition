@@ -26,7 +26,7 @@ ProjectileBlueprint {
         Acceleration = 5,
         DestroyOnWater = false,
         InitialSpeed = 3,
-        MaxZigZag = 3,
+        MaxZigZag = 0,
         Lifetime = 10,
         MaxSpeed = 15,
         StayUnderwater = true,
@@ -34,6 +34,6 @@ ProjectileBlueprint {
         TurnRate = 165,
         UseGravity = true,
         VelocityAlign = true,
-        ZigZagFrequency = 0.5,
+        ZigZagFrequency = 0,
     },
 }

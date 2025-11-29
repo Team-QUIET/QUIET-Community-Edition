@@ -148,9 +148,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
-            Damage = 1500,
+            Damage = 2000,
             DamageFriendly = true,
-            DamageRadius = 2,
+            DamageRadius = 3,
             DamageType = 'Normal',
 			
             DisplayName = 'APDS Artillery',
@@ -163,17 +163,16 @@ UnitBlueprint {
                 Water = 'Land|Water|Seabed',
             },
 			
-            FiringRandomness = 1.5,
-			
+            FiringRandomness = 2.5,
             FiringTolerance = 1,
 			
             Label = 'MainGun',
 			
-            MaxRadius = 125,
-            MinRadius = 10,
+            MaxRadius = 115,
+            MinRadius = 50,
 
-            MuzzleVelocity = 26.13,
-			MuzzleVelocityReduceDistance = 100,
+            MuzzleVelocity = 27.8,
+            MuzzleVelocityReduceDistance = 115,
 			
             ProjectileId = '/projectiles/TIFArtillery01/TIFArtillery01_proj.bp',
 			ProjectileLifetime = 10,
@@ -186,10 +185,11 @@ UnitBlueprint {
             },
 
             RackRecoilDistance = -2.5,
+            RackReloadTimeout = 14,
 
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 10/90,
+            RateOfFire = 10/200,
 			RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
 
@@ -222,11 +222,11 @@ UnitBlueprint {
 			
             TurretPitch = 30,
             TurretPitchRange = 60,
-            TurretPitchSpeed = 12,
+            TurretPitchSpeed = 6,
 			
             TurretYaw = 0,
-            TurretYawRange = 360,
-            TurretYawSpeed = 10,
+            TurretYawRange = 180,
+            TurretYawSpeed = 6,
             Turreted = true,
         },
 		

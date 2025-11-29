@@ -125,7 +125,8 @@ UnitBlueprint{
         ImprovedProduction = {    
             BuildCostEnergy = 12000,
             BuildCostMass = 520,
-            BuildTime = 1000,
+            BuildTime = 5720,
+
             Icon = 'Prod_Imp',
             Name = 'Improved Production',
             Slot = 'LCH',
@@ -155,7 +156,7 @@ UnitBlueprint{
         AdvancedProduction = {
             BuildCostEnergy = 12000,
             BuildCostMass = 520,
-            BuildTime = 1000,
+            BuildTime = 12000,
 
             Icon = 'Prod_Adv',
             Name = 'Advanced Production',
@@ -187,9 +188,9 @@ UnitBlueprint{
 		
 		-- 5% Materiels efficiency
         ImprovedMateriels = {    
-            BuildCostEnergy = 4500,
-            BuildCostMass = 200,
-            BuildTime = 800,
+            BuildCostEnergy = 12000,
+            BuildCostMass = 1500,
+            BuildTime = 8580,
 
             Icon = 'Materiel_Imp',
             Name = 'Improved Materiels',
@@ -216,9 +217,9 @@ UnitBlueprint{
 		
 		--	+10% materiels efficiency
         AdvancedMateriels = {
-            BuildCostEnergy = 9000,
-            BuildCostMass = 400,
-            BuildTime = 1400,
+            BuildCostEnergy = 20000,
+            BuildCostMass = 2600,
+            BuildTime = 12870,
 
             Icon = 'Materiel_Adv',
             Name = 'Advanced Materiels',

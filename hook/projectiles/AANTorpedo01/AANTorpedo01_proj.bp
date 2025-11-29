@@ -37,11 +37,11 @@ ProjectileBlueprint {
         InitialSpeed = 5,
         Lifetime = 30,
         MaxSpeed = 15,
-        MaxZigZag = 3,
+        MaxZigZag = 0,
         StayUnderwater = true,
         TrackTarget = true,
         TurnRate = 190,
         VelocityAlign = true,
-        ZigZagFrequency = 0.5,
+        ZigZagFrequency = 0,
     },
 }
