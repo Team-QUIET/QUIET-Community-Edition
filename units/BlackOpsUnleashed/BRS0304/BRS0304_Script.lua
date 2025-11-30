@@ -32,7 +32,7 @@ if not Buffs['BRS0304_JammerDebuff'] then
         DisplayName = 'Radar Disruption',
         BuffType = 'COUNTERINTEL',
         Stacks = 'REPLACE',  -- Don't stack, just refresh duration
-        Duration = 5,  -- 5 second duration, refreshed every 3 seconds
+        Duration = 10,  -- 5 second duration, refreshed every 3 seconds
         Affects = {
             VisionRadius = {
                 Add = 0,
