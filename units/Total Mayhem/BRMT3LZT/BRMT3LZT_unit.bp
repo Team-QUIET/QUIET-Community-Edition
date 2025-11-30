@@ -1,6 +1,9 @@
 UnitBlueprint {
 
     Source = '/mods/TotalMayhem/units/BRMT3LZT/BRMT3LZT_unit.bp',
+
+    ScriptClass = 'BRMT3LZT',
+    ScriptModule = '/mods/QUIET-Community-Edition/units/Total Mayhem/BRMT3LZT/BRMT3LZT_Script.lua',
     
     AI = { 
         GuardScanRadius = 40, 
@@ -59,6 +62,7 @@ UnitBlueprint {
             '<LOC ability_amphibious>Amphibious',
             "<LOC ability_aa>Anti-Air",
             '<LOC ability_radar>Radar',
+            'Toggles between AA and Ground',
         },
         
         Mesh = { IconFadeInZoom = 160, LODs = { {LODCutoff = 250,Scrolling = true,ShaderName = 'Insect'} } },
@@ -87,6 +91,12 @@ UnitBlueprint {
         },
         FactionName = 'Cybran',
         Icon = 'amph',
+
+        OrderOverrides = {
+            RULEUTC_WeaponToggle = { bitmapId = 'toggle-weapon-air' },
+        },
+        ToggleCaps = { RULEUTC_WeaponToggle = true },
+
         UnitName = '<LOC brmt3lzt_name>Trilobyte',
     },
 	
@@ -157,40 +167,43 @@ UnitBlueprint {
     },
 	
     Weapon = {
+        -- AA Weapon (default, active on creation)
         {
             AboveWaterFireOnly = true,
             AboveWaterTargetsOnly = true,
-            
+
             Audio = {
                 Fire = Sound { Bank = 'URLWeapon', Cue = 'URL0303_Disintegrator', LodCutoff = 'Weapon_LodCutoff' },
             },
-            
+
             BallisticArc = 'RULEUBA_LowArc',
+            CannotAttackGround = true,
             CollideFriendly = false,
-			
+
             Damage = 48,
             DamageRadius = 0,
             DamageType = 'Normal',
-			
-            DisplayName = 'Ionized Plasma Cannon',
+
+            DisplayName = 'Ionized Plasma Flak',
 
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Seabed|Air',
-                Seabed = 'Land|Water|Seabed|Air',                
+                Land = 'Air',
+                Seabed = 'Air',
             },
-			
+
             FiringTolerance = 2,
-			
-            Label = 'MainGun',
+
+            Label = 'AAGun',
 			LeadTarget = true,
-			
+
             MaxRadius = 40,
 
             MuzzleVelocity = 60,
             MuzzleVelocityRandomness = 0,
-			
+
             NoPause = true,
-			
+            NotExclusive = true,
+
             ProjectileId = '/projectiles/CDFLaserDisintegrator02/CDFLaserDisintegrator02_proj.bp',
 			ProjectileLifetimeUsesMultiplier = 1.5,
 
@@ -204,16 +217,16 @@ UnitBlueprint {
                     RackBone = 'Turret_Barrel01',
                 },
             },
-			
+
             RackRecoilDistance = -0.8,
 
             RackSlavedToTurret = true,
-			
-            RangeCategory = 'UWRC_DirectFire',
-			
-            RateOfFire = 30/10,	
 
-			
+            RangeCategory = 'UWRC_AntiAir',
+
+            RateOfFire = 30/10,
+
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'TECH3 BOMBER',
@@ -221,28 +234,118 @@ UnitBlueprint {
                 'TECH2 BOMBER',
                 'TECH2 GROUNDATTACK',
                 'TRANSPORTATION',
-				'ENGINEER',
-                'MOBILE',
-				'ANTIAIR',
-                'DEFENSE',
-                'ALLUNITS',
+                'AIR MOBILE',
             },
-			
+
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE,HIGHALTAIR',
 
-			
+            ToggleWeapon = 'GroundGun',
+
+
             TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBoneDualMuzzle = 'Turret_Muzzle01',
             TurretBonePitch = 'Turret_Barrel',
+            TurretBoneDualPitch = 'Turret_Barrel01',
             TurretBoneYaw = 'Turret',
-			
+            TurretDualManipulators = true,
+
             TurretPitch = 0,
             TurretPitchRange = 80,
             TurretPitchSpeed = 160,
-			
+
             TurretYaw = 0,
             TurretYawRange = 360,
             TurretYawSpeed = 180,
-			
+
+            Turreted = true,
+        },
+        -- Ground Weapon (disabled on creation, enabled when toggle is set)
+        {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'URLWeapon', Cue = 'URL0303_Disintegrator', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+
+            Damage = 12,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+
+            DisplayName = 'Ionized Plasma Cannon',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+            },
+
+            FiringTolerance = 2,
+
+            Label = 'GroundGun',
+			LeadTarget = true,
+
+            MaxRadius = 24,
+
+            MuzzleVelocity = 60,
+            MuzzleVelocityRandomness = 0,
+
+            NoPause = true,
+            NotExclusive = true,
+
+            ProjectileId = '/projectiles/CDFLaserDisintegrator02/CDFLaserDisintegrator02_proj.bp',
+			ProjectileLifetimeUsesMultiplier = 1.5,
+
+            RackBones = {
+                {
+                    MuzzleBones = { 'Turret_Muzzle' },
+                    RackBone = 'Turret_Barrel',
+                },
+                {
+                    MuzzleBones = { 'Turret_Muzzle01' },
+                    RackBone = 'Turret_Barrel01',
+                },
+            },
+
+            RackRecoilDistance = -0.8,
+
+            RackSlavedToTurret = true,
+
+            RangeCategory = 'UWRC_DirectFire',
+
+            RateOfFire = 30/10,
+
+
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+				'ENGINEER',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+
+            TargetRestrictDisallow = 'UNTARGETABLE',
+
+            ToggleWeapon = 'AAGun',
+
+
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBoneDualMuzzle = 'Turret_Muzzle01',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneDualPitch = 'Turret_Barrel01',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = true,
+
+            TurretPitch = 0,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 160,
+
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 180,
+
             Turreted = true,
         },
     },
