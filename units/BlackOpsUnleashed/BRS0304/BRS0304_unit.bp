@@ -1,7 +1,10 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "brs0304",
-	
+
+    ScriptClass = 'BRS0304',
+    ScriptModule = '/mods/QUIET-Community-Edition/units/BlackOpsUnleashed/BRS0304/BRS0304_Script.lua',
+
     Defense = {
 
         ArmorType = 'Normal',
@@ -14,17 +17,40 @@ UnitBlueprint {
         SubThreatLevel = 16,
         SurfaceThreatLevel = 62,
     },
-	
+
     Economy = {
         BuildCostEnergy = 64500,
         BuildCostMass = 6950,
         BuildTime = 13400,
+        -- Jammer aura energy upkeep
+        MaintenanceConsumptionPerSecondEnergy = 500,
     },
-	
+
+    Display = {
+        Abilities = {
+            '<LOC ability_aa>Anti-Air',
+            '<LOC ability_radar>Radar',
+            '<LOC ability_sonar>Sonar',
+            '<LOC ability_torpedo>Torpedoes',
+            '<LOC ability_torpedodef>Torpedo Defense',
+            '<LOC ability_tacmissiledef>Tactical Missile Defense',
+            'Radar Jammer Aura',
+        },
+    },
+
+    Intel = {
+        FreeIntel = true,
+        RadarRadius = 88,
+        SonarRadius = 56,
+        VisionRadius = 40,
+        WaterVisionRadius = 24,
+    },
+
     Weapon = {
+        -- Front Proton Cannon 1: 50 dmg x 2 muzzles x 0.5 RoF = 50 DPS (was 110)
         {
             AboveWaterTargetsOnly = true,
-            
+
             Audio = {
                 BarrelLoop  = Sound { Bank = 'URS',       Cue = 'URS_Turret_Lrg_Loop',  LodCutoff = 'Weapon_LodCutoff' },
                 BarrelStart = Sound { Bank = 'URS',       Cue = 'URS_Turret_Lrg_Start', LodCutoff = 'Weapon_LodCutoff' },
@@ -32,28 +58,28 @@ UnitBlueprint {
             },
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
-            
-            Damage = 110,
+
+            Damage = 50,
             DamageRadius = 1,
             DamageType = 'Normal',
-			
+
             DisplayName = 'Proton Cannon',
-			
+
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Seabed',
             },
-			
+
             FiringRandomness = 0.35,
             FiringTolerance = 1,
-			
+
             Label = 'ParticleGun',
-			
-            MaxRadius = 85,
+
+            MaxRadius = 70,
 
             MuzzleVelocity = 44,
-			
+
             ProjectileId = '/projectiles/CDFProtonCannon02/CDFProtonCannon02_proj.bp',
-            ProjectileLifetime = 2.2,			
+            ProjectileLifetime = 2.2,
 
             RackBones = {
                 {
@@ -65,13 +91,13 @@ UnitBlueprint {
             RackRecoilDistance = -1.5,
 
             RangeCategory = 'UWRC_DirectFire',
-			
-            RateOfFire = 10/20,		-- 110DPS Surface
-			
+
+            RateOfFire = 10/20,		-- 50 DPS Surface
+
             SlavedToBody = true,
             SlavedToBodyArcRange = 90,
 
-			
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'EXPERIMENTAL',
@@ -85,34 +111,35 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
 
-			
+
             TurretBoneMuzzle = 'Front_Right_Muzzle',
             TurretBonePitch = 'front_middle_barrel01',
             TurretBoneYaw = 'front_turret',
-			
+
             TurretPitch = 0,
             TurretPitchRange = 45,
             TurretPitchSpeed = 45,
-			
+
             TurretYaw = 0,
             TurretYawRange = 135,
             TurretYawSpeed = 40,
-			
+
             Turreted = true,
         },
+        -- Front Proton Cannon 2: 25 dmg x 2 muzzles x 1 RoF = 50 DPS (was 110)
         {
             AboveWaterTargetsOnly = true,
-            
+
             Audio = {
                 BarrelLoop  = Sound { Bank = 'URS',       Cue = 'URS_Turret_Lrg_Loop',  LodCutoff = 'Weapon_LodCutoff' },
                 BarrelStart = Sound { Bank = 'URS',       Cue = 'URS_Turret_Lrg_Start', LodCutoff = 'Weapon_LodCutoff' },
                 Fire        = Sound { Bank = 'URSWeapon', Cue = 'URS0302_Cannon',       LodCutoff = 'Weapon_LodCutoff' },
             },
-            
+
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 
-            Damage = 55,
+            Damage = 25,
             DamageRadius = 1,
             DamageType = 'Normal',
 
@@ -123,13 +150,13 @@ UnitBlueprint {
             },
             FiringRandomness = 0.35,
             FiringTolerance = 2,
-			
+
             Label = 'ParticleGun',
-			
-            MaxRadius = 85,
+
+            MaxRadius = 70,
 
             MuzzleVelocity = 50,
-			
+
             ProjectileId = '/projectiles/CDFProtonCannon02/CDFProtonCannon02_proj.bp',
             ProjectileLifetime = 1.9,
 
@@ -141,9 +168,9 @@ UnitBlueprint {
             },
 
             RackRecoilDistance = -1,
-			
-			RateOfFire = 10/10,		-- 110 DPS Surface
-			
+
+			RateOfFire = 10/10,		-- 50 DPS Surface
+
             SlavedToBody = true,
             SlavedToBodyArcRange = 120,
 
@@ -176,6 +203,7 @@ UnitBlueprint {
 
             Turreted = true,
         },
+        -- Right Death Ray: 4 dmg x 10 ticks x 2 muzzles x 0.5 RoF = 40 DPS (was 200)
         {
             AboveWaterTargetsOnly = true,
 
@@ -188,47 +216,47 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CannotAttackGround = true,
             CollideFriendly = false,
-			
+
             BeamCollisionDelay = 0,
             BeamLifetime = 1.0,
-			
-            Damage = 20,	-- 200 damage * 2 muzzles 
+
+            Damage = 4,
             DamageType = 'Normal',
-			
-            DisplayName = 'DeathRay',
-			
+
+            DisplayName = 'Disruption Beam',
+
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Seabed',
             },
-			
+
             FiringRandomness = 0,
             FiringTolerance = 0.2,
-			
+
             HeadingArcCenter = 90,
             HeadingArcRange = 100,
-			
+
             Label = 'RightGun',
-			
-            MaxRadius = 65,
-			
+
+            MaxRadius = 55,
+
 			MuzzleChargeDelay = 0.2,
 
 			NeedPrep = true,
-			
+
             DoNotCollideList = {'MISSILE','TORPEDO'},
-			
+
             RackBones = {
                 {
                     MuzzleBones = {'Right_Right_Muzzle','Right_Left_Muzzle'},
                     RackBone = 'right_barrel',
                 },
             },
-			
-            RateOfFire = 10/20,	-- 200 DPS Surface
-			
+
+            RateOfFire = 10/20,	-- 40 DPS Surface
+
 			RetargetOnMiss = true,
 
-			
+
             TargetPriorities = {
                 'SPECIALHIGHPRI',
                 'NAVAL EXPERIMENTAL',
@@ -243,21 +271,22 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
 
-			
+
             TurretBoneMuzzle = 'right_barrel',
             TurretBonePitch = 'right_barrel',
             TurretBoneYaw = 'right_turret',
-			
+
             TurretPitch = 0,
             TurretPitchRange = 80,
             TurretPitchSpeed = 30,
-			
+
             TurretYaw = 0,
             TurretYawRange = 120,
             TurretYawSpeed = 50,
-			
+
             Turreted = true,
         },
+        -- Left Death Ray: 4 dmg x 10 ticks x 2 muzzles x 0.5 RoF = 40 DPS (was 200)
         {
             AboveWaterTargetsOnly = true,
 
@@ -268,45 +297,45 @@ UnitBlueprint {
             },
 
             BallisticArc = 'RULEUBA_None',
-			
+
             BeamCollisionDelay = 0,
             BeamLifetime = 1.0,
 
-            CannotAttackGround = true,			
+            CannotAttackGround = true,
 
-            Damage = 20,	-- 200dmg * 2 muzzles = 400dmg
+            Damage = 4,
             DamageType = 'Normal',
-			
-            DisplayName = 'Death Ray',
-			
+
+            DisplayName = 'Disruption Beam',
+
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Seabed',
             },
-			
+
             FiringRandomness = 0,
             FiringTolerance = 2,
-			
+
             HeadingArcCenter = -90,
             HeadingArcRange = 100,
-			
+
             Label = 'LeftGun',
-			
-            MaxRadius = 65,
-			
+
+            MaxRadius = 55,
+
 			MuzzleChargeDelay = 0.2,
 
 			NeedPrep = true,
-			
+
 			DoNotCollideList = {'MISSILE','TORPEDO'},
-			
+
             RackBones = {
                 {
                     MuzzleBones = {'Left_Right_Muzzle','Left_Left_Muzzle'},
                     RackBone = 'left_barrel',
                 },
             },
-			
-            RateOfFire = 10/20,		-- 200 DPS Surface
+
+            RateOfFire = 10/20,		-- 40 DPS Surface
 
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -316,19 +345,19 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
 
-			
+
             TurretBoneMuzzle = 'left_barrel',
             TurretBonePitch = 'left_barrel',
             TurretBoneYaw = 'left_turret',
-			
+
             TurretPitch = 0,
             TurretPitchRange = 80,
             TurretPitchSpeed = 30,
-			
+
             TurretYaw = 0,
             TurretYawRange = 120,
             TurretYawSpeed = 50,
-			
+
             Turreted = true,
         },
 		
@@ -413,6 +442,7 @@ UnitBlueprint {
             Turreted = true,
         },
 
+        -- Ground Gun Toggle: 20 dmg x 6 muzzles x 0.5 RoF = 60 DPS (was 180)
         {
             AboveWaterTargetsOnly = true,
 
@@ -420,34 +450,34 @@ UnitBlueprint {
             Audio = {
                 Fire = Sound { Bank = 'URSWeapon', Cue = 'URS0202_Nano_Dart', LodCutoff = 'Weapon_LodCutoff' },
             },
-            
+
             BallisticArc = 'RULEUBA_None',
             CannotAttackGround = true,
             CollideFriendly = false,
-			
-            Damage = 60,
+
+            Damage = 20,
             DamageType = 'Normal',
-			
+
             DisplayName = 'Nanodart Launcher DF',
-			
+
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Seabed',
             },
-			
+
             FiringRandomness = 0.3,
             FiringTolerance = 2,
-			
+
             Label = 'GroundGun',
 
             LeadTarget = true,
-			
-            MaxRadius = 65,
-			
+
+            MaxRadius = 55,
+
             MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 6,
 
             MuzzleVelocity = 32,
-			
+
             ProjectileId = '/projectiles/CAANanoDart02/CAANanoDart02_proj.bp',
             ProjectileLifetime = 3,
 
@@ -466,8 +496,8 @@ UnitBlueprint {
             },
 
             RangeCategory = 'UWRC_DirectFire',
-			
-            RateOfFire = 10/20,		-- 180DPS Surface
+
+            RateOfFire = 10/20,		-- 60 DPS Surface (was 180)
 
 			
             TargetPriorities = {
