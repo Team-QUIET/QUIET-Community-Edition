@@ -1,0 +1,92 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "was0332",
+
+    ScriptClass = 'WAS0332',
+    ScriptModule = '/mods/QUIET-Community-Edition/units/WyvernBattlePack/WAS0332/WAS0332_Script.lua',
+
+    Defense = {
+        Shield = {
+            ImpactEffects = 'AeonShieldHit01',
+            ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
+            Mesh = '/effects/entities/AeonShield01/AeonShield01_mesh',
+            MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
+            RegenAssistMult = 60,
+
+            ShieldEnergyDrainRechargeTime = 5,
+            ShieldMaxHealth = 5000,
+            ShieldRechargeTime = 24,
+            ShieldRegenRate = 65,
+            ShieldRegenStartTime = 1,
+            ShieldSize = 16,
+            ShieldVerticalOffset = -2,
+
+            -- Shield projection radius for allied units
+            ShieldProjectionRadius = 50,
+        },
+
+        -- Shield spec for projected shields on allied units
+        TargetShield = {
+            ImpactEffects = 'AeonShieldHit01',
+            ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
+            Mesh = '/effects/entities/AeonShield01/AeonShield01_mesh',
+            MeshZ = '/effects/entities/Shield01/Shield01z_mesh',
+            RegenAssistMult = 60,
+
+            ShieldEnergyDrainRechargeTime = 10,
+            ShieldMaxHealth = 3500,
+            ShieldRechargeTime = 30,
+            ShieldRegenRate = 50,
+            ShieldRegenStartTime = 3,
+            ShieldSize = 8,
+            ShieldVerticalOffset = 0,
+        },
+    },
+
+    Display = {
+        Abilities = {
+            '<LOC ability_aa>Anti-Air',
+            '<LOC ability_shielddome>Shield Dome',
+            'Shield Projection: Projects shields onto nearby allied naval units',
+            '<LOC ability_radar>Radar',
+        },
+    },
+
+    Economy = {
+        MaintenanceConsumptionPerSecondEnergy = 400,
+    },
+
+    Weapon = {
+        -- Weapon 1: MainGun (Quantum Cannon front)
+        {},
+        -- Weapon 2: MainGun (Quantum Cannon front01)
+        {},
+        -- Weapon 3: MainGun (Quantum Cannon back)
+        {},
+        -- Weapon 4: AA Missile (Right)
+        {
+            HeadingArcCenter = 0,
+            HeadingArcRange = 180,
+            TurretYawRange = 180,
+        },
+        -- Weapon 5: AA Missile (Right01)
+        {
+            HeadingArcCenter = 0,
+            HeadingArcRange = 180,
+            TurretYawRange = 180,
+        },
+        -- Weapon 6: AA Missile (Left)
+        {
+            HeadingArcCenter = 0,
+            HeadingArcRange = 180,
+            TurretYawRange = 180,
+        },
+        -- Weapon 7: AA Missile (Left01)
+        {
+            HeadingArcCenter = 0,
+            HeadingArcRange = 180,
+            TurretYawRange = 180,
+        },
+    },
+}
+
