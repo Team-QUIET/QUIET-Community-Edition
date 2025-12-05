@@ -213,7 +213,7 @@ UnitBlueprint {
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
-                "(STRUCTURE * TECH3)"
+                "(STRUCTURE * TECH3)",
                 "(STRUCTURE * DEFENSE - ANTIMISSILE)",
                 "TECH3 MOBILE",
                 "TECH2 MOBILE",
@@ -276,8 +276,8 @@ UnitBlueprint {
 			
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'BOMBER'
-                'ANTINAVY'
+                'BOMBER',
+                'ANTINAVY',
                 'AIR MOBILE HIGHPRIAIR',
                 'AIR MOBILE',
             },
