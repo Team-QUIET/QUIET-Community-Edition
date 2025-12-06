@@ -1,47 +1,108 @@
 -- WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * QUIET Hook for Unit.lua' )
 -- This warning allows us to see exactly where our Hook Line starts so we can debug the exact line thats causing an error easier
 
+-- Helper function to identify HQ factory properties from categories
+local function GetHQFactoryInfo(cats)
+    if not cats then
+        return nil, nil, nil
+    end
+
+    local hasFactory = false
+    local hasStructure = false
+    local hasBuiltByT1 = false
+    local hasBuiltByT2 = false
+    local hasResearch = false
+    local hasTech2 = false
+    local hasTech3 = false
+    local hasLand = false
+    local hasAir = false
+    local hasNaval = false
+
+    -- Check all categories
+    for _, category in cats do
+        if category == 'FACTORY' then
+            hasFactory = true
+        elseif category == 'STRUCTURE' then
+            hasStructure = true
+        elseif category == 'BUILTBYTIER1FACTORY' then
+            hasBuiltByT1 = true
+        elseif category == 'BUILTBYTIER2FACTORY' then
+            hasBuiltByT2 = true
+        elseif category == 'RESEARCH' then
+            hasResearch = true
+        elseif category == 'TECH2' then
+            hasTech2 = true
+        elseif category == 'TECH3' then
+            hasTech3 = true
+        elseif category == 'LAND' then
+            hasLand = true
+        elseif category == 'AIR' then
+            hasAir = true
+        elseif category == 'NAVAL' then
+            hasNaval = true
+        end
+    end
+
+    -- Determine if this is an HQ factory
+    -- T2 HQ: BUILTBYTIER1FACTORY + FACTORY + STRUCTURE + TECH2 + RESEARCH + layer
+    -- T3 HQ: BUILTBYTIER2FACTORY + FACTORY + STRUCTURE + TECH3 + RESEARCH + layer
+    local isT2HQ = hasFactory and hasStructure and hasBuiltByT1 and hasResearch and hasTech2
+    local isT3HQ = hasFactory and hasStructure and hasBuiltByT2 and hasResearch and hasTech3
+    local isHQFactory = isT2HQ or isT3HQ
+
+    if not isHQFactory then
+        return false, nil, nil
+    end
+
+    -- Determine factory type
+    local factoryType = nil
+    if hasLand then
+        factoryType = "LAND"
+    elseif hasAir then
+        factoryType = "AIR"
+    elseif hasNaval then
+        factoryType = "NAVAL"
+    end
+
+    -- Determine tech level
+    local techLevel = nil
+    if hasTech2 then
+        techLevel = 2
+    elseif hasTech3 then
+        techLevel = 3
+    end
+
+    return isHQFactory, factoryType, techLevel
+end
+
 QCEUnit = Unit
 Unit = ClassUnit(QCEUnit) {
 
     DoTakeDamage = function(self, instigator, amount, vector, damageType)
-
-		local GetHealth = GetHealth
-	
+        local GetHealth = GetHealth
         local preAdjHealth = GetHealth(self)
-		
         AdjustHealth( self, instigator, -amount)
-		
+
         if GetHealth(self) < 1 then
-		
             if damageType == 'Reclaimed' then
-			
                 self:Destroy()
-				
             else
-			
                 local excessDamageRatio = 0.0
-				
                 -- Calculate the excess damage amount
                 local excess = preAdjHealth - amount
                 local maxHealth = EntityMethods.GetMaxHealth(self)
-				
+
                 if (excess < 0 and maxHealth > 0) then
-				
                     excessDamageRatio = -excess / maxHealth
-					
                 end
-				Kill( self, instigator, damageType, excessDamageRatio)
+                Kill( self, instigator, damageType, excessDamageRatio)
             end
-		end
-		
+        end
+
         -- Handle incoming OC damage for ACUs
         if damageType == 'Overcharge' and LOUDENTITY(categories.COMMAND, self) then
-
             local wep = instigator:GetWeaponByLabel('OverCharge')
-
             amount = wep:GetBlueprint().Overcharge.commandDamage
-            
         end
 
         -- Handle incoming OC damage for Structures
@@ -111,89 +172,113 @@ Unit = ClassUnit(QCEUnit) {
 
     -- Hook OnStopBeingBuilt to track HQ factory completion
     OnStopBeingBuilt = function(self, builder, layer)
-        -- Check if this is an HQ factory that just finished building using categories
+        -- Check if this is an HQ factory that just finished building
         local brain = self:GetAIBrain()
         local blueprint = self:GetBlueprint()
         local cats = blueprint.Categories
 
-        -- Check if this is an HQ factory using category search
-        -- T2 HQ factories have: BUILTBYTIER1FACTORY + FACTORY + STRUCTURE + TECH2 + RESEARCH + LAND/AIR/NAVAL
-        -- T3 HQ factories have: BUILTBYTIER2FACTORY + FACTORY + STRUCTURE + TECH3 + RESEARCH + LAND/AIR/NAVAL
-        local isHQFactory = false
-        local factoryType = nil
-        local techLevel = nil
+        local isHQFactory, factoryType, techLevel = GetHQFactoryInfo(cats)
 
-        if cats then
-            local hasFactory = false
-            local hasStructure = false
-            local hasBuiltByT1 = false
-            local hasBuiltByT2 = false
-            local hasResearch = false
-            local hasTech2 = false
-            local hasTech3 = false
-            local hasLand = false
-            local hasAir = false
-            local hasNaval = false
-
-            -- Check all categories
-            for _, category in cats do
-                if category == 'FACTORY' then
-                    hasFactory = true
-                elseif category == 'STRUCTURE' then
-                    hasStructure = true
-                elseif category == 'BUILTBYTIER1FACTORY' then
-                    hasBuiltByT1 = true
-                elseif category == 'BUILTBYTIER2FACTORY' then
-                    hasBuiltByT2 = true
-                elseif category == 'RESEARCH' then
-                    hasResearch = true
-                elseif category == 'TECH2' then
-                    hasTech2 = true
-                elseif category == 'TECH3' then
-                    hasTech3 = true
-                elseif category == 'LAND' then
-                    hasLand = true
-                elseif category == 'AIR' then
-                    hasAir = true
-                elseif category == 'NAVAL' then
-                    hasNaval = true
-                end
-            end
-
-            -- Determine if this is an HQ factory
-            -- T2 HQ: BUILTBYTIER1FACTORY + FACTORY + STRUCTURE + TECH2 + RESEARCH + layer
-            -- T3 HQ: BUILTBYTIER2FACTORY + FACTORY + STRUCTURE + TECH3 + RESEARCH + layer
-            local isT2HQ = hasFactory and hasStructure and hasBuiltByT1 and hasResearch and hasTech2
-            local isT3HQ = hasFactory and hasStructure and hasBuiltByT2 and hasResearch and hasTech3
-
-            isHQFactory = isT2HQ or isT3HQ
-
-            -- Determine factory type
-            if hasLand then
-                factoryType = "LAND"
-            elseif hasAir then
-                factoryType = "AIR"
-            elseif hasNaval then
-                factoryType = "NAVAL"
-            end
-
-            -- Determine tech level
-            if hasTech2 then
-                techLevel = 2
-            elseif hasTech3 then
-                techLevel = 3
-            end
-        end
+        --LOG("*QUIET* OnStopBeingBuilt - isHQFactory: " .. tostring(isHQFactory) ..
+        --    ", factoryType: " .. tostring(factoryType) ..
+        --    ", techLevel: " .. tostring(techLevel))
 
         if isHQFactory and factoryType and techLevel and brain then
-            -- Add HQ factory to brain tracking
-            brain:AddHQFactory(factoryType, "TECH" .. techLevel)
+            -- Store HQ factory info on the unit for use in OnKilled/OnReclaimed
+            self.IsHQFactory = true
+            self.HQFactoryType = factoryType
+            self.HQTechLevel = techLevel
 
-            --LOG("*QUIET* First " .. factoryType .. " T" .. techLevel ..
-            --    " HQ factory completed - Support Factories unlocked for player " .. brain:GetArmyIndex())
+            -- Check if brain has AddHQFactory method
+            if brain.AddHQFactory then
+                -- Add HQ factory to brain tracking
+                brain:AddHQFactory(factoryType, "TECH" .. techLevel)
+
+                --LOG("*QUIET* HQ Factory completed: " .. factoryType .. " T" .. techLevel ..
+                --    " for player " .. brain:GetArmyIndex())
+            else
+                LOG("*QUIET* ERROR: brain.AddHQFactory method not found!")
+            end
         end
 
         -- Call the original OnStopBeingBuilt method
         return QCEUnit.OnStopBeingBuilt(self, builder, layer)
+    end,
+
+    -- Hook OnKilled to track HQ factory destruction
+    OnKilled = function(self, instigator, type, overkillRatio)
+        -- Check if this was an HQ factory and notify the brain
+        if self.IsHQFactory and self.HQFactoryType and self.HQTechLevel then
+            local brain = self:GetAIBrain()
+            if brain and brain.RemoveHQFactory then
+                brain:RemoveHQFactory(self.HQFactoryType, "TECH" .. self.HQTechLevel)
+
+                --LOG("*QUIET* HQ Factory destroyed (killed): " .. self.HQFactoryType ..
+                --    " T" .. self.HQTechLevel .. " for player " .. brain:GetArmyIndex())
+            end
+        end
+
+        -- Call the original OnKilled method
+        return QCEUnit.OnKilled(self, instigator, type, overkillRatio)
+    end,
+
+    -- Hook OnReclaimed to track HQ factory reclamation (same as destruction for restrictions)
+    OnReclaimed = function(self, entity)
+        -- Check if this was an HQ factory and notify the brain
+        if self.IsHQFactory and self.HQFactoryType and self.HQTechLevel then
+            local brain = self:GetAIBrain()
+            if brain and brain.RemoveHQFactory then
+                brain:RemoveHQFactory(self.HQFactoryType, "TECH" .. self.HQTechLevel)
+
+                --LOG("*QUIET* HQ Factory reclaimed: " .. self.HQFactoryType ..
+                --    " T" .. self.HQTechLevel .. " for player " .. brain:GetArmyIndex())
+            end
+        end
+
+        -- Call the original OnReclaimed method if it exists
+        if QCEUnit.OnReclaimed then
+            return QCEUnit.OnReclaimed(self, entity)
+        end
+    end,
+
+    -- Hook OnCaptured to handle HQ factory capture (transfer ownership)
+    OnCaptured = function(self, captor)
+        -- If this was an HQ factory, remove it from the original owner's tracking
+        if self.IsHQFactory and self.HQFactoryType and self.HQTechLevel then
+            local originalBrain = self:GetAIBrain()
+            if originalBrain and originalBrain.RemoveHQFactory then
+                originalBrain:RemoveHQFactory(self.HQFactoryType, "TECH" .. self.HQTechLevel)
+
+                --LOG("*QUIET* HQ Factory captured (removed from original owner): " ..
+                --    self.HQFactoryType .. " T" .. self.HQTechLevel ..
+                --    " for player " .. originalBrain:GetArmyIndex())
+            end
+        end
+
+        -- Call the original OnCaptured method if it exists
+        if QCEUnit.OnCaptured then
+            return QCEUnit.OnCaptured(self, captor)
+        end
+    end,
+
+    -- Hook OnGiven to handle HQ factory being given to another player
+    OnGiven = function(self, newUnit)
+        -- The new unit will have OnStopBeingBuilt called automatically by the engine
+        -- which will add it to the new owner's tracking.
+        -- We need to remove it from the original owner's tracking here.
+        if self.IsHQFactory and self.HQFactoryType and self.HQTechLevel then
+            local originalBrain = self:GetAIBrain()
+            if originalBrain and originalBrain.RemoveHQFactory then
+                originalBrain:RemoveHQFactory(self.HQFactoryType, "TECH" .. self.HQTechLevel)
+
+                --LOG("*QUIET* HQ Factory given away: " .. self.HQFactoryType ..
+                --    " T" .. self.HQTechLevel .. " for player " .. originalBrain:GetArmyIndex())
+            end
+        end
+
+        -- Call the original OnGiven method if it exists
+        if QCEUnit.OnGiven then
+            return QCEUnit.OnGiven(self, newUnit)
+        end
     end,
 }
