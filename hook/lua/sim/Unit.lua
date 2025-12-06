@@ -170,19 +170,14 @@ Unit = ClassUnit(QCEUnit) {
     -- Called by the weapon class, these are expensive!
     OnLostTarget = function(self, Weapon) end,
 
-    -- Hook OnStartBuild to detect when an HQ factory is upgrading (will be replaced)
+    -- Hook OnStartBuild to detect when an HQ factory is upgrading
     OnStartBuild = function(self, unitBeingBuilt, order)
         -- Check if this HQ factory is upgrading to a higher tier
         if order == 'Upgrade' and self.IsHQFactory and self.HQFactoryType and self.HQTechLevel then
-            local brain = self:GetAIBrain()
-            if brain and brain.RemoveHQFactory then
-                -- Remove this HQ from tracking - it will be replaced by the upgraded version
-                brain:RemoveHQFactory(self.HQFactoryType, "TECH" .. self.HQTechLevel)
-                --LOG("*QUIET* HQ Factory upgrading, removing from tracking: " ..
-                --    self.HQFactoryType .. " T" .. self.HQTechLevel)
-            end
-            -- Clear the HQ factory flags so we don't try to remove it again on destruction
-            self.IsHQFactory = false
+            -- Mark that this HQ is upgrading, we'll handle removal when the new HQ finishes
+            self.IsUpgradingHQ = true
+            -- Transfer our HQ info to the unit being built so it knows it's an upgrade
+            unitBeingBuilt.UpgradedFromHQ = self
         end
 
         -- Call the original OnStartBuild method
@@ -207,6 +202,18 @@ Unit = ClassUnit(QCEUnit) {
             self.IsHQFactory = true
             self.HQFactoryType = factoryType
             self.HQTechLevel = techLevel
+
+            -- Check if this was an upgrade from an older HQ
+            if self.UpgradedFromHQ and self.UpgradedFromHQ.IsHQFactory then
+                local oldHQ = self.UpgradedFromHQ
+                -- Remove the old HQ from tracking BEFORE adding the new one
+                if brain.RemoveHQFactory then
+                    brain:RemoveHQFactory(oldHQ.HQFactoryType, "TECH" .. oldHQ.HQTechLevel)
+                end
+                -- Clear the old HQ's flags so it won't be removed again
+                oldHQ.IsHQFactory = false
+                self.UpgradedFromHQ = nil
+            end
 
             -- Check if brain has AddHQFactory method
             if brain.AddHQFactory then
