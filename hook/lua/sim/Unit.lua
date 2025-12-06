@@ -170,6 +170,25 @@ Unit = ClassUnit(QCEUnit) {
     -- Called by the weapon class, these are expensive!
     OnLostTarget = function(self, Weapon) end,
 
+    -- Hook OnStartBuild to detect when an HQ factory is upgrading (will be replaced)
+    OnStartBuild = function(self, unitBeingBuilt, order)
+        -- Check if this HQ factory is upgrading to a higher tier
+        if order == 'Upgrade' and self.IsHQFactory and self.HQFactoryType and self.HQTechLevel then
+            local brain = self:GetAIBrain()
+            if brain and brain.RemoveHQFactory then
+                -- Remove this HQ from tracking - it will be replaced by the upgraded version
+                brain:RemoveHQFactory(self.HQFactoryType, "TECH" .. self.HQTechLevel)
+                --LOG("*QUIET* HQ Factory upgrading, removing from tracking: " ..
+                --    self.HQFactoryType .. " T" .. self.HQTechLevel)
+            end
+            -- Clear the HQ factory flags so we don't try to remove it again on destruction
+            self.IsHQFactory = false
+        end
+
+        -- Call the original OnStartBuild method
+        return QCEUnit.OnStartBuild(self, unitBeingBuilt, order)
+    end,
+
     -- Hook OnStopBeingBuilt to track HQ factory completion
     OnStopBeingBuilt = function(self, builder, layer)
         -- Check if this is an HQ factory that just finished building

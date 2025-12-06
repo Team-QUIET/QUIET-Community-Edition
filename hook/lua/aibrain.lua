@@ -50,7 +50,6 @@ AIBrain = Class(QCEAIBrain) {
     -- Add HQ factory (called when HQ factory finishes building)
     AddHQFactory = function(self, layer, tech)
         if not self.HQFactoryCounts then
-            LOG("*QUIET* AddHQFactory: Initializing tracking for player " .. self:GetArmyIndex())
             self:InitializeHQFactoryTracking()
         end
 
@@ -58,9 +57,10 @@ AIBrain = Class(QCEAIBrain) {
             -- Increment count
             self.HQFactoryCounts[layer][tech] = self.HQFactoryCounts[layer][tech] + 1
 
-            --LOG("*QUIET* AddHQFactory: Added HQ Factory " .. layer .. " " .. tech ..
-            --    " for player " .. self:GetArmyIndex() ..
-            --    " (total: " .. self.HQFactoryCounts[layer][tech] .. ")")
+            -- T3 HQ also provides T2 capabilities, so increment T2 count as well
+            if tech == "TECH3" then
+                self.HQFactoryCounts[layer]["TECH2"] = self.HQFactoryCounts[layer]["TECH2"] + 1
+            end
 
             -- Unlock support factories and potentially T3 HQ factories
             self:UnlockHQCapabilities(layer, tech)
@@ -73,7 +73,6 @@ AIBrain = Class(QCEAIBrain) {
     -- Remove HQ factory (called when HQ factory is destroyed or reclaimed)
     RemoveHQFactory = function(self, layer, tech)
         if not self.HQFactoryCounts then
-            LOG("*QUIET* RemoveHQFactory: No tracking initialized for player " .. self:GetArmyIndex())
             return
         end
 
@@ -83,19 +82,20 @@ AIBrain = Class(QCEAIBrain) {
                 self.HQFactoryCounts[layer][tech] = self.HQFactoryCounts[layer][tech] - 1
             end
 
-            local newCount = self.HQFactoryCounts[layer][tech]
-
-            --LOG("*QUIET* RemoveHQFactory: Removed HQ Factory " .. layer .. " " .. tech ..
-            --    " for player " .. self:GetArmyIndex() ..
-            --    " (remaining: " .. newCount .. ")")
+            -- T3 HQ also provided T2 capabilities, so decrement T2 count as well
+            if tech == "TECH3" and self.HQFactoryCounts[layer]["TECH2"] > 0 then
+                self.HQFactoryCounts[layer]["TECH2"] = self.HQFactoryCounts[layer]["TECH2"] - 1
+            end
 
             -- If no HQ factories of this type remain, apply restrictions
-            if newCount == 0 then
+            if self.HQFactoryCounts[layer][tech] == 0 then
                 self:ApplyHQLossRestrictions(layer, tech)
             end
-        else
-            LOG("*QUIET* ERROR: Failed to remove HQ Factory " .. layer .. " " .. tech ..
-                " for player " .. self:GetArmyIndex() .. " - tracking not initialized properly")
+
+            -- Also check T2 count after T3 HQ loss (since T3 HQ contributed to T2 count)
+            if tech == "TECH3" and self.HQFactoryCounts[layer]["TECH2"] == 0 then
+                self:ApplyHQLossRestrictions(layer, "TECH2")
+            end
         end
     end,
 
@@ -112,29 +112,36 @@ AIBrain = Class(QCEAIBrain) {
             RemoveBuildRestriction(army,
                 categories[layer] * categories.TECH3 * categories.FACTORY * categories.STRUCTURE * categories.RESEARCH)
 
-            --LOG("*QUIET* UnlockHQCapabilities: Unlocked T2 support factories and T3 HQ for " ..
-            --    layer .. " for player " .. army)
+            -- Re-enable T2 mobile units (in case they were restricted from a previous HQ loss)
+            RemoveBuildRestriction(army,
+                categories.BUILTBYTIER2FACTORY * categories[layer] * (categories.MOBILE - categories.ENGINEER) * categories.TECH2)
         end
 
         if tech == "TECH3" then
             -- T3 HQ built: unlock T3 support factories for this layer
-            -- (Also ensures T2 support factories remain unlocked)
-            RemoveBuildRestriction(army,
-                categories[layer] * categories.TECH2 * categories.SUPPORTFACTORY)
             RemoveBuildRestriction(army,
                 categories[layer] * categories.TECH3 * categories.SUPPORTFACTORY)
 
-            --LOG("*QUIET* UnlockHQCapabilities: Unlocked T3 support factories for " ..
-            --    layer .. " for player " .. army)
+            -- Re-enable T3 mobile units (in case they were restricted from a previous HQ loss)
+            RemoveBuildRestriction(army,
+                categories.BUILTBYTIER3FACTORY * categories[layer] * (categories.MOBILE - categories.ENGINEER) * categories.TECH3)
+
+            -- T3 HQ also provides T2 capabilities, so unlock T2 as well
+            RemoveBuildRestriction(army,
+                categories[layer] * categories.TECH2 * categories.SUPPORTFACTORY)
+            RemoveBuildRestriction(army,
+                categories.BUILTBYTIER2FACTORY * categories[layer] * (categories.MOBILE - categories.ENGINEER) * categories.TECH2)
         end
     end,
 
     -- Apply restrictions when HQ is lost
+    -- Note: T3 HQ counts toward T2, so when T3 HQ is lost, RemoveHQFactory
+    -- will also call this for TECH2 if the T2 count reaches 0
     ApplyHQLossRestrictions = function(self, layer, tech)
         local army = self:GetArmyIndex()
 
         if tech == "TECH2" then
-            -- T2 HQ destroyed and no more T2 HQs of this layer:
+            -- No T2 HQs remaining (including T3 HQs which count toward T2)
             -- 1. Restrict building new T2 support factories
             AddBuildRestriction(army,
                 categories[layer] * categories.TECH2 * categories.SUPPORTFACTORY)
@@ -143,43 +150,27 @@ AIBrain = Class(QCEAIBrain) {
             AddBuildRestriction(army,
                 categories[layer] * categories.TECH3 * categories.FACTORY * categories.STRUCTURE * categories.RESEARCH)
 
-            -- 3. Restrict T2 units from being built by existing T2 support factories
-            -- This is done by restricting T2 mobile units built by T2 factories
+            -- 3. Restrict T2 mobile units (except engineers) from being built
             AddBuildRestriction(army,
-                categories.BUILTBYTIER2FACTORY * categories[layer] * categories.MOBILE * categories.TECH2)
+                categories.BUILTBYTIER2FACTORY * categories[layer] * (categories.MOBILE - categories.ENGINEER) * categories.TECH2)
 
-            -- 4. Also restrict T2 structures built by T2 factories for this layer
+            -- 4. Also restrict T3 support factories
             AddBuildRestriction(army,
-                categories.BUILTBYTIER2SUPPORTFACTORY * categories[layer] * categories.STRUCTURE)
-
-            -- 5. If there are no T3 HQs either, restrict T3 support factories too
-            if self.HQFactoryCounts[layer]["TECH3"] == 0 then
-                AddBuildRestriction(army,
-                    categories[layer] * categories.TECH3 * categories.SUPPORTFACTORY)
-            end
-
-            --LOG("*QUIET* ApplyHQLossRestrictions: Applied T2 HQ loss restrictions for " ..
-            --    layer .. " for player " .. army)
+                categories[layer] * categories.TECH3 * categories.SUPPORTFACTORY)
         end
 
         if tech == "TECH3" then
-            -- T3 HQ destroyed and no more T3 HQs of this layer:
+            -- No T3 HQs remaining
             -- 1. Restrict building new T3 support factories
             AddBuildRestriction(army,
                 categories[layer] * categories.TECH3 * categories.SUPPORTFACTORY)
 
-            -- 2. Restrict T3 units from being built by existing T3 support factories
+            -- 2. Restrict T3 mobile units (except engineers) from being built
             AddBuildRestriction(army,
-                categories.BUILTBYTIER3FACTORY * categories[layer] * categories.MOBILE * categories.TECH3)
+                categories.BUILTBYTIER3FACTORY * categories[layer] * (categories.MOBILE - categories.ENGINEER) * categories.TECH3)
 
-            -- 3. Also restrict T3 structures built by T3 factories for this layer
-            AddBuildRestriction(army,
-                categories.BUILTBYTIER3SUPPORTFACTORY * categories[layer] * categories.STRUCTURE)
-
-            -- Note: T2 capabilities should remain unaffected
-
-            --LOG("*QUIET* ApplyHQLossRestrictions: Applied T3 HQ loss restrictions for " ..
-            --    layer .. " for player " .. army)
+            -- Note: T2 restrictions are handled separately by RemoveHQFactory
+            -- which calls ApplyHQLossRestrictions for TECH2 if T2 count reaches 0
         end
     end,
 
