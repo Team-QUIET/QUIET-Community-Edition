@@ -175,8 +175,8 @@ UnitBlueprint {
 			DoTPulses = 5,
 			DoTTime = 3,
 
-            EnergyDrainPerSecond = 40,
-            EnergyRequired = 240,
+            EnergyDrainPerSecond = 100,
+            EnergyRequired = 380,
 
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',

@@ -179,8 +179,8 @@ UnitBlueprint {
 
             DisplayName = 'Thaam-atha Artillery Cannon',
 
-            EnergyDrainPerSecond = 30,
-            EnergyRequired = 180,
+            EnergyDrainPerSecond = 100,
+            EnergyRequired = 380,
 
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',

@@ -154,8 +154,8 @@ UnitBlueprint {
 
             DisplayName = 'Poker Artillery',
 
-            EnergyDrainPerSecond = 38,
-            EnergyRequired = 228,
+            EnergyDrainPerSecond = 100,
+            EnergyRequired = 380,
 
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',

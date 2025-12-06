@@ -159,8 +159,8 @@ UnitBlueprint {
 
             DisplayName = 'Resonance Artillery',
 
-            EnergyDrainPerSecond = 39,
-            EnergyRequired = 234,
+            EnergyDrainPerSecond = 100,
+            EnergyRequired = 380,
 
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
