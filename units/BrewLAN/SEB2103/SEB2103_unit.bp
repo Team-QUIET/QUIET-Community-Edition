@@ -146,31 +146,31 @@ UnitBlueprint {
             
             CollideFriendly = false,
 			
-            Damage = 330,                      -- 10% factional bonus
+            Damage = 330,
             DamageFriendly = true,
             DamageRadius = 1.5,
-            
+
             DamageType = 'ShieldMult1.2',       -- partial factional bonus
 
             DisplayName = 'Poker Artillery',
-			
-            EnergyDrainPerSecond = 38,		-- 4 second charge
-            EnergyRequired = 152,
-			
+
+            EnergyDrainPerSecond = 38,
+            EnergyRequired = 228,
+
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
                 Water = 'Land|Water|Seabed',
             },
-			
-            FiringRandomness = 1,
+
+            FiringRandomness = 1.5,
             FiringTolerance = 0.3,
-			
+
             Label = 'MainGun',
-			
-            MaxRadius = 55,
+
+            MaxRadius = 42,
             MinRadius = 5,
 
-            MuzzleVelocity = 18,
+            MuzzleVelocity = 15,
 			MuzzleVelocityReduceDistance = 50,
 			
             ProjectileId = '/projectiles/TIFArtillery01/TIFArtillery01_proj.bp',
@@ -191,7 +191,7 @@ UnitBlueprint {
 			
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 10/25,
+            RateOfFire = 10/38,
 			RenderFireClock = true,
 
             TargetPriorities = {

@@ -3,8 +3,8 @@ UnitBlueprint {
     BlueprintId = "ual0103",
 
     AI = {
-		GuardReturnRadius = 50,
-        GuardScanRadius = 36,
+		GuardReturnRadius = 52,
+        GuardScanRadius = 42,
     },
 
     Audio = {
@@ -157,22 +157,22 @@ UnitBlueprint {
             DamageFriendly = false,
             DamageRadius = 0.5,
             DamageType = 'Normal',
-			
+
             DisplayName = 'Concussion Artillery',
-			
+
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water',
             },
-			
+
             FiringRandomness = 0.35,
             FiringTolerance = 3,
-			
+
             Label = 'MainGun',
-			
-            MaxRadius = 37,
+
+            MaxRadius = 42,
             MinRadius = 5,
-	
-            MuzzleVelocity = 15,
+
+            MuzzleVelocity = 18,
             MuzzleVelocityReduceDistance = 28,
             ProjectileId = '/projectiles/AIFMortar01/AIFMortar01_proj.bp',
 			ProjectileLifetimeUsesMultiplier = 3,
@@ -216,7 +216,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
 
-			
+
             TurretBoneMuzzle = 'Turret_Muzzle',
             TurretBonePitch = 'Turret_Barrel',
             TurretBoneYaw = 'Turret_Barrel',

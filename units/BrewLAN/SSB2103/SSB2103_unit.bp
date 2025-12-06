@@ -174,30 +174,30 @@ UnitBlueprint {
             Damage = 300,
             DamageFriendly = true,
             DamageRadius = 1.25,
-            
+
             DamageType = 'ShieldMult1.3',       -- factional bonus
-			
+
             DisplayName = 'Thaam-atha Artillery Cannon',
-			
-            EnergyDrainPerSecond = 30,      -- 4 second charge
-            EnergyRequired = 119,
-			
+
+            EnergyDrainPerSecond = 30,
+            EnergyRequired = 180,
+
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
                 Water = 'Land|Water|Seabed',
             },
-			
-            FiringRandomness = 0.9,
+
+            FiringRandomness = 1.5,
             FiringTolerance = 0.3,
-			
+
             Label = 'MainGun',
-			
-            MaxRadius = 55,
+
+            MaxRadius = 42,
             MinRadius = 5,
-			
+
             MuzzleChargeDelay = 0.5,
 
-            MuzzleVelocity = 18,
+            MuzzleVelocity = 15,
 			MuzzleVelocityReduceDistance = 50,
 			
             ProjectileId = '/projectiles/SIFZthuthaamArtilleryShell02/SIFZthuthaamArtilleryShell02_proj.bp',
@@ -216,7 +216,7 @@ UnitBlueprint {
 			
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 10/25,
+            RateOfFire = 10/38,
 			RenderFireClock = true,
 
             TargetPriorities = {

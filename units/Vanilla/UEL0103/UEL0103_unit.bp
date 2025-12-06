@@ -3,8 +3,8 @@ UnitBlueprint {
     BlueprintId = "uel0103",
 
     AI = {
-		GuardReturnRadius = 48,
-        GuardScanRadius = 36,
+		GuardReturnRadius = 52,
+        GuardScanRadius = 42,
     },
 
     Audio = {
@@ -160,23 +160,23 @@ UnitBlueprint {
             DamageFriendly = false,
             DamageRadius = 1,
             DamageType = 'Normal',
-			
+
             DisplayName = 'Fragmentation Artillery',
-			
+
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water',
             },
-			
+
             FiringRandomness = 0.5,
 			FiringTolerance = 2,
-			
+
             Label = 'MainGun',
-			
-            MaxRadius = 37,
+
+            MaxRadius = 42,
             MinRadius = 5,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 14,
+            MuzzleVelocity = 18,
             MuzzleVelocityReduceDistance = 28,
 			ProjectileId = '/projectiles/TIFFragmentationSensorShell01/TIFFragmentationSensorShell01_proj.bp',
 			ProjectileLifetimeUsesMultiplier = 3,

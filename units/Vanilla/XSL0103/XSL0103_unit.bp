@@ -3,8 +3,8 @@ UnitBlueprint {
     Source = '/units/XSL0103/XSL0103_unit.bp', 
 
     AI = {
-		GuardReturnRadius = 45,
-        GuardScanRadius = 37,
+		GuardReturnRadius = 52,
+        GuardScanRadius = 42,
     },
 
     Audio = {
@@ -177,23 +177,23 @@ UnitBlueprint {
             DamageFriendly = false,
             DamageRadius = 1.5,
             DamageType = 'Normal',
-			
+
             DisplayName = 'Cannon',
-			
+
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water',
                 Water = 'Land|Water',
             },
-			
+
             FiringRandomness = 1,
             FiringTolerance = 1,
-			
+
             Label = 'MainGun',
-			
-            MaxRadius = 37,
+
+            MaxRadius = 42,
             MinRadius = 5,
 
-            MuzzleVelocity = 14,
+            MuzzleVelocity = 18,
             MuzzleVelocityReduceDistance = 28,
 			ProjectileId = '/projectiles/SIFThunthoArtilleryShell01/SIFThunthoArtilleryShell01_proj.bp',
 			ProjectileLifetimeUsesMultiplier = 3,
@@ -239,7 +239,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
 
-			
+
             TurretBoneMuzzle = 'Turret_Muzzle',
             TurretBonePitch = 'Turret',
             TurretBoneYaw = 'Turret',

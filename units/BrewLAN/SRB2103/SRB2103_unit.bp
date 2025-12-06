@@ -156,26 +156,26 @@ UnitBlueprint {
             DamageFriendly = true,
             DamageRadius = 1.5,
             DamageType = 'Normal',
-			
+
             DisplayName = 'Resonance Artillery',
-			
-            EnergyDrainPerSecond = 39,	-- 4 second charge
-            EnergyRequired = 156,
-			
+
+            EnergyDrainPerSecond = 39,
+            EnergyRequired = 234,
+
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
                 Water = 'Land|Water|Seabed',
             },
-			
-            FiringRandomness = 1,
+
+            FiringRandomness = 1.5,
             FiringTolerance = 0.3,
-			
+
             Label = 'MainGun',
-			
-            MaxRadius = 55,
+
+            MaxRadius = 42,
             MinRadius = 5,
 
-            MuzzleVelocity = 18,
+            MuzzleVelocity = 15,
 			MuzzleVelocityReduceDistance = 50,
 			
             ProjectileId = '/projectiles/CIFMolecularResonanceShell01/CIFMolecularResonanceShell01_proj.bp',
@@ -194,7 +194,7 @@ UnitBlueprint {
 			
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 10/25,
+            RateOfFire = 10/38,
 			RenderFireClock = true,
 
             TargetPriorities = {
