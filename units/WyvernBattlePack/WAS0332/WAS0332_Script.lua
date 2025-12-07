@@ -30,28 +30,46 @@ WAS0332 = ClassUnit(SeaUnit) {
         self.BaseEnergyMaint = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy or 100
         self.CurrentProjectionEnergy = 0
 
+        -- Enable personal shield on spawn
+        if self.MyShield then
+            self.MyShield:TurnOn()
+        end
+
         -- Start shield projection thread
         self:ForkThread(self.ShieldProjectionThread)
     end,
 
     -- Get energy cost for shielding a specific unit
     GetUnitShieldCost = function(self, unit)
+        if not unit or unit.Dead then
+            return EnergyCostPerUnitType.DEFAULT
+        end
+
         local bp = unit:GetBlueprint()
+        if not bp or not bp.Categories then
+            return EnergyCostPerUnitType.DEFAULT
+        end
+
+        -- Build category lookup from blueprint
+        local cats = {}
+        for _, cat in bp.Categories do
+            cats[cat] = true
+        end
 
         -- Check categories in order of specificity
-        if EntityCategoryContains(categories.BATTLESHIP, unit) then
+        if cats['BATTLESHIP'] then
             return EnergyCostPerUnitType.BATTLESHIP
-        elseif EntityCategoryContains(categories.BATTLECRUISER, unit) then
+        elseif cats['BATTLECRUISER'] then
             return EnergyCostPerUnitType.BATTLECRUISER
-        elseif EntityCategoryContains(categories.CARRIER, unit) then
+        elseif cats['CARRIER'] then
             return EnergyCostPerUnitType.CARRIER
-        elseif EntityCategoryContains(categories.CRUISER, unit) then
+        elseif cats['CRUISER'] then
             return EnergyCostPerUnitType.CRUISER
-        elseif EntityCategoryContains(categories.DESTROYER, unit) then
+        elseif cats['DESTROYER'] then
             return EnergyCostPerUnitType.DESTROYER
-        elseif EntityCategoryContains(categories.FRIGATE, unit) then
+        elseif cats['FRIGATE'] then
             return EnergyCostPerUnitType.FRIGATE
-        elseif EntityCategoryContains(categories.SUBMARINE, unit) then
+        elseif cats['SUBMARINE'] then
             return EnergyCostPerUnitType.SUBMARINE
         else
             return EnergyCostPerUnitType.DEFAULT
@@ -61,15 +79,22 @@ WAS0332 = ClassUnit(SeaUnit) {
     -- Calculate total energy for all projected units
     UpdateProjectionEnergy = function(self)
         local totalCost = 0
+        local unitsToRemove = {}
 
         for entityId, unit in self.ProjectedUnits do
-            if unit and not unit.Dead then
+            if unit and not unit.Dead and unit.GetBlueprint then
                 totalCost = totalCost + self:GetUnitShieldCost(unit)
+            else
+                table.insert(unitsToRemove, entityId)
             end
         end
 
-        self.CurrentProjectionEnergy = totalCost
+        for _, entityId in unitsToRemove do
+            self.ProjectedUnits[entityId] = nil
+        end
 
+        self.CurrentProjectionEnergy = totalCost
+        
         -- Set new energy consumption (base + projection costs)
         local newEnergy = self.BaseEnergyMaint + totalCost
         self:SetConsumptionPerSecondEnergy(newEnergy)
@@ -80,13 +105,14 @@ WAS0332 = ClassUnit(SeaUnit) {
         local aiBrain = self:GetAIBrain()
         local bp = self:GetBlueprint()
         local projectionRadius = bp.Defense.Shield.ShieldProjectionRadius or 50
+        local maxShieldedUnits = bp.Defense.Shield.MaxShieldedUnits or 6
 
         -- Wait for shield to initialize
         WaitTicks(20)
 
         while not self.Dead do
-            -- Find allied naval units within projection radius (exclude self)
-            local allunits = aiBrain:GetUnitsAroundPoint(categories.NAVAL, self:GetPosition(), projectionRadius, 'Ally')
+            -- Find allied naval units within projection radius (exclude self and structures)
+            local allunits = aiBrain:GetUnitsAroundPoint(categories.NAVAL - categories.STRUCTURE, self:GetPosition(), projectionRadius, 'Ally')
             local targetunits = {}
 
             for i, unit in allunits do
@@ -111,11 +137,21 @@ WAS0332 = ClassUnit(SeaUnit) {
                     end
                 end
 
-                -- Project shields onto allies that don't have one from us
+                -- Count current projections
+                local currentCount = 0
+                for _ in self.ProjectedUnits do
+                    currentCount = currentCount + 1
+                end
+
+                -- Project shields onto allies that don't have one from us (up to cap)
                 for i, unit in targetunits do
+                    if currentCount >= maxShieldedUnits then
+                        break
+                    end
                     if not (unit.Projectors and unit.Projectors[self:GetEntityId()])
                        and not unit.MyShield then
                         self:CreateProjectedShieldBubble(unit)
+                        currentCount = currentCount + 1
                     end
                 end
 
