@@ -125,6 +125,9 @@ WAS0332 = ClassUnit(SeaUnit) {
 
             local hasTargets = table.getn(targetunits) > 0
 
+            -- Clean up projections on units that moved out of range
+            self:CleanupOutOfRangeProjections(projectionRadius)
+
             if hasTargets then
                 -- We have allies to project to
                 if not self.IsProjectingShields then
@@ -154,9 +157,6 @@ WAS0332 = ClassUnit(SeaUnit) {
                         currentCount = currentCount + 1
                     end
                 end
-
-                -- Clean up projections on units that moved out of range
-                self:CleanupOutOfRangeProjections(projectionRadius)
 
                 -- Update energy consumption based on what we're shielding
                 self:UpdateProjectionEnergy()
