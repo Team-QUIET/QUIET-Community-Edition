@@ -149,8 +149,8 @@ UnitBlueprint {
     Intel = {
 		FreeIntel = true,
 
-        RadarStealth = true,
-        SonarStealth = true,
+        RadarStealth = false,
+        SonarStealth = false,
 
         SonarRadius = 72,
         VisionRadius = 44,
@@ -169,9 +169,7 @@ UnitBlueprint {
     Physics = {
         BankingSlope = 0,
         BuildOnLayerCaps = {
-            LAYER_Land = true,
-            LAYER_Seabed = true,
-            LAYER_Sub = true,
+            LAYER_Water = true,
         },
         DragCoefficient = 0.2,
         FlattenSkirt = true,
@@ -248,7 +246,7 @@ UnitBlueprint {
 			
             Label = 'Torpedo',
 			
-            MaxRadius = 92,
+            MaxRadius = 76,
 			
             MuzzleSalvoDelay = 0.5,
             MuzzleSalvoSize = 4,

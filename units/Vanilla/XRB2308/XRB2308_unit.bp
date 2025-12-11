@@ -2,6 +2,9 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = 'xrb2308',
 
+    ScriptClass = 'XRB2308',
+    ScriptModule = '/mods/QUIET-Community-Edition/units/Vanilla/XRB2308/XRB2308_Script.lua',
+
     AI = {
         TargetBones = {'Turret_Barrel'},
     },
