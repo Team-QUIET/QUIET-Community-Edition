@@ -1,0 +1,294 @@
+UnitBlueprint {
+
+    BuildIconSortPriority = 310,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER4COMMANDER',
+        'UEF',
+        'MOBILE',
+        'NAVAL',
+        'EXPERIMENTAL',
+        'SUBMERSIBLE',
+        'AIRSTAGINGPLATFORM',
+        'CARRIER',
+        'NEEDMOBILEBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'DRAGBUILD',
+        'FACTORY',
+        'NAVALCARRIER',
+        'SHOWQUEUE',
+        'OVERLAYRADAR',
+        'OVERLAYSONAR',
+        'OVERLAYOMNI',
+    },
+	
+    CollisionOffsetY = -0.375,
+    CollisionOffsetZ = 0.4,
+	
+    Defense = {
+
+        MissileTorpDestroy = { AttachBone = {'Front_Left_Projectile02','Front_Right_Projectile01','AA_Point'}, Radius = 3.5, RedirectRateOfFire = 9, ProjectileCategories = {'TORPEDO'} },
+
+        ArmorType = 'Normal',
+
+        EconomyThreatLevel = 200,
+
+        Health = 33550,
+        MaxHealth = 33550,
+        RegenRate = 24,
+
+        AirThreatLevel = 88,
+        SubThreatLevel = 46,
+    },
+	
+
+        Abilities = {
+            '<LOC ability_airstaging>Air Staging',
+            '<LOC ability_carrier>Carrier',
+            '<LOC ability_omni>Omni Sensor',
+            '<LOC ability_radar>Radar',
+            '<LOC ability_sonar>Sonar',
+            '<LOC ability_submersible>Submersible',
+        },
+		
+
+    Economy = {
+        BuildCostEnergy = 345000,
+        BuildCostMass = 24750,
+        BuildRate = 200,
+        BuildTime = 38500,
+		
+        BuildableCategory = {
+			'BUILTBYTIER2FACTORY UEF MOBILE AIR',
+            'BUILTBYTIER3FACTORY UEF MOBILE AIR',
+        },
+    },
+		
+	
+    Intel = {
+		FreeIntel = true,
+
+		OmniRadius = 32,
+        RadarRadius = 144,
+        SonarRadius = 80,
+
+		RadarStealth = true,
+		SonarStealth = true,
+
+        VisionRadius = 44,
+        WaterVisionRadius = 48,
+    },
+	
+    Interface = {
+        HelpText = 'Experimental Aircraft Carrier',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 10.5,
+    LifeBarSize = 5,
+	
+    Physics = {
+        BackUpDistance = 12,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Sub = true,
+            LAYER_Water = true,
+        },
+        CatchUpAcc = 8,
+        DragCoefficient = 0.2,
+        Elevation = -3.5,
+        MaxAcceleration = 1.25,
+        MaxBrake = 3.6,
+        MaxSpeed = 4.0,
+        MaxSpeedReverse = 4.0,
+        MaxSteerForce = 5,
+        MeshExtentsX = 1.4,
+        MeshExtentsY = 1.15,
+        MeshExtentsZ = 10,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_SurfacingSub',
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -2.5,
+        SkirtSizeX = 5,
+        SkirtSizeZ = 10.5,
+        TurnRadius = 18,
+        TurnRate = 20,
+    },
+	
+    SelectionSizeX = 1.5,
+    SelectionSizeZ = 8.0,
+    SelectionThickness = 0.14,
+	
+    SizeX = 1.8,
+    SizeY = 1.5,
+    SizeZ = 9.5,
+	
+    StrategicIconName = 'icon_sub4_air',
+    StrategicIconSortPriority = 45,
+	
+    Transport = {
+        ClassGenericUpTo = 3,
+        StorageSlots = 100,
+        TransportClass = 10,
+    },
+	
+    Veteran = {
+        Level1 = 20,
+        Level2 = 40,
+        Level3 = 60,
+        Level4 = 80,
+        Level5 = 100,
+    },
+	
+    Weapon = {
+        {
+            advancedTracking = true,
+            
+            Audio = {
+                Fire = Sound { Bank = 'XES_Weapons', Cue = 'XES0102_Angler_Torpedo', LodCutoff = 'Weapon_LodCutoff' },			
+                FireUnderWater = Sound { Bank = 'UESWeapon', Cue = 'UES0401_Torpedo', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+			
+            Buffs = {
+            	{
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 0.3,
+                    Radius = 2,
+                    TargetAllow = 'LAND TECH1,NAVAL TECH1,LAND TECH2',
+                    TargetDisallow = 'WALL,COMMAND,EXPERIMENTAL',
+                },
+            },
+
+            CollideFriendly = false,
+			
+            Damage = 350,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'LR Angler Torpedo',
+			
+            FireTargetLayerCapsTable = {
+                Sub = 'Seabed|Sub|Water',
+                Water = 'Seabed|Sub|Water',
+            },
+			
+            FiringRandomness = 15,
+            FiringTolerance = 60,
+			
+            Label = 'Torpedo',
+			
+            MaxRadius = 64,
+			
+            MuzzleSalvoDelay = 0.5,
+            MuzzleSalvoSize = 4,
+
+            MuzzleVelocity = 5,
+            MuzzleVelocityRandom = 1,
+			
+            ProjectileId = '/projectiles/TANAnglerTorpedo01/TANAnglerTorpedo01_proj.bp',
+            ProjectileLifetime = 8.5,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'Front_Right_Projectile01',
+                        'Front_Left_Projectile01',
+                        'Front_Right_Projectile02',
+                        'Front_Left_Projectile02',
+                    },
+                    RackBone = 'Front_Right_Projectile01',
+                },
+            },
+            
+            RackSalvoReloadTime = 1.5,
+
+            RangeCategory = 'UWRC_AntiNavy',
+			
+            RateOfFire = 1,		-- 1400 every 3 = 466 DPS Sub
+
+            TargetPriorities = {
+                'SUBMARINE',
+                'ALLUNITS -WALL',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
+
+            Turreted = false,
+        },
+		
+        {
+            advancedTracking = true,
+
+
+            Audio = {
+                Fire = Sound { Bank = 'UESWeapon', Cue = 'UES0401_Missile_Flayer', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 440,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Flayer SAM Launcher',
+			
+            FireTargetLayerCapsTable = {
+                Water = 'Air',
+            },
+
+            FiringTolerance = 100,
+			
+            Label = 'AA',
+			
+            MaxRadius = 52,
+			
+            MuzzleSalvoDelay = 0.3,
+            MuzzleSalvoSize = 4,
+
+            MuzzleVelocity = 35,
+			
+            ProjectileId = '/projectiles/TAAMissileFlayer01/TAAMissileFlayer01_proj.bp',
+            ProjectileLifetime = 4.8,
+
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'Upgrade_Weapon_Point01',
+                        'Upgrade_Weapon_Point02',
+                        'Upgrade_Weapon_Point03',
+                        'Upgrade_Weapon_Point04',
+                    },
+                    RackBone = 'Upgrade_Weapon_Point01',
+                },
+            },
+
+            RackSalvoReloadTime = 1.3,      -- 2.5 second cycle
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 1,		-- 1760/2 =  880 DPS Air
+
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'HIGHPRIAIR',
+                'BOMBER',
+                'TORPEDOBOMBER',
+                'GROUNDATTACK',
+                'AIR MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR',
+
+			
+            Turreted = false,
+        },
+
+    },
+}
