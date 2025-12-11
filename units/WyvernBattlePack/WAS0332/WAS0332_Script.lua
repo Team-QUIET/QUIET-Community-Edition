@@ -5,6 +5,7 @@ local SDFAireauBolterWeapon = SeraphimWeapons.SDFAireauBolterWeapon
 
 -- Energy cost multipliers per unit type
 local EnergyCostPerUnitType = {
+    EXPERIMENTAL = 400,
     BATTLESHIP = 200,
     BATTLECRUISER = 150,
     CARRIER = 150,
@@ -57,7 +58,9 @@ WAS0332 = ClassUnit(SeaUnit) {
         end
 
         -- Check categories in order of specificity
-        if cats['BATTLESHIP'] then
+        if cats['EXPERIMENTAL'] then
+            return EnergyCostPerUnitType.EXPERIMENTAL
+        elseif cats['BATTLESHIP'] then
             return EnergyCostPerUnitType.BATTLESHIP
         elseif cats['BATTLECRUISER'] then
             return EnergyCostPerUnitType.BATTLECRUISER
@@ -128,52 +131,51 @@ WAS0332 = ClassUnit(SeaUnit) {
             -- Clean up projections on units that moved out of range
             self:CleanupOutOfRangeProjections(projectionRadius)
 
+            -- Count current projections after cleanup
+            local currentCount = 0
+            for _ in self.ProjectedUnits do
+                currentCount = currentCount + 1
+            end
+
             if hasTargets then
-                -- We have allies to project to
-                if not self.IsProjectingShields then
-                    -- Start projecting - disable personal shield
-                    self.IsProjectingShields = true
-
-                    -- Disable personal shield
-                    if self.MyShield then
-                        self.MyShield:TurnOff()
-                    end
-                end
-
-                -- Count current projections
-                local currentCount = 0
-                for _ in self.ProjectedUnits do
-                    currentCount = currentCount + 1
-                end
-
                 -- Project shields onto allies that don't have one from us (up to cap)
                 for i, unit in targetunits do
                     if currentCount >= maxShieldedUnits then
                         break
                     end
+                    -- Skip units we're already projecting to or that have their own shield
                     if not (unit.Projectors and unit.Projectors[self:GetEntityId()])
                        and not unit.MyShield then
                         self:CreateProjectedShieldBubble(unit)
                         currentCount = currentCount + 1
                     end
                 end
+            end
 
-                -- Update energy consumption based on what we're shielding
+            -- Check if we're actually projecting to anyone
+            local actuallyProjecting = false
+            for _ in self.ProjectedUnits do
+                actuallyProjecting = true
+                break
+            end
+
+            if actuallyProjecting then
+                -- We are projecting - disable personal shield
+                if not self.IsProjectingShields then
+                    self.IsProjectingShields = true
+                    if self.MyShield then
+                        self.MyShield:TurnOff()
+                    end
+                end
                 self:UpdateProjectionEnergy()
-
             else
-                -- No allies nearby
+                -- Not projecting to anyone - enable personal shield
                 if self.IsProjectingShields then
-                    -- Stop projecting - enable personal shield
                     self:ClearAllProjections()
                     self.IsProjectingShields = false
-
-                    -- Re-enable personal shield
                     if self.MyShield then
                         self.MyShield:TurnOn()
                     end
-
-                    -- Reset energy to base
                     self:UpdateProjectionEnergy()
                 end
             end
@@ -189,6 +191,12 @@ WAS0332 = ClassUnit(SeaUnit) {
         if targetShieldSpec and not target.Dead then
             -- Create shield on target unit
             target:CreateProjectedShield(targetShieldSpec)
+
+            -- Factory units (like Tempest) don't auto-enable shields, for some dumb ass reason
+            if target.MyShield and EntityCategoryContains(categories.FACTORY, target) then
+                target:SetFocusEntity(target.MyShield)
+                target:EnableShield()
+            end
 
             -- Track this projector on the target
             if not target.Projectors then target.Projectors = {} end
