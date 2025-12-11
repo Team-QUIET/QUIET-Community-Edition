@@ -51,6 +51,8 @@ BSS0306 = ClassUnit(SSeaUnit) {
 
         self.Trash:Add(CreateRotator(self, 'Orb_Spinner', 'y', nil, 90, 0, 0))
 
+        IssueDive({self})
+
         local army = self.Army
         local CreateAttachedEmitter = CreateAttachedEmitter
 
