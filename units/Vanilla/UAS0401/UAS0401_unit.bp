@@ -1,0 +1,501 @@
+UnitBlueprint {
+    Source = '/units/UAS0401/UAS0401_unit.bp', 
+
+    ScriptModule = '/mods/QUIET-Community-Edition/units/Vanilla/UAS0401/UAS0401_Script.lua',
+    ScriptClass = 'UAS0401',
+    
+    AI = {
+        GuardScanRadius = 68,
+        TargetBones = {'UAS0401','Turret','Pontoon','Door'},
+
+        AssistHeartbeatInterval = 1,
+        DroneControlRange = 110,
+        DroneReturnRange = 60,
+        AirMonitorRange = 70,
+    },
+
+    Audio = {
+        Close                       = Sound { Bank = 'UAS', Cue = 'UAS0401_Doors_Close', LodCutoff = 'UnitMove_LodCutoff' },
+        Open                        = Sound { Bank = 'UAS', Cue = 'UAS0401_Doors_Open', LodCutoff = 'UnitMove_LodCutoff' },
+
+		EnemyUnitDetectedAeon       = Sound { Bank = 'XGG', Cue = 'XGG_HQ_GD1_04187' },
+		EnemyUnitDetectedUEF        = Sound { Bank = 'XGG', Cue = 'XGG_HQ_GD1_04187' },
+		EnemyUnitDetectedCybran     = Sound { Bank = 'XGG', Cue = 'XGG_HQ_GD1_04187' },
+
+        StartMove                   = Sound { Bank = 'UAS', Cue = 'UAS0401_Move_Start', LodCutoff = 'UnitMove_LodCutoff' },
+        StartMoveSub                = Sound { Bank = 'UAS', Cue = 'UAS0401_Move_Start', LodCutoff = 'UnitMove_LodCutoff' },
+        SubmergeStart               = Sound { Bank = 'UAS', Cue = 'UAS0401_Submerge', LodCutoff = 'UnitMove_LodCutoff' },
+        SurfaceStart                = Sound { Bank = 'UAS', Cue = 'UAS0401_Surface', LodCutoff = 'UnitMove_LodCutoff' },
+
+        Killed                      = Sound { Bank = 'UASDestroy', Cue = 'UAS0401_Destroy', LodCutoff = 'UnitMove_LodCutoff' },
+
+        UISelection                 = Sound { Bank = 'Interface', Cue = 'Aeon_Select_Naval', LodCutoff = 'UnitMove_LodCutoff' },
+    },
+
+    Buffs = {
+        Regen = {
+            Level1 = 10,
+            Level2 = 20,
+            Level3 = 30,
+            Level4 = 40,
+            Level5 = 50,
+        },
+        WaterVisionRadius = {
+            Level1 = 2,
+            Level2 = 4,
+            Level3 = 6,
+            Level4 = 8,
+            Level5 = 10,
+        },
+        VisionRadius = {
+            Level1 = 2,
+            Level2 = 4,
+            Level3 = 6,
+            Level4 = 8,
+            Level5 = 10,
+        },
+    },
+
+    BlueprintId = "uas0401",
+    BuildIconSortPriority = 320,
+
+    Categories = {
+        'SELECTABLE',
+		'BUILTBYTIER4COMMANDER',
+        'AEON',
+        'MOBILE',
+        'NAVAL',
+        'EXPERIMENTAL',
+        'FACTORY',
+        'NEEDMOBILEBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SHOWATTACKRETICLE',
+        'DRAGBUILD',
+        'PODSTAGINGPLATFORM',
+        'SUBMARINE',
+        'SUBMERSIBLE',
+        'SHOWQUEUE',
+        'OVERLAYRADAR',
+        'OVERLAYSONAR',
+    },
+
+    CollisionOffsetY = -0.4,
+
+    Defense = {
+        MissileTorpDestroy = { AttachBone = {'Anti_Torpedo_Muzzle02','Attachpoint01'}, Radius = 6, RedirectRateOfFire = 8, ProjectileCategories = {'TORPEDO','MISSILE'} },
+
+        ArmorType = 'Normal',
+        Health = 41500,
+        MaxHealth = 41500,
+        RegenRate = 20,
+
+        SubThreatLevel = 53,
+        SurfaceThreatLevel = 180,
+    },
+
+    Description = '<LOC uas0401_desc>Experimental Battleship/Submarine (Support)',
+
+    Display = {
+        Abilities = {
+            'Factory',
+            'AA Drones',
+            '<LOC ability_radar>Radar',
+            '<LOC ability_sonar>Sonar',
+            "<LOC ability_torpedo>Torpedoes",
+            "<LOC ability_tacmissiledef>Tactical Missile Defense",
+            '<LOC ability_torpedodef>Torpedo Defense',
+        },
+
+        AnimationDeath = {
+            {
+                Animation = '/units/uas0401/uas0401_adeath01.sca',
+                AnimationRateMax = 0.7,
+                AnimationRateMin = 0.5,
+                Weight = 100,
+            },
+        },
+
+        AnimationSurface = '/units/uas0401/uas0401_Aopen01.sca',
+
+        IdleEffects = { Water = { Effects = { { Bones = {0}, Scale = 3, Type = 'SeaIdle01' } } } },
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                { LODCutoff = 200, ShaderName = 'AeonNavy' },
+                { AlbedoName = 'uas0401_lod1_albedo.dds', LODCutoff = 600, ShaderName = 'AeonNavy', SpecularName = 'uas0401_lod1_specteam.dds' },
+            },
+        },
+
+        MovementEffects = {
+            Water = {
+                Effects = {
+                    { Bones = {'Wake_Left'}, Scale = 2.3, Type = 'LeftFrontWake' },
+                    { Bones = {'Wake_Right'}, Scale = 2.3, Type = 'RightFrontWake' },
+                },
+            },
+        },
+
+        UniformScale = 0.055,
+    },
+
+    DroneData = {
+        Drone1 = { Attachpoint = 'AttachSpecial01', UnitID = 'BAA0001' },
+        Drone2 = { Attachpoint = 'AttachSpecial02', UnitID = 'BAA0001' },
+        Drone3 = { Attachpoint = 'AttachSpecial03', UnitID = 'BAA0001' },
+        Drone4 = { Attachpoint = 'AttachSpecial04', UnitID = 'BAA0001' },
+        Drone5 = { Attachpoint = 'AttachSpecial05', UnitID = 'BAA0001' },
+        Drone6 = { Attachpoint = 'AttachSpecial06', UnitID = 'BAA0001' },
+    },
+
+
+
+    Economy = {
+        BuildCostEnergy = 495000,
+        BuildCostMass = 28500,
+        BuildRate = 180,
+        BuildTime = 25200,
+
+        BuildableCategory = {
+            'BUILTBYTIER3FACTORY AEON MOBILE CONSTRUCTION',
+            'BUILTBYTIER2FACTORY AEON MOBILE CONSTRUCTION',
+            'BUILTBYTIER1FACTORY AEON MOBILE CONSTRUCTION',
+
+            'BUILTBYTIER2FACTORY AEON MOBILE NAVAL',
+            'BUILTBYTIER1FACTORY AEON MOBILE NAVAL',
+            'BUILTBYTIER1FACTORY AEON MOBILE HOVER',
+            'BUILTBYTIER2FACTORY AEON MOBILE HOVER',
+			'BUILTBYTIER3FACTORY AEON MOBILE HOVER',
+        },
+    },
+
+    Footprint = {
+        MinWaterDepth = 3.8,
+        SizeX = 6,
+        SizeZ = 6,
+    },
+
+    General = {
+		CapCost = 14,
+
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_Dive = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        ConstructionBar = true,
+        FactionName = 'Aeon',
+        Icon = 'sea',
+
+        UnitName = '<LOC uas0401_name>Tempest',
+
+        ToggleCaps = { RULEUTC_SpecialToggle = true, RULEUTC_WeaponToggle = true },
+
+        OrderOverrides = {
+            RULEUTC_SpecialToggle = { bitmapId = 'dock', helpText = 'drone_recal' },
+            RULEUTC_WeaponToggle = { bitmapId = 'area-assist', helpText = 'drone_assist' },
+        },
+    },
+
+    Intel = {
+        RadarRadius = 144,
+        SonarRadius = 72,
+        VisionRadius = 40,
+        WaterVisionRadius = 44,
+    },
+
+    Interface = {
+        HelpText = 'Experimental Submarine',
+    },
+
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 6,
+    LifeBarSize = 9,
+
+    Physics = {
+        BackUpDistance = 10,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Sub = true,
+            LAYER_Water = true,
+        },
+        CatchUpAcc = 9,
+        DragCoefficient = 0.2,
+        Elevation = -4.8,
+
+        MaxAcceleration = 0.9,
+        MaxBrake = 1.5,
+        MaxSpeed = 3.6,
+        MaxSpeedReverse = 3,
+
+        MaxSteerForce = 5,
+
+        MeshExtentsX = 7,
+        MeshExtentsY = 3.2,
+        MeshExtentsZ = 7,
+
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_SurfacingSub',
+        RotateOnSpot = true,
+        RotateOnSpotThreshold = 1.1,
+        SkirtOffsetX = -2.5,
+        SkirtOffsetZ = -2.5,
+        SkirtSizeX = 9,
+        SkirtSizeZ = 9,
+        TurnRadius = 12,
+        TurnRate = 48,
+    },
+
+    ScriptClass = 'UAS0401',
+    ScriptModule = '/mods/QUIET-Community-Edition/units/Vanilla/UAS0401/UAS0401_Script.lua',
+
+    SelectionSizeX = 6,
+    SelectionSizeZ = 6,
+    SelectionThickness = 0.18,
+
+    SizeX = 6,
+    SizeY = 2.7,
+    SizeZ = 6,
+
+    StrategicIconName = 'icon_sub4_naval',
+    StrategicIconSortPriority = 45,
+
+    Veteran = {
+        Level1 = 30,
+        Level2 = 60,
+        Level3 = 90,
+        Level4 = 120,
+        Level5 = 150,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                BarrelLoop          = Sound { Bank = 'UAS', Cue = 'UAS_Turret_Lrg_Loop', LodCutoff = 'WeaponBig_LodCutoff' },
+                BarrelStart         = Sound { Bank = 'UAS', Cue = 'UAS_Turret_Lrg_Start', LodCutoff = 'WeaponBig_LodCutoff' },
+                Fire                = Sound { Bank = 'UASWeapon', Cue = 'UAS0401_Cannon_Oblivion', LodCutoff = 'WeaponBig_LodCutoff' },
+                MuzzleChargeStart   = Sound { Bank = 'UASWeapon', Cue = 'UAS0401_Cannon_Oblv_Charge', LodCutoff = 'WeaponBig_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+
+            Damage = 8500,
+            DamageFriendly = true,
+            DamageRadius = 3.2,
+            DamageType = 'Normal',
+
+            DisplayName = 'Oblivion Cannon',
+
+            EnergyRequired = 6000,
+            EnergyDrainPerSecond = 1200,
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+
+            FiringRandomness = 0.05,
+            FiringTolerance = 1.5,
+
+            Label = 'MainGun',
+
+			LeadTarget = true,
+
+            MaxRadius = 160,
+
+            MuzzleChargeDelay = 5,
+
+            MuzzleVelocity = 36,
+            MuzzleVelocityRandom = 2,
+            MuzzleVelocityReduceDistance = 175,
+
+            NotExclusive = true,
+
+            ProjectileId = '/projectiles/ADFOblivionCannon04/ADFOblivionCannon04_proj.bp',
+            ProjectileLifetime = 6,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle'},
+                    RackBone = 'Turret_Barrel02',
+                },
+            },
+
+            RackRecoilDistance = -3,
+
+            RackSalvoFiresAfterCharge = true,
+            RenderFireClock = true,
+
+            RangeCategory = 'UWRC_DirectFire',
+
+            RateOfFire = 10/100,
+
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'TECH3 MOBILE',
+                'TECH2 MOBILE',
+                'TECH1 MOBILE',
+                'ALLUNITS -WALL',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+
+
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel01',
+            TurretBoneYaw = 'Turret',
+
+            TurretPitch = 40,
+            TurretPitchRange = 50,
+            TurretPitchSpeed = 30,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 30,
+
+            Turreted = true,
+
+            UseFiringSolutionInsteadOfAimBone = true,
+        },
+
+        {
+            advancedTracking = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'UALWeapon', Cue = 'UAB2205_Torpedo', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            Buffs = {
+            	{
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 0.3,
+                    Radius = 2,
+                    TargetAllow = 'LAND TECH1,NAVAL TECH1,LAND TECH2',
+                    TargetDisallow = 'WALL,COMMAND,EXPERIMENTAL',
+                },
+            },
+
+            CollideFriendly = false,
+
+            Damage = 400,
+            DamageType = 'Normal',
+
+            DisplayName = 'LR Chrono Torpedo',
+
+            FireTargetLayerCapsTable = {
+                Sub = 'Seabed|Sub|Water',
+                Water = 'Seabed|Sub|Water',
+            },
+
+            FiringTolerance = 45,
+
+            Label = 'Torpedo',
+
+            MaxRadius = 72,
+
+            MuzzleSalvoDelay = 0.5,
+            MuzzleSalvoSize = 6,
+            MuzzleVelocity = 5,
+            MuzzleVelocityRandom = 0.5,
+
+            ProjectileId = '/projectiles/AANTorpedo01/AANTorpedo01_proj.bp',
+            ProjectileLifetime = 9,
+
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'Torpedo_Muzzle03',
+                        'Torpedo_Muzzle06',
+                        'Torpedo_Muzzle02',
+                        'Torpedo_Muzzle05',
+                        'Torpedo_Muzzle01',
+                        'Torpedo_Muzzle04',
+                    },
+                    RackBone = 'Torpedo_Muzzle01',
+                },
+            },
+
+            RackSalvoReloadTime = 1.5,
+
+            RangeCategory = 'UWRC_AntiNavy',
+
+            RateOfFire = 10/40,
+
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'SUBMARINE',
+				'NAVAL',
+				'MOBILE',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER, AIR',
+        },
+
+        {
+            advancedTracking = true,
+
+            BallisticArc = 'RULEUBA_None',
+
+            CannotAttackGround = true,
+            CollideFriendly = false,
+
+            CountedProjectile = true,
+
+            Damage = 2,
+			DamageFriendly = false,
+            DamageType = 'Normal',
+
+            DisplayName = 'AntiTorpedo',
+
+            FireTargetLayerCapsTable = {
+                Sub = 'Sub|Water',
+                Water = 'Sub|Water',
+            },
+
+            FiringTolerance = 48,
+
+            Label = 'AntiTorpedo',
+
+            MaxRadius = 32,
+            MinRadius = 8,
+
+            MuzzleSalvoDelay = 0.6,
+            MuzzleSalvoSize = 3,
+            MuzzleVelocity = 7,
+
+            ProjectileId = '/projectiles/AIMAntiTorpedo01/AIMAntiTorpedo01_proj.bp',
+            ProjectileLifetime = 4,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Anti_Torpedo_Muzzle01'},
+                    RackBone = 'Anti_Torpedo_Muzzle01',
+                },
+            },
+
+            RangeCategory = 'UWRC_Countermeasure',
+
+            RateOfFire = 1,
+
+
+            TargetRestrictOnlyAllow = 'TORPEDO',
+            TargetType = 'RULEWTT_Projectile',
+
+
+            WeaponRepackTimeout = 1.8,
+        },
+
+    },
+}
