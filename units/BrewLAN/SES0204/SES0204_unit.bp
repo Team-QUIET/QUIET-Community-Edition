@@ -30,7 +30,7 @@ UnitBlueprint {
     Physics = {
         BackUpDistance = 8,
         CatchUpAcc = 10,
-        Elevation = -2.8,
+        Elevation = -1.25,
         MaxAcceleration = 2,
         MaxBrake = 2,
         MaxSpeed = 4.0,

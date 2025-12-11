@@ -229,7 +229,7 @@ UnitBlueprint {
         DragCoefficient = 0.2,
         Elevation = -4.8,
 
-        MaxAcceleration = 0.9,
+        MaxAcceleration = 1.5,
         MaxBrake = 1.5,
         MaxSpeed = 3.6,
         MaxSpeedReverse = 3,
@@ -242,8 +242,7 @@ UnitBlueprint {
 
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_SurfacingSub',
-        RotateOnSpot = true,
-        RotateOnSpotThreshold = 1.1,
+        RotateOnSpot = false,
         SkirtOffsetX = -2.5,
         SkirtOffsetZ = -2.5,
         SkirtSizeX = 9,
