@@ -52,7 +52,7 @@ UnitBlueprint {
 
     Economy = {
         BuildCostEnergy = 345000,
-        BuildCostMass = 20750,
+        BuildCostMass = 19500,
         BuildRate = 415,
         BuildTime = 84500,
         BuildableCategory = {
@@ -68,10 +68,10 @@ UnitBlueprint {
     Intel = {
         FreeIntel = true,
         OmniRadius = 64,
-        RadarRadius = 186,
+        RadarRadius = 186, ---- Atlantis intel values tries to copy cybran carrier
         SonarRadius = 128,
-        RadarStealth = true,
-        SonarStealth = true,
+        RadarStealth = false, 
+        SonarStealth = false,
         VisionRadius = 56,
         WaterVisionRadius = 86,
     },
@@ -95,8 +95,8 @@ UnitBlueprint {
         DragCoefficient = 0.2,
         Elevation = -3.5,
         MaxAcceleration = 1.25,
-        MaxBrake = 2.9,
-        MaxSpeed = 2.9,
+        MaxBrake = 3.2,
+        MaxSpeed = 3.2,
         MaxSpeedReverse = 4.0,
         MaxSteerForce = 5,
         MeshExtentsX = 1.4,
@@ -251,3 +251,4 @@ UnitBlueprint {
         },
     },
 }
+
