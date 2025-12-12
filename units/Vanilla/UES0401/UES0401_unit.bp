@@ -50,14 +50,27 @@ UnitBlueprint {
         },
     },
 
-    Economy = {
-        BuildCostEnergy = 345000,
-        BuildCostMass = 19500,
-        BuildRate = 415,
-        BuildTime = 84500,
-        BuildableCategory = {
-            'BUILTBYTIER2FACTORY UEF MOBILE AIR',
-            'BUILTBYTIER3FACTORY UEF MOBILE AIR',
+    Display = {
+        AINames = {
+            'Sheppard',
+            'Sub Sub',
+            'Lost City',
+            'Atlantis',
+            'The Shark',
+			'Tube Sausage',
+        },
+
+        Abilities = {
+            '<LOC ability_aa>Anti-Air',
+            '<LOC ability_airstaging>Air Staging',
+            '<LOC ability_carrier>Carrier',
+            '<LOC ability_factory>Factory',
+            '<LOC ability_omni>Omni Sensor',
+            '<LOC ability_personalstealth>Personal Stealth',
+            '<LOC ability_radar>Radar',
+            '<LOC ability_sonar>Sonar',
+            '<LOC ability_submersible>Submersible',
+            '<LOC ability_torpedo>Torpedoes',
         },
     },
 
@@ -251,4 +264,5 @@ UnitBlueprint {
         },
     },
 }
+
 
