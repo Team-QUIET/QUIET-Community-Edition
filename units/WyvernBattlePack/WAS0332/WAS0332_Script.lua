@@ -110,6 +110,9 @@ WAS0332 = ClassUnit(SeaUnit) {
         local projectionRadius = bp.Defense.Shield.ShieldProjectionRadius or 50
         local maxShieldedUnits = bp.Defense.Shield.MaxShieldedUnits or 6
 
+        -- Initialize cooldown tracking for units that lost shields
+        self.ShieldProjectionCooldownTime = 0
+
         -- Wait for shield to initialize
         WaitTicks(20)
 
@@ -138,16 +141,22 @@ WAS0332 = ClassUnit(SeaUnit) {
             end
 
             if hasTargets then
-                -- Project shields onto allies that don't have one from us (up to cap)
-                for i, unit in targetunits do
-                    if currentCount >= maxShieldedUnits then
-                        break
-                    end
-                    -- Skip units we're already projecting to or that have their own shield
-                    if not (unit.Projectors and unit.Projectors[self:GetEntityId()])
-                       and not unit.MyShield then
-                        self:CreateProjectedShieldBubble(unit)
-                        currentCount = currentCount + 1
+                -- Check if we're still in cooldown from a shield being destroyed
+                local currentTick = GetGameTick()
+                local inCooldown = self.ShieldProjectionCooldownTime and currentTick < self.ShieldProjectionCooldownTime
+
+                if not inCooldown then
+                    -- Project shields onto allies that don't have one from us (up to cap)
+                    for i, unit in targetunits do
+                        if currentCount >= maxShieldedUnits then
+                            break
+                        end
+                        -- Skip units we're already projecting to or that have their own shield
+                        if not (unit.Projectors and unit.Projectors[self:GetEntityId()])
+                           and not unit.MyShield then
+                            self:CreateProjectedShieldBubble(unit)
+                            currentCount = currentCount + 1
+                        end
                     end
                 end
             end
