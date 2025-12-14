@@ -1233,34 +1233,35 @@ ProjectedShield = ClassShield(Shield) {
     end,
 
     DistributeDamage = function(self,instigator,amount,vector,type)
-	
         local pCount = self:CheckProjectors()
-		
+
         if pCount == 0 and not self.Owner.Dead then
             self.Owner:OnDamage(instigator,amount,vector,type)
         end
-		
+
         local damageToDeal = amount / pCount
         local overKillDamage, ProjectorHealth = 0,0
-		
+
         for i, projector in self.Owner.Projectors do
-		
             ProjectorHealth = projector.MyShield:GetHealth()
-			
             projector.MyShield:OnDamage(instigator,damageToDeal,vector,type)
-			
             --If it looked like too much damage, remove it from the projector list, and count the overkill
             if ProjectorHealth <= damageToDeal then
                 overKillDamage = overKillDamage + LOUDMAX(damageToDeal - ProjectorHealth, 0)
                 projector.ShieldProjectionEnabled = false
-                projector:ClearShieldProjections()
+                -- Set cooldown on projector to prevent immediate re-projection
+                projector.ShieldProjectionCooldownTime = GetGameTick() + 300  -- 10 second cooldown (30 ticks/sec)
+                -- Call the correct method name for clearing projections
+                if projector.ClearAllProjections then
+                    projector:ClearAllProjections()
+                elseif projector.ClearShieldProjections then
+                    projector:ClearShieldProjections()
+                end
             end
         end
-		
         if overKillDamage > 0 then
             self:DistributeDamage(instigator,overKillDamage,vector,type)
         end
-		
     end,
 
     CreateImpactEffect = function(self, vector)
