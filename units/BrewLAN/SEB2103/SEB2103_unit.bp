@@ -170,7 +170,7 @@ UnitBlueprint {
             MaxRadius = 42,
             MinRadius = 5,
 
-            MuzzleVelocity = 15,
+            MuzzleVelocity = 18,
 			MuzzleVelocityReduceDistance = 50,
 			
             ProjectileId = '/projectiles/TIFArtillery01/TIFArtillery01_proj.bp',
@@ -231,3 +231,4 @@ UnitBlueprint {
         },
     },
 }
+
