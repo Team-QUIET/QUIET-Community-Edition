@@ -191,7 +191,7 @@ UnitBlueprint {
             MaxRadius = 42,
             MinRadius = 5,
 
-            MuzzleVelocity = 15,
+            MuzzleVelocity = 18,
 			MuzzleVelocityReduceDistance = 50,
 			
             ProjectileId = '/projectiles/AIFMiasmaShell01/AIFMiasmaShell01_proj.bp',
@@ -251,3 +251,4 @@ UnitBlueprint {
         },
     },
 }
+
