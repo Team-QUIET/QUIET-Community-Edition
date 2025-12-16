@@ -175,7 +175,7 @@ UnitBlueprint {
             MaxRadius = 42,
             MinRadius = 5,
 
-            MuzzleVelocity = 15,
+            MuzzleVelocity = 18,
 			MuzzleVelocityReduceDistance = 50,
 			
             ProjectileId = '/projectiles/CIFMolecularResonanceShell01/CIFMolecularResonanceShell01_proj.bp',
@@ -234,3 +234,4 @@ UnitBlueprint {
         },
     },
 }
+
