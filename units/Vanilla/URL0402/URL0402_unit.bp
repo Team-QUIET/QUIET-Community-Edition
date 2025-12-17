@@ -511,7 +511,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 100,
+            Damage = 62,
             DamageRadius = 0,
             DamageType = 'Normal',
 			
@@ -553,7 +553,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_AntiAir',
 			
-            RateOfFire = 10/10,		---- 200 DPS Air
+            RateOfFire = 10/10,
 
             TargetPriorities = {
                 'SPECIALHIGHPRI',
