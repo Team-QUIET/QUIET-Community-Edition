@@ -7,6 +7,32 @@ UnitBlueprint {
 	    BuildCostEnergy = 475000,
     },
 
+    Physics = {
+        BackUpDistance = 5,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+        },
+        DragCoefficient = 0.2,
+        
+        LayerChangeOffsetHeight = -3.25,
+
+        MaxAcceleration = 1.5,
+        MaxBrake = 2.6,
+        MaxSpeed = 2.6,
+        MaxSpeedReverse = 1,
+        MaxSteerForce = 10,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Amphibious',
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+        SkirtSizeX = 4,
+        SkirtSizeZ = 4,
+        TurnRadius = 4,
+        TurnRate = 29,
+    },
+
 	Weapon = {
         {
 
