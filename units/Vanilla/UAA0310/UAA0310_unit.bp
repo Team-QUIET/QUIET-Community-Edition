@@ -48,8 +48,8 @@ UnitBlueprint {
 
         ArmorType = 'Light',
 
-        Health = 75000,
-        MaxHealth = 75000,
+        Health = 70000,
+        MaxHealth = 70000,
         RegenRate = 22,
 
         AirThreatLevel = 300,
