@@ -227,7 +227,7 @@ UnitBlueprint {
 
         LayerChangeOffsetHeight = -2,
         
-        MaxAcceleration = 0.6,
+        MaxAcceleration = 2.2,
         MaxSpeed = 2.4,
         MaxSpeedReverse = 2.4,
         
