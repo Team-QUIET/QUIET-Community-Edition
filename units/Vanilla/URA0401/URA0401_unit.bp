@@ -7,6 +7,15 @@ UnitBlueprint {
         BuildCostMass = 29000,
         BuildTime = 9750,
     },
+
+    Defense = {
+        AirThreatLevel = 80,
+        ArmorType = 'Light',
+        Health = 65000,
+        MaxHealth = 65000,
+        RegenRate = 30,
+        SurfaceThreatLevel = 149,
+    },
 	
 	Weapon = {
 	
