@@ -511,7 +511,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 62,
+            Damage = 125,
             DamageRadius = 0,
             DamageType = 'Normal',
 			
@@ -526,25 +526,23 @@ UnitBlueprint {
 			
             MaxRadius = 48,
 
-            MuzzleVelocity = 33,
+            MuzzleVelocity = 30,
 
             NotExclusive = true,
 
             ProjectileId = '/projectiles/CAAMissileNanite02/CAAMissileNanite02_proj.bp',
-            ProjectileLifetime = 5,
+            ProjectileLifetime = 6,
 			
             RackBones = {
                 {
                     MuzzleBones = {
                         'Right_Projectile01',
-                        'Right_Projectile02',
                     },
                     RackBone = 'Right_Projectile01',
                 },
                 {
                     MuzzleBones = {
                         'Left_Projectile01',
-                        'Left_Projectile02',
                     },
                     RackBone = 'Left_Projectile01',
                 },
