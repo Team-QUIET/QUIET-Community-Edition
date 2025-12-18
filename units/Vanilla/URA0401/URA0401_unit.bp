@@ -2,12 +2,6 @@ UnitBlueprint {
 	Merge = true,
 	BlueprintId = "ura0401",
 
-    Economy = {
-        BuildCostEnergy = 812000,
-        BuildCostMass = 29000,
-        BuildTime = 9750,
-    },
-
     Defense = {
         AirThreatLevel = 80,
         ArmorType = 'Light',
@@ -16,7 +10,13 @@ UnitBlueprint {
         RegenRate = 30,
         SurfaceThreatLevel = 149,
     },
-	
+
+    Economy = {
+        BuildCostEnergy = 812000,
+        BuildCostMass = 29000,
+        BuildTime = 9750,
+    },
+
 	Weapon = {
 	
 		-- 2 x Iridium Rocket Packs --
