@@ -2,6 +2,15 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "wra0401",
 
+    Defense = {
+        AirThreatLevel = 66,
+        ArmorType = "Light",
+        Health = 65000,
+        MaxHealth = 65000,
+        RegenRate = 30,
+        SurfaceThreatLevel = 209,
+    },
+
     Economy = {
         BuildCostEnergy = 812000,
         BuildCostMass = 29000,

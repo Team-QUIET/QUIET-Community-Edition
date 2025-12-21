@@ -43,6 +43,19 @@ UnitBlueprint {
         MinAirspeed = 0,
         StartTurnDistance = 20,
     },
+
+    Defense = {
+
+        ArmorType = 'Light',
+
+        Health = 70000,
+        MaxHealth = 70000,
+        RegenRate = 22,
+
+        AirThreatLevel = 300,
+        SubThreatLevel = 60,
+        SurfaceThreatLevel = 200,	-- an approximation to avoid overstating value of death ray
+    },
 	
     Physics = {
         BankingSlope = 0,

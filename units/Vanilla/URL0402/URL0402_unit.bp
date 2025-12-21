@@ -511,7 +511,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 100,
+            Damage = 125,
             DamageRadius = 0,
             DamageType = 'Normal',
 			
@@ -526,12 +526,12 @@ UnitBlueprint {
 			
             MaxRadius = 48,
 
-            MuzzleVelocity = 33,
+            MuzzleVelocity = 30,
 
             NotExclusive = true,
 
             ProjectileId = '/projectiles/CAAMissileNanite02/CAAMissileNanite02_proj.bp',
-            ProjectileLifetime = 5,
+            ProjectileLifetime = 6,
 			
             RackBones = {
                 {
@@ -553,7 +553,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_AntiAir',
 			
-            RateOfFire = 10/10,		---- 200 DPS Air
+            RateOfFire = 10/20,
 
             TargetPriorities = {
                 'SPECIALHIGHPRI',
