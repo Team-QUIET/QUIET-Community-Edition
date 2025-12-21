@@ -537,12 +537,14 @@ UnitBlueprint {
                 {
                     MuzzleBones = {
                         'Right_Projectile01',
+                        'Right_Projectile02',
                     },
                     RackBone = 'Right_Projectile01',
                 },
                 {
                     MuzzleBones = {
                         'Left_Projectile01',
+                        'Left_Projectile02',
                     },
                     RackBone = 'Left_Projectile01',
                 },
@@ -551,7 +553,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_AntiAir',
 			
-            RateOfFire = 10/10,
+            RateOfFire = 10/20,
 
             TargetPriorities = {
                 'SPECIALHIGHPRI',
