@@ -11,8 +11,10 @@ local TractorClawCollisionBeam = CollisionBeamFile.TractorClawCollisionBeam
 local Explosion = import('defaultexplosions.lua')
 local EffectTemplate = import("/lua/effecttemplates.lua")
 local QCECollisionbeams = import('/mods/QUIET-Community-Edition/lua/QCECollisionbeams.lua')
+local MultiTargetAAMixin = import('/mods/QUIET-Community-Edition/lua/QCEMultiTargetAA.lua').MultiTargetAAMixin
 
 local DefaultBeamWeapon = WeaponFile.DefaultBeamWeapon
+local DefaultProjectileWeapon = WeaponFile.DefaultProjectileWeapon
 
 
 
@@ -397,4 +399,17 @@ TMAnovacatbluelaserweapon = ClassWeapon(DefaultBeamWeapon) {
     FxChargeMuzzleFlash = {},
     FxUpackingChargeEffects = EffectTemplate.CMicrowaveLaserCharge01,
     FxUpackingChargeEffectScale = 1,
+}
+
+---@class AAAZealotMissileWeaponMultiTarget : DefaultProjectileWeapon
+AAAZealotMissileWeaponMultiTarget = ClassWeapon(DefaultProjectileWeapon) {
+    FxMuzzleFlash = EffectTemplate.CZealotLaunch01,
+
+    BuildAATargetTable = MultiTargetAAMixin.BuildAATargetTable,
+    GetNextAATarget = MultiTargetAAMixin.GetNextAATarget,
+    HasValidTargets = MultiTargetAAMixin.HasValidTargets,
+
+    CreateProjectileForWeapon = function(self, bone)
+        return MultiTargetAAMixin.CreateProjectileForWeaponMultiAA(self, bone, DefaultProjectileWeapon.CreateProjectileForWeapon)
+    end,
 }

@@ -10,12 +10,14 @@ local MissileRedirect = import('/lua/defaultantiprojectile.lua').MissileTorpDest
 
 local TrashAdd = TrashBag.Add
 
+local SAALosaareAutoCannonWeaponMultiTarget = SWeapon.SAALosaareAutoCannonWeaponMultiTarget
+
 BSS0306 = ClassUnit(SSeaUnit) {
 
     Weapons = {
         MainGun = ClassWeapon(SWeapon.SDFShriekerCannon){},
         LazorTurret = ClassWeapon(SWeapon.SDFUltraChromaticBeamGenerator){},
-        AAGun = ClassWeapon(SWeapon.SAALosaareAutoCannonWeapon){},
+        AAGun = ClassWeapon(SAALosaareAutoCannonWeaponMultiTarget){},
         FlakGun = ClassWeapon(SWeapon.SAAOlarisCannonWeapon){},
         PhasonBeam = ClassWeapon(SDFUnstablePhasonBeam){
             FxMuzzleFlash = {

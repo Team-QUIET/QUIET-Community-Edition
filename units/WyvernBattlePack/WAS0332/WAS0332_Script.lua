@@ -1,7 +1,8 @@
 local SeaUnit = import('/lua/defaultunits.lua').SeaUnit
 local SeraphimWeapons = import('/lua/seraphimweapons.lua')
-local SAAOlarisCannonWeapon = SeraphimWeapons.SAAOlarisCannonWeapon
+local AeonWeapons = import('/lua/aeonweapons.lua')
 local SDFAireauBolterWeapon = SeraphimWeapons.SDFAireauBolterWeapon
+local AAAZealotMissileWeaponMultiTarget = AeonWeapons.AAAZealotMissileWeaponMultiTarget
 
 -- Energy cost multipliers per unit type
 local EnergyCostPerUnitType = {
@@ -20,7 +21,7 @@ WAS0332 = ClassUnit(SeaUnit) {
 
     Weapons = {
         MainGun = ClassWeapon(SDFAireauBolterWeapon) {},
-        AntiAirMissiles = ClassWeapon(SAAOlarisCannonWeapon) {},
+        AntiAirMissiles = ClassWeapon(AAAZealotMissileWeaponMultiTarget) {},
     },
 
     OnStopBeingBuilt = function(self, builder, layer)

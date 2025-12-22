@@ -94,11 +94,11 @@ UnitBlueprint {
 			
             Label = 'Torpedo01',
 			
-            MaxRadius = 55,
+            MaxRadius = 62,
 			
             MuzzleSalvoDelay = 0.4,
             MuzzleSalvoSize = 4,
-            MuzzleVelocity = 10,
+            MuzzleVelocity = 30,
 			NotExclusive = true,
             ProjectileId = '/projectiles/CANTorpedoNanite02/CANTorpedoNanite02_proj.bp',
             ProjectileLifetimeUsesMultiplier = 1.5,
@@ -153,8 +153,8 @@ UnitBlueprint {
 			
             DisplayName = 'Kril Torpedo',
 			
-            DoTPulses = 5,
-            DoTTime = 3,
+            DoTPulses = 8,
+            DoTTime = 1,
 			
             FireTargetLayerCapsTable = {
                 Sub = 'Seabed|Sub|Water',
@@ -166,11 +166,11 @@ UnitBlueprint {
 			
             Label = 'Torpedo02',
 			
-            MaxRadius = 60,
+            MaxRadius = 70,
 			
-            MuzzleSalvoDelay = 0.8,
+            MuzzleSalvoDelay = 0.6,
             MuzzleSalvoSize = 8,
-            MuzzleVelocity = 20,
+            MuzzleVelocity = 30,
 			MuzzleVelocityRandom = 2,
 			NotExclusive = true,
             ProjectileId = '/projectiles/CANKrilTorpedo01/CANKrilTorpedo01_proj.bp',

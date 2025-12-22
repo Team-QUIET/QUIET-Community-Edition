@@ -5,10 +5,11 @@ local CSeaUnit = import('/lua/defaultunits.lua').SeaUnit
 
 local CybranWeaponsFile = import('/lua/cybranweapons.lua')
 
-local CDFProtonCannonWeapon     = CybranWeaponsFile.CDFProtonCannonWeapon
-local CAANanoDartWeapon         = CybranWeaponsFile.CAANanoDartWeapon
-local CAMZapperWeapon           = CybranWeaponsFile.CAMZapperWeapon
-local CANNaniteTorpedoWeapon    = CybranWeaponsFile.CANNaniteTorpedoWeapon
+local CDFProtonCannonWeapon         = CybranWeaponsFile.CDFProtonCannonWeapon
+local CAANanoDartWeapon             = CybranWeaponsFile.CAANanoDartWeapon
+local CAANanoDartWeaponMultiTarget  = CybranWeaponsFile.CAANanoDartWeaponMultiTarget
+local CAMZapperWeapon               = CybranWeaponsFile.CAMZapperWeapon
+local CANNaniteTorpedoWeapon        = CybranWeaponsFile.CANNaniteTorpedoWeapon
 
 local AIFQuasarAntiTorpedoWeapon = import('/lua/aeonweapons.lua').AIFQuasarAntiTorpedoWeapon
 
@@ -62,19 +63,19 @@ end
 BRS0304 = ClassUnit(CSeaUnit) {
 
     Weapons = {
-	
+
         ParticleGun     = ClassWeapon(CDFProtonCannonWeapon) {},
 
         RightGun        = ClassWeapon(MicrowaveLaser) {},
         LeftGun         = ClassWeapon(MicrowaveLaser) {},
-		
-        AAGun           = ClassWeapon(CAANanoDartWeapon) {},
+
+        AAGun           = ClassWeapon(CAANanoDartWeaponMultiTarget) {},
         GroundGun       = ClassWeapon(CAANanoDartWeapon) {},
-		
+
         Zapper          = ClassWeapon(CAMZapperWeapon) {},
         Torpedo         = ClassWeapon(CANNaniteTorpedoWeapon) {},
         AntiTorpedo     = ClassWeapon(AIFQuasarAntiTorpedoWeapon) {},
-		
+
     },
 
     IntelEffects = {

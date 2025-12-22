@@ -68,24 +68,32 @@ UnitBlueprint {
             HeadingArcCenter = 0,
             HeadingArcRange = 180,
             TurretYawRange = 180,
+            MultiTargetAA = true,
+            MaxAATargets = 4,
         },
         -- Weapon 5: AA Missile (Right01)
         {
             HeadingArcCenter = 0,
             HeadingArcRange = 180,
             TurretYawRange = 180,
+            MultiTargetAA = true,
+            MaxAATargets = 4,
         },
         -- Weapon 6: AA Missile (Left)
         {
             HeadingArcCenter = 0,
             HeadingArcRange = 180,
             TurretYawRange = 180,
+            MultiTargetAA = true,
+            MaxAATargets = 4,
         },
         -- Weapon 7: AA Missile (Left01)
         {
             HeadingArcCenter = 0,
             HeadingArcRange = 180,
             TurretYawRange = 180,
+            MultiTargetAA = true,
+            MaxAATargets = 4,
         },
     },
 }

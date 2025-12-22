@@ -5,6 +5,7 @@ local TerranWeaponFile = import('/lua/terranweapons.lua')
 local TDFIonizedPlasmaCannon    = TerranWeaponFile.TDFIonizedPlasmaCannon
 local TAMPhalanxWeapon          = TerranWeaponFile.TAMPhalanxWeapon
 local TSAMLauncher              = TerranWeaponFile.TSAMLauncher
+local TSAMLauncherMultiTarget   = TerranWeaponFile.TSAMLauncherMultiTarget
 local TANTorpedoAngler          = TerranWeaponFile.TANTorpedoAngler
 
 TerranWeaponFile = nil
@@ -12,10 +13,10 @@ TerranWeaponFile = nil
 WES0303 = ClassUnit(TSeaUnit) {
 
 Weapons = {
-        
+
         DeckGun = ClassWeapon(TDFIonizedPlasmaCannon) {},
-        
-		AA      = ClassWeapon(TSAMLauncher) {},
+
+		AA      = ClassWeapon(TSAMLauncherMultiTarget) {},
         
 		Torpedo = ClassWeapon(TANTorpedoAngler) {},
         

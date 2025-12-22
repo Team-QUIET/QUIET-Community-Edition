@@ -373,21 +373,24 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 100,
+            Damage = 200,
             DamageRadius = 1,
             DamageType = 'Normal',
-			
+
             DisplayName = 'Nanodart Launcher AA',
-			
+
             FireTargetLayerCapsTable = {
                 Water = 'Air',
             },
-			
+
             FiringTolerance = 10,
-			
+
             Label = 'AAGun',
-			
-            MaxRadius = 60,
+
+            MaxRadius = 70,
+
+            MultiTargetAA = true,
+            MaxAATargets = 6,
             
             MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 6,
@@ -413,7 +416,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_AntiAir',
 			
-            RateOfFire = 10/12,		-- 480 DPS Air
+            RateOfFire = 10/12,
 
 			
             TargetPriorities = {
@@ -432,12 +435,12 @@ UnitBlueprint {
             TurretBoneYaw = 'launcher_turret',
 			
             TurretPitch = 35,
-            TurretPitchRange = 80,
-            TurretPitchSpeed = 60,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 80,
 
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 50,
+            TurretYawSpeed = 160,
 
             Turreted = true,
         },
