@@ -1,0 +1,13 @@
+name = "Shield Damage Overspill Adjuster"
+author = "Codinghawk27"
+version = 1.0
+description = "Adjust the amount of damage overspill for shields. Disabling shield damage overspill makes turtling more powerful."
+exclusive = false
+ui_only = false
+selectable = true
+enabled = true
+uid = "abcdefg-fffe-fffe-fffe-24ehxst8372t"
+requires = { }
+conflicts = { }
+before = { }
+after = { }
