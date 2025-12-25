@@ -8,6 +8,10 @@ UnitBlueprint {
         BuildTime = 140,
     },
 
+    Intel = {
+        VisionRadius = 28,
+    },
+
     Weapon = {
         {
             MaxRadius = 35,

@@ -34,8 +34,8 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Normal',
-        Health = 330,
-        MaxHealth = 330,
+        Health = 220,
+        MaxHealth = 220,
         RegenRate = 2,
         SurfaceThreatLevel = 2.6,
     },
@@ -80,8 +80,8 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 365,
-        BuildCostMass = 58,
+        BuildCostEnergy = 265,
+        BuildCostMass = 42,
         BuildTime = 235,
     },
 	
@@ -101,7 +101,7 @@ UnitBlueprint {
     },
 	
     Intel = {
-        VisionRadius = 22,
+        VisionRadius = 16,
     },
 	
     Interface = {
@@ -120,8 +120,8 @@ UnitBlueprint {
         },
         DragCoefficient = 0.2,
         MaxAcceleration = 2.7,
-        MaxBrake = 2.7,
-        MaxSpeed = 2.7,
+        MaxBrake = 3.6,
+        MaxSpeed = 3.6,
         MaxSpeedReverse = 2.7,
         MaxSteerForce = 10,
         MeshExtentsX = 0.7,
@@ -170,7 +170,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 			
-            Damage = 28,
+            Damage = 24,
             DamageType = 'Normal',
 			
             DisplayName = 'Phasic Autogun',
@@ -185,7 +185,7 @@ UnitBlueprint {
 			
             Label = 'LaserTurret',
 			
-            MaxRadius = 19,
+            MaxRadius = 17.5,
 
             MuzzleVelocity = 25,
 			
@@ -201,7 +201,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_DirectFire',
 			
-            RateOfFire = 1,     -- 28 DPS
+            RateOfFire = 1,     -- 24 DPS
 
             TargetPriorities = {
                 'SPECIALHIGHPRI',

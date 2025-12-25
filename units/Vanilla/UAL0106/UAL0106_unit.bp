@@ -2,6 +2,14 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "ual0106",
 
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 140,
+        MaxHealth = 140,
+        RegenRate = 0,
+        SurfaceThreatLevel = 1.5,
+    },
+
     Economy = {
         BuildCostEnergy = 165,
         BuildCostMass = 42,
