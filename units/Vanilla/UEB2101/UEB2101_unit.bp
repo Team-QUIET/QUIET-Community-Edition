@@ -31,8 +31,8 @@ UnitBlueprint {
 
     Defense = {
         ArmorType = 'Structure',
-        Health = 1300,
-        MaxHealth = 1300,
+        Health = 900,
+        MaxHealth = 900,
         RegenRate = 0,
         SurfaceThreatLevel = 13,
     },
@@ -60,8 +60,8 @@ UnitBlueprint {
     },
 
     Economy = {
-        BuildCostEnergy = 2000,
-        BuildCostMass = 250,
+        BuildCostEnergy = 1000,
+        BuildCostMass = 125,
         BuildTime = 250,
 
         RebuildBonusIds = {'ueb2101'},
@@ -80,7 +80,7 @@ UnitBlueprint {
     },
 
     Intel = {
-        VisionRadius = 28,
+        VisionRadius = 24,
     },
 
     Interface = {
@@ -138,7 +138,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
-            Damage = 50,
+            Damage = 30,
             DamageType = 'Normal',
 			
             DisplayName = 'Light Plasma Cannon',
@@ -153,7 +153,7 @@ UnitBlueprint {
 			
             MaxRadius = 26,
 
-            MuzzleVelocity = 40,
+            MuzzleVelocity = 35,
 			
             ProjectileId = '/projectiles/TDFPlasma01/TDFPlasma01_proj.bp',
 			ProjectileLifetime = 0.9,
@@ -167,7 +167,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_DirectFire',
 
-            RateOfFire = 10/3,
+            RateOfFire = 10/4,
             ReTargetOnMiss = true,
 
             TargetPriorities = {
