@@ -71,10 +71,10 @@ UnitBlueprint {
 			
             MaxRadius = 24,
 			
-            MuzzleSalvoDelay = 0.3,
-            MuzzleSalvoSize = 2,
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 3,
 
-            MuzzleVelocity = 40,
+            MuzzleVelocity = 60,
 			
             ProjectileId = '/projectiles/SDFHeavyPhasicAutogun02/SDFHeavyPhasicAutogun02_proj.bp',
 			ProjectileLifetime = 1,

@@ -54,7 +54,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 			
-            Damage = 13,
+            Damage = 20,
             DamageType = 'Normal',
 			
             DisplayName = 'Riot Gun',
@@ -64,17 +64,17 @@ UnitBlueprint {
                 Land = 'Air|Land|Water|Seabed',
             },
 			
-            FiringRandomness = 0,
+            FiringRandomness = 0.2,
             FiringTolerance = 2,
 			
             Label = 'Turret01',
 			
-            MaxRadius = 24,
+            MaxRadius = 22,
 			
-            MuzzleSalvoDelay = 0.1,
-            MuzzleSalvoSize = 3,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
 
-            MuzzleVelocity = 40,
+            MuzzleVelocity = 80,
 			
             ProjectileId = '/projectiles/TDFRiot01/TDFRiot01_proj.bp',
             ProjectileLifetimeUsesMultiplier = 1.1,
@@ -88,7 +88,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_DirectFire',
 			
-            RateOfFire = 10/5,	
+            RateOfFire = 10/3,	
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",

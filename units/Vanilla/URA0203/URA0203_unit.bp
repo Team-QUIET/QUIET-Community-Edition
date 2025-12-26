@@ -73,10 +73,10 @@ UnitBlueprint {
 
             MaxRadius = 26,
 			
-            MuzzleSalvoDelay = 0.3,
-            MuzzleSalvoSize = 2,
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 3,
 
-            MuzzleVelocity = 30,
+            MuzzleVelocity = 40,
 			
             ProjectileId = '/projectiles/CDFRocketIridium01/CDFRocketIridium01_proj.bp',
 			ProjectileLifetime = 1.2,
