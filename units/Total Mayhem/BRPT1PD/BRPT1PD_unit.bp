@@ -2,6 +2,16 @@ UnitBlueprint {
   Merge = true,
   BlueprintId = "brpt1pd",
 
+    Economy = {
+        BuildCostEnergy = 4750,
+        BuildCostMass = 375,
+        BuildTime = 375,
+    },
+
+    Intel = {
+        VisionRadius = 24,
+    },
+
       Weapon = {
         {
             AboveWaterTargetsOnly = true,
@@ -32,11 +42,11 @@ UnitBlueprint {
                     TargetDisallow = 'WALL',
                 },                
             },			
-     
+
             CollideFriendly = false,
 			
-            Damage = 320,
-            DamageRadius = 1,
+            Damage = 300,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
             DamageFriendly = false,
 			
@@ -51,6 +61,7 @@ UnitBlueprint {
             Label = 'MainGun',
 			
             MaxRadius = 36,
+            MinRadius = 7.5,
 
             MuzzleVelocity = 35,
 			
@@ -70,7 +81,7 @@ UnitBlueprint {
 			
             RangeCategory = 'UWRC_DirectFire',
 			
-            RateOfFire = 5/10,
+            RateOfFire = 10/20,
 
 			
             TargetPriorities = {
