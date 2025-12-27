@@ -35,7 +35,7 @@ UnitBlueprint {
             CollideFriendly = false,
             ContinuousBeam = true,
 			
-            Damage = 25,
+            Damage = 5,
 			
             DamageFriendly = false,
             DamageType = 'Normal',
