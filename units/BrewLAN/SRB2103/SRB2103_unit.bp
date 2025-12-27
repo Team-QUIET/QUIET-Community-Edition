@@ -38,8 +38,8 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Structure',
-        Health = 900,
-        MaxHealth = 900,
+        Health = 400,
+        MaxHealth = 400,
         RegenRate = 2,
         SurfaceThreatLevel = 12.8,
     },
@@ -58,9 +58,9 @@ UnitBlueprint {
     },
     
     Economy = {
-        BuildCostEnergy = 5400,
-        BuildCostMass = 550,
-        BuildTime = 600,
+        BuildCostEnergy = 10000,
+        BuildCostMass = 500,
+        BuildTime = 750,
 		
         RebuildBonusIds = {'srb2103'},
     },
@@ -143,9 +143,9 @@ UnitBlueprint {
                     Add = { OnImpact = true },
                     AppliedToTarget = true,
                     BuffType = 'STUN',
-                    Duration = 1,
+                    Duration = 0.5,
                     Radius = 1.5,
-                    TargetAllow = 'LAND TECH1,NAVAL TECH1',
+                    TargetAllow = 'LAND TECH1',
                     TargetDisallow = 'TECH2,TECH3,EXPERIMENTAL,AIR,COMMAND,WALL',
                 },
             },
@@ -172,8 +172,8 @@ UnitBlueprint {
 
             Label = 'MainGun',
 
-            MaxRadius = 42,
-            MinRadius = 5,
+            MaxRadius = 47.5,
+            MinRadius = 15,
 
             MuzzleVelocity = 18,
 			MuzzleVelocityReduceDistance = 50,
