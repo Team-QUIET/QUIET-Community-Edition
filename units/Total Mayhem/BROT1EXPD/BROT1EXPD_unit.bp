@@ -1,6 +1,25 @@
 UnitBlueprint {
 	Merge = true,
 	BlueprintId = "brot1expd",
+
+    Defense = {
+        ArmorType = 'Structure',
+
+        Health = 500,
+        MaxHealth = 500,
+        RegenRate = 2,
+
+        AirThreatLevel = 14,
+        SurfaceThreatLevel = 17.1,
+    },
+
+    Economy = {
+        BuildCostEnergy = 4000,
+        BuildCostMass = 200,
+        BuildTime = 400,
+		
+        RebuildBonusIds = {'BROT1EXPD'},
+    },
 	
 	Weapon = {
         {
