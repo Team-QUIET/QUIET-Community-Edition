@@ -44,8 +44,8 @@ UnitBlueprint {
 
     Defense = {
         ArmorType = 'Structure',
-        Health = 1500,
-        MaxHealth = 1500,
+        Health = 1400,
+        MaxHealth = 1400,
         RegenRate = 1,
         SurfaceThreatLevel = 17.1,
     },
@@ -162,7 +162,7 @@ UnitBlueprint {
             MaxRadius = 36,
             MinRadius = 7.5,
 
-            MuzzleVelocity = 36,
+            MuzzleVelocity = 40,
 			
             ProjectileId = '/projectiles/ADFDisruptor01/ADFDisruptor01_proj.bp',
             ProjectileLifetime = 1.1,
