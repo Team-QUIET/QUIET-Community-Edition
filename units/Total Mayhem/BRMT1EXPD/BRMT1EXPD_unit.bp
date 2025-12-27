@@ -12,9 +12,9 @@ UnitBlueprint {
     },
 
     Economy = {
-        BuildCostEnergy = 4400,
-        BuildCostMass = 400,
-        BuildTime = 400,
+        BuildCostEnergy = 3000,
+        BuildCostMass = 300,
+        BuildTime = 300,
 		
         RebuildBonusIds = {'BRMT1EXPD'},
     },
