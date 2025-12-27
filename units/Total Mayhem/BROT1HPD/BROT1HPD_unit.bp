@@ -162,7 +162,7 @@ UnitBlueprint {
             MaxRadius = 36,
             MinRadius = 7.5,
 
-            MuzzleVelocity = 40,
+            MuzzleVelocity = 36,
 			
             ProjectileId = '/projectiles/ADFDisruptor01/ADFDisruptor01_proj.bp',
             ProjectileLifetime = 1.1,
