@@ -89,9 +89,9 @@ UnitBlueprint {
 			
             TargetPriorities = {
                 'SPECIALHIGHPRI',
-                'TECH3 MOBILE'
-                'TECH2 MOBILE'
-                'TECH1 MOBILE'
+                'TECH3 MOBILE',
+                'TECH2 MOBILE',
+                'TECH1 MOBILE',
                 'ALLUNITS',
             },
 			
