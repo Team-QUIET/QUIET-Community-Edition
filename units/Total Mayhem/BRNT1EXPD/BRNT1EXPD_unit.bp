@@ -1,7 +1,26 @@
 UnitBlueprint {
 	Merge = true,
 	BlueprintId = "brnt1expd",
-	
+
+    Defense = {
+        ArmorType = 'Structure',
+
+        Health = 1450,
+        MaxHealth = 1450,
+        RegenRate = 1,
+
+        AirThreatLevel = 15,
+        SurfaceThreatLevel = 17.5,
+    },
+
+    Economy = {
+        BuildCostEnergy = 4750,
+        BuildCostMass = 400,
+        BuildTime = 400,
+
+        RebuildBonusIds = {'BRNT1EXPD'},
+    },
+
       Weapon = {
             {
                   Damage = 5,
@@ -9,7 +28,7 @@ UnitBlueprint {
                   FiringRandomness = 0.3,
                               
                   MuzzleSalvoDelay = 0.05,
-                  MuzzleSalvoSize = 10,
+                  MuzzleSalvoSize = 7,
 
                   MuzzleVelocity = 54,
 
@@ -18,7 +37,7 @@ UnitBlueprint {
                   RackSalvoChargeTime = 0,
                   RackSalvoReloadTime = 0,
                         
-                  RateOfFire = 20/10,
+                  RateOfFire = 10/5,
 
                   
                   TurretPitch = 0,
@@ -35,7 +54,7 @@ UnitBlueprint {
                   FiringRandomness = 0.3,
                   
                   MuzzleSalvoDelay = 0.05,
-                  MuzzleSalvoSize = 10,
+                  MuzzleSalvoSize = 7,
 
                   MuzzleVelocity = 54,
 
@@ -44,7 +63,7 @@ UnitBlueprint {
                   RackSalvoChargeTime = 0,
                   RackSalvoReloadTime = 0,
                         
-                  RateOfFire = 20/10,
+                  RateOfFire = 10/5,
 
                   
                   TurretPitch = 0,
