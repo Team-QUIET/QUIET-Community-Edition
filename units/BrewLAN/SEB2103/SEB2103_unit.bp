@@ -38,8 +38,8 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Structure',
-        Health = 1000,
-        MaxHealth = 1000,
+        Health = 500,
+        MaxHealth = 500,
         RegenRate = 1,
         SurfaceThreatLevel = 13.2,
     },
@@ -59,9 +59,9 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 5400,
-        BuildCostMass = 550,
-        BuildTime = 600,
+        BuildCostEnergy = 10000,
+        BuildCostMass = 500,
+        BuildTime = 750,
 		
         RebuildBonusIds = {'seb2103'},
     },
@@ -167,8 +167,8 @@ UnitBlueprint {
 
             Label = 'MainGun',
 
-            MaxRadius = 42,
-            MinRadius = 5,
+            MaxRadius = 47.5,
+            MinRadius = 15,
 
             MuzzleVelocity = 18,
 			MuzzleVelocityReduceDistance = 50,

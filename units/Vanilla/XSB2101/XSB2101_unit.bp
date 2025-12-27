@@ -38,8 +38,8 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Structure',
-        Health = 1300,
-        MaxHealth = 1300,
+        Health = 900,
+        MaxHealth = 900,
         RegenRate = 0,
         SurfaceThreatLevel = 13,
     },
@@ -70,8 +70,8 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 2000,
-        BuildCostMass = 250,
+        BuildCostEnergy = 1000,
+        BuildCostMass = 125,
         BuildTime = 250,
 		
         RebuildBonusIds = {'xsb2101'},
@@ -91,7 +91,7 @@ UnitBlueprint {
     },
 	
     Intel = {
-        VisionRadius = 28,
+        VisionRadius = 24,
     },
 	
     Interface = {
@@ -149,7 +149,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 
-            Damage = 50,
+            Damage = 30,
             DamageType = 'Normal',
 
             DisplayName = 'Twin Barreled Oh Spectra Cannon',
@@ -181,7 +181,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_DirectFire',
 
-            RateOfFire = 10/3,
+            RateOfFire = 10/4,
 
             ReTargetOnMiss = true,
 

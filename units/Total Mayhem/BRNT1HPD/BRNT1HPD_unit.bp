@@ -2,6 +2,22 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "brnt1hpd",
 
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 1750,
+        MaxHealth = 1750,
+        RegenRate = 1,
+        SurfaceThreatLevel = 17.3,
+    },
+
+    Economy = {
+        BuildCostEnergy = 5000,
+        BuildCostMass = 375,
+        BuildTime = 375,
+
+        RebuildBonusIds = {'BRNT1HPD'},
+    },
+
     Weapon = {
         {
             Buffs = {
@@ -25,6 +41,70 @@ UnitBlueprint {
                     TargetDisallow = 'WALL',
                 },
             },  
+
+            CollideFriendly = false,
+			
+            Damage = 210,
+            DamageRadius = 1.5,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Gauss Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 1,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 36,
+            MinRadius = 7.5,
+
+            MuzzleVelocity = 35,
+			
+			ProjectileId = '/mods/TotalMayhem/projectiles/BRNT1MTproj/BRNT1MTproj_proj.bp',
+            ProjectileLifetime = 1.1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'muzzle01'},
+                    RackBone = 'Turret_Recoil',
+                },
+                {
+                    MuzzleBones = { 'muzzle02' },
+                    RackBone = 'Turret_Recoil01',
+                },
+            },
+            
+            RackRecoilDistance = -1,
+
+            RackSlavedToTurret = true,
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/12,
+
+			
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'TECH3 MOBILE',
+                'TECH2 MOBILE',
+                'TECH1 MOBILE',
+                'ALLUNITS',
+            },
+			
+            TargetRestrictDisallow = 'UNTARGETABLE',
+
+			
+            TurretBoneMuzzle = 'aim',
+            TurretBonePitch = 'Turret_Recoil',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 40,
+            TurretPitchSpeed = 36,
 
             TurretYaw = 0,
             TurretYawRange = 180,
