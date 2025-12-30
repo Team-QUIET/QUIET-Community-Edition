@@ -67,7 +67,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 10/100,
+            RateOfFire = 10/70,
             RenderFireClock = true,
 			
             SlavedToBody = true,

@@ -1,0 +1,17 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "srl0310",
+
+    Defense = {
+        ArmorType = 'Normal',
+
+        Health = 2000,
+        MaxHealth = 2000,
+
+        RegenRate = 2,
+
+        SurfaceThreatLevel = 9,
+    },
+
+}
+

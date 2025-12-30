@@ -2,6 +2,14 @@ UnitBlueprint {
   Merge = true,
   BlueprintId = "brl0307",
 
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 2200,
+        MaxHealth = 2200,
+        RegenRate = 2,
+        SurfaceThreatLevel = 16.5,
+    },
+
     Weapon = {
         {
             Buffs = {
