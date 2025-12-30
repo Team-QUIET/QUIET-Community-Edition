@@ -1,0 +1,121 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "xsl0203",
+
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 1400,
+        MaxHealth = 1400,
+        RegenRate = 1.5,
+        SurfaceThreatLevel = 10.2,
+    },
+
+
+    Economy = {
+        BuildCostEnergy = 2420,
+        BuildCostMass = 400,
+        BuildTime = 2000,
+    },
+
+    Physics = {
+        BackUpDistance = 3,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+        },
+        DragCoefficient = 0.2,
+		
+        Elevation = 0.125,
+		
+        MaxAcceleration = 1.2,
+        MaxBrake = 1.2,
+		
+        MaxSpeed = 3.5,
+        MaxSpeedReverse = 3.5,
+		
+        MaxSteerForce = 10,
+        MeshExtentsX = 1.3,
+        MeshExtentsY = 0.65,
+        MeshExtentsZ = 1.5,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Hover',
+		
+        RotateBodyWhileMoving = true,
+		
+        TurnFacingRate = 40,
+        TurnRadius = 0,
+        TurnRate = 48,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'XSL_Weapon', Cue = 'XSL0203_Cannon_Tau', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 150,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Tau Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+			FiringRandomnessWhileMoving = 0.4,
+            FiringTolerance = 1.5,
+			
+            Label = 'TauCannon01',
+			
+            MaxRadius = 25,
+
+            MuzzleVelocity = 35,
+			
+            ProjectileId = '/projectiles/SDFTauCannon01/SDFTauCannon01_proj.bp',
+            ProjectileLifetime = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle'},
+                    RackBone = 'Turret_Barrel',
+                },
+            },
+
+            RackRecoilDistance = -0.1,
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 0.5,		---- 75 DPS
+
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+
+            TurretBoneMuzzle = 'Turret_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 20,
+            TurretPitchSpeed = 60,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 42,
+
+            Turreted = true,
+        },
+    },
+
+}
