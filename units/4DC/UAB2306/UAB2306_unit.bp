@@ -163,7 +163,7 @@ UnitBlueprint{
 
             CollideFriendly = false,
 
-            Damage = 4200,
+            Damage = 2400,
             DamageFriendly = false,
             DamageRadius = 4,
             DamageType = "Normal",
@@ -184,7 +184,7 @@ UnitBlueprint{
             MaxRadius = 73,
             MinRadius = 6,
 
-            MuzzleChargeDelay = 0.5,
+            MuzzleChargeDelay = 3,
 
             MuzzleVelocity = 32,
 

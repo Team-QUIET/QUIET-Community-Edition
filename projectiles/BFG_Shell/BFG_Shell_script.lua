@@ -97,8 +97,8 @@ BFG_Shell = ClassProjectile(BFG_Projectile) {
                             -- Set the beam damage equal to 70% of the projectiles avalible DMG pool
                             local beamDmgAmt = self.DamageData.DamageAmount * 0.70                     
 
-                            -- Reduce the projectiles DamageAmount by 35% of the beam damage
-                            self.DamageData.DamageAmount = self.DamageData.DamageAmount - (beamDmgAmt * 0.35)                       
+                            -- Reduce the projectiles DamageAmount by 50% of the beam damage
+                            self.DamageData.DamageAmount = self.DamageData.DamageAmount - (beamDmgAmt * 0.50)                       
 
                             -- Damage and stun target                 
                             Damage(self:GetLauncher(), target:GetPosition(), target, beamDmgAmt, 'Normal')
