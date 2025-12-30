@@ -12,7 +12,7 @@ UnitBlueprint {
 
 
     Economy = {
-        BuildCostEnergy = 2420,
+        BuildCostEnergy = 4000,
         BuildCostMass = 400,
         BuildTime = 2000,
     },
@@ -31,7 +31,7 @@ UnitBlueprint {
         MaxAcceleration = 1.2,
         MaxBrake = 1.2,
 		
-        MaxSpeed = 3.5,
+        MaxSpeed = 3.6,
         MaxSpeedReverse = 3.5,
 		
         MaxSteerForce = 10,
@@ -72,7 +72,7 @@ UnitBlueprint {
 			
             Label = 'TauCannon01',
 			
-            MaxRadius = 25,
+            MaxRadius = 26.5,
 
             MuzzleVelocity = 35,
 			
@@ -95,7 +95,9 @@ UnitBlueprint {
             TargetPriorities = {
                 "SPECIALHIGHPRI",
                 "TECH3 MOBILE",
-                "TECH2 MOBILE",
+                "(TECH3 * DEFENSE - ANTIMISSILE)",
+                "(TECH2 * DEFENSE - ANTIMISSILE)",
+                "(TECH2 MOBILE - ANTIAIR)",
                 "TECH1 MOBILE",
                 "(STRUCTURE * DEFENSE - ANTIMISSILE)",
                 "ALLUNITS",
@@ -112,7 +114,7 @@ UnitBlueprint {
 
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 42,
+            TurretYawSpeed = 50,
 
             Turreted = true,
         },
