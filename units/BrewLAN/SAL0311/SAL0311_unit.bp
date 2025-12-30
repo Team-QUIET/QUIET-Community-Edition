@@ -4,16 +4,16 @@ UnitBlueprint {
 
     Defense = {
         ArmorType = 'Normal',
-        Health = 7000,
-        MaxHealth = 7000,
+        Health = 7500,
+        MaxHealth = 7500,
         RegenRate = 3,
         SurfaceThreatLevel = 60,
     },
 
     Economy = {
-        BuildCostEnergy = 22000,
-        BuildCostMass = 1800,
-        BuildTime = 825,
+        BuildCostEnergy = 17500,
+        BuildCostMass = 1750,
+        BuildTime = 1750,
     },
 
     Weapon = {
