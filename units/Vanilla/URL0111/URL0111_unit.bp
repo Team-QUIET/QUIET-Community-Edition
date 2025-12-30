@@ -61,7 +61,7 @@ UnitBlueprint {
             MuzzleChargeDelay = 0.5,
 	        MuzzleSalvoDelay = 1.5,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 5,
+            MuzzleVelocity = 6,
 			
             ProjectileLifetime = 22,
 
