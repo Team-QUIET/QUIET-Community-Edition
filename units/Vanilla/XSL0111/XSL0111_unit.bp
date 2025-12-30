@@ -60,7 +60,7 @@ UnitBlueprint {
             MinRadius = 15,
 
 	        MuzzleChargeDelay = 2,
-            MuzzleVelocity = 3,
+            MuzzleVelocity = 4,
             ProjectileLifetime = 25,
 
             RangeCategory = 'UWRC_IndirectFire',
