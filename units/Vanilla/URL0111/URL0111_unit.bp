@@ -61,7 +61,7 @@ UnitBlueprint {
             MuzzleChargeDelay = 0.5,
 	        MuzzleSalvoDelay = 1.5,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 6,
+            MuzzleVelocity = 5,
 			
             ProjectileLifetime = 22,
 
@@ -73,7 +73,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
 			
-            RateOfFire = 10/100,
+            RateOfFire = 10/70,
             RenderFireClock = true,
 			
             SlavedToBody = true,
