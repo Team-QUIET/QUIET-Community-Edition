@@ -28,7 +28,7 @@ UnitBlueprint {
 		
         Elevation = 0.125,
 		
-        MaxAcceleration = 1.2,
+        MaxAcceleration = 2.2,
         MaxBrake = 1.2,
 		
         MaxSpeed = 3.6,

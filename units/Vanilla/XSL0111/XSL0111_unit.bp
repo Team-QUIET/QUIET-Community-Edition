@@ -23,7 +23,7 @@ UnitBlueprint {
         MotionType = 'RULEUMT_Land',
 
         TurnRadius = 0.5,
-        TurnRate = 90,
+        TurnRate = 45,
     },
 
     Economy = {
