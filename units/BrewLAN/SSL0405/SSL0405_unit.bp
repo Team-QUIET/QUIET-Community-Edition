@@ -59,9 +59,9 @@ UnitBlueprint {
     Defense = {
         ArmorType = 'Experimental',
         
-        Health = 128500,
-        MaxHealth = 128500,
-        RegenRate = 22,
+        Health = 195920,
+        MaxHealth = 195920,
+        RegenRate = 20,
         
         AirThreatLevel = 72,
         SubThreatLevel = 33,
@@ -301,8 +301,8 @@ UnitBlueprint {
     },
     
     Economy = {
-        BuildCostEnergy = 1032000,
-        BuildCostMass = 68500,
+        BuildCostEnergy = 1062020,
+        BuildCostMass = 77500,
         BuildTime = 56250,
         
         MaintenanceConsumptionPerSecondEnergy = 100, --Tall mode
@@ -341,11 +341,11 @@ UnitBlueprint {
     Intel = {
 		FreeIntel = true,
 
-        OmniRadius = 48,
-        RadarRadius = 96,
-        SonarRadius = 56,
-        VisionRadius = 48,
-        WaterVisionRadius = 36,
+        OmniRadius = 50,
+        RadarRadius = 65,
+        SonarRadius = 65,
+        VisionRadius = 50,
+        WaterVisionRadius = 50,
     },
     
     Interface = {
@@ -368,10 +368,10 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -3,
         LayerTransitionDuration = 3.1,
         
-        MaxAcceleration = 1.2,
-        MaxBrake = 1.5,
-        MaxSpeed = 3.6,
-        MaxSpeedReverse = 2.8,
+        MaxAcceleration = 2.5,
+        MaxBrake = 2.5,
+        MaxSpeed = 2.5,
+        MaxSpeedReverse = 3,
         MaxSteerForce = 10,
         MinSpeedPercent = 0,
         
@@ -383,11 +383,11 @@ UnitBlueprint {
         SkirtSizeZ = 9,
         
         TurnRadius = 3,
-        TurnRate = 52,
+        TurnRate = 40,
         
         --Testing would indicate that both end up about 0.3 slower than the number would indicate.
-        TallSpeedMultiplier = 0.65,
-        WaterSpeedMultiplier = 1.1,
+        TallSpeedMultiplier = 0.7,
+        WaterSpeedMultiplier = 1.5,
     },
     
     SelectionSizeX = 5,
@@ -431,9 +431,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             
-            Damage = 700,
+            Damage = 825,
             DamageRadius = 1, -- Aim bone is dead centre, and the bore axes are parallel
-            DamageType = 'ShieldMult1.2',       -- 20% extra damage to shields
+            DamageType = 'Normal'
             
             DisplayName = 'Thau Cannon',
             
@@ -730,9 +730,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             
-            Damage = 900,
+            Damage = 2385,
             DamageFriendly = true,
-            DamageRadius = 1.5,
+            DamageRadius = 6,
             DamageType = 'Normal',
             
             DisplayName = 'Heavy Sinn Unthe Cannon',
@@ -743,19 +743,19 @@ UnitBlueprint {
                 Water = 'Land|Air|Water|Seabed',
             },
             
-            FiringRandomness = 0.2,
-            FiringRandomnessWhileMoving = 0.5,
+            FiringRandomness = 0,
+            FiringRandomnessWhileMoving = 0,
             
-            FiringTolerance = 2,
+            FiringTolerance = 15,
             
-            HeadingArcCenter = 60,
-            HeadingArcRange = 80,
+            HeadingArcCenter = 90,
+            HeadingArcRange = 175,
             
             Label = 'BigGun',
             
-            MaxRadius = 50,
-            MaxRadiusTall = 67,
-            MinRadius = 9,
+            MaxRadius = 42,
+            MaxRadiusTall = 60,
+            MinRadius = 7,
             
             MuzzleChargeDelay = 2.5,
 
@@ -781,7 +781,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_DirectFire',
             
-            RateOfFire = 1,
+            RateOfFire = 0.3,
             
             TargetCheckInterval = 0.5,
             
@@ -801,11 +801,11 @@ UnitBlueprint {
             TurretDualManipulators = false,
             
             TurretPitch = 0,
-            TurretPitchRange = 30,
+            TurretPitchRange = 20,
             TurretPitchSpeed = 50,
             
-            TurretYaw = 60,
-            TurretYawRange = 80,
+            TurretYaw = 0,
+            TurretYawRange = 180,
             TurretYawSpeed = 50,
             
             Turreted = true,
@@ -826,9 +826,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             
-            Damage = 900,
+            Damage = 2385,
             DamageFriendly = true,
-            DamageRadius = 1.5,
+            DamageRadius = 6,
             DamageType = 'Normal',
             
             DisplayName = 'Heavy Sinn Unthe Cannon',
@@ -839,19 +839,19 @@ UnitBlueprint {
                 Water = 'Land|Air|Water|Seabed',
             },
             
-            FiringRandomness = 0.2,
-            FiringRandomnessWhileMoving = 0.5,
+            FiringRandomness = 0,
+            FiringRandomnessWhileMoving = 0,
 
-            FiringTolerance = 2,
+            FiringTolerance = 15,
             
-            HeadingArcCenter = -60,
-            HeadingArcRange = 80,
+            HeadingArcCenter = -90,
+            HeadingArcRange = 175,
             
             Label = 'BigGun',
             
-            MaxRadius = 50,
-            MaxRadiusTall = 67,
-            MinRadius = 9,
+            MaxRadius = 42,
+            MaxRadiusTall = 60,
+            MinRadius = 7,
             
             MuzzleChargeDelay = 2.5,
 
@@ -877,7 +877,7 @@ UnitBlueprint {
             
             RangeCategory = 'UWRC_DirectFire',
             
-            RateOfFire = 1,
+            RateOfFire = 0.3,
             
             TargetCheckInterval = 0.5,
             TargetPriorities = {
@@ -894,17 +894,17 @@ UnitBlueprint {
             TurretDualManipulators = false,
             
             TurretPitch = 0,
-            TurretPitchRange = 30,
+            TurretPitchRange = 20,
             TurretPitchSpeed = 50,
             
-            TurretYaw = -60,
-            TurretYawRange = 80,
+            TurretYaw = 0,
+            TurretYawRange = 180,
             TurretYawSpeed = 50,
             
             Turreted = true,
         },
 
-        ----Tail Gun -- strictly AA --
+        ----Tail Gun --
 
         {
         
@@ -919,9 +919,9 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
             
-            Damage = 40,
+            Damage = 75,
             DamageFriendly = false,
-            DamageRadius = 1.6,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
             
             DetonatesAtTargetHeight = true,
@@ -931,12 +931,12 @@ UnitBlueprint {
             EffectiveRadius = 42,
             
             FireTargetLayerCapsTable = {
-                Land = 'Air',
-                Seabed = 'Air',
-                Water = 'Air',
+                Land = 'Air|Land',
+                Seabed = 'Air|Land',
+                Water = 'Air|Land',
             },
-            FiringRandomness = 1,
-            FiringTolerance = 0.2,
+            FiringRandomness = 3.5,
+            FiringTolerance = 0.5,
             
             HeadingArcCenter = 180,
             HeadingArcRange = 155,
@@ -945,15 +945,15 @@ UnitBlueprint {
             LeadTarget = true,
             
             MaxRadius = 50,
-            MaxRadiusTall = 50,
+            MaxRadiusTall = 45,
 
-            MuzzleSalvoSize = 2,
-            MuzzleVelocity = 95,
+            MuzzleSalvoSize = 3,
+            MuzzleVelocity = 20,
             
             NotExclusive = true,
             
             ProjectileId = '/projectiles/SAAOlarisAAArtillery06/SAAOlarisAAArtillery06_proj.bp',
-            ProjectileLifetime = 1,
+            ProjectileLifetime = 1.7,
             
             RackBones = {
                 {
@@ -965,7 +965,7 @@ UnitBlueprint {
                     RackBone = 'Mini_T_Barrel_R_002',
                 },
             },
-            RackFireTogether = true,
+            RackFireTogether = false,
             RackRecoilDistance = 3,
 
             RackSalvoSize = 1,
@@ -982,10 +982,10 @@ UnitBlueprint {
                 'MOBILE',
                 'ALLUNITS',
             },
-            TargetRestrictOnlyAllow = 'AIR',
+            TargetRestrictOnlyAllow = 'ALLUNITS',
             TargetRestrictDisallow = 'UNTARGETABLE, SATELLITE',
             
-            TrackingRadius = 1.2,
+            TrackingRadius = 1.4,
             
             TurretBoneMuzzle = 'Mini_Muzzle_L_002',
             TurretBonePitch = 'Mini_T_Barrel_L_002',
@@ -994,13 +994,13 @@ UnitBlueprint {
             TurretBoneYaw = 'Mini_T_Body_002',
             TurretDualManipulators = true,
             
-            TurretPitch = 30,
-            TurretPitchRange = 65,
-            TurretPitchSpeed = 90,
+            TurretPitch = 0,
+            TurretPitchRange = 85,
+            TurretPitchSpeed = 180,
             
             TurretYaw = 0,
             TurretYawRange = 160,
-            TurretYawSpeed = 90,
+            TurretYawSpeed = 180,
             
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
@@ -1020,7 +1020,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             
-            Damage = 40,
+            Damage = 75,
             DamageType = 'Normal',
 
             DisplayName = 'Aire-au Bolter',
@@ -1032,8 +1032,8 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed|Air',
                 Water = 'Land|Water|Seabed|Air',
             },
-            FiringRandomness = 0.3,
-            FiringTolerance = 1,
+            FiringRandomness = 3.5,
+            FiringTolerance = 0.5,
 
             Label = 'SmallGun',
             
@@ -1042,14 +1042,14 @@ UnitBlueprint {
             MaxRadius = 50,
             MaxRadiusTall = 45,
             
-            MuzzleSalvoDelay = 0.1,
-            MuzzleSalvoSize = 2,
-            MuzzleVelocity = 50,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 3,
+            MuzzleVelocity = 20,
             
             NotExclusive = true,
 			
             ProjectileId = '/projectiles/SDFAireauBolter01/SDFAireauBolter01_proj.bp',
-            ProjectileLifetime = 1.2,
+            ProjectileLifetime = 1.25,
 
             RackBones = {
                 {
@@ -1079,7 +1079,7 @@ UnitBlueprint {
             },
 
             TargetRestrictDisallow = 'UNTARGETABLE, SATELLITE',
-            TrackingRadius = 1.3,
+            TrackingRadius = 1.4,
             
             TurretBoneMuzzle = 'Mini_Muzzle_L_001',
             TurretBonePitch = 'Mini_T_Barrel_L_001',
@@ -1089,12 +1089,12 @@ UnitBlueprint {
             TurretDualManipulators = true,
             
             TurretPitch = 0,
-            TurretPitchRange = 80,
-            TurretPitchSpeed = 80,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 180,
             
             TurretYaw = 0,
             TurretYawRange = 100,
-            TurretYawSpeed = 60,
+            TurretYawSpeed = 180,
             
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,            
@@ -1114,7 +1114,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             
-            Damage = 40,
+            Damage = 75,
             DamageType = 'Normal',
             
             DisplayName = 'Aire-au Bolter',
@@ -1127,8 +1127,8 @@ UnitBlueprint {
                 Water = 'Land|Water|Seabed|Air',
             },
             
-            FiringRandomness = 0.3,
-            FiringTolerance = 1,
+            FiringRandomness = 3.5,
+            FiringTolerance = 0.5,
 
             Label = 'SmallGun',
             
@@ -1137,14 +1137,14 @@ UnitBlueprint {
             MaxRadius = 50,
             MaxRadiusTall = 45,
             
-            MuzzleSalvoDelay = 0.1,
-            MuzzleSalvoSize = 2,
-            MuzzleVelocity = 50,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 3,
+            MuzzleVelocity = 20,
             
             NotExclusive = true,
 			
             ProjectileId = '/projectiles/SDFAireauBolter01/SDFAireauBolter01_proj.bp',
-            ProjectileLifetime = 1.2,
+            ProjectileLifetime = 1.25,
 
             RackBones = {
                 {
@@ -1174,7 +1174,7 @@ UnitBlueprint {
             },
 
             TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
-            TrackingRadius = 1.3,
+            TrackingRadius = 1.4,
             
             TurretBoneMuzzle = 'Mini_Muzzle_L_003',
             TurretBonePitch = 'Mini_T_Barrel_L_003',
@@ -1184,12 +1184,12 @@ UnitBlueprint {
             TurretDualManipulators = true,
             
             TurretPitch = 0,
-            TurretPitchRange = 80,
-            TurretPitchSpeed = 80,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 180,
             
             TurretYaw = 0,
-            TurretYawRange = 100,
-            TurretYawSpeed = 60,
+            TurretYawRange = 180,
+            TurretYawSpeed = 180,
             
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
@@ -1206,7 +1206,7 @@ UnitBlueprint {
             BelowWaterFireOnly = true,
             CollideFriendly = false,
             
-            Damage = 335,
+            Damage = 70,
             DamageType = 'Normal',
             
             DisplayName = 'Uall Cavitation Torpedo',
@@ -1277,10 +1277,10 @@ UnitBlueprint {
             
             LeadTarget = false,
             
-            MaxRadius = 28,
-            MaxRadiusTall = 8,
+            MaxRadius = 32,
+            MaxRadiusTall = 5,
             
-            MuzzleVelocity = 10,
+            MuzzleVelocity = 80,
             
             ProjectileId = '/projectiles/SANAjelluAntiTorpedo01/SANAjelluAntiTorpedo01_proj.bp',
             ProjectileLifetime = 1.5,
@@ -1300,14 +1300,14 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             TargetRestrictOnlyAllow = 'TORPEDO',
             TargetType = 'RULEWTT_Projectile',
-            TrackingRadius = 1.1,
+            TrackingRadius = 1.875,
         },
 
         {
             AboveWaterTargetsOnly = true,
             Damage = 10000,
             DamageFriendly = true,
-            DamageRadius = 9,
+            DamageRadius = 8,
             DamageType = 'Normal',
             DisplayName = 'Death',
             DummyWeapon = true,
@@ -1318,7 +1318,7 @@ UnitBlueprint {
 
     Wreckage = {
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
-        EnergyMult = 0.2,
+        EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.5,
         ReclaimTimeMultiplier = 1,
@@ -1328,3 +1328,4 @@ UnitBlueprint {
         },
     },
 }
+
