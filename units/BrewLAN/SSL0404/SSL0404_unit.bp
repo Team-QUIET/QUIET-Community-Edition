@@ -25,6 +25,7 @@ UnitBlueprint {
             '<LOC ability_personalstealth>Personal Stealth',
             '<LOC ability_deathaoe>Volatile',
         },
+    },
 
     Economy = {
         BuildCostEnergy = 515000,
@@ -56,7 +57,7 @@ UnitBlueprint {
         StealthWaitTime = 2,
         
         VisionRadius = 40,
-        WaterVisionradius = 40,
+        WaterVisionRadius = 40,
     },
     
     Interface = {
