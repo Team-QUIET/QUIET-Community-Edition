@@ -83,6 +83,7 @@ UnitBlueprint {
             '<LOC ability_torpedodef>Torpedo Defense',
             '<LOC ability_deathaoe>Volatile',
         },
+    },
         
         AnimationActivate = '/mods/BrewLAN_LOUD/units/SSL0405/SSL0405_AAwakenLand.sca',
         
@@ -298,7 +299,6 @@ UnitBlueprint {
         },
 
         UniformScale = 0.035,
-    },
     
     Economy = {
         BuildCostEnergy = 1062020,
