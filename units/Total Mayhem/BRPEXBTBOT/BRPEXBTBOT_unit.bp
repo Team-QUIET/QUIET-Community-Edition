@@ -45,8 +45,8 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Normal',
-        Health = 32500,
-        MaxHealth = 32500,
+        Health = 40000,
+        MaxHealth = 40000,
         RegenRate = 10,
         
         AirThreatLevel = 28,
@@ -95,9 +95,9 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 90000,
-        BuildCostMass = 10000,
-        BuildTime = 10000,
+        BuildCostEnergy = 120000,
+        BuildCostMass = 12000,
+        BuildTime = 12000,
     },
     
     General = {
@@ -291,7 +291,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 102,
+            Damage = 125,
             DamageFriendly = false,
             DamageRadius = 4,
             DamageType = 'Normal',
@@ -307,9 +307,9 @@ UnitBlueprint {
 			
             Label = 'AAGun',
 			
-            MaxRadius = 60,
+            MaxRadius = 30,
 
-            MuzzleVelocity = 65,
+            MuzzleVelocity = 70,
             
             NotExclusive = true,
 			
