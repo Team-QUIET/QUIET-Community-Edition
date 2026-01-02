@@ -86,7 +86,7 @@ UnitBlueprint {
         },
 		
         AnimationWalk = '/mods/BlackOpsUnleashed/units/BSL0406/BSL0406_AWalk01.sca',
-        AnimationWalkRate = 1.10,
+        AnimationWalkRate = 1.20,
 		
         Mesh = {
             IconFadeInZoom = 130,
