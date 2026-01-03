@@ -1773,7 +1773,7 @@ UnitBlueprint {
             DamageType = 'Normal',
 
 			DoTTime = 4,
-            DoTPulses = 20,     -- 1000 damage
+            DoTPulses = 5,
 
             DisplayName = 'Storm Cannon',
 
@@ -1791,15 +1791,13 @@ UnitBlueprint {
 
             Label = 'EXBigBallCannon01',
 
-            MaxRadius = 33,
+            MaxRadius = 34,
             MinRadius = 2,
 
-            MuzzleChargeDelay = 2.5,
-
+            MuzzleChargeDelay = 1,
             MuzzleVelocity = 15,
 
 			NotExclusive = true,
-
 			PrefersPrimaryWeaponTarget = true,
 
             ProjectileId = '/mods/BlackopsACUs/projectiles/SeraACUBigBall01/SeraACUBigBall01_proj.bp',
@@ -1814,7 +1812,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_DirectFire',
 
-            RateOfFire = 1,     -- controlled by charge and muzzlechargedelay = 4 seconds
+            RateOfFire = 10/10,
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -1831,12 +1829,12 @@ UnitBlueprint {
             TurretBoneYaw = 'Torso',
 
             TurretPitch = 0,
-            TurretPitchRange = 30,
-            TurretPitchSpeed = 85,
+            TurretPitchRange = 20,
+            TurretPitchSpeed = 90,
 
             TurretYaw = 0,
-            TurretYawRange = 30,
-            TurretYawSpeed = 85,
+            TurretYawRange = 5,
+            TurretYawSpeed = 90,
 
             Turreted = true,
         },
@@ -1854,11 +1852,11 @@ UnitBlueprint {
             CollideFriendly = false,
 
             Damage = 100,
-			DamageRadius = 2.6,
+			DamageRadius = 2.5,
             DamageType = 'Normal',
 
 			DoTTime = 4,
-            DoTPulses = 20,     -- 2000 Damage
+            DoTPulses = 5,
 
             DisplayName = 'Storm Cannon II',
 
@@ -1876,15 +1874,13 @@ UnitBlueprint {
 
             Label = 'EXBigBallCannon02',
 
-            MaxRadius = 37,
+            MaxRadius = 38,
             MinRadius = 2,
 
-            MuzzleChargeDelay = 2.5,    -- 2.5 second muzzle charge delay
-
+            MuzzleChargeDelay = 1,
             MuzzleVelocity = 18,
 
 			NotExclusive = true,
-
 			PrefersPrimaryWeaponTarget = true,
 
             ProjectileId = '/mods/BlackopsACUs/projectiles/SeraACUBigBall02/SeraACUBigBall02_proj.bp',
@@ -1899,7 +1895,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_DirectFire',
 
-            RateOfFire = 1,     -- controlled by charges - 4 seconds
+            RateOfFire = 10/10,
 
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -1914,12 +1910,12 @@ UnitBlueprint {
             TurretBoneYaw = 'Torso',
 
             TurretPitch = 0,
-            TurretPitchRange = 30,
-            TurretPitchSpeed = 85,
+            TurretPitchRange = 20,
+            TurretPitchSpeed = 90,
 
             TurretYaw = 0,
-            TurretYawRange = 30,
-            TurretYawSpeed = 85,
+            TurretYawRange = 5,
+            TurretYawSpeed = 90,
 
             Turreted = true,
         },
@@ -1937,11 +1933,11 @@ UnitBlueprint {
             CollideFriendly = false,
 
             Damage = 180,
-			DamageRadius = 3.4,
+			DamageRadius = 3.5,
             DamageType = 'Normal',
 
 			DoTTime = 4,
-            DoTPulses = 20,     -- 3600 Damage
+            DoTPulses = 5,
 
             DisplayName = 'Storm Cannon III',
 
@@ -1959,15 +1955,13 @@ UnitBlueprint {
 
             Label = 'EXBigBallCannon03',
 
-            MaxRadius = 45,
-            MinRadius = 3,
+            MaxRadius = 46,
+            MinRadius = 2,
 
-            MuzzleChargeDelay = 2,
-
+            MuzzleChargeDelay = 1,
             MuzzleVelocity = 18,
 
 			NotExclusive = true,
-
 			PrefersPrimaryWeaponTarget = true,
 
             ProjectileId = '/mods/BlackopsACUs/projectiles/SeraACUBigBall03/SeraACUBigBall03_proj.bp',
@@ -1982,7 +1976,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_DirectFire',
 
-            RateOfFire = 1,     -- controlled by charges -- 4 seconds
+            RateOfFire = 10/10,
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -1999,12 +1993,12 @@ UnitBlueprint {
             TurretBoneYaw = 'Torso',
 
             TurretPitch = 0,
-            TurretPitchRange = 30,
-            TurretPitchSpeed = 85,
+            TurretPitchRange = 20,
+            TurretPitchSpeed = 90,
 
             TurretYaw = 0,
-            TurretYawRange = 30,
-            TurretYawSpeed = 85,
+            TurretYawRange = 5,
+            TurretYawSpeed = 90,
 
             Turreted = true,
         },
@@ -2022,7 +2016,7 @@ UnitBlueprint {
 
             CollideFriendly = false,
 
-            Damage = 75,
+            Damage = 68,
 			DamageRadius = 0,
             DamageType = 'Normal',
 
@@ -2055,7 +2049,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_DirectFire',
 
-            RateOfFire = 3,		-- 225 DPS
+            RateOfFire = 10/10,
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -2072,11 +2066,11 @@ UnitBlueprint {
             TurretBoneYaw = 'Torso',
 
             TurretPitch = 0,
-            TurretPitchRange = 4,
+            TurretPitchRange = 20,
             TurretPitchSpeed = 90,
 
             TurretYaw = 0,
-            TurretYawRange = 4,
+            TurretYawRange = 5,
             TurretYawSpeed = 90,
 
             Turreted = true,
@@ -2096,7 +2090,7 @@ UnitBlueprint {
 
             CollideFriendly = false,
 
-            Damage = 140,
+            Damage = 137,
 			DamageRadius = 0,
             DamageType = 'Normal',
 
@@ -2129,7 +2123,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_DirectFire',
 
-            RateOfFire = 3,		-- 420 DPS
+            RateOfFire = 10/10,
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -2146,11 +2140,11 @@ UnitBlueprint {
             TurretBoneYaw = 'Torso',
 
             TurretPitch = 0,
-            TurretPitchRange = 4,
+            TurretPitchRange = 20,
             TurretPitchSpeed = 90,
 
             TurretYaw = 0,
-            TurretYawRange = 4,
+            TurretYawRange = 5,
             TurretYawSpeed = 90,
 
             Turreted = true,
@@ -2179,11 +2173,11 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
                 Seabed = 'Land|Water|Seabed',
             },
-            FiringTolerance = 2,
+            FiringTolerance = 1,
 
             Label = 'EXRapidCannon03',
 
-            MaxRadius = 57,
+            MaxRadius = 56,
             MinRadius = 2,
 
             MuzzleVelocity = 40,
@@ -2204,7 +2198,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_DirectFire',
 
-            RateOfFire = 2,		-- 550 DPS
+            RateOfFire = 10/10,
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -2221,15 +2215,14 @@ UnitBlueprint {
             TurretBoneYaw = 'Torso',
 
             TurretPitch = 0,
-            TurretPitchRange = 4,
+            TurretPitchRange = 20,
             TurretPitchSpeed = 90,
 
             TurretYaw = 0,
-            TurretYawRange = 4,
+            TurretYawRange = 5,
             TurretYawSpeed = 90,
 
             Turreted = true,
-            
             UseFiringSolutionInsteadOfAimBone = true,
         },
         {

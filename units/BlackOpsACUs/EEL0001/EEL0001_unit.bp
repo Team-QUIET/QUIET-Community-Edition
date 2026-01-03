@@ -1639,89 +1639,1381 @@ UnitBlueprint {
         },
 
         {
-            
+            AboveWaterTargetsOnly = true,
+            CollideFriendly = false,
+			
+            Damage = 0,
+            DamageFriendly = true,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Death Nuke',
+			
+            FireOnDeath = true,
+            FiringTolerance = 2,
+			
+            Label = 'DeathWeapon',
+			
+            MaxRadius = 1,
+			
+            MuzzleVelocity = 0,
+			
+            NukeInnerRingDamage = 14500,
+            NukeInnerRingRadius = 15,
+            NukeInnerRingTicks = 5,
+            NukeInnerRingTotalTime = 1,
+			
+            NukeOuterRingDamage = 4500,
+            NukeOuterRingRadius = 25,
+            NukeOuterRingTicks = 5,
+            NukeOuterRingTotalTime = 4,
+			
+            ProjectileId = '/effects/Entities/UEFNukeEffectController01/UEFNukeEffectController01_proj.bp',
+
+            RackBones = {
+                {
+                    MuzzleBones = {0},
+                    RackBone = 0,
+                },
+            },
+
+            RateOfFire = 1,
+
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
         },
 		
 		--- Flamethrower ---
 
         {
-            
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+			AimsStraightOnDisable = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'UESWeapon', Cue = 'UES0201_Cannon_Dbl', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 6,
+            DamageRadius = 3,
+			
+            DoTPulses = 10,
+            DoTTime = 1,
+			
+            DamageType = 'Explosive',
+			
+            DisplayName = 'Flame Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 3,
+            FiringRandomness = 1.5,
+			
+            Label = 'EXFlameCannon01',
+			
+            MaxRadius = 26,
+            MinRadius = 2,
+
+            MuzzleVelocity = 18,
+			
+			NotExclusive = true,
+            NoPause = true,
+			
+            ProjectileId = '/mods/BlackOpsACUs/projectiles/NapalmProjectile01/Napalm01_proj.bp',
+            ProjectileLifetime = 2.4,
+
+            RackBones = {
+                {
+                    MuzzleBones = { 'Flamer_Muzzle', },
+                    RackBone = 'Left_Arm_Barrel',
+                },
+            },
+
+            RateOfFire = 10/5,
+
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'DEFENSE',
+                'SHIELD',
+                'RADAR',
+                'MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE,WALL',
+			
+            TurretBoneMuzzle = 'Flamer_Muzzle',
+            TurretBonePitch = 'Left_Arm_Barrel',
+            TurretBoneYaw = 'Left_Arm_Barrel',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 90,
+			
+            TurretYaw = 0,
+            TurretYawRange = 45,
+            TurretYawSpeed = 45,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
         },
         {
-            
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+			AimsStraightOnDisable = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'UESWeapon', Cue = 'UES0201_Cannon_Dbl', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 12,
+            DamageRadius = 3,
+			
+            DoTPulses = 20,
+            DoTTime = 1,
+			
+            DamageType = 'Explosive',
+			
+            DisplayName = 'Flame Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 2,
+            FiringRandomness = 1.5,
+			
+            Label = 'EXFlameCannon02',
+			
+            MaxRadius = 32,
+            MinRadius = 2,
+
+            MuzzleVelocity = 18,
+			
+            NoPause = true,
+			NotExclusive = true,
+
+            ProjectileId = '/mods/BlackOpsACUs/projectiles/NapalmProjectile01/Napalm01_proj.bp',
+            ProjectileLifetime = 2.4,
+
+            RackBones = {
+                {
+                    MuzzleBones = { 'Flamer_Muzzle' },
+                    RackBone = 'Left_Arm_Barrel',
+                },
+            },
+
+            RateOfFire = 10/5,
+
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'DEFENSE',
+                'STRUCTURE',
+                'SHIELD',
+                'RADAR',
+                'MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE,WALL',
+			
+            TurretBoneMuzzle = 'Flamer_Muzzle',
+            TurretBonePitch = 'Left_Arm_Barrel',
+            TurretBoneYaw = 'Left_Arm_Barrel',
+			
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 90,
+			
+            TurretYaw = 0,
+            TurretYawRange = 45,
+            TurretYawSpeed = 45,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
         },
 
 		--- Torpedo Launcher ---
 		
         {
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 380,
+            DamageType = 'Normal',
             
+            EnabledByEnhancement = 'EXTorpedoLauncher',
+			
+            FireTargetLayerCapsTable = {
+                Seabed = 'Seabed|Sub|Water',
+            },
+            FiringTolerance = 2,
+			
+            Label = 'TorpedoLauncher01',
+			
+            MaxRadius = 60,
+			
+            MuzzleSalvoDelay = 0.6,
+            MuzzleSalvoSize = 2,
+
+            MuzzleVelocity = 6,
+			
+            ProjectileId = '/projectiles/TANAnglerTorpedo01/TANAnglerTorpedo01_proj.bp',
+            ProjectileLifetime = 7.5,
+
+            RackBones = {
+                {
+                    MuzzleBones = { 'Torpedo_Muzzle01', 'Torpedo_Muzzle02' },
+                    RackBone = 'Torpedo_Tauncher',
+                },
+            },
+            
+            RackSalvoReloadTime = 2.1,  -- firing cycle 3.3 = 760/3.2
+
+            RangeCategory = 'UWRC_AntiNavy',
+			
+            RateOfFire = 1,
+
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'SUBMERSIBLE',
+                'NAVAL',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
         },
         {
-           
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 250,
+            DamageType = 'Normal',
+            
+            EnabledByEnhancement = 'EXTorpedoRapidLoader',
+			
+            FireTargetLayerCapsTable = {
+                Seabed = 'Seabed|Sub|Water',
+            },
+            FiringTolerance = 2,
+			
+            Label = 'TorpedoLauncher02',
+			
+            MaxRadius = 66,
+			
+            MuzzleSalvoDelay = 0.5,
+            MuzzleSalvoSize = 4,
+
+            MuzzleVelocity = 6,
+			
+            ProjectileId = '/projectiles/TANAnglerTorpedo01/TANAnglerTorpedo01_proj.bp',
+            ProjectileLifetime = 9,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Torpedo_Muzzle01','Torpedo_Muzzle02'},
+                    RackBone = 'Torpedo_Tauncher',
+                },
+            },
+            
+            RackSalvoReloadTime = 1.3,  -- cycle is 3.3 = 1000/3.3 = 303 DPS
+
+            RangeCategory = 'UWRC_AntiNavy',
+			
+            RateOfFire = 1,
+
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'SUBMERSIBLE',
+                'NAVAL',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
         },
         {
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 500,
+            DamageType = 'Normal',
             
+            EnabledByEnhancement = 'EXTorpedoClusterLauncher',
+			
+            FireTargetLayerCapsTable = {
+                Seabed = 'Seabed|Sub|Water',
+            },
+            FiringTolerance = 2,
+			
+            Label = 'TorpedoLauncher03',
+			
+            MaxRadius = 72,
+			
+            MuzzleSalvoDelay = 0.5,
+            MuzzleSalvoSize = 4,
+
+            MuzzleVelocity = 7,
+			
+            ProjectileId = '/projectiles/TANAnglerTorpedo01/TANAnglerTorpedo01_proj.bp',
+            ProjectileLifetime = 9,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Torpedo_Muzzle01','Torpedo_Muzzle02'},
+                    RackBone = 'Torpedo_Tauncher',
+                },
+            },
+            
+            RackSalvoReloadTime = 2.5,  -- cycle is 4.5 seconds = 2000/4.5 = 444 DPS
+
+            RangeCategory = 'UWRC_AntiNavy',
+			
+            RateOfFire = 1,
+
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'SUBMERSIBLE',
+                'NAVAL',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
         },
 		
 		-- Anti-Matter Cannon --
 		
         {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'XEL_Weapons', Cue = 'XEL0305_Plasma_Cannon', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
             
+            Damage = 900,
+            DamageRadius = 3,
+			DamageFriendly = false,
+            DamageType = 'Normal',
+            
+            DisplayName = 'Anti-Matter Cannon',
+            
+            EnabledByEnhancement = 'EXAntiMatterCannon',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 2,
+            
+            Label = 'EXAntiMatterCannon01',
+            
+            MaxRadius = 32,
+            MinRadius = 2,
+            
+            MuzzleVelocity = 32,
+            
+            PrefersPrimaryWeaponTarget = true,
+
+            ProjectileId = '/mods/BlackopsACUs/projectiles/UEFACUAntiMatter01/UEFACUAntiMatter01_proj.bp',
+            ProjectileLifetime = 1.1,            
+
+            RackBones = {
+                {
+                    MuzzleBones = { 'HAC_Muzzle' },
+                    RackBone = 'HAC',
+                },
+            },
+            
+            RackSalvoReloadTime = 3.3,  -- cycle is 3.3 seconds = 900/3.3 = 272 DPS
+
+            RangeCategory = 'UWRC_DirectFire',
+
+            RateOfFire = 10/10,
+
+            
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            
+            TurretBoneMuzzle = 'HAC_Muzzle',
+            TurretBonePitch = 'Right_Arm_Barrel',
+            TurretBoneYaw = 'Torso',
+            
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 90,
+            
+            TurretYaw = 0,
+            TurretYawRange = 5,
+            TurretYawSpeed = 90,
+            
+            Turreted = true,
+            
+            UseFiringSolutionInsteadOfAimBone = true,
         },
         {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'XEL_Weapons', Cue = 'XEL0305_Plasma_Cannon', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
             
+            Damage = 1800,
+            DamageRadius = 3.5,
+			DamageFriendly = false,
+            DamageType = 'Normal',
+            
+            DisplayName = 'Anti-Matter Cannon',
+            
+            EnabledByEnhancement = 'EXImprovedContainmentBottle',
+            
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 2,
+            
+            Label = 'EXAntiMatterCannon02',
+            
+            MaxRadius = 42,
+            MinRadius = 2,
+
+            MuzzleVelocity = 34,
+            
+            PrefersPrimaryWeaponTarget = true,
+
+            ProjectileId = '/mods/BlackopsACUs/projectiles/UEFACUAntiMatter02/UEFACUAntiMatter02_proj.bp',
+            ProjectileLifetime = 1.3,
+
+            RackBones = {
+                {
+                    MuzzleBones = { 'HAC_Muzzle' },
+                    RackBone = 'HAC',
+                },
+            },
+            
+            RackSalvoReloadTime = 3.3,  -- cycle is 3.3 seconds = 1600/3.3 = 485 DPS
+            
+            RangeCategory = 'UWRC_DirectFire',
+            
+            RateOfFire = 10/10,
+
+            
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+            TurretBoneMuzzle = 'HAC_Muzzle',
+            TurretBonePitch = 'Right_Arm_Barrel',
+            TurretBoneYaw = 'Torso',
+
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 90,
+
+            TurretYaw = 0,
+            TurretYawRange = 5,
+            TurretYawSpeed = 90,
+
+            Turreted = true,
+
+            UseFiringSolutionInsteadOfAimBone = true,
         },
         {
-           
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'XEL_Weapons', Cue = 'XEL0305_Plasma_Cannon', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_LowArc',
+
+            Buffs = {
+                {
+                    Add = { OnImpact = true },
+                    AppliedToTarget = true,
+                    BuffType = 'STUN',
+                    Duration = 2,
+                    Radius = 4,
+                    TargetAllow = 'TECH1,TECH2,TECH3',
+                    TargetDisallow = 'EXPERIMENTAL,COMMAND,AIR',
+                },
+            },
+
+            CollideFriendly = false,
+
+            Damage = 3600,
+            DamageRadius = 4,
+			DamageFriendly = false,
+            DamageType = 'Normal',
+
+            DisplayName = 'Anti-Matter Cannon',
+            
+            EnabledByEnhancement = 'EXPowerBooster',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 2,
+
+            Label = 'EXAntiMatterCannon03',
+
+            MaxRadius = 48,
+            MinRadius = 2,
+
+            MuzzleVelocity = 38,
+
+            PrefersPrimaryWeaponTarget = true,
+
+            ProjectileId = '/mods/BlackopsACUs/projectiles/UEFACUAntiMatter03/UEFACUAntiMatter03_proj.bp',
+            ProjectileLifetime = 1.4,
+
+            RackBones = {
+                {
+                    MuzzleBones = { 'HAC_Muzzle' },
+                    RackBone = 'HAC',
+                },
+            },
+            
+            RackSalvoReloadTime = 3.3,  -- cycle is 3.3 seconds = 2500/3.3 = 757 DPS
+
+            RangeCategory = 'UWRC_DirectFire',
+ 
+            RateOfFire = 10/10,
+
+            
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+            TurretBoneMuzzle = 'HAC_Muzzle',
+            TurretBonePitch = 'Right_Arm_Barrel',
+            TurretBoneYaw = 'Torso',
+
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 90,
+
+            TurretYaw = 0,
+            TurretYawRange = 5,
+            TurretYawSpeed = 90,
+
+            Turreted = true,
+
+            UseFiringSolutionInsteadOfAimBone = true,
         },
 		
 		-- Gatling Gun --
 		
         {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'XEL_Weapons', Cue = 'XEB2306_Gatling_Gun', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+
+            Damage = 40,
+            DamageType = 'Normal',
+
+            DisplayName = 'Banshee Gatling Cannon',
             
+            EnabledByEnhancement = 'EXGattlingEnergyCannon',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed|Air',
+                Seabed = 'Land|Water|Seabed|Air',
+                Water = 'Land|Water|Seabed|Air',
+            },
+
+            FiringRandomness = 0,
+            FiringRandomnessWhileMoving = 0.5,
+            FiringTolerance = 1,
+
+            Label = 'EXGattlingEnergyCannon01',
+
+            MaxRadius = 38,
+
+            MuzzleSalvoDelay = 0.4,
+            MuzzleSalvoSize = 10,
+
+            MuzzleVelocity = 46,
+
+			NotExclusive = true,
+
+            PrefersPrimaryWeaponTarget = true,
+
+            ProjectileId = '/projectiles/TDFHeavyPlasmaGatlingCannon01/TDFHeavyPlasmaGatlingCannon01_proj.bp',
+            ProjectileLifetime = 0.9,
+
+            RackBones = {
+                {
+                    MuzzleBones = { 'Gatling_Cannon_Muzzle' },
+                    RackBone = 'Gatling_Cannon_Barrel',
+                },
+            },
+
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+
+            RangeCategory = 'UWRC_DirectFire',
+
+            RateOfFire = 10/10,
+
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+            TurretBoneMuzzle = 'Gatling_Cannon_Muzzle',
+            TurretBonePitch = 'Right_Arm_Barrel',
+            TurretBoneYaw = 'Torso',
+
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 90,
+
+            TurretYaw = 0,
+            TurretYawRange = 5,
+            TurretYawSpeed = 90,
+
+            Turreted = true,
+
+            UseFiringSolutionInsteadOfAimBone = true,
         },
         {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'XEL_Weapons', Cue = 'XEB2306_Gatling_Gun', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+
+            Damage = 80,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+
+            DisplayName = 'Ravager Gatling Cannon',
             
+            EnabledByEnhancement = 'EXImprovedCoolingSystem',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+
+            FiringRandomness = 0,
+            FiringRandomnessWhileMoving = 0.5,
+            FiringTolerance = 1,
+
+            Label = 'EXGattlingEnergyCannon02',
+            
+            LeadTarget = true,
+
+            MaxRadius = 48,
+
+            MuzzleSalvoDelay = 0.4,
+            MuzzleSalvoSize = 20,
+
+            MuzzleVelocity = 40,
+
+			NotExclusive = true,
+
+            PrefersPrimaryWeaponTarget = true,
+			
+            ProjectileId = '/projectiles/TDFHeavyPlasmaGatlingCannon01/TDFHeavyPlasmaGatlingCannon01_proj.bp',
+            ProjectileLifetime = 1.5,
+
+            RackBones = {
+                {
+                    MuzzleBones = { 'Gatling_Cannon_Muzzle' },
+                    RackBone = 'Gatling_Cannon_Barrel',
+                },
+            },
+
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+
+            RangeCategory = 'UWRC_DirectFire',
+
+            RateOfFire = 10/10,
+
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+            TurretBoneMuzzle = 'Gatling_Cannon_Muzzle',
+            TurretBonePitch = 'Right_Arm_Barrel',
+            TurretBoneYaw = 'Torso',
+
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 90,
+
+            TurretYaw = 0,
+            TurretYawRange = 5,
+            TurretYawSpeed = 90,
+
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
         },
         {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'XEL_Weapons', Cue = 'XEB2306_Gatling_Gun', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CollideFriendly = false,
+
+            Damage = 180,
+            DamageRadius = 1,
+            DamageType = 'Normal',
+
+            DisplayName = 'Devastator Gatling Cannon',
             
+            EnabledByEnhancement = 'EXEnergyShellHardener',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+
+            FiringRandomness = 0,
+            FiringRandomnessWhileMoving = 0.5,
+            FiringTolerance = 1,
+
+            Label = 'EXGattlingEnergyCannon03',
+
+            MaxRadius = 56,
+
+            MuzzleSalvoDelay = 0.4,
+            MuzzleSalvoSize = 20,
+
+            MuzzleVelocity = 40,
+
+			NotExclusive = true,
+
+            PrefersPrimaryWeaponTarget = true,
+
+            ProjectileId = '/mods/BlackOpsACUs/projectiles/UEFHeavyPlasmaGatlingCannon02/UEFHeavyPlasmaGatlingCannon02_proj.bp',
+            ProjectileLifetime = 1.6,
+
+            RackBones = {
+                {
+                    MuzzleBones = { 'Gatling_Cannon_Muzzle' },
+                    RackBone = 'Gatling_Cannon_Barrel',
+                },
+            },
+
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+
+            RangeCategory = 'UWRC_DirectFire',
+
+            RateOfFire = 10/10,
+
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+            TurretBoneMuzzle = 'Gatling_Cannon_Muzzle',
+            TurretBonePitch = 'Right_Arm_Barrel',
+            TurretBoneYaw = 'Torso',
+
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 90,
+
+            TurretYaw = 0,
+            TurretYawRange = 5,
+            TurretYawSpeed = 90,
+
+            Turreted = true,
+
+            UseFiringSolutionInsteadOfAimBone = true,
         },
 		
 		-- Tactical Missile --
 		
         {
+            AboveWaterTargetsOnly = true,
             
+            AttackGroundTries = 1,
+
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEL0111_Missile_Cruise', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CollideFriendly = false,
+
+            CountedProjectile = true,
+
+            Damage = 6000,
+            DamageFriendly = true,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+
+            DisplayName = 'Tactical Warhead', -- Could be used with UI info.
+
+            EffectiveRadius = 0, -- Why is this here?
+            
+            EnabledByEnhancement = 'EXTacticalMisslePack',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+            },
+
+            FiringTolerance = 30,
+
+            Label = 'TacMissile',
+
+            ManualFire = true,
+            MaxProjectileStorage = 5,
+
+            MaxRadius = 256,
+            MinRadius = 5,
+
+            MuzzleVelocity = 8,
+            
+            NotExclusive = true,
+
+            ProjectileId = '/projectiles/TIFMissileCruiseCDR/TIFMissileCruiseCDR_proj.bp',
+            ProjectileLifetime = 80,
+
+            RackBones = {
+                {
+                    MuzzleBones = { 'Back_MissilePack_Muzzle' },
+                    RackBone = 'Back_MissilePack_Muzzle',
+                },
+            },
+
+            RangeCategory = 'UWRC_IndirectFire',
+
+            RateOfFire = 5,     -- ROF controlled by repack cycle of 4 seconds
+
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+            WeaponRepackTimeout = 4,
+            --WeaponUnpacks = true,
         },
 		
 		--- Billy Nuke Missile ---
 
         {
-           
+            AboveWaterTargetsOnly = true,
+            
+            AttackGroundTries = 1,
+
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEL0111_Missile_Cruise', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+            CountedProjectile = true,
+			
+            Damage = 0,
+            DamageFriendly = true,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Nuclear Warhead',
+            
+            EnabledByEnhancement = 'EXTacticalNukeSubstitution',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 360,
+			
+            Label = 'TacNukeMissile',
+			
+            ManualFire = true,
+            MaxProjectileStorage = 3,
+			
+            MaxRadius = 256,
+            MinRadius = 5,
+			
+            MuzzleVelocity = 8,
+			
+            NukeInnerRingDamage = 12000,
+            NukeInnerRingRadius = 15,
+            NukeInnerRingTicks = 24,
+            NukeInnerRingTotalTime = 0,
+            NukeOuterRingDamage = 250,
+            NukeOuterRingRadius = 25,
+            NukeOuterRingTicks = 20,
+            NukeOuterRingTotalTime = 0,
+			
+            NukeWeapon = true,
+			
+            ProjectileId = '/mods/BlackopsACUs/projectiles/UEFBilly/UEFBilly_proj.bp',
+            ProjectileLifetime = 80,
+			
+            RackBones = {
+                {
+                    MuzzleBones = { 'Back_MissilePack_Muzzle' },
+                    RackBone = 'Back_MissilePack_Muzzle',
+                },
+            },
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 1,
+
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+            WeaponRepackTimeout = 5,
+            --WeaponUnpacks = true,
         },
 		
 		-- Right Shoulder Energy Lance --
 		
         {
-            
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                BeamStart = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Start', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            BeamCollisionDelay = 0.1,
+            BeamLifetime = 0.1,
+
+            CollideFriendly = false,
+
+            Damage = 40,
+            DamageType = 'Normal',
+
+            DisplayName = 'Energy Lance',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Seabed = 'Air',
+                Water = 'Air',
+            },
+
+            FiringRandomness = 5,
+            FiringTolerance = 0,
+
+            Label = 'EXEnergyLance01',
+
+            MaxRadius = 25,
+
+            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoSize = 4,
+
+            PrefersPrimaryWeaponTarget = false,
+
+            RackBones = {
+                { MuzzleBones = { 'Right_Lance_Muzzle' },
+                    RackBone = 'Right_Lance_Muzzle',
+                },
+            },
+
+            RangeCategory = 'UWRC_AntiAir',
+
+            RateOfFire = 1,     -- 160 DPS AIR
+
+
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+				'MOBILE AIR',
+            },
+
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+
+            TurretBoneMuzzle = 'Right_Lance_Muzzle',
+            TurretBonePitch = 'Right_Lance_Pitch',
+            TurretBoneYaw = 'Right_Lance_Turret',
+
+            TurretPitch = 0,
+            TurretPitchRange = 100,
+            TurretPitchSpeed = 180,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 180,
+
+            Turreted = true,
+
+            UseFiringSolutionInsteadOfAimBone = true,
         },
 		
 		-- Left Shoulder Energy Lance --
 		
         {
-            
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                BeamStart = Sound { Bank = 'URLWeapon', Cue = 'URL0402_Beam_Start', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            BeamCollisionDelay = 0.1,
+            BeamLifetime = 0.1,
+
+            CollideFriendly = false,
+
+            Damage = 40,
+            DamageType = 'Normal',
+
+            DisplayName = 'Energy Lance',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Seabed = 'Air',
+                Water = 'Air',
+            },
+
+            FiringRandomness = 5,
+            FiringTolerance = 0,
+
+            Label = 'EXEnergyLance02',
+
+            MaxRadius = 25,
+
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 4,
+
+            PrefersPrimaryWeaponTarget = false,
+            RackBones = {
+                {
+                    MuzzleBones = { 'Left_Lance_Muzzle' },
+                    RackBone = 'Left_Lance_Muzzle',
+                },
+            },
+
+            RangeCategory = 'UWRC_AntiAir',
+
+            RateOfFire = 1,     -- 160 DPS Air
+
+
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+				'MOBILE AIR',
+            },
+
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+
+
+            TurretBoneMuzzle = 'Left_Lance_Muzzle',
+            TurretBonePitch = 'Left_Lance_Pitch',
+            TurretBoneYaw = 'Left_Lance_Turret',
+
+            TurretPitch = 0,
+            TurretPitchRange = 100,
+            TurretPitchSpeed = 180,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 180,
+
+            Turreted = true,
+
+            UseFiringSolutionInsteadOfAimBone = true,
         },
 		
 		-- Cluster Missiles -- 
 		
         {
-            
-        },
-        {
-            
-        },
-        {
-            
-        },
+            AboveWaterTargetsOnly = true,
 
+            Audio = {
+                Fire = Sound { Bank = 'UESWeapon', Cue = 'UES0202_Fire_Cruise', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CollideFriendly = false,
+
+            CountedProjectile = false,
+			
+            Damage = 150,
+            DamageFriendly = true,
+            DamageRadius = 1.5,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Flapjack Missile Cluster',
+            
+            EnabledByEnhancement = 'EXClusterMisslePack',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+                Seabed = 'Land|Water',
+                Sub = 'Land|Water',
+                Water = 'Land|Water',
+            },
+            FiringTolerance = 360,
+			
+            Label = 'EXClusterMissles01',
+			
+            MaxRadius = 75,
+            MinRadius = 5,
+			
+            MuzzleSalvoDelay = 0.7,
+            MuzzleSalvoSize = 6,
+            MuzzleVelocity = 3,
+            
+            NotExclusive = true,
+			
+            ProjectileId = '/projectiles/TIFMissileCruise04/TIFMissileCruise04_proj.bp',
+            ProjectileLifetime = 20,
+		
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'Left_Salvo_Muzzle03',
+                        'Right_Salvo_Muzzle03',
+                        'Left_Salvo_Muzzle02',
+                        'Right_Salvo_Muzzle02',
+                        'Left_Salvo_Muzzle01',
+                        'Right_Salvo_Muzzle01',
+                    },
+                    RackBone = 'Back_Upgrade_B01',
+                },
+            },
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 0.2,       -- 6 x 150 = 900 * .2 = 180 DPS
+
+
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'ARTILLERY',
+                'INDIRECTFIRE',
+                'DEFENSE',
+                'MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+        },
+        {
+            AboveWaterTargetsOnly = true,
+			
+            Audio = {
+                Fire = Sound { Bank = 'XEL_Weapons', Cue = 'XEL0306_Missile_Cruise', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CollideFriendly = false,
+
+            Damage = 300,
+            DamageFriendly = true,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Spearhead Missile Pack',
+            
+            EnabledByEnhancement = 'EXClusterMisslesPack',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+                Seabed = 'Land|Water',
+                Sub = 'Land|Water',
+                Water = 'Land|Water',
+            },
+            FiringTolerance = 360,
+			
+            Label = 'EXClusterMissles02',
+			
+            MaxRadius = 88,
+            MinRadius = 12,
+			
+            MuzzleSalvoDelay = 0.5,
+            MuzzleSalvoSize = 6,
+
+            MuzzleVelocity = 5,
+			
+			NotExclusive = true,
+			
+            ProjectileId = '/projectiles/TIFMissileCruise05/TIFMissileCruise05_proj.bp',
+            ProjectileLifetime = 20,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'Left_Salvo_Muzzle03',
+                        'Right_Salvo_Muzzle03',
+                        'Left_Salvo_Muzzle02',
+                        'Right_Salvo_Muzzle02',
+                        'Left_Salvo_Muzzle01',
+                        'Right_Salvo_Muzzle01',
+                    },
+                    RackBone = 'Back_Upgrade_B01',
+                },
+            },
+
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 0.2,       -- 6 x 300 = 1800 * .2 = 360 DPS
+
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'ARTILLERY',
+                'INDIRECTFIRE',
+                'DEFENSE',
+                'MOBILE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+        },
+        {
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'UESWeapon', Cue = 'UES0202_Fire_Cruise', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+            BallisticArc = 'RULEUBA_None',
+
+            CollideFriendly = false,
+
+            CountedProjectile = false,
+			
+            Damage = 130,
+            DamageFriendly = true,
+            DamageRadius = 2.6,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Fractal Cluster Missiles',
+            
+            EnabledByEnhancement = 'EXClusterMissleSalvoPack',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water',
+                Seabed = 'Land|Water',
+                Sub = 'Land|Water',
+                Water = 'Land|Water',
+            },
+            FiringTolerance = 360,
+			
+            Label = 'EXClusterMissles03',
+			
+            MaxRadius = 97,
+            MinRadius = 18,
+			
+            MuzzleSalvoDelay = 0.4,
+            MuzzleSalvoSize = 6,
+
+            MuzzleVelocity = 10,
+
+            NotExclusive = true,
+            
+            ProjectileId = '/mods/BlackopsACUs/projectiles/EXClusterMissle01/EXClusterMissle01_proj.bp',
+            ProjectileLifetime = 20,
+
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'Left_Salvo_Muzzle03',
+                        'Right_Salvo_Muzzle03',
+                        'Left_Salvo_Muzzle02',
+                        'Right_Salvo_Muzzle02',
+                        'Left_Salvo_Muzzle01',
+                        'Right_Salvo_Muzzle01',
+                    },
+                    RackBone = 'Back_Upgrade_B01',
+                },
+            },
+			
+            RangeCategory = 'UWRC_IndirectFire',
+			
+            RateOfFire = 0.2,       -- 6 x 130 = 780 * .2 = 156 DPS x 3 (missile split) = 468 DPS
+
+
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'ARTILLERY',
+                'INDIRECTFIRE',
+                'DEFENSE',
+                'MOBILE',
+                'ALLUNITS',
+            },
+
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+        },
 	},
 }

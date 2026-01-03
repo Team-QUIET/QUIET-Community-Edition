@@ -1563,7 +1563,7 @@ UnitBlueprint {
             DisplayName = 'Miasma Artillery',
 			
             DoTPulses = 5,          -- 5 x 130 damage every 9 seconds
-            DoTTime = 3,
+            DoTTime = 1,
             
             EnergyChargeForFirstShot = false,
 
@@ -1655,15 +1655,15 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
-            Damage = 195,
+            Damage = 215,
             DamageFriendly = true,
-            DamageRadius = 2.5,
+            DamageRadius = 3,
             DamageType = 'Normal',
 			
             DisplayName = 'Miasma Artillery',
 			
-            DoTPulses = 5,          -- 1950 damage every 8 seconds = 243 DPS
-            DoTTime = 3,
+            DoTPulses = 5,          -- 2150 damage every 8 seconds = 268 DPS
+            DoTTime = 1,
 			
             EnergyChargeForFirstShot = false,
 
@@ -1751,15 +1751,15 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
-            Damage = 260,
+            Damage = 290,
             DamageFriendly = true,
-            DamageRadius = 2.9,
+            DamageRadius = 3.5,
             DamageType = 'Normal',
 			
             DisplayName = 'Miasma Artillery',
 			
-            DoTPulses = 5,      --- 2600 damage every 7 seconds = 371 DPS
-            DoTTime = 3,
+            DoTPulses = 5,      --- 2900 damage every 7 seconds = 414 DPS
+            DoTTime = 1,
 
             EnergyChargeForFirstShot = false,
 
@@ -1838,13 +1838,224 @@ UnitBlueprint {
             UseFiringSolutionInsteadOfAimBone = true,
         },
         {
-           
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                BeamLoop = Sound {Bank = 'UALWeapon',Cue = 'UAL0401_Phason_Laser_Loop',LodCutoff = 'Weapon_LodCutoff'},
+                BeamStart = Sound {Bank = 'UALWeapon',Cue = 'UAL0401_Phason_Laser_Fire',LodCutoff = 'Weapon_LodCutoff'},
+                BeamStop = Sound {Bank = 'UALWeapon',Cue = 'UAL0401_Phason_Laser_Stop',LodCutoff = 'Weapon_LodCutoff'},
+            },
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0,
+			
+            CollideFriendly = false,
+            ContinuousBeam = true,
+			
+            Damage = 26,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Phason Laser',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+				Seabed = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+				
+            },
+			
+            FiringTolerance = 0,
+			
+            Label = 'EXPhasonBeam01',
+			
+            MaxRadius = 33,
+
+            NotExclusive = true,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Right_Turret_Muzzle'},
+                    RackBone = 'Right_Turret',
+                },
+            },
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/10,
+
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+			
+            TurretBoneMuzzle = 'Right_Turret_Muzzle',
+            TurretBonePitch = 'Right_Turret',
+            TurretBoneYaw = 'Right_Arm_B02',
+
+            TurretPitch = 0,
+            TurretPitchRange = 40,
+            TurretPitchSpeed = 90,
+			
+            TurretYaw = 0,
+            TurretYawRange = 10,
+            TurretYawSpeed = 180,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
         },
         {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                BeamLoop = Sound {Bank = 'UALWeapon',Cue = 'UAL0401_Phason_Laser_Loop',LodCutoff = 'Weapon_LodCutoff'},
+                BeamStart = Sound {Bank = 'UALWeapon',Cue = 'UAL0401_Phason_Laser_Fire',LodCutoff = 'Weapon_LodCutoff'},
+                BeamStop = Sound {Bank = 'UALWeapon',Cue = 'UAL0401_Phason_Laser_Stop',LodCutoff = 'Weapon_LodCutoff'},
+            },
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0,
+			
+            CollideFriendly = false,
+            ContinuousBeam = true,
+			
+            Damage = 52,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+
+            DisplayName = 'Phason Laser',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 0,
+			
+            Label = 'EXPhasonBeam02',
+			
+            MaxRadius = 42,
             
+            NotExclusive = true,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Right_Turret_Muzzle'},
+                    RackBone = 'Right_Turret',
+                },
+            },
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/10,
+
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			
+            TurretBoneMuzzle = 'Right_Turret_Muzzle',
+            TurretBonePitch = 'Right_Turret',
+            TurretBoneYaw = 'Right_Arm_B02',
+
+            TurretPitch = 0,
+            TurretPitchRange = 40,
+            TurretPitchSpeed = 90,
+			
+            TurretYaw = 0,
+            TurretYawRange = 10,
+            TurretYawSpeed = 180,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
         },
         {
+            AboveWaterFireOnly = true,
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                BeamLoop = Sound {Bank = 'UALWeapon',Cue = 'UAL0401_Phason_Laser_Loop',LodCutoff = 'Weapon_LodCutoff'},
+                BeamStart = Sound {Bank = 'UALWeapon',Cue = 'UAL0401_Phason_Laser_Fire',LodCutoff = 'Weapon_LodCutoff'},
+                BeamStop = Sound {Bank = 'UALWeapon',Cue = 'UAL0401_Phason_Laser_Stop',LodCutoff = 'Weapon_LodCutoff'},
+            },
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0,
+            BeamLifetime = 0,
+			
+            CollideFriendly = false,
+            ContinuousBeam = true,
+			
+            Damage = 104,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Phason Laser',
+
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 1,
+			
+            Label = 'EXPhasonBeam03',
+			
+            MaxRadius = 56,
             
+            NotExclusive = true,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Right_Turret_Muzzle'},
+                    RackBone = 'Right_Turret',
+                },
+            },
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 10/10,
+
+			
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+			
+            TurretBoneMuzzle = 'Right_Turret_Muzzle',
+            TurretBonePitch = 'Right_Turret',
+            TurretBoneYaw = 'Right_Arm_B02',
+
+            TurretPitch = 0,
+            TurretPitchRange = 40,
+            TurretPitchSpeed = 90,
+			
+            TurretYaw = 0,
+            TurretYawRange = 10,
+            TurretYawSpeed = 180,
+			
+            Turreted = true,
+            UseFiringSolutionInsteadOfAimBone = true,
         },
     },
 }

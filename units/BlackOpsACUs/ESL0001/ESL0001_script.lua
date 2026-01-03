@@ -1002,9 +1002,7 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
             
             -- increase radius by 5
 			wep:ChangeMaxRadius( self:GetBlueprint().Weapon[2].MaxRadius + 5)
-            
-            Buff.ApplyBuff(self,'MobilityPenalty')
-            
+                        
 			wpTarget:ChangeMaxRadius(self:GetBlueprint().Weapon[2].MaxRadius + 5)
             
 			wep = self:GetWeaponByLabel('OverCharge')
@@ -1022,10 +1020,6 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
             
             -- revert range to original value
 			wep:ChangeMaxRadius(self:GetBlueprint().Weapon[2].MaxRadius)
-            
-            if Buff.HasBuff( self, 'MobilityPenalty' ) then
-                Buff.RemoveBuff( self, 'MobilityPenalty' )
-            end
             
 			wpTarget:ChangeMaxRadius(self:GetBlueprint().Weapon[2].MaxRadius)
 
@@ -1071,8 +1065,6 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
 			self.wcTorp01 = false
 			self.wcTorp02 = false
 			self.wcTorp03 = true
-            
-            Buff.ApplyBuff(self,'MobilityPenalty')
 
 			self:ForkThread(self.WeaponRangeReset)
 			self:ForkThread(self.WeaponConfigCheck)
@@ -1081,10 +1073,6 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
 			self.wcTorp01 = false
 			self.wcTorp02 = false
 			self.wcTorp03 = false
-            
-            if Buff.HasBuff( self, 'MobilityPenalty' ) then
-                Buff.RemoveBuff( self, 'MobilityPenalty' )
-            end
 
 			self:ForkThread(self.WeaponRangeReset)
 			self:ForkThread(self.WeaponConfigCheck)
@@ -1126,18 +1114,12 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
 			self.wcBigBall02 = false
 			self.wcBigBall03 = true
             
-            Buff.ApplyBuff(self,'MobilityPenalty')
-
 			self:ForkThread(self.WeaponRangeReset)
 			self:ForkThread(self.WeaponConfigCheck)
 
         elseif enh =='EXStormCannonIIIRemove' then
 
             self:SetWeaponEnabledByLabel('EXBigBallCannon', false)
-            
-            if Buff.HasBuff( self, 'MobilityPenalty' ) then
-                Buff.RemoveBuff( self, 'MobilityPenalty' )
-            end
 
 			self.wcBigBall01 = false
 			self.wcBigBall02 = false
@@ -1183,8 +1165,6 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
 			self.wcRapid02 = false
 			self.wcRapid03 = true
             
-            Buff.ApplyBuff(self,'MobilityPenalty')
-
 			self:ForkThread(self.WeaponRangeReset)
 			self:ForkThread(self.WeaponConfigCheck)
 
@@ -1192,10 +1172,6 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
 			self.wcRapid01 = false
 			self.wcRapid02 = false
 			self.wcRapid03 = false
-            
-            if Buff.HasBuff( self, 'MobilityPenalty' ) then
-                Buff.RemoveBuff( self, 'MobilityPenalty' )
-            end
 
 			self:ForkThread(self.WeaponRangeReset)
 			self:ForkThread(self.WeaponConfigCheck)
@@ -1323,16 +1299,10 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
         elseif enh == 'EXArmorPlating' then
 
             Buff.ApplyBuff(self, 'ArmorPackage7')
-            
-            Buff.ApplyBuff(self,'MobilityPenalty')
 
 		elseif enh == 'EXArmorPlatingRemove' then
 
             Buff.RemoveBuff( self, 'ArmorPackage7' )
-            
-            if Buff.HasBuff( self, 'MobilityPenalty' ) then
-                Buff.RemoveBuff( self, 'MobilityPenalty' )
-            end
 
         elseif enh == 'EXStealthField' then
 
@@ -1349,10 +1319,6 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
         elseif enh == 'EXStealthFieldRemove' then
 
             Buff.RemoveBuff( self, 'ArmorPackage7' )
-            
-            if Buff.HasBuff( self, 'MobilityPenalty' ) then
-                Buff.RemoveBuff( self, 'MobilityPenalty' )
-            end
 
             self:SetScriptBit('RULEUTC_StealthToggle', true )   -- turn off Stealth Field
 
@@ -1382,10 +1348,6 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
 
             Buff.RemoveBuff( self, 'ArmorPackage7' )
             
-            if Buff.HasBuff( self, 'MobilityPenalty' ) then
-                Buff.RemoveBuff( self, 'MobilityPenalty' )
-            end
-            
             if self.CloakOn then
                 self:SetScriptBit('RULEUTC_CloakToggle', true ) -- turn off cloak
             end
@@ -1412,10 +1374,6 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
         elseif enh == 'EXOverchargeOverdriveRemove' then
 
             Buff.RemoveBuff( self, 'ArmorPackage7' )
-            
-            if Buff.HasBuff( self, 'MobilityPenalty' ) then
-                Buff.RemoveBuff( self, 'MobilityPenalty' )
-            end
             
             if self.CloakOn then
                 self:SetScriptBit('RULEUTC_CloakToggle', true ) -- turn off cloak
