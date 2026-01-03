@@ -2427,7 +2427,7 @@ UnitBlueprint {
             FiringTolerance = 2,
 			
             HeadingArcCenter = 0,
-            HeadingArcRange = 5,
+            HeadingArcRange = 360,
 
             Label = 'EXMLG01',
 
@@ -2465,7 +2465,7 @@ UnitBlueprint {
             TurretPitchSpeed = 40,
 
             TurretYaw = 0,
-            TurretYawRange = 5,
+            TurretYawRange = 45,
             TurretYawSpeed = 90,
 
             Turreted = true,
@@ -2506,7 +2506,7 @@ UnitBlueprint {
             FiringTolerance = 2,
 
             HeadingArcCenter = 0,
-            HeadingArcRange = 5,
+            HeadingArcRange = 360,
 
             Label = 'EXMLG02',
 
@@ -2543,7 +2543,7 @@ UnitBlueprint {
             TurretPitchSpeed = 40,
 
             TurretYaw = 0,
-            TurretYawRange = 5,
+            TurretYawRange = 45,
             TurretYawSpeed = 90,
 
             Turreted = true,
@@ -2583,7 +2583,7 @@ UnitBlueprint {
             FiringTolerance = 2,
 
             HeadingArcCenter = 0,
-            HeadingArcRange = 5,
+            HeadingArcRange = 360,
 
             Label = 'EXMLG03',
 
@@ -2622,7 +2622,7 @@ UnitBlueprint {
             TurretPitchSpeed = 40,
 
             TurretYaw = 0,
-            TurretYawRange = 5,
+            TurretYawRange = 45,
             TurretYawSpeed = 90,
 
             Turreted = true,
