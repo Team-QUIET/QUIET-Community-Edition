@@ -44,7 +44,7 @@ UnitBlueprint {
 	
     Defense = {
 
-        LambdaDestroy01 = {AttachBone = 'Torso01', Radius = 4.8, RedirectRateOfFire = 5 },
+        LambdaDestroy01 = {AttachBone = 'Torso01', Radius = 7.2, RedirectRateOfFire = 5 },
 
         ArmorType = 'Normal',
         Health = 56000,

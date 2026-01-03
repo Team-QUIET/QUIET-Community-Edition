@@ -55,7 +55,7 @@ UnitBlueprint {
         ArmorType = 'Experimental',
         Health = 35500,
         MaxHealth = 35500,
-        RegenRate = 27,
+        RegenRate = 75,
         SurfaceThreatLevel = 228,
     },
 	
@@ -86,7 +86,7 @@ UnitBlueprint {
         },
 		
         AnimationWalk = '/mods/BlackOpsUnleashed/units/BSL0406/BSL0406_AWalk01.sca',
-        AnimationWalkRate = 1,
+        AnimationWalkRate = 1.20,
 		
         Mesh = {
             IconFadeInZoom = 130,
@@ -157,10 +157,10 @@ UnitBlueprint {
             LAYER_Seabed = true,
         },
         DragCoefficient = 0.2,
-        MaxAcceleration = 1.5,
+        MaxAcceleration = 2.5,
         MaxBrake = 3.0,
         MaxSpeed = 3.0,
-        MaxSpeedReverse = 0,
+        MaxSpeedReverse = 2.5,
         MaxSteerForce = 10,
 		
         MeshExtentsX = 1.45,
@@ -178,7 +178,7 @@ UnitBlueprint {
         SkirtSizeZ = 6,
 		
         TurnRadius = 5,
-        TurnRate = 45,
+        TurnRate = 55,
     },
 	
     SelectionSizeX = 2.4,

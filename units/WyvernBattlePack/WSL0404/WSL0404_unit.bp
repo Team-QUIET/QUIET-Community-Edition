@@ -48,8 +48,8 @@ UnitBlueprint{
     Defense = {
         AirThreatLevel = 14,
         ArmorType = "Experimental",
-        Health = 21000,
-        MaxHealth = 21000,
+        Health = 27000,
+        MaxHealth = 27000,
         RegenRate = 12,
         SurfaceThreatLevel = 427.9,
     },
@@ -186,8 +186,8 @@ UnitBlueprint{
 
             DisplayName = "Suthanus Field Mortar",
 
-            EnergyDrainPerSecond = 2140,        -- 3.5 second charge
-            EnergyRequired = 7490,
+            EnergyDrainPerSecond = 450,        -- 3.5 second charge
+            EnergyRequired = 1575,
 
             FireTargetLayerCapsTable = {
                 Land = "Land|Water|Seabed",

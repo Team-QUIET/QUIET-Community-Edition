@@ -280,7 +280,7 @@ UnitBlueprint {
 
             CollideFriendly = false,
 			
-            Damage = 750,
+            Damage = 850,
             DamageFriendly = false,
             DamageRadius = 3,
             DamageType = 'Normal',
@@ -327,7 +327,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 1,		-- 1500 DPS
+            RateOfFire = 1,		-- 850 DPS
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -370,7 +370,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
-            Damage = 120,
+            Damage = 150,
 			DamageRadius = 0,
             DamageType = 'Normal',
 			
@@ -406,7 +406,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_DirectFire',
 			
-            RateOfFire = 5,		-- 600 DPS
+            RateOfFire = 5,		-- 750 DPS
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",

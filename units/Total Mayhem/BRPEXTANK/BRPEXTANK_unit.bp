@@ -57,7 +57,7 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 31000,
         MaxHealth = 31000,
-        RegenRate = 10,
+        RegenRate = 40,
         
         SurfaceThreatLevel = 193.1,
     },
@@ -67,8 +67,6 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_amphibious>Amphibious',
-			'Radar & Sonar Stealth',
-            'Lambda Destruction Field',
         },
 		
         Mesh = {
@@ -144,9 +142,9 @@ UnitBlueprint {
 
         LayerChangeOffsetHeight = -1.8,
 		
-        MaxAcceleration = 1.5,
+        MaxAcceleration = 2.7,
         MaxBrake = 1.5,
-        MaxSpeed = 3,
+        MaxSpeed = 3.7,
         MaxSpeedReverse = 3,
         MaxSteerForce = 10,
 		
@@ -164,7 +162,7 @@ UnitBlueprint {
         SkirtSizeZ = 4,
 		
         TurnRadius = 5,
-        TurnRate = 20,
+        TurnRate = 35,
 		
 		WaterSpeedMultiplier = 1.1,
     },
@@ -307,11 +305,11 @@ UnitBlueprint {
 			
             TurretPitch = 0,
             TurretPitchRange = 70,
-            TurretPitchSpeed = 40,
+            TurretPitchSpeed = 50,
 			
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 38,
+            TurretYawSpeed = 45,
 			
             Turreted = true,
         },
