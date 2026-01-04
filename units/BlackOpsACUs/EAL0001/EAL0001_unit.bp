@@ -276,9 +276,9 @@ UnitBlueprint {
 		
         EXImprovedEngineering = {
 		
-            BuildCostEnergy = 42000,
-            BuildCostMass = 1600,
-            BuildTime = 1250,
+            BuildCostEnergy = 48000,
+            BuildCostMass = 2100,
+            BuildTime = 2250,
 			
             BuildableCategoryAdds = 'BUILTBYTIER2COMMANDER AEON',
 
@@ -315,9 +315,9 @@ UnitBlueprint {
 		
         EXAdvancedEngineering = {
 		
-            BuildCostEnergy = 145000,
-            BuildCostMass = 7250,
-            BuildTime = 5850,
+            BuildCostEnergy = 155000,
+            BuildCostMass = 8250,
+            BuildTime = 7850,
 
             BuildableCategoryAdds = 'BUILTBYTIER3COMMANDER AEON',
 
@@ -356,9 +356,9 @@ UnitBlueprint {
 		
         EXExperimentalEngineering = {
 		
-            BuildCostEnergy = 389500,
-            BuildCostMass = 16950,
-            BuildTime = 22600,
+            BuildCostEnergy = 479500,
+            BuildCostMass = 21950,
+            BuildTime = 29600,
 			
             BuildableCategoryAdds = 'BUILTBYTIER4COMMANDER AEON',
 
@@ -397,9 +397,9 @@ UnitBlueprint {
 		
         EXCombatEngineering = {
 		
-            BuildCostEnergy = 42000,
-            BuildCostMass = 1600,
-            BuildTime = 1250,
+            BuildCostEnergy = 48000,
+            BuildCostMass = 2100,
+            BuildTime = 2250,
 
             BuildableCategoryAdds = 'BUILTBYTIER2COMMANDER AEON',
             Icon = 'exlce1',
@@ -437,9 +437,9 @@ UnitBlueprint {
 		
         EXAssaultEngineering = {
 		
-            BuildCostEnergy = 145000,
-            BuildCostMass = 7250,
-            BuildTime = 5850,
+            BuildCostEnergy = 155000,
+            BuildCostMass = 8250,
+            BuildTime = 7850,
 
             BuildableCategoryAdds = 'BUILTBYTIER3COMMANDER AEON',
 
@@ -480,9 +480,9 @@ UnitBlueprint {
 		
         EXApocalypticEngineering = {
 		
-            BuildCostEnergy = 389500,
-            BuildCostMass = 16950,
-            BuildTime = 22600,
+            BuildCostEnergy = 479500,
+            BuildCostMass = 21950,
+            BuildTime = 29600,
 			
             BuildableCategoryAdds = 'BUILTBYTIER4COMMANDER AEON',
             Icon = 'exlce3',
