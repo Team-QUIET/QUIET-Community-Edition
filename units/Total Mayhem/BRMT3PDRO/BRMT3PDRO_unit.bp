@@ -75,8 +75,8 @@ UnitBlueprint {
 			
             Label = 'RocketPod',
 
-            MaxRadius = 98,
-            MinRadius = 12,
+            MaxRadius = 92,
+            MinRadius = 8,
 			
             MuzzleChargeDelay = 0.1,
             MuzzleSalvoDelay = 0.2,

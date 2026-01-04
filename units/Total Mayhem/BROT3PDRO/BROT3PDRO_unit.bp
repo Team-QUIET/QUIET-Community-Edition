@@ -40,8 +40,8 @@ UnitBlueprint {
 			
             Label = 'MainGun',
 			
-            MaxRadius = 96,
-            MinRadius = 12,
+            MaxRadius = 92,
+            MinRadius = 8,
 			
             MuzzleSalvoDelay = 0.5,
             MuzzleSalvoSize = 3,
