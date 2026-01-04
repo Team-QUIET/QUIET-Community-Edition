@@ -14,8 +14,8 @@ UnitBlueprint {
                     Add = { OnImpact = true },
                     AppliedToTarget = true,
                     BuffType = 'STUN',
-                    Duration = 1.5,
-                    Radius = 3,
+                    Duration = 0.5,
+                    Radius = 2,
                     TargetAllow = 'LAND TECH1,NAVAL TECH1,LAND TECH2,NAVAL TECH2,LAND TECH3,NAVAL TECH3',
                     TargetDisallow = 'WALL',
                 },
@@ -25,7 +25,7 @@ UnitBlueprint {
 			
             Damage = 2400,
             DamageFriendly = true,
-            DamageRadius = 2.8,
+            DamageRadius = 2,
             DamageType = 'Normal',
 			
             DisplayName = 'Resonance Artillery',
@@ -38,13 +38,13 @@ UnitBlueprint {
                 Water = 'Land|Water',
             },
 			
-            FiringRandomness = 2.25,
+            FiringRandomness = 2.5,
             FiringTolerance = 1,
 			
             LeadTarget = true,
 			
-            MaxRadius = 155,
-            MinRadius = 25,
+            MaxRadius = 115,
+            MinRadius = 50,
 
             MuzzleVelocity = 33,
 			
@@ -59,7 +59,7 @@ UnitBlueprint {
 
 			RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 10/90,	
+            RateOfFire = 10/200,	
 
 			
             TargetPriorities = {
@@ -110,8 +110,8 @@ UnitBlueprint {
                     Add = { OnImpact = true },
                     AppliedToTarget = true,
                     BuffType = 'STUN',
-                    Duration = 1.5,
-                    Radius = 3,
+                    Duration = 0.5,
+                    Radius = 2,
                     TargetAllow = 'LAND TECH1,NAVAL TECH1,LAND TECH2,NAVAL TECH2,LAND TECH3,NAVAL TECH3',
                     TargetDisallow = 'WALL',
                 },
@@ -121,7 +121,7 @@ UnitBlueprint {
 			
             Damage = 2400,
             DamageFriendly = true,
-            DamageRadius = 2.8,
+            DamageRadius = 2,
             DamageType = 'Normal',
 			
             DisplayName = 'Resonance Artillery',
@@ -134,13 +134,13 @@ UnitBlueprint {
                 Water = 'Land|Water',
             },
 			
-            FiringRandomness = 2.25,
+            FiringRandomness = 2.5,
             FiringTolerance = 1,
 			
 			LeadTarget = true,			
 			
-            MaxRadius = 155,
-            MinRadius = 25,
+            MaxRadius = 115,
+            MinRadius = 50,
 
             MuzzleVelocity = 33,
 			
@@ -153,7 +153,7 @@ UnitBlueprint {
 
             RackRecoilDistance = -36,
 
-            RateOfFire = 10/90,	
+            RateOfFire = 10/200,	
 
 
             TargetPriorities = {
@@ -205,8 +205,8 @@ UnitBlueprint {
                     Add = { OnImpact = true },
                     AppliedToTarget = true,
                     BuffType = 'STUN',
-                    Duration = 1.5,
-                    Radius = 3,
+                    Duration = 0.5,
+                    Radius = 2,
                     TargetAllow = 'LAND TECH1,NAVAL TECH1,LAND TECH2,NAVAL TECH2,LAND TECH3,NAVAL TECH3',
                     TargetDisallow = 'WALL',
                 },
@@ -216,7 +216,7 @@ UnitBlueprint {
 			
             Damage = 2400,
             DamageFriendly = true,
-            DamageRadius = 2.8,
+            DamageRadius = 2,
             DamageType = 'Normal',
 			
             DisplayName = 'Resonance Artillery',
@@ -229,13 +229,13 @@ UnitBlueprint {
                 Water = 'Land|Water',
             },
 			
-            FiringRandomness = 2.25,
+            FiringRandomness = 2.5,
             FiringTolerance = 1,
 			
 			LeadTarget = true,			
 			
-            MaxRadius = 155,
-	        MinRadius = 25,
+            MaxRadius = 115,
+	        MinRadius = 50,
 
             MuzzleVelocity = 33,
 			
@@ -248,7 +248,7 @@ UnitBlueprint {
 
             RackRecoilDistance = -36,
 
-            RateOfFire = 10/90,	
+            RateOfFire = 10/200,	
 
 
             TargetPriorities = {

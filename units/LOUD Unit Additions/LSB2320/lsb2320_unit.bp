@@ -12,7 +12,7 @@ UnitBlueprint {
 			
             Damage = 2600,
             DamageFriendly = true,
-            DamageRadius = 3,
+            DamageRadius = 2,
             DamageType = 'Normal',
 			
             DisplayName = 'Zthuthaam Cannon',
@@ -25,13 +25,13 @@ UnitBlueprint {
                 Water = 'Land|Water',
             },
 			
-            FiringRandomness = 2.25,
+            FiringRandomness = 2.5,
             FiringTolerance = 1,
 			
 			LeadTarget = true,			
 			
-            MaxRadius = 160,
-            MinRadius = 25,
+            MaxRadius = 115,
+            MinRadius = 50,
 			
             MuzzleChargeDelay = 1,
 
@@ -47,7 +47,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 10/90,
+            RateOfFire = 10/200,
 
 			
             TargetPriorities = {
@@ -96,7 +96,7 @@ UnitBlueprint {
 			
             Damage = 2600,
             DamageFriendly = true,
-            DamageRadius = 3,
+            DamageRadius = 2,
             DamageType = 'Normal',
 			
             DisplayName = 'Zthuthaam Artillery Cannon',
@@ -109,13 +109,13 @@ UnitBlueprint {
                 Water = 'Land|Water',
             },
 			
-            FiringRandomness = 2.25,
+            FiringRandomness = 2.5,
             FiringTolerance = 1,
 			
 			LeadTarget = true,
 			
-            MaxRadius = 160,
-            MinRadius = 25,
+            MaxRadius = 115,
+            MinRadius = 50,
 			
             MuzzleChargeDelay = 1,
 
@@ -129,7 +129,7 @@ UnitBlueprint {
 
             RackRecoilDistance = -8,
 
-            RateOfFire = 10/90,
+            RateOfFire = 10/200,
 
 			
             TargetPriorities = {
@@ -178,7 +178,7 @@ UnitBlueprint {
 			
             Damage = 2600,
             DamageFriendly = true,
-            DamageRadius = 3,
+            DamageRadius = 2,
             DamageType = 'Normal',
 			
             DisplayName = 'Zthuthaam Artillery Cannon',
@@ -191,13 +191,13 @@ UnitBlueprint {
                 Water = 'Land|Water',
             },
 			
-            FiringRandomness = 2.25,
+            FiringRandomness = 2.5,
             FiringTolerance = 1,
 			
 			LeadTarget = true,
 			
-            MaxRadius = 160,
-            MinRadius = 25,
+            MaxRadius = 115,
+            MinRadius = 50, 
 			
             MuzzleChargeDelay = 1,
 
@@ -211,7 +211,7 @@ UnitBlueprint {
 
             RackRecoilDistance = -8,
 
-            RateOfFire = 10/90,
+            RateOfFire = 10/200,
 
 
             TargetPriorities = {

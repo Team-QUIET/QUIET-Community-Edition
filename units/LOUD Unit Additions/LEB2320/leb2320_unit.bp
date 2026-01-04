@@ -25,13 +25,13 @@ UnitBlueprint {
                 Water = 'Land|Water',
             },
 
-            FiringRandomness = 2.25,
+            FiringRandomness = 2.5,
             FiringTolerance = 1,
 			
 			LeadTarget = true,			
 			
-            MaxRadius = 155,
-            MinRadius = 25,
+            MaxRadius = 115,
+            MinRadius = 50,
 
             MuzzleVelocity = 33,
 			MuzzleVelocityReduceDistance = 175,
@@ -46,7 +46,7 @@ UnitBlueprint {
 
 			RangeCategory = 'UWRC_IndirectFire',			
 			
-            RateOfFire = 10/90,
+            RateOfFire = 10/200,
 
 			
             TargetPriorities = {
@@ -108,13 +108,13 @@ UnitBlueprint {
                 Water = 'Land|Water',
             },
 			
-            FiringRandomness = 2.25,
+            FiringRandomness = 2.5,
             FiringTolerance = 1,
 
 			LeadTarget = true,
 			
-            MaxRadius = 155,
-            MinRadius = 25,
+            MaxRadius = 115,
+            MinRadius = 50,
 
             MuzzleVelocity = 33,
 			MuzzleVelocityReduceDistance = 175,
@@ -127,7 +127,7 @@ UnitBlueprint {
             RackRecoilDistance = -25,
             RackReloadTimeout = 10,
 
-            RateOfFire = 10/90,
+            RateOfFire = 10/200,
 
             
             TargetPriorities = {
@@ -189,13 +189,13 @@ UnitBlueprint {
                 Water = 'Land|Water',
             },
 			
-            FiringRandomness = 2.25,
+            FiringRandomness = 2.5,
             FiringTolerance = 1,
 			
 			LeadTarget = true,
 			
-            MaxRadius = 155,
-            MinRadius = 25,
+            MaxRadius = 115,
+            MinRadius = 50,
 
             MuzzleVelocity = 33,
 			MuzzleVelocityReduceDistance = 175,
@@ -208,7 +208,7 @@ UnitBlueprint {
             RackRecoilDistance = -25,
             RackReloadTimeout = 10,
 
-            RateOfFire = 10/90,
+            RateOfFire = 10/200,
 
             
             TargetPriorities = {
