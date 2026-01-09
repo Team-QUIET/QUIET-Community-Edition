@@ -28,9 +28,9 @@ UnitBlueprint {
             CollideFriendly = false,
             CountedProjectile = false,
 			
-            Damage = 500,
+            Damage = 250,
             DamageFriendly = true,
-            DamageRadius = 3,
+            DamageRadius = 1,
             DamageType = 'Normal',
             
             DisplayName = 'Laanse Tactical Missile Launcher',
@@ -45,10 +45,10 @@ UnitBlueprint {
             
             Label = 'Missile',
 			
-            MaxRadius = 125,
+            MaxRadius = 115,
 			MinRadius = 18,
 			
-            MuzzleSalvoDelay = 0.9,
+            MuzzleSalvoDelay = 0.6,
             MuzzleSalvoSize = 4,
             MuzzleVelocity = 30,
             ProjectileId = '/projectiles/SIFLaanseTacticalMissile02/SIFLaanseTacticalMissile02_proj.bp',
@@ -66,7 +66,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 10/50,	
+            RateOfFire = 10/100,	
 
 			
             TargetPriorities = {

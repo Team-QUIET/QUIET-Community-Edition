@@ -46,8 +46,8 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 35,
         ArmorType = 'Normal',
-        Health = 1800,
-        MaxHealth = 1800,
+        Health = 2080,
+        MaxHealth = 2080,
         RegenRate = 0,
     },
 	
@@ -117,7 +117,7 @@ UnitBlueprint {
 	
     Economy = {
         BuildCostEnergy = 11000,
-        BuildCostMass = 1000,
+        BuildCostMass = 800,
         BuildTime = 500,
     },
 	
@@ -158,8 +158,8 @@ UnitBlueprint {
         DragCoefficient = 0.2,
         Elevation = 0.2,
         MaxAcceleration = 1.75,
-        MaxBrake = 3.3,
-        MaxSpeed = 3.3,
+        MaxBrake = 3.2,
+        MaxSpeed = 3.2,
         MaxSpeedReverse = 0,
         MaxSteerForce = 1000,
 		
@@ -280,7 +280,7 @@ UnitBlueprint {
             CollideFriendly = false,
 			
             Damage = 90,
-            DamageRadius = 0,
+            DamageRadius = 0.5,
             DamageType = 'Normal',
 			
             DisplayName = 'AA Autocannon',

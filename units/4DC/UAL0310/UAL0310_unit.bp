@@ -121,7 +121,7 @@ UnitBlueprint{
         ShieldDomeAdd = {
             BuildCostEnergy = 4150,
             BuildCostMass = 355,
-            BuildTime = 1250,
+            BuildTime = 250,
             MaintenanceConsumptionPerSecondEnergy = 125,
             Icon = "ptsg",
             ImpactEffects = "AeonShieldHit01",
