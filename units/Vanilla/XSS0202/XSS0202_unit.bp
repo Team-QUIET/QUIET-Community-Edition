@@ -48,7 +48,7 @@ UnitBlueprint {
             MaxRadius = 115,
 			MinRadius = 18,
 			
-            MuzzleSalvoDelay = 1.1,
+            MuzzleSalvoDelay = 0.6,
             MuzzleSalvoSize = 4,
             MuzzleVelocity = 30,
             ProjectileId = '/projectiles/SIFLaanseTacticalMissile02/SIFLaanseTacticalMissile02_proj.bp',
