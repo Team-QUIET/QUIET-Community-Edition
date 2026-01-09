@@ -44,7 +44,7 @@ UnitBlueprint {
 			
             Label = 'ParticleGun',
 			
-            MaxRadius = 80,
+            MaxRadius = 77,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 30,
             ProjectileId = '/projectiles/CDFProtonCannon02/CDFProtonCannon02_proj.bp',
