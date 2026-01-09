@@ -35,7 +35,7 @@ UnitBlueprint {
             
             DisplayName = 'Laanse Tactical Missile Launcher',
             
-            EnergyRequired = 500,
+            EnergyRequired = 250,
             EnergyDrainPerSecond = 65,
             
             FireTargetLayerCapsTable = {
@@ -66,7 +66,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 10/50,	
+            RateOfFire = 10/60,	
 
 			
             TargetPriorities = {
