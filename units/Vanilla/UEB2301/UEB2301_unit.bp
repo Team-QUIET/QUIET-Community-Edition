@@ -61,9 +61,9 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 4500,
-        BuildCostMass = 500,
-        BuildTime = 550,
+        BuildCostEnergy = 3780,
+        BuildCostMass = 540,
+        BuildTime = 675,
 
         RebuildBonusIds = {'ueb2301'},
     },
@@ -173,7 +173,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_DirectFire',
 			
-            RateOfFire = 1.0,
+            RateOfFire = 10/12, --125/DPS
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
