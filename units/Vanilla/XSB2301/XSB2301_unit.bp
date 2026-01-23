@@ -70,9 +70,9 @@ UnitBlueprint {
     },
 
     Economy = {
-        BuildCostEnergy = 4500,
-        BuildCostMass = 500,
-        BuildTime = 550,
+        BuildCostEnergy = 3780,
+        BuildCostMass = 540,
+        BuildTime = 675,
 
         RebuildBonusIds = {'xsb2301'},
     },
@@ -148,10 +148,10 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
 
             BeamCollisionDelay = 0,
-            BeamLifetime = 0.5,
+            BeamLifetime = 1.0,
             CollideFriendly = false,
 
-            Damage = 66,
+            Damage = 50,
             DamageRadius = 0,
             DamageType = 'Normal',
 
@@ -182,7 +182,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_DirectFire',
 
-            RateOfFire = 0.5,		---- 330 damage every 2 seconds = 165 DPS
+            RateOfFire = 10/40, --10/integer interval in ticks
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
