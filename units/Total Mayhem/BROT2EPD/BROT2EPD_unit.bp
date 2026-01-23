@@ -5,8 +5,8 @@ UnitBlueprint {
     Defense = {
         ArmorType = 'Structure',
 
-        Health = 4400,
-        MaxHealth = 4400,
+        Health = 7000,
+        MaxHealth = 7000,
         RegenRate = 3,
 
         AirThreatLevel = 24,
@@ -14,9 +14,9 @@ UnitBlueprint {
     },
 
     Economy = {
-        BuildCostEnergy = 16500,
+        BuildCostEnergy = 28000,
         BuildCostMass = 1700,
-        BuildTime = 1800,
+        BuildTime = 2800,
 
         RebuildBonusIds = {'BROT2EPD'},
     },
@@ -37,7 +37,7 @@ UnitBlueprint {
 				
             CollideFriendly = false,
 			
-            Damage = 160,
+            Damage = 100,
             DamageRadius = 1,
             DamageType = 'Normal',
 			
@@ -52,10 +52,10 @@ UnitBlueprint {
 			
             Label = 'MainGun',
 
-            MaxRadius = 52,
-            MinRadius = 5,
+            MaxRadius = 58,
+            MinRadius = 16,
 
-            RateOfFire = 15/10,
+            RateOfFire = 15/10, --150/DPS
 
             MuzzleVelocity = 48,
 
@@ -80,7 +80,7 @@ UnitBlueprint {
             CannotAttackGround = true,
             CollideFriendly = false,
 			
-            Damage = 200,
+            Damage = 100, --120/DPS
             DamageRadius = 0,
             DamageType = 'Normal',
 			
