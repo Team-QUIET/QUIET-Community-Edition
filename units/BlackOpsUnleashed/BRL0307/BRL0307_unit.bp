@@ -34,7 +34,7 @@ UnitBlueprint {
 
             MuzzleSalvoDelay = 0.2,
             MuzzleSalvoSize = 9,
-            MuzzleVelocity = 18,
+            MuzzleVelocity = 19,
             MuzzleVelocityRandom = 0.45,
 
             RenderFireClock = true,
