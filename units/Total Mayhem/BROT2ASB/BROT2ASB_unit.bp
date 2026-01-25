@@ -159,10 +159,10 @@ UnitBlueprint {
         
         LayerChangeOffsetHeight = -1.1,
         
-        MaxAcceleration = 1.1,
-        MaxBrake = 2.2,
-        MaxSpeed = 2.2,
-        MaxSpeedReverse = 2.2,
+        MaxAcceleration = 1.2,
+        MaxBrake = 2.3,
+        MaxSpeed = 2.3,
+        MaxSpeedReverse = 2.3,
         MaxSteerForce = 10,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_Amphibious',
@@ -215,13 +215,13 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
 			
 			BeamCollisionDelay = 0,
-            BeamLifetime = 0.5,
+            BeamLifetime = 0.4,
 			
             CollideFriendly = false,
 
             ContinuousBeam = false,
 			
-            Damage = 20,
+            Damage = 18,
             DamageFriendly = false,
             DamageType = 'Normal',
 			
@@ -235,7 +235,7 @@ UnitBlueprint {
             FiringTolerance = 2,
             Label = 'laser',
 			
-            MaxRadius = 33,
+            MaxRadius = 30,
 
             RackBones = {
                 {
