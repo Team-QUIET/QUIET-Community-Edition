@@ -63,7 +63,7 @@ UnitBlueprint {
 			
             MuzzleChargeDelay = 2,
             MuzzleVelocity = 3,
-            ProjectileLifetime = 25,
+            ProjectileLifetime = 30,
 
             RangeCategory = 'UWRC_IndirectFire',
 			
