@@ -147,7 +147,7 @@ UnitBlueprint {
 
             CollideFriendly = false,
 			
-            Damage = 7,
+            Damage = 5,
             DamageType = 'Normal',
 			
             DisplayName = 'Laser Cannon',
