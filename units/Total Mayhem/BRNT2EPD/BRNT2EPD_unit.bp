@@ -1,7 +1,23 @@
 UnitBlueprint {
 	Merge = true,
 	BlueprintId = "brnt2epd",
-	
+
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 7900,
+        MaxHealth = 7900,
+        RegenRate = 2,
+        SurfaceThreatLevel = 47.8,
+    },
+
+    Economy = {
+        BuildCostEnergy = 28000,
+        BuildCostMass = 1800,
+        BuildTime = 2800,
+		
+        RebuildBonusIds = {'BRNT2EPD'},
+    },
+
 	    Weapon = {
         {
             AboveWaterTargetsOnly = true,
@@ -17,7 +33,7 @@ UnitBlueprint {
                     Add = { OnImpact = true },
                     AppliedToTarget = true,
                     BuffType = 'STUN',
-                    Duration = 0.8,
+                    Duration = 0.2,
                     Radius = 2,
                     TargetAllow = 'LAND TECH1,NAVAL TECH1,LAND TECH2,NAVAL TECH2',
                     TargetDisallow = 'WALL',
@@ -26,8 +42,8 @@ UnitBlueprint {
 			
             CollideFriendly = false,
 			
-            Damage = 480,
-            DamageRadius = 2,
+            Damage = 150,
+            DamageRadius = 1,
             DamageType = 'Normal',
 			
             DisplayName = 'Plasma Cannon',
@@ -42,8 +58,8 @@ UnitBlueprint {
 			
             Label = 'Gauss01',
 			
-            MaxRadius = 54,
-            MinRadius = 6,
+            MaxRadius = 58,
+            MinRadius = 18,
 
             MuzzleVelocity = 48,
 			
