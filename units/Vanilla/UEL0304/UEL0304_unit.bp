@@ -11,8 +11,8 @@ UnitBlueprint {
     },
 
     Economy = {
-        BuildCostEnergy = 8000,
-        BuildCostMass = 800,
+        BuildCostEnergy = 12000,
+        BuildCostMass = 1200,
         BuildTime = 5000,
     },
 
@@ -51,7 +51,7 @@ UnitBlueprint {
 			
             CollideFriendly = false,
 			
-            Damage = 850,
+            Damage = 750,
             DamageFriendly = true,
             DamageRadius = 3.5,
             DamageType = 'Normal',
@@ -68,12 +68,12 @@ UnitBlueprint {
             },
 			
             FiringRandomness = 1.25,
-            FiringTolerance = 1,
+            FiringTolerance = 2,
 			
             LeadTarget = true,
 			
-            MaxRadius = 92,
-            MinRadius = 12,
+            MaxRadius = 90,
+            MinRadius = 25,
 
             MuzzleVelocity = 24,
             MuzzleVelocityReduceDistance = 92,
@@ -89,7 +89,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 10/65,
+            RateOfFire = 10/100,
 
 			
             TargetPriorities = {
@@ -113,11 +113,11 @@ UnitBlueprint {
 			
             TurretPitch = 30,
             TurretPitchRange = 45,
-            TurretPitchSpeed = 26,
+            TurretPitchSpeed = 20,
 			
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 32,
+            TurretYawSpeed = 30,
 			
             Turreted = true,
 
