@@ -29,7 +29,7 @@ UnitBlueprint {
 
             FiringRandomnessWhileMoving = 1.25,
 
-            MaxRadius = 71,
+            MaxRadius = 61,
             MinRadius = 11,
 
             MuzzleSalvoDelay = 0.2,
