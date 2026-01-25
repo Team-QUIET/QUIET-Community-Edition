@@ -78,7 +78,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 			
-            Damage = 700,
+            Damage = 580,
             DamageType = 'ShieldMult0.8',
 			
             DisplayName = 'Sih Energy Rifle',
@@ -86,13 +86,13 @@ UnitBlueprint {
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
             },
-            FiringRandomnessWhileMoving = 0.4,
+            FiringRandomnessWhileMoving = 0.18,
 			
-            FiringTolerance = 3,
+            FiringTolerance = 0,
 			
             IgnoreIfDisabled = true,
 			
-            MaxRadius = 69,
+            MaxRadius = 55,
 
             MuzzleVelocity = 100,
 			
@@ -102,7 +102,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_DirectFire',
 			
-            RateOfFire = 0.2,		-- 140 DPS
+            RateOfFire = 10/38,
             RenderFireClock = true,
 			
             SlavedToBody = false,
@@ -144,7 +144,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 			
-            Damage = 2800,
+            Damage = 2000,
             DamageRadius = 0,
             DamageType = 'ShieldMult0.40',    
 			
@@ -156,13 +156,13 @@ UnitBlueprint {
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
             },
-            FiringRandomnessWhileMoving = 0.2,
+            FiringRandomnessWhileMoving = 0.05,
 			
-            FiringTolerance = 0.5,
+            FiringTolerance = 0,
 			
             IgnoreIfDisabled = true,
 			
-            MaxRadius = 72,
+            MaxRadius = 65,
 			
             MuzzleChargeDelay = 1,      -- muzzle delay of 1 second
 
@@ -177,7 +177,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 10/60,
+            RateOfFire = 10/152,
 			
             SlavedToBody = false,
 

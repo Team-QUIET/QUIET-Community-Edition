@@ -75,7 +75,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 			
-            Damage = 1200,
+            Damage = 950,
             DamageType = 'ShieldMult0.7',     
 			
             DisplayName = 'Heavy Disruptor Cannon',
@@ -88,18 +88,18 @@ UnitBlueprint {
                 Water = 'Land|Water|Seabed',
             },
 			
-            FiringRandomnessWhileMoving = 0.3,
-            FiringTolerance = 2,
+            FiringRandomnessWhileMoving = 0.1,
+            FiringTolerance = 0,
 			
             Label = 'MainGun',
 			
-            MaxRadius = 70,
+            MaxRadius = 60,
 			
             MuzzleChargeDelay = 1,      -- 1 second delay
 
             MuzzleVelocity = 75,
 			
-            ProjectileLifetimeUsesMultiplier = 1,
+            ProjectileLifetimeUsesMultiplier = 1.15,
 
             RackRecoilDistance = -0.1,
 
@@ -108,7 +108,7 @@ UnitBlueprint {
 			
             RangeCategory = 'UWRC_DirectFire',
 			
-            RateOfFire = 10/60,
+            RateOfFire = 10/67,
 
             RenderFireClock = true,
 			
@@ -139,7 +139,7 @@ UnitBlueprint {
 			
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 90,
+            TurretYawSpeed = 110,
 			
             Turreted = true,
             WeaponCategory = "Direct Fire",

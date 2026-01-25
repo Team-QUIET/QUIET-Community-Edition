@@ -38,7 +38,7 @@ UnitBlueprint {
         BuildCostEnergy = 6650,
         BuildCostMass = 515,
         BuildRate = 8,
-        BuildTime = 3320,
+        BuildTime = 2820,
 
         MaintenanceConsumptionPerSecondEnergy = 20,
     },
@@ -67,8 +67,8 @@ UnitBlueprint {
 
     Defense = {
         ArmorType = "Normal",
-        Health = 435,
-        MaxHealth = 435,
+        Health = 535,
+        MaxHealth = 535,
         RegenRate = 1,
         SurfaceThreatLevel = 19.7,
     },
@@ -84,10 +84,10 @@ UnitBlueprint {
         BackupDistance = 5,
         BankingSlope = 0,
         DragCoefficient = 0.2,
-        MaxAcceleration = .75,
-        MaxBrake = 3.2,
-        MaxSpeed = 3.6,
-        MaxSpeedReverse = 2,
+        MaxAcceleration = 2.1,
+        MaxBrake = 2.1,
+        MaxSpeed = 2.1,
+        MaxSpeedReverse = 2.1,
         MaxSteerForce = 10,
         MinSpeedPercent = 0,
         MotionType = "RULEUMT_Land",
@@ -105,7 +105,7 @@ UnitBlueprint {
 
             CollideFriendly = false,
 
-            Damage = 700,
+            Damage = 400,
             DamageRadius = 0,
             DamageType = "ShieldMult0.5",
 
@@ -116,13 +116,13 @@ UnitBlueprint {
             EnergyRequired = 1540,
 
             FireTargetLayerCapsTable = { Land = "Land|Water" },
-            FiringRandomnessWhileMoving = 0.65,
-            FiringTolerance = 0.8,
+            FiringRandomnessWhileMoving = 0.05,
+            FiringTolerance = 0,
 
             MaxRadius = 42,
-            MinRadius = 6,
+            MinRadius = 12,
 
-            MuzzleVelocity = 50,
+            MuzzleVelocity = 60,
 
             ProjectileId = "/mods/QUIET-Community-Edition/projectiles/Sniper_NonPiercing/Sniper_NonPiercing_proj.bp",
             ProjectileLifetime = 1,
@@ -134,7 +134,7 @@ UnitBlueprint {
 
             RangeCategory = "UWRC_DirectFire",
 
-            RateOfFire = 10/55,     -- controlled by charge -- 7 seconds
+            RateOfFire = 10/60,     -- controlled by charge -- 7 seconds
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -155,12 +155,12 @@ UnitBlueprint {
             TurretDualManipulators = false,
 
             TurretPitch = 0,
-            TurretPitchRange = 48,
-            TurretPitchSpeed = 24,
+            TurretPitchRange = 60,
+            TurretPitchSpeed = 50,
 
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 44,
+            TurretYawSpeed = 110,
 
             Turreted = true,
         },
