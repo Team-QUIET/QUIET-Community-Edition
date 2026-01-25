@@ -5,8 +5,8 @@ UnitBlueprint {
     IgnoreEvenflow = true,
 
     Economy = {
-        BuildCostEnergy = 10000,
-        BuildCostMass = 800,
+        BuildCostEnergy = 14000,
+        BuildCostMass = 1000,
         BuildTime = 4500,
     },
 

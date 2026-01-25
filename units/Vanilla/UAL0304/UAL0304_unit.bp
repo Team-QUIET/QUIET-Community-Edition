@@ -10,8 +10,8 @@ UnitBlueprint {
     },
 
     Economy = {
-        BuildCostEnergy = 8000,
-        BuildCostMass = 800,
+        BuildCostEnergy = 12000,
+        BuildCostMass = 1200,
         BuildTime = 4750,
     },
 
@@ -47,7 +47,7 @@ UnitBlueprint {
 			
             Damage = 95,
             DamageFriendly = true,
-            DamageRadius = 2.5,
+            DamageRadius = 3,
             DamageType = 'Normal', 
 			
             DisplayName = 'Sonance Artillery',
@@ -64,14 +64,14 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
             },
             
-            FiringRandomness = 1.25,
-            FiringTolerance = 1,
+            FiringRandomness = 1,
+            FiringTolerance = 2,
 			
             Label = 'MainGun',
             LeadTarget = true,
 			
-            MaxRadius = 92,
-            MinRadius = 12,
+            MaxRadius = 90,
+            MinRadius = 25,
 			
             MuzzleVelocity = 24,
             MuzzleVelocityReduceDistance = 95,
@@ -85,7 +85,7 @@ UnitBlueprint {
             RackSalvoFiresAfterCharge = true,
             RenderFireClock = true,
 			
-            RateOfFire = 10/100,
+            RateOfFire = 10/200,
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -107,12 +107,12 @@ UnitBlueprint {
             TurretBoneYaw = 'Turret',
 
             TurretPitch = 30,
-            TurretPitchRange = 60,
-            TurretPitchSpeed = 24,
+            TurretPitchRange = 45,
+            TurretPitchSpeed = 20,
 
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 32,
+            TurretYawSpeed = 30,
 
             Turreted = true,
         },

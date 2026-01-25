@@ -63,7 +63,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 5,
 			
-            ProjectileLifetime = 25,
+            ProjectileLifetime = 30,
 			
             RangeCategory = 'UWRC_IndirectFire',
 

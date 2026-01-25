@@ -11,8 +11,8 @@ UnitBlueprint {
     },
 
     Economy = {
-        BuildCostEnergy = 8000,
-        BuildCostMass = 800,
+        BuildCostEnergy = 12000,
+        BuildCostMass = 1200,
         BuildTime = 5000,
     },
 	
@@ -46,9 +46,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
 			
-            Damage = 850,
+            Damage = 700,
             DamageFriendly = true,
-            DamageRadius = 3.5,
+            DamageRadius = 4,
             DamageType = 'Normal',      
 			
             DisplayName = 'Suthanus Artillery',
@@ -56,21 +56,21 @@ UnitBlueprint {
             EnergyChargeForFirstShot = true,
            
             EnergyRequired = 2400,
-            EnergyDrainPerSecond = 480,     -- 5 seconds to charge
+            EnergyDrainPerSecond = 480,
 
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
             },
 			
-            FiringRandomness = 1.55,
+            FiringRandomness = 1.75,
             FiringTolerance = 1,
 			
             LeadTarget = true,
 			
-            MaxRadius = 92,
-            MinRadius = 12,
+            MaxRadius = 90,
+            MinRadius = 25,
 			
-            MuzzleChargeDelay = 0.2,        -- .2 second delay
+            MuzzleChargeDelay = 0.25,
 
             MuzzleVelocity = 24,
             MuzzleVelocityReduceDistance = 92,
@@ -84,7 +84,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_IndirectFire',
 			
-            RateOfFire = 10/65,     -- every 5 seconds by charge = 96 Dps
+            RateOfFire = 10/100,
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -106,7 +106,7 @@ UnitBlueprint {
             TurretBoneYaw = 'Turret',
 			
             TurretPitch = 30,
-            TurretPitchRange = 40,
+            TurretPitchRange = 50,
             TurretPitchSpeed = 20,
 			
             TurretYaw = 0,
@@ -116,7 +116,7 @@ UnitBlueprint {
             Turreted = true,
 			
             WeaponRepackTimeout = 0,
-            WeaponUnpackAnimationRate = 1,
+            WeaponUnpackAnimationRate = 0.44,
             WeaponUnpackLocksMotion = true,
             WeaponUnpacks = true,
         },
