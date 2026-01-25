@@ -29,6 +29,14 @@ UnitBlueprint {
 
             FiringRandomnessWhileMoving = 1.25,
 
+            MaxRadius = 71,
+            MinRadius = 11,
+
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 9,
+            MuzzleVelocity = 18,
+            MuzzleVelocityRandom = 0.45,
+
             RenderFireClock = true,
             RackSalvoFiresAfterCharge = true,
 
