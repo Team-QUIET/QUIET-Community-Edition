@@ -91,8 +91,8 @@ UnitBlueprint {
         MaxSteerForce = 10,
         MinSpeedPercent = 0,
         MotionType = "RULEUMT_Land",
-        TurnRadius = 6,
-        TurnRate = 50,
+        TurnRadius = 2,
+        TurnRate = 80,
     },
 
     Weapon = {
