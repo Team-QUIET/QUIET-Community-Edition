@@ -25,6 +25,8 @@ UnitBlueprint {
             ShieldVerticalOffset = -0.3,
         },
 
+    },
+
     Economy = {
         BuildCostEnergy = 26500,
         BuildCostMass = 1700,
