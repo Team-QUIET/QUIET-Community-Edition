@@ -59,6 +59,9 @@ UnitBlueprint {
 
             MuzzleVelocity = 48,
 
+            ProjectileId = '/mods/TotalMayhem/projectiles/BROT3SHPDproj/BROT3SHPDproj_proj.bp',
+			ProjectileLifetime = 1.4,
+
             TurretPitch = 0,
             TurretPitchRange = 55,
             TurretPitchSpeed = 55,
