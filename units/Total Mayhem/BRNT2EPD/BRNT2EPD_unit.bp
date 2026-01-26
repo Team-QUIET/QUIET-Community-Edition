@@ -42,8 +42,8 @@ UnitBlueprint {
 			
             CollideFriendly = false,
 			
-            Damage = 150,
-            DamageRadius = 1,
+            Damage = 300,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
 			
             DisplayName = 'Plasma Cannon',
