@@ -77,7 +77,7 @@ UnitBlueprint {
             NoPause = true,
 
             ProjectileId = '/projectiles/CDFLaserDisintegrator02/CDFLaserDisintegrator02_proj.bp',
-            ProjectileLifetimeUsesMultiplier = 1.1,
+            ProjectileLifetimeUsesMultiplier = 1.2,
 
             RackBones = {
                 {
