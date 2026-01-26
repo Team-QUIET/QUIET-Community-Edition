@@ -37,7 +37,7 @@ UnitBlueprint {
 				
             CollideFriendly = false,
 			
-            Damage = 100,
+            Damage = 150,
             DamageRadius = 1,
             DamageType = 'Normal',
 			
@@ -55,7 +55,7 @@ UnitBlueprint {
             MaxRadius = 58,
             MinRadius = 16,
 
-            RateOfFire = 15/10, --150/DPS
+            RateOfFire = 10/10, --150/DPS
 
             MuzzleVelocity = 48,
 
