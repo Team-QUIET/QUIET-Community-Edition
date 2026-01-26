@@ -145,18 +145,11 @@ Unit = ClassUnit(QCEUnit) {
             end
         
             if ( self.ShowUnitDestructionDebris and overkillRatio ) then
-        
-                if overkillRatio <= 0.30 then
-                    self:CreateUnitDestructionDebris( true, true, false )
-                else
-                    self:CreateUnitDestructionDebris( false, true, true )
-                end
+                self:CreateUnitDestructionDebris( true, true, false )
             end
         end
-        
-        if overkillRatio <= 0.30 then
-            self:CreateWreckage( overkillRatio )
-        end
+            
+		self:CreateWreckage( overkillRatio )
 
         WaitTicks( (self.DeathThreadDestructionWaitTime or 0.1) * 10 )
 
