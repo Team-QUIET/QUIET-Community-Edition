@@ -145,7 +145,7 @@ Unit = ClassUnit(QCEUnit) {
             end
         
             if ( self.ShowUnitDestructionDebris and overkillRatio ) then
-                self:CreateUnitDestructionDebris( false, true, true )
+                self:CreateUnitDestructionDebris( true, true, false )
             end
         end
             
