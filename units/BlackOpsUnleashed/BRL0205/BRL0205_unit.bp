@@ -100,7 +100,7 @@ UnitBlueprint {
 		
         BuildTime = 940,
 		
-        MaintenanceConsumptionPerSecondEnergy = 44,
+        MaintenanceConsumptionPerSecondEnergy = 20,
         
         NeedToFaceTargetToBuild = true,
     },

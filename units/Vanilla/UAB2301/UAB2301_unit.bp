@@ -33,8 +33,8 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Structure',
-        Health = 2025,
-        MaxHealth = 2025,
+        Health = 2000,
+        MaxHealth = 2000,
         RegenRate = 1,
         SurfaceThreatLevel = 22.4,
     },
@@ -64,9 +64,9 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 4250,
-        BuildCostMass = 450,
-        BuildTime = 550,
+        BuildCostEnergy = 3780,
+        BuildCostMass = 540,
+        BuildTime = 675,
 
         RebuildBonusIds = {'uab2301'},
     },
@@ -146,7 +146,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
-            Damage = 300,
+            Damage = 560,
             DamageFriendly = false,
             DamageRadius = 2,
             DamageType = 'Normal',
@@ -158,7 +158,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Seabed',
             },
 			
-            FiringRandomness = 0.15,
+            FiringRandomness = 0.1,
             FiringTolerance = 0.5,
 			
             Label = 'MainGun',
@@ -169,7 +169,7 @@ UnitBlueprint {
 			
             MuzzleChargeDelay = 1,
 
-            MuzzleVelocity = 38,
+            MuzzleVelocity = 45,
 			
             ProjectileId = '/projectiles/ADFOblivionCannon03/ADFOblivionCannon03_proj.bp',
             ProjectileLifetime = 1.4,
@@ -185,7 +185,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_DirectFire',
 			
-            RateOfFire = 0.5,
+            RateOfFire = 10/40,
 
 			
             TargetPriorities = {

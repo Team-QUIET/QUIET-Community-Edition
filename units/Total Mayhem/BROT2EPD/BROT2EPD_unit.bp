@@ -2,6 +2,25 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "brot2epd",
 
+    Defense = {
+        ArmorType = 'Structure',
+
+        Health = 7000,
+        MaxHealth = 7000,
+        RegenRate = 3,
+
+        AirThreatLevel = 24,
+        SurfaceThreatLevel = 45.5,
+    },
+
+    Economy = {
+        BuildCostEnergy = 28000,
+        BuildCostMass = 1700,
+        BuildTime = 2800,
+
+        RebuildBonusIds = {'BROT2EPD'},
+    },
+
     Weapon = {	
         {
             Buffs = {
@@ -15,11 +34,33 @@ UnitBlueprint {
                 TargetDisallow = 'WALL,COMMAND,EXPERIMENTAL',
                 },
             },
+				
+            CollideFriendly = false,
+			
+            Damage = 150,
+            DamageRadius = 1,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Gauss Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 0.5,
+			
+            Label = 'MainGun',
 
-            MaxRadius = 52,
-            MinRadius = 5,
+            MaxRadius = 58,
+            MinRadius = 16,
 
-            RateOfFire = 15/10,
+            RateOfFire = 10/10, --150/DPS
+
+            MuzzleVelocity = 48,
+
+            ProjectileId = '/mods/TotalMayhem/projectiles/BROT3SHPDproj/BROT3SHPDproj_proj.bp',
+			ProjectileLifetime = 1.4,
 
             TurretPitch = 0,
             TurretPitchRange = 55,
@@ -31,12 +72,88 @@ UnitBlueprint {
 
         },
         {
+            advancedTracking = true,
+
+            
+            Audio = {
+                Fire = Sound { Bank = 'UALWeapon', Cue = 'UAB2304_SAM', LodCutoff = 'Weapon_LodCutoff'},
+            },
+            
+            BallisticArc = 'RULEUBA_None',
+            CannotAttackGround = true,
+            CollideFriendly = false,
+			
+            Damage = 100, --120/DPS
+            DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Short Range AA Missile',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Water = 'Air',
+            },
+            FiringTolerance = 12,
+			
+            Label = 'AAMissile',
+			
+            MaxRadius = 48,
+			
+            MuzzleSalvoDelay = 0.5,
+            MuzzleSalvoSize = 6,
+            MuzzleVelocity = 30,
+			
+            ProjectileId = '/projectiles/AAAZealotMissile01/AAAZealotMissile01_proj.bp',
+            ProjectileLifetime = 3.2,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'aa01','aa02','aa03','aa04','aa05','aa06'},
+                    RackBone = 'aa01',
+                },
+            },
+            
+            RackReloadTimeout = 10,
+
+            RackSlavedToTurret = true,
+			
+            RangeCategory = 'UWRC_AntiAir',
 
             RateOfFire = 2/10,
 
+
+            TargetPriorities = {
+                'EXPERIMENTAL',
+                'HIGHPRIAIR',
+                'AIR MOBILE',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TargetRestrictOnlyAllow = 'AIR -SATELLITE',
+
+			
+            TurretBoneMuzzle = 'aa01',
+            TurretBonePitch = 'aa01',
+            TurretBoneYaw = 'aa01',
+			
+            TurretPitch = 25,
+            TurretPitchRange = 80,
+            TurretPitchSpeed = 180,
+			
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 60,
+            
+            Turreted = true,
         },
         {
-        
+            Damage = 350,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+            DisplayName = 'Death Weapon',
+			DummyWeapon = true,
+            Label = 'DeathWeapon',
+            WeaponCategory = 'Death',        
         },
     },
 }
