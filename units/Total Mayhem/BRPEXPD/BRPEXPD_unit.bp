@@ -1,0 +1,143 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "brpexpd",
+	
+    BuildIconSortPriority = 71,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER4COMMANDER',
+        'SERAPHIM',
+        'STRUCTURE',
+        'DEFENSE',
+        'EXPERIMENTAL',
+        'DIRECTFIRE',
+        'SIZE8',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SORTDEFENSE',
+    },
+	
+    CollisionOffsetY = -0.25,
+	
+    Defense = {
+		AirThreatLevel = 85,
+        ArmorType = 'Structure',
+        Health = 18500,
+        MaxHealth = 18500,
+        RegenRate = 15,
+        SurfaceThreatLevel = 229.9,
+    },
+	
+    Description = '<LOC brpexpd_desc>Experimental Multirole Point Defense',
+		
+    Economy = {
+        BuildCostEnergy = 95000,
+        BuildCostMass = 8750,
+        BuildTime = 8250,
+		
+        RebuildBonusIds = {'BRPEXPD'},
+    },
+
+    Intel = {
+        VisionRadius = 44,
+    },
+	
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+
+            Audio = {
+                BeamLoop    = Sound { Bank = 'XSS_Weapon', Cue = 'XSS0201_Ultrachromatic_Beam', LodCutoff = 'Weapon_LodCutoff' },
+                BeamStart   = Sound { Bank = 'UALWeapon', Cue = 'UAL0401_Phason_Laser_Fire', LodCutoff = 'Weapon_LodCutoff'},
+                BeamStop    = Sound { Bank = 'UALWeapon', Cue = 'UAL0401_Phason_Laser_Stop',LodCutoff = 'Weapon_LodCutoff'},
+            },
+
+            AutoInitiateAttackCommand = true,
+
+            BallisticArc = 'RULEUBA_None',
+			
+            BeamCollisionDelay = 0,
+            BeamLifetime = 1,
+			
+            CollideFriendly = false,
+			
+            Damage = 340,
+            DamageRadius = 1.5,
+            DamageType = 'ShieldMult1.1',
+			
+            DisplayName = 'Ultrachromatic Beam Generator',
+
+            EnergyDrainPerSecond = 525,     -- 4 second charge
+            EnergyRequired = 2100,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed|Air',
+            },
+			
+            FiringTolerance = 0.3,
+			
+            Label = 'MainWeapon',
+			
+            MaxRadius = 92,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Muzzle01'},
+                    RackBone = 'Barrel_Right',
+                },
+            },
+            RackRecoilDistance = -2,
+
+            RackSalvoFiresAfterCharge = true,
+
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 1,		-- controlled by charge - 3400 damage every 4 seconds -- 850 DPS
+
+            TargetPriorities = {
+                'EXPERIMENTAL',
+                'SPECIALHIGHPRI',
+                'MOBILE',
+                'DEFENSE',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+
+			
+            TurretBoneMuzzle = 'Muzzle01',
+            TurretBonePitch = 'Object07',
+            TurretBoneYaw = 'Turret',
+			
+            TurretPitch = 10,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 34,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 34,
+			
+            Turreted = true,
+        },
+        
+        {
+    		Damage = 2750,
+    		DamageFriendly = true,
+    		DamageRadius = 6,
+    		DamageType = 'Normal',
+    		DummyWeapon = true,
+    		Label = 'DeathWeapon',
+    	}, 
+    },
+
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.3,
+        HealthMult = 0.9,
+        MassMult = 0.6,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+	        },
+        },
+}
