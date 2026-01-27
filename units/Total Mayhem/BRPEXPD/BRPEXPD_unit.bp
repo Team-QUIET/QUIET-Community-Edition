@@ -93,7 +93,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_DirectFire',
 			
-            RateOfFire = 1,		-- controlled by charge - 3400 damage every 4 seconds -- 850 DPS
+            RateOfFire = 10/40,		-- controlled by charge - 3400 damage every 4 seconds -- 850 DPS
 
             TargetPriorities = {
                 'EXPERIMENTAL',
@@ -141,3 +141,4 @@ UnitBlueprint {
 	        },
         },
 }
+
