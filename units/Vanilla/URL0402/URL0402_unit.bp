@@ -296,7 +296,7 @@ UnitBlueprint {
 			
             ContinuousBeam = true,
 			
-            Damage = 300,
+            Damage = 250,
             DamageType = 'ShieldMult1.1',
 			
             DoNotCollideList = {'TORPEDO','MISSILE'},
@@ -314,7 +314,7 @@ UnitBlueprint {
 			
 			LeadTarget = false,
 			
-            MaxRadius = 37,
+            MaxRadius = 33,
             MinRadius = 5,
 			
             NotExclusive = true,
