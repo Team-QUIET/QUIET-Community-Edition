@@ -314,7 +314,7 @@ UnitBlueprint {
 			
 			LeadTarget = false,
 			
-            MaxRadius = 37,
+            MaxRadius = 33,
             MinRadius = 5,
 			
             NotExclusive = true,
