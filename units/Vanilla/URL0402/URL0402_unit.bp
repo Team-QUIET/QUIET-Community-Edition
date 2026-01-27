@@ -296,7 +296,7 @@ UnitBlueprint {
 			
             ContinuousBeam = true,
 			
-            Damage = 250,
+            Damage = 300,
             DamageType = 'ShieldMult1.1',
 			
             DoNotCollideList = {'TORPEDO','MISSILE'},
