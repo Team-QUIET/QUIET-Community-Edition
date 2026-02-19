@@ -1,0 +1,118 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "ssl0319",
+
+    Defense = {
+        ArmorType = 'Normal',
+        EconomyThreatLevel = 93,
+        Health = 1380,
+        MaxHealth = 1380,
+        RegenRate = 1,
+    },
+
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+            LAYER_Sub = true,
+            LAYER_Water = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 3,
+        MaxBrake = 3,
+        MaxSpeed = 3,
+        MaxSpeedReverse = 1,
+        MaxSteerForce = 10,
+        MeshExtentsX = 1,
+        MeshExtentsY = 0.5,
+        MeshExtentsZ = 1,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Amphibious',
+        RotateOnSpot = true,
+        RotateOnSpotThreshold = 0.1,
+        TurnRadius = 0,
+        TurnRate = 90,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'XSL_Weapon', Cue = 'XSL0201_Cannon_Spectra', LodCutoff = 'Weapon_LodCutoff'},
+            },
+
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 40,
+            DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Oh Spectra Cannon',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 2,
+			
+            Label = 'MainGun',
+			
+            MaxRadius = 20,
+
+            MuzzleVelocity = 25,
+			
+            ProjectileId = '/projectiles/SDFOhCannon01/SDFOhCannon01_proj.bp',
+            ProjectileLifetime = 1,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Barrel_Muzzle'},
+                    RackBone = 'Turret_Barrel',
+                },
+                {
+                    MuzzleBones = {'Turret_Barrel_Muzzle001'},
+                    RackBone = 'Turret_Barrel001',
+                },
+            },
+
+            RackRecoilDistance = -1,
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 1.5,	-- 60 DPS
+
+			
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,WALL',
+
+			
+            TurretBoneMuzzle = 'Turret_Barrel_Muzzle',
+            TurretBonePitch = 'Turret_Barrel',
+            TurretBoneYaw = 'Turret',
+            TurretBoneDualMuzzle = 'Turret_Barrel_Muzzle001',
+            TurretBoneDualPitch = 'Turret_Barrel001',
+            TurretDualManipulators = true,
+			
+            TurretPitch = 0,
+            TurretPitchRange = 30,
+            TurretPitchSpeed = 60,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 100,
+			
+            Turreted = true,
+        },
+    },
+
+}
