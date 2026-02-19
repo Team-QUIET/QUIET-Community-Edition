@@ -5,9 +5,9 @@ UnitBlueprint {
     Defense = {
         ArmorType = 'Normal',
 
-        Health = 1380,
-        MaxHealth = 1380,
-        RegenRate = 3,
+        Health = 2800,
+        MaxHealth = 2800,
+        RegenRate = 125,
 
         EconomyThreatLevel = 93,
         SurfaceThreatLevel = 5,
@@ -19,6 +19,8 @@ UnitBlueprint {
         BankingSlope = 0,
         BuildOnLayerCaps = {
             LAYER_Land = true,
+            LAYER_Seabed = true,
+            LAYER_Sub = true,
             LAYER_Water = true,
         },
         DragCoefficient = 0.2,
@@ -108,3 +110,4 @@ UnitBlueprint {
     },
 
 }
+
