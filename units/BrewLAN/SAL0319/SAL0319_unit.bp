@@ -23,16 +23,16 @@ UnitBlueprint {
         'OVERLAYOMNI',
         'OVERLAYMISC',
     },
-	
+
     CollisionOffsetY = -0.25,
-	
+
     Defense = {
         ArmorType = 'Normal',
         EconomyThreatLevel = 93,
         Health = 1380,
         MaxHealth = 1380,
         RegenRate = 1,
-		
+
         Shield = {
             ImpactEffects = 'AeonShieldHit01',
             ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
@@ -50,9 +50,9 @@ UnitBlueprint {
         },
 
     },
-	
+
     Description = '<LOC sal0209_desc>Defence Engineer',
-	
+
     Display = {
         Abilities = {
             '<LOC ability_engineeringsuite>Engineering Suite',
@@ -63,34 +63,34 @@ UnitBlueprint {
             '<LOC ability_sacrifice>Sacrifice',
         },
     },
-	
+
     Economy = {
         BuildCostEnergy = 7260,
         BuildCostMass = 950,
         BuildRate = 17,
         BuildTime = 4500,
-		
+
         BuildableCategory = {
             'BUILTBYTIER3ENGINEER DEFENSE AEON',
             'BUILTBYTIER3ENGINEER INDIRECTFIRE AEON',
             'BUILTBYTIER3ENGINEER NUKE SILO AEON',
             'BUILTBYTIER3FIELD AEON',
         },
-		
+
         SacrificeEnergyMult = 0.9,
         SacrificeMassMult = 0.9,
-		
+
         MaintenanceConsumptionPerSecondEnergy = 24,
 		MaxBuildDistance = 5.5,
-		
+
         StorageEnergy = 300,
         StorageMass = 20,
     },
-	
-	
+
+
     Intel = {
 		FreeIntel = true,
-        
+
         RadarStealth = true,
 
         OmniRadius = 6,
@@ -98,15 +98,15 @@ UnitBlueprint {
         VisionRadius = 24,
         WaterVisionRadius = 20,
     },
-	
+
     Interface = {
         HelpText = '<LOC sal0209_desc>Defence Engineer',
     },
-	
+
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.45,
     LifeBarSize = 1.1,
-	
+
     Physics = {
         BackUpDistance = 4,
         BankingSlope = 0.5,
@@ -115,10 +115,10 @@ UnitBlueprint {
         },
         DragCoefficient = 0.2,
         Elevation = 0.5,
-        MaxAcceleration = 2.5,
+        MaxAcceleration = 4.6,
         MaxBrake = 5.6,
         MaxSpeed = 5.6,
-        MaxSpeedReverse = 0,
+        MaxSpeedReverse = 4.6,
         MaxSteerForce = 1000,
 
         MeshExtentsX = 1.1,
@@ -133,8 +133,8 @@ UnitBlueprint {
         RotateOnSpotThreshold = 0.1,
 
         TurnFacingRate = 100,
-        TurnRadius = 0,
-        TurnRate = 90,
+        TurnRadius = 2,
+        TurnRate = 120,
     },
-		
+
 }
