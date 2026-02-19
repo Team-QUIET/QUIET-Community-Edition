@@ -5,9 +5,9 @@ UnitBlueprint {
     Defense = {
         ArmorType = 'Normal',
         EconomyThreatLevel = 93,
-        Health = 1380,
-        MaxHealth = 1380,
-        RegenRate = 1,
+        Health = 3800,
+        MaxHealth = 3800,
+        RegenRate = 50,
 		SurfaceThreatLevel = 6,
     },
 
@@ -29,6 +29,8 @@ UnitBlueprint {
         BankingSlope = 0,
         BuildOnLayerCaps = {
             LAYER_Land = true,
+            LAYER_Seabed = true,
+            LAYER_Sub = true,
             LAYER_Water = true,
         },
         DragCoefficient = 0.2,
@@ -41,7 +43,7 @@ UnitBlueprint {
         MeshExtentsY = 1.2,
         MeshExtentsZ = 0.75,
         MinSpeedPercent = 0,
-        MotionType = 'RULEUMT_AmphibiousFloating',
+        MotionType = 'RULEUMT_Amphibious',
         TurnRadius = 0,
         TurnRate = 120,
     },
@@ -119,3 +121,4 @@ UnitBlueprint {
     },
 	
 }
+
