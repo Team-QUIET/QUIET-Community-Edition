@@ -4,7 +4,7 @@ UnitBlueprint {
 
     Economy = {
         BuildCostEnergy = 125000,
-        BuildCostMass = 5500,
+        BuildCostMass = 7500,
         BuildTime = 10000,
         
         RebuildBonusIds = {'lrb2320'},
@@ -47,11 +47,11 @@ UnitBlueprint {
             },
 			
             FiringRandomness = 2.5,
-            FiringTolerance = 1,
+            FiringTolerance = 1.1,
 			
             LeadTarget = true,
 			
-            MaxRadius = 120,
+            MaxRadius = 157.5,
             MinRadius = 35,
 
             MuzzleVelocity = 33,
@@ -143,11 +143,11 @@ UnitBlueprint {
             },
 			
             FiringRandomness = 2.5,
-            FiringTolerance = 1,
+            FiringTolerance = 1.1,
 			
 			LeadTarget = true,			
 			
-            MaxRadius = 120,
+            MaxRadius = 157.5,
             MinRadius = 35,
 
             MuzzleVelocity = 33,
@@ -238,11 +238,11 @@ UnitBlueprint {
             },
 			
             FiringRandomness = 2.5,
-            FiringTolerance = 1,
+            FiringTolerance = 1.1,
 			
 			LeadTarget = true,			
 			
-            MaxRadius = 120,
+            MaxRadius = 157.5,
 	        MinRadius = 35,
 
             MuzzleVelocity = 33,
