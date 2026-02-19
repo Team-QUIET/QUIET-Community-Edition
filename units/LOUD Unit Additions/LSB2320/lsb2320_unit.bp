@@ -38,7 +38,7 @@ UnitBlueprint {
 			
 			LeadTarget = true,			
 			
-            MaxRadius = 120,
+            MaxRadius = 157.5,
             MinRadius = 35,
 			
             MuzzleChargeDelay = 1,
@@ -122,7 +122,7 @@ UnitBlueprint {
 			
 			LeadTarget = true,
 			
-            MaxRadius = 120,
+            MaxRadius = 157.5,
             MinRadius = 35,
 			
             MuzzleChargeDelay = 1,
@@ -204,7 +204,7 @@ UnitBlueprint {
 			
 			LeadTarget = true,
 			
-            MaxRadius = 120,
+            MaxRadius = 157.5,
             MinRadius = 35, 
 			
             MuzzleChargeDelay = 1,
