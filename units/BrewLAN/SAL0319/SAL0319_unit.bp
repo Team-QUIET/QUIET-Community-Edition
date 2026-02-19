@@ -41,7 +41,7 @@ UnitBlueprint {
             PassOverkillDamage = true,
             RegenAssistMult = 60,
             ShieldEnergyDrainRechargeTime = 5,
-            ShieldMaxHealth = 600,
+            ShieldMaxHealth = 7250,
             ShieldRechargeTime = 15,
             ShieldRegenRate = 40,
             ShieldRegenStartTime = 1,
@@ -115,9 +115,9 @@ UnitBlueprint {
         },
         DragCoefficient = 0.2,
         Elevation = 0.5,
-        MaxAcceleration = 2,
-        MaxBrake = 2.6,
-        MaxSpeed = 2.6,
+        MaxAcceleration = 2.5,
+        MaxBrake = 5.6,
+        MaxSpeed = 5.6,
         MaxSpeedReverse = 0,
         MaxSteerForce = 1000,
 
@@ -134,7 +134,7 @@ UnitBlueprint {
 
         TurnFacingRate = 100,
         TurnRadius = 0,
-        TurnRate = 50,
+        TurnRate = 90,
     },
 		
 }
