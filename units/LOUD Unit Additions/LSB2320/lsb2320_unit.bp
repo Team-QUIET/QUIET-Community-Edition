@@ -4,7 +4,7 @@ UnitBlueprint {
 
     Economy = {
         BuildCostEnergy = 125000,
-        BuildCostMass = 5500,
+        BuildCostMass = 7500,
         BuildTime = 10000,
         
         RebuildBonusIds = {'lsb2320'},
@@ -39,7 +39,7 @@ UnitBlueprint {
 			LeadTarget = true,			
 			
             MaxRadius = 157.5,
-            MinRadius = 35,
+            MinRadius = 50,
 			
             MuzzleChargeDelay = 1,
 
@@ -123,7 +123,7 @@ UnitBlueprint {
 			LeadTarget = true,
 			
             MaxRadius = 157.5,
-            MinRadius = 35,
+            MinRadius = 50,
 			
             MuzzleChargeDelay = 1,
 
@@ -205,7 +205,7 @@ UnitBlueprint {
 			LeadTarget = true,
 			
             MaxRadius = 157.5,
-            MinRadius = 35, 
+            MinRadius = 50, 
 			
             MuzzleChargeDelay = 1,
 
