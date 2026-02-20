@@ -42,7 +42,7 @@ UnitBlueprint {
             LeadTarget = true,
 			
             MaxRadius = 157.5,
-            MinRadius = 35,
+            MinRadius = 50,
 
             MuzzleVelocity = 33,
 			
@@ -125,7 +125,7 @@ UnitBlueprint {
             LeadTarget = true,
 			
             MaxRadius = 157.5,
-            MinRadius = 35,
+            MinRadius = 50,
 
             MuzzleVelocity = 33,
 			
@@ -205,7 +205,7 @@ UnitBlueprint {
             LeadTarget = true,
 			
             MaxRadius = 157.5,
-            MinRadius = 35,
+            MinRadius = 50,
 
             MuzzleVelocity = 33,
 			
