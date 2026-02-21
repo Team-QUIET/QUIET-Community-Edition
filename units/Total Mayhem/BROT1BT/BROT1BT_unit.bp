@@ -154,7 +154,7 @@ UnitBlueprint {
 
             CollideFriendly = false,
 			
-            Damage = 80,
+            Damage = 50,
             DamageRadius = 0,
             
             DamageType = 'Normal',
