@@ -173,14 +173,14 @@ UnitBlueprint {
 
 			Label = "AssaultCannon",
 
-			MaxRadius = 33,
+			MaxRadius = 35,
 
-			MuzzleVelocity = 40,
+			MuzzleVelocity = 45,
 
 			NotExclusive = true,
 
 			ProjectileId = "/projectiles/TDFGauss04/TDFGauss04_proj.bp",
-			ProjectileLifetime = 1,
+			ProjectileLifetime = 1.2,
 
 			RackBones = {
 				{
@@ -219,11 +219,11 @@ UnitBlueprint {
 
 			TurretPitch = 0,
 			TurretPitchRange = 45,
-			TurretPitchSpeed = 45,
+			TurretPitchSpeed = 90,
 
 			TurretYaw = 0,
 			TurretYawRange = 180,
-			TurretYawSpeed = 40,
+			TurretYawSpeed = 90,
 
 			Turreted = true,
 		},
@@ -256,11 +256,11 @@ UnitBlueprint {
 
 			Label = "MiniGun",
 
-			MaxRadius = 26,
+			MaxRadius = 30,
 
 			MuzzleSalvoDelay = 0.1,
 			MuzzleSalvoSize = 20,
-			MuzzleVelocity = 32,
+			MuzzleVelocity = 35,
 
 			NotExclusive = true,
 
@@ -299,11 +299,11 @@ UnitBlueprint {
 
 			TurretPitch = 0,
 			TurretPitchRange = 45,
-			TurretPitchSpeed = 45,
+			TurretPitchSpeed = 90,
 
 			TurretYaw = 0,
 			TurretYawRange = 180,
-			TurretYawSpeed = 45,
+			TurretYawSpeed = 90,
 
 			Turreted = true,
 
