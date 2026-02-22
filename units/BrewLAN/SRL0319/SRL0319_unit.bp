@@ -1,0 +1,112 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "srl0319",
+
+    Defense = {
+        ArmorType = 'Normal',
+
+        Health = 2800,
+        MaxHealth = 2800,
+        RegenRate = 75,
+
+        EconomyThreatLevel = 93,
+        SurfaceThreatLevel = 5,
+		
+    },
+	
+    Physics = {
+        BackUpDistance = 4,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+            LAYER_Sub = true,
+            LAYER_Water = true,
+        },
+        DragCoefficient = 0.2,
+        MaxAcceleration = 3,
+        MaxBrake = 3,
+        MaxSpeed = 3,
+        MaxSpeedReverse = 16,
+        MaxSteerForce = 15,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Amphibious',
+        TurnRadius = 0,
+        TurnRate = 120,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'URLWeapon', Cue = 'URL0203_Bolter', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+			
+            Damage = 25,
+			DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Electron Bolter',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+            FiringTolerance = 2,
+			
+            Label = 'Bolter',
+            LeadTarget = true,
+			
+            MaxRadius = 22,
+			
+            MuzzleSalvoDelay = 0.3,
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 38,
+			
+            ProjectileId = '/projectiles/CDFBolter02/CDFBolter02_proj.bp',
+            ProjectileLifetime = 0.7,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret01_Muzzle','Turret02_Muzzle'},
+                    RackBone = 'Turret01_Barrel',
+                },
+            },
+			
+            RangeCategory = 'UWRC_DirectFire',
+			
+            RateOfFire = 0.5,	-- 50 DPS
+
+			
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE,WALL',
+
+			
+            TurretBoneMuzzle = 'Turret01_Muzzle',
+            TurretBonePitch = 'Turret01_Barrel',
+            TurretBoneYaw = 'Turret01_Barrel',
+            TurretDualManipulators = false,
+			
+            TurretPitch = 5,
+            TurretPitchRange = 40,
+            TurretPitchSpeed = 30,
+			
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 90,
+			
+            Turreted = true,
+        },
+    },
+
+}
