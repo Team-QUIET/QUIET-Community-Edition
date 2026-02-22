@@ -1,7 +1,15 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "lab2320",
-	
+
+    Economy = {
+        BuildCostEnergy = 125000,
+        BuildCostMass = 7500,
+        BuildTime = 10000,
+        
+        RebuildBonusIds = {'lab2320'},
+    },
+
     Weapon = {
         {
             AboveWaterTargetsOnly = true,
@@ -33,7 +41,7 @@ UnitBlueprint {
 
             LeadTarget = true,
 			
-            MaxRadius = 120,
+            MaxRadius = 157.5,
             MinRadius = 50,
 
             MuzzleVelocity = 33,
@@ -116,7 +124,7 @@ UnitBlueprint {
 			
             LeadTarget = true,
 			
-            MaxRadius = 120,
+            MaxRadius = 157.5,
             MinRadius = 50,
 
             MuzzleVelocity = 33,
@@ -196,7 +204,7 @@ UnitBlueprint {
 			
             LeadTarget = true,
 			
-            MaxRadius = 120,
+            MaxRadius = 157.5,
             MinRadius = 50,
 
             MuzzleVelocity = 33,
