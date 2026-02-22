@@ -1,7 +1,15 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "lsb2320",
-	
+
+    Economy = {
+        BuildCostEnergy = 125000,
+        BuildCostMass = 7500,
+        BuildTime = 10000,
+        
+        RebuildBonusIds = {'lsb2320'},
+    },
+
     Weapon = {
         {
             AboveWaterTargetsOnly = true,
@@ -30,7 +38,7 @@ UnitBlueprint {
 			
 			LeadTarget = true,			
 			
-            MaxRadius = 120,
+            MaxRadius = 157.5,
             MinRadius = 50,
 			
             MuzzleChargeDelay = 1,
@@ -114,7 +122,7 @@ UnitBlueprint {
 			
 			LeadTarget = true,
 			
-            MaxRadius = 120,
+            MaxRadius = 157.5,
             MinRadius = 50,
 			
             MuzzleChargeDelay = 1,
@@ -196,7 +204,7 @@ UnitBlueprint {
 			
 			LeadTarget = true,
 			
-            MaxRadius = 120,
+            MaxRadius = 157.5,
             MinRadius = 50, 
 			
             MuzzleChargeDelay = 1,
