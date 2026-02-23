@@ -75,7 +75,7 @@ UnitBlueprint {
                 
                 Label = 'Turret',
                 
-                MaxRadius = 68,
+                MaxRadius = 66,
 
                 MuzzleSalvoDelay = 0,
                 MuzzleSalvoSize = 1,
@@ -157,7 +157,7 @@ UnitBlueprint {
                 
                 Label = 'Turret',
                 
-                MaxRadius = 68,
+                MaxRadius = 66,
 
                 MuzzleSalvoDelay = 0,
                 MuzzleSalvoSize = 1,
