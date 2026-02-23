@@ -21,9 +21,9 @@ UnitBlueprint {
     Intel = {
         FreeIntel = true,
         RadarRadius = 40,
-        SonarRadius = 36,
+        SonarRadius = 48,
         VisionRadius = 32,
-        WaterVisionRadius = 44,
+        WaterVisionRadius = 48,
     },
     
     Physics = {
@@ -75,11 +75,11 @@ UnitBlueprint {
                 
                 Label = 'Turret',
                 
-                MaxRadius = 60,
+                MaxRadius = 66,
 
                 MuzzleSalvoDelay = 0,
                 MuzzleSalvoSize = 1,
-                MuzzleVelocity = 30,
+                MuzzleVelocity = 34,
                 ProjectileId = '/projectiles/TDFGauss01/TDFGauss01_proj.bp',
                 ProjectileLifetimeUsesMultiplier = 1.5,
                 ProjectilesPerOnFire = 1,			
@@ -157,11 +157,11 @@ UnitBlueprint {
                 
                 Label = 'Turret',
                 
-                MaxRadius = 60,
+                MaxRadius = 66,
 
                 MuzzleSalvoDelay = 0,
                 MuzzleSalvoSize = 1,
-                MuzzleVelocity = 30,
+                MuzzleVelocity = 34,
                 PrefersPrimaryWeaponTarget = true,
                 ProjectileId = '/projectiles/TDFGauss01/TDFGauss01_proj.bp',
                 ProjectileLifetimeUsesMultiplier = 1.25,
