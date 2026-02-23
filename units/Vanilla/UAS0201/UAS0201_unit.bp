@@ -9,7 +9,7 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 7250,
         MaxHealth = 7250,
-        RegenRate = 0,
+        RegenRate = 2,
         SubThreatLevel = 12,
         SurfaceThreatLevel = 25,
     },
@@ -38,7 +38,7 @@ UnitBlueprint {
         DragCoefficient = 0.2,
         MaxAcceleration = 2,
         MaxBrake = 2,
-        MaxSpeed = 4,
+        MaxSpeed = 3.95,
         MaxSpeedReverse = 3,
         MaxSteerForce = 5,
         MeshExtentsX = 1.1,
@@ -71,7 +71,7 @@ UnitBlueprint {
             CollideFriendly = false,
 			
             Damage = 1060,
-            DamageRadius = 2,
+            DamageRadius = 1.8,
             DamageType = 'Normal',
 			
             DisplayName = 'Oblivion Cannon',
@@ -80,7 +80,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Seabed',
             },
 			
-            FiringRandomness = 0.25,
+            FiringRandomness = 0.27,
             FiringTolerance = 2,
 			
             Label = 'FrontTurret',
@@ -276,7 +276,7 @@ UnitBlueprint {
             MinRadius = 10,
 			
             MuzzleSalvoDelay = 0.2,
-            MuzzleVelocity = 80,
+            MuzzleVelocity = 70,
             ProjectileId = '/projectiles/AIMAntiTorpedo01/AIMAntiTorpedo01_proj.bp',
             ProjectileLifetime = 4,
 			
@@ -290,7 +290,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_Countermeasure',
 			
             RackSalvoReloadTime = 3.5,
-            RateOfFire = 10/25,
+            RateOfFire = 10/35,
 
             TargetResetWhenReady = true,
 
@@ -344,7 +344,7 @@ UnitBlueprint {
             MinRadius = 10,
 
             MuzzleSalvoDelay = 0.2,			
-            MuzzleVelocity = 80,
+            MuzzleVelocity = 70,
             ProjectileId = '/projectiles/AIMAntiTorpedo01/AIMAntiTorpedo01_proj.bp',
             ProjectileLifetime = 4,
             
@@ -358,7 +358,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 3.5,
 
             RangeCategory = 'UWRC_Countermeasure',
-            RateOfFire = 10/25,
+            RateOfFire = 10/30,
 
             TargetResetWhenReady = true,
 			
@@ -412,7 +412,7 @@ UnitBlueprint {
             MinRadius = 10,
 
             MuzzleSalvoDelay = 0.2,
-            MuzzleVelocity = 80,
+            MuzzleVelocity = 70,
             ProjectileId = '/projectiles/AIMAntiTorpedo01/AIMAntiTorpedo01_proj.bp',
             ProjectileLifetime = 4,
 			
@@ -426,7 +426,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 3.5,
 
             RangeCategory = 'UWRC_Countermeasure',
-            RateOfFire = 10/25,
+            RateOfFire = 10/30,
 
             TargetResetWhenReady = true,
 			
