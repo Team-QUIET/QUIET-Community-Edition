@@ -19,4 +19,12 @@ UnitBlueprint {
             ShieldVerticalOffset = -50,
         },
     },
+
+    Economy = {
+        BuildCostEnergy = 18250,
+        BuildCostMass = 1131,
+        BuildTime = 4240,
+		
+        MaintenanceConsumptionPerSecondEnergy = 300,
+    },
 }
