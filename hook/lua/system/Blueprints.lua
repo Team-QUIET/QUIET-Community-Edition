@@ -373,6 +373,19 @@ do
 					end
 				end
 
+				-- Adds TIER3 Build Capabilities for Nuke & SMDs
+				local CatsMisc = {
+					"BUILTBYTIER3COMMANDER",
+        			"BUILTBYTIER3ENGINEER",
+				}
+				if cats.SILO and cats.NUKE and cats.STRATEGIC and cats.STRUCTURE and cats.TECH3 or cats.SILO and cats.ANTIMISSILE and cats.DEFENSE and cats.STRUCTURE and cats.TECH3 then
+					for i, cat in CatsMisc do
+						if not cats[cat] then
+							table.insert(bp.Categories, cat)
+						end
+					end
+				end
+
 				-- T1 & T2 Air Scout Cost Reduction
 				if cats.SCOUT and cats.INTELLIGENCE and cats.HIGHALTAIR and cats.AIR then
 					do
