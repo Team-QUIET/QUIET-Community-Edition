@@ -1,0 +1,310 @@
+UnitBlueprint {
+    Merge = true,
+	BlueprintId = "xsb2401",
+    
+    AI = {
+        InitialAutoMode = true,
+    },
+
+    Audio = {
+		EnemyUnitDetectedAeon       = Sound { Bank = 'XGG',	Cue = 'XGG_HQ_GD1_04190'},
+		EnemyUnitDetectedUEF        = Sound { Bank = 'XGG',	Cue = 'XGG_HQ_GD1_04190'},
+		EnemyUnitDetectedCybran     = Sound { Bank = 'XGG',	Cue = 'XGG_HQ_GD1_04190'},
+		EnemyUnitDetectedSeraphim   = Sound { Bank = 'XGG', Cue = 'XGG_HQ_GD1_04190'},
+        NuclearLaunchDetected       = Sound { Bank = 'XGG', Cue = 'Computer_Computer_MissileLaunch_01351'},
+        DeathExplosion              = Sound { Bank = 'XSL_Destroy', Cue = 'XSB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff'},
+        Destroyed                   = Sound { Bank = 'XSL_Destroy', Cue = 'XSB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff'},
+        Killed                      = Sound { Bank = 'XSL_Destroy', Cue = 'XSB_Destroy_Lrg_PreDestroy', LodCutoff = 'UnitMove_LodCutoff'},
+        NukeCharge                  = Sound { Bank = 'XSB', Cue = 'XSB2401_Nuke_Charge', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection                 = Sound { Bank = 'SeraphimSelect',Cue = 'Seraphim_Select_gun', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+    
+    Buffs = {
+        Regen = {
+            Level1 = 10,
+            Level2 = 20,
+            Level3 = 30,
+            Level4 = 40,
+            Level5 = 50,
+        },
+    },
+    
+    BuildIconSortPriority = 150,
+    
+    Categories = {
+        'SELECTABLE',
+		'BUILTBYTIER4COMMANDER',
+        'SERAPHIM',
+        'STRUCTURE',
+        'STRATEGIC',
+        'EXPERIMENTAL',
+        'NUKE',
+        'SILO',
+        'SIZE12',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SORTSTRATEGIC',
+    },
+    
+    CollisionOffsetY = -0.25,
+    
+    Defense = {
+        ArmorType = 'Structure',
+        EconomyThreatLevel = 6627,
+        Health = 12000,
+        MaxHealth = 12000,
+        RegenRate = 3,
+    },
+    
+    Description = '<LOC xsb2401_desc>Experimental Missile Launcher',
+    
+    Display = {
+        Abilities = {
+            'Manual Launch',
+        },
+
+        AnimationDeath = {
+            {
+                Animation = '/units/xsb2401/xsb2401_ADeath.sca',
+                AnimationRateMax = 1,
+                AnimationRateMin = 1,
+                Weight = 100,
+            },
+        },
+        AnimationOpen = '/units/uab2305/uab2305_aopen.sca',
+
+        AttackReticleSize = 65,
+
+        BuildAttachBone = 'Attachpoint',
+
+        DamageEffects = {
+            {
+                Bone = 0,
+                OffsetX = 0.65,
+                OffsetY = 0.7,
+                OffsetZ = -0.4,
+            },
+            {
+                Bone = 0,
+                OffsetX = -0.65,
+                OffsetY = 0.7,
+                OffsetZ = -0.4,
+            },
+            {
+                Bone = 0,
+                OffsetX = 0,
+                OffsetY = 0.7,
+                OffsetZ = 0.7,
+            },
+        },
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 190,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    Scrolling = true,
+                    ShaderName = 'Seraphim',
+                },
+                {
+                    AlbedoName = 'xsb2401_lod1_albedo.dds',
+                    LODCutoff = 300,
+                    ShaderName = 'Seraphim',
+                    SpecularName = 'xsb2401_lod1_specteam.dds',
+                },
+            },
+        },
+
+        MissileBone = 'Nuke',
+
+        Tarmacs = {
+            {
+                Albedo = 'Tarmacs/Tar8x_seraphim_01_albedo',
+                DeathLifetime = 300,
+                FadeOut = 150,
+                Length = 12.8,
+                Normal = 'Tarmacs/Tar8x_seraphim_01_normals',
+                Orientations = {0,90,180,270},
+                RemoveWhenDead = false,
+                Width = 12.8,
+            },
+        },
+
+        UniformScale = 0.057,
+    },
+    
+    Economy = {
+        BuildCostEnergy = 10008000,
+        BuildCostMass = 217900,
+        BuildRate = 2160,
+        BuildTime = 91832,
+
+        RebuildBonusIds = {'xsb2401'},
+    },
+    
+    Footprint = {
+        SizeX = 5,
+        SizeZ = 5,
+    },
+    
+    General = {
+        BuildBones = {
+            BuildEffectBones = {'N01','N02','N03'},
+        },
+		CapCost = 10,
+        CommandCaps = {
+            RULEUCC_Nuke = true,
+            RULEUCC_SiloBuildNuke = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Seraphim',
+        Icon = 'land',
+        SelectionPriority = 5,
+        UnitName = '<LOC xsb2401_name>Yolona Oss',
+    },
+    
+    Intel = {
+        VisionRadius = 0,
+    },
+    
+    Interface = {
+        HelpText = 'Experimental Missile Launcher',
+    },
+    
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 2,
+    LifeBarSize = 5.5,
+    
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+        MaxSteerForce = 0,
+        MeshExtentsX = 2.1,
+        MeshExtentsY = 1,
+        MeshExtentsZ = 2.1,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = -1.5,
+        SkirtOffsetZ = -1.5,
+        SkirtSizeX = 8,
+        SkirtSizeZ = 8,
+        TurnRate = 0,
+    },
+    
+    SelectionSizeX = 3,
+    SelectionSizeZ = 3,
+    SelectionThickness = 0.36,
+    
+    SizeX = 2,
+    SizeY = 1.6,
+    SizeZ = 2,
+    
+    StrategicIconName = 'icon_structure4_nuke',
+    StrategicIconSortPriority = 175,
+    
+    Veteran = {
+        Level1 = 1000,
+        Level2 = 2000,
+        Level3 = 3000,
+        Level4 = 4000,
+        Level5 = 5000,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound {
+                    Bank = 'XSB_Weapon',
+                    Cue = 'XSB2401_Exp_Strategic_Missile',
+                    LodCutoff = 'Weapon_LodCutoff',
+                },
+            },
+            BallisticArc = 'RULEUBA_None',
+			
+            CollideFriendly = false,
+            CountedProjectile = true,
+			
+            Damage = 0,
+			
+            DamageType = 'Normal',
+			
+            DisplayName = 'Experimental Strategic Missile Launcher',
+			
+            EnergyDrainPerSecond = 0,
+            EnergyRequired = 0,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+                Sub = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+			
+            FiringTolerance = 2,
+			
+            ForceSingleFire = true,
+			
+            InitialProjectileStorage = 0,
+			
+            Label = 'NukeMissiles',
+			
+            ManualFire = 1,
+			
+            MaxProjectileStorage = 2,
+			
+            MaxRadius = 20000,
+            MinRadius = 70,
+			
+            MuzzleChargeDelay = 5,
+
+            MuzzleVelocity = 0,
+			
+            NukeInnerRingDamage = 1000001,
+            NukeInnerRingRadius = 45,
+            NukeInnerRingTicks = 24,
+            NukeInnerRingTotalTime = 12,
+            NukeOuterRingDamage = 14500,
+            NukeOuterRingRadius = 60,
+            NukeOuterRingTicks = 20,
+            NukeOuterRingTotalTime = 5,
+			
+            NukeWeapon = true,
+			
+            ProjectileId = '/projectiles/SIFExperimentalStrategicMissile01/SIFExperimentalStrategicMissile01_proj.bp',
+			ProjectileLifetime = 500,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Attachpoint'},
+                    RackBone = 'Attachpoint',
+                },
+            },
+
+            RangeCategory = 'UWRC_IndirectFire',
+            
+            RateOfFire = 1,
+
+            TargetRestrictDisallow = 'UNTARGETABLE',
+
+            WeaponRepackTimeout = 15,
+            WeaponUnpacks = true,
+        },
+    },
+
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.3,
+        HealthMult = 0.9,
+        MassMult = 0.3,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}
