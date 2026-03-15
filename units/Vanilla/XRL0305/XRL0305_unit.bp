@@ -74,7 +74,7 @@ UnitBlueprint {
 
             CollideFriendly = false,
 			
-            Damage = 225,
+            Damage = 175,
             DamageType = 'Normal',
 			
             DisplayName = 'Disintegrator',
@@ -88,7 +88,7 @@ UnitBlueprint {
 
             LeadTarget = true,
 			
-            MaxRadius = 34,
+            MaxRadius = 32,
 
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,

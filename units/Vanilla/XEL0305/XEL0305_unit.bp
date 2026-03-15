@@ -11,8 +11,8 @@ UnitBlueprint {
     },
 
     Economy = {
-        BuildCostEnergy = 14000,
-        BuildCostMass = 1280,
+        BuildCostEnergy = 21000,
+        BuildCostMass = 1780,
         BuildTime = 7000,
     },
 
@@ -38,7 +38,7 @@ UnitBlueprint {
 			
             Label = 'PlasmaCannon01',
 			
-            MaxRadius = 35,
+            MaxRadius = 33,
 
             MuzzleVelocity = 35,
 			
