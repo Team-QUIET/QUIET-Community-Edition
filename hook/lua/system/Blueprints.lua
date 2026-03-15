@@ -1098,6 +1098,9 @@ do
 			'bab2303',   -- Archangel
 			'beb2303',   -- Hellstorm
 			'srl0401',   -- Abyss Crawler
+			'brot1ml',   -- Wavecrest
+			'sea0401',   -- AC-500
+			'bra0409',   -- Gargantuan
 		};
 		for i, bp in pairs(unitPruningId) do
 			if all_blueprints.Unit[bp] then
