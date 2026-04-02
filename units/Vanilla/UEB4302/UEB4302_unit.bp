@@ -1,0 +1,284 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'ueb4302',
+
+    AI = {
+        InitialAutoMode = true,
+    },
+	
+    Audio = {
+        Close = Sound { Bank = 'UEB', Cue = 'UEB4302_Door', LodCutoff = 'UnitMove_LodCutoff' },
+        Destroyed = Sound { Bank = 'UELDestroy', Cue = 'UEB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff'},
+        Open = Sound { Bank = 'UEB', Cue = 'UEB4302_Door', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'UEF_Select_Gun', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    BuildIconSortPriority = 155,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER4COMMANDER',
+        'UEF',
+        'STRUCTURE',
+        'DEFENSE',
+        'TECH3',
+        'ANTIMISSILE',
+        'SILO',
+        'DRAGBUILD',
+        'SIZE8',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SORTSTRATEGIC',
+    },
+	
+    CollisionOffsetY = -0.25,
+	
+    Defense = {
+        ArmorType = 'Structure',
+        EconomyThreatLevel = 294,
+        Health = 3800,
+        MaxHealth = 3800,
+        RegenRate = 2,
+    },
+	
+    Description = '<LOC ueb4302_desc>Strategic Missile Defense',
+	
+    Display = {
+        Abilities = {
+            '<LOC ability_stratmissiledef>Strategic Missile Defense',
+            '<LOC ability_aquatic>Aquatic: can be built underwater',
+			'Anti Satellite',
+        },
+
+        AnimationPermOpen = '/units/ueb4302/ueb4302_Aopen.sca',
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 140,
+                    ShaderName = 'Unit',
+                },
+                {
+                    AlbedoName = 'ueb4302_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    ShaderName = 'Unit',
+                    SpecularName = 'ueb4302_lod1_specteam.dds',
+                },
+            },
+        },
+
+        Tarmacs = {
+            {
+                Albedo = 'Tarmacs/Tar8x_01_albedo',
+                DeathLifetime = 300,
+                FadeOut = 150,
+                Length = 6.4,
+                Normal = 'Tarmacs/Tar8x_01_normals',
+                Orientations = {0},
+                RemoveWhenDead = false,
+                Width = 6.4,
+            },
+        },
+
+        UniformScale = 1.4,
+    },
+
+    Economy = {
+        BuildCostEnergy = 105000,
+        BuildCostMass = 7500,
+        BuildRate = 1350,
+        BuildTime = 7000,
+
+        RebuildBonusIds = {'ueb4302'},
+    },
+
+    General = {
+		CapCost = 2,
+        CommandCaps = {
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_SiloBuildTactical = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'UEF',
+        Icon = 'amph',
+        SelectionPriority = 5,
+        UnitName = '<LOC ueb4302_name>Nuke Eliminator',
+    },
+
+    Intel = {
+        VisionRadius = 12,
+    },
+
+    Interface = {
+        HelpText = 'Strategic Missile Defense',
+    },
+
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.85,
+    LifeBarSize = 2,
+
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+        },
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+        MaxSteerForce = 0,
+        MeshExtentsX = 2,
+        MeshExtentsY = 0.75,
+        MeshExtentsZ = 2,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+        SkirtSizeX = 3,
+        SkirtSizeZ = 3,
+        TurnRate = 0,
+    },
+
+    SelectionSizeX = 1.25,
+    SelectionSizeZ = 1.25,
+    SelectionThickness = 0.55,
+
+    SizeX = 1.75,
+    SizeY = 0.8,
+    SizeZ = 1.75,
+
+    StrategicIconName = 'icon_structure3_antimissile',
+    StrategicIconSortPriority = 195,
+
+    Weapon = {
+        {
+
+            Audio = {
+                Fire = Sound { Bank = 'UELWeapon', Cue = 'UEB4302_Anti_Missile', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+
+            CountedProjectile = true,
+			
+            Damage = 30,
+            DamageType = 'Normal',
+			
+            DisplayName = 'AntiNuke',
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+				Sub = 'Air',
+				Water = 'Air',
+                Seabed = 'Air',
+            },
+			
+            FiringTolerance = 60,
+			
+            ForceSingleFire = true,
+			
+            InitialProjectileStorage = 0,
+			
+            Label = 'AntiNuke',
+			
+            MaxProjectileStorage = 7,
+			
+            MaxRadius = 100,
+
+            MuzzleVelocity = 90,
+			
+            ProjectileId = '/projectiles/TIMMissileIntercerptor01/TIMMissileIntercerptor01_proj.bp',
+			ProjectileLifetime = 3.6,
+			
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle01'},
+                    RackBone = 'Turret_Muzzle01',
+                },
+            },
+			
+            RackSalvoReloadTime = 3.3,
+
+            RangeCategory = 'UWRC_Countermeasure',
+			
+            RateOfFire = 0.6,
+
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TargetRestrictOnlyAllow = 'STRATEGIC MISSILE',
+            TargetType = 'RULEWTT_Projectile',
+
+
+            Turreted = false,
+        },
+		{
+			AntiSat = true,
+
+            Audio = {
+                Fire = Sound {
+                    Bank = 'UELWeapon',
+                    Cue = 'UEB4302_Anti_Missile',
+                    LodCutoff = 'Weapon_LodCutoff',
+                },
+            },
+			AutoInitiateAttackCommand = true,
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+			
+            Damage = 500,
+			DamageRadius = 0,
+            DamageType = 'Normal',
+			
+            DisplayName = 'Anti Sat',
+			
+            EffectiveRadius = 75,
+			
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+				Sub = 'Air',
+                Seabed = 'Air',
+				Water = 'Air',
+            },
+            FiringTolerance = 60,
+			
+            Label = 'AntiNuke2',
+			
+            MaxRadius = 90,
+
+            MuzzleVelocity = 65,
+			
+			NotExclusive = true,
+			
+            ProjectileId = '/projectiles/TIMMissileIntercerptor02/TIMMissileIntercerptor02_proj.bp',
+			ProjectileLifetime = 2,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Turret_Muzzle01'},
+                    RackBone = 'Turret_Muzzle01',
+                },
+            },
+
+            RangeCategory = 'UWRC_AntiAir',
+			
+            RateOfFire = 0.12,
+
+            TargetPriorities = {'SATELLITE'},
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictOnlyAllow = 'SATELLITE',
+
+            Turreted = false,
+        },
+    },
+
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.3,
+        HealthMult = 0.9,
+        MassMult = 0.3,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+            Seabed = true,
+        },
+    },
+}

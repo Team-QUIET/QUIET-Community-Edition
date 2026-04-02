@@ -1,0 +1,267 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'urb4302',
+
+    AI = {
+        InitialAutoMode = true,
+    },
+	
+    Audio = {
+        Destroyed   = Sound { Bank = 'URLDestroy', Cue = 'URB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff' },
+        UISelection = Sound { Bank = 'Interface', Cue = 'Cybran_Select_Gun', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+	
+    BuildIconSortPriority = 155,
+	
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER4COMMANDER',
+        'CYBRAN',
+        'STRUCTURE',
+        'DEFENSE',
+        'TECH3',
+        'ANTIMISSILE',
+        'SILO',
+        'DRAGBUILD',
+        'SIZE8',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SORTSTRATEGIC',
+    },
+
+    Defense = {
+        ArmorType = 'Structure',
+        EconomyThreatLevel = 294,
+        Health = 3800,
+        MaxHealth = 3800,
+        RegenRate = 5,
+    },
+	
+    Description = '<LOC urb4302_desc>Strategic Missile Defense',
+	
+    Display = {
+        Abilities = {
+            '<LOC ability_stratmissiledef>Strategic Missile Defense',
+			'Anti Satellite Weapon',
+        },
+
+        AnimationPermOpen = '/units/urb4302/urb4302_Aopen.sca',
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 140,
+                    ShaderName = 'Insect',
+                },
+                {
+                    AlbedoName = 'urb4302_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    ShaderName = 'Insect',
+                    SpecularName = 'urb4302_lod1_specteam.dds',
+                },
+            },
+        },
+
+        UniformScale = 0.1,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 105000,
+        BuildCostMass = 7500,
+        BuildRate = 1350,
+        BuildTime = 7000,
+
+        RebuildBonusIds = {'urb4302'},
+    },
+	
+    Footprint = {
+        MinWaterDepth = 3,
+        SizeX = 2,
+        SizeZ = 2,
+    },
+	
+    General = {
+		CapCost = 2,
+
+        CommandCaps = {
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_SiloBuildTactical = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Cybran',
+        Icon = 'amph',
+        SelectionPriority = 5,
+
+        UnitName = '<LOC urb4302_name>Guardian',
+    },
+	
+    Intel = {
+        VisionRadius = 10,
+    },
+	
+    Interface = {
+        HelpText = 'Strategic Missile Defense',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.85,
+    LifeBarSize = 2,
+	
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+        },
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+        MaxSteerForce = 0,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+        SkirtSizeX = 3,
+        SkirtSizeZ = 3,
+        TurnRate = 0,
+    },
+	
+    SelectionCenterOffsetZ = -0.3,
+    SelectionSizeX = 1.25,
+    SelectionSizeZ = 1.25,
+    SelectionThickness = 0.55,
+	
+    SizeX = 1,
+    SizeY = 2,
+    SizeZ = 1,
+	
+    StrategicIconName = 'icon_structure3_antimissile',
+    StrategicIconSortPriority = 195,
+	
+    Weapon = {
+        {
+
+            Audio = {
+                Fire = Sound { Bank = 'URLWeapon', Cue = 'URB4302_Anti_Missile_EMP', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+            CountedProjectile = true,
+
+            Damage = 30,
+            DamageType = 'Normal',
+
+            DisplayName = 'EMP Anti Nuke',
+
+            EffectiveRadius = 90,
+
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Seabed = 'Air',
+            },
+            FiringTolerance = 60,
+
+            ForceSingleFire = true,
+
+            InitialProjectileStorage = 0,
+
+            Label = 'MissileRack',
+
+            MaxProjectileStorage = 7,
+
+            MaxRadius = 100,
+
+            MuzzleVelocity = 90,
+
+            ProjectileId = '/projectiles/CAADissidentAntiNuke01/CAADissidentAntiNuke01_proj.bp',
+            ProjectileLifetime = 3.6,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Missile_Attachpoint'},
+                    RackBone = 'URB4302',
+                },
+            },
+			
+            RackSalvoReloadTime = 3.3,
+
+            RangeCategory = 'UWRC_Countermeasure',
+
+            RateOfFire = 0.6,
+
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TargetRestrictOnlyAllow = 'STRATEGIC MISSILE',
+            TargetType = 'RULEWTT_Projectile',
+
+			
+            Turreted = false,
+        },
+		
+		{
+			AntiSat = true,
+
+            Audio = {
+                Fire = Sound { Bank = 'URLWeapon', Cue = 'URB4302_Anti_Missile_EMP', LodCutoff = 'Weapon_LodCutoff' },
+            },
+
+			AutoInitiateAttackCommand = true,
+
+            BallisticArc = 'RULEUBA_None',
+
+            CollideFriendly = false,
+            Damage = 500,
+			DamageRadius = 0,
+            DamageType = 'Normal',
+            DisplayName = 'EMP Anti Sat',
+
+            EffectiveRadius = 75,
+
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Seabed = 'Air',
+            },
+            FiringTolerance = 60,
+
+            Label = 'MissileRack2',
+
+            MaxRadius = 90,
+
+            MuzzleVelocity = 65,
+
+			NotExclusive = true,
+            
+            ProjectileId = '/projectiles/CAADissidentAntiNuke02/CAADissidentAntiNuke02_proj.bp',
+            ProjectileLifetime = 2,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Missile_Attachpoint'},
+                    RackBone = 'URB4302',
+                },
+            },
+
+            RangeCategory = 'UWRC_AntiAir',
+
+            RateOfFire = 0.2,
+
+            TargetPriorities = {'SATELLITE'},
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictOnlyAllow = 'SATELLITE',
+
+			
+            Turreted = false,
+        },
+    },
+
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.3,
+        HealthMult = 0.9,
+        MassMult = 0.3,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+            Seabed = true,
+        },
+    },
+}

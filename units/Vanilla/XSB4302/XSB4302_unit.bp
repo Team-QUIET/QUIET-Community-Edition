@@ -1,0 +1,284 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = 'xsb4302',
+
+    AI = {
+        InitialAutoMode = true,
+    },
+
+    Audio = {
+        Destroyed   = Sound { Bank = 'XSL_Destroy', Cue = 'XSB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'SeraphimSelect', Cue = 'Seraphim_Select_gun', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+
+    BuildIconSortPriority = 155,
+
+    Categories = {
+        'SELECTABLE',
+--        'BUILTBYTIER3ENGINEER',
+        'BUILTBYTIER4COMMANDER',
+        'SERAPHIM',
+        'DRAGBUILD',
+        'STRUCTURE',
+        'DEFENSE',
+        'TECH3',
+        'ANTIMISSILE',
+        'SILO',
+        'SIZE8',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SORTSTRATEGIC',
+    },
+
+    CollisionOffsetY = -0.25,
+
+    Defense = {
+        ArmorType = 'Structure',
+        EconomyThreatLevel = 294,
+        Health = 3800,
+        MaxHealth = 3800,
+        RegenRate = 5,
+    },
+
+    Description = '<LOC xsb4302_desc>Strategic Missile Defense',
+
+    Display = {
+        Abilities = {
+            '<LOC ability_aquatic>Aquatic: can be built underwater',
+            '<LOC ability_stratmissiledef>Strategic Missile Defense',
+			'Anti Satellite Weapon',
+        },
+
+        AnimationPermOpen = '/units/xsb4302/xsb4302_Aopen.sca',
+
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 140,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    Scrolling = true,
+                    ShaderName = 'Seraphim',
+                },
+                {
+                    AlbedoName = 'xsb4302_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    LookupName = '/textures/environment/Falloff_seraphim_lookup.dds',
+                    ShaderName = 'Seraphim',
+                    SpecularName = 'xsb4302_lod1_specteam.dds',
+                },
+            },
+        },
+
+        Tarmacs = {
+            {
+                Albedo = 'Tarmacs/Tar8x_seraphim_01_albedo',
+                DeathLifetime = 300,
+                FadeOut = 150,
+                Length = 6.4,
+                Normal = 'Tarmacs/Tar8x_seraphim_01_normals',
+                Orientations = {0,90,180,270},
+                RemoveWhenDead = false,
+                Width = 6.4,
+            },
+        },
+
+        UniformScale = 0.05,
+    },
+
+    Economy = {
+        BuildCostEnergy = 105000,
+        BuildCostMass = 7500,
+        BuildRate = 1350,	---- was 1080
+        BuildTime = 7000,
+
+        RebuildBonusIds = {'xsb4302'},
+    },
+
+    General = {
+		CapCost = 2,
+        CommandCaps = {
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_SiloBuildTactical = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'Seraphim',
+        Icon = 'amph',
+        SelectionPriority = 5,
+
+        UnitName = '<LOC xsb4302_name>Ythisioz',
+    },
+
+    Intel = {
+        VisionRadius = 12,
+    },
+
+    Interface = {
+        HelpText = 'Strategic Missile Defense',
+    },
+
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 1,
+    LifeBarSize = 1.5,
+
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+        },
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+        MaxSteerForce = 0,
+        MeshExtentsX = 2,
+        MeshExtentsY = 1.25,
+        MeshExtentsZ = 2,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+        SkirtSizeX = 3,
+        SkirtSizeZ = 3,
+        TurnRate = 0,
+    },
+
+    SelectionSizeX = 1.25,
+    SelectionSizeZ = 1.25,
+    SelectionThickness = 0.55,
+
+    SizeX = 1.5,
+    SizeY = 1.5,
+    SizeZ = 1.75,
+
+    StrategicIconName = 'icon_structure3_antimissile',
+    StrategicIconSortPriority = 195,
+
+    Weapon = {
+        {
+
+            Audio = {
+                Fire = Sound { Bank = 'XSB_Weapon', Cue = 'XSB4302_Strat_Missile_Def', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+            CountedProjectile = true,
+
+            Damage = 30,
+            DamageType = 'Normal',
+
+            DisplayName = 'Hu Strategic Missile Defense',
+
+            EffectiveRadius = 90,
+
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Seabed = 'Air',
+            },
+            FiringTolerance = 60,
+
+            ForceSingleFire = true,
+
+            InitialProjectileStorage = 0,
+
+            Label = 'MissileRack',
+
+            MaxProjectileStorage = 7,
+
+            MaxRadius = 100,
+
+            MuzzleVelocity = 90,
+
+            ProjectileId = '/projectiles/SIFHuAntiNuke01/SIFHuAntiNuke01_proj.bp',
+            ProjectileLifetime = 3.6,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Missile_Attachpoint'},
+                    RackBone = 'Missile_Attachpoint',
+                },
+            },
+			
+            RackSalvoReloadTime = 3.3,
+
+            RangeCategory = 'UWRC_Countermeasure',
+
+            RateOfFire = 0.6,
+
+            TargetRestrictDisallow = 'UNTARGETABLE,SATELLITE',
+            TargetRestrictOnlyAllow = 'STRATEGIC MISSILE',
+            TargetType = 'RULEWTT_Projectile',
+
+			
+            Turreted = false,
+        },
+		{
+			AntiSat = true,
+
+            Audio = {
+                Fire = Sound {
+                    Bank = 'XSB_Weapon',
+                    Cue = 'XSB4302_Strat_Missile_Def',
+                    LodCutoff = 'Weapon_LodCutoff',
+                },
+            },
+			AutoInitiateAttackCommand = true,
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+            Damage = 500,
+			DamageRadius = 0,
+            DamageType = 'Normal',
+
+            DisplayName = 'Hu Anti Satellite',
+
+            EffectiveRadius = 75,
+
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+				Sub = 'Air',
+				Water = 'Air',
+                Seabed = 'Air',
+            },
+            FiringTolerance = 60,
+
+            Label = 'MissileRack2',
+
+            MaxRadius = 90,
+
+            MuzzleVelocity = 65,
+			NotExclusive = true,
+
+            ProjectileId = '/projectiles/SIFHuAntiNuke02/SIFHuAntiNuke02_proj.bp',
+            ProjectileLifetime = 2,
+
+            RackBones = {
+                {
+                    MuzzleBones = {'Missile_Attachpoint'},
+                    RackBone = 'Missile_Attachpoint',
+                },
+            },
+
+            RangeCategory = 'UWRC_AntiAir',
+
+            RateOfFire = 0.2,
+
+            TargetPriorities = {'SATELLITE'},
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictOnlyAllow = 'SATELLITE',
+
+			
+            Turreted = false,
+        },
+    },
+
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0.3,
+        HealthMult = 0.9,
+        MassMult = 0.3,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+            Seabed = true,
+        },
+    },
+}
