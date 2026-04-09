@@ -363,6 +363,14 @@ do
 					end
 				end
 
+				if cats.SILO and cats.NUKE and cats.STRATEGIC and cats.STRUCTURE and cats.TECH3 then
+					if not bp.IgnoreEvenflow then
+						bp.IgnoreEvenflow = true
+					end
+
+					bp.Economy.BuildTime = bp.Economy.BuildTime * 0.73
+				end
+
 				-- Adds DRAGBUILD to all Units
 				local CatsMisc = {
 					'DRAGBUILD',
