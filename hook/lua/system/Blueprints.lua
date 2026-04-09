@@ -371,6 +371,16 @@ do
 					bp.Economy.BuildTime = bp.Economy.BuildTime * 0.73
 				end
 
+				if cats.GATE and cats.TECH3 and cats.STRUCTURE then
+					if not bp.IgnoreEvenflow then
+						bp.IgnoreEvenflow = true
+					end
+                    
+					bp.Economy.BuildTime = bp.Economy.BuildTime * 0.70
+					bp.Economy.BuildCostMass = bp.Economy.BuildCostMass * 0.75
+					bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.90
+				end
+
 				-- Adds DRAGBUILD to all Units
 				local CatsMisc = {
 					'DRAGBUILD',
