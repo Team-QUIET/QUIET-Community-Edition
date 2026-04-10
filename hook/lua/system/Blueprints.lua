@@ -11,6 +11,7 @@ do
 	local TableInsert = table.insert
 
 	local MathMax = math.max
+	local MathMin = math.min
 	local MathFloor = math.floor
 	local MathSqrt = math.sqrt
 
@@ -176,6 +177,37 @@ do
 		for _, unit in units do
 			CalculateLODOfUnit(unit)
 		end
+	end
+
+	local function NormalizeExperimentalMass(massCost)
+		return MathMin(1, MathMax(0, (massCost - 10000) / 50000))
+	end
+
+	local function CalculateExperimentalHealthMultiplier(massCost)
+		local normalizedMass = NormalizeExperimentalMass(massCost)
+		return 1.12 + 0.98 * (normalizedMass ^ 0.90)
+	end
+
+	local function CalculateExperimentalMassCostMultiplier(massCost)
+		local normalizedMass = NormalizeExperimentalMass(massCost)
+		return 1.00 - 0.18 * (normalizedMass ^ 0.85)
+	end
+
+	local function CalculateExperimentalBuildTimeScalar(massCost)
+		local normalizedMass = NormalizeExperimentalMass(massCost)
+		return 0.90 + 0.08 * (normalizedMass ^ 0.90)
+	end
+
+	local function ApplyExperimentalHealthScaling(bp, massCost)
+		if not (bp.Defense and (bp.Defense.MaxHealth or bp.Defense.Health)) then
+			return
+		end
+
+		local baseHealth = bp.Defense.MaxHealth or bp.Defense.Health
+		local scaledHealth = MathFloor((baseHealth * CalculateExperimentalHealthMultiplier(massCost)) + 0.5)
+
+		bp.Defense.MaxHealth = scaledHealth
+		bp.Defense.Health = scaledHealth
 	end
 
 	--=======================================
@@ -474,49 +506,33 @@ do
 					end
 
 					local massCost = bp.Economy.BuildCostMass
-					
-					-- Tiered cost reduction system
-					-- Handles "Tiers" of experimental units (from Light to Ultra Heavy)
-					if massCost >= 10000 and massCost <= 16000 then
-						-- Scale down to base 10k with gradual increase
-						if massCost <= 10500 then
-							bp.Economy.BuildCostMass = 10000
-						elseif massCost <= 12500 then
-							bp.Economy.BuildCostMass = 11000
-						elseif massCost <= 15000 then
-							bp.Economy.BuildCostMass = 12000
-						else
-							bp.Economy.BuildCostMass = 13000
-						end
-						
-						-- Scale energy cost proportionally
-						if bp.Economy.BuildCostEnergy then
-							local energyRatio = bp.Economy.BuildCostMass / massCost
-							bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * energyRatio
-						end
-					elseif massCost >= 34500 then
-						-- 20% reduction for heavy experimentals
-						bp.Economy.BuildCostMass = massCost * 0.8
-						if bp.Economy.BuildCostEnergy then
-							bp.Economy.BuildCostEnergy = bp.Economy.BuildCostEnergy * 0.8
-						end
+
+					-- Reduce mass cost so larger experimentals receive larger discounts
+					local adjustedMassCost = MathFloor((massCost * CalculateExperimentalMassCostMultiplier(massCost)) + 0.5)
+					bp.Economy.BuildCostMass = adjustedMassCost
+
+					if bp.Economy.BuildCostEnergy then
+						local energyRatio = adjustedMassCost / massCost
+						bp.Economy.BuildCostEnergy = MathFloor((bp.Economy.BuildCostEnergy * energyRatio) + 0.5)
 					end
 
-					-- Scale build time based on mass cost
-					-- Base build time starts at 10k mass
-					-- Scales to 22k at 20k mass
-					-- Continues scaling from there
+					-- Build time scaling keeps the same overall structure while increasing
+					-- slightly with unit size to avoid step changes between experimental tiers.
 					local baseMass = 10000
 					local baseBuildTime = 15000
 					
 					-- Calculate scaled build time
 					if not bp.IgnoreExperimentalModsBT then	
-						local massRatio = bp.Economy.BuildCostMass / baseMass
-						local scaledBuildTime = baseBuildTime * (massRatio * 0.8)
+						local massRatio = adjustedMassCost / baseMass
+						local buildTimeScalar = CalculateExperimentalBuildTimeScalar(massCost)
+						local scaledBuildTime = baseBuildTime * (massRatio * buildTimeScalar)
 					
 						-- Ensure minimum build time of 15000
-						bp.Economy.BuildTime = math.max(15000, scaledBuildTime)
+						bp.Economy.BuildTime = MathMax(15000, MathFloor(scaledBuildTime + 0.5))
 					end
+
+					-- Scale HP from the original mass tier
+					ApplyExperimentalHealthScaling(bp, massCost)
 				end
 			end
 		end
