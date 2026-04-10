@@ -162,7 +162,7 @@ UnitBlueprint {
             CollideFriendly = false,
             ContinuousBeam = false,
 			
-            Damage = 120,
+            Damage = 100,
             DamageRadius = 0,
             DamageType = 'Normal',
 
