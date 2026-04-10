@@ -193,11 +193,6 @@ do
 		return 1.00 - 0.18 * (normalizedMass ^ 0.85)
 	end
 
-	local function CalculateExperimentalBuildTimeScalar(massCost)
-		local normalizedMass = NormalizeExperimentalMass(massCost)
-		return 0.90 + 0.08 * (normalizedMass ^ 0.90)
-	end
-
 	local function ApplyExperimentalHealthScaling(bp, massCost)
 		if not (bp.Defense and (bp.Defense.MaxHealth or bp.Defense.Health)) then
 			return
@@ -514,21 +509,6 @@ do
 					if bp.Economy.BuildCostEnergy then
 						local energyRatio = adjustedMassCost / massCost
 						bp.Economy.BuildCostEnergy = MathFloor((bp.Economy.BuildCostEnergy * energyRatio) + 0.5)
-					end
-
-					-- Build time scaling keeps the same overall structure while increasing
-					-- slightly with unit size to avoid step changes between experimental tiers.
-					local baseMass = 10000
-					local baseBuildTime = 15000
-					
-					-- Calculate scaled build time
-					if not bp.IgnoreExperimentalModsBT then	
-						local massRatio = adjustedMassCost / baseMass
-						local buildTimeScalar = CalculateExperimentalBuildTimeScalar(massCost)
-						local scaledBuildTime = baseBuildTime * (massRatio * buildTimeScalar)
-					
-						-- Ensure minimum build time of 15000
-						bp.Economy.BuildTime = MathMax(15000, MathFloor(scaledBuildTime + 0.5))
 					end
 
 					-- Scale HP from the original mass tier
