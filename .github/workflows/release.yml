@@ -1,0 +1,113 @@
+name: Release Mod Package
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - mod_info.lua
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve Version
+        id: version
+        shell: pwsh
+        run: |
+          $content = Get-Content -Raw -Path 'mod_info.lua'
+
+          if ($content -notmatch '(?m)^\s*version\s*=\s*([0-9]+(?:\.[0-9]+)*)') {
+              throw "Unable to parse version from mod_info.lua"
+          }
+
+          $version = $Matches[1]
+          $tag = "V$version"
+          $assetName = "QUIET-Community-Edition-$tag.zip"
+          $archivePath = Join-Path $env:RUNNER_TEMP $assetName
+          $changelogPath = Join-Path $PWD "changelog/$tag.md"
+          $releaseBodyPath = Join-Path $env:RUNNER_TEMP 'release-notes.md'
+          $shouldRelease = 'true'
+
+          if ('${{ github.event_name }}' -eq 'push') {
+              $before = '${{ github.event.before }}'
+
+              if ($before -and $before -ne '0000000000000000000000000000000000000000') {
+                  $previousContent = git show "$before`:mod_info.lua" 2>$null
+
+                  if ($LASTEXITCODE -eq 0 -and $previousContent -match '(?m)^\s*version\s*=\s*([0-9]+(?:\.[0-9]+)*)') {
+                      $previousVersion = $Matches[1]
+
+                      if ($previousVersion -eq $version) {
+                          $shouldRelease = 'false'
+                      }
+                  }
+              }
+          }
+
+          if (Test-Path $changelogPath) {
+              Copy-Item -LiteralPath $changelogPath -Destination $releaseBodyPath -Force
+          } else {
+              @(
+                  "# $tag"
+                  ""
+                  "Automated release package for QUIET-Community-Edition."
+              ) | Set-Content -Path $releaseBodyPath
+          }
+
+          "version=$version" >> $env:GITHUB_OUTPUT
+          "tag=$tag" >> $env:GITHUB_OUTPUT
+          "asset_name=$assetName" >> $env:GITHUB_OUTPUT
+          "archive_path=$archivePath" >> $env:GITHUB_OUTPUT
+          "release_body=$releaseBodyPath" >> $env:GITHUB_OUTPUT
+          "should_release=$shouldRelease" >> $env:GITHUB_OUTPUT
+
+      - name: Build Release Zip
+        if: steps.version.outputs.should_release == 'true'
+        shell: pwsh
+        run: |
+          $archivePath = "${{ steps.version.outputs.archive_path }}"
+          $repoRoot = (Get-Location).Path
+          $folderName = Split-Path -Leaf $repoRoot
+          $stagingRoot = Join-Path $env:RUNNER_TEMP '_package'
+          $packageRoot = Join-Path $stagingRoot $folderName
+          $excludedNames = @('.git', '.github', '.vscode')
+
+          if (Test-Path $stagingRoot) {
+              Remove-Item -LiteralPath $stagingRoot -Recurse -Force
+          }
+
+          if (Test-Path $archivePath) {
+              Remove-Item -LiteralPath $archivePath -Force
+          }
+
+          New-Item -ItemType Directory -Path $packageRoot -Force | Out-Null
+
+          Get-ChildItem -LiteralPath $repoRoot -Force | Where-Object {
+              $excludedNames -notcontains $_.Name
+          } | ForEach-Object {
+              Copy-Item -LiteralPath $_.FullName -Destination $packageRoot -Recurse -Force
+          }
+
+          Compress-Archive -Path $packageRoot -DestinationPath $archivePath -Force
+
+      - name: Publish GitHub Release
+        if: steps.version.outputs.should_release == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: ${{ steps.version.outputs.tag }}
+          body_path: ${{ steps.version.outputs.release_body }}
+          files: ${{ steps.version.outputs.archive_path }}
+          fail_on_unmatched_files: true
+          overwrite_files: true
