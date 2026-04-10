@@ -2,6 +2,8 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "brpat2figbo",
 
+    IgnoreEvenflow = true,
+
     Air = {
         AutoLandTime = 1.6,
         BankFactor = 2,
@@ -47,6 +49,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 12000,
         BuildCostMass = 235,
+        BuildTime = 2000,
     },
 
     Physics = {
@@ -78,7 +81,7 @@ UnitBlueprint {
 			
             FiringTolerance = 2,
 			
-            MaxRadius = 35,
+            MaxRadius = 30,
 
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 2,

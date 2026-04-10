@@ -2,6 +2,8 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "sra0212",
 
+    IgnoreEvenflow = true,
+
     Air = {
         AutoLandTime = 1.6,
         BankFactor = 2,
@@ -47,6 +49,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 11500,
         BuildCostMass = 220,
+        BuildTime = 2000,
     },
 
     Physics = {
@@ -74,7 +77,7 @@ UnitBlueprint {
             },
             FiringTolerance = 2,
 
-            MaxRadius = 32,
+            MaxRadius = 30,
 
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 6,
