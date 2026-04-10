@@ -33,7 +33,7 @@ jobs:
 
           $version = $Matches[1]
           $tag = "V$version"
-          $assetName = "QUIET-Community-Edition-$tag.zip"
+          $assetName = "QUIET-Community-Edition.zip"
           $archivePath = Join-Path $env:RUNNER_TEMP $assetName
           $changelogPath = Join-Path $PWD "changelog/$tag.md"
           $releaseBodyPath = Join-Path $env:RUNNER_TEMP 'release-notes.md'
