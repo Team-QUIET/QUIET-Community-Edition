@@ -1115,6 +1115,8 @@ do
 			'brot1ml',   -- Wavecrest
 			'sea0401',   -- AC-500
 			'bra0409',   -- Gargantuan
+			'brmt1expdt2', -- Dual Microwave Pen
+			'brb2303', -- Squall
 		};
 		for i, bp in pairs(unitPruningId) do
 			if all_blueprints.Unit[bp] then
