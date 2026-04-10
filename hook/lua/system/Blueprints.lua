@@ -193,6 +193,12 @@ do
 		return 1.00 - 0.18 * (normalizedMass ^ 0.85)
 	end
 
+	local function CalculateExperimentalBuildTime(massCost, adjustedMassCost)
+		local normalizedMass = NormalizeExperimentalMass(massCost)
+		local buildTimeScalar = 1.08 + 0.234 * (normalizedMass ^ 0.90)
+		return MathMax(15000, MathFloor((adjustedMassCost * buildTimeScalar) + 0.5))
+	end
+
 	local function ApplyExperimentalHealthScaling(bp, massCost)
 		if not (bp.Defense and (bp.Defense.MaxHealth or bp.Defense.Health)) then
 			return
@@ -509,6 +515,10 @@ do
 					if bp.Economy.BuildCostEnergy then
 						local energyRatio = adjustedMassCost / massCost
 						bp.Economy.BuildCostEnergy = MathFloor((bp.Economy.BuildCostEnergy * energyRatio) + 0.5)
+					end
+
+					if bp.Economy.BuildTime then
+						bp.Economy.BuildTime = CalculateExperimentalBuildTime(massCost, adjustedMassCost)
 					end
 
 					-- Scale HP from the original mass tier
