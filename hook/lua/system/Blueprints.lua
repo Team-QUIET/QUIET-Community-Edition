@@ -185,18 +185,23 @@ do
 
 	local function CalculateExperimentalHealthMultiplier(massCost)
 		local normalizedMass = NormalizeExperimentalMass(massCost)
-		return 1.12 + 0.98 * (normalizedMass ^ 0.90)
+		return 1.08 + 0.82 * (normalizedMass ^ 0.95)
 	end
 
-	local function CalculateExperimentalMassCostMultiplier(massCost)
-		local normalizedMass = NormalizeExperimentalMass(massCost)
-		return 1.00 - 0.18 * (normalizedMass ^ 0.85)
+	local function CalculateExperimentalHealthCeilingFactor(baseHealth)
+		local normalizedHealth = MathMin(1, MathMax(0, (baseHealth - 85000) / 115000))
+		return 1.00 - 0.75 * (normalizedHealth ^ 0.90)
 	end
 
-	local function CalculateExperimentalBuildTime(massCost, adjustedMassCost)
+	local function CalculateExperimentalRegenFactor(regenRate)
+		local normalizedRegen = MathMin(1, MathMax(0, (regenRate - 20) / 80))
+		return 1.00 - 0.60 * (normalizedRegen ^ 0.85)
+	end
+
+	local function CalculateExperimentalBuildTime(massCost)
 		local normalizedMass = NormalizeExperimentalMass(massCost)
-		local buildTimeScalar = 1.08 + 0.234 * (normalizedMass ^ 0.90)
-		return MathMax(15000, MathFloor((adjustedMassCost * buildTimeScalar) + 0.5))
+		local buildTimeScalar = 1.15 + 0.69 * (normalizedMass ^ 0.95)
+		return MathMax(15000, MathFloor((massCost * buildTimeScalar) + 0.5))
 	end
 
 	local function ApplyExperimentalHealthScaling(bp, massCost)
@@ -205,7 +210,10 @@ do
 		end
 
 		local baseHealth = bp.Defense.MaxHealth or bp.Defense.Health
-		local scaledHealth = MathFloor((baseHealth * CalculateExperimentalHealthMultiplier(massCost)) + 0.5)
+		local regenRate = bp.Defense.RegenRate or 0
+		local baseBonus = CalculateExperimentalHealthMultiplier(massCost) - 1
+		local dampedBonus = baseBonus * CalculateExperimentalHealthCeilingFactor(baseHealth) * CalculateExperimentalRegenFactor(regenRate)
+		local scaledHealth = MathFloor((baseHealth * (1 + dampedBonus)) + 0.5)
 
 		bp.Defense.MaxHealth = scaledHealth
 		bp.Defense.Health = scaledHealth
@@ -508,17 +516,8 @@ do
 
 					local massCost = bp.Economy.BuildCostMass
 
-					-- Reduce mass cost so larger experimentals receive larger discounts
-					local adjustedMassCost = MathFloor((massCost * CalculateExperimentalMassCostMultiplier(massCost)) + 0.5)
-					bp.Economy.BuildCostMass = adjustedMassCost
-
-					if bp.Economy.BuildCostEnergy then
-						local energyRatio = adjustedMassCost / massCost
-						bp.Economy.BuildCostEnergy = MathFloor((bp.Economy.BuildCostEnergy * energyRatio) + 0.5)
-					end
-
 					if bp.Economy.BuildTime then
-						bp.Economy.BuildTime = CalculateExperimentalBuildTime(massCost, adjustedMassCost)
+						bp.Economy.BuildTime = CalculateExperimentalBuildTime(massCost)
 					end
 
 					-- Scale HP from the original mass tier
