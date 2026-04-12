@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - mod_info.lua
+  workflow_call:
   workflow_dispatch:
 
 permissions:
