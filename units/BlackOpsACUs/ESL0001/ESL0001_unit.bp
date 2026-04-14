@@ -1932,7 +1932,7 @@ UnitBlueprint {
 
             CollideFriendly = false,
 
-            Damage = 180,
+            Damage = 200,
 			DamageRadius = 3.5,
             DamageType = 'Normal',
 
@@ -1943,7 +1943,7 @@ UnitBlueprint {
 
             EnergyChargeForFirstShot = false,
 
-            EnergyDrainPerSecond = 700,	-- 2 second charge --
+            EnergyDrainPerSecond = 933,	-- 1.5 second charge --
             EnergyRequired = 1400,
 
             FireTargetLayerCapsTable = {
