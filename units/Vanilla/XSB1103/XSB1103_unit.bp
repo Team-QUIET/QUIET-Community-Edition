@@ -5,8 +5,8 @@ UnitBlueprint {
     Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 32,
-        Health = 600,
-        MaxHealth = 600,
+        Health = 520,
+        MaxHealth = 520,
         RegenRate = 0,
     },
 
@@ -18,14 +18,14 @@ UnitBlueprint {
 		
         BuildableCategory = {'xsb1202'},
 		
-        MaintenanceConsumptionPerSecondEnergy = 12,
+        MaintenanceConsumptionPerSecondEnergy = 10,
 		
         ProductionPerSecondMass = 2,
 		
         RebuildBonusIds = {'xsb1103','xsb1202','xsb1302'},
 
-        StorageEnergy = 60,
-        StorageMass = 6,        
+        StorageEnergy = 64,
+        StorageMass = 32,        
     },
 	
     General = {
