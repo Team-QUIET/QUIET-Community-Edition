@@ -64,8 +64,8 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 180,
-        BuildCostMass = 36,
+        BuildCostEnergy = 190,
+        BuildCostMass = 42,
         BuildTime = 190,
     },
 	
@@ -172,7 +172,7 @@ UnitBlueprint {
             MaxRadius = 42,
             MinRadius = 5,
 
-            MuzzleVelocity = 18,
+            MuzzleVelocity = 21,
             MuzzleVelocityReduceDistance = 28,
             ProjectileId = '/projectiles/AIFMortar01/AIFMortar01_proj.bp',
 			ProjectileLifetimeUsesMultiplier = 3,
