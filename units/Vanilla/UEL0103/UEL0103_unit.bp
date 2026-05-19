@@ -63,8 +63,8 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 180,
-        BuildCostMass = 36,
+        BuildCostEnergy = 190,
+        BuildCostMass = 42,
         BuildTime = 200,
     },
 	
@@ -176,7 +176,7 @@ UnitBlueprint {
             MinRadius = 5,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 18,
+            MuzzleVelocity = 21,
             MuzzleVelocityReduceDistance = 28,
 			ProjectileId = '/projectiles/TIFFragmentationSensorShell01/TIFFragmentationSensorShell01_proj.bp',
 			ProjectileLifetimeUsesMultiplier = 3,
