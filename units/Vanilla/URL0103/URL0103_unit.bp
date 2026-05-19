@@ -69,8 +69,8 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 180,
-        BuildCostMass = 36,
+        BuildCostEnergy = 200,
+        BuildCostMass = 42,
         BuildTime = 200,
     },
 	
@@ -162,7 +162,7 @@ UnitBlueprint {
                     Add = {OnImpact = true},
                     AppliedToTarget = true,
                     BuffType = 'STUN',
-                    Duration = 3,
+                    Duration = 2,
                     Radius = 2,
                     TargetAllow = 'TECH1',
 					TargetDisallow = "TECH2,WALL",
@@ -171,8 +171,8 @@ UnitBlueprint {
                     Add = { OnImpact = true },
                     AppliedToTarget = true,
                     BuffType = "STUN",
-                    Duration = 2,
-                    Radius = 2.55,
+                    Duration = 1,
+                    Radius = 1.0,
                     TargetAllow = "TECH2",
                     TargetDisallow = "WALL",
                 },
@@ -198,7 +198,7 @@ UnitBlueprint {
             MaxRadius = 42,
             MinRadius = 5,
 
-            MuzzleVelocity = 18,
+            MuzzleVelocity = 21,
             MuzzleVelocityReduceDistance = 28,
             ProjectileId = '/projectiles/CIFGrenade01/CIFGrenade01_proj.bp',
             ProjectileLifetimeUsesMultiplier = 3,
