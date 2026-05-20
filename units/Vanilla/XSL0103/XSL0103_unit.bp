@@ -249,7 +249,7 @@ UnitBlueprint {
             TurretPitchSpeed = 70,
 			
             TurretYaw = 0,
-            TurretYawRange = 90,
+            TurretYawRange = 180,
             TurretYawSpeed = 70,
 			
             Turreted = true,
