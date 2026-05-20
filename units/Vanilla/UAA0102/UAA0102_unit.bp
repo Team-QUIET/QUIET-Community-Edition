@@ -50,7 +50,7 @@ UnitBlueprint {
 			
             NeedPrep = true,
 
-			ProjectileLifetime = 0.5,
+			ProjectileLifetime = 1.5,
 
             RangeCategory = 'UWRC_AntiAir',
 			
@@ -111,7 +111,7 @@ UnitBlueprint {
 			
             PrefersPrimaryWeaponTarget = true,
 
-            ProjectileLifetime = 0.6,
+            ProjectileLifetime = 1.5,
 			
             RateOfFire = 2,		-- another 28 DPS Air
 			
