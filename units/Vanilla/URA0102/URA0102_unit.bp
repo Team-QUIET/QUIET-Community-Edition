@@ -47,7 +47,7 @@ UnitBlueprint {
 
             MuzzleVelocity = 70,
 			
-            ProjectileLifetime = 0.5,
+            ProjectileLifetime = 1.5,
 
             RangeCategory = 'UWRC_AntiAir',
 			
