@@ -38,7 +38,7 @@ UnitBlueprint {
         ToggleCaps = {RULEUTC_ProductionToggle = true},
 
         UpgradesFrom = 'urb1103',
-        UpgradesTo = 'urb1302',
+        UpgradesTo = 'urb1204',
     },
 
 }
