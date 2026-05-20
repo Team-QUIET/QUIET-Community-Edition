@@ -101,9 +101,9 @@ UnitBlueprint{
         BankingSlope = 0,
         DragCoefficient = 0.2,
         Elevation = 0.125,
-        MaxAcceleration = 2.9,
-        MaxBrake = 2.9,
-        MaxSpeed = 2.9,
+        MaxAcceleration = 2.84,
+        MaxBrake = 2.84,
+        MaxSpeed = 2.84,
         MaxSpeedReverse = 2.9,
         MaxSteerForce = 1000,
         MeshExtentsX = 0.6,
@@ -155,7 +155,7 @@ UnitBlueprint{
             CollideFriendly = false,
 
             Damage = 14,
-            DamageRadius = 1,
+            DamageRadius = 0.5,
             DamageType = "Normal",
 
             DisplayName = "Grenade Launcher",
