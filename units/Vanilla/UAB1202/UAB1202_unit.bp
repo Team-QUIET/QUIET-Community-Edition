@@ -16,7 +16,7 @@ UnitBlueprint {
         BuildRate = 12,
         BuildTime = 900,
         
-        BuildableCategory = {'uab1302'},
+        BuildableCategory = {'uab1204'},
         
         MaintenanceConsumptionPerSecondEnergy = 46,
         
