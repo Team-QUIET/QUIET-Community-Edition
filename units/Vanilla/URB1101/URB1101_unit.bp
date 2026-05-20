@@ -5,16 +5,16 @@ UnitBlueprint {
     Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 8,
-        Health = 600,
-        MaxHealth = 600,
-        RegenRate = 0,
+        Health = 500,
+        MaxHealth = 500,
+        RegenRate = 2,
     },
 
     Economy = {
         AdjacentStructureEnergyMod = -2,
         
-        BuildCostEnergy = 750,
-        BuildCostMass = 90,
+        BuildCostEnergy = 800,
+        BuildCostMass = 80,
         BuildTime = 125,
         
         ProductionPerSecondEnergy = 20,
