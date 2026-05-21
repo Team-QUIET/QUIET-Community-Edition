@@ -172,7 +172,7 @@ UnitBlueprint {
             MaxRadius = 42,
             MinRadius = 5,
 
-            MuzzleVelocity = 21,
+            MuzzleVelocity = 18,
             MuzzleVelocityReduceDistance = 28,
             ProjectileId = '/projectiles/AIFMortar01/AIFMortar01_proj.bp',
 			ProjectileLifetimeUsesMultiplier = 3,
