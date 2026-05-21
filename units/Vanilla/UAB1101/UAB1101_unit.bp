@@ -23,11 +23,5 @@ UnitBlueprint {
         
 		StorageEnergy = 100,
     },
-    
-    General = {
-        FactionName = 'Aeon',
-        Icon = 'land',
-        SelectionPriority = 5,
-    },
-    
+
 }
