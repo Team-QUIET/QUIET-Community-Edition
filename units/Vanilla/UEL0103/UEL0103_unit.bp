@@ -176,7 +176,7 @@ UnitBlueprint {
             MinRadius = 5,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 21,
+            MuzzleVelocity = 18,
             MuzzleVelocityReduceDistance = 28,
 			ProjectileId = '/projectiles/TIFFragmentationSensorShell01/TIFFragmentationSensorShell01_proj.bp',
 			ProjectileLifetimeUsesMultiplier = 3,
