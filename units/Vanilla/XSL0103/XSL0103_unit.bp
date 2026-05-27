@@ -2,6 +2,8 @@ UnitBlueprint {
 
     Source = '/units/XSL0103/XSL0103_unit.bp', 
 
+    IgnoreEvenFlow = true,
+
     AI = {
 		GuardReturnRadius = 52,
         GuardScanRadius = 42,
@@ -77,9 +79,9 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 190,
+        BuildCostEnergy = 590,
         BuildCostMass = 54,
-        BuildTime = 290,
+        BuildTime = 590,
     },
 	
     General = {
@@ -98,7 +100,7 @@ UnitBlueprint {
     },
 	
     Intel = {
-        VisionRadius = 18,
+        VisionRadius = 10,
         WaterVisionRadius = 10,
     },
 	
@@ -118,10 +120,10 @@ UnitBlueprint {
         },
         DragCoefficient = 0.2,
         Elevation = 0.11,
-        MaxAcceleration = 2.7,
-        MaxBrake = 2.7,
-        MaxSpeed = 2.7,
-        MaxSpeedReverse = 2.7,
+        MaxAcceleration = 2.64,
+        MaxBrake = 2.64,
+        MaxSpeed = 2.64,
+        MaxSpeedReverse = 2.64,
         
         MaxSteerForce = 10,
         MeshExtentsX = 0.55,
@@ -170,7 +172,7 @@ UnitBlueprint {
             Audio = {
                 Fire = Sound { Bank = 'XSL_Weapon', Cue = 'XSL0103_Thuntho', LodCutoff = 'Weapon_LodCutoff'},
             },
-            BallisticArc = 'RULEUBA_HighArc',
+            BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
             Damage = 150,
@@ -191,10 +193,10 @@ UnitBlueprint {
             Label = 'MainGun',
 
             MaxRadius = 42,
-            MinRadius = 5,
+            MinRadius = 6.5,
 
-            MuzzleVelocity = 22,
-            MuzzleVelocityReduceDistance = 28,
+            MuzzleVelocity = 18,
+            MuzzleVelocityReduceDistance = 40,
 			ProjectileId = '/projectiles/SIFThunthoArtilleryShell01/SIFThunthoArtilleryShell01_proj.bp',
 			ProjectileLifetimeUsesMultiplier = 3,
 
@@ -211,7 +213,7 @@ UnitBlueprint {
 
             RenderFireClock = true,
 			
-            RateOfFire = 10/29,
+            RateOfFire = 10/50,
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 45,
