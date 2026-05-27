@@ -64,9 +64,9 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 190,
+        BuildCostEnergy = 240,
         BuildCostMass = 42,
-        BuildTime = 190,
+        BuildTime = 240,
     },
 	
     General = {
@@ -170,12 +170,12 @@ UnitBlueprint {
             Label = 'MainGun',
 
             MaxRadius = 42,
-            MinRadius = 5,
+            MinRadius = 6.5,
 
             MuzzleVelocity = 18,
             MuzzleVelocityReduceDistance = 28,
             ProjectileId = '/projectiles/AIFMortar01/AIFMortar01_proj.bp',
-			ProjectileLifetimeUsesMultiplier = 3,
+			ProjectileLifetimeUsesMultiplier = 4,
 
             RackBones = {
                 {
