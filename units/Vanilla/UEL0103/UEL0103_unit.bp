@@ -2,6 +2,8 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "uel0103",
 
+    IgnoreEvenflow = true,
+
     AI = {
 		GuardReturnRadius = 52,
         GuardScanRadius = 42,
@@ -34,8 +36,8 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Normal',
-        Health = 205,
-        MaxHealth = 205,
+        Health = 190,
+        MaxHealth = 190,
         RegenRate = 0,
         SurfaceThreatLevel = 2.8,
     },
@@ -63,9 +65,9 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 190,
+        BuildCostEnergy = 240,
         BuildCostMass = 42,
-        BuildTime = 200,
+        BuildTime = 240,
     },
 	
     General = {
@@ -102,10 +104,10 @@ UnitBlueprint {
             LAYER_Land = true,
         },
         DragCoefficient = 0.2,
-        MaxAcceleration = 2.8,
-        MaxBrake = 2.8,
-        MaxSpeed = 2.8,
-        MaxSpeedReverse = 2.8,
+        MaxAcceleration = 2.72,
+        MaxBrake = 2.72,
+        MaxSpeed = 2.72,
+        MaxSpeedReverse = 2.72,
         MaxSteerForce = 10,
         MeshExtentsX = 0.4,
         MeshExtentsY = 0.4,
@@ -149,7 +151,7 @@ UnitBlueprint {
             Audio = {
                 Fire = Sound { Bank = 'UELWeapon', Cue = 'UEL0103_Mortar', LodCutoff = 'Weapon_LodCutoff'},
             },
-            BallisticArc = 'RULEUBA_HighArc',
+            BallisticArc = 'RULEUBA_LowArc',
             
             CameraLifetime = 5,
             CameraVisionRadius = 5,
@@ -173,7 +175,7 @@ UnitBlueprint {
             Label = 'MainGun',
 
             MaxRadius = 42,
-            MinRadius = 5,
+            MinRadius = 6.5,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 18,
