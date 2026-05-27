@@ -2,6 +2,8 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "url0103",
 
+    IgnoreEvenFlow = true,
+
     AI = {
 		GuardReturnRadius = 52,
         GuardScanRadius = 42,
@@ -69,9 +71,9 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 200,
-        BuildCostMass = 42,
-        BuildTime = 200,
+        BuildCostEnergy = 480,
+        BuildCostMass = 54,
+        BuildTime = 480,
     },
 	
     General = {
@@ -90,7 +92,7 @@ UnitBlueprint {
     },
 	
     Intel = {
-        VisionRadius = 18,
+        VisionRadius = 10,
     },
 	
     Interface = {
@@ -108,9 +110,9 @@ UnitBlueprint {
             LAYER_Land = true,
         },
         DragCoefficient = 0.2,
-        MaxAcceleration = 2.9,
-        MaxBrake = 2.9,
-        MaxSpeed = 2.9,
+        MaxAcceleration = 2.72,
+        MaxBrake = 2.72,
+        MaxSpeed = 2.72,
         MaxSpeedReverse = 2.9,
         MaxSteerForce = 1000,
         MinSpeedPercent = 0,
@@ -155,15 +157,15 @@ UnitBlueprint {
                 Fire = Sound { Bank = 'URLWeapon', Cue = 'URL0103_Grenade_EMP', LodCutoff = 'Weapon_LodCutoff' },
             },
 
-            BallisticArc = 'RULEUBA_HighArc',
+            BallisticArc = 'RULEUBA_LowArc',
 
             Buffs = {
                 {
                     Add = {OnImpact = true},
                     AppliedToTarget = true,
                     BuffType = 'STUN',
-                    Duration = 2,
-                    Radius = 2,
+                    Duration = 1,
+                    Radius = 1,
                     TargetAllow = 'TECH1',
 					TargetDisallow = "TECH2,WALL",
                 },
@@ -171,17 +173,17 @@ UnitBlueprint {
                     Add = { OnImpact = true },
                     AppliedToTarget = true,
                     BuffType = "STUN",
-                    Duration = 1,
-                    Radius = 1.0,
+                    Duration = 0.5,
+                    Radius = 0.5,
                     TargetAllow = "TECH2",
                     TargetDisallow = "WALL",
                 },
             },
             CollideFriendly = false,
 			
-            Damage = 230,
+            Damage = 200,
             DamageFriendly = false,
-            DamageRadius = 2,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
 
             DisplayName = 'EMP Grenade Launcher',
@@ -196,10 +198,10 @@ UnitBlueprint {
             Label = 'MainGun',
 
             MaxRadius = 42,
-            MinRadius = 5,
+            MinRadius = 6.5,
 
-            MuzzleVelocity = 21,
-            MuzzleVelocityReduceDistance = 28,
+            MuzzleVelocity = 18,
+            MuzzleVelocityReduceDistance = 40,
             ProjectileId = '/projectiles/CIFGrenade01/CIFGrenade01_proj.bp',
             ProjectileLifetimeUsesMultiplier = 3,
             ProjectilesPerOnFire = 1,
@@ -217,7 +219,7 @@ UnitBlueprint {
 
             RenderFireClock = true,
 			
-            RateOfFire = 10/60,
+            RateOfFire = 10/80,
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -247,7 +249,7 @@ UnitBlueprint {
             TurretBonePitch = 'Turret_Barrel',
             TurretBoneYaw = 'Turret',
 			
-            TurretPitch = 45,
+            TurretPitch = 40,
             TurretPitchRange = 90,
             TurretPitchSpeed = 70,
 			
