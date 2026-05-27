@@ -166,16 +166,16 @@ UnitBlueprint {
                 Land = 'Land|Water',
             },
 
-            FiringRandomness = 0.35,
-            FiringTolerance = 2.25,
+            FiringRandomness = 0.25,
+            FiringTolerance = 1.5,
 
             Label = 'MainGun',
 
             MaxRadius = 42,
             MinRadius = 6.5,
 
-            MuzzleVelocity = 18,
-            MuzzleVelocityReduceDistance = 32,
+            MuzzleVelocity = 16,
+            MuzzleVelocityReduceDistance = 40,
             ProjectileId = '/projectiles/AIFMortar01/AIFMortar01_proj.bp',
 			ProjectileLifetimeUsesMultiplier = 3,
 
