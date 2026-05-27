@@ -167,7 +167,7 @@ UnitBlueprint {
             },
 
             FiringRandomness = 0.35,
-            FiringTolerance = 2.75,
+            FiringTolerance = 2.25,
 
             Label = 'MainGun',
 
@@ -175,7 +175,7 @@ UnitBlueprint {
             MinRadius = 6.5,
 
             MuzzleVelocity = 18,
-            MuzzleVelocityReduceDistance = 28,
+            MuzzleVelocityReduceDistance = 32,
             ProjectileId = '/projectiles/AIFMortar01/AIFMortar01_proj.bp',
 			ProjectileLifetimeUsesMultiplier = 3,
 
@@ -223,7 +223,7 @@ UnitBlueprint {
             TurretBonePitch = 'Turret_Barrel',
             TurretBoneYaw = 'Turret_Barrel',
 			
-            TurretPitch = 45,
+            TurretPitch = 40,
             TurretPitchRange = 90,
             TurretPitchSpeed = 70,
 			
