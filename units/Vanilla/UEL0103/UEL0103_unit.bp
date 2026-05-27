@@ -65,9 +65,9 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 250,
+        BuildCostEnergy = 520,
         BuildCostMass = 52,
-        BuildTime = 250,
+        BuildTime = 500,
     },
 	
     General = {
@@ -86,7 +86,7 @@ UnitBlueprint {
     },
 	
     Intel = {
-        VisionRadius = 18,
+        VisionRadius = 10,
     },
 	
     Interface = {
@@ -201,7 +201,7 @@ UnitBlueprint {
 
             RenderFireClock = true,
 			
-            RateOfFire = 10/40,
+            RateOfFire = 10/60,
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
