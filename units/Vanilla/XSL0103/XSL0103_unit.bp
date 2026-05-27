@@ -38,8 +38,8 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Normal',
-        Health = 170,
-        MaxHealth = 170,
+        Health = 150,
+        MaxHealth = 150,
         RegenRate = 0,
         SurfaceThreatLevel = 2.8,
     },
@@ -81,7 +81,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 590,
         BuildCostMass = 54,
-        BuildTime = 590,
+        BuildTime = 1080,
     },
 	
     General = {
@@ -120,10 +120,10 @@ UnitBlueprint {
         },
         DragCoefficient = 0.2,
         Elevation = 0.11,
-        MaxAcceleration = 2.64,
-        MaxBrake = 2.64,
-        MaxSpeed = 2.64,
-        MaxSpeedReverse = 2.64,
+        MaxAcceleration = 2.55,
+        MaxBrake = 2.55,
+        MaxSpeed = 2.55,
+        MaxSpeedReverse = 2.55,
         
         MaxSteerForce = 10,
         MeshExtentsX = 0.55,
