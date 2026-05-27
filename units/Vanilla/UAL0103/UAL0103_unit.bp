@@ -2,6 +2,8 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "ual0103",
 
+    IgnoreEvenflow = true,
+
     AI = {
 		GuardReturnRadius = 52,
         GuardScanRadius = 42,
@@ -103,10 +105,10 @@ UnitBlueprint {
             LAYER_Land = true,
         },
         DragCoefficient = 0.2,
-        MaxAcceleration = 2.7,
-        MaxBrake = 2.7,
-        MaxSpeed = 2.7,
-        MaxSpeedReverse = 2.7,
+        MaxAcceleration = 2.67,
+        MaxBrake = 2.67,
+        MaxSpeed = 2.67,
+        MaxSpeedReverse = 2.67,
         MaxSteerForce = 10,
         MeshExtentsX = 0.55,
         MeshExtentsY = 0.35,
@@ -150,7 +152,7 @@ UnitBlueprint {
             Audio = {
                 Fire = Sound { Bank = 'UALWeapon', Cue = 'UAL0103_Mortar_Concussion', LodCutoff = 'Weapon_LodCutoff'},
             },
-            BallisticArc = 'RULEUBA_HighArc',
+            BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
             Damage = 200,
@@ -165,7 +167,7 @@ UnitBlueprint {
             },
 
             FiringRandomness = 0.35,
-            FiringTolerance = 3,
+            FiringTolerance = 2.75,
 
             Label = 'MainGun',
 
@@ -175,7 +177,7 @@ UnitBlueprint {
             MuzzleVelocity = 18,
             MuzzleVelocityReduceDistance = 28,
             ProjectileId = '/projectiles/AIFMortar01/AIFMortar01_proj.bp',
-			ProjectileLifetimeUsesMultiplier = 4,
+			ProjectileLifetimeUsesMultiplier = 3,
 
             RackBones = {
                 {
@@ -188,10 +190,10 @@ UnitBlueprint {
 
             RenderFireClock = true,
 			
-            RateOfFire = 10/20,
+            RateOfFire = 10/25,
 			
             SlavedToBody = true,
-            SlavedToBodyArcRange = 40,
+            SlavedToBodyArcRange = 55,
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
