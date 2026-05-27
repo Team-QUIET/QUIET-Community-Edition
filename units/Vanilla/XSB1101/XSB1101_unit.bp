@@ -2,6 +2,28 @@ UnitBlueprint {
     Merge = true,
     BlueprinId = "xsb1101",
 
+    Adjacency = 'T1PowerGeneratorAdjacencyBuffs',
+
+    BuildIconSortPriority = 70,
+
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYCOMMANDER',
+        'SERAPHIM',
+        'STRUCTURE',
+        'ECONOMIC',
+        'TECH1',
+        'ENERGYPRODUCTION',
+        'DRAGBUILD',
+        'SIZE4',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SORTECONOMY',
+    },
+
     Defense = {
         ArmorType = 'Structure',
         EconomyThreatLevel = 8,
