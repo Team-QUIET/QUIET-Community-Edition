@@ -158,9 +158,9 @@ UnitBlueprint {
             
             CollideFriendly = false,
 			
-            Damage = 50,
+            Damage = 150,
             DamageFriendly = false,
-            DamageRadius = 1,
+            DamageRadius = 1.25,
             DamageType = 'Normal',
 
             DisplayName = 'Fragmentation Artillery',
@@ -177,12 +177,11 @@ UnitBlueprint {
             MaxRadius = 42,
             MinRadius = 6.5,
             MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 3,
+            MuzzleSalvoSize = 1,
             MuzzleVelocity = 16,
             MuzzleVelocityReduceDistance = 40,
 			ProjectileId = '/projectiles/TDFGauss01/TDFGauss01_proj.bp',
 			ProjectileLifetimeUsesMultiplier = 3,
-            ProjectilesPerOnFire = 3,
 			
             RackBones = {
                 {
@@ -195,7 +194,7 @@ UnitBlueprint {
             RackReloadTimeout = 10,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
-            RackSalvoSize = 3,
+            RackSalvoSize = 1,
             RackSlavedToTurret = false,
 
             RangeCategory = 'UWRC_IndirectFire',
