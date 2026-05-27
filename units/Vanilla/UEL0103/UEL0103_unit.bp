@@ -65,9 +65,9 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 240,
-        BuildCostMass = 42,
-        BuildTime = 240,
+        BuildCostEnergy = 250,
+        BuildCostMass = 52,
+        BuildTime = 250,
     },
 	
     General = {
@@ -158,7 +158,7 @@ UnitBlueprint {
             
             CollideFriendly = false,
 			
-            Damage = 150,
+            Damage = 50,
             DamageFriendly = false,
             DamageRadius = 1,
             DamageType = 'Normal',
@@ -169,18 +169,18 @@ UnitBlueprint {
                 Land = 'Land|Water',
             },
 
-            FiringRandomness = 0.5,
-			FiringTolerance = 2,
+            FiringRandomness = 0.25,
+			FiringTolerance = 1.5,
 
             Label = 'MainGun',
 
             MaxRadius = 42,
             MinRadius = 6.5,
             MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
-            MuzzleVelocity = 18,
-            MuzzleVelocityReduceDistance = 28,
-			ProjectileId = '/projectiles/TIFFragmentationSensorShell01/TIFFragmentationSensorShell01_proj.bp',
+            MuzzleSalvoSize = 3,
+            MuzzleVelocity = 16,
+            MuzzleVelocityReduceDistance = 40,
+			ProjectileId = '/projectiles/TDFGauss01/TDFGauss01_proj.bp',
 			ProjectileLifetimeUsesMultiplier = 3,
 			
             RackBones = {
@@ -231,7 +231,7 @@ UnitBlueprint {
             TurretBonePitch = 'Turret_Barrel',
             TurretBoneYaw = 'Turret',
 			
-            TurretPitch = 45,
+            TurretPitch = 40,
             TurretPitchRange = 90,
             TurretPitchSpeed = 70,
 			
