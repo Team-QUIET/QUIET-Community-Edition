@@ -36,8 +36,8 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Normal',
-        Health = 150,
-        MaxHealth = 150,
+        Health = 140,
+        MaxHealth = 140,
         RegenRate = 0,
         SurfaceThreatLevel = 2.9,
     },
@@ -66,9 +66,9 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 240,
-        BuildCostMass = 42,
-        BuildTime = 240,
+        BuildCostEnergy = 480,
+        BuildCostMass = 52,
+        BuildTime = 480,
     },
 	
     General = {
@@ -190,7 +190,7 @@ UnitBlueprint {
 
             RenderFireClock = true,
 			
-            RateOfFire = 10/25,
+            RateOfFire = 10/50,
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 55,
