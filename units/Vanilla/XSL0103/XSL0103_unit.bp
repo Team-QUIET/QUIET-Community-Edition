@@ -195,7 +195,7 @@ UnitBlueprint {
             MaxRadius = 42,
             MinRadius = 6.5,
 
-            MuzzleVelocity = 18,
+            MuzzleVelocity = 16,
             MuzzleVelocityReduceDistance = 40,
 			ProjectileId = '/projectiles/SIFThunthoArtilleryShell01/SIFThunthoArtilleryShell01_proj.bp',
 			ProjectileLifetimeUsesMultiplier = 3,
@@ -246,7 +246,7 @@ UnitBlueprint {
             TurretBonePitch = 'Turret',
             TurretBoneYaw = 'Turret',
 
-            TurretPitch = 45,
+            TurretPitch = 40,
             TurretPitchRange = 90,
             TurretPitchSpeed = 70,
 			
