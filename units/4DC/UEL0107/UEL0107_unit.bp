@@ -38,8 +38,8 @@ UnitBlueprint{
 
     Defense = {
         ArmorType = "Normal",
-        Health = 225,
-        MaxHealth = 225,
+        Health = 190,
+        MaxHealth = 190,
         RegenRate = 0,
         SubThreatLevel = 1.2,
         SurfaceThreatLevel = 3,
@@ -88,8 +88,8 @@ UnitBlueprint{
     },
 
     Intel = { 
-        VisionRadius = 20,
-        WaterVisionRadius = 8,
+        VisionRadius = 14,
+        WaterVisionRadius = 16,
     },
 
     LifeBarHeight = 0.075,
@@ -176,7 +176,7 @@ UnitBlueprint{
             MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 5,
 
-            MuzzleVelocity = 17,
+            MuzzleVelocity = 16,
             MuzzleVelocityRandomness = 1.0,
             MuzzleVelocityReduceDistance = 1,
 
