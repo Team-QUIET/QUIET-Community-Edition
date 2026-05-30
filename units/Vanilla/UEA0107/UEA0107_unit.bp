@@ -1,0 +1,64 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "uea0107",
+
+    Defense = {
+		AirThreatLevel = 1,
+        ArmorType = 'Light',
+        Health = 360,
+        MaxHealth = 360,
+        RegenRate = 2,
+    },
+
+    Economy = {
+        BuildCostEnergy = 3780,
+        BuildCostMass = 84,
+        BuildTime = 1134,
+    },
+		
+    Intel = {
+        VisionRadius = 32,
+    },
+	
+    Interface = {
+        HelpText = 'Basic Air Transport',
+    },
+	
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 1.65,
+    LifeBarSize = 1.25,
+	
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Air = true,
+        },
+        Elevation = 10,
+		
+        FuelRechargeRate = 6,
+        FuelUseTime = 240,
+		
+        MaxSpeed = 0.5,
+        MeshExtentsX = 1.25,
+        MeshExtentsY = 1,
+        MeshExtentsZ = 5.25,
+        MotionType = 'RULEUMT_Air',
+    },
+	
+    SelectionSizeX = 0.8,
+    SelectionSizeZ = 3,
+    SelectionThickness = 0.22,
+	
+    SizeX = 1.4,
+    SizeY = 0.7, --1.8,
+    SizeZ = 4.5,
+	
+    StrategicIconName = 'icon_gunship1_transport',
+    StrategicIconSortPriority = 65,
+	
+    Transport = {
+        AirClass = true,
+        Class2AttachSize = 1,
+        Class3AttachSize = 2,
+        TransportClass = 10,
+    },
+}

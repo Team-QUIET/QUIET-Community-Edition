@@ -1,0 +1,70 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "xsa0107",
+
+    Defense = {
+        AirThreatLevel = 1,
+        ArmorType = 'Light',
+        Health = 395,
+        MaxHealth = 395,
+        RegenRate = 2,
+    },
+
+    Economy = {
+        BuildCostEnergy = 3780,
+        BuildCostMass = 84,
+        BuildTime = 1134,
+    },
+
+    Intel = {
+        VisionRadius = 32,
+    },
+
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Air = true,
+        },
+        Elevation = 10,
+		
+        FuelRechargeRate = 6,
+        FuelUseTime = 240,
+		
+        MaxSpeed = 0.5,
+        MeshExtentsX = 1.6,
+        MeshExtentsY = 0.5,
+        MeshExtentsZ = 1.6,
+        MotionType = 'RULEUMT_Air',
+    },
+	
+    SelectionSizeX = 2.1,
+    SelectionSizeZ = 4.5,
+    SelectionThickness = 0.23,
+	
+    SizeX = 4.5,
+    SizeY = 1.2, --3,
+    SizeZ = 7,
+	
+    StrategicIconName = 'icon_gunship1_transport',
+    StrategicIconSortPriority = 65,
+	
+    Transport = {
+        AirClass = true,
+        Class2AttachSize = 1,
+        Class3AttachSize = 2,
+        TransportClass = 10,
+    },
+
+    Wreckage = {
+        Blueprint = "/props/DefaultWreckage/DefaultWreckage_prop.bp",
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+            Seabed = true,
+            Sub = true,
+            Water = true,
+        },
+    },
+}
