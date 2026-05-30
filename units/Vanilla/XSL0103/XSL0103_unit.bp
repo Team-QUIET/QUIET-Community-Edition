@@ -2,7 +2,7 @@ UnitBlueprint {
 
     Source = '/units/XSL0103/XSL0103_unit.bp', 
 
-    IgnoreEvenFlow = true,
+    IgnoreEvenflow = true,
 
     AI = {
 		GuardReturnRadius = 52,
@@ -79,9 +79,9 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 620,
-        BuildCostMass = 52,
-        BuildTime = 1090,
+        BuildCostEnergy = 540,
+        BuildCostMass = 54,
+        BuildTime = 940,
     },
 	
     General = {
