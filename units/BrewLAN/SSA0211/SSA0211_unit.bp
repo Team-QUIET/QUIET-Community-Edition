@@ -30,6 +30,14 @@ UnitBlueprint {
         Winged = true,
     },
 
+    Defense = {
+        ArmorType = 'Light',
+        Health = 950,
+        MaxHealth = 950,
+		RegenRate = 5,
+        SurfaceThreatLevel = 17,
+    },
+
     Intel = {
 		FreeIntel = true,
 
@@ -38,8 +46,9 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 19000,
-        BuildCostMass = 775,
+        BuildCostEnergy = 17000,
+        BuildCostMass = 500,
+        BuildTime = 1500,
     },
 	
     Weapon = {
@@ -57,7 +66,7 @@ UnitBlueprint {
             Damage = 609,
 			
             DamageFriendly = true,
-            DamageRadius = 4,
+            DamageRadius = 2.5,
             DamageType = 'Normal',
 			
             Display = 'Zhanasee Strategic Bomb',
