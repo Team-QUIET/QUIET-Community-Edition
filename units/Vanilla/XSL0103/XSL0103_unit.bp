@@ -81,7 +81,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 590,
         BuildCostMass = 54,
-        BuildTime = 1080,
+        BuildTime = 810,
     },
 	
     General = {
@@ -197,7 +197,7 @@ UnitBlueprint {
 
             MuzzleVelocity = 16,
             MuzzleVelocityReduceDistance = 40,
-			ProjectileId = '/projectiles/SIFThunthoArtilleryShell01/SIFThunthoArtilleryShell01_proj.bp',
+			ProjectileId = '/projectiles/SDFHeavyPhasicAutogun01/SDFHeavyPhasicAutogun01_proj.bp',
 			ProjectileLifetimeUsesMultiplier = 3,
 
             RackBones = {
