@@ -30,16 +30,25 @@ UnitBlueprint {
         Winged = true,
     },
 
+    Defense = {
+        ArmorType = 'Light',
+        Health = 850,
+        MaxHealth = 850,
+		RegenRate = 7,
+        SurfaceThreatLevel = 16,
+    },
+
     Intel = {
-		FreeIntel =true,
+		FreeIntel = true,
 
         RadarRadius = 65,
         VisionRadius = 32,
     },
 	
     Economy = {
-        BuildCostEnergy = 19000,
-        BuildCostMass = 775,
+        BuildCostEnergy = 18000,
+        BuildCostMass = 500,
+        BuildTime = 1500,
     },
 	
     Weapon = {
@@ -56,7 +65,7 @@ UnitBlueprint {
 			
             Damage = 1065,
             DamageFriendly = true,
-            DamageRadius = 6,
+            DamageRadius = 3,
             DamageType = 'Normal',
 			
             DisplayName = 'Neutron Bomb',
