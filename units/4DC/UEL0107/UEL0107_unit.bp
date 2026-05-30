@@ -88,7 +88,7 @@ UnitBlueprint{
     },
 
     Intel = { 
-        VisionRadius = 22,
+        VisionRadius = 20,
         WaterVisionRadius = 8,
     },
 
@@ -173,11 +173,11 @@ UnitBlueprint{
             MaxRadius = 28,
             MinRadius = 5,
 
-            MuzzleSalvoDelay = 0.25,
+            MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 5,
 
-            MuzzleVelocity = 18,
-            MuzzleVelocityRandomness = 2.0,
+            MuzzleVelocity = 17,
+            MuzzleVelocityRandomness = 1.0,
             MuzzleVelocityReduceDistance = 1,
 
             ProjectileId = "/mods/4DC/projectiles/Mortar/Mortar_proj.bp",
