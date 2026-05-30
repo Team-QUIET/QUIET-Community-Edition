@@ -87,7 +87,7 @@ UnitBlueprint {
     },
 	
     Intel = {
-        VisionRadius = 16,
+        VisionRadius = 10,
     },
 	
     Interface = {
