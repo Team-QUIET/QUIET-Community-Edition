@@ -1,0 +1,58 @@
+UnitBlueprint {
+
+    Defense = {
+        ArmorType = 'Structure',
+        EconomyThreatLevel = 176,
+        Health = 4800,
+        MaxHealth = 4800,
+        RegenRate = 2,
+    },
+	
+ 
+    Economy = {
+        BuildCostEnergy = 2200,
+        BuildCostMass = 345,
+        
+        BuildRate = 40,
+        BuildTime = 300,
+        
+        BuildableCategory = {
+            'BUILTBYTIER1FACTORY UEF MOBILE CONSTRUCTION',
+            'BUILTBYTIER1FACTORY UEF STRUCTURE NAVAL',
+            'BUILTBYTIER1FACTORY UEF MOBILE NAVAL',
+        },
+        
+        InitialRallyX = 0,
+        InitialRallyZ = 10,
+        
+        RebuildBonusIds = {'ueb0103','ueb0203','ueb0303'},
+
+        StorageEnergy = 800,
+        StorageMass = 800,
+    },
+    
+    Footprint = {
+        MinWaterDepth = 3,
+    },
+    
+    General = {
+        BuildBones = {
+            BuildEffectBones = {'Right_Exhaust'},
+        },
+        CommandCaps = {
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        ConstructionBar = true,
+        FactionName = 'UEF',
+        Icon = 'sea',
+        SelectionPriority = 5,
+
+        UpgradesTo = 'ueb0203',
+    },
+
+}
