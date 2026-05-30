@@ -1,0 +1,27 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "ueb1201",
+
+    Adjacency = 'T2PowerGeneratorAdjacencyBuffs',
+
+    Defense = {
+        ArmorType = 'Structure',
+        EconomyThreatLevel = 76,
+        Health = 2700,
+        MaxHealth = 2700,
+    },
+
+    Economy = {
+        AdjacentStructureEnergyMod = -4,
+        
+        BuildCostEnergy = 20000,
+        BuildCostMass = 2000,
+        
+        BuildTime = 4000,
+        
+        ProductionPerSecondEnergy = 500,
+        
+		StorageEnergy = 2500,
+    },
+
+}
