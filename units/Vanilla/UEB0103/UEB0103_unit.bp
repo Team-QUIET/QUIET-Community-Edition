@@ -1,4 +1,6 @@
 UnitBlueprint {
+    Merge = true,
+    BlueprintId = "ueb0103",
 
     Defense = {
         ArmorType = 'Structure',
