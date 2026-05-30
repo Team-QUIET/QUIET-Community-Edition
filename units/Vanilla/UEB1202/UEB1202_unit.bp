@@ -14,7 +14,7 @@ UnitBlueprint {
         BuildCostEnergy = 6800,
         BuildCostMass = 900,
         BuildRate = 12,
-        BuildTime = 900,
+        BuildTime = 1000,
         
         BuildableCategory = {'ueb1204'},
         
@@ -24,8 +24,8 @@ UnitBlueprint {
         
         RebuildBonusIds = {'ueb1202','ueb1302'},
 
-        StorageEnergy = 100,
-        StorageMass = 60,        
+        StorageEnergy = 120,
+        StorageMass = 120,        
     },
 
     General = {
