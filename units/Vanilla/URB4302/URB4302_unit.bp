@@ -169,12 +169,12 @@ UnitBlueprint {
 
             MaxProjectileStorage = 7,
 
-            MaxRadius = 100,
+            MaxRadius = 125,
 
             MuzzleVelocity = 90,
 
             ProjectileId = '/projectiles/CAADissidentAntiNuke01/CAADissidentAntiNuke01_proj.bp',
-            ProjectileLifetime = 3.6,
+            ProjectileLifetime = 4.0,
 
             RackBones = {
                 {
