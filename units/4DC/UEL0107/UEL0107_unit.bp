@@ -38,8 +38,8 @@ UnitBlueprint{
 
     Defense = {
         ArmorType = "Normal",
-        Health = 225,
-        MaxHealth = 225,
+        Health = 190,
+        MaxHealth = 190,
         RegenRate = 0,
         SubThreatLevel = 1.2,
         SurfaceThreatLevel = 3,
@@ -88,8 +88,8 @@ UnitBlueprint{
     },
 
     Intel = { 
-        VisionRadius = 22,
-        WaterVisionRadius = 8,
+        VisionRadius = 14,
+        WaterVisionRadius = 16,
     },
 
     LifeBarHeight = 0.075,
@@ -101,9 +101,9 @@ UnitBlueprint{
         BankingSlope = 0,
         DragCoefficient = 0.2,
         Elevation = 0.125,
-        MaxAcceleration = 2.9,
-        MaxBrake = 2.9,
-        MaxSpeed = 2.9,
+        MaxAcceleration = 2.84,
+        MaxBrake = 2.84,
+        MaxSpeed = 2.84,
         MaxSpeedReverse = 2.9,
         MaxSteerForce = 1000,
         MeshExtentsX = 0.6,
@@ -114,7 +114,7 @@ UnitBlueprint{
         RotateBodyWhileMoving = true,
         TurnFacingRate = 80,
         TurnRadius = 2,
-        TurnRate = 60,
+        TurnRate = 90,
         WobbleFactor = 0.003,
         WobbleSpeed = 0.01,
     },
@@ -154,8 +154,8 @@ UnitBlueprint{
 
             CollideFriendly = false,
 
-            Damage = 14,
-            DamageRadius = 1,
+            Damage = 10,
+            DamageRadius = 0.5,
             DamageType = "Normal",
 
             DisplayName = "Grenade Launcher",
@@ -173,11 +173,11 @@ UnitBlueprint{
             MaxRadius = 28,
             MinRadius = 5,
 
-            MuzzleSalvoDelay = 0.5,
+            MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 5,
 
-            MuzzleVelocity = 15,
-            MuzzleVelocityRandomness = 2.0,
+            MuzzleVelocity = 16,
+            MuzzleVelocityRandomness = 1.0,
             MuzzleVelocityReduceDistance = 1,
 
             ProjectileId = "/mods/4DC/projectiles/Mortar/Mortar_proj.bp",

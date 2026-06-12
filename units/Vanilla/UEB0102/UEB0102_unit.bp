@@ -1,0 +1,63 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "uebo0102",
+
+    Defense = {
+        ArmorType = 'Structure',
+        EconomyThreatLevel = 150,
+        Health = 2800,
+        MaxHealth = 2800,
+        RegenRate = 0,
+    },
+
+    Economy = {
+        BuildCostEnergy = 3000,
+        BuildCostMass = 210,
+        
+        BuildRate = 40,
+        BuildTime = 300,
+        
+        BuildableCategory = {
+            'BUILTBYTIER1FACTORY UEF MOBILE LAND CONSTRUCTION',
+            'BUILTBYTIER1FACTORY UEF STRUCTURE AIR',
+            'BUILTBYTIER1FACTORY UEF MOBILE AIR',
+            'TRANSPORTBUILTBYTIER1FACTORY UEF MOBILE AIR',
+        },
+
+        RebuildBonusIds = {'ueb0102','ueb0202','ueb0302'},
+
+        StorageEnergy = 1200,
+        StorageMass = 200,
+    },
+    
+    Footprint = {
+        SizeX = 5,
+        SizeZ = 5,
+    },
+    
+    General = {
+        BuildBones = {
+            BuildEffectBones = {'Muzzle01'},
+        },
+
+        CommandCaps = {
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        ConstructionBar = true,
+        FactionName = 'UEF',
+        Icon = 'air',
+        SelectionPriority = 5,
+
+        UpgradesTo = 'ueb0202',
+    },
+
+    Intel = {
+        VisionRadius = 10,
+    },
+
+}

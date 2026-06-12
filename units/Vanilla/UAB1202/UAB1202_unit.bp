@@ -1,0 +1,43 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "uab1202",
+
+    Defense = {
+        ArmorType = 'Structure',
+        EconomyThreatLevel = 120,
+        Health = 1800,
+        MaxHealth = 1800,
+        RegenRate = 1,
+    },
+
+    Economy = {
+        BuildCostEnergy = 6800,
+        BuildCostMass = 900,
+        BuildRate = 12,
+        BuildTime = 1000,
+        
+        BuildableCategory = {'uab1204'},
+        
+        MaintenanceConsumptionPerSecondEnergy = 48,
+        
+        ProductionPerSecondMass = 6,
+        
+        RebuildBonusIds = {'uab1202','uab1302'},
+
+        StorageEnergy = 120,
+        StorageMass = 120,        
+    },
+    
+    General = {
+
+        CommandCaps = { RULEUCC_Pause = true },
+        FactionName = 'Aeon',
+        Icon = 'amph',
+        SelectionPriority = 5,
+        ToggleCaps = { RULEUTC_ProductionToggle = true },
+        
+        UpgradesFrom = 'uab1103',
+        UpgradesTo = 'uab1204',
+    },
+ 
+}

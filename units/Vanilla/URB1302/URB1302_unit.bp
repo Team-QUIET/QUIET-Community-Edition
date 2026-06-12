@@ -1,0 +1,145 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "urb1303",
+
+    Adjacency = 'T3MassExtractorAdjacencyBuffs',
+
+    Audio = {
+        Destroyed   = Sound { Bank = 'URLDestroy', Cue = 'URB_Destroy_Huge', LodCutoff = 'UnitMove_LodCutoff'},
+        UISelection = Sound { Bank = 'Interface', Cue = 'Cybran_Select_Resource', LodCutoff = 'UnitMove_LodCutoff'},
+    },
+    
+    BuildIconSortPriority = 40,
+    
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYTIER3COMMANDER',
+        'CYBRAN',
+        'STRUCTURE',
+        'ECONOMIC',
+        'TECH3',
+        'MASSPRODUCTION',
+        'MASSEXTRACTION',
+        'SIZE4',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SORTECONOMY',
+    },
+    
+    CollisionOffsetY = 0,
+    
+    Defense = {
+        ArmorType = 'Structure',
+        EconomyThreatLevel = 540,		-- 1000% MassOutput + 2% Healt
+        Health = 9000,
+        MaxHealth = 9000,
+        RegenRate = 3,
+    },
+    
+    Description = '<LOC urb1302_desc>Advanced Mass Extractor',
+    
+    Display = {
+        AnimationOpen = '/units/urb1302/urb1302_Apump.sca',
+        AnimationUpgrade = '/units/urb1302/urb1302_Aupgrade.sca',
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 120,
+                    ShaderName = 'Insect',
+                },
+                {
+                    AlbedoName = 'urb1302_lod1_albedo.dds',
+                    LODCutoff = 215,
+                    ShaderName = 'Insect',
+                    SpecularName = 'urb1302_lod1_specteam.dds',
+                },
+            },
+        },
+        UniformScale = 0.1,
+    },
+	
+    Economy = {
+        BuildCostEnergy = 31625,
+        BuildCostMass = 4600,
+        BuildTime = 4600,
+		
+        MaintenanceConsumptionPerSecondEnergy = 192,
+		
+        ProductionPerSecondMass = 18,
+		
+        RebuildBonusIds = {'urb1302'},
+        
+        StorageEnergy = 180,
+        StorageMass = 15,
+    },
+	
+    General = {
+        FactionName = 'Cybran',
+        Icon = 'amph',
+        SelectionPriority = 5,
+        ToggleCaps = { RULEUTC_ProductionToggle = true },
+        CommandCaps = {
+            RULEUCC_Guard = false,
+            RULEUCC_Move = false,
+            RULEUCC_Patrol = false,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = false,
+            RULEUCC_Stop = true,
+        },
+
+        UpgradesFrom = 'urb1204',
+        UpgradesTo = 'urb1304',
+    },
+    
+    Interface = {
+        HelpText = 'Advanced Mass Extractor',
+    },
+    
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.55,
+    LifeBarSize = 1.25,
+    
+    Physics = {
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+        },
+        BuildRestriction = 'RULEUBR_OnMassDeposit',
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+        MaxSteerForce = 0,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = -0.5,
+        SkirtOffsetZ = -0.5,
+        SkirtSizeX = 2,
+        SkirtSizeZ = 2,
+        TurnRate = 0,
+    },
+    
+    SelectionSizeX = 0.65,
+    SelectionSizeZ = 0.65,
+    SelectionThickness = 0.6,
+    
+    SizeX = 0.75,
+    SizeY = 1.8,
+    SizeZ = 0.75,
+    
+    StrategicIconName = 'icon_structure3_mass',
+    StrategicIconSortPriority = 245,
+    
+    Wreckage = {
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = {
+            Land = true,
+            Seabed = true,
+        },
+    },
+}

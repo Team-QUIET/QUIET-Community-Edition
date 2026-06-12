@@ -1,0 +1,43 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "ueb1103",
+
+    Defense = {
+        ArmorType = 'Structure',
+        EconomyThreatLevel = 32,
+        Health = 580,
+        MaxHealth = 580,
+        RegenRate = 0,
+    },
+
+    Economy = {
+        BuildCostEnergy = 360,
+        BuildCostMass = 36,
+        BuildRate = 8,
+        BuildTime = 60,
+        
+        BuildableCategory = {'ueb1202'},
+        
+        MaintenanceConsumptionPerSecondEnergy = 6,
+        
+        ProductionPerSecondMass = 2,
+        
+        RebuildBonusIds = {'ueb1103','ueb1202','ueb1302'},
+
+        StorageEnergy = 60,
+        StorageMass = 40,        
+    },
+    
+    General = {
+        CommandCaps = {RULEUCC_Pause = true},
+
+        FactionName = 'UEF',
+        Icon = 'amph',
+        SelectionPriority = 5,
+
+        ToggleCaps = {RULEUTC_ProductionToggle = true},
+
+        UpgradesTo = 'ueb1202',
+    },
+
+}

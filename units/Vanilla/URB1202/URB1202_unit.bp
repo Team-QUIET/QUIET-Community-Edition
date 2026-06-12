@@ -1,0 +1,44 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "urb1202",
+
+    Defense = {
+        ArmorType = 'Structure',
+        EconomyThreatLevel = 120,
+        Health = 1600,
+        MaxHealth = 1600,
+        RegenRate = 4,
+    },
+
+    Economy = {
+        BuildCostEnergy = 6800,
+        BuildCostMass = 900,
+        BuildRate = 12,
+        BuildTime = 1000,
+        
+        BuildableCategory = {'urb1204'},
+        
+        MaintenanceConsumptionPerSecondEnergy = 48,
+        
+        ProductionPerSecondMass = 6,
+        
+        RebuildBonusIds = {'urb1202','urb1302'},
+
+        StorageEnergy = 120,
+        StorageMass = 120,        
+    },
+
+    General = {
+        CommandCaps = {
+            RULEUCC_Pause = true,
+        },
+        FactionName = 'Cybran',
+        Icon = 'amph',
+        SelectionPriority = 5,
+        ToggleCaps = {RULEUTC_ProductionToggle = true},
+
+        UpgradesFrom = 'urb1103',
+        UpgradesTo = 'urb1204',
+    },
+
+}

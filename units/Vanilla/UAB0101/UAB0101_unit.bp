@@ -1,0 +1,54 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "uab0101",
+
+    Defense = {
+        ArmorType = 'Structure',
+        EconomyThreatLevel = 128,
+        Health = 2400,
+        MaxHealth = 2400,
+        RegenRate = 0,
+    },
+
+    Economy = {
+        BuildCostEnergy = 2500,
+        BuildCostMass = 250,
+        
+        BuildRate = 40,
+        BuildTime = 300,
+        
+        BuildableCategory = {
+            'BUILTBYTIER1FACTORY AEON MOBILE CONSTRUCTION',
+            'BUILTBYTIER1FACTORY AEON STRUCTURE LAND',
+            'BUILTBYTIER1FACTORY AEON MOBILE LAND',
+        },
+        
+        RebuildBonusIds = {'uab0101','uab0201','uab0301'},
+        
+        StorageEnergy = 600,
+        StorageMass = 400,
+    },
+
+    General = {
+        BuildBones = { BuildEffectBones = {'Tier1_Arm_Refpoint'} },
+
+        CommandCaps = {
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        ConstructionBar = true,
+        FactionName = 'Aeon',
+        Icon = 'land',
+        SelectionPriority = 5,
+        UpgradesTo = 'uab0201',
+    },
+
+    Intel = {
+        VisionRadius = 10,
+    },
+
+}

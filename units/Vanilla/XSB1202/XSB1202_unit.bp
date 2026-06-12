@@ -1,0 +1,44 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "xsb1202",
+
+    Defense = {
+        ArmorType = 'Structure',
+        EconomyThreatLevel = 120,
+        Health = 1900,
+        MaxHealth = 1900,
+        RegenRate = 1,
+    },
+
+    Economy = {
+        BuildCostEnergy = 6800,
+        BuildCostMass = 900,
+        BuildRate = 12,
+        BuildTime = 1000,
+        
+        BuildableCategory = {'xsb1204'},
+        
+        MaintenanceConsumptionPerSecondEnergy = 48,
+        
+        ProductionPerSecondMass = 6,
+        
+        RebuildBonusIds = {'xsb1202','xsb1302'},
+
+        StorageEnergy = 120,
+        StorageMass = 120,        
+    },
+
+    General = {
+        CommandCaps = {
+            RULEUCC_Pause = true,
+        },
+        FactionName = 'Seraphim',
+        Icon = 'amph',
+        SelectionPriority = 5,
+        ToggleCaps = {RULEUTC_ProductionToggle = true},
+
+        UpgradesFrom = 'xsb1103',
+        UpgradesTo = 'xsb1204',
+    },
+
+}

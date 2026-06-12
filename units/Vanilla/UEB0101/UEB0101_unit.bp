@@ -1,0 +1,61 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "ueb0101",
+
+    Defense = {
+        ArmorType = 'Structure',
+        EconomyThreatLevel = 136,
+        Health = 2800,
+        MaxHealth = 2800,
+        RegenRate = 0,
+    },
+
+    Economy = {
+        BuildCostEnergy = 2500,
+        BuildCostMass = 250,
+        
+        BuildRate = 40,
+        BuildTime = 300,
+
+        BuildableCategory = {
+            'BUILTBYTIER1FACTORY UEF MOBILE LAND CONSTRUCTION',
+            'BUILTBYTIER1FACTORY UEF STRUCTURE LAND',
+            'BUILTBYTIER1FACTORY UEF MOBILE LAND',
+        },
+
+        RebuildBonusIds = {'ueb0101','ueb0201','ueb0301'},
+
+        StorageEnergy = 600,
+        StorageMass = 400,
+    },
+    
+    Footprint = {
+        SizeX = 5,
+        SizeZ = 5,
+    },
+    
+    General = {
+        BuildBones = {
+            BuildEffectBones = {'Muzzle01'},
+        },
+
+        CommandCaps = {
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        ConstructionBar = true,
+        FactionName = 'UEF',
+        Icon = 'land',
+        SelectionPriority = 5,
+        UpgradesTo = 'ueb0201',
+    },
+
+    Intel = {
+        VisionRadius = 12,
+    },
+
+}
