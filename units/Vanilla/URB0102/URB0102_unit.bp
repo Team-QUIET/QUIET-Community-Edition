@@ -1,0 +1,63 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "urb0102",
+
+    Defense = {
+        ArmorType = 'Structure',
+        EconomyThreatLevel = 150,
+        Health = 2200,
+        MaxHealth = 2200,
+        RegenRate = 2,
+    },
+    
+    Economy = {
+        BuildCostEnergy = 3000,
+        BuildCostMass = 210,
+        
+        BuildRate = 40,
+        BuildTime = 300,
+        
+        BuildableCategory = {
+            'BUILTBYTIER1FACTORY CYBRAN MOBILE CONSTRUCTION LAND',
+            'BUILTBYTIER1FACTORY CYBRAN STRUCTURE AIR',
+            'BUILTBYTIER1FACTORY CYBRAN MOBILE AIR',
+            'TRANSPORTBUILTBYTIER1FACTORY CYBRAN MOBILE AIR',
+        },
+
+        RebuildBonusIds = {'urb0102','urb0202','urb0302'},
+
+        StorageEnergy = 1200,
+        StorageMass = 200,
+    },
+    
+    Footprint = {
+        SizeX = 5,
+        SizeZ = 5,
+    },
+    
+    General = {
+        BuildBones = {
+            BuildAttachBone = 'Build_Point',
+            BuildEffectBones = {'Arm02_Muzzle','Arm01_Muzzle'},
+        },
+        CommandCaps = {
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        ConstructionBar = true,
+        FactionName = 'Cybran',
+        Icon = 'air',
+        SelectionPriority = 5,
+
+        UpgradesTo = 'urb0202',
+    },
+
+    Intel = {
+        VisionRadius = 12,
+    },
+
+}

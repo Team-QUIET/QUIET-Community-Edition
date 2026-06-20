@@ -1,6 +1,6 @@
 UnitBlueprint {
     Merge = true,
-    BlueprintId = "xsl0103",
+    BlueprintId = "brpt1ht",
 
     AI = {  
         GuardScanRadius = 24,     

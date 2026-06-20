@@ -2,6 +2,8 @@ UnitBlueprint {
 
     Source = '/units/XSL0103/XSL0103_unit.bp', 
 
+    IgnoreEvenflow = true,
+
     AI = {
 		GuardReturnRadius = 52,
         GuardScanRadius = 42,
@@ -36,8 +38,8 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Normal',
-        Health = 170,
-        MaxHealth = 170,
+        Health = 150,
+        MaxHealth = 150,
         RegenRate = 0,
         SurfaceThreatLevel = 2.8,
     },
@@ -77,9 +79,9 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 180,
+        BuildCostEnergy = 540,
         BuildCostMass = 54,
-        BuildTime = 290,
+        BuildTime = 940,
     },
 	
     General = {
@@ -98,7 +100,7 @@ UnitBlueprint {
     },
 	
     Intel = {
-        VisionRadius = 18,
+        VisionRadius = 10,
         WaterVisionRadius = 10,
     },
 	
@@ -118,10 +120,10 @@ UnitBlueprint {
         },
         DragCoefficient = 0.2,
         Elevation = 0.11,
-        MaxAcceleration = 2.7,
-        MaxBrake = 2.7,
-        MaxSpeed = 2.7,
-        MaxSpeedReverse = 2.7,
+        MaxAcceleration = 2.55,
+        MaxBrake = 2.55,
+        MaxSpeed = 2.55,
+        MaxSpeedReverse = 2.55,
         
         MaxSteerForce = 10,
         MeshExtentsX = 0.55,
@@ -170,7 +172,7 @@ UnitBlueprint {
             Audio = {
                 Fire = Sound { Bank = 'XSL_Weapon', Cue = 'XSL0103_Thuntho', LodCutoff = 'Weapon_LodCutoff'},
             },
-            BallisticArc = 'RULEUBA_HighArc',
+            BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
             Damage = 150,
@@ -191,11 +193,11 @@ UnitBlueprint {
             Label = 'MainGun',
 
             MaxRadius = 42,
-            MinRadius = 5,
+            MinRadius = 6.5,
 
-            MuzzleVelocity = 18,
-            MuzzleVelocityReduceDistance = 28,
-			ProjectileId = '/projectiles/SIFThunthoArtilleryShell01/SIFThunthoArtilleryShell01_proj.bp',
+            MuzzleVelocity = 16,
+            MuzzleVelocityReduceDistance = 40,
+			ProjectileId = '/projectiles/SDFHeavyPhasicAutogun01/SDFHeavyPhasicAutogun01_proj.bp',
 			ProjectileLifetimeUsesMultiplier = 3,
 
             RackBones = {
@@ -211,7 +213,7 @@ UnitBlueprint {
 
             RenderFireClock = true,
 			
-            RateOfFire = 10/29,
+            RateOfFire = 10/50,
 			
             SlavedToBody = true,
             SlavedToBodyArcRange = 45,
@@ -244,12 +246,12 @@ UnitBlueprint {
             TurretBonePitch = 'Turret',
             TurretBoneYaw = 'Turret',
 
-            TurretPitch = 45,
+            TurretPitch = 40,
             TurretPitchRange = 90,
             TurretPitchSpeed = 70,
 			
             TurretYaw = 0,
-            TurretYawRange = 90,
+            TurretYawRange = 180,
             TurretYawSpeed = 70,
 			
             Turreted = true,

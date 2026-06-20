@@ -2,6 +2,8 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "ual0103",
 
+    IgnoreEvenflow = true,
+
     AI = {
 		GuardReturnRadius = 52,
         GuardScanRadius = 42,
@@ -34,8 +36,8 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Normal',
-        Health = 150,
-        MaxHealth = 150,
+        Health = 140,
+        MaxHealth = 140,
         RegenRate = 0,
         SurfaceThreatLevel = 2.9,
     },
@@ -64,9 +66,9 @@ UnitBlueprint {
     },
 	
     Economy = {
-        BuildCostEnergy = 180,
-        BuildCostMass = 36,
-        BuildTime = 190,
+        BuildCostEnergy = 480,
+        BuildCostMass = 52,
+        BuildTime = 760,
     },
 	
     General = {
@@ -85,7 +87,7 @@ UnitBlueprint {
     },
 	
     Intel = {
-        VisionRadius = 16,
+        VisionRadius = 10,
     },
 	
     Interface = {
@@ -103,10 +105,10 @@ UnitBlueprint {
             LAYER_Land = true,
         },
         DragCoefficient = 0.2,
-        MaxAcceleration = 2.7,
-        MaxBrake = 2.7,
-        MaxSpeed = 2.7,
-        MaxSpeedReverse = 2.7,
+        MaxAcceleration = 2.67,
+        MaxBrake = 2.67,
+        MaxSpeed = 2.67,
+        MaxSpeedReverse = 2.67,
         MaxSteerForce = 10,
         MeshExtentsX = 0.55,
         MeshExtentsY = 0.35,
@@ -150,7 +152,7 @@ UnitBlueprint {
             Audio = {
                 Fire = Sound { Bank = 'UALWeapon', Cue = 'UAL0103_Mortar_Concussion', LodCutoff = 'Weapon_LodCutoff'},
             },
-            BallisticArc = 'RULEUBA_HighArc',
+            BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
             Damage = 200,
@@ -164,16 +166,16 @@ UnitBlueprint {
                 Land = 'Land|Water',
             },
 
-            FiringRandomness = 0.35,
-            FiringTolerance = 3,
+            FiringRandomness = 0.25,
+            FiringTolerance = 1.5,
 
             Label = 'MainGun',
 
             MaxRadius = 42,
-            MinRadius = 5,
+            MinRadius = 6.5,
 
-            MuzzleVelocity = 18,
-            MuzzleVelocityReduceDistance = 28,
+            MuzzleVelocity = 16,
+            MuzzleVelocityReduceDistance = 40,
             ProjectileId = '/projectiles/AIFMortar01/AIFMortar01_proj.bp',
 			ProjectileLifetimeUsesMultiplier = 3,
 
@@ -188,10 +190,10 @@ UnitBlueprint {
 
             RenderFireClock = true,
 			
-            RateOfFire = 10/20,
+            RateOfFire = 10/50,
 			
             SlavedToBody = true,
-            SlavedToBodyArcRange = 40,
+            SlavedToBodyArcRange = 55,
 
             TargetPriorities = {
                 "SPECIALHIGHPRI",
@@ -221,12 +223,12 @@ UnitBlueprint {
             TurretBonePitch = 'Turret_Barrel',
             TurretBoneYaw = 'Turret_Barrel',
 			
-            TurretPitch = 45,
+            TurretPitch = 40,
             TurretPitchRange = 90,
             TurretPitchSpeed = 70,
 			
             TurretYaw = 0,
-            TurretYawRange = 45,
+            TurretYawRange = 170,
             TurretYawSpeed = 70,
 			
             Turreted = true,

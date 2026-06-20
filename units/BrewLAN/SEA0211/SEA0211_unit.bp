@@ -30,6 +30,15 @@ UnitBlueprint {
         Winged = true,
     },
 
+    Defense = {
+        AirThreatLevel = 1,
+        ArmorType = 'Light',
+        Health = 1050,
+        MaxHealth = 1050,
+		RegenRate = 3,
+        SurfaceThreatLevel = 16,
+    },
+
     Intel = {
 		FreeIntel = true,
 
@@ -38,8 +47,9 @@ UnitBlueprint {
     },
 
     Economy = {
-        BuildCostEnergy = 19000,
-        BuildCostMass = 775,
+        BuildCostEnergy = 15750,
+        BuildCostMass = 475,
+        BuildTime = 1475,
     },
 
     Weapon = {
@@ -51,7 +61,7 @@ UnitBlueprint {
             CollideFriendly = false,
             Damage = 1615,
             DamageFriendly = true,
-            DamageRadius = 3,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'Tactical Bomb',
             EffectiveRadius = 25,

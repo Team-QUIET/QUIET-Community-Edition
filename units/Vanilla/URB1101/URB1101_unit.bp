@@ -1,0 +1,55 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "urb1101",
+
+    Adjacency = 'T1PowerGeneratorAdjacencyBuffs',
+
+    BuildIconSortPriority = 70,
+
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYCOMMANDER',
+        'CYBRAN',
+        'STRUCTURE',
+        'ECONOMIC',
+        'TECH1',
+        'ENERGYPRODUCTION',
+        'DRAGBUILD',
+        'SIZE4',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SORTECONOMY',
+    },
+
+    Defense = {
+        ArmorType = 'Structure',
+        EconomyThreatLevel = 8,
+        Health = 500,
+        MaxHealth = 500,
+        RegenRate = 2,
+    },
+
+    Economy = {
+        AdjacentStructureEnergyMod = -2,
+        
+        BuildCostEnergy = 800,
+        BuildCostMass = 80,
+        BuildTime = 125,
+        
+        ProductionPerSecondEnergy = 20,
+        
+        RebuildBonusIds = {'urb1101'},
+        
+		StorageEnergy = 150,
+    },
+    
+    General = {
+        FactionName = 'Cybran',
+        Icon = 'land',
+        SelectionPriority = 5,
+    },
+    
+}

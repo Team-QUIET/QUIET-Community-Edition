@@ -1,0 +1,70 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "ura0107",
+
+    Defense = {
+        AirThreatLevel = 1,
+        ArmorType = 'Light',
+        Health = 360,
+        MaxHealth = 360,
+        RegenRate = 4,
+    },
+
+    Economy = {
+        BuildCostEnergy = 3780,
+        BuildCostMass = 84,
+        BuildTime = 1134,
+    },
+	
+    General = {
+        CommandCaps = {
+            RULEUCC_CallTransport = true,
+            RULEUCC_Ferry = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Stop = true,
+            RULEUCC_Transport = true,
+        },
+        FactionName = 'Cybran',
+        Icon = 'air',
+        SelectionPriority = 2,
+        UnitName = '<LOC ura0107_name>Skyhook',
+    },
+	
+    Intel = {
+        VisionRadius = 32,
+    },
+
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Air = true,
+        },
+        Elevation = 10,
+		
+        FuelRechargeRate = 6,
+        FuelUseTime = 240,
+		
+        MaxSpeed = 0.5,
+        MotionType = 'RULEUMT_Air',
+    },
+	
+    SelectionSizeX = 1.6,
+    SelectionSizeZ = 3.25,
+    SelectionThickness = 0.21,
+	
+    SizeX = 1.4,
+    SizeY = 1.1, ---2.2,
+    SizeZ = 4.5,
+	
+    StrategicIconName = 'icon_gunship1_transport',
+    StrategicIconSortPriority = 65,
+	
+    Transport = {
+        AirClass = true,
+        Class2AttachSize = 1,
+        Class3AttachSize = 2,
+        TransportClass = 10,
+    },
+
+}

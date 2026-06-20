@@ -38,8 +38,8 @@ UnitBlueprint {
 	
     Defense = {
         ArmorType = 'Structure',
-        Health = 500,
-        MaxHealth = 500,
+        Health = 900,
+        MaxHealth = 900,
         RegenRate = 1,
         SurfaceThreatLevel = 13.2,
     },
@@ -60,7 +60,7 @@ UnitBlueprint {
 	
     Economy = {
         BuildCostEnergy = 7500,
-        BuildCostMass = 400,
+        BuildCostMass = 300,
         BuildTime = 750,
 		
         RebuildBonusIds = {'seb2103'},

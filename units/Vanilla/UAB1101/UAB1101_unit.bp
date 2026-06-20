@@ -1,0 +1,49 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "uab1101",
+
+    Adjacency = 'T1PowerGeneratorAdjacencyBuffs',
+
+    BuildIconSortPriority = 60,
+
+    Categories = {
+        'SELECTABLE',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYCOMMANDER',
+        'AEON',
+        'STRUCTURE',
+        'ECONOMIC',
+        'TECH1',
+        'ENERGYPRODUCTION',
+        'DRAGBUILD',
+        'SIZE4',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SORTECONOMY',
+    },
+
+    Defense = {
+        ArmorType = 'Structure',
+        EconomyThreatLevel = 8,
+        Health = 560,
+        MaxHealth = 560,
+        RegenRate = 1,
+    },
+
+    Economy = {
+        AdjacentStructureEnergyMod = -2,
+        
+        BuildCostEnergy = 800,
+        BuildCostMass = 80,
+        BuildTime = 125,
+        
+        ProductionPerSecondEnergy = 20,
+        
+        RebuildBonusIds = {'uab1101'},
+        
+		StorageEnergy = 150,
+    },
+
+}
