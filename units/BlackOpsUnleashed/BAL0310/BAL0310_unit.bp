@@ -50,10 +50,10 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 			
-            Damage = 800,
+            Damage = 700,
             DamageFriendly = true,
-            DamageRadius = 1.6,
-            DamageType = 'ShieldMult1.2',
+            DamageRadius = 1.3,
+            DamageType = 'ShieldMult0.8',
 			
             DisplayName = 'Sonance Artillery',
 
@@ -73,7 +73,7 @@ UnitBlueprint {
             HeadingArcCenter = 0,
             HeadingArcRange = 180,
 			
-            MaxRadius = 50,
+            MaxRadius = 40,
 
             LeadTarget = true,
 			
