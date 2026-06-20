@@ -47,6 +47,8 @@ UnitBlueprint {
         TurnRadius = 0,
         TurnRate = 120,
     },
+
+    StrategicIconName = 'icon_seabed3_engineer',
 	
     Weapon = {
         {
