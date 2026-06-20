@@ -1,6 +1,6 @@
 UnitBlueprint {
     Merge = true,
-    BlueprintId = "urb1303",
+    BlueprintId = "urb1302",
 
     Adjacency = 'T3MassExtractorAdjacencyBuffs',
 
