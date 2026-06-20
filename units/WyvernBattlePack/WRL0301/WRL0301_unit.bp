@@ -12,7 +12,7 @@ UnitBlueprint {
 
         Health = 4000,
         MaxHealth = 4000,
-        RegenRate = 3,
+        RegenRate = 7,
 
         SurfaceThreatLevel = 39.1,
     },
@@ -94,7 +94,7 @@ UnitBlueprint {
 
             Label = "MainGun",
 
-            MaxRadius = 35,
+            MaxRadius = 37,
 
             MuzzleVelocity = 35,
             MuzzleVelocityRandom = 3,
@@ -137,7 +137,7 @@ UnitBlueprint {
 
             TurretYaw = 0,
             TurretYawRange = 180,
-            TurretYawSpeed = 40,
+            TurretYawSpeed = 60,
 
             Turreted = true,
             UseFiringSolutionInsteadOfAimBone = true,
