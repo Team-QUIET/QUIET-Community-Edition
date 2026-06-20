@@ -45,7 +45,7 @@ UnitBlueprint {
 
         Health = 9750,
         MaxHealth = 9750,
-        RegenRate = 5,
+        RegenRate = 15,
 
         AirThreatLevel = 24,
         SurfaceThreatLevel = 89.4,
@@ -142,7 +142,7 @@ UnitBlueprint {
 
         LayerChangeOffsetHeight = -0.85,
 		
-        MaxAcceleration = 1.2,
+        MaxAcceleration = 2.3,
         MaxBrake = 2.3,
         MaxSpeed = 2.3,
         MaxSpeedReverse = 2.3,
@@ -156,8 +156,8 @@ UnitBlueprint {
 
         MotionType = 'RULEUMT_Amphibious',
 
-        TurnRadius = 4.5,
-        TurnRate = 32,
+        TurnRadius = 2.5,
+        TurnRate = 64,
 
 		WaterSpeedMultiplier = 1.15,
     },
