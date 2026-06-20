@@ -88,7 +88,7 @@ UnitBlueprint {
         BuildCostMass = 1100,
         
         BuildRate = 70,
-        BuildTime = 11200,
+        BuildTime = 5600,
         BuildableCategory = {
             'BUILTBYTIER2FACTORY CYBRAN MOBILE CONSTRUCTION LAND',
             'BUILTBYTIER2FACTORY CYBRAN STRUCTURE LAND',
