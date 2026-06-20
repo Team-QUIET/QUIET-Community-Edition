@@ -7,8 +7,8 @@ UnitBlueprint{
 
     Defense = {
         ArmorType = "Normal",
-        Health = 2600,
-        MaxHealth = 2600,
+        Health = 3000,
+        MaxHealth = 3000,
         RegenRate = 0,
 
         Shield = {
@@ -16,7 +16,7 @@ UnitBlueprint{
             OwnerShieldMesh = "/mods/BattlePack/units/WEL0305/WEL0305_PersonalShield_mesh",
             RegenAssistMult = 60,
             ShieldEnergyDrainRechargeTime = 5,
-            ShieldMaxHealth = 4200,
+            ShieldMaxHealth = 5000,
             ShieldRechargeTime = 50,
             ShieldRegenRate = 15,
             ShieldRegenStartTime = 3,

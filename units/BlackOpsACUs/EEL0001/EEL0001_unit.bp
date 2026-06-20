@@ -26,11 +26,11 @@ UnitBlueprint {
 	
     Buffs = {
         Regen = {
-            Level1 = 4,
-            Level2 = 8,
-            Level3 = 11,
-            Level4 = 14,
-            Level5 = 17,
+            Level1 = 6,
+            Level2 = 10,
+            Level3 = 13,
+            Level4 = 16,
+            Level5 = 21,
         },
         VisionRadius = {
             Level1 = 2,
@@ -81,7 +81,7 @@ UnitBlueprint {
         
         Health = 20150,         -- +241%
         MaxHealth = 20150,
-        RegenRate = 6,
+        RegenRate = 9,
         
         SurfaceThreatLevel = 45,
 		

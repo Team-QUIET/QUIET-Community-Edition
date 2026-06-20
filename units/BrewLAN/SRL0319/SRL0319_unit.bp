@@ -35,6 +35,8 @@ UnitBlueprint {
         TurnRate = 120,
     },
 
+    StrategicIconName = 'icon_seabed3_engineer',
+
     Weapon = {
         {
             AboveWaterTargetsOnly = true,

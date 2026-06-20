@@ -353,7 +353,7 @@ UnitBlueprint {
 			
             Label = 'GroundGun',
 			
-            MaxRadius = 50,
+            MaxRadius = 25,
             PreferPrimaryWeaponTarget = true,
 			
             MuzzleSalvoDelay = 0.5,

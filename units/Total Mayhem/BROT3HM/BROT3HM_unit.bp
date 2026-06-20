@@ -47,8 +47,8 @@ UnitBlueprint {
 
         ArmorType = 'Normal',
 
-        Health = 9750,
-        MaxHealth = 9750,
+        Health = 8050,
+        MaxHealth = 8050,
         RegenRate = 3,
 
         SurfaceThreatLevel = 78.1,
@@ -220,7 +220,7 @@ UnitBlueprint {
 			
             Label = 'MainGun',
 
-            MaxRadius = 38,
+            MaxRadius = 37,
 
             MuzzleVelocity = 45,
 
@@ -304,27 +304,27 @@ UnitBlueprint {
                     AppliedToTarget = true,
                     BuffType = 'STUN',
                     Duration = 0.6,
-                    Radius = 1.25,
-                    TargetAllow = 'LAND TECH1,NAVAL TECH1',
-                    TargetDisallow = 'WALL',
+                    Radius = 1.0,
+                    TargetAllow = 'LAND TECH1',
+                    TargetDisallow = 'WALL, DIRECTFIRE',
                 },
             	{
                     Add = { OnImpact = true },
                     AppliedToTarget = true,
                     BuffType = 'STUN',
                     Duration = 0.4,
-                    Radius = 1.0,
-                    TargetAllow = 'LAND TECH2,NAVAL TECH2',
-                    TargetDisallow = 'WALL',
+                    Radius = 0.5,
+                    TargetAllow = 'LAND TECH2',
+                    TargetDisallow = 'WALL, DIRECTFIRE',
                 },
             	{
                     Add = { OnImpact = true },
                     AppliedToTarget = true,
                     BuffType = 'STUN',
                     Duration = 0.2,
-                    Radius = 1.0,
-                    TargetAllow = 'LAND TECH3,NAVAL TECH3',
-                    TargetDisallow = 'WALL',
+                    Radius = 0.5,
+                    TargetAllow = 'LAND TECH3',
+                    TargetDisallow = 'WALL, DIRECTFIRE',
                 },
             },			
      
@@ -345,7 +345,7 @@ UnitBlueprint {
 			
             Label = 'MainGun2',
 			
-            MaxRadius = 38,
+            MaxRadius = 37,
 
             MuzzleVelocity = 60,
 

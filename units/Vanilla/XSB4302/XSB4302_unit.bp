@@ -184,12 +184,12 @@ UnitBlueprint {
 
             MaxProjectileStorage = 7,
 
-            MaxRadius = 100,
+            MaxRadius = 125,
 
             MuzzleVelocity = 90,
 
             ProjectileId = '/projectiles/SIFHuAntiNuke01/SIFHuAntiNuke01_proj.bp',
-            ProjectileLifetime = 3.6,
+            ProjectileLifetime = 4.0,
 
             RackBones = {
                 {

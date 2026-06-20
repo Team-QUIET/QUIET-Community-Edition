@@ -1,0 +1,163 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "wsl0202",    
+
+    Description = "Heavy Tank",
+
+    AI = {
+        GuardScanRadius = 25,
+    },
+
+    Buffs = {
+        Regen = {
+            Level1 = 2,
+            Level2 = 4,
+            Level3 = 6,
+            Level4 = 8,
+            Level5 = 10,
+        },
+    },
+
+    BuildIconSortPriority = 21,
+
+    Categories = {
+        "BUILTBYTIER2FACTORY",
+        "BUILTBYTIER3FACTORY",
+        "DIRECTFIRE",
+        "LAND",
+        "MOBILE",
+        "RECLAIMABLE",
+        "SELECTABLE",
+        "SERAPHIM",
+        "TANK",
+        "TECH2",
+        "VISIBLETORECON",
+    },
+
+    Defense = {
+        ArmorType = "Normal",
+        Health = 1250,
+        MaxHealth = 1250,
+        RegenRate = 2,
+        SurfaceThreatLevel = 10.6,
+    },
+
+    Intel = {
+        VisionRadius = 28
+    },
+
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 0.95,
+
+    Physics = {
+        BankingSlope = 0,
+        DragCoefficient = 0.2,
+        MaxAcceleration = 3.4,
+        MaxBrake = 3.4,
+        MaxSpeed = 3.4,
+        MaxSpeedReverse = 0,
+        MaxSteerForce = 10,
+        MeshExtentsX = 1,
+        MeshExtentsY = 1.25,
+        MeshExtentsZ = 1,
+        MinSpeedPercent = 0,
+        MotionType = "RULEUMT_Land",
+        TurnRadius = 0,
+        TurnRate = 100,
+    },
+
+    SelectionSizeX = 0.6,
+    SelectionSizeZ = 0.75,
+    SelectionThickness = 0.53,
+
+    SizeX = 1.1,
+    SizeY = 0.5,
+    SizeZ = 0.8,
+
+    StrategicIconName = "icon_land2_directfire",
+    StrategicIconSortPriority = 115,
+
+    Transport = { TransportClass = 2 },
+
+    Veteran = {
+        Level1 = 4,
+        Level2 = 8,
+        Level3 = 12,
+        Level4 = 16,
+        Level5 = 20,
+    },
+
+    Weapon = {
+        {
+            AboveWaterTargetsOnly = true,
+            Audio = {
+                Fire = Sound { Bank = 'XSL_Weapon', Cue = 'XSL0303_Bolter', LodCutoff = 'Weapon_LodCutoff' },
+            },
+            BallisticArc = "RULEUBA_LowArc",
+            CollideFriendly = false,
+
+            Damage = 26,
+            DamageType = "Normal",
+
+            DisplayName = "Thau Cannon",
+
+            FireTargetLayerCapsTable = { Land = "Land|Water|Seabed" },
+            FiringTolerance = 0.3,
+
+            Label = "MainTurret",
+
+            MaxRadius = 25,
+
+            MuzzleVelocity = 30,
+
+            ProjectileId = "/projectiles/SDFTauCannon01/SDFTauCannon01_proj.bp",
+            ProjectileLifetime = 1.0,
+
+            RackBones = {
+                {
+                    MuzzleBones = { "Turret_Barrel_Recoil_Muzzle" },
+                    RackBone = "Turret_Barrel_Recoil",
+                },
+            },
+            RackRecoilDistance = -1,
+
+            RangeCategory = "UWRC_DirectFire",
+            RateOfFire = 25/10,   -- 65 DPS
+
+            TargetPriorities = {
+                "SPECIALHIGHPRI",
+                "TECH3 MOBILE",
+                "TECH2 MOBILE",
+                "TECH1 MOBILE",
+                "(STRUCTURE * DEFENSE - ANTIMISSILE)",
+                "ALLUNITS",
+            },
+            TargetRestrictDisallow = "UNTARGETABLE",
+
+
+            TurretBoneMuzzle = "Turret_Barrel_Recoil_Muzzle",
+            TurretBonePitch = "Turret_Barrel",
+            TurretBoneYaw = "Turret",
+
+            TurretPitch = 0,
+            TurretPitchRange = 30,
+            TurretPitchSpeed = 45,
+
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 75,
+
+            Turreted = true,
+        },
+    },
+
+    Wreckage = {
+        Blueprint = "/props/DefaultWreckage/DefaultWreckage_prop.bp",
+        EnergyMult = 0.3,
+        HealthMult = 0.9,
+        MassMult = 0.5,
+        ReclaimTimeMultiplier = 1,
+        WreckageLayers = { Land = true },
+    },
+}
