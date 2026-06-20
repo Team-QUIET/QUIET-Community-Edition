@@ -22,9 +22,9 @@ UnitBlueprint {
 	},
 
 	Economy = {
-		BuildCostEnergy = 31500, -- was 24000
-		BuildCostMass = 3125,  -- was 1950
-		MaintenanceConsumptionPerSecondEnergy = 95,
+		BuildCostEnergy = 30000, -- was 24000
+		BuildCostMass = 3000,  -- was 1950
+		MaintenanceConsumptionPerSecondEnergy = 50,
 	},
 
 	Weapon = {
