@@ -1,6 +1,14 @@
 UnitBlueprint {
     Merge = true,
     BlueprintId = "uel0203",
+
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 1350,
+        MaxHealth = 1350,
+        RegenRate = 3,
+        SurfaceThreatLevel = 8.5,
+    },
 	
     Intel = {
         VisionRadius = 18, ---- unit vision was higher than directfire radius with no clear reasons
@@ -58,16 +66,16 @@ UnitBlueprint {
                 Water = 'Land|Water',
             },
 			
-			FiringRandomness = 0.4,
-			FiringRandomnessWhileMoving = 1.3,
+			FiringRandomness = 0.2,
+			FiringRandomnessWhileMoving = 1.1,
 			
-            FiringTolerance = 1.5,
+            FiringTolerance = 1.0,
 			
             Label = 'Riotgun01',
 			
             MaxRadius = 21,
 
-            MuzzleVelocity = 33,
+            MuzzleVelocity = 35,
 			
             ProjectileId = '/projectiles/TDFRiot02/TDFRiot02_proj.bp',
             ProjectileLifetime = 0.8,
