@@ -91,7 +91,7 @@ UnitBlueprint {
         BuildCostMass = 1100,
         
         BuildRate = 70,
-        BuildTime = 11200,
+        BuildTime = 5600,
         
         BuildableCategory = {
             'BUILTBYTIER2FACTORY UEF MOBILE CONSTRUCTION LAND',
