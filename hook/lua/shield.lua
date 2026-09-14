@@ -1335,3 +1335,8 @@ ProjectedShield = ClassShield(Shield) {
     end,
 }
 end -- Do End
+
+-- Legacy abilities call the native entity health method through the shield instance.
+for _, ShieldClass in {Shield, UnitShield, AntiArtilleryShield, DomeHunkerShield, PersonalHunkerShield, ProjectedShield} do
+    ShieldClass.GetHealth = moho.entity_methods.GetHealth
+end

@@ -613,7 +613,7 @@ UnitBlueprint {
 
             RangeCategory = 'UWRC_AntiNavy',
 			
-            RateOfFire = 10/10,
+            RateOfFire = 10/40,
 
             
             TargetPriorities = {
