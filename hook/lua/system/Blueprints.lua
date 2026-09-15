@@ -43,36 +43,21 @@ do
 	-- Various Local Functions that assist with Functions farther in this file
 	--=======================================
 	local function DetermineWeaponDPS(weapon)
-		--- With thanks to Sean 'Balthazar' Wheeldon
-		-- Base values
-		local ProjectileCount
-		if weapon.MuzzleSalvoDelay == 0 then
-			ProjectileCount = MathMax(1, TableGetn(weapon.RackBones[1].MuzzleBones or { 'nehh' }))
-		else
-			ProjectileCount = (weapon.MuzzleSalvoSize or 1)
+		-- OldModBlueprints loads PhxLib before this pass. Use the same rack,
+		-- muzzle, charge and reload estimator as QUIET's unit details.
+		-- This pass runs before native weapon defaults are populated. Supply
+		-- them on a copy, retaining nuclear damage for classification only.
+		local estimate = {}
+		for key, value in pairs(weapon) do
+			estimate[key] = value
 		end
-		if weapon.RackFireTogether then
-			ProjectileCount = ProjectileCount * MathMax(1, TableGetn(weapon.RackBones or { 'nehh' }))
+		estimate.RateOfFire = weapon.RateOfFire or 1
+		estimate.BeamCollisionDelay = weapon.BeamCollisionDelay or 0
+		estimate.Damage = (weapon.Damage or 0) + (weapon.NukeInnerRingDamage or 0)
+		if not estimate.RackBones or not estimate.RackBones[1] then
+			estimate.RackBones = nil
 		end
-		-- Game logic rounds the timings to the nearest tick --  MathMax(0.1, 1 / (weapon.RateOfFire or 1)) for unrounded values
-		local DamageInterval = MathFloor((MathMax(0.1, 1 / (weapon.RateOfFire or 1)) * 10) + 0.5) / 10 +
-			ProjectileCount *
-			(MathMax(weapon.MuzzleSalvoDelay or 0, weapon.MuzzleChargeDelay or 0) * (weapon.MuzzleSalvoSize or 1))
-		local Damage = ((weapon.Damage or 0) + (weapon.NukeInnerRingDamage or 0)) * ProjectileCount * (weapon.DoTPulses or 1
-			)
-		
-		-- Beam calculations.
-		if weapon.BeamLifetime and weapon.BeamLifetime == 0 then
-			-- Unending beam. Interval is based on collision delay only.
-			DamageInterval = 0.1 + (weapon.BeamCollisionDelay or 0)
-		elseif weapon.BeamLifetime and weapon.BeamLifetime > 0 then
-			-- Uncontinuous beam. Interval from start to next start.
-			DamageInterval = DamageInterval + weapon.BeamLifetime
-			-- Damage is calculated as a single glob, beam weapons are typically underappreciated
-			Damage = Damage * (weapon.BeamLifetime / (0.1 + (weapon.BeamCollisionDelay or 0)))
-		end
-		
-		return (Damage / DamageInterval) or 0
+		return PhxLib.PhxWeapDPS(estimate).DPS
 	end
 
 	local function DetermineWeaponCategory(weapon)
