@@ -1,0 +1,20 @@
+name: Test Release Packaging
+
+on:
+  pull_request:
+    paths: ['.github/scripts/**', '.github/workflows/release*.yml', '.gitattributes']
+  push:
+    branches: [main]
+    paths: ['.github/scripts/**', '.github/workflows/release*.yml', '.gitattributes']
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test versioning, archives, and ref publication against local repositories
+        shell: pwsh
+        run: python .github/scripts/test_release.py
