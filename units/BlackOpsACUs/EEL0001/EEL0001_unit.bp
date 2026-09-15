@@ -1496,6 +1496,8 @@ UnitBlueprint {
 	
     Weapon = {
         {
+            -- Release stale contacts on the weapon that turns the torso.
+            AlwaysRecheckTarget = true,
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
                 Seabed = 'Land|Water|Seabed',

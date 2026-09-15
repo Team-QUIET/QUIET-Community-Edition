@@ -31,7 +31,7 @@ local TrashBag                = TrashBag
 local TrashAdd                = TrashBag.Add
 local TrashDestroy            = TrashBag.Destroy
 
-local wep, wpTarget
+local wep
 
 ERL0001                       = ClassUnit(CWalkingLandUnit) {
 
@@ -467,9 +467,9 @@ ERL0001                       = ClassUnit(CWalkingLandUnit) {
         self.CloakOn = false
         self.Deviator = false
 
-        wpTarget = self:GetWeaponByLabel('TargetPainter')
+        self.TargetPainter = self:GetWeaponByLabel('TargetPainter')
 
-        wpTarget:ChangeMaxRadius(100)
+        self.TargetPainter:ChangeMaxRadius(100)
 
         self:ForkThread(self.WeaponConfigCheck)
         self:ForkThread(self.WeaponRangeReset)
@@ -558,7 +558,7 @@ ERL0001                       = ClassUnit(CWalkingLandUnit) {
     end,
 
     WeaponRangeReset = function(self)
-        wpTarget:ChangeMaxRadius(__blueprints[self.BlueprintID].Weapon[2].MaxRadius)
+        self.TargetPainter:ChangeMaxRadius(__blueprints[self.BlueprintID].Weapon[2].MaxRadius)
 
         if not self.wcRocket01 then
             wep = self:GetWeaponByLabel('EXRocketPack01')
@@ -781,7 +781,7 @@ ERL0001                       = ClassUnit(CWalkingLandUnit) {
                 wep = self:GetWeaponByLabel('EXEMPShot03')
                 wep:ChangeMaxRadius(radius)
 
-                wpTarget:ChangeMaxRadius(radius)
+                self.TargetPainter:ChangeMaxRadius(radius)
             elseif self.wcEMP02 then
                 self:SetWeaponEnabledByLabel('EXEMPArray01', true)
 
@@ -802,7 +802,7 @@ ERL0001                       = ClassUnit(CWalkingLandUnit) {
                 wep = self:GetWeaponByLabel('EXEMPShot03')
                 wep:ChangeMaxRadius(radius)
 
-                wpTarget:ChangeMaxRadius(radius)
+                self.TargetPainter:ChangeMaxRadius(radius)
             elseif self.wcEMP03 then
                 self:SetWeaponEnabledByLabel('EXEMPArray01', true)
 
@@ -823,7 +823,7 @@ ERL0001                       = ClassUnit(CWalkingLandUnit) {
                 wep = self:GetWeaponByLabel('EXEMPShot03')
                 wep:ChangeMaxRadius(radius)
 
-                wpTarget:ChangeMaxRadius(radius)
+                self.TargetPainter:ChangeMaxRadius(radius)
             elseif not self.wcEMP01 and not self.wcEMP01 and not self.wcEMP01 then
                 self:SetWeaponEnabledByLabel('EXEMPArray01', false)
             end
@@ -834,7 +834,7 @@ ERL0001                       = ClassUnit(CWalkingLandUnit) {
                 wep = self:GetWeaponByLabel('EXMLG01')
                 wep:ChangeMaxRadius(__blueprints[self.BlueprintID].Weapon[17].MaxRadius)
 
-                wpTarget:ChangeMaxRadius(__blueprints[self.BlueprintID].Weapon[17].MaxRadius)
+                self.TargetPainter:ChangeMaxRadius(__blueprints[self.BlueprintID].Weapon[17].MaxRadius)
             else
                 self:SetWeaponEnabledByLabel('EXMLG01', false)
             end
@@ -845,7 +845,7 @@ ERL0001                       = ClassUnit(CWalkingLandUnit) {
                 wep = self:GetWeaponByLabel('EXMLG02')
                 wep:ChangeMaxRadius(__blueprints[self.BlueprintID].Weapon[18].MaxRadius)
 
-                wpTarget:ChangeMaxRadius(__blueprints[self.BlueprintID].Weapon[18].MaxRadius)
+                self.TargetPainter:ChangeMaxRadius(__blueprints[self.BlueprintID].Weapon[18].MaxRadius)
             else
                 self:SetWeaponEnabledByLabel('EXMLG02', false)
             end
@@ -856,7 +856,7 @@ ERL0001                       = ClassUnit(CWalkingLandUnit) {
                 wep = self:GetWeaponByLabel('EXMLG03')
                 wep:ChangeMaxRadius(__blueprints[self.BlueprintID].Weapon[19].MaxRadius)
 
-                wpTarget:ChangeMaxRadius(__blueprints[self.BlueprintID].Weapon[19].MaxRadius)
+                self.TargetPainter:ChangeMaxRadius(__blueprints[self.BlueprintID].Weapon[19].MaxRadius)
             else
                 self:SetWeaponEnabledByLabel('EXMLG03', false)
             end
@@ -1146,7 +1146,7 @@ ERL0001                       = ClassUnit(CWalkingLandUnit) {
             self:ForkThread(self.WeaponRangeReset)
             self:ForkThread(self.WeaponConfigCheck)
         elseif enh == 'EXRipperBooster' then
-            wpTarget:ChangeMaxRadius(__blueprints[self.BlueprintID].Weapon[2].MaxRadius + 5)
+            self.TargetPainter:ChangeMaxRadius(__blueprints[self.BlueprintID].Weapon[2].MaxRadius + 5)
 
             wep = self:GetWeaponByLabel('RightRipper')
             wep:ChangeMaxRadius(__blueprints[self.BlueprintID].Weapon[2].MaxRadius + 5)
@@ -1158,7 +1158,7 @@ ERL0001                       = ClassUnit(CWalkingLandUnit) {
 
             self:ShowBone('Right_Upgrade', true)
         elseif enh == 'EXRipperBoosterRemove' then
-            wpTarget:ChangeMaxRadius(__blueprints[self.BlueprintID].Weapon[2].MaxRadius)
+            self.TargetPainter:ChangeMaxRadius(__blueprints[self.BlueprintID].Weapon[2].MaxRadius)
 
             wep = self:GetWeaponByLabel('RightRipper')
             wep:ChangeMaxRadius(__blueprints[self.BlueprintID].Weapon[2].MaxRadius)

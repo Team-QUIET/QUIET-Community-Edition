@@ -31,7 +31,7 @@ local TrashBag = TrashBag
 local TrashAdd = TrashBag.Add
 local TrashDestroy = TrashBag.Destroy
 
-local wep, wpTarget
+local wep
 
 ESL0001 = ClassUnit( SWalkingLandUnit ) {
 
@@ -336,9 +336,9 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
 		self.EXMoving = false
 		self.EXOCFire = false
 
-		wpTarget = self:GetWeaponByLabel('TargetPainter')
+		self.TargetPainter = self:GetWeaponByLabel('TargetPainter')
 
-		wpTarget:ChangeMaxRadius(100)
+		self.TargetPainter:ChangeMaxRadius(100)
 
 		self:ForkThread(self.WeaponConfigCheck)
 		self:ForkThread(self.WeaponRangeReset)
@@ -443,7 +443,7 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
 
     WeaponRangeReset = function(self)
         
-		wpTarget:ChangeMaxRadius(self:GetBlueprint().Weapon[2].MaxRadius)
+		self.TargetPainter:ChangeMaxRadius(self:GetBlueprint().Weapon[2].MaxRadius)
 
 		if not self.wcTorp01 then
 			wep = self:GetWeaponByLabel('EXTorpedoLauncher01')
@@ -550,7 +550,7 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
 				wep = self:GetWeaponByLabel('EXBigBallCannon01')
 				wep:ChangeMaxRadius(self:GetBlueprint().Weapon[8].MaxRadius)
 
-				wpTarget:ChangeMaxRadius(self:GetBlueprint().Weapon[8].MaxRadius)
+				self.TargetPainter:ChangeMaxRadius(self:GetBlueprint().Weapon[8].MaxRadius)
 			end
 
 			if self.wcBigBall02 then
@@ -560,7 +560,7 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
 				wep = self:GetWeaponByLabel('EXBigBallCannon02')
 				wep:ChangeMaxRadius(self:GetBlueprint().Weapon[9].MaxRadius)
 
-				wpTarget:ChangeMaxRadius(self:GetBlueprint().Weapon[9].MaxRadius)
+				self.TargetPainter:ChangeMaxRadius(self:GetBlueprint().Weapon[9].MaxRadius)
 			end
 
 			if self.wcBigBall03 then
@@ -570,7 +570,7 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
 				wep = self:GetWeaponByLabel('EXBigBallCannon03')
 				wep:ChangeMaxRadius(self:GetBlueprint().Weapon[10].MaxRadius)
 
-				wpTarget:ChangeMaxRadius(self:GetBlueprint().Weapon[10].MaxRadius)
+				self.TargetPainter:ChangeMaxRadius(self:GetBlueprint().Weapon[10].MaxRadius)
 			end
 
 			if self.wcRapid01 then
@@ -580,7 +580,7 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
 				wep = self:GetWeaponByLabel('EXRapidCannon01')
 				wep:ChangeMaxRadius(self:GetBlueprint().Weapon[11].MaxRadius)
 
-				wpTarget:ChangeMaxRadius(self:GetBlueprint().Weapon[11].MaxRadius)
+				self.TargetPainter:ChangeMaxRadius(self:GetBlueprint().Weapon[11].MaxRadius)
 			end
 
 			if self.wcRapid02 then
@@ -590,7 +590,7 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
 				wep = self:GetWeaponByLabel('EXRapidCannon02')
 				wep:ChangeMaxRadius(self:GetBlueprint().Weapon[12].MaxRadius)
 
-				wpTarget:ChangeMaxRadius(self:GetBlueprint().Weapon[12].MaxRadius)
+				self.TargetPainter:ChangeMaxRadius(self:GetBlueprint().Weapon[12].MaxRadius)
 			end
 
 			if self.wcRapid03 then
@@ -600,7 +600,7 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
 				wep = self:GetWeaponByLabel('EXRapidCannon03')
 				wep:ChangeMaxRadius(self:GetBlueprint().Weapon[13].MaxRadius)
 
-				wpTarget:ChangeMaxRadius(self:GetBlueprint().Weapon[13].MaxRadius)
+				self.TargetPainter:ChangeMaxRadius(self:GetBlueprint().Weapon[13].MaxRadius)
 			end
 
 			if self.wcAA01 then
@@ -1003,7 +1003,7 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
             -- increase radius by 5
 			wep:ChangeMaxRadius( self:GetBlueprint().Weapon[2].MaxRadius + 5)
                         
-			wpTarget:ChangeMaxRadius(self:GetBlueprint().Weapon[2].MaxRadius + 5)
+			self.TargetPainter:ChangeMaxRadius(self:GetBlueprint().Weapon[2].MaxRadius + 5)
             
 			wep = self:GetWeaponByLabel('OverCharge')
             
@@ -1021,7 +1021,7 @@ ESL0001 = ClassUnit( SWalkingLandUnit ) {
             -- revert range to original value
 			wep:ChangeMaxRadius(self:GetBlueprint().Weapon[2].MaxRadius)
             
-			wpTarget:ChangeMaxRadius(self:GetBlueprint().Weapon[2].MaxRadius)
+			self.TargetPainter:ChangeMaxRadius(self:GetBlueprint().Weapon[2].MaxRadius)
 
 			wep = self:GetWeaponByLabel('OverCharge')
 

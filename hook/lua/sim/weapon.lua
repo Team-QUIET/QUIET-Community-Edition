@@ -1,5 +1,15 @@
 QCEWeapon = Weapon
 Weapon = ClassWeapon(QCEWeapon) {
+    AddDamageMod = function(self, dmgMod)
+        local previous = self.DamageMod or 0
+        QCEWeapon.AddDamageMod(self, dmgMod)
+
+        -- Projectiles use cached damage; preserve any buffs already in that cache.
+        if self.damageTable then
+            self.damageTable.DamageAmount = self.damageTable.DamageAmount + (self.DamageMod or 0) - previous
+        end
+    end,
+
     -- this event is triggered at the moment that a weapon fires a shell
     CreateProjectileForWeapon = function(self, bone)
 

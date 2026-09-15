@@ -37,7 +37,7 @@ local TrashDestroy                         = TrashBag.Destroy
 
 local WaitTicks                            = coroutine.yield
 
-local wep, wpTarget
+local wep
 
 
 EEL0001 = ClassUnit(TWalkingLandUnit) {
@@ -337,9 +337,9 @@ EEL0001 = ClassUnit(TWalkingLandUnit) {
         self.Shield = false
         self.ShieldOn = false
 
-        wpTarget = self:GetWeaponByLabel('TargetPainter')
+        self.TargetPainter = self:GetWeaponByLabel('TargetPainter')
 
-        wpTarget:ChangeMaxRadius(100)
+        self.TargetPainter:ChangeMaxRadius(100)
 
         self:ForkThread(self.WeaponConfigCheck)
         self:ForkThread(self.WeaponRangeReset)
@@ -537,7 +537,7 @@ EEL0001 = ClassUnit(TWalkingLandUnit) {
     end,
 
     WeaponRangeReset = function(self)
-        wpTarget:ChangeMaxRadius(self:GetBlueprint().Weapon[2].MaxRadius)
+        self.TargetPainter:ChangeMaxRadius(self:GetBlueprint().Weapon[2].MaxRadius)
 
         if not self.wcFlamer01 then
             wep = self:GetWeaponByLabel('EXFlameCannon01')
@@ -757,35 +757,35 @@ EEL0001 = ClassUnit(TWalkingLandUnit) {
                 wep = self:GetWeaponByLabel('EXAntiMatterCannon02')
                 wep:ChangeMaxRadius(self:GetBlueprint().Weapon[11].MaxRadius)
 
-                wpTarget:ChangeMaxRadius(self:GetBlueprint().Weapon[11].MaxRadius)
+                self.TargetPainter:ChangeMaxRadius(self:GetBlueprint().Weapon[11].MaxRadius)
             end
 
             if self.wcAMC03 then
                 wep = self:GetWeaponByLabel('EXAntiMatterCannon03')
                 wep:ChangeMaxRadius(self:GetBlueprint().Weapon[12].MaxRadius)
 
-                wpTarget:ChangeMaxRadius(self:GetBlueprint().Weapon[12].MaxRadius)
+                self.TargetPainter:ChangeMaxRadius(self:GetBlueprint().Weapon[12].MaxRadius)
             end
 
             if self.wcGatling01 then
                 wep = self:GetWeaponByLabel('EXGattlingEnergyCannon01')
                 wep:ChangeMaxRadius(self:GetBlueprint().Weapon[13].MaxRadius)
 
-                wpTarget:ChangeMaxRadius(self:GetBlueprint().Weapon[13].MaxRadius)
+                self.TargetPainter:ChangeMaxRadius(self:GetBlueprint().Weapon[13].MaxRadius)
             end
 
             if self.wcGatling02 then
                 wep = self:GetWeaponByLabel('EXGattlingEnergyCannon02')
                 wep:ChangeMaxRadius(self:GetBlueprint().Weapon[14].MaxRadius)
 
-                wpTarget:ChangeMaxRadius(self:GetBlueprint().Weapon[14].MaxRadius)
+                self.TargetPainter:ChangeMaxRadius(self:GetBlueprint().Weapon[14].MaxRadius)
             end
 
             if self.wcGatling03 then
                 wep = self:GetWeaponByLabel('EXGattlingEnergyCannon03')
                 wep:ChangeMaxRadius(self:GetBlueprint().Weapon[15].MaxRadius)
 
-                wpTarget:ChangeMaxRadius(self:GetBlueprint().Weapon[15].MaxRadius)
+                self.TargetPainter:ChangeMaxRadius(self:GetBlueprint().Weapon[15].MaxRadius)
             end
 
             if self.wcTMissiles01 then
@@ -833,21 +833,21 @@ EEL0001 = ClassUnit(TWalkingLandUnit) {
                 wep = self:GetWeaponByLabel('EXClusterMissles01')
                 wep:ChangeMaxRadius(self:GetBlueprint().Weapon[20].MaxRadius)
 
-                wpTarget:ChangeMaxRadius(self:GetBlueprint().Weapon[20].MaxRadius)
+                self.TargetPainter:ChangeMaxRadius(self:GetBlueprint().Weapon[20].MaxRadius)
             end
 
             if self.wcCMissiles02 then
                 wep = self:GetWeaponByLabel('EXClusterMissles02')
                 wep:ChangeMaxRadius(self:GetBlueprint().Weapon[21].MaxRadius)
 
-                wpTarget:ChangeMaxRadius(self:GetBlueprint().Weapon[21].MaxRadius)
+                self.TargetPainter:ChangeMaxRadius(self:GetBlueprint().Weapon[21].MaxRadius)
             end
 
             if self.wcCMissiles03 then
                 wep = self:GetWeaponByLabel('EXClusterMissles03')
                 wep:ChangeMaxRadius(self:GetBlueprint().Weapon[22].MaxRadius)
 
-                wpTarget:ChangeMaxRadius(self:GetBlueprint().Weapon[22].MaxRadius)
+                self.TargetPainter:ChangeMaxRadius(self:GetBlueprint().Weapon[22].MaxRadius)
             end
         end
     end,
@@ -1095,7 +1095,7 @@ EEL0001 = ClassUnit(TWalkingLandUnit) {
 
             wepZephyr:ChangeMaxRadius(__blueprints[self.BlueprintID].Weapon[2].MaxRadius + 5)
 
-            wpTarget:ChangeMaxRadius(self:GetBlueprint().Weapon[2].MaxRadius)
+            self.TargetPainter:ChangeMaxRadius(self:GetBlueprint().Weapon[2].MaxRadius)
 
             local wepOvercharge = self:GetWeaponByLabel('OverCharge')
 
@@ -1110,7 +1110,7 @@ EEL0001 = ClassUnit(TWalkingLandUnit) {
 
             wepZephyr:ChangeMaxRadius(__blueprints[self.BlueprintID].Weapon[2].MaxRadius)
 
-            wpTarget:ChangeMaxRadius(self:GetBlueprint().Weapon[2].MaxRadius)
+            self.TargetPainter:ChangeMaxRadius(self:GetBlueprint().Weapon[2].MaxRadius)
 
             local wepOvercharge = self:GetWeaponByLabel('OverCharge')
 
