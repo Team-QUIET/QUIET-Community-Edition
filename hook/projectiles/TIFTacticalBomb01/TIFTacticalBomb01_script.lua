@@ -1,15 +1,18 @@
 local EmitterProjectile = import('/lua/sim/defaultprojectiles.lua').EmitterProjectile
 local EffectTemplate = import('/lua/EffectTemplates.lua')
 local GetRandomFloat = import('/lua/utilities.lua').GetRandomFloat
+local ImpactScale = 0.55
 
 TIFTacticalBomb01 = ClassProjectile(EmitterProjectile) {
 
 	PolyTrail = '/effects/emitters/default_polytrail_04_emit.bp',
     FxTrails = {},
 
-	FxLandHitScale = 0.4,
-    FxUnitHitScale = 0.4,
-    FxSplatScale = 4,
+	FxLandHitScale = ImpactScale,
+    FxUnitHitScale = ImpactScale,
+    FxPropHitScale = ImpactScale,
+    FxSplatScale = 10 * ImpactScale,
+    FxLightScale = 3.5 * ImpactScale,
 
 	FxImpactTrajectoryAligned = false,
     FxImpactUnit = EffectTemplate.TAntiMatterShellHit01,
@@ -22,7 +25,7 @@ TIFTacticalBomb01 = ClassProjectile(EmitterProjectile) {
         local pos = self:GetPosition()
 		local rf = GetRandomFloat(0,6.28)
 
-        CreateLightParticle( self, -1, army, 1.4, 2, 'sparkle_03', 'ramp_fire_03' )
+        CreateLightParticle( self, -1, army, self.FxLightScale, 2, 'sparkle_03', 'ramp_fire_03' )
 
         if TargetType == 'Terrain' then
             CreateDecal( pos, rf, 'nuke_scorch_001_normals', '', 'Alpha Normals', self.FxSplatScale, self.FxSplatScale, 150, 50, army )

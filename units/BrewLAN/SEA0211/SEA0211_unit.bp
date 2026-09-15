@@ -61,7 +61,7 @@ UnitBlueprint {
             CollideFriendly = false,
             Damage = 1615,
             DamageFriendly = true,
-            DamageRadius = 1.5,
+            DamageRadius = 2.25,
             DamageType = 'Normal',
             DisplayName = 'Tactical Bomb',
             EffectiveRadius = 25,
