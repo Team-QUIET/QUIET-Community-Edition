@@ -26,6 +26,15 @@ UnitBlueprint {
         SurfaceThreatLevel = 40.7,
     },
 
+    Economy = {
+        BuildCostEnergy = 12000,
+        BuildCostMass = 950,
+        BuildRate = 3,
+        BuildTime = 4750,
+		
+        MaintenanceConsumptionPerSecondEnergy = 30,
+    },
+
     Physics = {
 		BackUpDistance = 4,
         BankingSlope = 0,
@@ -33,9 +42,9 @@ UnitBlueprint {
             LAYER_Land = true,
         },
         DragCoefficient = 0.2,
-        MaxAcceleration = 3.3,
-        MaxBrake = 3.15,
-        MaxSpeed = 3.15,
+        MaxAcceleration = 2.9,
+        MaxBrake = 2.75,
+        MaxSpeed = 2.75,
         MaxSpeedReverse = 2.95,
         MaxSteerForce = 10,
         MeshExtentsX = 1,
