@@ -130,8 +130,8 @@ UnitBlueprint{
     },
 
     Economy = {
-        BuildCostEnergy = 960000,
-        BuildCostMass = 61000,
+        BuildCostEnergy = 1620000,
+        BuildCostMass = 94000,
         BuildTime = 8400,
     },
 
@@ -171,8 +171,8 @@ UnitBlueprint{
         LayerChangeOffsetHeight = -5.5,
 
         MaxAcceleration = 0.8,
-        MaxBrake = 2.4,
-        MaxSpeed = 2.4,
+        MaxBrake = 2.1,
+        MaxSpeed = 2.1,
         MaxSpeedReverse = 0,
         MaxSteerForce = 10,
         MeshExtentsX = 2.75,
@@ -233,7 +233,7 @@ UnitBlueprint{
 
             ContinuousBeam = true,
 
-            Damage = 360,
+            Damage = 330,
             DamageRadius = 1,
             DamageType = "Normal",
 
