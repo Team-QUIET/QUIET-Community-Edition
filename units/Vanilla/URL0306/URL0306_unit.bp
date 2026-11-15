@@ -92,8 +92,8 @@ UnitBlueprint {
         RadarStealth = true,
         RadarStealthField = true,
         
-        RadarStealthFieldRadius = 16,
-        SonarStealthFieldRadius = 16,
+        RadarStealthFieldRadius = 14,
+        SonarStealthFieldRadius = 14,
 
         VisionRadius = 16,
     },
