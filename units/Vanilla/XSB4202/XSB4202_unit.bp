@@ -14,4 +14,17 @@ UnitBlueprint {
             ShieldVerticalOffset = -3,
         },
     },
+
+    Economy = {
+        BuildCostEnergy = 17000,
+        BuildCostMass = 1000,
+        BuildRate = 10,
+        BuildTime = 700,
+		
+        BuildableCategory = { 'xsb4301' },
+		
+        MaintenanceConsumptionPerSecondEnergy = 300,
+		
+        RebuildBonusIds = { 'xsb4202','xsb4301' },
+    },
 }
