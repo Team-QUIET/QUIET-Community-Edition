@@ -22,7 +22,7 @@ UnitBlueprint {
         BuildCostEnergy = 10000,
         BuildCostMass = 800,
         
-        BuildTime = 4500,
+        BuildTime = 5500,
         
         TeleportEnergyMod = 0.15,
         TeleportMassMod = 1,
@@ -65,7 +65,7 @@ UnitBlueprint {
             
             Damage = 92,
             DamageFriendly = true,
-            DamageRadius = 2,
+            DamageRadius = 1,
             DamageType = 'Normal',
             
             DisplayName = 'Iridium Rocket Barrage',

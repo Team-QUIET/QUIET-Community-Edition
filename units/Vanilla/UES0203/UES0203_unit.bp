@@ -2,6 +2,12 @@ UnitBlueprint {
     Merge = true,
     BlueprintId = "ues0203",
 
+    Economy = {
+        BuildCostEnergy = 4950,
+        BuildCostMass = 380,
+        BuildTime = 2000,
+    },
+
     Intel = {
 		FreeIntel = true,
 		RadarStealth = false,

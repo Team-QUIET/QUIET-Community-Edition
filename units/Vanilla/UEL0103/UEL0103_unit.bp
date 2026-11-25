@@ -104,9 +104,9 @@ UnitBlueprint {
             LAYER_Land = true,
         },
         DragCoefficient = 0.2,
-        MaxAcceleration = 2.72,
-        MaxBrake = 2.72,
-        MaxSpeed = 2.72,
+        MaxAcceleration = 2.52,
+        MaxBrake = 2.62,
+        MaxSpeed = 2.62,
         MaxSpeedReverse = 2.72,
         MaxSteerForce = 10,
         MeshExtentsX = 0.4,
@@ -117,7 +117,7 @@ UnitBlueprint {
         RotateOnSpot = false,
         RotateOnSpotThreshold = 0.5,
         TurnRadius = 2,
-        TurnRate = 90,
+        TurnRate = 45,
     },
 	
     SelectionCenterOffsetX = 0,
@@ -174,7 +174,7 @@ UnitBlueprint {
 
             Label = 'MainGun',
 
-            MaxRadius = 42,
+            MaxRadius = 41.5,
             MinRadius = 6.5,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,

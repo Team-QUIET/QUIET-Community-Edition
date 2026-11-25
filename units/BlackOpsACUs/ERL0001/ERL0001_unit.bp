@@ -661,8 +661,8 @@ UnitBlueprint {
 
         EXEMPArray = {
 
-            BuildCostEnergy = 59000,
-            BuildCostMass = 1900,
+            BuildCostEnergy = 69000,
+            BuildCostMass = 1200,
             BuildTime = 1650,
 
             Icon = 'exramc1',
@@ -698,8 +698,8 @@ UnitBlueprint {
 
         EXImprovedCapacitors = {
 
-            BuildCostEnergy = 142500,
-            BuildCostMass = 2100,
+            BuildCostEnergy = 172500,
+            BuildCostMass = 1900,
             BuildTime = 2975,
 
             Icon = 'exramc2',
@@ -737,8 +737,8 @@ UnitBlueprint {
 
         EXPowerBooster = {
 
-            BuildCostEnergy = 216500,
-            BuildCostMass = 3375,
+            BuildCostEnergy = 256500,
+            BuildCostMass = 2100,
             BuildTime = 9550,
 
             Icon = 'exramc3',
@@ -776,8 +776,8 @@ UnitBlueprint {
 
         EXMasor = {
 
-            BuildCostEnergy = 76000,
-            BuildCostMass = 2200,
+            BuildCostEnergy = 100000,
+            BuildCostMass = 1500,
             BuildTime = 1950,
 
             Icon = 'exrgec1',
@@ -817,8 +817,8 @@ UnitBlueprint {
 
         EXImprovedCoolingSystem = {
 
-            BuildCostEnergy = 172500,
-            BuildCostMass = 3250,
+            BuildCostEnergy = 200000,
+            BuildCostMass = 2500,
             BuildTime = 3475,
 
             Icon = 'exrgec2',
@@ -860,8 +860,8 @@ UnitBlueprint {
 
         EXAdvancedEmitterArray = {
 
-            BuildCostEnergy = 256500,
-            BuildCostMass = 6875,
+            BuildCostEnergy = 300000,
+            BuildCostMass = 4875,
             BuildTime = 11350,
 
             Icon = 'exrgec3',
@@ -944,7 +944,7 @@ UnitBlueprint {
 
             Icon = 'excint2',
             
-            ConsumptionPerSecondEnergy = 2000,
+            ConsumptionPerSecondEnergy = 1000,
 
             Name = 'Intel Enhancement (T3)',
 

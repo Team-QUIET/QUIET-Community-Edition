@@ -5,8 +5,8 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 32,
         ArmorType = 'Normal',
-        Health = 2900,
-        MaxHealth = 2900,
+        Health = 3900,
+        MaxHealth = 3900,
         RegenRate = 1,
         SurfaceThreatLevel = 15,
     },
@@ -16,6 +16,28 @@ UnitBlueprint {
         RadarRadius = 96,
         VisionRadius = 48,
         WaterVisionRadius = 12,
+    },
+
+    Physics = {
+        BackUpDistance = 5,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Water = true,
+        },
+        CatchUpAcc = 10,
+        DragCoefficient = 0.2,
+        MaxAcceleration = 2.5,
+        MaxBrake = 2.5,
+        MaxSpeed = 4.0,
+        MaxSpeedReverse = 4.5,
+        MaxSteerForce = 5,
+        MeshExtentsX = 1.15,
+        MeshExtentsY = 1.25,
+        MeshExtentsZ = 3.6,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Water',
+        TurnRadius = 20,
+        TurnRate = 40,
     },
     
     Weapon = {
@@ -50,7 +72,7 @@ UnitBlueprint {
             
             MuzzleChargeDelay = 0.4,
             MuzzleSalvoSize = 2,
-            MuzzleVelocity = 40,
+            MuzzleVelocity = 50,
             ProjectileId = '/projectiles/ADFQuantumCannon01/ADFQuantumCannon01_proj.bp',
             ProjectileLifetimeUsesMultiplier = 1.5,
 

@@ -51,9 +51,9 @@ UnitBlueprint {
         
         AirThreatLevel = 95,
         ArmorType = 'Light',
-        Health = 2050,
-        MaxHealth = 2050,
-        RegenRate = 10,
+        Health = 2200,
+        MaxHealth = 2200,
+        RegenRate = 75,
     },
 
     Description = '<LOC sea0313_desc>Interdiction Fighter',

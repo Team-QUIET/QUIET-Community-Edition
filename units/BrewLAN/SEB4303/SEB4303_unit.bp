@@ -1,0 +1,48 @@
+UnitBlueprint {
+    Merge = true,
+    BlueprintId = "seb4303",
+
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 825,
+        MaxHealth = 825,
+        RegenRate = 3,
+		
+        Shield = {
+            AntiArtilleryShield = true,
+            
+            ImpactEffects = 'UEFAntiArtilleryShieldHit01',
+            ImpactMesh = '/effects/entities/ShieldSection01/ShieldSection01_mesh',
+            
+            Mesh = '/mods/BrewLAN_LOUD/effects/entities/SEB4303AntiArtilleryShield01/SEB4303AntiArtilleryShield01_mesh',
+            MeshZ = '/mods/BrewLAN_LOUD/effects/entities/SEB4303AntiArtilleryShield01/SEB4303AntiArtilleryShieldZ_mesh',            
+
+            RegenAssistMult = 60,
+            
+            ShieldEnergyDrainRechargeTime = 5,
+            ShieldMaxHealth = 20750,
+            ShieldRechargeTime = 20,
+            ShieldRegenRate = 275,
+            ShieldRegenStartTime = 1,
+            ShieldSize = 57,
+            ShieldVerticalOffset = 0,
+        },
+		
+        EconomyThreatLevel = 80,
+        SurfaceThreatLevel = 155.3,
+
+    },
+	
+    Economy = {
+        BuildCostEnergy = 57500,
+        BuildCostMass = 3500,
+        BuildTime = 15000,
+		
+        MaintenanceConsumptionPerSecondEnergy = 3500,
+		
+        RebuildBonusIds = {'seb4303'},
+		
+        StorageEnergy = 12000,		
+    },
+
+}

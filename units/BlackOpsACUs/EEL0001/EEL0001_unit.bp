@@ -658,7 +658,7 @@ UnitBlueprint {
         EXAntiMatterCannon = {
 
             BuildCostEnergy = 76000,
-            BuildCostMass = 2200,
+            BuildCostMass = 1600,
             BuildTime = 1950,
 
             Icon = 'exramc1',
@@ -696,7 +696,7 @@ UnitBlueprint {
         EXImprovedContainmentBottle = {
 
             BuildCostEnergy = 172500,
-            BuildCostMass = 3250,
+            BuildCostMass = 2600,
             BuildTime = 3475,
 
             Icon = 'exramc2',
@@ -735,7 +735,7 @@ UnitBlueprint {
         EXPowerBooster = {
 
             BuildCostEnergy = 256500,
-            BuildCostMass = 5875,
+            BuildCostMass = 5000,
             BuildTime = 11350,
 
             Icon = 'exramc3',
@@ -774,7 +774,7 @@ UnitBlueprint {
         EXGattlingEnergyCannon = {
 
             BuildCostEnergy = 59000,
-            BuildCostMass = 1900,
+            BuildCostMass = 1100,
             BuildTime = 1650,
 
             Icon = 'exrgec1',
@@ -811,7 +811,7 @@ UnitBlueprint {
         EXImprovedCoolingSystem = {
 
             BuildCostEnergy = 142500,
-            BuildCostMass = 2100,
+            BuildCostMass = 1900,
             BuildTime = 2975,
 
             Icon = 'exrgec2',
@@ -850,7 +850,7 @@ UnitBlueprint {
         EXEnergyShellHardener = {
 
             BuildCostEnergy = 216500,
-            BuildCostMass = 4375,
+            BuildCostMass = 2500,
             BuildTime = 9550,
 
             Icon = 'exrgec3',
@@ -933,7 +933,7 @@ UnitBlueprint {
 
             Icon = 'excint2',
             
-            ConsumptionPerSecondEnergy = 2000,
+            ConsumptionPerSecondEnergy = 1000,
 
             Name = 'Intel Enhancement (T3)',
 
@@ -1232,7 +1232,7 @@ UnitBlueprint {
         EXClusterMisslePack = {
 
             BuildCostEnergy = 9600,
-            BuildCostMass = 1200,
+            BuildCostMass = 1000,
             BuildTime = 960,
 
             Icon = 'exbbat1',
@@ -1269,7 +1269,7 @@ UnitBlueprint {
         EXClusterMisslesPack = {
 
             BuildCostEnergy = 47000,
-            BuildCostMass = 2500,
+            BuildCostMass = 1500,
             BuildTime = 4700,
 
             Icon = 'exbbat2',
@@ -1306,7 +1306,7 @@ UnitBlueprint {
 		
         EXClusterMissleSalvoPack = {
             BuildCostEnergy = 175000,
-            BuildCostMass = 5750,
+            BuildCostMass = 3750,
             BuildTime = 17500,
 
             Icon = 'exbbat3',

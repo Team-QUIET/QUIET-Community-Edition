@@ -20,6 +20,6 @@ UnitBlueprint {
         BuildCostMass = 2500,
         BuildTime = 2400,
 		
-        MaintenanceConsumptionPerSecondEnergy = 1100,
+        MaintenanceConsumptionPerSecondEnergy = 700,
     },
 }

@@ -62,7 +62,7 @@ UnitBlueprint {
             CollideFriendly = false,
 			
             Damage = 1000,
-            DamageRadius = 2,
+            DamageRadius = 2.5,
             DamageType = 'Normal',
 			
             DisplayName = 'Gauss Cannon',
@@ -84,7 +84,7 @@ UnitBlueprint {
 
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 35,
+            MuzzleVelocity = 50,
             ProjectileId = "/projectiles/TDFGauss03/TDFGauss03_proj.bp",
             ProjectileLifetimeUsesMultiplier = 1.5,
             ProjectilesPerOnFire = 3,
@@ -166,7 +166,7 @@ UnitBlueprint {
             CollideFriendly = false,
             
             Damage = 1000,
-            DamageRadius = 2,
+            DamageRadius = 2.5,
             DamageType = 'Normal',
             
             DisplayName = 'Gauss Cannon',
@@ -188,7 +188,7 @@ UnitBlueprint {
             
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 35,
+            MuzzleVelocity = 50,
             ProjectileId = "/projectiles/TDFGauss03/TDFGauss03_proj.bp",
             ProjectileLifetimeUsesMultiplier = 1.5,
             ProjectilesPerOnFire = 3,
@@ -269,7 +269,7 @@ UnitBlueprint {
             CollideFriendly = false,
             
             Damage = 1000,
-            DamageRadius = 2,
+            DamageRadius = 2.5,
             DamageType = 'Normal',
             
             DisplayName = 'Gauss Cannon',
@@ -293,7 +293,7 @@ UnitBlueprint {
 
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 35,
+            MuzzleVelocity = 50,
             ProjectileId = "/projectiles/TDFGauss03/TDFGauss03_proj.bp",
             ProjectileLifetimeUsesMultiplier = 1.5,
             ProjectilesPerOnFire = 3,
@@ -713,7 +713,7 @@ UnitBlueprint {
 			
             Label = 'PhalanxGun',
 			
-            MaxRadius = 28,
+            MaxRadius = 38,
 			
             MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 5,
@@ -778,7 +778,7 @@ UnitBlueprint {
 			
             Label = 'PhalanxGun',
 			
-            MaxRadius = 28,
+            MaxRadius = 38,
 			
             MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 5,

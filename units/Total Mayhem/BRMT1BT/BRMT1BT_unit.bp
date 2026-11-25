@@ -167,7 +167,7 @@ UnitBlueprint {
 			
             Label = 'MainGun',
 			
-            MaxRadius = 21,
+            MaxRadius = 21.5,
             MuzzleVelocity = 35,
             ProjectileId = '/projectiles/CDFLaserHeavy01/CDFLaserHeavy01_proj.bp',			
             ProjectileLifetimeUsesMultiplier = 1.15,

@@ -44,8 +44,8 @@ UnitBlueprint {
     Defense = {
         MissileTorpDestroy = { AttachBone = {'XSS0306'}, Radius = 3.7, RedirectRateOfFire = 8, ProjectileCategories = {'TORPEDO'} },
         ArmorType = 'Normal',
-        Health = 23500,
-        MaxHealth = 23500,
+        Health = 30500,
+        MaxHealth = 30500,
         RegenRate = 8,
         AirThreatLevel = 72,
         SubThreatLevel = 8,

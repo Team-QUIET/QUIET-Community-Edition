@@ -84,7 +84,7 @@
 
     Economy = {
         BuildCostEnergy = 75000,
-        BuildCostMass = 8000,
+        BuildCostMass = 7000,
         BuildTime = 20000,
     },
 

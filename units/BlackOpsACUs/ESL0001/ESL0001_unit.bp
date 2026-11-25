@@ -677,7 +677,7 @@ UnitBlueprint {
 
         EXStormCannon = {
 
-            BuildCostEnergy = 76000,
+            BuildCostEnergy = 66000,
             BuildCostMass = 2200,
             BuildTime = 1950,
 
@@ -716,8 +716,8 @@ UnitBlueprint {
         EXStormCannonII = {
 
             BuildCostEnergy = 172500,
-            BuildCostMass = 3250,
-            BuildTime = 3475,
+            BuildCostMass = 3000,
+            BuildTime = 4475,
 
             Icon = 'exramc2',
 
@@ -755,7 +755,7 @@ UnitBlueprint {
         EXStormCannonIII = {
 
             BuildCostEnergy = 256500,
-            BuildCostMass = 6875,
+            BuildCostMass = 5000,
             BuildTime = 11350,
 
             Icon = 'exramc3',
@@ -795,7 +795,7 @@ UnitBlueprint {
         EXRapidCannon = {
 
             BuildCostEnergy = 59000,
-            BuildCostMass = 1900,
+            BuildCostMass = 1200,
             BuildTime = 1650,
 
             Icon = 'exrgec1',
@@ -869,7 +869,7 @@ UnitBlueprint {
         EXRapidCannonIII = {
 
             BuildCostEnergy = 216500,
-            BuildCostMass = 4375,
+            BuildCostMass = 2375,
             BuildTime = 9550,
 
             Icon = 'exrgec3',
@@ -951,7 +951,7 @@ UnitBlueprint {
 
             Icon = 'excint2',
             
-            ConsumptionPerSecondEnergy = 2000,
+            ConsumptionPerSecondEnergy = 1000,
 
             Name = 'Intel Enhancement (T3)',
 

@@ -74,7 +74,7 @@ UnitBlueprint {
 
         StandUpright = false,
         TurnRadius = 1,
-        TurnRate = 60,
+        TurnRate = 30,
 		WaterSpeedMultiplier = 1.2,
     },
 

@@ -5,8 +5,8 @@ UnitBlueprint {
     Defense = {
         AirThreatLevel = 36,
         ArmorType = 'Normal',
-        Health = 2900,
-        MaxHealth = 2900,
+        Health = 3900,
+        MaxHealth = 3900,
         RegenRate = 2,
         SurfaceThreatLevel = 24,
     },
@@ -16,6 +16,28 @@ UnitBlueprint {
         RadarRadius = 96,
         VisionRadius = 48,
         WaterVisionRadius = 12,
+    },
+
+    Physics = {
+        BackUpDistance = 5,
+        BankingSlope = 0,
+        BuildOnLayerCaps = {
+            LAYER_Water = true,
+        },
+        CatchUpAcc = 10,
+        DragCoefficient = 0.2,
+        MaxAcceleration = 2,
+        MaxBrake = 2,
+        MaxSpeed = 3.9,
+        MaxSpeedReverse = 4,
+        MaxSteerForce = 5,
+        MeshExtentsX = 1.6,
+        MeshExtentsY = 1.6,
+        MeshExtentsZ = 4.8,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Water',
+        TurnRadius = 12,
+        TurnRate = 32,
     },
 
     Weapon = {
